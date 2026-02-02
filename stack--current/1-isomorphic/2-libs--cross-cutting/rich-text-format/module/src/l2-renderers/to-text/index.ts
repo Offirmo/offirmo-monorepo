@@ -167,10 +167,10 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽ
 			let max_value_length = 0
 			state.sub_nodes.forEach(li_node => {
 				//console.log({li_node})
-				const kv_node = li_node.$sub[SPECIAL_LIST_NODE_CONTENT_KEY]! as CheckedNode
+				const kv_node = li_node.$refs[SPECIAL_LIST_NODE_CONTENT_KEY]! as CheckedNode
 
-				const key_node = promoteꓽto_node(kv_node.$sub['key']!)
-				const value_node = promoteꓽto_node(kv_node.$sub['value']!)
+				const key_node = promoteꓽto_node(kv_node.$refs['key']!)
+				const value_node = promoteꓽto_node(kv_node.$refs['value']!)
 
 				const key_text = renderⵧto_text(key_node)
 				const value_text = renderⵧto_text(value_node)
@@ -225,10 +225,10 @@ const onꓽconcatenateⵧsub_node: WalkerCallbacks<
 	State,
 	RenderingOptionsⵧToText
 >['onꓽconcatenateⵧsub_node'] = (
-	{ state, $node, $sub_node_id, $sub_node, sub_state },
+	{ state, $node, $refs_node_id, $refs_node, sub_state },
 	options,
 ) => {
-	state.sub_nodes.push(normalizeꓽnode($sub_node))
+	state.sub_nodes.push(normalizeꓽnode($refs_node))
 
 	const { style } = options
 	const [sub_str, trailing_spaces] = (() => {
@@ -243,7 +243,7 @@ const onꓽconcatenateⵧsub_node: WalkerCallbacks<
 					if ($node.$type === 'ul') return '-'
 
 					const cleaned_index: string = (() => {
-						let res = String($sub_node_id).trim()
+						let res = String($refs_node_id).trim()
 
 						// trim leading 0
 						while (res[0] === '0') {

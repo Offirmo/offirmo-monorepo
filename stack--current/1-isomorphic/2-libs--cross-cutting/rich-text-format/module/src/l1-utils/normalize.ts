@@ -20,7 +20,7 @@ function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 		$type = 'auto', // for now
 		$heading = null,
 		$content = '',
-		$sub = {},
+		$refs = {},
 		$classes = [],
 		$hints = {},
 		...rest
@@ -53,7 +53,7 @@ function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 		$type,
 		$heading,
 		$content,
-		$sub,
+		$refs,
 		$classes,
 		$hints,
 	}

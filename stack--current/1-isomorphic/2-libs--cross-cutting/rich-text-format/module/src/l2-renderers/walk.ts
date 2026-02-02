@@ -14,6 +14,7 @@ import { type NodeLike, NodeType, type CheckedNode, type Node } from '../l1-type
 import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
 import type { BaseState } from '@offirmo-private/state-utils'
+import { getꓽtype } from '../l1-utils'
 
 /////////////////////////////////////////////////
 // base rendering options
@@ -37,7 +38,10 @@ const DEFAULT_RENDERING_OPTIONSⵧWalk = Object.freeze<BaseRenderingOptions>({
 // Hooks
 
 interface BaseWalkState {
+	aggregated_refs: CheckedNode['$refs']
+
 	depthⵧh: number // header depth
+	depthⵧlist: number // list depth
 	depthⵧnodes: number // overall depth ((no known usage for now / debug only)
 
 	//$parent_node: Immutable<CheckedNode> | null
@@ -75,8 +79,8 @@ interface OnConcatenateStringParams<RendererState> extends BaseHookParams<Render
 // CONCAT SUB-NODE
 // REMINDER this is done at the PARENT level => node, state, depth all refer to the PARENT node concatenating the child
 interface OnConcatenateSubNodeParams<RendererState> extends BaseHookParams<RendererState> {
-	//$sub_node_id: string
-	$sub_node: Immutable<Node>
+	//$refs_node_id: string
+	$refs_node: Immutable<Node>
 	XXX sub_state: RendererState // IMPORTANT: this is where the parent node can "consume" the child state into its own state
 }
 
@@ -98,14 +102,14 @@ interface OnTypeParams<RendererState> extends BaseHookParams<RendererState> {
 
 interface UnknownSubNodeResolver<RendererState, RenderingOptions> {
 	(
-		$sub_node_id: string,
+		$refs_node_id: string,
 		context: BaseHookParams<RendererState>,
 		options: RenderingOptions,
 	): Node | undefined
 }
 
 interface WalkerStateCreator<RendererState, RenderingOptions> {
-	(options: RenderingOptions): RendererState
+	(options: RenderingOptions, parent_state: RendererState | undefined): RendererState
 }
 
 interface WalkerReducer<RendererState, P extends BaseHookParams<RendererState>, RenderingOptions> {
@@ -204,7 +208,7 @@ function _getꓽcallbacksⵧdefault<
 		*/
 
 		resolveꓽunknown_ref(
-			$sub_node_id: string,
+			$refs_node_id: string,
 			context: BaseHookParams<RendererState>,
 			options: RenderingOptions,
 		): Node | undefined {
@@ -278,43 +282,43 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 						throw new Error(`${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
 
 					// splitting the ⎨⎨place|filter1|filter2⎬⎬ content
-					const [$sub_node_id, ...$filters] = split_end.shift()!.split('|')
-					assert($sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
+					const [$refs_node_id, ...$filters] = split_end.shift()!.split('|')
+					assert($refs_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
 
-					let $sub_node = promoteꓽto_node(
-						(function _resolve_sub_node_by_id(): Immutable<CheckedNode>['$sub'][string] {
-							if ($sub_node_id === 'br') {
+					let $refs_node = promoteꓽto_node(
+						(function _resolve_sub_node_by_id(): Immutable<CheckedNode>['$refs'][string] {
+							if ($refs_node_id === 'br') {
 								assert(
-									!$sub_nodes[$sub_node_id],
-									`${LIB}: error in content "${$content}", having a reserved subnode "${$sub_node_id}"!`,
+									!$refs_nodes[$refs_node_id],
+									`${LIB}: error in content "${$content}", having a reserved subnode "${$refs_node_id}"!`,
 								)
 								return SUB_NODE_BR
 							}
 
-							if ($sub_node_id === 'hr') {
+							if ($refs_node_id === 'hr') {
 								assert(
-									!$sub_nodes[$sub_node_id],
-									`${LIB}: error in content "${$content}", having a reserved subnode "${$sub_node_id}"!`,
+									!$refs_nodes[$refs_node_id],
+									`${LIB}: error in content "${$content}", having a reserved subnode "${$refs_node_id}"!`,
 								)
 								return SUB_NODE_HR
 							}
 
-							if ($sub_nodes[$sub_node_id] !== undefined) {
+							if ($refs_nodes[$refs_node_id] !== undefined) {
 								// reminder: can be a falsy node-like 0, ''
-								return $sub_nodes[$sub_node_id]!
+								return $refs_nodes[$refs_node_id]!
 							}
 
 							// sub node is missing on the immediate node, advanced resolution:
 
 							if (
 								options.shouldꓽrecover_from_unknown_sub_nodes === 'root'
-								&& $root_node.$sub[$sub_node_id]
+								&& $root_node.$refs[$refs_node_id]
 							) {
-								return $root_node.$sub[$sub_node_id]!
+								return $root_node.$refs[$refs_node_id]!
 							}
 
 							const candidate_from_resolver = callbacks.resolveꓽunknown_ref(
-								$sub_node_id,
+								$refs_node_id,
 								{
 									$node,
 									depth,
@@ -325,26 +329,26 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 							if (candidate_from_resolver) return candidate_from_resolver
 
 							if (options.shouldꓽrecover_from_unknown_sub_nodes === 'placeholder') {
-								return { $content: `{{??${$sub_node_id}??}}` }
+								return { $content: `{{??${$refs_node_id}??}}` }
 							}
 
 							if (true) {
 								console.error('shouldꓽrecover_from_unknown_sub_nodes FAILURE')
-								console.error($node, { $content, sub_node_id: $sub_node_id })
+								console.error($node, { $content, sub_node_id: $refs_node_id })
 							}
 							throw new Error(
-								`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${$sub_node_id}"! (recover mode = ${options.shouldꓽrecover_from_unknown_sub_nodes})`,
+								`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${$refs_node_id}"! (recover mode = ${options.shouldꓽrecover_from_unknown_sub_nodes})`,
 							)
 						})(),
 					)
 
 					let sub_state = _walk(
-						$sub_node,
+						$refs_node,
 						callbacks,
 						options,
 						{
 							$parent_node: $node,
-							$id: $sub_node_id,
+							$id: $refs_node_id,
 							depth: depth + 1,
 							$root_node,
 						},
@@ -384,7 +388,7 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 						)
 					}, sub_state)
 
-					// Should we detect unused $subnodes?
+					// Should we detect unused $refsnodes?
 					// NO it's convenient (ex. Oh-my-rpg) to over-set subnodes
 					// and set a content which may or may not use them.
 
@@ -394,8 +398,8 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 							$node,
 							depth,
 
-							$sub_node_id,
-							$sub_node,
+							$refs_node_id,
+							$refs_node,
 							sub_state,
 						},
 						options,
@@ -431,19 +435,31 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 	callbacks: Immutable<WalkerCallbacks<CustomWalkState, RenderingOptions>>,
 	options: RenderingOptions,
-	bstate: BaseWalkState,
-	xstate: CustomWalkState,
+	bstateⵧparent: BaseWalkState,
+	xstateⵧparent: CustomWalkState,
 	$raw_node: Immutable<NodeLike>,
 ) {
 	const $node = normalizeꓽnode(promoteꓽto_node($raw_node))
+	const { $heading, $refs } = $node
 
-	xstate = callbacks.onꓽnodeⵧenter({ $node, bstate, xstate }, options)
+	// build new child state
+	const bstate: BaseWalkState = {
+		...bstateⵧparent,
+		aggregated_refs: Object.create(bstateⵧparent.aggregated_refs, $refs),
+		depthⵧnodes: bstateⵧparent.depthⵧnodes + 1,
+		...(getꓽtype($node) === NodeType.ol && { depthⵧlist: bstateⵧparent.depthⵧlist + 1}),
+		...(getꓽtype($node) === NodeType.ul && { depthⵧlist: bstateⵧparent.depthⵧlist + 1}),
+		...($heading !== null && { depthⵧh: bstateⵧparent.depthⵧh + 1}),
+	}
+	let xstate = callbacks.onꓽnodeⵧenter({ $node, bstate, xstate: xstateⵧparent }, options)
 
 	xstate = _walk_content(callbacks, options, bstate, xstate, $node)
 
-	xstate = callbacks.onꓽnodeⵧexit({ $node, bstate, xstate }, options)
+	// IMPORTANT
+	// if needed, this is where we "re-absorb" the child state
+	xstateⵧparent = callbacks.onꓽnodeⵧexit({ $node, bstate, xstate }, options)
 
-	return xstate
+	return xstateⵧparent
 }
 
 /////////////////////////////////////////////////
@@ -476,13 +492,17 @@ function walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 	)
 
 	const bstate: BaseWalkState = {
+		aggregated_refs: {},
+
+		depthⵧh: -1, // TODO 1D allow starting at different depth through options
+		depthⵧnodes: -1,
+		depthⵧlist: -1,
+
 		//$parent_node: null,
 		//$id: 'root',
-		//depthⵧnodes: 0,
-		depthⵧh: 0, // TODO 1D allow starting at different depth through options
 		//$root_node,
 	}
-	const xstate = callbacks.createꓽstate(options)
+	const xstate = callbacks.createꓽstate(options, undefined)
 
 	return _walk(callbacks, options, bstate, xstate, $raw_node)
 }
@@ -494,7 +514,7 @@ export {
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 	type WalkerCallbacks,
 	walk,
-	SPECIAL_LIST_NODE_CONTENT_KEY,
+	//SPECIAL_LIST_NODE_CONTENT_KEY,
 
 	// for convenience
 	NodeType,

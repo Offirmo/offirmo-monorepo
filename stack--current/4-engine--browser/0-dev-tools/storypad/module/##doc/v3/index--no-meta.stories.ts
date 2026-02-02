@@ -15,7 +15,7 @@ export const StringHtml: Story‿v3 ={
 export const RichText: Story‿v3 = {
 	render: () => ({
 		$content: `This is a CSF v3 story returning RichText: ⎨⎨sub⎬⎬`,
-		$sub: {
+		$refs: {
 			sub: $EXAMPLE_COMPLETE_NODE,
 		}
 	})

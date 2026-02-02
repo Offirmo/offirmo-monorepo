@@ -41,7 +41,7 @@ function getꓽcontent_nodes‿array($node: Immutable<CheckedNode>): Array<Immut
 function isꓽlistⵧKV($node: Immutable<CheckedNode>): boolean {
 	if (!isꓽlist($node)) return false
 
-	return Object.values($node.$sub).every(
+	return Object.values($node.$refs).every(
 		$node => ($node as any)?.$content === '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
 	)
 }
@@ -51,7 +51,7 @@ function isꓽlistⵧKV($node: Immutable<CheckedNode>): boolean {
 function isꓽlistⵧuuid($node: Immutable<CheckedNode>): boolean {
 	if (!isꓽlist($node)) return false
 
-	return Object.values($node.$sub).every($node => !!($node as any)?.$hints?.uuid)
+	return Object.values($node.$refs).every($node => !!($node as any)?.$hints?.uuid)
 }
 */
 

@@ -32,7 +32,7 @@ function render_attributes(state: Immutable<CharacterState>): RichText.Document 
 
 		const $doc_attr = RichText.keyꓺvalue(label, `${value}`).done()
 
-		$doc_list.$sub[`000${index}`.slice(-3)] = $doc_attr
+		$doc_list.$refs[`000${index}`.slice(-3)] = $doc_attr
 	})
 
 	const $doc = RichText.fragmentⵧblock()

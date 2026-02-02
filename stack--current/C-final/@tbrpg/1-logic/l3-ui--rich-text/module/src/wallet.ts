@@ -23,7 +23,7 @@ function render_wallet(wallet: Immutable<WalletState>): RichText.Document {
 
 	ALL_CURRENCIES.forEach((currency: Currency) => {
 		const amount = get_currency_amount(wallet, currency)
-		$doc_list.$sub[currency] = render_currency_amount(currency, amount)
+		$doc_list.$refs[currency] = render_currency_amount(currency, amount)
 	})
 
 	const $doc = RichText.fragmentⵧblock()

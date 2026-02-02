@@ -43,7 +43,7 @@ function render_equipment(inventory: Immutable<InventoryState>, options?: Immuta
 			.pushNode($doc_item, {id: 'item'})
 			.done()
 
-		$doc_list.$sub[`000${ITEM_SLOTS_TO_INT[slot]}`.slice(-3)] = $doc_line
+		$doc_list.$refs[`000${ITEM_SLOTS_TO_INT[slot]}`.slice(-3)] = $doc_line
 	})
 
 	const $doc = RichText.fragmentⵧblock()
@@ -80,10 +80,10 @@ function render_backpack(inventory: Immutable<InventoryState>, options?: Immutab
 
 	const $doc_list = builder.done()
 
-	if (Object.keys($doc_list.$sub).length === 0) {
+	if (Object.keys($doc_list.$refs).length === 0) {
 		// completely empty
 		$doc_list.$type = RichText.NodeType.ul
-		$doc_list.$sub['-'] = RichText.fragmentⵧinline().pushText('(empty)').done()
+		$doc_list.$refs['-'] = RichText.fragmentⵧinline().pushText('(empty)').done()
 	}
 
 	const $doc = RichText.fragmentⵧblock()

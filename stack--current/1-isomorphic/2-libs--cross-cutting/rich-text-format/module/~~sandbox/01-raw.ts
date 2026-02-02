@@ -20,7 +20,7 @@ count++
 
 $doc = {
 	$content: 'Hello, ⎨⎨target⎬⎬!',
-	$sub: {
+	$refs: {
 		target: {
 			$type: 'strong',
 			$content: 'world',
@@ -35,7 +35,7 @@ count++
 
 $doc = {
 	$content: '⎨⎨greetings⎬⎬',
-	$sub: {
+	$refs: {
 		target: {
 			$type: 'strong',
 			$content: 'world',

@@ -12,7 +12,7 @@ const $EXAMPLE_COMPLETE_NODE: CheckedNode = {
 	$type: 'fragmentⵧinline',
 	$heading: null,
 	$content: 'Hello, ⎨⎨target⎬⎬!',
-	$sub: {
+	$refs: {
 		target: 'World',
 	},
 	$classes: ['foo'],

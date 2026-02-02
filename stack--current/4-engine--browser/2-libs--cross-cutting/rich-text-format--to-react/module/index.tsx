@@ -85,7 +85,7 @@ function _generate_own_react_key({
 
 	if ($node.$type === NodeType._li) {
 		// this is a wrapper, go down a level
-		$node = promoteꓽto_node($node.$sub![SPECIAL_LIST_NODE_CONTENT_KEY]!)
+		$node = promoteꓽto_node($node.$refs![SPECIAL_LIST_NODE_CONTENT_KEY]!)
 	}
 
 	if ($node.$hints?.key) key += `.aka:${$node.$hints.key}`
@@ -266,7 +266,7 @@ interface WalkState {
 
 	// this is where the sub-nodes concatenation happens
 	children_states: Array<WalkState>
-	$sub_nodes: Array<Immutable<Node>> // we also store the sub-nodes, but no usage yet
+	$refs_nodes: Array<Immutable<Node>> // we also store the sub-nodes, but no usage yet
 }
 
 const create_state: WalkerCallbacks<
@@ -275,7 +275,7 @@ const create_state: WalkerCallbacks<
 >['create_state'] = (): WalkState => {
 	return {
 		element: undefined,
-		$sub_nodes: [],
+		$refs_nodes: [],
 		children_states: [],
 	}
 }
@@ -304,7 +304,7 @@ const on_concatenateⵧstr: WalkerCallbacks<
 >['on_concatenateⵧstr'] = ({ state, str }) => {
 	state.children_states.push({
 		element: str,
-		$sub_nodes: [],
+		$refs_nodes: [],
 		children_states: [],
 	})
 	return state
@@ -314,7 +314,7 @@ const on_concatenateⵧsub_node: WalkerCallbacks<
 	WalkState,
 	RenderingOptionsⵧToReact
 >['on_concatenateⵧsub_node'] = ({ state, sub_state, $node }) => {
-	state.$sub_nodes.push($node)
+	state.$refs_nodes.push($node)
 	state.children_states.push(sub_state)
 
 	return state

@@ -21,7 +21,7 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 		$type = 'auto',
 		$heading = null,
 		$content = '',
-		$sub = {},
+		$refs = {},
 		$classes = [],
 		$hints = {},
 	} = $any_node as Node // cast out the Immutability: we know what we're doing 🤙
@@ -31,7 +31,7 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 		$type,
 		$heading,
 		$content,
-		$sub,
+		$refs,
 		$classes,
 		$hints,
 	} satisfies CheckedNode
@@ -39,8 +39,8 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 	if ($v === SCHEMA_VERSION) {
 		delete $node.$v
 	}
-	if (Object.keys($sub).length === 0) {
-		delete $node.$sub
+	if (Object.keys($refs).length === 0) {
+		delete $node.$refs
 	}
 	if ($classes.filter(c => c?.trim()).length === 0) {
 		delete $node.$classes

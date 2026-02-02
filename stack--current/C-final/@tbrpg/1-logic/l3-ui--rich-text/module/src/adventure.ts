@@ -48,7 +48,7 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 			$story_sub_elements['item'] = $doc
 			$story_sub_elements['item_slot'] = RichText.fragmentⵧinline().pushText(slot).done()
 			$story_sub_elements[slot] = $doc
-			$loot_list.$sub[slot] = $doc
+			$loot_list.$refs[slot] = $doc
 
 			handled_adventure_outcomes_so_far.add(slot)
 		})
@@ -59,12 +59,12 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 
 			const $doc = render_currency_amount(currency, gains[currency], { render_unit: false })
 
-			$loot_list.$sub[currency] = $story_sub_elements[currency] = $doc
+			$loot_list.$refs[currency] = $story_sub_elements[currency] = $doc
 
 			handled_adventure_outcomes_so_far.add(currency)
 		})
 
-		const hasLoot = !!Object.keys($loot_list.$sub).length
+		const hasLoot = !!Object.keys($loot_list.$refs).length
 		if (hasLoot)
 			$listing_of_loot = RichText.fragmentⵧblock()
 				//.pushLineBreak()
@@ -88,7 +88,7 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 			$story_sub_elements[attr] = $doc_attr_gain_value // precise
 
 
-			$improvement_list.$sub[attr] = attr === 'level'
+			$improvement_list.$refs[attr] = attr === 'level'
 				? RichText.fragmentⵧinline().pushText('🆙 You leveled up!').done()
 				: RichText.fragmentⵧinline().pushText(`You improved your ${attr} by ${gains[attr]}!`).done() // TODO improve
 
@@ -97,7 +97,7 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 
 		// TODO one day spells / skills
 
-		const has_improvement = !!Object.keys($improvement_list.$sub).length
+		const has_improvement = !!Object.keys($improvement_list.$refs).length
 		if (has_improvement)
 			$listing_of_character_improvement = RichText.fragmentⵧblock()
 				//.pushLineBreak()
@@ -150,8 +150,8 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 		//.pushNode($listing_of_character_improvement, 'char_improv')
 		.done()
 
-	$doc.$sub = {
-		...$doc.$sub,
+	$doc.$refs = {
+		...$doc.$refs,
 		...$story_sub_elements,
 	}
 

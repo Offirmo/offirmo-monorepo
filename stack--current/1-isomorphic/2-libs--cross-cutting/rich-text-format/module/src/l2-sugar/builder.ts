@@ -30,8 +30,8 @@ interface CommonOptions {
 	classes?: string[]
 }
 
-type SubNodes = CheckedNode['$sub'] // TODO why Immu?
-type SubNode = CheckedNode['$sub'][string]
+type SubNodes = CheckedNode['$refs'] // TODO why Immu?
+type SubNode = CheckedNode['$refs'][string]
 
 interface Builder {
 	// content NOT a node = text/number only
@@ -204,7 +204,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 
 		const id = options.id || _get_next_id()
 		assertꓽstringⵧnormalized_and_trimmed(id)
-		$node.$sub[id] = subnode
+		$node.$refs[id] = subnode
 		return builder
 	}
 	function addSubs(nodes: SubNodes): Builder {
@@ -338,7 +338,7 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 		$type,
 		$classes: [...($node_base.$classes || [])],
 		$content: $node_base.$content || [], // XXX
-		$sub: $node_base.$sub || {},
+		$refs: $node_base.$refs || {},
 		$hints:
 			$node_base.$hints ? structuredClone<CheckedNode['$hints']>($node_base.$hints as any) : {},
 	}

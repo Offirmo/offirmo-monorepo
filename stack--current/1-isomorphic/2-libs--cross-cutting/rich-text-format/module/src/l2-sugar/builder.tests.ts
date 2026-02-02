@@ -39,7 +39,7 @@ describe(`${LIB} -- sugar -- builder`, () => {
 				$content: '⎨⎨sub⎬⎬',
 				$type: 'fragmentⵧinline',
 				$classes: ['bar'],
-				$sub: {
+				$refs: {
 					sub: 'foo'
 				},
 				$hints: { uuid: '1234' },
@@ -134,8 +134,8 @@ describe(`${LIB} -- sugar -- builder`, () => {
 				.done()
 
 			expect(isꓽNode($doc)).to.be.true
-			expect(Object.values($doc.$sub).length).to.equal(1)
-			expect(Object.keys($doc.$sub)).to.deep.equal(['0001']) // auto id
+			expect(Object.values($doc.$refs).length).to.equal(1)
+			expect(Object.keys($doc.$refs)).to.deep.equal(['0001']) // auto id
 			expect(renderⵧto_text($doc)).to.equal('') // yes, empty! We pushed a raw sub node without referencing it
 		})
 
@@ -168,8 +168,8 @@ describe(`${LIB} -- sugar -- builder`, () => {
 				.done()
 
 			expect(isꓽNode($doc)).to.be.true
-			expect(Object.values($doc.$sub).length).to.equal(2)
-			expect(Object.keys($doc.$sub)).to.deep.equal(['foo', 'bar']) // ids were preserved
+			expect(Object.values($doc.$refs).length).to.equal(2)
+			expect(Object.keys($doc.$refs)).to.deep.equal(['foo', 'bar']) // ids were preserved
 			expect(renderⵧto_text($doc)).to.equal('') // yes, empty! see above
 		})
 	})
@@ -182,8 +182,8 @@ describe(`${LIB} -- sugar -- builder`, () => {
 				.done()
 
 			expect(isꓽNode($doc)).to.be.true
-			expect(Object.values($doc.$sub).length).to.equal(1)
-			expect(Object.keys($doc.$sub)).to.deep.equal(['0001']) // auto id
+			expect(Object.values($doc.$refs).length).to.equal(1)
+			expect(Object.keys($doc.$refs)).to.deep.equal(['0001']) // auto id
 			expect($doc.$content).to.equal('⎨⎨0001⎬⎬') // auto id
 			expect(renderⵧto_text($doc)).to.equal('foo')
 		})
@@ -194,8 +194,8 @@ describe(`${LIB} -- sugar -- builder`, () => {
 				.done()
 
 			expect(isꓽNode($doc)).to.be.true
-			expect(Object.values($doc.$sub).length).to.equal(1)
-			expect(Object.keys($doc.$sub)).to.deep.equal(['bar'])
+			expect(Object.values($doc.$refs).length).to.equal(1)
+			expect(Object.keys($doc.$refs)).to.deep.equal(['bar'])
 			expect($doc.$content).to.equal('⎨⎨bar⎬⎬')
 			expect(renderⵧto_text($doc)).to.equal('foo')
 		})

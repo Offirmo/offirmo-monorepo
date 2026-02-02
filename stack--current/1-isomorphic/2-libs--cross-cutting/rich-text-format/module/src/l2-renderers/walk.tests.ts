@@ -48,7 +48,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should work -- existing -- default (inline)', () => {
 			const $doc = {
 				$content: 'foo⎨⎨bar⎬⎬baz',
-				$sub: {
+				$refs: {
 					bar: {
 						$content: '42',
 					},
@@ -61,7 +61,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should work -- existing -- explicit (block)', () => {
 			const $doc = {
 				$content: 'foo⎨⎨bar⎬⎬baz',
-				$sub: {
+				$refs: {
 					bar: {
 						$content: '42',
 						$type: RichText.NodeType.fragmentⵧblock,
@@ -75,7 +75,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should work -- handling missing -- error', () => {
 			const $doc = {
 				$content: 'foo⎨⎨gꓽbar⎬⎬baz',
-				$sub: {
+				$refs: {
 					// MISSING sub node
 				},
 			}
@@ -88,7 +88,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should work -- handling missing -- auto recovery -- placeholder', () => {
 			const $doc = {
 				$content: 'foo⎨⎨gꓽbar⎬⎬baz',
-				$sub: {
+				$refs: {
 					// NO sub node
 				},
 			}
@@ -103,7 +103,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should work -- handling missing -- auto recovery -- root', () => {
 			const $doc = {
 				$content: '⎨⎨greeting⎬⎬',
-				$sub: {
+				$refs: {
 					username: 'John',
 					greeting: {
 						$content: 'Hello, ⎨⎨username⎬⎬!',
@@ -121,15 +121,15 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should work -- handling missing -- resolver', () => {
 			const $doc = {
 				$content: 'foo⎨⎨gꓽbar⎬⎬baz',
-				$sub: {
+				$refs: {
 					// NO sub node
 				},
 			}
 
 			const str = RichText.renderⵧto_text($doc, undefined, {
 				...RichText.callbacksⵧto_text,
-				resolveꓽunknown_ref($sub_node_id: string, ...rest): Node | undefined {
-					if ($sub_node_id === 'gꓽbar')
+				resolveꓽunknown_ref($refs_node_id: string, ...rest): Node | undefined {
+					if ($refs_node_id === 'gꓽbar')
 						return {
 							$content: '33',
 							$type: RichText.NodeType.fragmentⵧblock,
@@ -169,7 +169,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should detect unmatched ⎨⎨⎬⎬ -- ⎨⎨ 2', () => {
 			const $doc = {
 				$content: '⎨⎨foo⎬⎬ ⎨⎨bar',
-				$sub: {
+				$refs: {
 					foo: {},
 				},
 			}
@@ -189,7 +189,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2a', () => {
 			const $doc = {
 				$content: '⎨⎨foo⎬⎬ bar⎬⎬',
-				$sub: {
+				$refs: {
 					foo: {},
 				},
 			}
@@ -200,7 +200,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2b', () => {
 			const $doc = {
 				$content: 'bar⎬⎬ ⎨⎨foo⎬⎬',
-				$sub: {
+				$refs: {
 					foo: {},
 				},
 			}
@@ -212,7 +212,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		it('should detect reversed ⎨⎨⎬⎬', () => {
 			const $doc = {
 				$content: '⎬⎬foo⎨⎨',
-				$sub: {
+				$refs: {
 					foo: {},
 				},
 			}

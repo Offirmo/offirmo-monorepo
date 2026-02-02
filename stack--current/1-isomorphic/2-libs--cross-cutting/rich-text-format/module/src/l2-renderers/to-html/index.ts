@@ -69,8 +69,8 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['onꓽ
 	$node,
 	depth,
 }) => {
-	const { $type, $classes, $sub, $hints } = $node
-	const $sub_node_count = Object.keys($sub).length
+	const { $type, $classes, $refs, $hints } = $node
+	const $refs_node_count = Object.keys($refs).length
 
 	if ($type === 'br') {
 		state.str = '<br/>\n'
@@ -127,7 +127,7 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['onꓽ
 
 	result += `<${element}`
 	if (classes.length) result += ` class="${classes.join(' ')}"`
-	result += '>' + state.str + ($sub_node_count ? '\n' + indent(depth) : '') + `</${element}>`
+	result += '>' + state.str + ($refs_node_count ? '\n' + indent(depth) : '') + `</${element}>`
 
 	if (isꓽlink($node)) result = `<a href="${$hints.href}" target="_blank">${result}</a>`
 

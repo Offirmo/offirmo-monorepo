@@ -104,9 +104,9 @@ function render_weapon_name(i: Immutable<Weapon>): RichText.Document {
 	}
 
 	const $doc = builder.done()
-	$doc.$sub['base'] = RichText.fragmentⵧinline().pushText(b).done()
-	$doc.$sub['q1'] = RichText.fragmentⵧinline().pushText(q1).done()
-	$doc.$sub['q2'] = RichText.fragmentⵧinline().pushText(q2).done()
+	$doc.$refs['base'] = RichText.fragmentⵧinline().pushText(b).done()
+	$doc.$refs['q1'] = RichText.fragmentⵧinline().pushText(q1).done()
+	$doc.$refs['q2'] = RichText.fragmentⵧinline().pushText(q2).done()
 
 	return $doc
 }

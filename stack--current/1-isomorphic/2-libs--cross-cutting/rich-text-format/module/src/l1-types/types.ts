@@ -32,14 +32,13 @@ type CheckedNode = {
 	// - MAY be an array, but should be reserved for nodes that really need it: lists, blocks
 	// - if only inline, should stay a string as much as possible for readability
 	// - if an array, automatically makes this node a block-level element
-	// can refer $sub-nodes with ⎨⎨key⎬⎬ syntax
+	// can refer sub-nodes with ⎨⎨key⎬⎬ syntax
 	$content: NodeLike | Array<NodeLike>
 
-	// TODO review name
-	$sub: {
-		// content that can be referenced by their key
+	// slottable/re-usable content that can be referenced by their key
+	$refs: {
 		// Note: unused are allowed for convenience, excess will not be checked
-		[key: SubNodeKey]: NodeLike // ~~Immutable to clearly convey that a node will not modify its given sub-nodes~~ NOO! actually it allows to prepare node and improving them later!
+		[key: SubNodeKey]: NodeLike // ~~Immutable to clearly convey that a node will not modify its given sub-nodes~~ NOO! actually it allows preparing node and improving them later!
 	}
 
 	// hints for renderers. May or may not be used, depending on renderer support
