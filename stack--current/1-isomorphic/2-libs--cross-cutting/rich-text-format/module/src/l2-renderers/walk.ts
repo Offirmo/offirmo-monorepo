@@ -442,7 +442,7 @@ function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 	const $node = normalizeꓽnode(promoteꓽto_node($raw_node))
 	const { $heading, $refs } = $node
 
-	// build new child state
+	// build child state
 	const bstate: BaseWalkState = {
 		...bstateⵧparent,
 		aggregated_refs: Object.create(bstateⵧparent.aggregated_refs, $refs),
@@ -457,6 +457,7 @@ function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 
 	// IMPORTANT
 	// if needed, this is where we "re-absorb" the child state
+	// base state = no re-absorption so far
 	xstateⵧparent = callbacks.onꓽnodeⵧexit({ $node, bstate, xstate }, options)
 
 	return xstateⵧparent

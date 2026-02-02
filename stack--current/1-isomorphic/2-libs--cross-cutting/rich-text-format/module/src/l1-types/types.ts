@@ -86,7 +86,7 @@ const NodeType = Enum(
 	// TODO 1D 'wbr'
 
 	// internally used, don't use directly
-	'_h',
+	'_h', // header
 	//'_li',
 )
 type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
@@ -94,7 +94,7 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 // hints for progressive enhancement
 // - for rendering, hints should be OPTIONAL and any renderer should be able to render decently without them
 // - for non-rendering (ex. hypermedia features) hints can be made mandatory
-// UnderlyingData = JSON =  no, causes error "Type instantiation is excessively deep and possibly infinite."
+// UnderlyingData = JSON = no, causes error "Type instantiation is excessively deep and possibly infinite."
 interface Hints<UnderlyingData = any, HyperLink = Hyperlink‿x> {
 	// string or keyword to use as bullets. to remove bullets: ''
 	// https://www.w3schools.com/cssref/pr_list-style-type.php
