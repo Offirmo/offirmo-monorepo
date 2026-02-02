@@ -11,3 +11,4 @@ https://fr.wikipedia.org/wiki/Programme_spatial_fran%C3%A7ais
 Lemaistre
 Observatoire de Paris https://en.wikipedia.org/wiki/R%C3%B8mer's_determination_of_the_speed_of_light
 Poincarré
+typeface https://en.wikipedia.org/wiki/Romain_du_Roi

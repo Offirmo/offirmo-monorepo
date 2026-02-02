@@ -13,16 +13,31 @@ TODO
 
 
 
+
+
+ex. of seed phrases
+
+https://www.iancoleman.net/ethereum-bip39/
+`skin behind silver concert pave edge because similar major payment critic inch battle frame unlock`
+
+
+
+
+
+
 Libs:
 - base https://github.com/paulmillr
 - Bitcoin
   - https://github.com/orgs/bitcoinjs/repositories?type=all&q=sort%3Astars
 - ethereum
+  - https://ethereum.org/developers/docs/apis/javascript/
   - https://github.com/ethereum/js-ethereum-cryptography/
   - viem https://viem.sh/docs/getting-started
   - ethers https://docs.ethers.org/v6/getting-started/
+  - web3 js https://docs.web3js.org/ deprecated but good doc https://blog.chainsafe.io/web3-js-sunset/
 - Solana
   - https://solana.com/docs/clients/javascript
+  - https://www.anza.xyz/blog/meet-kit-the-new-solana-javascript-sdk https://www.solanakit.com/ (ex. web3.js)
 - Sui
   - @mysten/sui
 
@@ -40,6 +55,8 @@ https://verify.walletconnect.com
 https://verify.walletconnect.org
 https://www.dynamic.xyz/
 privy
+https://github.com/a16z/helios
+
 
 SaaS
 - Codex

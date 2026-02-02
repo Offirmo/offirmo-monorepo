@@ -108,6 +108,8 @@ TODO https://developer.mozilla.org/en-US/docs/Web/API/Payment_Handler_API
 https://blog.jim-nielsen.com/2023/examples-of-great-urls/
 
 
+TODO XXX https://zerotrickpony.com/articles/browser-bugs/
+
 
 Something went wrong
 Try reloading the page, then check our Statuspage for any current outages. If there are no relevant outages, create a support request so we can help you out.

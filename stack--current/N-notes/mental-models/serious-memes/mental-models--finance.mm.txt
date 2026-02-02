@@ -25,7 +25,6 @@ Confirmation of Payee (CoP) = cross-checks the details of customer payments to e
 crash -- fundamental &
 crash -- technical &
 currencies -- virtual -- Bitcoin
-Financial contagion = spread of market disturbances—mostly on the downside https://en.wikipedia.org/wiki/Financial_contagion
 currency -- alternative = ex. https://en.wikipedia.org/wiki/Goldback
 currency -- code USD AUD EUR
 currency -- collapse = ex. hyperinflation
@@ -69,6 +68,7 @@ financial -- repression = policies that result in savers earning returns below t
 financial -- security
 financial -- system -- decentralized (DeFi)
 financial -- system -- global
+Financial contagion = spread of market disturbances—mostly on the downside https://en.wikipedia.org/wiki/Financial_contagion
 financially (il)literate = https://www.smh.com.au/business/the-economy/our-financial-literacy-crisis-can-you-answer-these-5-money-questions-20230109-p5cb6c.html
 FinCEN = U.S. Treasury’s Financial Crimes Enforcement Network
 fintech au https://www.thefinnies.org.au/
@@ -102,6 +102,9 @@ ledger
 ledger = data store that keeps track of transactions https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 legal tender
 lending
+liquidity -- & formation -- CCA "Continuous Clearing Auctions" https://blog.uniswap.org/continuous-clearing-auctions https://cca.uniswap.org/
+liquidity -- & formation -- liquidity seeding
+liquidity -- & formation -- price discovery
 loss leader = a pricing strategy where a product is sold at a price below its market cost[2] to stimulate other sales of more profitable goods or services. With this sales promotion/marketing strategy, a "leader" is any popular article, i.e., sold at a low price to attract customers. https://en.wikipedia.org/wiki/Loss_leader
 macro/micro
 market correction

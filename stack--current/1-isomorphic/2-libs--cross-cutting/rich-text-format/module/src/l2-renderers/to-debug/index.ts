@@ -2,10 +2,7 @@
 
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import {
-	type CheckedNode,
-	type Node,
-} from '../../l1-types/index.ts'
+import { type CheckedNode, type Node } from '../../l1-types/index.ts'
 
 import {
 	type BaseRenderingOptions,
@@ -32,72 +29,110 @@ function debug_node_short($node: Immutable<CheckedNode>) {
 ////////////////////////////////////
 
 interface RenderingOptionsⵧToDebug extends BaseRenderingOptions {}
-const DEFAULT_RENDERING_OPTIONSⵧToDebug= Object.freeze<RenderingOptionsⵧToDebug>({
+const DEFAULT_RENDERING_OPTIONSⵧToDebug = Object.freeze<RenderingOptionsⵧToDebug>({
 	...DEFAULT_RENDERING_OPTIONSⵧWalk,
 })
 
 type State = string
 
-const consoleGroupStart: Function = (console.groupCollapsed || console.group || console.log).bind(console)
+const consoleGroupStart: Function = (console.groupCollapsed || console.group || console.log).bind(
+	console,
+)
 const consoleGroupEnd: Function = (console.groupEnd || console.log).bind(console)
 
 const create_state: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['create_state'] = () => ''
 
-const on_nodeⵧenter: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_nodeⵧenter'] = ({$node, $id, state, depth}) => {
+const onꓽnodeⵧenter: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['onꓽnodeⵧenter'] = ({
+	$node,
+	$id,
+	state,
+	depth,
+}) => {
 	if (depth === 0) {
-		consoleGroupStart('⟩ [on_rootⵧenter]')
+		consoleGroupStart('⟩ [onꓽrootⵧenter]')
 	}
 
-	consoleGroupStart(indent(depth) + `⟩ [on_nodeⵧenter] #${$id}/` + debug_node_short($node))
+	consoleGroupStart(indent(depth) + `⟩ [onꓽnodeⵧenter] #${$id}/` + debug_node_short($node))
 	console.log(indent(depth) + `  [state="${state}"] (init)`)
 	return state
 }
 
-const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_nodeⵧexit'] = ({$node, $id, state, depth}) => {
-	console.log(indent(depth) + `⟨ [on_nodeⵧexit] #${$id}`)
+const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['onꓽnodeⵧexit'] = ({
+	$node,
+	$id,
+	state,
+	depth,
+}) => {
+	console.log(indent(depth) + `⟨ [onꓽnodeⵧexit] #${$id}`)
 	console.log(indent(depth) + `  [state="${state}"]`)
 	consoleGroupEnd()
 
 	if (depth === 0) {
-		console.log('⟨ [on_rootⵧexit]')
+		console.log('⟨ [onꓽrootⵧexit]')
 		consoleGroupEnd()
 	}
 
 	return state
 }
 
-
 // when walking inside the content
-const on_concatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_concatenateⵧstr'] = ({str, state, $node, depth}) => {
-	console.log(indent(depth) + `+ [on_concatenateⵧstr] "${str}"`)
+const onꓽconcatenateⵧstr: WalkerCallbacks<
+	State,
+	RenderingOptionsⵧToDebug
+>['onꓽconcatenateⵧstr'] = ({ str, state, $node, depth }) => {
+	console.log(indent(depth) + `+ [onꓽconcatenateⵧstr] "${str}"`)
 	state = state + str
 	console.log(indent(depth) + `  [state="${state}"]`)
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_concatenateⵧsub_node'] = ({state, sub_state, depth}) => {
-	console.log(indent(depth) + `+ [on_concatenateⵧsub_node] "${sub_state}"`)
+const onꓽconcatenateⵧsub_node: WalkerCallbacks<
+	State,
+	RenderingOptionsⵧToDebug
+>['onꓽconcatenateⵧsub_node'] = ({ state, sub_state, depth }) => {
+	console.log(indent(depth) + `+ [onꓽconcatenateⵧsub_node] "${sub_state}"`)
 	state = state + sub_state
 	console.log(indent(depth) + `  [state="${state}"]`)
 	return state
 }
 
-const on_filter: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_filter'] = ({$filter, $filters, state, $node, depth}) => {
-	console.log(indent(depth) + `  [on_filter] "${$filter}`)
+const onꓽfilter: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['onꓽfilter'] = ({
+	$filter,
+	$filters,
+	state,
+	$node,
+	depth,
+}) => {
+	console.log(indent(depth) + `  [onꓽfilter] "${$filter}`)
 	return state
 }
 
-const on_classⵧbefore: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_classⵧbefore'] = ({$class, state, $node, depth}) => {
-	console.log(indent(depth) + `  [⟩on_classⵧbefore] .${$class}`)
+const onꓽclassⵧbefore: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['onꓽclassⵧbefore'] = ({
+	$class,
+	state,
+	$node,
+	depth,
+}) => {
+	console.log(indent(depth) + `  [⟩onꓽclassⵧbefore] .${$class}`)
 	return state
 }
-const on_classⵧafter: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_classⵧafter'] = ({$class, state, $node, depth}) => {
-	console.log(indent(depth) + `  [⟨on_classⵧafter] .${$class}`)
+const onꓽclassⵧafter: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['onꓽclassⵧafter'] = ({
+	$class,
+	state,
+	$node,
+	depth,
+}) => {
+	console.log(indent(depth) + `  [⟨onꓽclassⵧafter] .${$class}`)
 	return state
 }
 
-const on_type: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_type'] = ({$type, state, $node, depth}) => {
-	console.log(indent(depth) + `  [on_type] "${$type}" ${$node.$classes}`)
+const onꓽtype: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['onꓽtype'] = ({
+	$type,
+	state,
+	$node,
+	depth,
+}) => {
+	console.log(indent(depth) + `  [onꓽtype] "${$type}" ${$node.$classes}`)
 	return state
 }
 
@@ -106,23 +141,23 @@ const on_type: WalkerCallbacks<State, RenderingOptionsⵧToDebug>['on_type'] = (
 const callbacksⵧto_debug: Partial<WalkerCallbacks<State, RenderingOptionsⵧToDebug>> = {
 	create_state,
 
-	on_nodeⵧenter,
-	on_nodeⵧexit,
+	onꓽnodeⵧenter,
+	onꓽnodeⵧexit,
 
-	on_concatenateⵧstr,
-	on_concatenateⵧsub_node,
+	onꓽconcatenateⵧstr,
+	onꓽconcatenateⵧsub_node,
 
-	on_filter,
-	on_classⵧbefore,
-	on_classⵧafter,
+	onꓽfilter,
+	onꓽclassⵧbefore,
+	onꓽclassⵧafter,
 
-	on_type,
-	on_typeꘌbr: ({state, depth}: {state: any, depth: number}) => {
-		console.log(indent(depth) + '  [on_typeꘌbr]')
+	onꓽtype,
+	onꓽtypeꘌbr: ({ state, depth }: { state: any; depth: number }) => {
+		console.log(indent(depth) + '  [onꓽtypeꘌbr]')
 		return state + '\\\\br\\\\'
 	},
-	on_typeꘌhr: ({state, depth}: {state: any, depth: number}) => {
-		console.log(indent(depth) + '  [on_typeꘌhr]')
+	onꓽtypeꘌhr: ({ state, depth }: { state: any; depth: number }) => {
+		console.log(indent(depth) + '  [onꓽtypeꘌhr]')
 		return state + '--hr--'
 	},
 }
@@ -137,8 +172,4 @@ function renderⵧto_debug($doc: Node, options: Partial<RenderingOptionsⵧToDeb
 
 /////////////////////////////////////////////////
 
-export {
-	DEFAULT_RENDERING_OPTIONSⵧToDebug,
-	callbacksⵧto_debug,
-	renderⵧto_debug,
-}
+export { DEFAULT_RENDERING_OPTIONSⵧToDebug, callbacksⵧto_debug, renderⵧto_debug }

@@ -22,6 +22,7 @@
 [ ] https://craftinginterpreters.com/
 [ ] https://devpedia.pages.dev/
 [ ] https://en.wikipedia.org/wiki/Reference_class_forecasting
+[ ] https://git-scm.com/docs/gitglossary
 [ ] https://github.com/anvaka/npmrank/blob/master/sample/dependencies.md
 [ ] https://github.com/charlax/professional-programming
 [ ] https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md
@@ -1039,6 +1040,7 @@ types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
 types -- systems -- role -- (disputable pre-semver citation!) the main challenge in real-world software engineering is not writing code but changing code once it is written and deployed. In general, type systems can be both helpful and harmful when it comes to changing code -- type systems are invaluable for detecting problems introduced by a change, but an overly-rigid type system can be a hindrance if it means common types of changes are difficult to make. https://news.ycombinator.com/item?id=18188519
 types -- union -- discriminated & = a special kind of union in which a) all the options are object schemas that b) share a particular key (the "discriminator"). Based on the value of the discriminator key, the language is able to "narrow" the type signature as you'd expect.
+typescript -- declaration merging https://stackoverflow.com/a/52416229/31353119
 typescript -- learning resource https://github.com/type-challenges/type-challenges
 typescript -- performance https://trpc.io/blog/typescript-performance-lessons
 typography -- quotes https://smartquotesforsmartpeople.com/

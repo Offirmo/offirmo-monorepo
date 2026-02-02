@@ -161,6 +161,12 @@ biohacking https://www.medicalnewstoday.com/articles/biohacking
 birthday problem = counterintuitive https://en.wikipedia.org/wiki/Birthday_problem
 birthday/christmas/21 effect = increased death around certain dates / milestones https://en.wikipedia.org/wiki/Birthday_effect
 black swan https://en.wikipedia.org/wiki/Black_swan_theory
+Blue Monday -- stressors -- Debt minus ability to pay
+Blue Monday -- stressors -- Failed quit attempts (New Year's resolutions)
+Blue Monday -- stressors -- Motivational levels
+Blue Monday -- stressors -- Need to take action
+Blue Monday -- stressors -- Time since Christmas
+Blue Monday -- stressors -- Weather/Light exposure
 Blue Monday = worse of the year https://en.wikipedia.org/wiki/Blue_Monday_(date)
 blue-chip = (publicly traded company) known for its stability, consistent earnings, sound financials, and long-standing reputation = "most wanted in the industry (investment)"
 bonnes et mauvaises cartes
@@ -371,6 +377,7 @@ do I want my name on this? = tool to decide if sth is good https://lynnandtonic.
 dog energy vs cat energy
 don't blame the audience
 don't expect perfection -> trigger self-consciousness = counter-productive
+don't feed the trolls
 don't judge me / You do you. I’ll do me / I’m just living my truth. You live yours. https://aleteia.org/2022/12/18/why-saying-dont-judge-me-isnt-quite-right
 don't shoot the messenger
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
@@ -1223,6 +1230,8 @@ skin tones -- Monk https://skintone.google/the-scale
 skin tones -- tanning https://en.wikipedia.org/wiki/Sun_tanning#Tanning_behavior_of_different_skin_colors
 slavery -- Atlantic trade https://en.wikipedia.org/wiki/Atlantic_slave_trade
 slavery -- France https://en.wikipedia.org/wiki/Slavery_in_France
+slavery -- servitude
+slavery -- servitude -- indentured & = https://en.wikipedia.org/wiki/Indentured_servitude
 slavery -- USA https://en.wikipedia.org/wiki/Slavery_in_the_United_States
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 sleep on it
@@ -1346,6 +1355,14 @@ tribal knowledge
 trolley problem https://neal.fun/absurd-trolley-problems/
 trust -- is earned
 trust -- principles -- Reuters =  integrity, independence, and freedom from bias https://www.thomsonreuters.com/en/about-us/trust-principles
+trust -- seven rules of trust -- 1 Make It Personal
+trust -- seven rules of trust -- 2 Be Positive About People
+trust -- seven rules of trust -- 3 Create a Clear Purpose
+trust -- seven rules of trust -- 4 Be Trusting
+trust -- seven rules of trust -- 5 Be Civil
+trust -- seven rules of trust -- 6 Be Independent
+trust -- seven rules of trust -- 7 Be Transparent
+trust -- seven rules of trust = "The Seven Rules of Trust: A Blueprint for Building Things That Last" according to Jimmy Wales https://en.wikipedia.org/wiki/The_Seven_Rules_of_Trust
 trust -- takes years to earn but seconds to lose / Trust is built slowly, and lost quickly
 trust -- trust, but verify
 trust -- trustworthy -- Linus Torvald = a lot about not surprising people "the fact that people know my opinions and where I stand on things. While they may not necessarily like or agree with them all, at least they can trust me to be reliable" https://www.cio.com/article/276384/open-source-tools-five-things-linus-torvalds-has-learned-about-managing-software-projects.html
@@ -1402,6 +1419,14 @@ Who's Who -- Jesus
 Who's Who -- Platon
 Who's Who = biographical entries of notable people https://en.wikipedia.org/wiki/Who%27s_Who
 why do things go right? https://safetydifferently.com/why-do-things-go-right/
+wikipedia -- 5 pillars = Wikipedia is an online encyclopedia; it has a neutral point of view; it is free content that anyone can edit and distribute; all Wikipedians should interact in a respectful and civil manner; and Wikipedia does not have firm rules.
+wikipedia -- edit wars https://en.wikipedia.org/wiki/List_of_edit_wars_on_Wikipedia ex. https://en.wikipedia.org/wiki/Wikipedia_Star_Trek_Into_Darkness_debate
+wikipedia -- mirrors
+wikipedia -- policies -- content -- Neutral point of view (NPOV)
+wikipedia -- policies -- content -- No original research (NOR)
+wikipedia -- policies -- content -- Verifiability (V)
+wikipedia -- policies https://en.wikipedia.org/wiki/Wikipedia:List_of_policies
+wikipedia -- reliability https://en.wikipedia.org/wiki/Wikipedia_Seigenthaler_biography_incident
 winner takes it all
 wisdom
 wisdom -- a wisdom for left may not be valid for right

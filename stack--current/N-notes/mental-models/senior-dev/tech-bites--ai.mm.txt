@@ -7,6 +7,7 @@
 2024 "Her" moment for voice = crossed the uncanny valley
 2024 Google I/O AI built-in Chrome
 2024 o3
+2024-05 Google AI overview multiple blunders https://www.forbes.com/sites/jackkelly/2024/05/31/google-ai-glue-to-pizza-viral-blunders/
 2024-11 MCP https://www.anthropic.com/news/model-context-protocol
 2025-03 4o image generation = incredible, +1M users in 1h https://openai.com/index/introducing-4o-image-generation/ https://x.com/sama/status/1906771292390666325
 2025-04 multimodal img gen https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
@@ -33,6 +34,7 @@
 2025-12 debate on Bitcoin BIP about LLM contrib = Open source projects are now expecting "social capital" = may refuse to review work from someone unknown until they prove skin in the game/motivation https://github.com/bitcoin/bips/pull/2051/files#diff-0fe6969eba0422ddb0e7823d13092c03aa90122e0c5e66786c5d8b20f54719e6L42
 2026-01 no more Stask Overflow questions https://data.stackexchange.com/stackoverflow/query/1926661#graph https://news.ycombinator.com/item?id=46482345
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
+[ ] https://agent-skills.md/
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
 [ ] https://openai.com/news/

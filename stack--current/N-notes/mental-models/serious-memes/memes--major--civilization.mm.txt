@@ -30,6 +30,7 @@ democracy -- education https://politics.stackexchange.com/questions/84583/is-dem
 democracy -- guided https://en.wikipedia.org/wiki/Guided_democracy
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 divine kingship
+droits de l'homme https://fr.wikisource.org/wiki/Charte_internationale_des_Droits_de_l%E2%80%99Homme_(1948)/D%C3%A9claration_universelle_des_Droits_de_l%E2%80%99Homme
 electricity
 electricity -- light bulb
 elite abuses https://www.theguardian.com/us-news/2025/dec/23/epstein-unredacted-files-social-media
@@ -78,8 +79,10 @@ language -- grading -- EGIDS -- 08b Nearly Extinct = The only remaining speakers
 language -- grading -- EGIDS -- 09 Dormant = The language serves as a reminder of heritage identity for an ethnic community, but no one has more than symbolic proficiency
 language -- grading -- EGIDS -- 10 Extinct = The language is no longer used and no one retains a sense of ethnic identity associated with the language
 language -- https://en.wikipedia.org/wiki/Na-Dene_languages
+law -- simple and accessible https://en.wikipedia.org/wiki/Napoleonic_Code
 loi du talion
 making big things
+Melian dialogue
 military tactics https://civilization.fandom.com/wiki/Military_Tactics_(Civ6)
 numeral system https://en.wikipedia.org/wiki/Positional_notation
 pollution -- 12xx https://en.wikipedia.org/wiki/Pea_soup_fog
@@ -119,3 +122,4 @@ war -- https://en.wikipedia.org/wiki/Irredentism
 war -- https://en.wikipedia.org/wiki/July_Crisis
 war https://en.wikipedia.org/wiki/List_of_established_military_terms
 weights and measures https://en.wikipedia.org/wiki/Apothecaries%27_system
+wikipedia https://wikipedia25.org/

@@ -81,6 +81,7 @@ address gap limit = chains that use address derivation recommend a limit of deri
 Airdrop = gift of assets, usually as an incentive to use a new thing
 airdrops -- double claiming
 altcoin = anything not BitCoin (or maybe Ether, depending on who you ask)
+Annual Energy Consumption https://ethereum.org/energy-consumption/
 antifragility = ?? https://www.reddit.com/r/ethereum/comments/7beq39/ethereum_and_antifragility/
 Aptos https://aptosfoundation.org/whitepaper
 Arbitrum
@@ -95,6 +96,7 @@ attacks -- address poisoning = https://paragraph.com/@x-explore/address-poisonin
 attacks -- armed heist = extorting crypto ex. https://x.com/beausecurity/status/1972333331049312437
 attacks -- donation https://www.cyfrin.io/blog/solodit-checklist-explained-3-donation-attacks https://medium.com/@ankitacode11/part-3-protecting-smart-contracts-from-donation-attacks-a-guide-to-secure-eth-handling-b05561228ab2
 attacks -- fake price (illiquid) = manipulating the price of a low-liquidity token to fake its value
+attacks -- kidnappings and Robberies = https://x.com/beausecurity/status/1995487124544491784
 attacks -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hack-june-2025
 attacks -- spam tokens = sent to leaked address to pollute and maybe phish
 attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-chain-attack-in-crypto-and-how-to-prevent-it
@@ -217,6 +219,11 @@ custody -- against custodial exchanges = "n July 2025, @MEXC_Official froze over
 custody -- non-custodial = "even if someone goes and nukes the platform, censors it, DDoS’s it, or takes down AWS, you can still go to the chain and get your assets back."
 custody -- partially custodial = ex. Infinex
 custody -- self-custody = funds are not waived
+D.Y.O.R. Checklist -- Scope the app = Is there a security audit? Check their smart contract on bcheck.edu. Are there any red flags? Check their smart contract on tokensniffer.com. Are there any red flags? Is their whitepaper clear with their project roadmap?
+D.Y.O.R. Checklist -- Scope the ecosystem = Are there any collaborations with other trusted projects?
+D.Y.O.R. Checklist -- Scope the team = Check their Twitter, Discord, Website, and other socials: Is the team present and responsive? Do community members seem real and engage with sustained excitement? Does their website explain what they do in a way you understand? Are the founders doxx’d (publicly identified)?
+D.Y.O.R. Checklist -- Scope the tokenomics = If the project has a token, make sure to check the following information:  What is the token utility, market cap, volume, and liquidity? Can you buy and sell the token? (Check Poocoin / Bogged / Dextools) Is the token listed on CoinGecko and CoinMarketCap? Is the token listed on exchanges? Is there fair and healthy distribution of tokens allocation?
+D.Y.O.R. Checklist = If you’d like to dig deeper into this project, here is a recommended list of a non-exhaustive steps you can take to Do Your Own Research. We don't affiliate with any of the sources. https://portal.arbitrum.io/
 DAO -- DUNA "Decentralized Unincorporated Nonprofit Association" https://a16zcrypto.com/posts/article/duna-for-daos/
 dapp "decentralized application" = app built on a decentralized network that combines a smart contract and a frontend user interface https://ethereum.org/en/developers/docs/dapps/#definition-of-a-dapp
 dapps -- cryptokitties
@@ -268,17 +275,24 @@ Ethereum -- ERC "Ethereum Request for Comment" https://eips.ethereum.org/erc
 Ethereum -- ether = the coin
 ethereum -- gas https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas
 Ethereum -- https://devcon.org/
+Ethereum -- L2 -- Base vs Arbitrum vs Optimism https://medium.com/@diteliti/base-vs-arbitrum-vs-optimism-who-will-win-the-l2-war-analysis-of-reach-retention-and-revenue-e7a87a1cc76f https://themarketperiodical.com/2024/10/13/base-vs-arbitrum-the-battle-for-ethereum-l2-dominance-heats-up/
+Ethereum -- L2 -- grades Emerging => Developing => Maturing => Robust https://ethereum.org/layer-2/networks/
+Ethereum -- L2 -- list https://ethereum.org/layer-2/networks/
+Ethereum -- L2 -- saturation point https://x.com/DefiIgnas/status/1951238740526993611
 Ethereum -- lean & = https://blog.ethereum.org/2025/07/31/lean-ethereum https://leanroadmap.org/ https://github.com/leanEthereum
 Ethereum -- platform
 Ethereum -- protocol
 Ethereum -- REth https://github.com/paradigmxyz/reth
+Ethereum -- roadmap (incl past) +++ https://ethereum.org/roadmap/
 Ethereum -- roadmap https://ethereum.org/en/roadmap/
 Ethereum -- staking https://rocketpool.net/ https://x.com/Rocket_Pool
 ethereum -- top questions https://ethereum.stackexchange.com/questions?sort=votes
 Ethereum -- trustlessness "Ethereum was not created to make finance efficient or apps convenient. It was created to set people free — to empower anyone, anywhere to coordinate without permission and without trusting anyone they cannot hold accountable." https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
 Ethereum -- trustlessness https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
+Ethereum -- whitepaper https://ethereum.org/whitepaper/
 Ethereum 2.0 (Serenity) = users able to become a validator and help secure the network by providing computational resources and locking up 32 Ether per validator
 Ethereum = blockchain with a built-in fully fledged Turing-complete programming language that can be used to create "contracts" that can be used to encode arbitrary state transition functions, allowing users to create any systems we have not yet imagined, simply by writing up the logic in a few lines of code https://ethereum.org/en/whitepaper/#a-next-generation-smart-contract-and-decentralized-application-platform https://ethereum.org/en/what-is-ethereum/ https://aws.amazon.com/blockchain/what-is-ethereum/
+Ethereum L2 -- https://l2beat.com/
 EVM and non-EVM chains
 EVM network
 exchanges -- Binance -- against https://www.theguardian.com/business/binance
@@ -293,6 +307,7 @@ exchanges = cryptocurrency exchange
 fiat
 fiat ramps
 fiat-backed
+fogo -- foggots
 Fogo -- sessions = a novel chain primitive that enable users to interact with apps on the chain without paying for gas or signing individual transactions https://docs.fogo.io/fogo-sessions.html
 Fogo = L1 built for DeFi applications. It is based on Solana's architecture and implements multi-local consensus to achieve minimal latency https://docs.fogo.io/
 Fogo https://www.fogo.io/
@@ -323,6 +338,10 @@ Hyperliquid -- HyperBFT consensus
 Hyperliquid -- HyperCore
 Hyperliquid -- HyperEVM
 Hyperliquid = https://hyperfoundation.org/
+i18n -- messages extraction
+i18n -- plurals
+i18n -- plurals -- interval & = many / a few / none https://www.i18next.com/overview/comparison-to-others#b-or-like-to-say-something-like-interval-plurals
+i18n -- solutions https://phrase.com/blog/posts/react-i18n-best-libraries/
 ICO (banned)
 ICO -- alternatives -- patrons https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick https://finance.yahoo.com/news/infinex-raises-67-7-million-140229371.html
 ICO -- boom
@@ -342,10 +361,9 @@ iota https://iota.stackexchange.com/
 ISO/TC 307 = standardization effort "Blockchain and distributed ledger technologies" https://www.iso.org/committee/6266604.html
 kaito -- Yaps As Proof-of-Attention https://yaps.kaito.ai/social-card
 katana https://app.katana.network/
-kidnappings and Robberies = https://x.com/beausecurity/status/1995487124544491784
 L1
-L2 -- Base vs Arbitrum vs Optimism https://medium.com/@diteliti/base-vs-arbitrum-vs-optimism-who-will-win-the-l2-war-analysis-of-reach-retention-and-revenue-e7a87a1cc76f https://themarketperiodical.com/2024/10/13/base-vs-arbitrum-the-battle-for-ethereum-l2-dominance-heats-up/
-L2 -- saturation point https://x.com/DefiIgnas/status/1951238740526993611
+L2
+L2 -- Rollup ??
 launchpad tokens
 launchpads
 layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
@@ -364,6 +382,10 @@ Markets in Crypto Assets (MiCA) regulation to oversee the crypto industry
 MegaETH = MegaETH is real-time Ethereum, streaming transactions at lightning speed: 10-millisecond latency and over 20,000 transactions per second https://x.com/megaeth
 memecoin
 metas -- revenue = have revenue, generate a token, buy back
+metrics -- active addresses count
+metrics -- TPS "Transactions Per Second"
+metrics -- TVL "Total Value Locked"
+metrics = to evaluate a chain / project
 mining
 mining -- algorithms -- Ethash = used by Ethereum when PoW https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/ethash/
 mining -- algorithms -- goals -- ASIC-resistance = the benefit from creating specialized hardware for the algorithm should be as small as possible
@@ -500,6 +522,7 @@ scams -- ex. Celsius = a risky crypto lending venture masquerading as a safe, ba
 scams -- exchanges -- diverting customer funds
 scams -- exchanges -- misleading investors about its surveillance controls
 scams -- fake trading = accepting order not backed by real stuff ex. MEXC
+scams -- internal order desk = selling sth not liquid yet (fake trades) https://x.com/TheWhiteWhaleV2/status/2008648520748986422
 scams -- pig butchering = people are lured by flirtatious strangers online into investing in fraudulent cryptocurrency trading platforms. Victims are coached to invest more and more money into what appears to be an extremely profitable trading platform, only to find their money is gone when they wish to cash out. https://yro.slashdot.org/story/25/05/30/2151248/us-sanctions-cloud-provider-funnull-as-top-source-of-pig-butchering-scams
 scams -- ponzi schemes -- expectation of new people depositing, once new people stop depositing, the system can collapse within hour
 scams -- pyramid scheme
@@ -596,6 +619,7 @@ token gating -- examples for brands https://www.arianee.com/post/what-is-token-g
 token gating = exclusive content to token (F/NF) holders https://www.coinbase.com/en-au/learn/crypto-basics/what-is-token-gating-and-what-are-the-benefits-of-doing-it
 token sale -- ex. 2025 https://sale.megaeth.com/
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
+tokenomics
 tokens
 tokens -- a16z categories -- Arcade tokens
 tokens -- a16z categories -- Asset-backed tokens
@@ -611,6 +635,7 @@ tokens -- standards
 tokens -- tainted = can be differentiated = less fungible
 tokens -- tokenomics
 tokens -- vs coins = digital assets that live on a specific blockchain. Instead of having their own network, like coins, tokens are stored on other blockchains. Because they use a token standard, all of the tokens on a given blockchain are interoperable, as long as they come in the same format. Tokens come in two main forms; fungible (such as ERC-20 tokens) and non-fungible (NFTs). https://www.ledger.com/ru/academy/topics/crypto/what-is-token-gating
+tokens -- wrapped & = quasi-token "pegged" to the real token, useful to move cross-chains https://coinmarketcap.com/academy/article/what-is-wrapped-ethereum-weth
 tokens = cryptographic representations of ownership, access rights, or other forms of value. Ex. physical and digital assets like real estate, stocks, commodities, art, music, and even in-game items
 tokens = deprecated terminology in favor of "assets"
 trading -- limit orders = instructions like “buy 1 ETH at $3,000 or lower.”
@@ -734,3 +759,4 @@ WLF "World Liberty Financial" = "Inspired by Trump" https://worldlibertyfinancia
 zCash https://z.cash/learn/
 zk-SNARKs = zero-knowledge succinct non-interactive arguments of knowledge
 zkVM
+“Your Chain, Your Rules” https://arbitrum.io/launch-chain

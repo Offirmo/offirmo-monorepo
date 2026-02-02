@@ -81,6 +81,7 @@ customer segmentation = Strategic, Enterprise, Mid-Market, SMB
 decision -- avoiding hard decisions (bad)  https://newsletter.manager.dev/p/feature-flags-are-ruining-your-codebase
 decision maker https://www.youtube.com/watch?v=qf-_bRjZ38U
 deep appeal = something that a few people love, even if most people don't get it right away https://paulbuchheit.blogspot.com/
+deployment gap = between lab/demo to actual use https://www.a16z.news/p/the-physical-ai-deployment-gap
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 dogfooding "Eating our own Dogfood" = ranges wider than testing your end-product, and can be the difference between good and great products https://gregtidanian.substack.com/p/eating-our-own-dog-food
 don't build castles in others people's kingdoms

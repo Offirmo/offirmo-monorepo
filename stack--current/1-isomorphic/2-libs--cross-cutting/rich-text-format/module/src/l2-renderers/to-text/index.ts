@@ -1,12 +1,12 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import type { CheckedNode, NodeLike } from '../../l1-types/index.ts'
-import { getꓽdisplay_type } from '../../l1-types/guards.ts'
+import { getꓽdisplay_type } from '../../l1-utils/misc.ts'
 
 import { promoteꓽto_node } from '../../l1-utils/promote.ts'
 import { normalizeꓽnode } from '../../l1-utils/normalize.ts'
 
-import { isꓽlink, isꓽlistⵧKV } from '../common.ts'
+import { isꓽlink } from '../common.ts'
 import {
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 	type BaseRenderingOptions,
@@ -20,7 +20,7 @@ import {
 interface RenderingOptionsⵧToText extends BaseRenderingOptions {
 	use_hints?: boolean // use known hints to improve rendering? or ignore them and render the most basic style?
 	style:
-		| 'basic'    // text only
+		| 'basic' // text only
 		| 'advanced' // more intelligent: detect KV lists; allow bullet-less lists
 		| 'markdown'
 }
@@ -53,7 +53,10 @@ type State = {
 /////////////////////////////////////////////////
 // callbacks
 
-const create_state: WalkerCallbacks<State, RenderingOptionsⵧToText>['create_state'] = (parent_state) => {
+const createꓽstate: WalkerCallbacks<
+	State,
+	RenderingOptionsⵧToText
+>['createꓽstate'] = parent_state => {
 	return {
 		sub_nodes: [],
 		starts_with_block: false,
@@ -66,12 +69,15 @@ const create_state: WalkerCallbacks<State, RenderingOptionsⵧToText>['create_st
 	}
 }
 
-const on_nodeⵧenter: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_nodeⵧenter'] = ({state, $node, depth}, {style}) => {
-	//console.log(`XXX to text on_nodeⵧenter`, $node?.$type)
+const onꓽnodeⵧenter: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽnodeⵧenter'] = (
+	{ state, $node },
+	{ style },
+) => {
+	//console.log(`XXX to text onꓽnodeⵧenter`, $node?.$type)
 
 	switch ($node.$type) {
 		case 'ol':
-			// fallthrough
+		// fallthrough
 		case 'ul':
 			state.nested_list_depth += 1
 			break
@@ -83,18 +89,21 @@ const on_nodeⵧenter: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_nod
 	return state
 }
 
-const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_nodeⵧexit'] = ({state, $node, depth}, {style}) => {
-	//console.log('[on_type]', { $type, state })
+const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽnodeⵧexit'] = (
+	{ state, $node, depth },
+	{ style },
+) => {
+	//console.log('[onꓽnodeⵧexit]', { $type, state })
 
 	switch ($node.$type) {
 		case 'ul':
-			// fallthrough
+		// fallthrough
 		case 'ol':
 			state.starts_with_block = true // in case the container type wasn't a block. It's definitely a block!
 			break
 
 		case 'br':
-			// fallthrough
+		// fallthrough
 		case 'hr':
 			state.ends_with_block = true
 			state.str = '' // clear, in case the user accidentally pushed some content in this node
@@ -133,11 +142,10 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_node
 				break
 		}
 
-		if (isꓽlink($node))
-			state.str = `[${state.str}](${$node.$hints.href})`
-	}
-	else {
+		if (isꓽlink($node)) state.str = `[${state.str}](${$node.$hints.href})`
+	} else {
 		switch ($node.$type) {
+			// TODO review
 			case 'heading':
 				state.marginⵧtop‿lines = Math.max(state.marginⵧtop‿lines, 1)
 				break
@@ -150,6 +158,7 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_node
 				break
 		}
 
+		/* TODO review
 		if (style === 'advanced' && isꓽlistⵧKV($node)) {
 			// rewrite completely to a better-looking one
 			const key_value_pairs: [string, string][] = []
@@ -172,10 +181,15 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_node
 				key_value_pairs.push([key_text, value_text])
 			})
 
-			state.str = key_value_pairs.map(([key_text, value_text]) => {
-				return key_text.padEnd(max_key_length + 1, '.') + value_text.padStart(max_value_length + 1, '.')
-			}).join('\n')
-		}
+			state.str = key_value_pairs
+				.map(([key_text, value_text]) => {
+					return (
+						key_text.padEnd(max_key_length + 1, '.')
+						+ value_text.padStart(max_value_length + 1, '.')
+					)
+				})
+				.join('\n')
+		}*/
 	}
 
 	if (getꓽdisplay_type($node) === 'block') {
@@ -186,33 +200,38 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_node
 	return state
 }
 
-const on_concatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_concatenateⵧstr'] = ({state, str}) => {
-	//console.log('on_concatenateⵧstr()', {str, state: structuredClone(state),})
+const onꓽconcatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽconcatenateⵧstr'] = ({
+	state,
+	str,
+}) => {
+	//console.log('onꓽconcatenateⵧstr()', {str, state: structuredClone(state),})
 	if (state.ends_with_block) {
 		state.trailing_spaces = '' // remove them
-		state.str += ''.padStart(state.marginⵧbottom‿lines + 1,'\n')
+		state.str += ''.padStart(state.marginⵧbottom‿lines + 1, '\n')
 		state.ends_with_block = false
 		state.marginⵧbottom‿lines = 0
 	}
 
 	state.str += state.trailing_spaces
 	const without_trailing = str.trimEnd()
-	state.trailing_spaces = (without_trailing.length !== str.length)
-		? str.slice(without_trailing.length - str.length)
-		: '' // bc slice(0) = full str
+	state.trailing_spaces =
+		without_trailing.length !== str.length ? str.slice(without_trailing.length - str.length) : '' // bc slice(0) = full str
 	state.str += without_trailing
 
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_concatenateⵧsub_node'] = ({
-	state, $node, depth,
-	$sub_node_id, $sub_node, sub_state
-}, options) => {
+const onꓽconcatenateⵧsub_node: WalkerCallbacks<
+	State,
+	RenderingOptionsⵧToText
+>['onꓽconcatenateⵧsub_node'] = (
+	{ state, $node, $sub_node_id, $sub_node, sub_state },
+	options,
+) => {
 	state.sub_nodes.push(normalizeꓽnode($sub_node))
 
 	const { style } = options
-	const [ sub_str, trailing_spaces ] = (() => {
+	const [sub_str, trailing_spaces] = (() => {
 		switch ($node.$type) {
 			case 'ul':
 			// fallthrough
@@ -221,33 +240,33 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 					if (options.use_hints && $node.$hints.list__style__type !== undefined)
 						return $node.$hints.list__style__type
 
-					if ($node.$type === 'ul')
-						return '-'
+					if ($node.$type === 'ul') return '-'
 
 					const cleaned_index: string = (() => {
 						let res = String($sub_node_id).trim()
 
 						// trim leading 0
-						while(res[0] === '0') {
+						while (res[0] === '0') {
 							res = res.slice(1)
 						}
 						// trim trailing '.'
-						if (res.at(-1) === '.')
-							res = res.slice(0, -1)
+						if (res.at(-1) === '.') res = res.slice(0, -1)
 
 						return res
 					})()
-					if (style === 'markdown')
-						return `${cleaned_index}.` // no alignment, could mess with the markdown
+					if (style === 'markdown') return `${cleaned_index}.` // no alignment, could mess with the markdown
 
 					// alignment for readability
 					return cleaned_index.padStart(2) + '.'
 				})()
 				const indent: string = '  '.repeat(state.nested_list_depth - 1)
-				return [ indent + bullet + (bullet ? ' ' : '') + sub_state.str, sub_state.trailing_spaces ]
+				return [
+					indent + bullet + (bullet ? ' ' : '') + sub_state.str,
+					sub_state.trailing_spaces,
+				]
 			}
 			default:
-				return [ sub_state.str, sub_state.trailing_spaces ]
+				return [sub_state.str, sub_state.trailing_spaces]
 		}
 	})()
 
@@ -259,8 +278,7 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 			// merge margin
 			state.marginⵧtop‿lines = Math.max(state.marginⵧtop‿lines, sub_state.marginⵧtop‿lines)
 		}
-	}
-	else {
+	} else {
 		if (sub_state.starts_with_block) {
 			// concatenate
 			state.ends_with_block = true
@@ -269,9 +287,14 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 		}
 	}
 
-	state = on_concatenateⵧstr({
-		state, $node, depth, str: sub_str + trailing_spaces,
-	}, options)
+	state = onꓽconcatenateⵧstr(
+		{
+			state,
+			$node,
+			str: sub_str + trailing_spaces,
+		},
+		options,
+	)
 
 	state.ends_with_block = sub_state.ends_with_block
 
@@ -279,13 +302,13 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 }
 
 const callbacksⵧto_text: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {
-	create_state,
+	createꓽstate,
 
-	on_nodeⵧenter,
-	on_nodeⵧexit,
+	onꓽnodeⵧenter,
+	onꓽnodeⵧexit,
 
-	on_concatenateⵧstr,
-	on_concatenateⵧsub_node,
+	onꓽconcatenateⵧstr,
+	onꓽconcatenateⵧsub_node,
 }
 
 function renderⵧto_text(
@@ -293,17 +316,19 @@ function renderⵧto_text(
 	options: Partial<RenderingOptionsⵧToText> = {},
 	callback_overrides: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {},
 ): string {
-	const $node = promoteꓽto_node($doc)
-
 	const full_options: RenderingOptionsⵧToText = {
 		...DEFAULT_RENDERING_OPTIONSⵧToText,
 		...options,
 	}
 
-	const state = walk<State, RenderingOptionsⵧToText>($node, {
-		...callbacksⵧto_text,
-		...callback_overrides,
-	}, full_options)
+	const state = walk<State, RenderingOptionsⵧToText>(
+		$doc,
+		{
+			...callbacksⵧto_text,
+			...callback_overrides,
+		},
+		full_options,
+	)
 
 	return state.str + state.trailing_spaces
 }

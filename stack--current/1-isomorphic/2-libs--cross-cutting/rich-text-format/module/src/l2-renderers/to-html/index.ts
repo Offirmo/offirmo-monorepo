@@ -21,7 +21,7 @@ const LIB = 'rich_text_to_html'
 const MANY_TABS = '																																							'
 
 interface RenderingOptionsⵧToHtml extends BaseRenderingOptions {}
-const DEFAULT_RENDERING_OPTIONSⵧToHtml= Object.freeze<RenderingOptionsⵧToHtml>({
+const DEFAULT_RENDERING_OPTIONSⵧToHtml = Object.freeze<RenderingOptionsⵧToHtml>({
 	...DEFAULT_RENDERING_OPTIONSⵧWalk,
 })
 
@@ -42,25 +42,33 @@ const NODE_TYPE_TO_HTML_ELEMENT: { [k: string]: string } = {
 	[NodeType.fragmentⵧblock]: 'div',
 }
 
-const warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
-
 const create_state: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['create_state'] = () => ({
-		sub_nodes: [],
-		str: '',
-	})
+	sub_nodes: [],
+	str: '',
+})
 
-const on_concatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_concatenateⵧstr'] = ({state, str}) => {
+const onꓽconcatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['onꓽconcatenateⵧstr'] = ({
+	state,
+	str,
+}) => {
 	state.str += str
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_concatenateⵧsub_node'] = ({$node, state, sub_state}) => {
+const onꓽconcatenateⵧsub_node: WalkerCallbacks<
+	State,
+	RenderingOptionsⵧToHtml
+>['onꓽconcatenateⵧsub_node'] = ({ $node, state, sub_state }) => {
 	state.sub_nodes.push($node)
 	state.str = state.str + sub_state.str
 	return state
 }
 
-const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_nodeⵧexit'] = ({state, $node, depth}) => {
+const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['onꓽnodeⵧexit'] = ({
+	state,
+	$node,
+	depth,
+}) => {
 	const { $type, $classes, $sub, $hints } = $node
 	const $sub_node_count = Object.keys($sub).length
 
@@ -78,7 +86,7 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_node
 	let is_inline = false
 	const classes = [...$classes]
 
-	switch($type) {
+	switch ($type) {
 		case 'strong':
 		case 'em':
 			is_inline = true
@@ -95,15 +103,14 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_node
 			break
 	}
 
-	if (!is_inline)
-		result += '\n' + indent(depth)
+	if (!is_inline) result += '\n' + indent(depth)
 
 	const element: string = NODE_TYPE_TO_HTML_ELEMENT[$type] || $type
 
 	if (isꓽlist($node)) {
 		classes.push('o⋄rich-text⋄list')
 
-		switch($hints.list__style__type) {
+		switch ($hints.list__style__type) {
 			case '':
 				classes.push('o⋄rich-text⋄list--no-bullet')
 				break
@@ -116,21 +123,13 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_node
 			//console.log(`${LIB} seen uuid list`)
 			classes.push('o⋄rich-text⋄list--interactive')
 		}
-
-		if (isꓽlistⵧKV($node)) {
-			classes.push('o⋄rich-text⋄list--no-bullet')
-			// TODO rewrite completely
-			warn_kvp()
-		}
 	}
 
 	result += `<${element}`
-	if (classes.length)
-		result += ` class="${classes.join(' ')}"`
+	if (classes.length) result += ` class="${classes.join(' ')}"`
 	result += '>' + state.str + ($sub_node_count ? '\n' + indent(depth) : '') + `</${element}>`
 
-	if (isꓽlink($node))
-		result = `<a href="${$hints.href}" target="_blank">${result}</a>`
+	if (isꓽlink($node)) result = `<a href="${$hints.href}" target="_blank">${result}</a>`
 
 	// for demo only
 	if ($hints['uuid'])
@@ -143,14 +142,14 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_node
 const callbacksⵧto_html: Partial<WalkerCallbacks<State, RenderingOptionsⵧToHtml>> = {
 	create_state,
 
-	on_concatenateⵧstr,
-	on_concatenateⵧsub_node,
-	on_nodeⵧexit,
+	onꓽconcatenateⵧstr,
+	onꓽconcatenateⵧsub_node,
+	onꓽnodeⵧexit,
 }
 
 function renderⵧto_html(
 	$doc: Immutable<NodeLike>,
-	options: Partial<RenderingOptionsⵧToHtml> = {}
+	options: Partial<RenderingOptionsⵧToHtml> = {},
 ): string {
 	const $node = promoteꓽto_node($doc)
 
@@ -169,7 +168,4 @@ function renderⵧto_html(
 
 /////////////////////////////////////////////////
 
-export {
-	callbacksⵧto_html,
-	renderⵧto_html,
-}
+export { callbacksⵧto_html, renderⵧto_html }

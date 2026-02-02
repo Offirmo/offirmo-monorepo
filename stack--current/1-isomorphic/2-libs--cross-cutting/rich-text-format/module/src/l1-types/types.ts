@@ -1,67 +1,94 @@
 import { Enum } from 'typescript-string-enums'
-import type { Emoji, Immutable, JSON } from '@offirmo-private/ts-types'
+import type { Emoji } from '@offirmo-private/ts-types'
 import type { Hyperlink‿x } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
-
 // using type instead of interface to prevent extra properties
-// (bc not supposed to extend this)
+// (bc not supposed to extend this. See $hints for an open-ended extension point)
+// TODO review "checked" naming
 type CheckedNode = {
 	$v: number // schema version
 
-	$type: NodeType
+	// if not provided, inferred from $content to inline or block
+	// Not in $hints because it's core to the rendering
+	$type: NodeType | 'auto' // auto = "I don't know yet, don't infer too early, decide later" TODO review
 
+	// Heading, in the generic/semantic sense =
+	// - word or phrase that or sentence that explains what the following part is about
+	// - written at the beginning of a structural part => is a structural element of a document
+	// - clearly indicates the content of the following section
+	// In our case:
+	// - indicates that the content is collapsible into just the heading (if UI allows it)
+	// - ~maps to a heading (HTML h1..h6, Markdown # ## ###) most of the time
+	//   - thus heading is supposed to be an inline fragment
+	//   - an document outline algorithm will tell the renderer the depth of the heading in the document structure
+	// - MAY map to a caption/figcaption if the node is a figure
+	// - may map to simple text if the content is a list (no <h>)
 	$heading: NodeLike | null
-	$content:
-		| NodeLike
-		| Array<NodeLike>
+	// Note: no footer, no known use case so far + not the same "collapsible" semantics
 
+	// Content of the node
+	// - MAY be an array, but should be reserved for nodes that really need it: lists, blocks
+	// - if only inline, should stay a string as much as possible for readability
+	// - if an array, automatically makes this node a block-level element
+	// can refer $sub-nodes with ⎨⎨key⎬⎬ syntax
+	$content: NodeLike | Array<NodeLike>
+
+	// TODO review name
 	$sub: {
-		// content that can be referenced by their id
+		// content that can be referenced by their key
 		// Note: unused are allowed for convenience, excess will not be checked
-		[id: SubNodeId]: NodeLike // Immutable to clearly convey that a node will not modify its given sub-nodes NOO! actually it allows to prepare node and improving them later!
+		[key: SubNodeKey]: NodeLike // ~~Immutable to clearly convey that a node will not modify its given sub-nodes~~ NOO! actually it allows to prepare node and improving them later!
 	}
 
-	// hints for renderers. May or may not be used.
-	// NOTE should be still working even if stripped TODO review
-	$classes: string[]
+	// hints for renderers. May or may not be used, depending on renderer support
+	$classes: string[] // not in $hints because too useful, better be native
+	// - NOTE rendering should be still acceptable even if $hints is stripped out
+	// - NOTE if a feature in $hints is too good to be stripped out, then it's a hint it should be natively supported
 	$hints: Hints
 }
 
-
 const NodeType = Enum(
-	// https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
-
 	// display "inline"
-	// strong > em > normal > weak
+	// strong > em > [normal] > weak
 	// https://www.shecodes.io/athena/7571-understanding-the-difference-between-strong-and-em-in-html
 	// https://stackoverflow.com/questions/1936864/what-is-the-difference-between-strong-and-em-tags
 	'strong', // emphasis -- strong (but less strong than heading) usually rendered as bold.
-	'em',     // emphasis -- medium. usually rendered as italic.
-	'weak',   // DE-emphasis, ex. ansi.dim
-	'emoji', // OPTIONAL but useful to ensure a good rendering.
-	         // This node type represent a single emoji.
-	         // As of 2024, emojis are still very hard to handle properly
-	         // ref: https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
-	         // hence deserving the help of this special node type
-	'fragmentⵧinline', // = span
+	'em', // emphasis -- medium. usually rendered as italic.
+	'weak', // DE-emphasis, ex. ansi.dim
+	'emoji', // This node type represent a single emoji. Useful for optimal rendering. (As of 2024, emojis are still very hard to handle properly)
+	// ref: https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
+	// TODO 'code', // A short fragment of code. (too useful, and markdown has it)
+	'fragmentⵧinline', // = generic inline = ~span
+	// TODO 1D dedicated short formats such as number, currency, date, time, datetime, duration
+	// TODO 1D dedicated micro formats such as email, phone, address...
+	// TODO 1D pills?
 
 	// display "block"
-	//'heading', integrated
+	//'heading' -> being reviewed, now a dedicated $heading prop
 	'ol',
 	'ul',
 	'hr',
-	'fragmentⵧblock',  // = div
+	// TODO 1D 'quoteⵧblock',
+	// TODO 1D 'codeⵧblock',
+	'fragmentⵧblock', // = generic block = ~div
+
+	// TODO 1D https://www.markdownguide.org/cheat-sheet/#extended-syntax
+	// TODO 1D footnotes
+	// TODO 1D task list
+	// TODO 1D "warnings" (GitHub `> [!IMPORTANT]`)
+	// TODO 1D sub/super
 
 	// special
 	'br', // Useful for poems etc.
-	      // do not abuse, use other semantic elements (heading, lists) as much as possible before this one.
-	      // REMINDER the client should be the one doing line breaks for long content
+	// do not abuse, use other semantic elements (heading, lists) as much as possible before this one.
+	// REMINDER the client should be the one doing line breaks for long content
+	// TODO 1D 'wbr'
 
 	// internally used, don't use directly
-	// the key-value semantic is already semantic enough to describe a list
-	'_li',
+	'_h',
+	//'_li',
 )
 type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 
@@ -70,7 +97,6 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 // - for non-rendering (ex. hypermedia features) hints can be made mandatory
 // UnderlyingData = JSON =  no, causes error "Type instantiation is excessively deep and possibly infinite."
 interface Hints<UnderlyingData = any, HyperLink = Hyperlink‿x> {
-
 	// string or keyword to use as bullets. to remove bullets: ''
 	// https://www.w3schools.com/cssref/pr_list-style-type.php
 	list__style__type?: string
@@ -84,26 +110,22 @@ interface Hints<UnderlyingData = any, HyperLink = Hyperlink‿x> {
 	href?: HyperLink // make this node as an anchor to another Hypermedia resource
 	// advanced = moved to dedicated OHA lib
 
-	// TODO styles TODO colors
+	// TODO styles TODO colors TODO theme
 
 	key?: string // for ex. to recognize a specific content (do not abuse! Reminder to keep everything text-compatible)
 
 	// anything allowed
-	[k: string]: any
+	[k: string]: any // TODO better TS hintable format cf. Matt Poccock
 }
 
-type SubNodeId = string
-
+type SubNodeKey = string
 
 type Node = Partial<CheckedNode>
 
 // Node + stuff trivial+safe to promote to a Node
-type NodeLike =
-	| string
-	| number
-	| Node
-	// We want Nodes to be natively JSON serializable, so no BigInt, date...
-	// boolean, null = let's wait before assigning meaning to them
+type NodeLike = string | number | Node
+// We want Nodes to be natively JSON serializable, so no BigInt, date...
+// boolean, null = let's wait before assigning meaning to them
 
 ///////
 
@@ -114,13 +136,10 @@ type Document = Node
 
 export {
 	NodeType,
-
 	type Hints,
-
-	type SubNodeId,
+	type SubNodeKey,
 	type CheckedNode,
 	type Node,
 	type NodeLike,
-
 	type Document,
 }
