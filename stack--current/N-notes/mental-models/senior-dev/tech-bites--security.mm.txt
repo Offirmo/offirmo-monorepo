@@ -130,6 +130,7 @@ privacy pass -- token
 privacy pass = ???
 private relay -- iCloud = "ensures that no single party handling user data has complete information on both who the user is and what they are trying to access." = Internet privacy service from Apple that allows users with iOS 15, iPadOS 15, or macOS Monterey on (...) their devices and an iCloud+ subscription, to connect to the Internet and browse with Safari in a more secure and private way  https://blog.cloudflare.com/icloud-private-relay/
 pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
+randomness -- nothing up my sleeve https://en.wikipedia.org/wiki/Nothing-up-my-sleeve_number
 risks -- software -- bad defaults -- firebase https://env.fail/posts/firewreck-1
 risks -- software -- buffer overflows and how to protect against them
 risks -- software -- cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
