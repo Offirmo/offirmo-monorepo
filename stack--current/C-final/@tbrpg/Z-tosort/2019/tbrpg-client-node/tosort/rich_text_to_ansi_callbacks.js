@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
 const { stylize_string } = require('../libs')
 
@@ -10,7 +10,7 @@ const WIDTH_COMPENSATION = ' '
 // TODO handle boxification
 
 function apply_type($type, str) {
-	switch($type) {
+	switch ($type) {
 		case 'li':
 		case 'inline_fragment':
 		case 'section':
@@ -22,7 +22,7 @@ function apply_type($type, str) {
 			return str
 		case 'strong':
 			return stylize_string.bold(str)
-		xxx
+			xxx
 		case 'heading':
 			return '\n' + stylize_string.bold(str)
 		case 'em':
@@ -34,7 +34,7 @@ function apply_type($type, str) {
 }
 
 function apply_class($class, str, hints = {}) {
-	switch($class) {
+	switch ($class) {
 		case 'item__name':
 		case 'avatar__name':
 		case 'avatar__class':
@@ -115,15 +115,12 @@ function apply_class($class, str, hints = {}) {
 	}
 }
 
-function on_concatenate_sub_node({state, sub_state, $id, $parent_node}) {
-	if ($parent_node.$type === 'ul')
-		return state + '\n - ' + sub_state
+function on_concatenate_sub_node({ state, sub_state, $id, $parent_node }) {
+	if ($parent_node.$type === 'ul') return state + '\n - ' + sub_state
 
-	if ($parent_node.$type === 'ol')
-		return state + `\n ${(' ' + $id).slice(-2)}. ` + sub_state
+	if ($parent_node.$type === 'ol') return state + `\n ${(' ' + $id).slice(-2)}. ` + sub_state
 
-	if ($parent_node.$type === 'strong')
-		return state + stylize_string.bold(sub_state)
+	if ($parent_node.$type === 'strong') return state + stylize_string.bold(sub_state)
 	xxx
 
 	return state + sub_state
@@ -135,15 +132,16 @@ function clean(state) {
 }
 
 const callbacks = {
-	on_node_enter: () => '',
-	on_concatenate_str: ({state, str}) => state + str,
+	onꓽnodeⵧenter: () => '',
+	on_concatenate_str: ({ state, str }) => state + str,
 	on_concatenate_sub_node,
-	on_class_after: ({state, $class, $node}) => apply_class($class, state, $node.$hints),
-	on_type: ({state, $type}) => apply_type($type, state),
-	on_root_exit: ({state}) => clean(state),
+	on_class_after: ({ state, $class, $node }) => apply_class($class, state, $node.$hints),
+	on_type: ({ state, $type }) => apply_type($type, state),
+	on_root_exit: ({ state }) => clean(state),
 
-	on_type_br: ({state}) => state + '\n',
-	on_type_hr: ({state}) => state + '\n------------------------------------------------------------\n',
+	on_type_br: ({ state }) => state + '\n',
+	on_type_hr: ({ state }) =>
+		state + '\n------------------------------------------------------------\n',
 }
 
 module.exports = callbacks

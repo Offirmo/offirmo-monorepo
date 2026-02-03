@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import {
 	renderⵧto_react,
-	intermediate_on_node_exit,
+	intermediate_onꓽnodeⵧexit,
 	intermediate_assemble,
 	InteractiveRichTextFragment,
 } from '../../../index.js'
@@ -10,14 +10,25 @@ import {
 ////////////
 
 function on_nodeⵧexit(params, options) {
-	const { children, classes, component, wrapper } = intermediate_on_node_exit(params, options)
-	const { state, $node: { $hints }, $id } = params
+	const { children, classes, component, wrapper } = intermediate_onꓽnodeⵧexit(params, options)
+	const {
+		state,
+		$node: { $hints },
+		$id,
+	} = params
 
 	if (classes.includes('monster')) {
-		children.push(<span key={$id} className="monster-emoji">{$hints.possible_emoji}</span>)
+		children.push(
+			<span key={$id} className="monster-emoji">
+				{$hints.possible_emoji}
+			</span>,
+		)
 	}
 
-	let element = intermediate_assemble({ ...params, children, classes, component, wrapper }, options)
+	let element = intermediate_assemble(
+		{ ...params, children, classes, component, wrapper },
+		options,
+	)
 
 	if ($hints.uuid) {
 		//console.log(`${LIB} seen element with uuid:`, $node)

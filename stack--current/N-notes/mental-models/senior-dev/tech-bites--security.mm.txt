@@ -11,6 +11,7 @@
 [ ] https://www.cisa.gov/spotlight
 [ ] https://www.reddit.com/r/privacy/ https://www.reddit.com/r/PrivacyGuides/
 account takeover (ATO) https://www.kasada.io/use-cases/account-takeover/
+Alice & Bob https://en.wikipedia.org/wiki/Alice_and_Bob#Cast_of_characters
 attacks -- 0 click& = exploit security flaws in software that handles incoming data, like messaging apps, email clients, or web browsers https://medium.com/@davidsehyeonbaek/zero-click-attacks-how-your-device-can-be-infected-with-spyware-without-even-opening-a-message-1e1699850ecc
 attacks -- business email compromise (BEC)
 attacks -- credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
@@ -21,6 +22,7 @@ attacks -- phishing https://www.azarask.in/blog/post/a-new-type-of-phishing-atta
 attacks -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
 attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-npm-ecosystem
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
+attacks -- timing https://timing.attacks.cr.yp.to/programming.html
 attacks -- webextensions https://ia.acs.org.au/article/2025/four-million-browsers-infected-with-spyware.html
 authentication
 authorization
@@ -42,7 +44,7 @@ content scrapping = can be anti-competitive https://www.kasada.io/use-cases/cont
 Content security policy (CSP) https://web.dev/articles/csp
 cryptography -- ciphertext indistinguishability = important security property of encryption schemes = an adversary will be unable to distinguish pairs of ciphertexts based on the message they encrypt. indistinguishability under chosen plaintext attack is considered a basic requirement for most provably secure public key cryptosystems  https://cse.iitkgp.ac.in/~debdeep/courses_iitkgp/FCrypto/scribes/scribe8.pdf
 cryptography -- don't write your own
-cryptography -- using crypto doesn't mean you're secure (attackers will look for a weaker link)
+cryptography -- using cryptography doesn't mean you're secure (attackers will look for a weaker link)
 CVE "Common Vulnerabilities and Exposures" = a catalog of publicly disclosed vulnerabilities and exposures. Each CVE includes a unique identifier, summary, associated metadata like the Common Weakness Enumeration (CWE) and Common Platform Enumeration (CPE), and a severity score that can range from None to Critical. The format of a CVE ID consists of a fixed prefix, the year of the disclosure and an arbitrary sequence number ​​like CVE-2017-0144. Memorable names such as "EternalBlue"  (CVE-2017-0144)  are often associated with high-profile exploits to enhance recall. https://blog.cloudflare.com/vulnerability-transparency-strengthening-security-through-responsible/#what-is-a-cve
 CVE -- CNA "CVE Numbering Authority" = an authorized party that  can assign CVE identifiers for vulnerabilities discovered within its products and ecosystems https://blog.cloudflare.com/vulnerability-transparency-strengthening-security-through-responsible/#what-is-a-cna
 Cybersecurity Assessment Tool (CAT) https://cybercat.tools/#assessment

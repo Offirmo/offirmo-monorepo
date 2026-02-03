@@ -4,6 +4,7 @@ import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
 import { SCHEMA_VERSION } from '../consts.ts'
 
 import { NodeType, type CheckedNode, type Node, type NodeLike } from '../l1-types/types.ts'
+import { getꓽtype } from './misc.ts'
 
 /////////////////////////////////////////////////
 
@@ -35,6 +36,7 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 		$classes,
 		$hints,
 	} satisfies CheckedNode
+	if (!$type) $node.$type = getꓽtype($node) // only if not explicitly set
 
 	if ($v === SCHEMA_VERSION) {
 		delete $node.$v
@@ -55,11 +57,11 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 
 	if ($content_.length <= 1) {
 		$node.$content = $content_[0] ?? ''
-		if (($type = NodeType.fragmentⵧinline)) {
+		if ($type === NodeType.fragmentⵧinline) {
 			delete $node.$type
 		}
 	} else {
-		if (($type = NodeType.fragmentⵧblock)) {
+		if ($type === NodeType.fragmentⵧblock) {
 			delete $node.$type
 		}
 	}

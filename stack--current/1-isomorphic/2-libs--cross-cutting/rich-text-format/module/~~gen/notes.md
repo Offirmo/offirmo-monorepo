@@ -87,6 +87,7 @@ TODO #hashtags ?
 TODO some AI stuff?
 TODO some web3 stuff?
 
+⎨⎨place|filter1|filter2⎬⎬ content
 
 ## references / prior art
 

@@ -4,6 +4,7 @@ import { normalize_unicode } from '@offirmo-private/normalize-string'
 import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
 import { NodeType, type CheckedNode, type Node } from '../l1-types/types.ts'
+import { getꓽtype } from './misc.ts'
 
 /////////////////////////////////////////////////
 
@@ -57,6 +58,7 @@ function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 		$classes,
 		$hints,
 	}
+	$node.$type = getꓽtype($node)
 
 	return $node
 }

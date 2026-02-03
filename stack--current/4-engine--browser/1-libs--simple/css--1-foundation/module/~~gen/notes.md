@@ -80,3 +80,5 @@ bg highlight 432C38
 fg error DC322F
 
 bg code 073642
+
+https://css-tricks.com/an-interview-with-elad-shechter-on-the-new-css-reset/
