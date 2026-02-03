@@ -10,7 +10,7 @@ import type { Node, CheckedNode, NodeLike } from './types.ts'
 const $EXAMPLE_COMPLETE_NODE: CheckedNode = {
 	$v: 1,
 	$type: 'fragmentⵧinline',
-	$heading: null,
+	$heading: 'title',
 	$content: 'Hello, ⎨⎨target⎬⎬!',
 	$refs: {
 		target: 'World',
@@ -24,7 +24,14 @@ const $EXAMPLE_COMPLETE_NODE: CheckedNode = {
 function assertꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node>
 function assertꓽNode(candidate: any): asserts candidate is Node
 function assertꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node> {
-	return assertꓽshape($EXAMPLE_COMPLETE_NODE, candidate, {
+	const reference = {
+		...$EXAMPLE_COMPLETE_NODE,
+	}
+	if (!candidate?.$heading)
+		reference.$heading = null
+	if (Array.isArray(candidate?.$content))
+		reference.$content = []
+	return assertꓽshape(reference, candidate, {
 		// "Node" is quite loose, so we only expect at least 1 prop
 		match_reference_props: 'some',
 		// but no extra prop

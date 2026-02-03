@@ -2,61 +2,77 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 let count = 0
 
+
 /////////////////////////////////////////////////
 // single node
-count++
 
-let $doc: RichText.NodeLike = 'Hello, world!'
-demo($doc)
-
-$doc = {
-	$content: 'Hello, world!',
+base1: {
+	count++
+	let $doc: RichText.NodeLike = 'Hello, world!'
+	demo($doc)
 }
-demo($doc)
+
+base2: {
+	count++
+	let $doc: RichText.NodeLike = {
+		$content: 'Hello, world!',
+	}
+	demo($doc)
+}
 
 /////////////////////////////////////////////////
-// using a sub node
-count++
 
-$doc = {
-	$content: 'Hello, ⎨⎨target⎬⎬!',
-	$refs: {
-		target: {
-			$type: 'strong',
-			$content: 'world',
+sub_node: {
+	count++
+	let $doc: RichText.NodeLike = {
+		$content: 'Hello, ⎨⎨target⎬⎬!',
+		$refs: {
+			target: {
+				$type: 'strong',
+				$content: 'world',
+			},
 		},
-	},
+	}
+	demo($doc)
 }
-demo($doc)
 
 /////////////////////////////////////////////////
 // sub-node is provided by the parent
-count++
+sub_node_inherited: {
+	count++
 
-$doc = {
-	$content: '⎨⎨greetings⎬⎬',
-	$refs: {
-		target: {
-			$type: 'strong',
-			$content: 'world',
+	let $doc: RichText.NodeLike = {
+		$content: '⎨⎨greetings⎬⎬',
+		$refs: {
+			target: {
+				$type: 'strong',
+				$content: 'world',
+			},
+			greetings: 'Hello, ⎨⎨target⎬⎬!', // yes, we allow refs in primitive strings
 		},
-		greetings: 'Hello, ⎨⎨target⎬⎬!', // yes, we allow refs in primitive strings
-	},
+	}
+	demo($doc)
 }
-demo($doc)
+
 
 /////////////////////////////////////////////////
 // lists
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/footer
-count++
 
-$doc = RichText.listⵧordered()
-	.customize($doc => {
-		$doc.$heading = '3 sector model'
-	})
-	.pushSubNodes(['primary = raw materials', 'secondary = manufacturing', 'tertiary = services'])
-	.done()
-demo($doc)
+list: {
+	count++
+	const $doc = {
+		$type: 'ol',
+		$heading: '3 sector model',
+		$content: [
+			'primary = raw materials',
+			'secondary = manufacturing',
+			'tertiary = services'
+		],
+	}
+	demo($doc)
+}
+
 
 /////////////////////////////////////////////////
 // tables

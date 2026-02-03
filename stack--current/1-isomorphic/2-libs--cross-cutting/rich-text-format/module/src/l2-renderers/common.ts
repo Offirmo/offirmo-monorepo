@@ -3,7 +3,8 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import { NodeType } from '../l1-types/types.ts'
 import type { Node, CheckedNode, NodeLike } from '../l1-types/types.ts'
 import { getꓽdisplay_type, promoteꓽto_node } from '../l1-utils'
-import { isꓽNodeLike } from '../l1-types'
+import { isꓽNode, isꓽNodeLike } from '../l1-types'
+import { LIB } from '../consts.ts'
 
 /////////////////////////////////////////////////
 
@@ -14,22 +15,22 @@ function isꓽlink($node: Immutable<CheckedNode>): boolean {
 function getꓽcontent_nodes‿array($node: Immutable<CheckedNode>): Array<Immutable<NodeLike>> {
 	const result: Array<Immutable<NodeLike>> = []
 
-	if ($node.$heading) {
-		const $heading = promoteꓽto_node($node.$heading)
-		assert(
-			getꓽdisplay_type($heading) === 'inline',
-			`$heading content should be inline (think markdown)!`,
-		)
-		result.push({
-			...$heading,
-			$type: NodeType._h, // swap type to retain the knowledge it was a $heading
-		})
-	}
-
 	if (isꓽNodeLike($node.$content)) {
 		result.push($node.$content)
 	} else if (Array.isArray($node.$content)) {
-		result.push(...$node.$content)
+
+		result.push(...$node.$content.map($row_node => {
+			if (isꓽNode($row_node)) {
+				assert(getꓽdisplay_type($row_node) === 'block', `${LIB}[walk]: row should be a block!`)
+				return $row_node
+			}
+
+			// preserve the info that this node was a "row"
+			return {
+				$type: 'fragmentⵧblock',
+				$content: $row_node,
+			} satisfies Node
+		}))
 	} else {
 		assert('$content type should match expected structure!')
 	}

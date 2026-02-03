@@ -42,10 +42,7 @@ type State = {
 	str: string
 }
 
-/////////////////////////////////////////////////
-// callbacks
-
-const createꓽstate: WalkerCallbacks<State, RenderingOptionsⵧToText>['createꓽstate'] = () => {
+function createꓽstate(): State {
 	return {
 		starts_with_block: false,
 		ends_with_block: false,
@@ -56,13 +53,17 @@ const createꓽstate: WalkerCallbacks<State, RenderingOptionsⵧToText>['create�
 	}
 }
 
+/////////////////////////////////////////////////
+// callbacks
+
+
 const onꓽnodeⵧenter: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽnodeⵧenter'] = (
 	{ xstate, $node },
 	{ style },
 ) => {
 	//console.log(`XXX to text onꓽnodeⵧenter`, $node?.$type)
 
-	return xstate
+	return createꓽstate()
 }
 
 const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽnodeⵧexit'] = (
@@ -71,17 +72,12 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽ
 ) => {
 	//console.log('[onꓽnodeⵧexit]', { $type, xstate })
 
-	switch ($node.$type) {
-		case 'ul':
-		// fallthrough
-		case 'ol':
-			xstate.starts_with_block = true // in case the container type wasn't a block. It's definitely a block!
-			break
+	if (getꓽdisplay_type($node) === 'block') xstate.starts_with_block = true
 
+	switch ($node.$type) {
 		case 'br':
 		// fallthrough
 		case 'hr':
-			xstate.ends_with_block = true
 			xstate.str = '' // clear, in case the user accidentally pushed some content in this node
 			break
 
@@ -92,9 +88,9 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽ
 	if (style === 'markdown') {
 		switch ($node.$type) {
 			case '_h':
-				xstate.str = `### ${xstate.str}`
-				xstate.marginⵧtop‿lines = Math.max(xstate.marginⵧtop‿lines, 1)
-				xstate.marginⵧbottom‿lines = Math.max(xstate.marginⵧbottom‿lines, 1)
+				xstate.str = `${'#'.repeat(bstate.depthⵧh + 1)} ${xstate.str}`
+				xstate.marginⵧtop‿lines = Math.max(xstate.marginⵧtop‿lines, bstate.depthⵧh + 1)
+				xstate.marginⵧbottom‿lines = Math.max(xstate.marginⵧbottom‿lines, bstate.depthⵧh + 1)
 				break
 
 			case 'strong':
@@ -118,7 +114,9 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽ
 				break
 		}
 
-		if (isꓽlink($node)) xstate.str = `[${xstate.str}](${$node.$hints.href})`
+		if (isꓽlink($node)) {
+			xstate.str = `[${xstate.str}](${$node.$hints.href})`
+		}
 
 		// TODO advanced markdown features
 	} else {
@@ -184,7 +182,7 @@ const onꓽconcatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToText>[
 	//console.log('onꓽconcatenateⵧstr()', {str, xstate: structuredClone(xstate),})
 	if (xstate.ends_with_block) {
 		xstate.trailing_spaces = '' // remove them
-		xstate.str += ''.padStart(xstate.marginⵧbottom‿lines + 1, '\n')
+		xstate.str += '\n'.repeat(xstate.marginⵧbottom‿lines + 1)
 		xstate.ends_with_block = false
 		xstate.marginⵧbottom‿lines = 0
 	}
@@ -201,32 +199,26 @@ const onꓽconcatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToText>[
 const onꓽconcatenateⵧsub_node: WalkerCallbacks<
 	State,
 	RenderingOptionsⵧToText
->['onꓽconcatenateⵧsub_node'] = ({ bstate, xstate, $node, xstateⵧsub }, options) => {
+>['onꓽconcatenateⵧsub_node'] = ({ bstate, xstate, $node, xstateⵧsub, row_index }, options) => {
 	const { style } = options
 	const [sub_str, trailing_spaces] = (() => {
 		switch ($node.$type) {
 			case 'ul':
 			// fallthrough
 			case 'ol': {
+				if (row_index === -1) {
+					// this is the heading, not a row
+					return [xstateⵧsub.str, xstateⵧsub.trailing_spaces]
+				}
+
 				const bullet: string = (() => {
 					if (options.use_hints && $node.$hints.list__style__type !== undefined)
 						return $node.$hints.list__style__type
 
 					if ($node.$type === 'ul') return '-'
 
-					const cleaned_index: string = (() => {
-						let res = String($refs_node_id).trim()
-
-						// trim leading 0
-						while (res[0] === '0') {
-							res = res.slice(1)
-						}
-						// trim trailing '.'
-						if (res.at(-1) === '.') res = res.slice(0, -1)
-
-						return res
-					})()
-					if (style === 'markdown') return `${cleaned_index}.` // no alignment, could mess with the markdown
+					const cleaned_index: string = String(row_index + 1)
+					if (style === 'markdown') return `${cleaned_index}.` // no alignment: could mess with the markdown
 
 					// alignment for readability
 					return cleaned_index.padStart(2) + '.'

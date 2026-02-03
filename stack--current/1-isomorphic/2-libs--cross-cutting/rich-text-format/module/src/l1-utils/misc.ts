@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { Node, CheckedNode, NodeLike } from '../l1-types/index.ts'
+import type { NodeLike } from '../l1-types/index.ts'
 import { NodeType, isꓽNode } from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
@@ -52,7 +52,7 @@ const _NODE_TYPE_to_DISPLAY_MODE: Immutable<{ [k: string]: 'inline' | 'block' }>
 	[NodeType.br]: 'inline', // allowed in inline
 
 	// internally used, don't mind
-	//[NodeType._li]: 'block',
+	[NodeType._h]: 'block',
 }
 
 function getꓽdisplay_type($node: Immutable<NodeLike>): 'inline' | 'block' {

@@ -9,12 +9,12 @@ import { capitalizeⵧfirst } from '@offirmo-private/normalize-string'
 
 import { LIB } from '../consts.ts'
 import { getꓽcontent_nodes‿array } from './common.ts'
-import { type NodeLike, NodeType, type CheckedNode, type Node } from '../l1-types/index.ts'
+import { type NodeLike, NodeType, type CheckedNode, type Node, isꓽNodeLike, isꓽNode } from '../l1-types/index.ts'
 
 import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
 import type { BaseState } from '@offirmo-private/state-utils'
-import { getꓽtype } from '../l1-utils'
+import { getꓽdisplay_type, getꓽtype } from '../l1-utils'
 
 /////////////////////////////////////////////////
 // base rendering options
@@ -59,13 +59,13 @@ interface BaseHookParams<RendererState> {
 
 // known usages:
 // - creating/deriving the new "sub-node" custom renderer state
+//   - note: renderers are free to extend the state or create a new one, depending on their needs
 interface OnNodeEnterParams<RendererState> extends BaseHookParams<RendererState> {
 	//$id: string
 }
 
 // known usages:
 // - perform normalization/linting/autofixes of the node
-// - finally collate all the sub-nodes (in some cases)
 interface OnNodeExitParams<RendererState> extends BaseHookParams<RendererState> {
 	//$id: string
 }
@@ -78,9 +78,15 @@ interface OnConcatenateStringParams<RendererState> extends BaseHookParams<Render
 // CONCAT SUB-NODE
 // REMINDER this is done at the PARENT level => node, state, depth all refer to the PARENT node concatenating the child
 interface OnConcatenateSubNodeParams<RendererState> extends BaseHookParams<RendererState> {
-	xstateⵧsub: RendererState // IMPORTANT: this is an opportunity for the parent node to "consume/reduce" the child state into its own state (depending on how the renderer work)
+
+	// depending on how renderer works,
+	// if they created a new state for the child node,
+	// this is the place to "consume/reduce" the child state into its own state
+	xstateⵧsub: RendererState
+
 	row_index: number // if this node is from an array content, its index there; else -1
-	//col_index: number // if this node is from an array content, its col index there; else -1
+
+	//col_index: number // if this node is from an array content, its col index there; else -1 TODO 1D
 }
 
 /*
@@ -281,7 +287,7 @@ function _walk_StringWithRefs<CustomWalkState, RenderingOptions extends BaseRend
 			const [$ref_key, ...$filters] = split_end.shift()!.split('|')
 			assert($ref_key, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
 
-			let $refs_node = promoteꓽto_node(
+			let $referenced_node = promoteꓽto_node(
 				(function _resolve_ref_by_id(): Immutable<CheckedNode>['$refs'][string] {
 					if ($ref_key === 'br') {
 						assert(
@@ -331,7 +337,7 @@ function _walk_StringWithRefs<CustomWalkState, RenderingOptions extends BaseRend
 				})(),
 			)
 
-			let xstateⵧsub = _walk(callbacks, options, bstate, xstate, $refs_node)
+			const xstateⵧsub = _walk(callbacks, options, bstate, xstate, $referenced_node)
 
 			if ($filters.length > 0) {
 				throw new Error('TODO review & reimplement filters')
@@ -408,14 +414,57 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 	xstate: CustomWalkState,
 	$node: Immutable<CheckedNode>,
 ) {
-	const $content_array = getꓽcontent_nodes‿array($node)
-	$content_array.forEach(node => {
-		if (typeof node === 'string') {
-			xstate = _walk_StringWithRefs(callbacks, options, bstate, xstate, $node, node)
-		} else {
-			throw new Error('NIMP array of non strings')
+
+	if ($node.$heading) {
+		let $heading = promoteꓽto_node($node.$heading)
+		assert(
+			getꓽdisplay_type($heading) === 'inline',
+			`$heading content should be inline (think markdown)!`,
+		)
+		$heading = {
+			...$heading,
+			$type: '_h'
 		}
+		const xstateⵧsub = _walk(callbacks, options, bstate, xstate, $heading)
+		xstate = callbacks.onꓽconcatenateⵧsub_node(
+			{
+				$node,
+				bstate,
+				xstate,
+				xstateⵧsub,
+				row_index: -1,
+			},
+			options,
+		)
+
+		// AND we're now a level deeper in a <h>
+		bstate.depthⵧh++
+	}
+
+
+	const $content_array = getꓽcontent_nodes‿array($node)
+	$content_array.forEach(($row_node, row_index) => {
+		if (typeof $row_node === 'string') {
+			xstate = _walk_StringWithRefs(callbacks, options, bstate, xstate, $node, $row_node)
+			return
+		}
+
+		const xstateⵧsub = _walk(callbacks, options, bstate, xstate, $row_node)
+		xstate = callbacks.onꓽconcatenateⵧsub_node(
+			{
+				$node,
+				bstate,
+				xstate,
+				xstateⵧsub,
+				row_index,
+			},
+			options,
+		)
 	})
+
+	if ($node.$heading) {
+		bstate.depthⵧh--
+	}
 
 	return xstate
 }
