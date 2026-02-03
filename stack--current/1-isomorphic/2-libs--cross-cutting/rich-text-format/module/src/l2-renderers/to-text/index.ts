@@ -72,7 +72,10 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽ
 ) => {
 	//console.log('[onꓽnodeⵧexit]', { $type, xstate })
 
-	if (getꓽdisplay_type($node) === 'block') xstate.starts_with_block = true
+	if (getꓽdisplay_type($node) === 'block') {
+		xstate.starts_with_block = true
+		xstate.ends_with_block = true
+	}
 
 	switch ($node.$type) {
 		case 'br':
@@ -89,8 +92,8 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽ
 		switch ($node.$type) {
 			case '_h':
 				xstate.str = `${'#'.repeat(bstate.depthⵧh + 1)} ${xstate.str}`
-				xstate.marginⵧtop‿lines = Math.max(xstate.marginⵧtop‿lines, bstate.depthⵧh + 1)
-				xstate.marginⵧbottom‿lines = Math.max(xstate.marginⵧbottom‿lines, bstate.depthⵧh + 1)
+				xstate.marginⵧtop‿lines = Math.max(xstate.marginⵧtop‿lines, 3 - bstate.depthⵧh)
+				xstate.marginⵧbottom‿lines = Math.max(xstate.marginⵧbottom‿lines, 3 - bstate.depthⵧh)
 				break
 
 			case 'strong':
@@ -167,11 +170,6 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽ
 		}*/
 	}
 
-	if (getꓽdisplay_type($node) === 'block') {
-		xstate.starts_with_block = true
-		xstate.ends_with_block = true
-	}
-
 	return xstate
 }
 
@@ -239,15 +237,17 @@ const onꓽconcatenateⵧsub_node: WalkerCallbacks<
 		if (xstateⵧsub.starts_with_block) {
 			// propagate to us
 			xstate.starts_with_block = true
-			// merge margin
+			// collapse margins (though we don't really need them)
 			xstate.marginⵧtop‿lines = Math.max(xstate.marginⵧtop‿lines, xstateⵧsub.marginⵧtop‿lines)
 		}
 	} else {
 		if (xstateⵧsub.starts_with_block) {
 			// concatenate
 			xstate.ends_with_block = true
-			// collapse margins
-			xstate.marginⵧbottom‿lines += xstateⵧsub.marginⵧtop‿lines
+			// apply top margin, merged
+			xstate.str += '\n'.repeat(Math.max(xstate.marginⵧbottom‿lines, xstateⵧsub.marginⵧtop‿lines))
+			// replace bottom margin (now applied) with the concatened one's
+			xstate.marginⵧbottom‿lines = xstateⵧsub.marginⵧbottom‿lines
 		}
 	}
 

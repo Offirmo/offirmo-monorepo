@@ -2,7 +2,6 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 let count = 0
 
-
 /////////////////////////////////////////////////
 // single node
 
