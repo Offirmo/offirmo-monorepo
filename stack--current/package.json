@@ -68,6 +68,7 @@
 
 			"B-backend/*",
 
+			"C-final/@devdocs/*",
 			"C-final/@infinite-monorepo/*",
 			"C-final/@tbrpg/1-logic/*",
 			"C-final/api--placeholders/*",

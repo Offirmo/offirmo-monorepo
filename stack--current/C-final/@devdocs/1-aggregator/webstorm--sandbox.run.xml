@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false" type="NodeJSConfigurationType"
+		name="@devdocs/aggregator -- Sandbox"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@devdocs/1-aggregator"
+		path-to-js-file="module/src/~~sandbox/index.ts">
+		<node-interpreter>project</node-interpreter>
+		<method v="2" />
+	</configuration>
+</component>

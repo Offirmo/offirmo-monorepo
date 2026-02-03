@@ -70,6 +70,7 @@ AI gateway = convenient self-service integration point for internal teams who wa
 AI Labyrinth = new, next generation honeypot and cybersecurity defensive tool that uses AI to trap AI = leverages AI to confuse crawlers and bots that ignore "no crawl" directives. Instead of blocking these bots, AI Labyrinth directs bots into an endless maze of convincing, AI-generated pages. https://blog.cloudflare.com/ai-labyrinth/
 AI model collapse = as AI grows, systems are trained on their own outputs, gradually losing accuracy, diversity, and reliability. This occurs because errors compound across successive model generations, leading to distorted data distributions and "irreversible defects" in performance. The model becomes poisoned with its own projection of reality. https://slashdot.org/story/25/05/28/0242240/some-signs-of-ai-model-collapse-begin-to-reveal-themselves
 AI transition = https://www.youtube.com/watch?v=v9JBMnxuPX8
+AI Washing = using AI as a pretext to fire and increase the workload https://it.slashdot.org/story/26/02/02/0618242/is-ai-really-taking-jobs-or-are-employers-just-ai-washing-normal-layoffs
 AI winter
 AI with ifs (TODO find better name)
 AI-first software delivery = https://www.linkedin.com/pulse/what-ai-first-software-delivery-thoughtworks-4krff/
