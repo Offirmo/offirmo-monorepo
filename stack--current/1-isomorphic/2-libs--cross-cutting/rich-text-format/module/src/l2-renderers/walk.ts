@@ -225,10 +225,12 @@ function _getꓽcallbacksⵧdefault<
 
 const SUB_NODE_BR: Node = Object.freeze<Node>({
 	$type: 'br',
+	$content: '\n' // convenient, prevent the renderers from having to do special handling
 })
 
 const SUB_NODE_HR: Node = Object.freeze<Node>({
 	$type: 'hr',
+	// no content, this one is too special
 })
 
 function _walk_StringWithRefs<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
@@ -475,9 +477,10 @@ function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 	// TODO 1D lint circular refs
 	switch ($type) {
 		case 'br':
-		// fallthrough
+			assert($node.$content === '\n', 'br should not have content!')
+			break
 		case 'hr':
-			assert($node.$content.length === 0, 'br and hr should not have content!')
+			assert($node.$content.length === 0, 'hr should not have content!')
 			break
 
 		default:

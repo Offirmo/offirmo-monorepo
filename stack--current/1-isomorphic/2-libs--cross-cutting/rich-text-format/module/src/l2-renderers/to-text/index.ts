@@ -106,20 +106,21 @@ const onꓽnodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['onꓽ
 
 	// block margins
 	if (getꓽdisplay_type($node) === 'block') {
-		// generic, may be changed later
-		xstate.marginⵧtop‿lines = 2
-		xstate.marginⵧbottom‿lines = 2
+		// ensure minimum values
+		// (some higher values may already be present thanks to child nodes)
+		xstate.marginⵧtop‿lines = Math.max(2, xstate.marginⵧtop‿lines)
+		xstate.marginⵧbottom‿lines = Math.max(2, xstate.marginⵧbottom‿lines)
 
 		switch ($node.$type) {
 			case '_li':
-				// list items can be tight
+				// list items should be tight
 				// the ol/ul wrapper will ensure overall margin
 				xstate.marginⵧtop‿lines = 1
 				xstate.marginⵧbottom‿lines = 1
 				break
 
 			case '_h':
-				xstate.marginⵧtop‿lines = Math.max(xstate.marginⵧtop‿lines, 3 - bstate.depthⵧh)
+				xstate.marginⵧtop‿lines = Math.max(4 - bstate.depthⵧh, xstate.marginⵧtop‿lines)
 				break
 
 			default:
@@ -173,6 +174,7 @@ const onꓽconcatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToText>[
 	if (xstate.marginⵧbottom‿lines) {
 		xstate.str = xstate.str.trimEnd() // no need for those trailing spaces
 		xstate.str += '\n'.repeat(xstate.marginⵧbottom‿lines)
+		xstate.marginⵧbottom‿lines = 0 // because done
 	}
 
 	// concat

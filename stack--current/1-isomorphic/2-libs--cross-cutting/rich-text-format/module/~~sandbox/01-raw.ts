@@ -92,7 +92,7 @@ let count = 0
 			{
 				$heading: 'Article 2',
 				$content: [
-					'Chacun peut se prévaloir de tous les droits et de toutes les libertés proclamés dans la présente Déclaration, sans distinction aucune, ...',
+					'Chacun peut se prévaloir de tous les droits et de toutes les libertés proclamés dans la présente Déclaration, sans distinction aucune...',
 				],
 			},
 		],
