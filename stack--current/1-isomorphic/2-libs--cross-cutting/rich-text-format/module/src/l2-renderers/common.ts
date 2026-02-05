@@ -1,10 +1,8 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
-import { NodeType } from '../l1-types/types.ts'
-import type { Node, CheckedNode, NodeLike } from '../l1-types/types.ts'
-import { getꓽdisplay_type, promoteꓽto_node } from '../l1-utils'
-import { isꓽNode, isꓽNodeLike } from '../l1-types'
-import { LIB } from '../consts.ts'
+import type { CheckedNode, NodeLike } from '../l1-types/types.ts'
+import { wrap, isꓽlist } from '../l1-utils/index.ts'
+import { isꓽNodeLike } from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -12,30 +10,24 @@ function isꓽlink($node: Immutable<CheckedNode>): boolean {
 	return !!$node.$hints.href
 }
 
-function getꓽcontent_nodes‿array($node: Immutable<CheckedNode>): Array<Immutable<NodeLike>> {
-	const result: Array<Immutable<NodeLike>> = []
-
+// for iterating only
+function getꓽcontent‿nodes_list($node: Immutable<CheckedNode>): Array<Immutable<NodeLike>> {
 	if (isꓽNodeLike($node.$content)) {
-		result.push($node.$content)
-	} else if (Array.isArray($node.$content)) {
-
-		result.push(...$node.$content.map($row_node => {
-			if (isꓽNode($row_node)) {
-				assert(getꓽdisplay_type($row_node) === 'block', `${LIB}[walk]: row should be a block!`)
-				return $row_node
-			}
-
-			// preserve the info that this node was a "row"
-			return {
-				$type: 'fragmentⵧblock',
-				$content: $row_node,
-			} satisfies Node
-		}))
-	} else {
-		assert('$content type should match expected structure!')
+		// simply promote to array
+		return [ $node.$content ]
 	}
 
-	return result
+	if (Array.isArray($node.$content)) {
+		const is_list = isꓽlist($node)
+
+		return $node.$content.map($row_node => {
+			// IMPORTANT preserve the info that this node was a "row" with an expected block display
+			// if list, also preserve the extra semantic meaning
+			return wrap($row_node, is_list ? '_li' : 'fragmentⵧblock')
+		})
+	}
+
+	throw new Error('Unknown case!')
 }
 
 /* this is a table, TODO reimplement
@@ -58,4 +50,4 @@ function isꓽlistⵧuuid($node: Immutable<CheckedNode>): boolean {
 
 /////////////////////////////////////////////////
 
-export { isꓽlink, getꓽcontent_nodes‿array }
+export { isꓽlink, getꓽcontent‿nodes_list }

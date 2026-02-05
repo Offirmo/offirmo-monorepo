@@ -1,5 +1,6 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
+import { Enum } from 'typescript-string-enums'
 
 import type { NodeLike } from '../l1-types/index.ts'
 import { NodeType, isꓽNode } from '../l1-types/index.ts'
@@ -32,7 +33,6 @@ function getꓽtype($node: Immutable<NodeLike>): NodeType {
 }
 
 const _NODE_TYPE_to_DISPLAY_MODE: Immutable<{ [k: string]: 'inline' | 'block' }> = {
-	// TODO assert completeness and no-intersection of inline and block
 
 	// classic inlines
 	[NodeType.fragmentⵧinline]: 'inline',
@@ -53,7 +53,12 @@ const _NODE_TYPE_to_DISPLAY_MODE: Immutable<{ [k: string]: 'inline' | 'block' }>
 
 	// internally used, don't mind
 	[NodeType._h]: 'block',
+	[NodeType._li]: 'block',
 }
+assert(
+	Enum.keys(NodeType).sort().join(',') === Object.keys(_NODE_TYPE_to_DISPLAY_MODE).sort().join(','),
+	`_NODE_TYPE_to_DISPLAY_MODE should be up to date!`
+)
 
 function getꓽdisplay_type($node: Immutable<NodeLike>): 'inline' | 'block' {
 	const $type = getꓽtype($node)

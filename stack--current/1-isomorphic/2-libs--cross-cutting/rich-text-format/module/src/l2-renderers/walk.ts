@@ -8,20 +8,17 @@ import { hasꓽshape, isꓽexact_stringified_number } from '@offirmo-private/typ
 import { capitalizeⵧfirst } from '@offirmo-private/normalize-string'
 
 import { LIB } from '../consts.ts'
-import { getꓽcontent_nodes‿array } from './common.ts'
+import { getꓽcontent‿nodes_list } from './common.ts'
 import {
 	type NodeLike,
 	NodeType,
 	type CheckedNode,
 	type Node,
-	isꓽNodeLike,
-	isꓽNode,
 } from '../l1-types/index.ts'
 
 import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
-import type { BaseState } from '@offirmo-private/state-utils'
-import { getꓽdisplay_type, getꓽtype } from '../l1-utils'
+import { getꓽdisplay_type, getꓽtype, isꓽlist, wrap } from '../l1-utils/index.ts'
 
 /////////////////////////////////////////////////
 // base rendering options
@@ -68,7 +65,8 @@ interface BaseHookParams<RendererState> {
 interface OnNodeEnterParams<RendererState> extends BaseHookParams<RendererState> {}
 
 // known usages:
-// - perform normalization/linting/autofixes of the node
+// - perform normalization/linting/autofixes on the node
+// - perform post-processing on the node
 interface OnNodeExitParams<RendererState> extends BaseHookParams<RendererState> {}
 
 // known usages:
@@ -83,7 +81,7 @@ interface OnConcatenateStringParams<RendererState> extends BaseHookParams<Render
 interface OnConcatenateSubNodeParams<RendererState> extends BaseHookParams<RendererState> {
 	// depending on how renderer works,
 	// if they created a new state for the child node,
-	// this is the place to "consume/reduce" the child state into its own state
+	// this is an opportunity to "consume/reduce" the child state into its own state
 	xstateⵧsub: RendererState
 
 	row_index: number // if this node is from an array content, its index there; else -1
@@ -415,15 +413,12 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 	$node: Immutable<CheckedNode>,
 ) {
 	if ($node.$heading) {
-		let $heading = promoteꓽto_node($node.$heading)
 		assert(
-			getꓽdisplay_type($heading) === 'inline',
+			getꓽdisplay_type($node.$heading) === 'inline',
 			`$heading content should be inline (think markdown)!`,
 		)
-		$heading = {
-			...$heading,
-			$type: '_h',
-		}
+
+		const $heading = wrap($node.$heading, '_h')
 		const xstateⵧsub = _walk(callbacks, options, bstate, xstate, $heading)
 		xstate = callbacks.onꓽconcatenateⵧsub_node(
 			{
@@ -435,13 +430,10 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 			},
 			options,
 		)
-
-		// AND we're now a level deeper in a <h>
-		//bstate.depthⵧh++
 	}
 
-	const $content_array = getꓽcontent_nodes‿array($node)
-	$content_array.forEach(($row_node, row_index) => {
+	let $content = getꓽcontent‿nodes_list($node)
+	$content.forEach(($row_node, row_index) => {
 		if (typeof $row_node === 'string') {
 			xstate = _walk_StringWithRefs(callbacks, options, bstate, xstate, $node, $row_node)
 			return
@@ -460,16 +452,12 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 		)
 	})
 
-	if ($node.$heading) {
-		//bstate.depthⵧh--
-	}
-
 	return xstate
 }
 
 /**
  * Walk recursively inside a node.
- * Must return a NEW "node" state.
+ * Must return a NEW "node" state = this is NOT a reducer!!
  */
 function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 	callbacks: Immutable<WalkerCallbacks<CustomWalkState, RenderingOptions>>,
@@ -481,6 +469,20 @@ function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 	const $node = normalizeꓽnode(promoteꓽto_node($raw_node))
 	const { $heading, $refs, $type } = $node
 	assert($type !== 'auto', `${LIB}[walk]: $type should never be "auto" at this stage!`)
+
+	// ~linting
+	// TODO 1D lint which block can be a child of another
+	// TODO 1D lint circular refs
+	switch ($type) {
+		case 'br':
+		// fallthrough
+		case 'hr':
+			assert($node.$content.length === 0, 'br and hr should not have content!')
+			break
+
+		default:
+			break
+	}
 
 	// build child state
 	const bstate: BaseWalkState = {
@@ -500,12 +502,9 @@ function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 
 	xstate = _walk_content(callbacks, options, bstate, xstate, $node)
 
-	// IMPORTANT TODO review ???
-	// if needed, this is where we "re-absorb" the child state
-	// base state = no re-absorption so far
-	xstateⵧparent = callbacks.onꓽnodeⵧexit({ $node, bstate, xstate }, options)
+	xstate = callbacks.onꓽnodeⵧexit({ $node, bstate, xstate }, options)
 
-	return xstateⵧparent
+	return xstate
 }
 
 /////////////////////////////////////////////////

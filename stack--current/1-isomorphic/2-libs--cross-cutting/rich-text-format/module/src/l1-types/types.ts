@@ -58,7 +58,7 @@ const NodeType = Enum(
 	'weak', // DE-emphasis, ex. ansi.dim
 	'emoji', // This node type represent a single emoji. Useful for optimal rendering. (As of 2024, emojis are still very hard to handle properly)
 	// ref: https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
-	// TODO 'code', // A short fragment of code. (too useful, and markdown has it)
+	// TODO 1D 'code', // A short fragment of code. (too useful, and markdown has it)
 	'fragmentⵧinline', // = generic inline = ~span
 	// TODO 1D dedicated short formats such as number, currency, date, time, datetime, duration
 	// TODO 1D dedicated micro formats such as email, phone, address...
@@ -87,7 +87,7 @@ const NodeType = Enum(
 
 	// internally used, don't use directly
 	'_h', // header
-	//'_li',
+	'_li', // list item
 )
 type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 

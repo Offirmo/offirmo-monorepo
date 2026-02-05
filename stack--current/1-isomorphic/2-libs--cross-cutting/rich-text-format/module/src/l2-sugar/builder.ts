@@ -30,7 +30,7 @@ interface CommonOptions {
 	classes?: string[]
 }
 
-type SubNodes = CheckedNode['$refs'] // TODO why Immu?
+type SubNodes = CheckedNode['$refs']
 type SubNode = CheckedNode['$refs'][string]
 
 interface Builder {
@@ -118,7 +118,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		return String(++sub_id).padStart(4, '0')
 	}
 
-	//let locale = 'en-US' TODO one day
+	//let locale = 'en-US' TODO 1D
 
 	function addClass(...classes: ReadonlyArray<string>): Builder {
 		try {
@@ -151,7 +151,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 				// no, allow empty strings. sometimes it's easier for control flow reasons.
 				//assert(!!str, `${LIB}: sugar: pushText(): Empty string?!`)
 
-				// TODO one day
+				// TODO 1D
 				//if (hasꓽemoji(str)) {
 				//assert($node.$type === NodeType.emoji, `${LIB}: sugar: pushText(): Emoji detected in a non-emoji node!`)
 				//}
@@ -302,6 +302,8 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 		if (isꓽNode(content)) {
 			// "lift" it to avoid an unneeded subnode
 			// also make mutable
+
+			// TODO check "wrap"
 
 			const display_typeⵧsource = getꓽdisplay_type(content)
 			const display_typeⵧtarget = getꓽdisplay_type({ $type })

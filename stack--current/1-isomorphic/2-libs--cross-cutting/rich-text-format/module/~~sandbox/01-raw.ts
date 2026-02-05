@@ -134,7 +134,7 @@ Object.entries(DEMOS).forEach((entry) => {
 
 function demo($doc: Immutable<RichText.NodeLike>) {
 	console.log(
-		`\n------- #${count} to text -------\n`
+		`------- #${count} to text -------\n`
 			+ RichText.renderⵧto_text($doc, {
 				style: 'markdown',
 			}),
