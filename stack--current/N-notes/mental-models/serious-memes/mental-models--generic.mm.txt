@@ -40,6 +40,7 @@
 [ ] +++ https://paulgraham.com/articles.html
 [ ] +++ https://thewokesalaryman.com/
 [ ] Ash Lamb visuals https://www.linkedin.com/in/ashlamb/recent-activity/all/
+[ ] biases -- cognitive = https://en.wikipedia.org/wiki/Cognitive_bias
 [ ] ex. of edited interview misleading https://paulgraham.com/wids.html
 [ ] Futures studies https://en.wikipedia.org/wiki/Futures_studies + many concepts
 [ ] https://36questionsinlove.com/
@@ -143,7 +144,6 @@ biases -- attractiveness
 biases -- baby-face
 biases -- Benjamin Franklin effect = ppl like a person more after doing a favor to them
 biases -- bias blind spot = tendency to see oneself as less biased than others
-biases -- cognitive = https://en.wikipedia.org/wiki/Cognitive_bias TODO
 biases -- derangement syndrome = (pejorative) irrational negative reactions, ex. to Trump https://en.wikipedia.org/wiki/Trump_derangement_syndrome
 biases -- false-uniqueness effect = ppl tend to view their qualities, traits & pers attributes as unique when they are not
 biases -- hostile attribution = tendency to interpret others' behavior as having hostile intent, even when ambiguous or benign
@@ -421,6 +421,7 @@ entrepreneurship -- billing -- free day https://blog.jpl-consulting.com/2011/05/
 entrepreneurship -- billing -- hourly rate vs fixed price
 envy -- I wish people could see how ugly it is to be envious, and how obvious it is to those around you when that's what's happening (from narcissist dishonest) https://www.sandofsky.com/lambda-school/
 envy -- There's not much uglier than trying to tear someone down because they achieved what you wish you had  (from narcissist dishonest)  https://www.sandofsky.com/lambda-school/
+Epstein case, no arrests
 equality -- gender -- Scully effect
 equality -- race
 equality vs equity https://medium.com/@CRA1G/the-evolution-of-an-accidental-meme-ddc4e139e0e4
@@ -1293,6 +1294,8 @@ Streisand effect = Increased awareness of information caused by efforts to suppr
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 submarine = hidden project until ready
 substance vs. form = The form of pancakes is breakfast food, but the substance is dessert. But because they’re flat and branded as breakfast, it’s socially acceptable to eat them in the morning.
+success -- "I wouldn’t wish this level of success on my worst enemy" https://x.com/TheWhiteWhaleV2/status/1998799262583333211
+success -- "more than anything, you want to be understood and accepted" https://x.com/TheWhiteWhaleV2/status/1998799262583333211
 success -- redefine success = If your venture has only one definition of success, then you're setting yourself up for failure. I can guarantee success by simply redefining success to include learning something interesting. In this way, I've always succeeded, and also learned a lot :) https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 success? power, influence, money, genius IQ, infinite resources
 sucker https://en.wikipedia.org/wiki/Social_loafing#%22Sucker%22_effect/Aversion
@@ -1338,6 +1341,7 @@ third place = meeting places, ex. Starbucks
 thought leader
 tier list = ranking by desirability/viability/fitness https://en.wikipedia.org/wiki/Tier_list
 tier-3 meme
+time -- evening waste = You're on the sofa. You know you should get up - exercise, read, cook a real meal - but you can't make yourself move. So you sit there, not resting, not working, scrolling through your phone while mentally rehearsing the tasks you're not doing. You tell yourself you're lazy. https://x.com/DrDominicNg/status/2018735498622087346
 time management
 time-tested
 tip of the iceberg

@@ -12,6 +12,7 @@
 absolute advantage = a situation in which a company can produce the same product as other companies using fewer resources https://coinmarketcap.com/academy/glossary/absolute-advantage
 adaptability = turn the challenges into opportunities
 adoption -- technology adoption -- usually non-linear = due to so-called complementary network effects
+agency arbitrage = buy an agency, extract into a SaaS https://x.com/toddsaunders/status/2011108996728701399"
 aha moment
 alignment -- challenges -- risk of social layer capture: means "having the right friends"
 alignment -- of incentives = https://vitalik.eth.limo/general/2024/09/28/alignment.html

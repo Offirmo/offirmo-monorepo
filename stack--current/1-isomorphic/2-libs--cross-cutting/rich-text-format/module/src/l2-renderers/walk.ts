@@ -9,7 +9,14 @@ import { capitalizeⵧfirst } from '@offirmo-private/normalize-string'
 
 import { LIB } from '../consts.ts'
 import { getꓽcontent_nodes‿array } from './common.ts'
-import { type NodeLike, NodeType, type CheckedNode, type Node, isꓽNodeLike, isꓽNode } from '../l1-types/index.ts'
+import {
+	type NodeLike,
+	NodeType,
+	type CheckedNode,
+	type Node,
+	isꓽNodeLike,
+	isꓽNode,
+} from '../l1-types/index.ts'
 
 import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
@@ -41,9 +48,7 @@ interface BaseWalkState {
 	depthⵧlist: number // list depth
 	depthⵧnodes: number // overall depth ((no known usage for now / debug only)
 
-	//$parent_node: Immutable<CheckedNode> | null
-	//$id: string // ??
-	//$root_node: Immutable<CheckedNode> // for sub-node resolution "root" mode
+	//$parent_node: Immutable<CheckedNode> | null TODO review useful for context?
 }
 
 interface BaseHookParams<RendererState> {
@@ -60,32 +65,28 @@ interface BaseHookParams<RendererState> {
 // known usages:
 // - creating/deriving the new "sub-node" custom renderer state
 //   - note: renderers are free to extend the state or create a new one, depending on their needs
-interface OnNodeEnterParams<RendererState> extends BaseHookParams<RendererState> {
-	//$id: string
-}
+interface OnNodeEnterParams<RendererState> extends BaseHookParams<RendererState> {}
 
 // known usages:
 // - perform normalization/linting/autofixes of the node
-interface OnNodeExitParams<RendererState> extends BaseHookParams<RendererState> {
-	//$id: string
-}
+interface OnNodeExitParams<RendererState> extends BaseHookParams<RendererState> {}
 
-// CONCAT STRING
+// known usages:
+// - text renderer
 interface OnConcatenateStringParams<RendererState> extends BaseHookParams<RendererState> {
 	str: string
 }
 
-// CONCAT SUB-NODE
-// REMINDER this is done at the PARENT level => node, state, depth all refer to the PARENT node concatenating the child
+// known usages:
+// - text renderer
+// REMINDER this is done at the PARENT level => node, state, depth all refer to the PARENT node concatenating the child TODO review this?
 interface OnConcatenateSubNodeParams<RendererState> extends BaseHookParams<RendererState> {
-
 	// depending on how renderer works,
 	// if they created a new state for the child node,
 	// this is the place to "consume/reduce" the child state into its own state
 	xstateⵧsub: RendererState
 
 	row_index: number // if this node is from an array content, its index there; else -1
-
 	//col_index: number // if this node is from an array content, its col index there; else -1 TODO 1D
 }
 
@@ -105,18 +106,20 @@ interface OnTypeParams<RendererState> extends BaseHookParams<RendererState> {
 }
 */
 
-interface UnknownSubNodeResolver<RendererState, RenderingOptions> {
+// it's useful to have a dynamic way to resolve unknown refs, ex. if querying a big data store = inconvenient to preload all possible $refs
+interface UnknownRefResolver<RendererState, RenderingOptions> {
 	(
 		$ref_key: string,
 		context: BaseHookParams<RendererState>,
 		options: RenderingOptions,
-	): Node | undefined
+	): NodeLike | undefined
 }
 
 interface RendererStateCreator<RendererState, RenderingOptions> {
 	(options: RenderingOptions, parent_state: RendererState | undefined): RendererState
 }
 
+// generic reducer type for all hooks
 interface WalkerReducer<RendererState, P extends BaseHookParams<RendererState>, RenderingOptions> {
 	(params: P, options: RenderingOptions): RendererState
 }
@@ -140,10 +143,10 @@ interface WalkerCallbacks<RendererState, RenderingOptions extends BaseRenderingO
 		RenderingOptions
 	>
 
-	//onꓽclassⵧbefore: WalkerReducer<RendererState, OnClassParams<RendererState>, RenderingOptions>
-	//onꓽclassⵧafter: WalkerReducer<RendererState, OnClassParams<RendererState>, RenderingOptions>
-
 	/* TODO review
+	onꓽclassⵧbefore: WalkerReducer<RendererState, OnClassParams<RendererState>, RenderingOptions>
+	onꓽclassⵧafter: WalkerReducer<RendererState, OnClassParams<RendererState>, RenderingOptions>
+
 	onꓽfilter: WalkerReducer<RendererState, OnFilterParams<RendererState>, RenderingOptions>
 	onꓽfilterꘌCapitalize: WalkerReducer<
 		RendererState,
@@ -165,7 +168,7 @@ interface WalkerCallbacks<RendererState, RenderingOptions extends BaseRenderingO
 	*/
 
 	// useful for dynamically generated refs
-	resolveꓽunknown_ref: UnknownSubNodeResolver<RendererState, RenderingOptions>
+	resolveꓽunknown_ref: UnknownRefResolver<RendererState, RenderingOptions>
 }
 
 /////////////////////////////////////////////////
@@ -174,25 +177,24 @@ function _getꓽcallbacksⵧdefault<
 	RendererState,
 	RenderingOptions extends BaseRenderingOptions = any,
 >(): WalkerCallbacks<RendererState, RenderingOptions> {
-	function nothing(): void {}
-	function identity({ xstate }: { xstate: RendererState }): RendererState {
+	function identityReducer({ xstate }: { xstate: RendererState }): RendererState {
 		return xstate
 	}
 
 	return {
 		createꓽstate: () => 'YOU NEED TO IMPLEMENT createꓽstate()!' as any, // tricky to get right
 
-		onꓽnodeⵧenter: identity,
-		onꓽnodeⵧexit: identity,
+		onꓽnodeⵧenter: identityReducer,
+		onꓽnodeⵧexit: identityReducer,
 
-		onꓽconcatenateⵧstr: identity,
-		onꓽconcatenateⵧsub_node: identity,
+		onꓽconcatenateⵧstr: identityReducer,
+		onꓽconcatenateⵧsub_node: identityReducer,
 
 		/*
-		onꓽclassⵧbefore: identity,
-		onꓽclassⵧafter: identity,
+		onꓽclassⵧbefore: identityReducer,
+		onꓽclassⵧafter: identityReducer,
 
-		onꓽfilter: identity,
+		onꓽfilter: identityReducer,
 		onꓽfilterꘌCapitalize: ({ state }: { state: RendererState }) => {
 			// TODO review many capitalize!
 			// generic processing that works for text, ansi, React...
@@ -208,7 +210,7 @@ function _getꓽcallbacksⵧdefault<
 			return state
 		},
 
-		onꓽtype: identity,
+		onꓽtype: identityReducer,
 		*/
 
 		resolveꓽunknown_ref(
@@ -237,10 +239,8 @@ function _walk_StringWithRefs<CustomWalkState, RenderingOptions extends BaseRend
 	bstate: BaseWalkState,
 	xstate: CustomWalkState,
 	$node: Immutable<CheckedNode>,
-	$content: string,
+	$content: string, // looks like "Hello ⎨⎨world⎬⎬, welcome to ⎨⎨place|filter1|filter2⎬⎬
 ) {
-	// $content looks like "Hello ⎨⎨world⎬⎬, welcome to ⎨⎨place|filter1|filter2⎬⎬
-
 	const splitⵧby_opening_brace = $content.split('⎨⎨')
 	const splitⵧby_closing_brace = $content.split('⎬⎬')
 
@@ -414,7 +414,6 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 	xstate: CustomWalkState,
 	$node: Immutable<CheckedNode>,
 ) {
-
 	if ($node.$heading) {
 		let $heading = promoteꓽto_node($node.$heading)
 		assert(
@@ -423,7 +422,7 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 		)
 		$heading = {
 			...$heading,
-			$type: '_h'
+			$type: '_h',
 		}
 		const xstateⵧsub = _walk(callbacks, options, bstate, xstate, $heading)
 		xstate = callbacks.onꓽconcatenateⵧsub_node(
@@ -438,9 +437,8 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 		)
 
 		// AND we're now a level deeper in a <h>
-		bstate.depthⵧh++
+		//bstate.depthⵧh++
 	}
-
 
 	const $content_array = getꓽcontent_nodes‿array($node)
 	$content_array.forEach(($row_node, row_index) => {
@@ -463,7 +461,7 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 	})
 
 	if ($node.$heading) {
-		bstate.depthⵧh--
+		//bstate.depthⵧh--
 	}
 
 	return xstate
@@ -494,6 +492,8 @@ function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 		depthⵧnodes: bstateⵧparent.depthⵧnodes + 1,
 		...(getꓽtype($node) === NodeType.ol && { depthⵧlist: bstateⵧparent.depthⵧlist + 1 }),
 		...(getꓽtype($node) === NodeType.ul && { depthⵧlist: bstateⵧparent.depthⵧlist + 1 }),
+
+		// XXX
 		...($heading !== null && { depthⵧh: bstateⵧparent.depthⵧh + 1 }),
 	}
 	let xstate = callbacks.onꓽnodeⵧenter({ $node, bstate, xstate: xstateⵧparent }, options)

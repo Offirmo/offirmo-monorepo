@@ -17,6 +17,7 @@ attacks -- business email compromise (BEC)
 attacks -- credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
 attacks -- direct blackmail = example of letter to individual https://www.reddit.com/r/cybersecurity_help/comments/1f7tbec/demand_for_bitcoin_payment_made_with_threats/
 attacks -- griefing
+attacks -- homographs = using unicode for visual deception https://x.com/sheeki03/status/2018382483465867444
 attacks -- phishing -- (many variants)
 attacks -- phishing https://www.azarask.in/blog/post/a-new-type-of-phishing-attack/
 attacks -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
