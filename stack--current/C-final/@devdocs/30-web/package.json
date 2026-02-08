@@ -1,0 +1,28 @@
+{
+	"name": "@devdocs/web",
+	"description": "Storybook replacement",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.html"
+	},
+	"source": "module/src/index.html",
+	"dependencies": {},
+	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
+		"clean": "npm-run-all _clean--pkg",
+		"_start:parcel:main": "parcel serve module/src/index.html --port 1981 --lazy --no-autoinstall",
+		"start": "npm-run-all clean --parallel _start:parcel:main"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/storypad": "*",
+		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4"
+	}
+}
