@@ -26,7 +26,7 @@ const POSSIBLY_UNRESURRECTED_OFFIRMO_MODULES = [
 export default new Resolver({
 	async resolve(params) {
 		if (DEBUG) {
-			console.warn(`[${LIB}] ACTIVATING 😓`) // sad bc this plugin is a hack
+			console.warn(`[${LIB}] ACTIVATING 😓`) // sad to reach this code bc this plugin is a hack
 			console.log(`[${LIB}] params=`, params)
 			const { specifier, specifierType, sourcePath, resolveFrom } = params.dependency
 			console.log(`[${LIB}] Dependency=`, { specifier, specifierType, sourcePath, resolveFrom })
@@ -63,7 +63,7 @@ export default new Resolver({
 		}
 
 		// no match, let the next resolver in the pipeline handle this dependency.
-		// Since this plugin is a "last resort",this will very likely cause a failure:
+		// Since this plugin is a "last resort", this will very likely cause a failure:
 
 		if (true || DEBUG) {
 			console.error('@offirmo-private/parcel-resolver ABOUT TO FAIL')
