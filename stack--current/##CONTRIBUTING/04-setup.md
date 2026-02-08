@@ -1,7 +1,7 @@
 
 ## Installation
 
-I use [macOS 15.2](update marker) but this should work on any unix-like system.
+I use [macOS 15.7](update marker) but this should work on any unix-like system.
 
 This set of command will build everything: (required as there are dependencies between modules)
 ```bash
