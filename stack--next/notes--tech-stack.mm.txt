@@ -37,6 +37,7 @@ JavaScript -- TypeScript -- zod, https://valibot.dev/guides/comparison/, typebox
 just https://just.systems/man/en/further-ramblings.html
 lang -- typescript -- bases https://github.com/tsconfig/bases
 lang -- typescript -- scaling issues https://engineering.usemotion.com/moving-off-of-typescript-e7bb1f3ad091
+libs -- charts -- https://www.chartjs.org/
 libs -- https://itty.dev/
 linter -- eslint
 linter -- https://biomejs.dev/

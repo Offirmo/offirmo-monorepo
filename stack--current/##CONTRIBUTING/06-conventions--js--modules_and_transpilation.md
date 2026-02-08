@@ -28,6 +28,40 @@ ES reasonably supported https://philipwalton.com/articles/the-state-of-es5-on-th
 new target env: workerd https://blog.cloudflare.com/more-npm-packages-on-cloudflare-workers-combining-polyfills-and-native-code/
 
 
+### update 2026-02-08
+Updated state:
+
+1. Node runtime version
+* oldest *active* LTS node = [24](https://nodejs.org/en/about/previous-releases)
+* SaaS providers: most recent node supported by…
+  * AWS lambda = [24](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
+  * 🆕 Vercel = [24](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions)
+* KILLER FEATURE = no longer transpile, auto-strip typescript
+  * introduced in node 23 but backported in node 22.18 ✅ https://github.com/nodejs/node/releases/tag/v22.18.0
+  * need TS >5.7 https://devblogs.microsoft.com/typescript/announcing-typescript-5-7/#path-rewriting-for-relative-paths
+
+⭆ 🆕 latest supported node = 24 (if updated, search for "engines" and "@types/node")
+
+2. ECMAScript version
+* latest ES = [ES2025](https://en.wikipedia.org/wiki/ECMAScript_version_history) + [latest spec](https://262.ecma-international.org/16.0/)
+* latest ES _reasonably_ supported by above node LTS (latest minor) = [ES2025](https://node.green/#ES2025)
+* latest ES supported by TypeScript as a target = [2025](https://www.typescriptlang.org/tsconfig#target) [code](https://github.com/microsoft/TypeScript/blob/main/src/server/protocol.ts#L3297)
+* 🆕 latest ES supported by TypeScript as a lib = [2025](https://github.com/microsoft/TypeScript/tree/main/src/lib)
+* latest ES reasonably supported by browsers or polyfills = ~[ES2025](https://compat-table.github.io/compat-table/es2016plus/)
+
+⭆ 🆕 latest convenient ES = 2025 (if changed, need search&replace in package.json, search for "es2024" and "update marker")
+
+3. ES module
+- we consider webpack outdated and are no longer taking into account its limitations
+- we consider the ecosystem advanced enough to move to full ESM https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
+
+⭆ latest convenient module = ES (module = 2022 in TypeScript)
+
+Also:
+- [x] TS supports importing .ts AND transpiles to .js
+- [x] TS has working support of [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
+
+
 ### update 2025-11-25
 Updated state:
 
