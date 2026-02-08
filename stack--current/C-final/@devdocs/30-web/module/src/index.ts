@@ -1,5 +1,7 @@
 console.log('Hello from index.ts')
 
+import './index.css'
+
 import assert from 'tiny-invariant'
 
 /////////////////////////////////////////////////

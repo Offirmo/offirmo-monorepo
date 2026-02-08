@@ -1,0 +1,23 @@
+@namespace svg url(http://www.w3.org/2000/svg);
+
+body {
+	padding: 0;
+	margin: 0;
+
+	width: 100vw;
+	max-width: 100%;
+
+	/* children layout */
+	display: flex;
+	align-items: stretch;
+
+	.sidebar {
+		height: 100dvh;
+		resize: horizontal;
+		overflow-y: scroll;
+	}
+	.content {
+		flex-grow: 9999;
+		overflow-y: scroll;
+	}
+}

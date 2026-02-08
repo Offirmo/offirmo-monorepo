@@ -23,5 +23,9 @@
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4"
-	}
+	},
+
+	"parcelIgnore": [
+		"documents/.+"
+	]
 }

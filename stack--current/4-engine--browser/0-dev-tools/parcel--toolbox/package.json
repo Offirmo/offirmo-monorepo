@@ -14,6 +14,7 @@
 	"dependencies": {
 		"@offirmo-private/parcel-config": "*",
 		"parcel": "^2",
+		"parcel-resolver-ignore": "^2",
 		"process": "^0",
 		"sharp": "^0.31"
 	},

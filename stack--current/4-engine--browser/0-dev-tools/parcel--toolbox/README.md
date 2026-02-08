@@ -14,6 +14,8 @@
 @parcel/resolver-default: ENOENT: no such file or directory, stat 
 '~/work/src/off/offirmo-monorepo/stack--current/3-engine--browser/0-dev-tools/parcel--toolbox/node_modules/sharp'
 ```
+* `"parcel-resolver-ignore": "^2",`
+  * https://github.com/parcel-bundler/parcel/issues/7064
 
 ## Tosort
 

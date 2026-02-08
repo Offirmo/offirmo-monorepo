@@ -96,6 +96,8 @@ ransom
 slavery
 societal -- & collapse = fall of a complex human society characterized by the loss of cultural identity and of social complexity as an adaptive system, the downfall of government, and the rise of violence https://en.wikipedia.org/wiki/Societal_collapse
 societal -- & longevity = https://en.wikipedia.org/wiki/Societal_collapse
+sovereignty
+sovereignty -- digital
 Sphere of influence
 state independence -- Banana republic
 state independence -- Buffer state
