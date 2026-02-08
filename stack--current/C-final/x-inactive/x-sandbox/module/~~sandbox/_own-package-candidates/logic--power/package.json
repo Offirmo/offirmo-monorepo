@@ -11,11 +11,11 @@
 	"source": "src/index.ts",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2024.esm/index.js"
+			"import": "./dist/src.es2025.esm/index.js"
 		}
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
+	"module": "dist/src.es2025.esm/index.js",
+	"typings": "dist/src.es2025.esm/index.d.ts",
 
 	"peerDependencies": {
 		"tslib": "^2"
@@ -37,7 +37,7 @@
 		"_build:prod": "monorepo-script--build-typescript-package",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
+		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2025.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod",
 		"cheatsheet": "node doc/cheatsheet.js"
 	},

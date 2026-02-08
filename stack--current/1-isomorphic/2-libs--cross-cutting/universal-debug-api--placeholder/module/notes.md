@@ -6,7 +6,7 @@ https://cdn.jsdelivr.net/gh/Offirmo/offirmo-monorepo@master/3-advanced--multi/un
 	"size-limit": [
 		{
 			"limit": "600b",
-			"path": "dist/src.es2024.esm/index.js"
+			"path": "dist/src.es2025.esm/index.js"
 		},
 		{
 			"limit": "1.3kb",

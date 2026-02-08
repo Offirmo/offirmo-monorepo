@@ -1,7 +1,7 @@
 	"size-limit": [
 		{
 			"limit": "100b",
-			"path": "dist/src.es2024.esm/index.js"
+			"path": "dist/src.es2025.esm/index.js"
 		}
 	],
 

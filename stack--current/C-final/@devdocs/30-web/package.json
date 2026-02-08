@@ -1,6 +1,5 @@
 {
 	"name": "@devdocs/web",
-	"description": "Storybook replacement",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",

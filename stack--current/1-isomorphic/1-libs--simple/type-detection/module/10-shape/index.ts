@@ -72,7 +72,7 @@ function assertꓽshape<T extends object>(reference: T, under_test: object, {
 	assert(isꓽobjectⵧkv(under_test), `hasꓽshape: under_test should be a k/v object!`)
 
 	const keysⵧref = new Set<string>(Object.keys(reference))
-	const keysⵧunder_test = new Set<string>(Object.keys(under_test)) as any // update marker remove when ES2025
+	const keysⵧunder_test = new Set<string>(Object.keys(under_test))
 
 	const keysⵧmatching = keysⵧunder_test.intersection(keysⵧref) as Set<keyof typeof reference>
 

@@ -21,7 +21,7 @@ function getꓽmessage(thrown: unknown): string {
 }
 
 function getꓽattribute<T>(thrown: unknown, key: PropertyKey, fallback: T): T
-function getꓽattribute<T = unknown>(thrown: unknown, key: PropertyKey): T | undefined
+function getꓽattribute<T = unknown>(thrown: unknown, key: PropertyKey, fallback?: never): T | undefined
 function getꓽattribute<T>(thrown: unknown, key: PropertyKey, fallback: T): T | undefined {
 	let candidate: T = (thrown as any)?.[key]
 	if (candidate != null) {
