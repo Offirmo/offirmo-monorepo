@@ -13,6 +13,7 @@
 
 	"dependencies": {
 		"@offirmo-private/parcel-config": "*",
+		"@parcel/service-worker": "^2",
 		"parcel": "^2",
 		"parcel-resolver-ignore": "^2",
 		"process": "^0",

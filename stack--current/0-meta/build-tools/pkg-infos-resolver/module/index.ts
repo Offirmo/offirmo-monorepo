@@ -19,11 +19,8 @@ interface PackageJson {
 // TODO move in another pkg and inject?
 const OVERRIDES: Record<string, {}> = {
 	'fraction.js': { version: '^4' }, // v5+ switched to BigInt, which is not json-compatible
-
-	// bit complicated. Ideally, we should use NODE_MAJOR_VERSION but not all versions have a matching @type/node...
-	'@types/node': { version: `^22` }, // clamp it to the closest, safest available version
+	'@types/node': { version: `^${NODE_MAJOR_VERSION}` }, // clamp it to the closest, safest available version
 }
-assert(NODE_MAJOR_VERSION === 22, `pkg-infos-resolver should be up to date with NODE_MAJOR_VERSION!`)
 
 // TODO why is type-fest misdetected?
 

@@ -16,6 +16,9 @@
 ```
 * `"parcel-resolver-ignore": "^2",`
   * https://github.com/parcel-bundler/parcel/issues/7064
+* `"@parcel/service-worker": "^2"`
+  * https://parceljs.org/languages/javascript/#service-workers
+
 
 ## Tosort
 

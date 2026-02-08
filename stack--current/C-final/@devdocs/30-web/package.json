@@ -10,10 +10,23 @@
 		".": "./module/src/index.html"
 	},
 	"source": "module/src/index.html",
-	"dependencies": {},
+	"dependencies": {
+		"rehype-sanitize": "^6",
+		"rehype-stringify": "^10",
+		"remark-frontmatter": "^5",
+		"remark-parse": "^11",
+		"remark-rehype": "^11",
+		"tiny-invariant": "^1",
+		"tslib": "^2",
+		"unified": "^11"
+	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
+		"check--ts": "echo \"@devdocs/web\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean check--ts--watch",
+		"_check": "run-s check--ts",
 		"_start:parcel:main": "parcel serve module/src/index.html --port 1981 --lazy --no-autoinstall",
 		"start": "npm-run-all clean --parallel _start:parcel:main"
 	},
@@ -22,9 +35,9 @@
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"npm-run-all": "^4"
+		"npm-run-all": "^4",
+		"typescript": "^5"
 	},
-
 	"parcelIgnore": [
 		"documents/.+"
 	]

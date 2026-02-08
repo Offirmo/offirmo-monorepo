@@ -8,8 +8,7 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts",
-		"./examples": "./module/src/__examples/_entrypoint.ts"
+		".": "./module/src/index.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
