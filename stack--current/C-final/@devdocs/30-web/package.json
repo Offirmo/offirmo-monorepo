@@ -11,6 +11,7 @@
 	},
 	"source": "module/src/index.html",
 	"dependencies": {
+		"@parcel/service-worker": "^2",
 		"rehype-sanitize": "^6",
 		"rehype-stringify": "^10",
 		"remark-frontmatter": "^5",
