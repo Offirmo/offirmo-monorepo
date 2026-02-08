@@ -41,7 +41,7 @@
 		"@offirmo/universal-debug-api-interface": "^1",
 		"@parcel/core": "^2",
 		"@parcel/types": "^2",
-		"@types/node": "^22",
+		"@types/node": "^24",
 		"meow": "^14",
 		"npm-run-all": "^4",
 		"typescript": "^5",

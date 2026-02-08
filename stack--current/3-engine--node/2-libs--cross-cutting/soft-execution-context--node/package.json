@@ -30,7 +30,7 @@
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo/practical-logger-node": "^0.3",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/node": "^22",
+		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

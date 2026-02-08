@@ -40,7 +40,7 @@
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/chroma-js": "^3",
-		"@types/node": "^22",
+		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

@@ -34,7 +34,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/node": "^22",
+		"@types/node": "^24",
 		"@types/pg": "^8",
 		"npm-run-all": "^4",
 		"typescript": "^5"
