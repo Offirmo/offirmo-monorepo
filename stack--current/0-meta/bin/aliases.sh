@@ -61,6 +61,7 @@ alias    mono32sn='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 3-e
 alias    mono32un='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 3-engine--node/;   cd 2-libs--cross-cutting/universal-debug-api--node/;         tabset --badge mono32un'
 
 alias   mono40cud='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/css--utils--diagnostics/;                     tabset --badge mono40cud'
+alias    mono40gw='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/generator--website-entry-points/;             tabset --badge mono40gw'
 alias    mono40pc='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/parcel--check/;                               tabset --badge mono40pc'
 alias  mono40ppri='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/parcel--plugin--resolver--improved/;          tabset --badge mono40ppri'
 alias     mono40s='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/storypad/;                                    tabset --badge mono40s'
@@ -84,7 +85,6 @@ alias    mono42re='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-e
 alias    mono42rt='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/rich-text-format--to-react/;        tabset --badge mono42rt'
 alias    mono42sb='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/soft-execution-context--browser/;   tabset --badge mono42sb'
 alias    mono42ub='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/universal-debug-api--browser/;      tabset --badge mono42ub'
-alias   mono4Xagw='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--website-entry-points/;      tabset --badge mono4Xagw'
 
 alias    mono7@sc='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd @oh-my-rpg/state--codes/;                                 tabset --badge mono7@sc'
 alias    mono7@se='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd @oh-my-rpg/state--engagement/;                            tabset --badge mono7@se'
