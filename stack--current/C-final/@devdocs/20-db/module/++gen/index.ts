@@ -9,15 +9,16 @@ import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const DATASOURCE_ROOT = path.resolve(__dirname, '../../../../../../../../../yvem/dev-docs')
+const DATASOURCE_ROOT = path.resolve(__dirname, '../../../../../../../../yvem/dev-docs')
 
 const { getꓽdata_sources } = await import(path.resolve(DATASOURCE_ROOT, 'module/++gen/index.ts'))
 
 const nodes: Array<Node> = []
 
-getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
+await Promise.all(getꓽdata_sources().map(({ url, path‿abs }): Promise<void> => {
 	switch (url) {
 		case 'https://github.com/bitcoin/bips.git': {
+			nodes.push({ id: 'BIPs', parent_id: 'Bitcoin', name: 'Improvement Proposals' })
 			const files = getꓽmarkup_files_from_datasource(path‿abs)
 
 			// TODO create nodes
@@ -25,14 +26,10 @@ getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
 		}
 
 		case 'https://github.com/ChainAgnostic/CAIPs.git': {
+			nodes.push({ id: 'CAIPs', parent_id: 'Chain Agnostic', name: 'Improvement Proposals' })
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'CAIPs'))
 
 			// TODO create nodes
-
-			files.forEach(async fe => {
-				const x = await ↆreadꓽfile(fe.path‿abs)
-				console.log(x)
-			})
 
 			break
 		}
@@ -41,17 +38,38 @@ getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'ensips'))
 
 			// TODO create nodes
+			nodes.push({ id: 'ENS', parent_id: 'Ethereum' })
+			nodes.push({ id: 'ENSIPs', parent_id: 'ENS', name: 'Improvement Proposals' })
+
 			break
 		}
 
 		case 'https://github.com/ethereum/EIPs.git': {
+			nodes.push({ id: 'EIPs', parent_id: 'Ethereum', name: 'Improvement Proposals' })
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'EIPS'))
 
-			// TODO create nodes
+			files.forEach(async fe => {
+				const x = await ↆreadꓽfile(fe.path‿abs)
+				const { dataⵧjson: { frontmatter } } = x
+				assert(!!frontmatter)
+
+				const { title, eip, type, category, status, created: created_at } = frontmatter
+
+				console.log(x)
+				debugger
+
+				nodes.push({
+					parent_id: 'EIPs',
+					id: 'EIPs',
+					name: frontmatter.title,
+				})
+			})
+
 			break
 		}
 
 		case 'https://github.com/infinex-xyz/proposals.git': {
+			nodes.push({ id: 'XIPs', parent_id: 'Infinex', name: 'Improvement Proposals' })
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'content/xips'))
 			// TODO other files?
 
@@ -60,6 +78,7 @@ getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
 		}
 
 		case 'https://github.com/satoshilabs/slips.git': {
+			nodes.push({ id: 'SLIPs', parent_id: 'Satoshi Labs', name: 'Improvement Proposals' })
 			const files = getꓽmarkup_files_from_datasource(path‿abs)
 
 			// TODO create nodes
@@ -67,6 +86,7 @@ getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
 		}
 
 		case 'https://github.com/solana-foundation/solana-improvement-documents.git': {
+			nodes.push({ id: 'SIPs', parent_id: 'Solana', name: 'Improvement Proposals' })
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'proposals'))
 
 			// TODO create nodes
@@ -74,6 +94,7 @@ getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
 		}
 
 		case 'https://github.com/Synthetixio/SIPs.git': {
+			nodes.push({ id: 'SIPs', parent_id: 'Synthetix', name: 'Improvement Proposals' })
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'content/sips'))
 			// TODO other files?
 
@@ -82,11 +103,13 @@ getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
 		}
 
 		case 'https://bitcoin.org/': {
+			//nodes.push()
 			// TODO 1D
 			break
 		}
 
 		case 'https://hyperliquid.gitbook.io/': {
+			nodes.push({ id: 'HIPs', parent_id: 'Hyperliquid', name: 'Improvement Proposals' })
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'hyperliquid-docs/hyperliquid-improvement-proposals-hips'))
 
 			// TODO create nodes
@@ -96,7 +119,7 @@ getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
 		default:
 			throw new Error(`Unknown submodule URL: ${url}, please add handling!`)
 	}
-})
+}))
 
 function getꓽmarkup_files_from_datasource(path‿abs: string) {
 	const filesⵧall = lsFilesSync(path‿abs)
@@ -121,7 +144,9 @@ function getꓽmarkup_files_from_datasource(path‿abs: string) {
 		`Suspiciously few markup files found in ${path‿abs}, please check!`,
 	)
 
-	console.log(feⵧrelevant.map(fe => fe.basename‿no_ᐧxᐧext).sort())
+	//console.log(feⵧrelevant.map(fe => fe.basename‿no_ᐧxᐧext).sort())
 
 	return feⵧrelevant
 }
+
+console.log(nodes)

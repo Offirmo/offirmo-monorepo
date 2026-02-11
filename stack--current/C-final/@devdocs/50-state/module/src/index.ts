@@ -1,4 +1,8 @@
 
-interface State {
+interface SharedState {
 	enabled...
+}
+
+interface TabState {
+	...
 }
