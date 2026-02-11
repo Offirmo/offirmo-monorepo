@@ -9,13 +9,13 @@ import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const SOURCE_ROOT = path.resolve(__dirname, '../../../../../../../../../yvem/dev-docs')
+const DATASOURCE_ROOT = path.resolve(__dirname, '../../../../../../../../../yvem/dev-docs')
 
-const { getꓽsubmodules } = await import(path.resolve(SOURCE_ROOT, 'module/++gen/get-submodules.ts'))
+const { getꓽdata_sources } = await import(path.resolve(DATASOURCE_ROOT, 'module/++gen/index.ts'))
 
 const nodes: Array<Node> = []
 
-getꓽsubmodules().forEach(async ({ url, path‿abs }) => {
+getꓽdata_sources().forEach(async ({ url, path‿abs }) => {
 	switch (url) {
 		case 'https://github.com/bitcoin/bips.git': {
 			const files = getꓽmarkup_files_from_datasource(path‿abs)
@@ -53,7 +53,7 @@ getꓽsubmodules().forEach(async ({ url, path‿abs }) => {
 
 		case 'https://github.com/infinex-xyz/proposals.git': {
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'content/xips'))
-			// TODO other files
+			// TODO other files?
 
 			// TODO create nodes
 			break
@@ -61,7 +61,6 @@ getꓽsubmodules().forEach(async ({ url, path‿abs }) => {
 
 		case 'https://github.com/satoshilabs/slips.git': {
 			const files = getꓽmarkup_files_from_datasource(path‿abs)
-			// TODO other files
 
 			// TODO create nodes
 			break
@@ -69,7 +68,6 @@ getꓽsubmodules().forEach(async ({ url, path‿abs }) => {
 
 		case 'https://github.com/solana-foundation/solana-improvement-documents.git': {
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'proposals'))
-			// TODO other files
 
 			// TODO create nodes
 			break
@@ -77,7 +75,19 @@ getꓽsubmodules().forEach(async ({ url, path‿abs }) => {
 
 		case 'https://github.com/Synthetixio/SIPs.git': {
 			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'content/sips'))
-			// TODO other files
+			// TODO other files?
+
+			// TODO create nodes
+			break
+		}
+
+		case 'https://bitcoin.org/': {
+			// TODO 1D
+			break
+		}
+
+		case 'https://hyperliquid.gitbook.io/': {
+			const files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'hyperliquid-docs/hyperliquid-improvement-proposals-hips'))
 
 			// TODO create nodes
 			break
@@ -91,7 +101,7 @@ getꓽsubmodules().forEach(async ({ url, path‿abs }) => {
 function getꓽmarkup_files_from_datasource(path‿abs: string) {
 	const filesⵧall = lsFilesSync(path‿abs)
 
-	const feⵧall = filesⵧall.map(absp => createꓽfile_entry(absp, SOURCE_ROOT))
+	const feⵧall = filesⵧall.map(absp => createꓽfile_entry(absp, DATASOURCE_ROOT))
 
 	const feⵧmarkup = feⵧall.filter(
 		fe =>
