@@ -35,6 +35,7 @@
 2025-12 debate on Bitcoin BIP about LLM contrib = Open source projects are now expecting "social capital" = may refuse to review work from someone unknown until they prove skin in the game/motivation https://github.com/bitcoin/bips/pull/2051/files#diff-0fe6969eba0422ddb0e7823d13092c03aa90122e0c5e66786c5d8b20f54719e6L42
 2026-01 no more Stask Overflow questions https://data.stackexchange.com/stackoverflow/query/1926661#graph https://news.ycombinator.com/item?id=46482345
 2026-01-20 "the era of humans writing code is over. Disturbing for those of us who identify as SWEs, but no less true." https://x.com/rough__sea/status/2013280952370573666
+2026-01-31 most massive layoffs for 25 years, "job hugging" https://x.com/BoringBiz_/status/2019414912552878526?
 2026-02 Claudeception https://github.com/blader/Claudeception/commits/main/
 2026-02 moltbook social for AI
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
@@ -42,6 +43,7 @@
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
 [ ] https://openai.com/news/
+[ ] https://red.anthropic.com/
 [ ] https://simonwillison.net/
 [ ] https://www.anthropic.com/news
 [ ] https://www.perspectiveapi.com/
@@ -92,6 +94,11 @@ ASL-2 = At this stage, larger, more complex AI models are introduced, requiring 
 ASL-3 = This level signifies a significantly higher risk as AI models become increasingly powerful. More sophisticated safety and security measures are essential because the technology is now capable of complex problem-solving and may pose unintended risks if misused or uncontrolled.
 ASL-4+ = (Speculative) The highest level, ASL-4, is where AI technology enters speculative, highly autonomous territory. Models at this level may start exhibiting autonomous behaviors, making independent decisions, and even potentially circumventing certain safety checks—creating complex and unprecedented risks.
 assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
+attacks -- jailbreaks -- Constitutional Classifiers = safeguards that monitor model inputs and outputs to detect and block potentially harmful content. The novel aspect of the approach was that the classifiers were trained on synthetic data generated from a "constitution,” which included natural language rules specifying what’s allowed and what isn’t. For example, Claude should help with college chemistry homework, but not assist in the synthesis of Schedule 1 chemicals. https://www.anthropic.com/research/next-generation-constitutional-classifiers https://www.anthropic.com/research/constitutional-classifiers
+attacks -- jailbreaks -- universal = consistent attack strategies that work across many queries https://www.anthropic.com/research/next-generation-constitutional-classifiers
+attacks -- jailbreaks = techniques that can circumvent safety guardrails and elicit harmful information https://www.anthropic.com/research/next-generation-constitutional-classifiers
+attacks -- Output obfuscation & = prompt models to disguise their outputs in ways that appear harmless if a classifier is only looking at a model’s output. For example, during adversarial testing, attackers successfully instructed models to substitute possibly dangerous chemical names with innocuous alternatives (like referring to reagents as "food flavorings") or used metaphors and riddles in which harmful concepts are mapped onto anodyne concepts.
+attacks -- Reconstruction & = break up harmful information into segments that appear benign, then reassemble them. For example, an attacker might embed a harmful query as a series of functions scattered throughout a codebase, then instruct the model to extract and respond to the hidden message
 attention
 attention -- flash attention = ???
 beliefs = judgments a model appears to be forming about a user during a conversation, ex. age, wealth, education level, gender https://slashdot.org/story/25/05/24/1946203/people-should-know-about-the-beliefs-llms-form-about-them-while-conversing
@@ -121,6 +128,7 @@ Cinderella “Glass Slipper” Effect = easy early retention "When the Shoe Fits
 citation accuracy
 coded gaze = Automated systems are not inherently neutral. They reflect the priorities, preferences, and prejudices - the coded gaze - of those who have the power to mold artificial intelligence.
 common sense https://commonsense.run/
+compaction = automatic summarizing of older context when approaching the context window limit https://platform.claude.com/docs/en/build-with-claude/compaction
 constitution = a list of principles to which the model should adhere https://www.anthropic.com/research/constitutional-classifiers
 constitutional AI = AI training themselves from a set of human-given rules, self-critique and revision https://arxiv.org/abs/2212.08073
 constitutional classifiers = method that defends AI models against universal jailbreaks https://www.anthropic.com/research/constitutional-classifiers
@@ -132,6 +140,7 @@ ControlNet = a type of model for controlling image diffusion models by condition
 crawlers -- robots.txt / legal https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
 custom instructions https://www.reddit.com/r/ChatGPTPro/comments/15ffpx3/reddit_what_are_your_best_custom_instructions_for/
+dangerous user queries = related to the production of chemical, biological, radiological, or nuclear weapons (CBRN) https://www.anthropic.com/research/next-generation-constitutional-classifiers
 dataset https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
 day 2 = The challenge of revising, maintaining, further developing, and deploying an AI-generated app https://manual.bubble.io/beta-features/bubbles-ai-app-generator#the-day-1-and-day-2-dilemma-in-ai-driven-app-development
 deep reinforcement learning (deep RL) course: https://spinningup.openai.com/
@@ -173,6 +182,7 @@ hallucinations -- leaderboard https://github.com/vectara/hallucination-leaderboa
 helpful, harmless and honest
 HHH helpful, honest, and harmless
 Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.pinecone.io/learn/series/faiss/hnsw/
+https://agentation.dev/
 https://nonbot.org/
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
@@ -282,6 +292,7 @@ rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-t
 ReAct flow
 reasoning trace = see ITG
 reasoning trace https://arstechnica.com/information-technology/2024/09/openai-threatens-bans-for-probing-new-ai-models-reasoning-process/
+refusal = refuse to answer perfectly benign questions, increasing frustration for the user. Due to defense against CBRN / jailbreaks
 regulation -- European AI act https://www.reddit.com/r/ArtificialInteligence/comments/1fqmcds/i_worked_on_the_eus_artificial_intelligence_act/
 reinforcement learning -- from human feedback (RLHF) https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback&ved=2ahUKEwiV_o6h9e6LAxUJXWwGHZpzE74QFnoECBAQAQ&usg=AOvVaw3cKKpEYiTP2H21l8DbR9BO
 reinforcement learning https://en.wikipedia.org/wiki/Reinforcement_learning

@@ -15,19 +15,32 @@ function inferꓽformat_from_path(file_path: AnyFilePath): StructuredFileFormat 
 	switch (ᐧext‿lc) {
 		case '.json':
 			return 'json'
+
 		case '.jsonc':
 			return 'jsonc'
+
 		case '.json5':
 			return 'json5'
+
 		case '.js':
 		case '.cjs':
 		case '.mjs':
 		case '.ts':
 		case '.mts':
-			return 'import'
+			return 'default-export'
+
 		case '.yml':
 		case '.yaml':
 			return 'yaml'
+
+		case '.md':
+		case '.markdown':
+		case '.mdoc':
+			return 'markupⵧmarkdown'
+
+		case '.mediawiki':
+			return 'markupⵧmediawiki'
+
 		default:
 			break
 	}
@@ -51,13 +64,6 @@ function inferꓽformat_from_path(file_path: AnyFilePath): StructuredFileFormat 
 
 	return undefined
 }
-/*
-function inferꓽformat_from_content_shape(
-	content: Immutable<JSONObject>,
-): StructuredFileFormat | undefined {
-	return undefined
-}
-*/
 
 function _getꓽjson__type(a: Immutable<JSON>): 'object' | 'array' | 'primitive' | 'undef' {
 	if (a === undefined) {

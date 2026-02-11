@@ -22,11 +22,7 @@ import type {
 	DependencyType,
 } from './types'
 
-import {
-	type FileEntry,
-	createꓽfile_entry,
-	updateꓽfile_entry,
-} from './file-entry/index.ts'
+import { type FileEntry, createꓽfile_entry, updateꓽfile_entry } from '@offirmo-private/file-entry'
 
 import {
 	type PureModuleDetails,

@@ -1,6 +1,7 @@
 +++ important history https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
 1969 ARPANET, forerunner of the Internet, starts operating
 1971 email
+1973 BASIC games https://blog.codinghorror.com/updating-the-single-most-influential-book-of-the-basic-era/
 1973 FTP
 2010's tech bubble, a period where mediocre people could raise ludicrous money amid a venture capitalist echo chamber fueled by low-interest rates https://www.sandofsky.com/lambda-school/
 2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
@@ -100,8 +101,10 @@ architectural decision record (ADR) = captures a single AD and its rationale; ca
 architectural styles = independent of any specific implementation
 architecturally significant requirement (ASR) = a requirement that has a measurable effect on the architecture and quality of a software and/or hardware system
 architecture -- services https://en.wikipedia.org/wiki/Service-oriented_architecture
+arithmetic -- arbitrary-precision & = aka. bignum https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic
 arithmetic -- decimal
-arithmetic -- floating point math] https://0.30000000000000004.com
+arithmetic -- floating point -- "What Every Computer Scientist Should Know About Floating-Point Arithmetic" https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
+arithmetic -- floating point -- "Your language isn’t broken, it’s doing floating point math" https://0.30000000000000004.com
 arithmetic -- integers encoding
 arithmetic -- precision
 arithmetic -- rounding
@@ -171,6 +174,7 @@ changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 CHOP "chat-oriented programming"
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
+CLI -- guidelines https://clig.dev/
 client/server -- multi-tier architecture
 clippy https://www.mentalfloss.com/article/504767/tragic-life-clippy-worlds-most-hated-virtual-assistant
 close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
@@ -306,6 +310,7 @@ data format -- serialization -- persistence
 data format -- serialization -- stability! ex. sorting by keys in k/v, important for immutability! (ex. stable hashing, caching, diff...)
 data format -- serialization -- wire format
 data format -- serialization -- wire format -- https://capnproto.org/ = serialization only! (better than protobuf)
+data format -- serialization -- wire format -- protobuffers BAD https://reasonablypolymorphic.com/blog/protos-are-wrong/index.html
 data format -- serialization = converting a complex data structure/object into a format (like a stream of bytes or text) that can be easily stored (in a file/database) or transmitted (over a network) and later reconstructed back into its original form (deserialization) https://en.wikipedia.org/wiki/Serialization
 data format -- TODO find TS stuff
 data residency -- storing = storing user data in the same jurisdiction as the customer’s residence.

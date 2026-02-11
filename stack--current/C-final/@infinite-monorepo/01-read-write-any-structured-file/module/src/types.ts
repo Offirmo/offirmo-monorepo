@@ -1,16 +1,20 @@
 import type { JSONObject } from '@offirmo-private/ts-types'
 
 export const STRUCTURED_FILE_FORMATS = [
-	'import', // js/ts exporting a default JSONObject
+	'default-export', // js/ts exporting a default JSONObject
 	'json5', // https://json5.org/
 	'jsonc', // https://jsonc.org/
 	'jsoncⵧwith_trailing_comma', // common extension
 	'json', // https://www.json.org
 	'yaml',
-	// csv
+	'markupⵧmarkdown', // with optional frontmatter
+	'markupⵧmediawiki', // with optional frontmatter
+	// csv TODO 1D
+	// ini TODO 1D
 	//| 'kv-simple' // multiple lines `k v` ex. .yarnrc
 	'list', // multiple lines ex. .gitignore WILL STRIP COMMENTS
 	'single-value', // single line, ex .nvmrc
+
 	// last resort
 	'text', // no known or supported structure, just text with EOL and trailing line
 	'unknown',
@@ -18,18 +22,32 @@ export const STRUCTURED_FILE_FORMATS = [
 export type StructuredFileFormat = (typeof STRUCTURED_FILE_FORMATS)[number]
 
 export const STRUCTURED_FILE_FORMATS__PARSERS = [
-	'import', // js/ts exporting a default JSONObject
-	'json5', // can handle any json flavour
+	'default-export', // js/ts exporting a default JSONObject
+	'json5', // can handle any JSON flavor
 	'yaml',
-	'list', // multiple lines ex. .gitignore WILL STRIP COMMENTS
+	'markupⵧmarkdown',
+	'markupⵧmediawiki',
+	'list', // multiple lines ex. .gitignore ⚠️ WILL STRIP COMMENTS (TODO improve)
 	'single-value', // single line, ex .nvmrc
 	'text', // no structure, just text
-]
+] as const
 export type StructuredFileFormatⳇParser = (typeof STRUCTURED_FILE_FORMATS__PARSERS)[number]
 
-export type ContentⳇTsImport = JSONObject
+export interface StructuredContent {
+	dataⵧraw: string
+	dataⵧjson: JSONObject
+	dataⵧx?: never // TODO advanced data format saving comments, position of elements, etc.
+
+	// TODO schema
+
+	_format: StructuredFileFormat
+	_parser: StructuredFileFormatⳇParser
+}
+
+export type ContentⳇDefaultExport = JSONObject
 export type ContentⳇJson5 = JSONObject
 export type ContentⳇYaml = JSONObject
 export type ContentⳇList = { entries: string[] }
 export type ContentⳇSingleValue = { value: string }
 export type ContentⳇText = { text: string }
+export type ContentⳇMarkup = { text: string; frontmatter?: JSONObject }

@@ -27,6 +27,7 @@ GHA https://github.com/step-security
 git -- git crypt https://github.com/AGWA/git-crypt
 https://github.com/gvergnaud/ts-pattern
 https://tanstack.com/
+https://www.totaltypescript.com/how-to-create-an-npm-package
 IaC -- pulumi https://www.pulumi.com/
 IaC -- terraform / opentofu = more established but strange syntax
 IaC -- terraform https://github.com/cloudflare/terraform-provider-cloudflare/issues/5573

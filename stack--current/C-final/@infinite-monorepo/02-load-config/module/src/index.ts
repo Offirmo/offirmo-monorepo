@@ -2,7 +2,7 @@ import * as process from 'node:process'
 import * as path from 'node:path'
 import { homedir } from 'node:os'
 import {
-	ↆloadꓽfileⵧimport,
+	ↆloadꓽfileⵧdefault_export,
 	ↆreadꓽfile,
 } from '@infinite-monorepo/read-write-any-structured-file/read'
 
@@ -25,7 +25,7 @@ interface Result {
 	exact_file_path‿abs: AbsoluteFilePath | null // can be null if no file
 	hasꓽpackageᐧjson: boolean // is there a package.json in the same folder?
 	boundary?: // is that a boundary?
-	| 'git' // parent_folder_path‿abs is a git repo root
+		| 'git' // parent_folder_path‿abs is a git repo root
 		// NOTE could there be more than one? (if git submodules)
 		| 'home' // parent_folder_path‿abs is a user folder (home, ~)
 		| 'fs' // parent_folder_path‿abs is a fs root
@@ -95,7 +95,7 @@ export async function loadꓽconfigⵧchain(
 			if (child_dirs_pathes‿rel.includes(radix)) {
 				// to mts / cts = ESM is standard now, module is implicit
 				const candidate_file_path‿abs = path.join(current_path‿abs, radix, 'index.ts')
-				const ೱdata = ↆloadꓽfileⵧimport(candidate_file_path‿abs)
+				const ೱdata = ↆloadꓽfileⵧdefault_export(candidate_file_path‿abs)
 				const result: Result = {
 					data: { loading: '…' },
 					parent_folder_path‿abs: current_path‿abs,

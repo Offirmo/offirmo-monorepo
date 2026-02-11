@@ -2,6 +2,9 @@
 TODO
 - sign the trustless manifesto https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
 - create an ERC-20 token https://trezor.io/learn/supported-assets/ethereum-layer-2-EVM/what-are-erc20-tokens
+  - https://github.com/Uniswap/uerc20-factory
+  - https://eips.ethereum.org/EIPS/eip-2612
+  - bridge-able
 - create NFTs
 - test own gateway? https://developers.cloudflare.com/web3/ethereum-gateway/
 - register an ENS
@@ -15,6 +18,7 @@ TODO
 
 
 
+
 ex. of seed phrases
 
 https://www.iancoleman.net/ethereum-bip39/
@@ -22,7 +26,12 @@ https://www.iancoleman.net/ethereum-bip39/
 
 
 
-
+token bridging
+https://github.com/ethereum-optimism/superchainerc20-starter
+https://ethereum-magicians.org/t/erc-7802-crosschain-token-interface/21508
+https://eips.ethereum.org/EIPS/eip-7802
+https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/interfaces/L2/IERC7802.sol
+https://www.zeeve.io/blog/superchain-erc20-simplifying-asset-interoperability-in-layer2-rollups/
 
 
 Libs:

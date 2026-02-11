@@ -1,5 +1,5 @@
 {
-	"name": "@devdocs/web",
+	"name": "@devdocs/web-app",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -24,7 +24,7 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@devdocs/web\" && tsc --noEmit",
+		"check--ts": "echo \"@devdocs/web-app\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s check--ts",
@@ -38,8 +38,5 @@
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"typescript": "^5"
-	},
-	"parcelIgnore": [
-		"documents/.+"
-	]
+	}
 }

@@ -1,0 +1,13 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"pretty": true
+	},
+	"include": [
+		"../../typescript-custom-typings/*.d.ts",
+		"module/**/*.ts"
+	],
+	"exclude": [
+		"**/~~*/**/*"
+	]
+}

@@ -1,9 +1,6 @@
 import * as path from 'node:path'
 
-import assert from 'tiny-invariant'
-
-import type { AbsolutePath } from '../types.js'
-import type { FileEntry } from './types.js'
+import type { AbsolutePath, FileEntry } from './types.ts'
 
 /////////////////////////////////////////////////
 
@@ -36,6 +33,7 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 	return {
 		path‿abs,
 		path‿rel,
+		root‿abspath,
 		basename,
 		ext,
 		extⵧsub,
@@ -47,8 +45,13 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 	}
 }
 
-// in-place, mutate!
-function updateꓽfile_entry(entry: FileEntry, new_path‿abs: AbsolutePath, root‿abspath: AbsolutePath): void {
+// in-place mutation (no return)
+// for rare uses where we want to keep the reference
+function updateꓽfile_entry(
+	entry: FileEntry,
+	new_path‿abs: AbsolutePath,
+	root‿abspath: AbsolutePath = entry.root‿abspath,
+): void {
 	const new_entry = createꓽfile_entry(new_path‿abs, root‿abspath)
 	Object.keys(entry).forEach(k => {
 		// @ts-ignore
@@ -58,9 +61,4 @@ function updateꓽfile_entry(entry: FileEntry, new_path‿abs: AbsolutePath, roo
 
 /////////////////////////////////////////////////
 
-export {
-	type FileEntry,
-
-	createꓽfile_entry,
-	updateꓽfile_entry,
-}
+export { type FileEntry, createꓽfile_entry, updateꓽfile_entry }

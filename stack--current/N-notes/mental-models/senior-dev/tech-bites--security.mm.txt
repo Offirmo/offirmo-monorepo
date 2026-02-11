@@ -1,4 +1,5 @@
 2014-04-07 heart bleed = serious vulnerability in the popular OpenSSL cryptographic software library. This weakness allows stealing the information protected https://heartbleed.com/
+2015-09 XcodeGhost https://en.wikipedia.org/wiki/XcodeGhost
 2025-11-24 Shai Hulud 2 https://helixguard.ai/blog/malicious-sha1hulud-2025-11-24
 2025-11-29 React2Shell https://react2shell.com/
 [ ] +++ http://zesty.ca/capmyths/usenix.pdf
@@ -55,7 +56,7 @@ DDoS -- interstitial challenge = https://developers.cloudflare.com/cloudflare-ch
 DDoS -- report http://www.ddosreport.com
 DEF CON = one of the oldest continuously running hacker conventions around, and also one of the largest https://defcon.org/
 defence -- Primary / Secondary / Tertiary
-defense -- in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
+defense -- in depth = https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 denial of wallet = like DoS but service down due to no more credits https://www.kasada.io/use-cases/genai-abuse-73-percent-have-experienced-genai-security-incidents/
 device posture
 digital security https://securitylab.amnesty.org/digital-resources/
@@ -132,6 +133,7 @@ privacy pass -- issuance protocol https://www.rfc-editor.org/rfc/rfc9578.html
 privacy pass -- token
 privacy pass = ???
 private relay -- iCloud = "ensures that no single party handling user data has complete information on both who the user is and what they are trying to access." = Internet privacy service from Apple that allows users with iOS 15, iPadOS 15, or macOS Monterey on (...) their devices and an iCloud+ subscription, to connect to the Internet and browse with Safari in a more secure and private way  https://blog.cloudflare.com/icloud-private-relay/
+production-grade cryptography
 pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
 randomness -- nothing up my sleeve https://en.wikipedia.org/wiki/Nothing-up-my-sleeve_number
 risks -- software -- bad defaults -- firebase https://env.fail/posts/firewreck-1

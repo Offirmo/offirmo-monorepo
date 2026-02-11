@@ -7,9 +7,7 @@ import type {
 	DependencyDetails,
 } from '../types.ts'
 
-import type {
-	FileEntry,
-} from '../file-entry/types.ts'
+import type { FileEntry } from '@offirmo-private/file-entry'
 
 /////////////////////////////////////////////////
 

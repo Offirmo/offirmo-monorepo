@@ -94,7 +94,7 @@ assets -- top = ranking website https://www.coingecko.com/
 AT Protocol = an open, decentralized network for building social applications https://atproto.com/
 attacks -- 51% = where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
 attacks -- 51% double spend, happens mainly on smaller chains ex. https://en.wikipedia.org/wiki/Ethereum_Classic#51%_double_spend_attacks
-attacks -- 7702 delegation to drainer https://x.com/wiimee/status/1985074040781070716?s=46&t=Vf4wSrK5GroKAVnaytpTJw
+attacks -- 7702 delegation to drainer https://x.com/wiimee/status/1985074040781070716
 attacks -- address poisoning = https://paragraph.com/@x-explore/address-poisoning-attack-a-continuing-threat https://x.com/specteranalyst/status/2002075668570309054 https://x.com/tayvano_/status/1605801004141727745
 attacks -- armed heist = extorting crypto ex. https://x.com/beausecurity/status/1972333331049312437
 attacks -- donation https://www.cyfrin.io/blog/solodit-checklist-explained-3-donation-attacks https://medium.com/@ankitacode11/part-3-protecting-smart-contracts-from-donation-attacks-a-guide-to-secure-eth-handling-b05561228ab2
@@ -158,13 +158,13 @@ blockchains -- arrow of time = the way of solving double spending ~forcing the "
 blockchains -- sizes = ex. Ethereum Mainnet 2025 2300Gb https://chainstats.org/
 BNB Chain
 boosters = ppl who try to pump a tech/coin
-bridging
+bridging https://specs.optimism.io/interop/token-bridging.html
+builder codes ex. https://x.com/DeriveXYZ/status/2020993875482149111
 Cairo paper https://eprint.iacr.org/2021/1063.pdf
 cardano https://cardano.stackexchange.com/
-cas account ?? https://x.com/phantom/status/1991271831458963629?s=46
 case study -- privacy https://newsletter.systemdesign.one/p/how-do-airtags-work
 CBDC "Central bank digital currencies" = cryptonite for crypto? (centralized) https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
-CEX-like -- beware, ex. storing private keys in DB https://x.com/retardmode/status/1991067539539902942?s=46
+CEX-like -- beware, ex. storing private keys in DB https://x.com/retardmode/status/1991067539539902942
 chain -- native currency = the native currency of a chain, ex. ETH for Ethereum, SOL for Solana
 chains -- &"that matters" = chain that matters. BSC, HyperEVM, Solana, Base, ETH L1, etc. (2025) https://x.com/dwr/status/1976029779783790680
 chains -- EVM-compatible
@@ -332,6 +332,7 @@ games = always end up being a casino?
 gaming https://www.immutable.com/
 gas
 gas -- market? https://blog.gas.network/
+gas account ?? https://x.com/phantom/status/1991271831458963629
 gas-optimized = a contract using less gas (how?)
 gelato
 gossip
@@ -518,6 +519,7 @@ ponzi https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25794
 portfolio -- viewer https://1inch.com/portfolio/overview/address/0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
 predictions https://polymarket.com/
 price oracles = pricing of some resource
+programmable recovery = ??
 proof-of -- 1999 proof of work (PoW) = keep chain secure by needing 51% of the network's computing power to defraud the chain. This would require such huge investments in equipment and energy; you're likely to spend more than you'd gain. https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/ https://en.wikipedia.org/wiki/Proof_of_work
 proof-of -- 2011 proof of stake (PoS) = keep chain secure by needing to destroy tokens to control the chain + rewards incentives https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/
 proof-of -- 2017 proof of authority (PoA) = modified version of proof-of-stake (PoS) that is a reputation-based consensus algorithm instead https://ethereum.org/en/developers/docs/consensus-mechanisms/poa/
@@ -631,11 +633,16 @@ talent -- network https://careers.near.org/talent-network
 talent pools -- New-York = #1 many finance turned to crypto
 talent pools -- San Francisco = #3, focused on AI / robotics
 techno-optimism
+terminology -- chain -- & runtime = All chains operate on a runtime that dictates the functionality and features of the chain, it’s smart contract support, etc. Some chains have a common chain runtime, notably those in the EVM ecosystem: Ethereum itself, Avalanche, Polygon... Ex. of runtimes: evm, svm, nearIntents
+terminology -- chain -- asset = an asset on a specific chain, ex. ETH on Ethereum, USDC on Solana, etc.
+terminology -- chain = a chain/blockchain. Ex. BitCoin, Ethereum, Arbitrum, Base, Optimism, Polygon, Solana... Testnets are considered different chain. aka. “networks” (EVM) or “clusters“ (Solana)
+terminology -- token = not recommended, unclear. Prefer "asset"
 TG = token generation?
 TGE / ICO / liquidity incentives -- 10 commandments for success https://caladan.xyz/wp-content/uploads/2025/10/Caladan_Mercenary_Report.pdf
 thesis -- Solana = ??
 thesis -- superapp = Infinex https://mirror.xyz/kain.eth/HbaT4MYs6uZXVymRJDRSyZpCFVMAoyeBSv7wVrAQe2o  https://paragraph.com/@kain/the-superapp-thesis
 thesis = some sort of hypothesis a project believes in / is based on
+threshold signing systems
 token gating -- examples for brands https://www.arianee.com/post/what-is-token-gating
 token gating = exclusive content to token (F/NF) holders https://www.coinbase.com/en-au/learn/crypto-basics/what-is-token-gating-and-what-are-the-benefits-of-doing-it
 token sale -- ex. 2025 https://sale.megaeth.com/
@@ -652,6 +659,7 @@ tokens -- a16z categories -- Security tokens
 tokens -- a16z categories https://a16zcrypto.com/posts/article/defining-tokens/
 tokens -- BAT "Basic Attention Token" = Brave Browser's own cryptocurrency that users can earn by viewing advertisements shown by Brave
 tokens -- Ether (ETH) = the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet
+tokens -- net dolar https://netdollar.cloudflare.com/
 tokens -- standards
 tokens -- tainted = can be differentiated = less fungible
 tokens -- tokenomics

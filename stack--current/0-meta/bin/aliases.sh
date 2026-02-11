@@ -5,6 +5,7 @@ export OFFIRMO_MONOREPO_ROOT=~/work/src/off/offirmo-monorepo/stack--current/;
 
 
 alias     mono0bb='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/better-console-groups/;                       tabset --badge mono0bb'
+alias     mono0bf='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/file-entry/;                                  tabset --badge mono0bf'
 alias    mono0bfl='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/fs--ls/;                                      tabset --badge mono0bfl'
 alias    mono0bmd='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/monorepo--decisions/;                         tabset --badge mono0bmd'
 alias     mono0bm='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/monorepo/;                                    tabset --badge mono0bm'
@@ -95,9 +96,11 @@ alias     monoBdg='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd B-b
 alias     monoBoc='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd B-backend/;        cd offirmo-api--client/;                                     tabset --badge monoBoc'
 alias     monoBoi='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd B-backend/;        cd offirmo-api--interface/;                                  tabset --badge monoBoi'
 
-alias     monoC@1='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/10-aggregator/;                                  tabset --badge monoC@1'
-alias     monoC@2='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/20-docfind/;                                     tabset --badge monoC@2'
-alias     monoC@3='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/30-web/;                                         tabset --badge monoC@3'
+alias     monoC@1='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/10-types/;                                       tabset --badge monoC@1'
+alias     monoC@2='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/20-db/;                                          tabset --badge monoC@2'
+alias     monoC@3='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/30-search/;                                      tabset --badge monoC@3'
+alias     monoC@5='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/50-state/;                                       tabset --badge monoC@5'
+alias     monoC@9='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/90-web-app/;                                     tabset --badge monoC@9'
 alias     monoC@0='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/01-read-write-any-structured-file/;    tabset --badge monoC@0'
 alias    monoC@02='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/02-load-config/;                       tabset --badge monoC@02'
 alias    monoC@12='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/11-types/;                             tabset --badge monoC@12'
