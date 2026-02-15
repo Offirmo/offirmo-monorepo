@@ -77,7 +77,7 @@ function getꓽcompareFnⵧby_string_key<T>(key: string | ((val: T) => string), 
 	function to_index(val: T): number {
 		const key = get_index_key(val)
 		const index = ordered_values.indexOf(key)
-		if(typeof index !== 'number' || isNaN(index)) throw new Error('getꓽcompareFnⵧby_string_key(): value was not found in the ordered values list!')
+		if(index === -1) throw new Error('getꓽcompareFnⵧby_string_key(): value was not found in the ordered values list!')
 		return index
 	}
 

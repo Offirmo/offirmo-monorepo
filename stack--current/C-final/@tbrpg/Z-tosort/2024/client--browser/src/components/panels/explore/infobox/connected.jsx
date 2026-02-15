@@ -6,7 +6,7 @@ import get_game_instance from '../../../../services/game-instance-browser'
 import { AppStateContext } from '../../../../context'
 
 import InfoboxView from './component'
-import ErrorBoundary from "@offirmo-private/react-error-boundary"
+import ErrorBoundary from '@offirmo-private/react--error-boundary'
 
 
 

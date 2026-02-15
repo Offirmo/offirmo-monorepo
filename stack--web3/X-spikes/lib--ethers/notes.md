@@ -16,3 +16,7 @@ const contract = new ethers.Contract('0x9ba021b0a9b958b5e75ce9f6dff97c7ee52cb3e6
   const ratio = Number(output) / 1e18;
   const assetPrice = (sharePrice: number) => sharePrice * ratio;
 })();
+
+
+
+import { ethers } from 'ethers';

@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { elapsed_time_ms } from '@offirmo-private/async-utils'
 import schedule_on_next_repaint from 'raf-schd'
 
-import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import ErrorBoundary from '@offirmo-private/react--error-boundary'
 import { create as create_chat } from '@offirmo-private/view-chat'
 
 import { AutoScrollDown } from '../auto-scroll-down'

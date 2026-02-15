@@ -12,7 +12,7 @@ import { BUILD_DATE } from '../../../build.json'
 import NetlifyWidget from '../../misc/netlify'
 import { Chat } from '../../utils/chat-interface'
 import rich_text_to_react from '../../../services/rich-text-to-react'
-import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import ErrorBoundary from '@offirmo-private/react--error-boundary'
 import get_game_instance from '../../../services/game-instance-browser'
 
 import '../index.css'

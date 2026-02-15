@@ -6,6 +6,16 @@ import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
 
 /////////////////////////////////////////////////
 
+async function ↆimportꓽjson5() {
+	return await import('json5').then(x => (x as any).default as typeof import('json5'))
+}
+
+async function ↆimportꓽyaml() {
+	return await import('yaml').then(x => (x as any).default as typeof import('yaml'))
+}
+
+/////////////////////////////////////////////////
+
 function inferꓽformat_from_path(file_path: AnyFilePath): StructuredFileFormat | undefined {
 	const basename = path.basename(file_path)
 	const basename‿lc = basename.toLowerCase()
@@ -121,4 +131,4 @@ function mergeꓽjson(a: Immutable<JSON>, b: Immutable<JSON>): Immutable<JSON> {
 
 /////////////////////////////////////////////////
 
-export { inferꓽformat_from_path, mergeꓽjson }
+export { ↆimportꓽjson5, ↆimportꓽyaml, inferꓽformat_from_path, mergeꓽjson }

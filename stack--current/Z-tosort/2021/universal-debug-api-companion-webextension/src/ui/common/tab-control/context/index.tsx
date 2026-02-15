@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import * as React from 'react'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { render_any_m } from '@offirmo-private/react-error-boundary'
+import { render_any_m } from '@offirmo-private/react--error-boundary'
 
 import { State, create_loading, create_demo } from '../../../../common/state/ui'
 

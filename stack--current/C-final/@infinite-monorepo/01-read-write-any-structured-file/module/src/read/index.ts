@@ -19,7 +19,7 @@ import type {
 	StructuredContent,
 	ContentⳇMarkup,
 } from '../types.ts'
-import { inferꓽformat_from_path } from '../common/index.ts'
+import { inferꓽformat_from_path, ↆimportꓽjson5, ↆimportꓽyaml } from '../common/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -106,7 +106,7 @@ async function ↆloadꓽfileⵧjson5(
 	file_path: AnyFilePath,
 	content_hint?: Promise<string> | string,
 ): Promise<ContentⳇJson5> {
-	const ↆpkgꓽjson5 = import('json5').then(x => (x as any).default as typeof import('json5'))
+	const ↆpkgꓽjson5 = ↆimportꓽjson5()
 	const ↆcontent‿raw = _readRawTextFile(file_path, content_hint)
 	const [JSON5, content] = await Promise.all([ↆpkgꓽjson5, ↆcontent‿raw])
 	return JSON5.parse(content) as JSONObject
@@ -116,7 +116,7 @@ async function ↆloadꓽfileⵧyaml(
 	file_path: AnyFilePath,
 	content_hint?: Promise<string> | string,
 ): Promise<ContentⳇYaml> {
-	const ↆpkgꓽyaml = import('yaml').then(x => (x as any).default as typeof import('yaml'))
+	const ↆpkgꓽyaml = ↆimportꓽyaml()
 	const ↆcontent‿raw = _readRawTextFile(file_path, content_hint)
 	const [yaml, content] = await Promise.all([ↆpkgꓽyaml, ↆcontent‿raw])
 	return yaml.parse(content) as JSONObject
@@ -157,7 +157,7 @@ async function ↆloadꓽfileⵧmarkdown(
 	const content‿raw = await ↆcontent‿raw
 	if (content‿raw.startsWith('---')) {
 		// yaml frontmatter
-		const ↆpkgꓽyaml = import('yaml').then(x => (x as any).default as typeof import('yaml'))
+		const ↆpkgꓽyaml = ↆimportꓽyaml()
 		const end_of_frontmatter = content‿raw.indexOf('\n---\n', 3)
 		assert(end_of_frontmatter > 0, 'Invalid frontmatter: missing closing ---')
 		const frontmatter_raw = content‿raw.slice(3, end_of_frontmatter)

@@ -25,17 +25,6 @@ export default function json_stable_stringify(
 	if (typeof indent === 'number')
 		indent = Array(indent + 1).join(' ')
 
-	/* TODO implement cmp?
-	const cmp = opts.cmp && (function (f) {
-		return function (node) {
-			return function (a, b) {
-				const aobj = { key: a, value: node[a] }
-				const bobj = { key: b, value: node[b] }
-				return f(aobj, bobj)
-			}
-		}
-	})(opts.cmp)*/
-
 	function _stringify (parent: Node, key: Key, node: Node, depth: number, encountered_nodes: Immutable<Set<Node>>): ReturnType<typeof JSON['stringify']> | undefined {
 		const current_indent = indent ? ('\n' + new Array(depth + 1).join(indent as string)) : ''
 		const colonSeparator = indent ? ': ' : ':'
@@ -68,7 +57,7 @@ export default function json_stable_stringify(
 			return '[' + out.join(',') + current_indent + ']'
 		}
 
-		const proto = Object.getPrototypeOf(obj)
+		const proto = Object.getPrototypeOf(node)
 		switch (proto?.constructor?.name) {
 			// all primitives that can be an Object
 			case 'String':

@@ -14,7 +14,7 @@ import type {
 	ContentⳇYaml,
 	StructuredFileFormat,
 } from '../types.ts'
-import { inferꓽformat_from_path } from '../common/index.ts'
+import { inferꓽformat_from_path, ↆimportꓽjson5, ↆimportꓽyaml } from '../common/index.ts'
 
 /////////////////////////////////////////////////
 /*
@@ -41,7 +41,7 @@ async function ೱwriteꓽfile(
 async function ೱwriteꓽfile(
 	file_path: AnyFilePath,
 	content: Immutable<JSONObject>,
-	format?: StructuredFileFormat | undefined, // SSOT will be inferred from extension if absent
+	format?: StructuredFileFormat | undefined, // SSoT: format will be inferred from extension if absent
 ): Promise<void> {
 	format ||=
 		inferꓽformat_from_path(file_path)
@@ -51,6 +51,8 @@ async function ೱwriteꓽfile(
 		})()
 
 	switch (format) {
+		case 'default-export':
+			return await ೱwriteꓽfileⵧdefault_export(file_path, content)
 		case 'json5':
 			return await ೱwriteꓽfileⵧjson5(file_path, content)
 		case 'json':
@@ -80,7 +82,7 @@ async function ೱwriteꓽfileⵧjson5(
 	file_path: AnyFilePath,
 	content: Immutable<ContentⳇJson5>,
 ): Promise<void> {
-	const pkgꓽjson5 = await import('json5').then(x => (x as any).default as typeof import('json5'))
+	const pkgꓽjson5 = await ↆimportꓽjson5()
 	let content_serialized = pkgꓽjson5.stringify(content, null, 2)
 	await fs.writeFile(
 		path.resolve(process.cwd(), file_path),
@@ -109,7 +111,7 @@ async function ೱwriteꓽfileⵧyaml(
 	file_path: AnyFilePath,
 	content: Immutable<ContentⳇYaml>,
 ): Promise<void> {
-	const pkgꓽyaml = await import('yaml').then(x => (x as any).default as typeof import('yaml'))
+	const pkgꓽyaml = await ↆimportꓽyaml()
 	let content_serialized = pkgꓽyaml.stringify(content)
 	await fs.writeFile(
 		path.resolve(process.cwd(), file_path),
@@ -159,6 +161,23 @@ async function ೱwriteꓽfileⵧtext(
 	await fs.writeFile(
 		path.resolve(process.cwd(), file_path),
 		_post_process_text(content_serialized),
+		{
+			encoding: 'utf8',
+		},
+	)
+}
+
+async function ೱwriteꓽfileⵧdefault_export(
+	file_path: AnyFilePath,
+	content: Immutable<ContentⳇText>,
+): Promise<void> {
+	const pkgꓽjson5 = await ↆimportꓽjson5()
+	let content_serialized = pkgꓽjson5.stringify(content, null, 2)
+	await fs.writeFile(
+		path.resolve(process.cwd(), file_path),
+		_post_process_text(`const data = ${content_serialized}
+
+export default data`),
 		{
 			encoding: 'utf8',
 		},

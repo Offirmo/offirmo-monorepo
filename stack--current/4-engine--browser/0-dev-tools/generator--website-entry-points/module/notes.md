@@ -28,6 +28,10 @@ TODO auto "link tree" such as this complex one https://linktr.ee/infinex.xyz
 
 security -- domain name registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
 
+TODO .well-known/walletconnect.txt ??
+
+TODO public-assets/ ex. logos
+
 
 TODO all sections of https://github.com/about
 TODO sitelinks? https://developers.google.com/search/docs/appearance/sitelinks

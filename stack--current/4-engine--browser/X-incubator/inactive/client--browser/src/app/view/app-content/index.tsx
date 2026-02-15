@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 
-import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import ErrorBoundary from '@offirmo-private/react--error-boundary'
 
 import Immersion from './immersion'
 import BG from '../../../to-export-to-own-package/assets--background/licensed/Albert_Weand/adventurers/index.tsx'

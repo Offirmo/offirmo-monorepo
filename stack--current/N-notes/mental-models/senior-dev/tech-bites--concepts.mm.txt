@@ -287,6 +287,7 @@ data -- privacy
 data -- re-extraction = of vx.y.z
 data -- versioning = of content + schema
 data format -- consumer vs producer
+Single Executable Application (SEA) https://joyeecheung.github.io/blog/2026/01/26/improving-single-executable-application-building-for-node-js/
 data format -- consumer vs producer -- independent release/deploy
 data format -- do NOT conflate serialization w/ working representation w/ persisted w/ interchange! (cf. protobuf)
 data format -- future proofing = vastly overrated now that we have semver!! (+ migrations)

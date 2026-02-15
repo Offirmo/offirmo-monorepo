@@ -111,6 +111,11 @@ bag check
 bear/bull markets = alternance of several months of falling prices (bear) and several months of rising prices (bull). Hard to time. Need to survive a bear market.
 beginner issues -- network mismatches https://www.reddit.com/r/CoinBase/comments/1jh0xgp/coinbase_wrapped_bitcoin_stuck_in_coinbase_wallet/
 Berachain
+big ideas -- balance of power = If we need powerful forces in society, then they should be balanced - either each force balanced within itself (eg. competition between companies), or between each other, or ideally both https://vitalik.eth.limo/general/2025/12/30/balance_of_power.html
+big ideas -- democratized finance
+big ideas -- internet-native money
+big ideas -- self-sovereignty
+big ideas / high minded ideals
 BIP -- statuses -- process = “Workflow > Progression through BIP Statuses > Deployed > Process BIPs”  “A Process BIP may change status from Complete to Deployed when... https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc/m/TgSc-CRvAwAJ
 BIP https://www.ledger.com/academy/what-is-a-bitcoin-improvement-proposal-bip
 BIP-141 Segregated Witness "SegWit" https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki
@@ -503,6 +508,7 @@ open source -- benefits -- enabling permissionless third-party improvements
 open source -- benefits -- reducing the risk of proprietary lock-in
 open standards -- striving for interoperability. If you want to introduce a new feature that is not well-served by existing standards, write a new proposal in collaboration with others. Applications can be rated by which proposals they are compatible with.
 Optimism
+orange pill = https://bitcoinmagazine.com/culture/what-does-it-mean-to-orange-pill-someone
 ossification
 P2WPKH-nested-in-P2SH (BIP 141) serialization format for segregated witness transactions.
 passkey
@@ -517,6 +523,7 @@ Polygon
 polymarkets -- arbitrage https://x.com/browomo/status/2018630984015483061
 ponzi https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25794
 portfolio -- viewer https://1inch.com/portfolio/overview/address/0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
+prediction markets -- distribution = what is betted on https://predictions.paradigm.xyz/
 predictions https://polymarket.com/
 price oracles = pricing of some resource
 programmable recovery = ??
@@ -594,6 +601,7 @@ Solana network
 solidity -- ABI
 solidity -- calldata = ??
 solidity -- events
+Solidity -- known bugs https://etherscan.io/solcbuginfo
 solidity https://en.wikipedia.org/wiki/Solidity
 solo validating
 solutions -- "the only nationally chartered bank built to enable developers and builders to create new financial products" https://column.com/

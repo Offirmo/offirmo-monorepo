@@ -19,7 +19,7 @@ yarn refresh--build-variables
 		"@offirmo-private/iframe--loading": "^0",
 		"@offirmo-private/marketing-rsrc": "^0",
 		"@offirmo-private/poll-window-variable": "^0",
-		"@offirmo-private/react-error-boundary": "*",
+		"@offirmo-private/react--error-boundary": "*",
 		"@offirmo-private/rich-text-format": "^0",
 		"@offirmo-private/rich-text-format--to-react": "^0",
 		"@offirmo-private/soft-execution-context": "*",

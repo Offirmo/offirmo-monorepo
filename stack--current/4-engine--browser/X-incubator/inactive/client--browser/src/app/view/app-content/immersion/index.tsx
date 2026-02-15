@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 
 import { type Immutable, PositiveInteger } from '@offirmo-private/ts-types'
-import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import ErrorBoundary from '@offirmo-private/react--error-boundary'
 import { getꓽrandom, getꓽengine } from '@offirmo/random'
 
 import { Background } from '../../../../to-export-to-own-package/assets--background/types.ts'

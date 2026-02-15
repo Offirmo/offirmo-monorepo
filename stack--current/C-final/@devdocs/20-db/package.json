@@ -29,6 +29,7 @@
 		"@offirmo-private/file-entry": "*",
 		"@offirmo-private/fs--ls": "*",
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

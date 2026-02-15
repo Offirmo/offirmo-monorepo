@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import actual from 'actual'
 
-import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import ErrorBoundary from '@offirmo-private/react--error-boundary'
 import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
 
 import './index.css'

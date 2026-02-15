@@ -5,6 +5,7 @@ TODO
   - https://github.com/Uniswap/uerc20-factory
   - https://eips.ethereum.org/EIPS/eip-2612
   - bridge-able
+  - recent ex INX https://etherscan.io/token/0xd0213247b6b99b5ad89172f90d054b4873d6cdec#code
 - create NFTs
 - test own gateway? https://developers.cloudflare.com/web3/ethereum-gateway/
 - register an ENS
@@ -17,6 +18,7 @@ TODO
 
 
 
+test https://chat.blockscan.com/start wallet to wallet messaging
 
 
 ex. of seed phrases

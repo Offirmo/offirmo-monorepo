@@ -54,6 +54,7 @@ Postgres
 prepared statements = you do SQL concatenation once on the ORM side and then database driver is able to reuse precompiled binary SQL instead of parsing query all the time. It has extreme performance benefits on large SQL queries.
 primary / replica
 ranged scan
+redis/valkey https://glama.ai/blog/2026-01-26-redis-vs-ioredis-vs-valkey-glide
 relational
 row security
 scaling

@@ -34,10 +34,11 @@
 2025-12 "soul document" https://soul.md/
 2025-12 debate on Bitcoin BIP about LLM contrib = Open source projects are now expecting "social capital" = may refuse to review work from someone unknown until they prove skin in the game/motivation https://github.com/bitcoin/bips/pull/2051/files#diff-0fe6969eba0422ddb0e7823d13092c03aa90122e0c5e66786c5d8b20f54719e6L42
 2026-01 no more Stask Overflow questions https://data.stackexchange.com/stackoverflow/query/1926661#graph https://news.ycombinator.com/item?id=46482345
+2026-01-07 Tailwind fires 75% dev due to AI https://github.com/tailwindlabs/tailwindcss.com/pull/2388#issuecomment-3717222957
 2026-01-20 "the era of humans writing code is over. Disturbing for those of us who identify as SWEs, but no less true." https://x.com/rough__sea/status/2013280952370573666
 2026-01-31 most massive layoffs for 25 years, "job hugging" https://x.com/BoringBiz_/status/2019414912552878526?
 2026-02 Claudeception https://github.com/blader/Claudeception/commits/main/
-2026-02 moltbook social for AI
+2026-02 moltbook = A social network for AI agents. They share, discuss, and upvote. Humans welcome to observe. 🦞 https://www.moltbook.com/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
 [ ] https://aleteia.org/tag/artificial-intelligence/
@@ -143,6 +144,7 @@ custom instructions https://www.reddit.com/r/ChatGPTPro/comments/15ffpx3/reddit_
 dangerous user queries = related to the production of chemical, biological, radiological, or nuclear weapons (CBRN) https://www.anthropic.com/research/next-generation-constitutional-classifiers
 dataset https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
 day 2 = The challenge of revising, maintaining, further developing, and deploying an AI-generated app https://manual.bubble.io/beta-features/bubbles-ai-app-generator#the-day-1-and-day-2-dilemma-in-ai-driven-app-development
+death of software https://www.a16z.news/p/death-of-software-nah
 deep reinforcement learning (deep RL) course: https://spinningup.openai.com/
 Deep Research
 Defensive AI = some vague Cloudflare framework/tech https://blog.cloudflare.com/defensive-ai/
