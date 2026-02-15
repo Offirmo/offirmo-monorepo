@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo/practical-logger-core -- Demo"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/practical-logger--core"
+		working-dir="$USER_HOME$/work/src/__doc/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/practical-logger--core"
 		path-to-js-file="module/##demo/index.ts">
 		<node-interpreter>project</node-interpreter>
 		<method v="2" />

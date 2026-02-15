@@ -1,7 +1,7 @@
 #@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
 
-export OFFIRMO_MONOREPO_ROOT=~/work/src/off/offirmo-monorepo/stack--current/;
+export OFFIRMO_MONOREPO_ROOT=~/work/src/__doc/off/offirmo-monorepo/stack--current/;
 
 
 alias     mono0bb='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/better-console-groups/;                       tabset --badge mono0bb'
@@ -100,7 +100,10 @@ alias     monoC@1='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-f
 alias     monoC@2='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/20-db/;                                          tabset --badge monoC@2'
 alias     monoC@3='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/30-search/;                                      tabset --badge monoC@3'
 alias     monoC@5='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/50-state/;                                       tabset --badge monoC@5'
+alias     monoC@8='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/80-service_worker/;                              tabset --badge monoC@8'
 alias     monoC@9='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/90-web-app/;                                     tabset --badge monoC@9'
+alias    monoC@92='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/97-web-core/;                                    tabset --badge monoC@92'
+alias    monoC@93='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/98-web-property/;                                tabset --badge monoC@93'
 alias     monoC@0='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/01-read-write-any-structured-file/;    tabset --badge monoC@0'
 alias    monoC@02='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/02-load-config/;                       tabset --badge monoC@02'
 alias    monoC@12='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/11-types/;                             tabset --badge monoC@12'

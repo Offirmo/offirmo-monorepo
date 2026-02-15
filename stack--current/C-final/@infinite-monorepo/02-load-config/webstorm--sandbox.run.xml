@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
 		name="@infinite-monorepo/load-config -- Sandbox"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/02-load-config"
+		working-dir="$USER_HOME$/work/src/__doc/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/02-load-config"
 		path-to-js-file="module/sandbox/index.ts">
 		<node-interpreter>project</node-interpreter>
 		<method v="2" />
