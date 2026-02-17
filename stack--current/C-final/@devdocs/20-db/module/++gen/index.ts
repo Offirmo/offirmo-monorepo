@@ -20,6 +20,7 @@ const DATASOURCE_ROOT = path.resolve(__dirname, '../../../../../../../../yvem/de
 const { getꓽdata_sources } = await import(path.resolve(DATASOURCE_ROOT, 'module/++gen/index.ts'))
 
 const nodes: Array<Node> = []
+const statuses = new Set()
 
 await Promise.all(
 	getꓽdata_sources().map(async ({ url, path‿abs }): Promise<void> => {
@@ -54,8 +55,6 @@ await Promise.all(
 			case 'https://github.com/ethereum/EIPs.git': {
 				nodes.push({ id: 'EIPs', parent_id: 'Ethereum', name: 'Improvement Proposals' })
 
-				const statuses = new Set()
-
 				const eip_files = getꓽmarkup_files_from_datasource(path.resolve(path‿abs, 'EIPS'))
 				const eip_nodes: Array<Node> = await Promise.all(
 					eip_files.map(async fe => {
@@ -72,11 +71,13 @@ await Promise.all(
 							eip: eip_index,
 							type,
 							category,
-							status,
+							status = 'unknown',
 							created: created_at,
 						} = frontmatter
 						assert(!!eip_index, `EIP should have an index!`)
-						if (status) statuses.add(status.toLowerCase().trim())
+
+						status = status.toLowerCase().trim()
+						statuses.add(status)
 
 						const id = `EIP-${String(eip_index).padStart(5, '0')}`
 						const node: Node = {
@@ -108,10 +109,6 @@ await Promise.all(
 					return na.id.localeCompare(nb.id)
 				})
 				nodes.push(...eip_nodes)
-				await ೱwriteꓽfile(
-					path.resolve(__dirname, '../src/eips-statuses.ts'),
-					Array.from(statuses.values()).sort(),
-				)
 
 				// TODO ERCs
 				break
@@ -204,3 +201,8 @@ function getꓽmarkup_files_from_datasource(path‿abs: string) {
 console.log(nodes)
 
 await ೱwriteꓽfile(path.resolve(__dirname, '../src/node--datasources.ts'), nodes)
+
+await ೱwriteꓽfile(
+	path.resolve(__dirname, '../src/statuses.ts'),
+	Array.from(statuses.values()).sort(),
+)

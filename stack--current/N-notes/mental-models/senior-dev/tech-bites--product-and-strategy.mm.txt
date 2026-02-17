@@ -370,6 +370,8 @@ support loops = ex. help desk + social media + phone etc.
 system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
 teams moving from spreadsheet
+too big to fail
+too big to tame
 tool tech stack -- review https://www.lennysnewsletter.com/p/whats-in-your-stack-the-state-of
 top complaints -- actual case J. -- 01 Performance and Speed
 top complaints -- actual case J. -- 02 User Interface and Usability

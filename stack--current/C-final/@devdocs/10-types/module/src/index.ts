@@ -1,15 +1,19 @@
 export const ROOT_CATEGORIES_ORDERED = [
 	'Shared',
+
+	// https://www.coingecko.com/en/categories/layer-1
 	'Bitcoin',
 	'Ethereum',
 	'Solana',
+	'Sui',
+	'Zcash',
 	'Hyperliquid',
 	'Infinex',
 	'Synthetix',
 ] as const
 export type RootCategory = (typeof ROOT_CATEGORIES_ORDERED)[number]
 
-/* NodeId should be url safe
+/* - should be url safe
  */
 export type NodeId = string
 

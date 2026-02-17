@@ -6,6 +6,7 @@ alt currency -- frequent flyer miles = building a currency in that airline’s n
 alt currency -- gift cards
 applicable laws and regulations
 asset
+bailouts = https://nomorebailouts.org
 asset -- seizure
 bank run = when many customers withdraw their funds from a bank due to concerns about the bank's insolvency or bankruptcy. https://en.wikipedia.org/wiki/Bank_run
 banking

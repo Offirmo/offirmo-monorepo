@@ -72,6 +72,7 @@
 [ ] https://support.infinex.xyz/en/articles/9719898-crypto-terms
 [ ] https://tenderly.co/
 [ ] https://vitalik.eth.limo/
+[ ] https://www.coingecko.com/en/categories
 [ ] https://www.kaleido.io/blog-categories/product-technology
 [ ] list https://en.wikipedia.org/wiki/List_of_cryptocurrencies
 [ ] list of chains
@@ -81,6 +82,7 @@ Aave = decentralized lending protocol https://aave.com/
 address -- evm = the right-most 160 bits of a Keccak hash of an ECDSA public key https://info.etherscan.com/what-is-an-ethereum-address/
 address -- screening = "against sanctions lists and high-risk activity"
 address gap limit = chains that use address derivation recommend a limit of derived checks https://support.ledger.com/article/360010892360-zd
+advocacy -- "Stand with crypto" https://www.standwithcrypto.org/au
 Airdrop = gift of assets, usually as an incentive to use a new thing
 airdrops -- double claiming
 altcoin = anything not BitCoin (or maybe Ether, depending on who you ask)
@@ -183,6 +185,7 @@ challenges -- form vs substance = "the prosecution asked jurors to ignore the fo
 challenges -- Governance = can be challenging in decentralized systems. It requires effective structures that involve community participation and don’t centralize power.
 challenges -- multibillion-dollar implosions of FTX, BlockFi, Celsius, and Voyager Digital
 challenges -- need to purchase crypto first, have to endure a steep learning curve with wallets and exchanges as well as additional costs "It’s really hard to get non crypto people to use it" https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
+challenges -- quantum https://a16zcrypto.com/posts/podcast/quantum-computing-what-when-where-how-fact-vs-fiction/
 challenges -- Regulatory compliance = Web3 applications must follow existing data protection and financial security requirements.
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
@@ -271,6 +274,7 @@ domain names = .eth
 domain names = .xyz introduced in 2014, but "top 5 for malicious domain registrations [2024]" https://en.wikipedia.org/wiki/.xyz
 dominance = coin dominance (BitCoin) https://www.coingecko.com/en/charts/bitcoin-dominance
 DYOR
+EIP-1559 (Type 2) transactions
 EIP-6963: Multi Injected Provider Discovery = Using window events to announce injected Wallet Providers https://eips.ethereum.org/EIPS/eip-6963
 Enjin
 ENS - history https://ens.swiss-knife.xyz/history
@@ -343,6 +347,7 @@ gelato
 gossip
 governance -- plutocracy? https://www.reddit.com/r/CryptoCurrency/comments/zy6koh/onchain_cryptocurrency_governance_is_an_example/
 governance -- skin in the game
+grand ideas -- no more bailouts https://nomorebailouts.org
 griefing attacks = no gain for the attacker, just issues for the victim. ex "Just create 100k accounts get $5 in each and burn it"
 humanity protocol = ? https://www.humanity.org/
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
@@ -382,6 +387,7 @@ L2 -- Rollup ??
 launchpad tokens
 launchpads
 launchpads
+layer 0 = ??? https://www.coingecko.com/en/categories/layer-0-l0
 layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
 licenses -- MiCA license in the European Union
 licenses -- Money Service Business (MSB) = license in the U.S
@@ -656,6 +662,9 @@ token gating = exclusive content to token (F/NF) holders https://www.coinbase.co
 token sale -- ex. 2025 https://sale.megaeth.com/
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokenomics
+tokenomics -- burn
+tokenomics -- buybacks https://x.com/metaproph3t/status/2021426384799993939
+tokenomics -- utility
 tokens
 tokens -- a16z categories -- Arcade tokens
 tokens -- a16z categories -- Asset-backed tokens
@@ -795,6 +804,8 @@ who's who -- Virgil Griffith
 who's who -- Vitalik Buterin = https://en.wikipedia.org/wiki/Vitalik_Buterin https://x.com/VitalikButerin
 who's who -- William Entriken
 WLF "World Liberty Financial" = "Inspired by Trump" https://worldlibertyfinancial.com/
+x402 -- "pay per crawl" https://blog.cloudflare.com/introducing-pay-per-crawl/
+x402 = "402 Payment Required response with pricing" https://www.x402.org/
 XMR = ??? https://x.com/PerpetualCow/status/2010820707991650542
 zCash https://z.cash/learn/
 zk-SNARKs = zero-knowledge succinct non-interactive arguments of knowledge
