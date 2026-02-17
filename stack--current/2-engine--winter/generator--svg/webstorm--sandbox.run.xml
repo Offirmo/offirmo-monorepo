@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo-private/generator--svg -- Sandbox"
-		working-dir="$USER_HOME$/work/src/__doc/off/offirmo-monorepo/stack--current/2-engine--winter/generator--svg"
+		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/2-engine--winter/generator--svg"
 		path-to-js-file="module/~~sandbox/index.ts">
 		<node-interpreter>project</node-interpreter>
 		<method v="2" />

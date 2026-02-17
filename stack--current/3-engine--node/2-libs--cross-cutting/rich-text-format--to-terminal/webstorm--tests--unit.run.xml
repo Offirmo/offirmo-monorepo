@@ -2,8 +2,8 @@
 	<configuration default="false" name="@offirmo-private/rich-text-format--to-terminal -- TESTS -- UNIT" type="mocha-javascript-test-runner">
 		<node-interpreter>project</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
-		<mocha-package>$USER_HOME$/work/src/__doc/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
-		<working-directory>$USER_HOME$/work/src/__doc/off/offirmo-monorepo/stack--current/3-engine--node/2-libs--cross-cutting/rich-text-format--to-terminal</working-directory>
+		<mocha-package>$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
+		<working-directory>$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/3-engine--node/2-libs--cross-cutting/rich-text-format--to-terminal</working-directory>
 		<pass-parent-env>true</pass-parent-env>
 		<ui>bdd</ui>
 		<extra-mocha-options>--bail</extra-mocha-options>

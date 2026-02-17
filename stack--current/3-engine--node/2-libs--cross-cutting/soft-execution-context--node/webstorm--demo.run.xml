@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo-private/soft-execution-context--node -- Demo"
-		working-dir="$USER_HOME$/work/src/__doc/off/offirmo-monorepo/stack--current/3-engine--node/2-libs--cross-cutting/soft-execution-context--node"
+		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/3-engine--node/2-libs--cross-cutting/soft-execution-context--node"
 		path-to-js-file="module/##doc/demo.ts">
 		<node-interpreter>project</node-interpreter>
 		<method v="2" />

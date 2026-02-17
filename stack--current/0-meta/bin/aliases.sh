@@ -1,7 +1,7 @@
 #@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
 
-export OFFIRMO_MONOREPO_ROOT=~/work/src/__doc/off/offirmo-monorepo/stack--current/;
+export OFFIRMO_MONOREPO_ROOT=${OFFIRMO_MONOREPO_ROOT:-"~/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/"};
 
 
 alias     mono0bb='cd "$OFFIRMO_MONOREPO_ROOT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/better-console-groups/;                       tabset --badge mono0bb'

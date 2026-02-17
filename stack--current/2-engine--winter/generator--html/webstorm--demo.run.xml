@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo-private/generator--html -- Demo"
-		working-dir="$USER_HOME$/work/src/__doc/off/offirmo-monorepo/stack--current/2-engine--winter/generator--html"
+		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/2-engine--winter/generator--html"
 		path-to-js-file="module/##demo/demo--personal-blog/index.ts">
 		<node-interpreter>project</node-interpreter>
 		<method v="2" />
