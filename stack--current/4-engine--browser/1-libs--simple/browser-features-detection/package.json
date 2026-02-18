@@ -8,9 +8,14 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		"./has-hover": "./module/src/l1-is-framed/_entrypoint.ts",
-		"./is-framed": "./module/src/l3-has-hover/_entrypoint.ts"
+		".": "./module/src/_entrypoint.ts",
+		"./has-hover": "./module/src/l3-has-hover/_entrypoint.ts",
+		"./infer-channel": "./module/src/l2-infer-channel/_entrypoint.ts",
+		"./is-localhost": "./module/src/l1-is-localhost/_entrypoint.ts",
+		"./is-tunneled": "./module/src/l1-is-tunneled/_entrypoint.ts",
+		"./uses-tab": "./module/src/l3-uses-tab/_entrypoint.ts"
 	},
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},

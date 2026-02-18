@@ -40,6 +40,7 @@ function _generateꓽicons(spec: Immutable<WebPropertyEntryPointSpec>): WebManif
 		acc.push({
 			src: `./${icon_path}`, // TODO review should we add ./ ?
 			type,
+			// purpose: "maskable", TODO review
 			...(size && {sizes: `${size}x${size}`}),
 		} as Icon)
 		return acc

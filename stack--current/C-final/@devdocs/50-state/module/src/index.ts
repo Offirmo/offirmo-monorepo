@@ -1,8 +1,2 @@
-
-interface SharedState {
-	enabled...
-}
-
-interface TabState {
-	...
-}
+export * from './types.ts'
+export * from './reducer.ts'

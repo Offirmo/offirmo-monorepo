@@ -1,2 +1,2 @@
-// ./is-framed
+// ./has-hover
 export * from './index.ts'

@@ -6,8 +6,8 @@ alt currency -- frequent flyer miles = building a currency in that airline’s n
 alt currency -- gift cards
 applicable laws and regulations
 asset
-bailouts = https://nomorebailouts.org
 asset -- seizure
+bailouts = https://nomorebailouts.org
 bank run = when many customers withdraw their funds from a bank due to concerns about the bank's insolvency or bankruptcy. https://en.wikipedia.org/wiki/Bank_run
 banking
 banking -- reserve -- fractional / full https://en.wikipedia.org/wiki/Fractional-reserve_banking
@@ -48,6 +48,9 @@ economics -- ecological ex. https://en.wikipedia.org/wiki/Ithaca_Hours
 economics -- ecological https://en.wikipedia.org/wiki/Ecological_economics
 economics https://en.wikipedia.org/wiki/Economics
 equity
+ETF "exchange-traded fund" = a type of fund that directly tracks the price of an underlying asset, such as a commodity or cryptocurrency, by holding it in reserve https://www.forbes.com/sites/digital-assets/article/what-is-ethereum-spot-etf/
+ETF -- Futures & = futures ETFs rely on contracts that speculate on the asset's future price. This can lead to discrepancies between the price of the shares of a futures ETF and the current market price of the underlying asset. Futures ETFs can also exhibit phenomena like contango or backwardation, where prices deviate from spot market prices due to the structure of futures contracts.
+ETF -- spot & = A fund manager purchases some amount of the asset, holds it in custody, and issues shares against it. Investors buy the shares, which represent fractional ownership of the fund's asset holdings. If the fund is managed effectively, the price of the shares should mirror the asset’s price on the spot market. This model lets investors gain exposure to the asset’s spot price without the complications of asset management, such as storage or security. Instead, they can simply buy and sell shares with a brokerage account.
 exchange
 executive order 6102 = 1933 relinquish all gold https://en.wikipedia.org/wiki/Executive_Order_6102
 finance -- Benjamin Franklin's The Way to Wealth = 85 maxims https://www.artofmanliness.com/career-wealth/wealth/money-and-career-advice-from-benjamin-franklins-way-to-wealth/
@@ -127,6 +130,7 @@ poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you s
 private extortion of debt, labour and waste
 purchasing power https://en.wikipedia.org/wiki/Purchasing_power
 recession
+regulatory protection = are subject to oversight by financial regulators
 reserve banking -- fractional = https://en.wikipedia.org/wiki/Fractional-reserve_banking
 saving
 scrip = pseudo legal tender ~exploitative payment of employees ex. company scrip / https://en.wikipedia.org/wiki/Truck_wages
@@ -134,6 +138,7 @@ security
 security -- stocks, bonds, ETFs (exchange traded funds), options, and mutual funds
 security = a financial asset that can be sold or traded in a financial market + investments that can be exchanged and used to raise capital. https://gordonlaw.com/learn/what-is-a-security/
 shares
+solutions -- https://plaid.com/ ?
 stock = all the shares https://en.wikipedia.org/wiki/Stock
 stock market
 stock market -- crash = https://en.wikipedia.org/wiki/Stock_market_crash

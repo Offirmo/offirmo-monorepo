@@ -1,0 +1,20 @@
+
+nav.tree-view {
+	font-stretch: ultra-condensed;
+
+	a {
+		text-decoration: none;
+	}
+
+	/* tweak offirmo foundation */
+	:is(ol, ul) {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.tree-view__node-label {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

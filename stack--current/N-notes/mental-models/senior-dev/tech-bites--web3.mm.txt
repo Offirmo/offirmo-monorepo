@@ -1,3 +1,4 @@
+
 "Investing in crypto assets involves a high degree of risk. Crypto owners can lose their entire investment due to inherent risks. Past performance is not indicative of future results. Make sure to conduct your own research before investing in cryptocurrencies."
 "proactively manage your on-chain footprint -> might prevent you from having security issues in the future"
 & = "the distributed web" = a set of technologies that enables hosting of content and web applications in a serverless manner by leveraging distributed systems and consensus protocols https://developers.cloudflare.com/web3/
@@ -45,6 +46,7 @@
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
 2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
 2025-06 crypto fully banned in China https://www.idnfinancials.com/news/54986/china-tightens-financial-control-crypto-now-fully-banned
+2025-06-18 GENIUS act in USA https://decrypt.co/325659/senate-passes-stablecoin-bill-genius-act-major-boon-crypto
 2025-07 Mainnet = Ethereum relevant again https://blog.synthetix.io/synthetix-mainnet/
 2025-08-08 Trump signs order to allow crypto and real estate investments in retirement plans (despite being risky) https://www.theguardian.com/us-news/2025/aug/07/trump-executive-order-cryptocurrency
 2025-08-13 Google briefly bans wallets webextensions https://blocknews.com/google-bans-crypto-wallets-the-u-s-and-eu-here-is-why/ https://blocknews.com/google-drops-plans-to-ban-non-custodial-crypto-wallets-here-is-the-full-story/
@@ -73,6 +75,7 @@
 [ ] https://tenderly.co/
 [ ] https://vitalik.eth.limo/
 [ ] https://www.coingecko.com/en/categories
+[ ] https://www.forbes.com/digital-assets/news/
 [ ] https://www.kaleido.io/blog-categories/product-technology
 [ ] list https://en.wikipedia.org/wiki/List_of_cryptocurrencies
 [ ] list of chains
@@ -100,6 +103,7 @@ attacks -- 7702 delegation to drainer https://x.com/wiimee/status/19850740407810
 attacks -- address poisoning = https://paragraph.com/@x-explore/address-poisoning-attack-a-continuing-threat https://x.com/specteranalyst/status/2002075668570309054 https://x.com/tayvano_/status/1605801004141727745
 attacks -- armed heist = extorting crypto ex. https://x.com/beausecurity/status/1972333331049312437
 attacks -- donation https://www.cyfrin.io/blog/solodit-checklist-explained-3-donation-attacks https://medium.com/@ankitacode11/part-3-protecting-smart-contracts-from-donation-attacks-a-guide-to-secure-eth-handling-b05561228ab2
+attacks -- ex. of recel https://thenewscrypto.com/crypto-hacker-behind-infini-exploit-returns-moves-32m-eth-in-fresh-transfers/
 attacks -- fake price (illiquid) = manipulating the price of a low-liquidity token to fake its value
 attacks -- kidnappings and Robberies = https://x.com/beausecurity/status/1995487124544491784
 attacks -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hack-june-2025
@@ -617,6 +621,7 @@ solutions -- Cloudflare -- IFPS
 solutions -- CoinGecko = ranking website https://www.coingecko.com/
 solutions -- Geth (Go Ethereum) = an open source blockchain protocol implementing the standard Ethereum specification plus other useful features such as a pluggable consensus engine. Geth is among the most widely used implementations of Ethereum nodes. It supports both the standard DAG based Proof-of-Work consensus and Proof-of-Authority (PoA) consensus with its implementation called Clique https://github.com/ethereum/go-ethereum
 solutions -- https://www.moderntreasury.com/
+solutions -- https://x.com/meshpay ?
 solutions -- Lighter = a decentralized trading platform that is designed to deliver unmatched security and scale. Lighter is the first and only exchange that provides verifiable matching and liquidations, while operating at the best in class traditional exchange level performances.
 solutions -- Swapper
 some goals = immune to inflationary abuse, resistant to seizure, and adaptable to global economic growth https://woodcoincrypto.com/whitepaper/
@@ -664,6 +669,11 @@ tokenization = process of representing real-world or digital assets as digital t
 tokenomics
 tokenomics -- burn
 tokenomics -- buybacks https://x.com/metaproph3t/status/2021426384799993939
+tokenomics -- it's all about attention and liquidity = anything else is useless https://x.com/TheWhiteWhaleV2/status/2022421870805401622
+tokenomics -- market manipulation -- "spoofed sell wall" by Market Makers https://x.com/TheWhiteWhaleV2/status/2020257514546217138
+tokenomics -- market manipulation -- defense https://x.com/TheWhiteWhaleV2/status/2020257514546217138
+tokenomics -- net asset value (NAV) = indicative value of the token based on the value of the underlying assets it represents, minus any liabilities = used as a reference
+tokenomics -- price discovery
 tokenomics -- utility
 tokens
 tokens -- a16z categories -- Arcade tokens
@@ -679,7 +689,7 @@ tokens -- Ether (ETH) = the cryptocurrency used for many things on the Ethereum 
 tokens -- net dolar https://netdollar.cloudflare.com/
 tokens -- standards
 tokens -- tainted = can be differentiated = less fungible
-tokens -- tokenomics
+tokens -- tokenomics = see [tokenomics]
 tokens -- vs coins = digital assets that live on a specific blockchain. Instead of having their own network, like coins, tokens are stored on other blockchains. Because they use a token standard, all of the tokens on a given blockchain are interoperable, as long as they come in the same format. Tokens come in two main forms; fungible (such as ERC-20 tokens) and non-fungible (NFTs). https://www.ledger.com/ru/academy/topics/crypto/what-is-token-gating
 tokens -- wrapped & = quasi-token "pegged" to the real token, useful to move cross-chains https://coinmarketcap.com/academy/article/what-is-wrapped-ethereum-weth
 tokens = cryptographic representations of ownership, access rights, or other forms of value. Ex. physical and digital assets like real estate, stocks, commodities, art, music, and even in-game items

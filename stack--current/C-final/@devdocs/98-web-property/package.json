@@ -14,6 +14,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@devdocs/marketing": "^0.0.1",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -23,8 +24,10 @@
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
+		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

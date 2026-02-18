@@ -11,16 +11,22 @@
 	},
 	"source": "module/src/index.html",
 	"dependencies": {
+		"@devdocs/db": "^0.0.1",
+		"@devdocs/marketing": "^0.0.1",
+		"@devdocs/state": "^0.0.1",
 		"@offirmo-private/async-utils": "*",
+		"@offirmo-private/browser-features-detection": "*",
 		"@offirmo-private/css--framework": "*",
 		"@offirmo-private/page-loaded": "*",
 		"@offirmo-private/react--error-boundary": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/soft-execution-context--browser": "*",
 		"@offirmo/universal-debug-api-browser": "^1",
+		"agentation": "^2",
 		"limit-once": "^0.16",
 		"react": "^19",
 		"react-dom": "^19",
+		"react-router": "^7",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},
@@ -37,6 +43,7 @@
 		"start": "npm-run-all clean --parallel _start:parcel:main"
 	},
 	"devDependencies": {
+		"@devdocs/types": "^0.0.1",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",

@@ -1,5 +1,5 @@
 import { usesꓽtab } from './index.ts'
 
-function Default() {
+export function Default() {
 	return `usesꓽtab() = ${usesꓽtab()}`
 }

@@ -1,4 +1,4 @@
-import type { Emoji, Basename, AnyPath} from '@offirmo-private/ts-types'
+import type { Emoji, Basename, AnyPath } from '@offirmo-private/ts-types'
 import type {
 	Author,
 	Contentⳇweb,
@@ -6,8 +6,8 @@ import type {
 	Thing,
 	ThingWithOnlinePresence,
 } from '@offirmo-private/ts-types-web'
-import type { FeatureSnippets } from "@offirmo-private/generator--html"
-import type { SVG } from "@offirmo-private/generator--svg"
+import type { FeatureSnippets } from '@offirmo-private/generator--html'
+import type { SVG } from '@offirmo-private/generator--svg'
 
 /////////////////////////////////////////////////
 
@@ -91,7 +91,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 
 	// meta selector that triggers different defaults
 	preset?:
-		| 'game' // webapp, uses full screen, no nav nor browser controls
+		| 'app--immersive' // webapp, uses full screen, no nav nor browser controls ex. game
 		| 'blog' // content oriented
 		| 'landing' // "rebound" page trying to promote the real content with a CTA: buy, install app... https://growth.design/case-studies/landing-page-ux-psychology
 	// TODO more on-demand
@@ -104,7 +104,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	wantsꓽinstall?:
 		| false // won't provide much benefit, no need to advertise it
 		| 'partial' // not capable enough to be eligible for "prompt to install" so we may want to advertise it in JS
-		| 'prompt' // fully capable to the point the browser is expected to prompt https://web.dev/articles/install-criteria
+		| 'promotion-capable' // fully capable to the point the browser is expected to prompt https://web.dev/articles/install-criteria
 		| 'redirect' // we want to redirect to an app store TODO clarify
 	titleⵧapp?: Descriptionⳇtitle
 	descriptionⵧapp?: string
@@ -114,8 +114,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	usesꓽpull_to_refresh?: boolean
 
 	/////// JS SRC
-	generatesꓽjsⵧscaffold?:
-		| 'offirmo--react' // TODO clarify generate JS/TS source code
+	generatesꓽjsⵧscaffold?: 'offirmo--react' // TODO clarify generate JS/TS source code
 
 	/////// META
 	host?:
@@ -132,7 +131,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 }
 
 interface EntryPoints {
-	[relpath: string]: string | Buffer,
+	[relpath: string]: string | Buffer
 }
 
 /////////////////////////////////////////////////

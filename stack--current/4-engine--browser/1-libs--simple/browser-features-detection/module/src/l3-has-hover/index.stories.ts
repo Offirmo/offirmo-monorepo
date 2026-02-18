@@ -1,5 +1,5 @@
 import { hasꓽhover } from './index.ts'
 
-function Default() {
+export function Default() {
 	return `hasꓽhover() = ${hasꓽhover()}`
 }

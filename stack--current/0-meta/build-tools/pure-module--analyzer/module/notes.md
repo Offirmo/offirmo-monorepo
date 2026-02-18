@@ -1,6 +1,17 @@
 // node --experimental-strip-types ./X-spikes/parse-import-ts/index.mjs
 
 
+
+	_overrides: {
+		files: {
+			packageᐧjson: {
+				"|source": ">DELETE<",
+				"|exports|.": ">DELETE<",
+			},
+		},
+	},
+
+
 ```ts
 interface PureModuleDetailsAllowedInManifest {
 	name: string // NOT including the namespace

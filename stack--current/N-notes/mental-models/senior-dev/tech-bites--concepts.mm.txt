@@ -287,7 +287,6 @@ data -- privacy
 data -- re-extraction = of vx.y.z
 data -- versioning = of content + schema
 data format -- consumer vs producer
-Single Executable Application (SEA) https://joyeecheung.github.io/blog/2026/01/26/improving-single-executable-application-building-for-node-js/
 data format -- consumer vs producer -- independent release/deploy
 data format -- do NOT conflate serialization w/ working representation w/ persisted w/ interchange! (cf. protobuf)
 data format -- future proofing = vastly overrated now that we have semver!! (+ migrations)
@@ -684,6 +683,7 @@ monolith refactoring -- 2. Understand the domain and build good and scalable abs
 monolith refactoring -- 3. Replace usage of the old mess with the new APIs, validate consistency, etc.
 monorepo -- boundaries = don't conflate the main codebase vs things needed to run the build vs things produced by the build
 monorepo -- megarepo
+Most codebases get harder to work with over time because each feature you add injects more complexity. After 10 years, teams spend more time fighting their system than building on it because each new feature is a negotiation with the old ones. Over time, the codebase becomes harder to understand, harder to modify, and harder to trust. https://every.to/guides/compound-engineering
 multi tenant -- isolation
 MVC (Model View Controller)
 myth of the code monkey = belief that developers are dumb, can't use advanced features, will make wrong decisions and need to be forced to use good practices https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
@@ -906,6 +906,7 @@ silly "make software silly again" https://www.linkedin.com/posts/addyosmani_soft
 simple average
 Singe Source of Truth (SSOT) / single point of truth (SPOT) = https://en.wikipedia.org/wiki/Single_source_of_truth
 single executable application "SEA" -- node https://codesnip.sh/posts/building-standalone-nodejs-executables
+Single Executable Application (SEA) https://joyeecheung.github.io/blog/2026/01/26/improving-single-executable-application-building-for-node-js/
 single source of truth
 site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
 SLI (Service Level Indicator) = a measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
@@ -965,6 +966,7 @@ Sustainable Architectural Decisions https://adr.github.io/
 system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
 system call
 tainting an object https://react.dev/reference/react/experimental_taintObjectReference
+taste = Every codebase reflects the taste of the developers who built it, from naming conventions to error handling patterns and testing approaches https://every.to/guides/compound-engineering
 tech debt -- buckets -- 1 strategic = directly impacts business outcomes: what specific user or business capabilities will be blocked? what's our timeline before we hit critical constraints? what's the minimum investment needed to unblock progress?
 tech debt -- buckets -- 2 tactical = slows delivery speed: focus on velocity metrics: "our deploy time has increased from 15 minutes to 4 hours in the last quarter""bug fix turnaround has gone from 2 days to 2 weeks""feature development estimates have doubled"
 tech debt -- buckets -- 3 brand = the product works but doesn't exude quality/trust, ex. slow, clunky, "infantile"

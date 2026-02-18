@@ -1,5 +1,5 @@
 import { isꓽframed } from './index.ts'
 
-function Default() {
+export function Default() {
 	return `isꓽframed() = ${isꓽframed()}`
 }

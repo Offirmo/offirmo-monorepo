@@ -67,7 +67,7 @@ function wantsꓽinstall(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 
 	// not provided
 
-	if (spec.preset === 'game')
+	if (spec.preset === 'app--immersive')
 		return true
 
 	return false
@@ -80,7 +80,7 @@ function hasꓽown_navigation(spec: Immutable<WebPropertyEntryPointSpec>): boole
 	if (typeof spec.hasꓽown_navigation === 'boolean')
 		return spec.hasꓽown_navigation
 
-	if (spec.preset === 'game')
+	if (spec.preset === 'app--immersive')
 		return true
 
 	return false
@@ -116,7 +116,7 @@ function prefersꓽorientation(spec: Immutable<WebPropertyEntryPointSpec>): bool
 function getꓽfeatures(spec: Immutable<WebPropertyEntryPointSpec>): FeatureSnippets[] {
 	const features = new Set<FeatureSnippets>(spec.features ?? [])
 
-	if (spec.preset === 'game')
+	if (spec.preset === 'app--immersive')
 		features.add('cssⳇviewport--full' as FeatureSnippets)
 
 	features.add('cssⳇbox-layout--natural')

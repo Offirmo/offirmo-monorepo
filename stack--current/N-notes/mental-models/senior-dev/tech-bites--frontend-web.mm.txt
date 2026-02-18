@@ -453,6 +453,7 @@ spirit -- the web is a big tent
 spirit -- the web is for everyone
 spirit -- view source affordance https://htmx.org/essays/right-click-view-source/
 spirit https://info.cern.ch/hypertext/WWW/Summary.html
+SRI "Subresource Integrity" https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 SVG = https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/
 Tailwind -- pro/cons https://colton.dev/blog/tailwind-is-the-worst-of-all-worlds/

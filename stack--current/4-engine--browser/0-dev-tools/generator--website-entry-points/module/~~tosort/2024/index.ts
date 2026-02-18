@@ -53,7 +53,7 @@ const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentry
 	const SPEC: Parameters<typeof generateꓽwebsiteᝍentryᝍpoints>[0] = {
 		...THING_ONLINE,
 
-		preset: 'game',
+		preset: 'app--immersive',
 
 		title: 'The Boring RPG',
 		icon: SVG.createꓽfrom_emoji('⚔️'),
@@ -74,7 +74,7 @@ const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentry
 		},
 
 		// PWA
-		wantsꓽinstall: 'prompt',
+		wantsꓽinstall: 'promotion-capable',
 		hasꓽown_navigation: true,
 		supportsꓽscreensⵧwith_shape: true,
 		canꓽuse_window_controls_overlay: true,

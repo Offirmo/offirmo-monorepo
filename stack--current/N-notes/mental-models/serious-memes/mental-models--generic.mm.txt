@@ -58,6 +58,7 @@
 [ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
 [ ] https://fs.blog/mental-models/
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
+[ ] https://waitbutwhy.com/
 [ ] https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://www.reddit.com/r/explainlikeimfive/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
@@ -330,6 +331,7 @@ decoy effect https://en.wikipedia.org/wiki/Decoy_effect
 degree mills = https://www.dice.com/career-advice/coding-bootcamp-popularity-growth-2019
 DEI
 deliberate intentional practice / play = intention of not achieving much, but just picking it up, giving it a strum and then having an open mind to the possibilities that you might discover something new or a new meta https://ghuntley.com/play/
+delusionally optimistic vs Delusional optimism = https://x.com/digiii/status/2008518313995911533
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- no-hope candidate = a candidate who stands for a political party in an electoral division where the party in question enjoys only low levels of support. Although the candidate has little chance of winning, a major party will normally make an effort to ensure it has its name on the ballot paper https://en.wikipedia.org/wiki/Paper_candidate
 dependability https://posthog.com/founders/first-ops-hire
@@ -771,6 +773,7 @@ Lev Landau classification of physicists -- line 1 = perseverance, tenacity, ener
 Lev Landau classification of physicists -- line 2 = originality, genius, intuition
 Lev Landau classification of physicists https://books.google.com.au/books?id=nGcHEAAAQBAJ&pg=PA115&redir_esc=y#v=onepage&q&f=false
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
+life -- "the journey" https://readalittlepoetry.com/2011/08/12/the-journey-by-mary-oliver/
 life -- 4 burners = Imagine your life as a stovetop. You’ve got 4 burners: 1. Family 2. Work 3. Health 4. Friends But in reality: To be successful…  You have to turn off one. To be *really* successful…  You must turn off two. https://x.com/thecurioustales/status/2023042152142700788
 life -- balance between living the moment and preparing the long-term = ex. of ppl dying at 50 before planned retirement / travelling (Also Gospel's parable)
 life -- diseases -- heart disfunction = New York Heart Association Functional Classification https://en.wikipedia.org/wiki/New_York_Heart_Association_Functional_Classification
@@ -1286,6 +1289,7 @@ society -- high -- crème de la crème
 soft skills https://newsletter.weskao.com/p/how-to-give-a-senior-leader-feedback-without-getting-fired
 soft skills https://softskills.audio/
 solution / excuses
+some grim social experiments https://en.wikipedia.org/wiki/Harry_Harlow
 spite -- house / fence https://en.wikipedia.org/wiki/Spite_house
 spite = a narrower definition could be: to intentionally annoy, hurt, or upset even when there might be no (apparent) gain, and even when those actions might cause the person spiting harm as well https://en.wikipedia.org/wiki/Spite_(sentiment)
 sponcon "sponsored content" = a form of influencer marketing popular on social media
@@ -1413,6 +1417,7 @@ typography -- quotes https://smartquotesforsmartpeople.com/
 tyranny of the majority
 tyranny of the urgent https://www.psychologytoday.com/us/blog/human-flourishing-101/202309/how-to-conquer-the-tyranny-of-the-urgent
 underdog spirit = What do you got? Hunger. Drive. Grit. Scrappiness. Independence. You’re on offense. You don’t have enough, which is why you’re dangerous. You have no choice but to be clever and creative. To make up for what you don’t have with something they can’t have: The underdog spirit. https://x.com/jasonfried/status/1656717766374875137
+understanding a problem and having real life experience with it are two different things https://x.com/TheWhiteWhaleV2/status/2022421870805401622
 universal human truths of existence = such as death, freedom, isolation and the search for the meaning of life
 universe
 universe -- cosmological model -- +++ Lambda cold dark matter (ΛCDM) = current best (2024) https://en.wikipedia.org/wiki/Lambda-CDM_model

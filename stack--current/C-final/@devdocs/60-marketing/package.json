@@ -1,0 +1,34 @@
+{
+	"name": "@devdocs/marketing",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"check--ts": "echo \"@devdocs/marketing\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/generator--website-entry-points": "*",
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/ts-types-web": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	}
+}

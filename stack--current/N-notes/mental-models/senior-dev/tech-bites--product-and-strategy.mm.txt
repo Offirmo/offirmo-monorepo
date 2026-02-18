@@ -164,6 +164,7 @@ growth -- bundles
 growth -- case studies https://growth.design/case-studies
 growth -- cognitive load
 growth -- concepts https://growth.design/psychology
+growth -- fluidity = Eventually, every growth channel gets competitive and expensive https://web.archive.org/web/20260217224228/https://speedrun.substack.com/p/your-next-customer-is-asking-chatgpt
 growth -- friction
 growth -- get to scale
 growth -- get to scale -- how to?

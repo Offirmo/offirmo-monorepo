@@ -17,6 +17,9 @@ And above all it's hard to properly comment!
 I need a tool.
 
 
+TODO CSP https://centralcsp.com/ https://domsignal.com/csp-test
+TODO everything here https://domsignal.com/toolbox
+
 NOT IN SCOPE
 * minification = not this tool's job
 * SSR = maybe one day? but ideally we want full static on CDN

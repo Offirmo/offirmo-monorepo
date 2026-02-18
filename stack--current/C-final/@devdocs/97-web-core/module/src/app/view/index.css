@@ -2,3 +2,9 @@
 :root {
 	background-color: #FF0000;
 }
+
+.o-codex-tree {
+	block-size: 100%;
+	min-block-size: 0;
+	overflow: auto;
+}

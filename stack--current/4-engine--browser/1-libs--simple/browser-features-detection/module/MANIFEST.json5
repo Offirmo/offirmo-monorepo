@@ -4,13 +4,4 @@
 	engines: {
 		browser: '*',
 	},
-
-	_overrides: {
-		files: {
-			packageᐧjson: {
-				"|source": ">DELETE<",
-				"|exports|.": ">DELETE<",
-			},
-		},
-	},
 }

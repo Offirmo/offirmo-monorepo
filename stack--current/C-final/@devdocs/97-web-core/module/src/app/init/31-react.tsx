@@ -1,5 +1,6 @@
 import { Fragment, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Agentation } from 'agentation' // https://agentation.dev/install
 
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import { schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
@@ -9,12 +10,12 @@ import { LIB } from '../consts.ts'
 
 import { ೱᐧpage_loaded } from '@offirmo-private/page-loaded'
 
-import Root from '../view'
+import { CHANNEL } from '../cross-cutting/channel'
+import { Root } from '../view'
 
 /////////////////////////////////////////////////
 
-const StrictCheck = StrictMode
-//const StrictCheck = Fragment
+const StrictCheck = CHANNEL === 'dev' ? StrictMode : Fragment
 
 /////////////////////////////////////////////////
 
@@ -29,11 +30,14 @@ async function init(): Promise<void> {
 			const root = createRoot(document.getElementById('react-root'))
 			// TODO 1D make StrictCheck optional + add other dev tools?
 			root.render(
-				<StrictCheck>
-					<ErrorBoundary name={`${LIB}ᐧroot`} SXC={SXC}>
-						<Root />
-					</ErrorBoundary>
-				</StrictCheck>,
+				<>
+					<StrictCheck>
+						<ErrorBoundary name={`${LIB}ᐧroot`} SXC={SXC}>
+							<Root />
+						</ErrorBoundary>
+					</StrictCheck>
+					{CHANNEL === 'dev' && <Agentation />}
+				</>,
 			)
 		})
 	})

@@ -30,7 +30,7 @@
 2025-08-27 The reality of AI-Assisted software engineering productivity https://addyo.substack.com/p/the-reality-of-ai-assisted-software
 2025-10-17 "AGI is still 10y away" influential podcast https://www.dwarkesh.com/p/andrej-karpathy
 2025-11-14 AI espionage? https://www.anthropic.com/news/disrupting-AI-espionage
-2025-11-20 A Microsoft executive is questioning why more people aren't impressed with AI (...) immediately triggered backlash.https://au.pcmag.com/ai/114305/microsoft-exec-asks-why-arent-more-people-impressed-with-ai
+2025-11-20 A Microsoft executive is questioning why more people aren't impressed with AI => immediately triggered backlash.https://au.pcmag.com/ai/114305/microsoft-exec-asks-why-arent-more-people-impressed-with-ai
 2025-12 "soul document" https://soul.md/
 2025-12 debate on Bitcoin BIP about LLM contrib = Open source projects are now expecting "social capital" = may refuse to review work from someone unknown until they prove skin in the game/motivation https://github.com/bitcoin/bips/pull/2051/files#diff-0fe6969eba0422ddb0e7823d13092c03aa90122e0c5e66786c5d8b20f54719e6L42
 2026-01 no more Stask Overflow questions https://data.stackexchange.com/stackoverflow/query/1926661#graph https://news.ycombinator.com/item?id=46482345
@@ -103,6 +103,7 @@ attacks -- Reconstruction & = break up harmful information into segments that ap
 attention
 attention -- flash attention = ???
 beliefs = judgments a model appears to be forming about a user during a conversation, ex. age, wealth, education level, gender https://slashdot.org/story/25/05/24/1946203/people-should-know-about-the-beliefs-llms-form-about-them-while-conversing
+Beliefs to let go -- https://every.to/guides/compound-engineering
 benchmark -- GPQA https://arxiv.org/abs/2311.12022
 benchmark -- Humanity's Last Exam https://lastexam.ai/
 benchmark -- OSWorld https://os-world.github.io/
@@ -138,6 +139,7 @@ context -- long context trumps everything? https://arxiv.org/pdf/2406.13121
 Contextual Language Models (CLMs) Contextual.ai
 control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
+coumpound engineering = Plan → Work → Review → Compound → Repeat https://every.to/guides/compound-engineering
 crawlers -- robots.txt / legal https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
 custom instructions https://www.reddit.com/r/ChatGPTPro/comments/15ffpx3/reddit_what_are_your_best_custom_instructions_for/
@@ -211,6 +213,7 @@ jailbreak -- rapid response https://arxiv.org/abs/2411.07494
 jailbreak -- universal https://www.anthropic.com/research/constitutional-classifiers
 JAX
 jobs -- shrinkage of entry-level jobs In Tech https://slashdot.org/story/25/05/28/2239206/ai-may-already-be-shrinking-entry-level-jobs-in-tech-new-research-suggests
+Just fucking code. https://www.justfuckingcode.com/
 knowledge cutoff
 labyrinth https://blog.cloudflare.com/ai-labyrinth/
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
@@ -311,9 +314,11 @@ second brain
 security -- Freysa "approveTransfer" https://x.com/jarrodwattsdev/status/1862299845710757980
 sentences -- I am deeply, deeply sorry. This is a critical failure on my part https://www.tomshardware.com/tech-industry/artificial-intelligence/googles-agentic-ai-wipes-users-entire-hard-drive-without-permission-after-misinterpreting-instructions-to-clear-a-cache-i-am-deeply-deeply-sorry-this-is-a-critical-failure-on-my-part
 sentences -- You're absolutely right
+SEO https://speedrun.substack.com/p/your-next-customer-is-asking-chatgpt
 shadow AI = where all the employees use AI in stealth https://ghuntley.com/mirrors/
 singularity
 skilled pragmatist https://cutlefish.substack.com/p/tbm-271-the-biggest-untapped-opportunity
+skills -- spec https://agentskills.io/specification
 sleeper agents (security) https://www.anthropic.com/research/probes-catch-sleeper-agents
 sleeper agents -- defection probes https://www.anthropic.com/research/probes-catch-sleeper-agents
 slop = unwanted AI generated content https://simonwillison.net/2024/May/8/slop/

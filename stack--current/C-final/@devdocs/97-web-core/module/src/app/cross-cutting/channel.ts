@@ -1,0 +1,13 @@
+/////////////////////////////////////////////////
+
+import { inferꓽchannel } from '@offirmo-private/browser-features-detection'
+
+import { WEBSITE } from '@devdocs/marketing'
+
+/////////////////////////////////////////////////
+
+const CHANNEL = inferꓽchannel(WEBSITE.urlⵧcanonical)
+
+/////////////////////////////////////////////////
+
+export { CHANNEL }
