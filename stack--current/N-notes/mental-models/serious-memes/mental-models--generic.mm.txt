@@ -1,4 +1,3 @@
-1 or 2 way door
 10th dentist = someone who sincerely, or professionally, disagree with the broad majority of people "9 dentists out of 10 recommends..." https://www.reddit.com/r/The10thDentist/
 12 steps
 1970 missing kids https://www.bbc.co.uk/news/articles/c1ed4g1q52no = no "free range" kids anymore
@@ -370,6 +369,8 @@ discernement -- Choose the more interesting path. Interestingness is a sign of u
 discernement -- coin flipping = don't look, which one do you wish is not?
 discernement -- example avec plusieurs questions https://archive.md/zpgip
 discernement -- regret minimization https://theprokit.com/posts/a-jeff-bezos-classic-the-regret-minimization-framework/
+discernment -- 1 vs. 2 way door
+discernment -- recoverable vs. irrecoverable
 discrimination
 discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
 discrimination -- indirect = when a neutral rule, policy, practice or criterion applies to everyone but disproportionately disadvantages a particular group with a protected characteristic, without objective justification
