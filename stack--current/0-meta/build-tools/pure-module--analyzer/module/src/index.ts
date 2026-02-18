@@ -755,6 +755,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				const first_line = content.trim().split('\n').at(0)!.trim()
 				const id = first_line.slice(2).trim()
 				console.log(`${indent}    ⭐️new sub entry point "${id}"`)
+				assert(!result.entrypointⵧexports[id], `entrypointⵧexports[${id}] should not already exist! (file ${entry.path‿rel}, previous ${result.entrypointⵧexports[id]?.path‿rel})`)
 				result.entrypointⵧexports[id] = entry
 			}
 		}
