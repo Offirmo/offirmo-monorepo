@@ -3,7 +3,7 @@
 	"dependencies": {
 		"@offirmo-private/css--foundation": "*",
 		"@offirmo-private/css--framework": "*",
-		"@offirmo-private/css--utils": "*",
+		"@offirmo-private/css--utils--diagnostics": "*",
 		"@offirmo-private/react--error-boundary": "*",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"react": "^19",

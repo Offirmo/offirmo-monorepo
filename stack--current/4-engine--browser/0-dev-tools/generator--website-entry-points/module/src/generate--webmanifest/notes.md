@@ -7,3 +7,5 @@ TODO https://medium.com/samsung-internet-dev/pwa-series-the-manifest-file-cheats
 
 
 https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+
+TODO review https://css-tricks.com/meta-theme-color-and-trickery/

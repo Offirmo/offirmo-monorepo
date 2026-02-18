@@ -6,7 +6,7 @@ const init = once(async function loadꓽcss(): Promise<void> {
 	console.log('loading css...')
 
 	//import('@offirmo-private/css--framework') NO already imported through entry point (bc critical for some vars)
-	import('@offirmo-private/css--utils')
+	import('@offirmo-private/css--utils--diagnostics')
 
 	window.document.documentElement.dataset['oTheme'] = 'dark--colorhunt212'
 	import('@offirmo-private/css--framework/src/themes/theme--dark--colorhunt212.css')
