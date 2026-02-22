@@ -187,6 +187,7 @@ chains -- tribalism
 challenges -- double spend
 challenges -- form vs substance = "the prosecution asked jurors to ignore the form of X — non-custodial, immutable smart contract code — and instead focus on the substance of what it enabled: money laundering"  In short, prosecutors accused X of using a technical innovation to cleverly sidestep the law. This is what the rest of crypto is often accused of, too. In substance, skeptics say,  tokens are stocks, protocols are companies, labs entities are c-suites, staking yields are dividends, token burns are buybacks, airdrops are sometimes IPOs, DAOs are general partnerships, and stablecoins are bank accounts. It’s often hard to argue with. https://blockworks.co/news/crypto-substance-vs-form
 challenges -- Governance = can be challenging in decentralized systems. It requires effective structures that involve community participation and don’t centralize power.
+challenges -- mistakes https://ia.acs.org.au/article/2026/crypto-exchange-makes--58bn-mistake.html
 challenges -- multibillion-dollar implosions of FTX, BlockFi, Celsius, and Voyager Digital
 challenges -- need to purchase crypto first, have to endure a steep learning curve with wallets and exchanges as well as additional costs "It’s really hard to get non crypto people to use it" https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
 challenges -- quantum https://a16zcrypto.com/posts/podcast/quantum-computing-what-when-where-how-fact-vs-fiction/
@@ -553,6 +554,7 @@ role blind and clear signing = ???
 rotation = swapping crypto around cycles, ex. BTC-to-ETH
 RPC = interface to interact with a blockchain through a node
 RWAfi = real-world asset finance
+sanctionned by US https://en.wikipedia.org/wiki/Nicolas_Guillou
 Satochi
 scalability
 scalability -- transactions per second
@@ -665,6 +667,7 @@ threshold signing systems
 token gating -- examples for brands https://www.arianee.com/post/what-is-token-gating
 token gating = exclusive content to token (F/NF) holders https://www.coinbase.com/en-au/learn/crypto-basics/what-is-token-gating-and-what-are-the-benefits-of-doing-it
 token sale -- ex. 2025 https://sale.megaeth.com/
+Token Transparency = A standardized, open-source disclosure framework for token issuers. Leveling the playing field for all investors. https://blockworks.com/token-transparency
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokenomics
 tokenomics -- burn
@@ -793,6 +796,7 @@ Web3 -- decentralization = aim to distribute and store data in decentralized net
 Web3 -- interoperability = Web 3.0 aims to create more interconnections between diverse technologies, so data flows between different platforms without intermediaries. Interoperability makes data portable so users can seamlessly switch between services while maintaining their preferences, profiles, and settings.
 Web3 -- semantic web = enables applications to perform complex tasks by understanding the content and context of web data. It uses metadata and artificial intelligence to provide meanings (semantics) to user-generated data. Web 3.0 aims to move more fully towards semantic web technologies currently found in some aspects of existing web technologies. For example, a search engine provides more accurate and contextually relevant search results, and intelligent agents assist users in performing tasks more efficiently.
 Web3 -- trustlessness = In centralized web applications and services, users often need to place trust in a central authority to manage their data, transactions, and interactions. These central authorities have control over user data, and they can manipulate the system's rules. The data may be subject to security risks or mismanagement, potentially resulting in the loss or misuse of user information. In contrast, Web3 introduces trustlessness, so users can engage in transactions and interactions without trusting any specific party.
+Web4 ? “where AI agents read, write, own, earn, and transact—without needing a human in the loop.”
 whale -- fighting over the same whales
 whale = big asset holder
 who's who -- Anthony Di Iorio

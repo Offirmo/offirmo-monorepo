@@ -27,6 +27,7 @@ frontend -- React -- https://reactrouter.com/home ?
 GHA https://github.com/step-security
 git -- git crypt https://github.com/AGWA/git-crypt
 https://github.com/gvergnaud/ts-pattern
+https://punits.dev/blog/vercel-netlify-cloudflare-serverless-cold-starts/
 https://tanstack.com/
 https://www.totaltypescript.com/how-to-create-an-npm-package
 IaC -- pulumi https://www.pulumi.com/
@@ -55,10 +56,12 @@ monorepo -- aware -- ✖ bolt
 nanoservices
 next.js https://nextjs.org/docs
 packages -- evaluation https://node-modules.dev/graph#install=@solana/web3.js
+pdf https://documenso.com/blog/introducing-libpdf-the-pdf-library-typescript-deserves
 pkg manager -- ⚠ pnpm
 pkg manager -- ✅ yarn v4
 pkg manager -- ✖ npm
 polish https://number-flow.barvian.me/
+PostgreS queues https://news.ycombinator.com/item?id=37636841
 search -- postgres https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
 solutions -- https://drizzle.team/
@@ -70,6 +73,7 @@ ui - markdown -- editor https://overtype.dev/
 vite -- npm create vite@latest my-project
 vite -- vitest
 vite ✅ https://vite.dev/
+viz https://visx.airbnb.tech/gallery
 web apps -- ? expo https://expo.dev/
 wire protocol https://capnproto.org/l ?
 yalc

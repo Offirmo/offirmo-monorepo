@@ -4,3 +4,4 @@ https://datatracker.ietf.org/doc/html/rfc8615
 
 
 TODO https://llmstxt.org/
+TODO https://sneak.berlin/.well-known/pgpkey.txt

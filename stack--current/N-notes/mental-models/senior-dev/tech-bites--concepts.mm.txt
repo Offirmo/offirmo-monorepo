@@ -453,6 +453,7 @@ framework -- motivations -- don't like the language ex. Java style on Javascript
 framework -- motivations -- underlying complexities = BUT may not be still there
 framework -- spectrum = spectrum of more features v. loss of architectural control https://reactrouter.com/start/modes
 frameworks = you have to build projects around them and not with them https://orm.drizzle.team/docs/overview#headless-orm
+freedesktop.org
 FTU – First Time Use
 function
 function -- 1st-class object

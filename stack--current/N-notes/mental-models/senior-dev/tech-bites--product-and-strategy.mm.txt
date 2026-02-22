@@ -141,7 +141,7 @@ features -- enterprise scale -- sort
 features -- enterprise scale -- SSO
 features -- enterprise scale -- templates
 features -- enterprise scale -- user management
-features -- infantile level https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+features -- infantile level = https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 features -- worse is better = there is a point where less functionality ("worse") is a preferable option ("better") in terms of practicality and usability. Software that is limited, but simple to use, may be more appealing to the user and market than the reverse https://en.wikipedia.org/wiki/Worse_is_better
 FFP "First Full Purchase" = the moment customers finally decide it’s time to go from ‘just browsing’ to ‘fine, take my money already'
 financing cycle https://en.wikipedia.org/wiki/Seed_money
@@ -174,7 +174,13 @@ growth -- onboarding -- fatigue
 growth -- should never be a goal in itself, relevance+engagement is
 growth -- viral = helpful but not necessary
 house ads = surfacing 1p content / features to user
-how to make something great https://ryolu.notion.site/how-to-make-something-great
+how to make something great -- Act from Instinct and Build to Learn
+how to make something great -- Assemble the Believers, Not the Bureaucrats
+how to make something great -- Begin with the Ambiguous Artifact = A truly fertile concept often resists immediate clarity
+how to make something great -- Delay the Funnel, Widen the Field = at the genesis of a thing that might be great, strict focus is a ruse. The best solutions emerge after you’ve wandered through a landscape of problems
+how to make something great -- Don’t Validate Ideas to Death = In a world saturated with A/B tests, focus groups, and the fetishization of “data-driven” everything, it’s easy to strangle a young idea in the crib
+how to make something great -- Pursue Quality and Agility in Equal Measure
+how to make something great = https://ryolu.notion.site/how-to-make-something-great
 illegal practices -- monopoly / oligopoly
 illegal practices -- payola = illegal practice of paying a commercial radio station to play a song without the station disclosing the payment (boosted) https://en.wikipedia.org/wiki/Payola
 illegal practices -- predatory pricing
@@ -372,7 +378,7 @@ system of work = A connected portfolio of products with clear and discrete value
 target
 teams moving from spreadsheet
 too big to fail
-too big to tame
+too big to tame https://tech.slashdot.org/story/25/12/09/141227/indias-aviation-crisis-is-all-about-too-big-to-tame
 tool tech stack -- review https://www.lennysnewsletter.com/p/whats-in-your-stack-the-state-of
 top complaints -- actual case J. -- 01 Performance and Speed
 top complaints -- actual case J. -- 02 User Interface and Usability

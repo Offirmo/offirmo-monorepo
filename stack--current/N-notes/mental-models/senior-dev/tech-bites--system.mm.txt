@@ -124,6 +124,7 @@ back-off and retry mechanisms
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
+background jobs -- "Queues aren't the right abstraction" = want durable instead https://www.inngest.com/blog/queues-are-no-longer-the-right-abstraction
 background jobs -- durable functions = "durable" = workflow's ability to maintain state and logic through failures, retries, and pauses. A Durable Function guarantees a start-to-finish execution; once it's started, it will eventually complete its execution regardless of any unexpected issues. https://www.inngest.com/blog/durable-functions-a-visual-javascript-primer
 background jobs -- issues -- Inefficient Error Handling: While we can implement basic retry mechanisms, it's challenging to manage complex error handling and recovery scenarios.
 background jobs -- issues -- Lack of State Management: Background jobs typically don't maintain their state between executions. If a job fails midway, it often needs to start from the beginning, potentially leading to duplicate work or inconsistent results.
