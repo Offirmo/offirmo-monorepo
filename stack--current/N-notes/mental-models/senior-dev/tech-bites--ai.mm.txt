@@ -319,6 +319,7 @@ shadow AI = where all the employees use AI in stealth https://ghuntley.com/mirro
 singularity
 skilled pragmatist https://cutlefish.substack.com/p/tbm-271-the-biggest-untapped-opportunity
 skills -- spec https://agentskills.io/specification
+skills https://simonwillison.net/2025/Dec/12/openai-skills/
 sleeper agents (security) https://www.anthropic.com/research/probes-catch-sleeper-agents
 sleeper agents -- defection probes https://www.anthropic.com/research/probes-catch-sleeper-agents
 slop = unwanted AI generated content https://simonwillison.net/2024/May/8/slop/

@@ -404,6 +404,7 @@ end-of-life -- "stuck upgrading" https://github.com/NullVoxPopuli/package-majors
 end-of-life -- debate https://github.com/endoflife-date/endoflife.date/pull/6684
 end-of-life https://endoflife.date/
 engineer's notions of simplicity, economies of scale, and design integrity https://en.wikipedia.org/wiki/Planned_obsolescence#History
+engineering https://en.wikipedia.org/wiki/Citicorp_Center_engineering_crisis
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
 EOL software "end of life" https://www.herodevs.com/support
 epochs: a backward-compatible language evolution mechanism https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1881r0.html
@@ -845,6 +846,7 @@ resource -- deletion -- undelete = Undeleting shouldn’t be triggered by users,
 resource -- subresource = delete them with parent
 resource -- trash can + untrashing = known feature, different from soft deletion
 Resource Description Framework (RDF) = express statements as triples in the form of subject-predicate-object
+responsibilities https://en.wikipedia.org/wiki/British_Post_Office_scandal
 REST (REpresentational State Transfer)
 REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
 Reverse Polish Notation
