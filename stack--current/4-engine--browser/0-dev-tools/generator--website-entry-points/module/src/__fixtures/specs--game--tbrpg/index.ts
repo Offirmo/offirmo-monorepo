@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@monorepo-private/ts--types--web'
-import { AUTHOR } from '@monorepo-private/marketing/offirmo'
+import { AUTHOR } from '@monorepo-private/marketing/creator'
 
 import type { WebProperty, WebPropertyEntryPointSpec } from '../..'
 
@@ -90,8 +90,7 @@ const WEBSITE: WebProperty = {
 /////////////////////////////////////////////////
 const SPEC: WebPropertyEntryPointSpec = {
 	...WEBSITE,
-
-	preset: 'app--immersive',
+	...PRESETꘌappⵧimmersive,
 
 	/////// PWA
 	wantsꓽinstall: 'promotion-capable',

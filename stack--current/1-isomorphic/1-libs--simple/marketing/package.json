@@ -6,11 +6,12 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/x/index.ts",
-		"./offirmo": "./module/src/offirmo/_entrypoint.ts",
-		"./x": "./module/src/x/_entrypoint.ts"
+		".": "./module/src/web3/index.ts",
+		"./creator": "./module/src/creator/_entrypoint.ts",
+		"./pro": "./module/src/pro/_entrypoint.ts",
+		"./web3": "./module/src/web3/_entrypoint.ts"
 	},
-	"source": "module/src/x/index.ts",
+	"source": "module/src/web3/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -18,7 +19,7 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/x/**/*.tests.ts'",
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/web3/**/*.tests.ts'",
 		"check--ts": "echo \"@monorepo-private/marketing\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",

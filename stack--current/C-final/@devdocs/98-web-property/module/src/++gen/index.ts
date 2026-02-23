@@ -9,10 +9,7 @@ import { SPEC } from '../index.ts'
 /////////////////////////////////////////////////
 
 await generateꓽwebsiteᝍentryᝍpoints(
-	{
-		...SPEC,
-		host: 'cloudflare--pages',
-	},
+	SPEC,
 	path.resolve(path.dirname(fileURLToPath(import.meta.url)), '~~output'),
 	{ rm: true },
 )

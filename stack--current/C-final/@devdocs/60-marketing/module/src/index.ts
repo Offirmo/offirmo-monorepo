@@ -8,6 +8,7 @@ import type {
 } from '@monorepo-private/ts--types--web'
 
 import type { WebProperty } from '@monorepo-private/generator--website-entry-points'
+import { AUTHOR } from '@monorepo-private/marketing/web3'
 
 /////////////////////////////////////////////////
 /*
@@ -18,24 +19,6 @@ WebPropertyEntryPointSpec
 		⇲ Thing
 			↳ Author
 */
-
-/////////////////////////////////////////////////
-
-//const SOCIAL_LINKⵧGITHUB: SocialNetworkLink      = { network: 'github',      handle: 'TODO',   url: 'https://github.com/TODO'           }
-//const SOCIAL_LINKⵧTWITTER: SocialNetworkLink     = { network: 'twitter',     handle: 'TODO',       url: 'https://x.com/@TODO'          }
-
-const AUTHOR: Author = {
-	name: 'TODO persona',
-	intro: 'Web3 engineer',
-	//email: EMAIL,
-
-	urlⵧcanonical: 'TODO',
-
-	urlsⵧsocial: [
-		//SOCIAL_LINKⵧGITHUB,
-		//SOCIAL_LINKⵧTWITTER
-	],
-}
 
 /////////////////////////////////////////////////
 
@@ -50,6 +33,7 @@ const ONLINE_PRESENCE: WithOnlinePresence = {
 	urlⵧcanonical: 'TODO',
 	urlsⵧsocial: [
 		// TODO
+		//const SOCIAL_LINKⵧGITHUB: SocialNetworkLink      = { network: 'github',      handle: 'TODO',   url: 'https://github.com/TODO'           }
 	],
 }
 
@@ -71,7 +55,7 @@ const WEBSITE: WebProperty = {
 
 	title: 'Dev Docs Web3',
 	icon: {
-		emoji: '🧱',
+		emoji: '⛓️‍💥',
 		//svg: path.join(__dirname, './icon--rpg.svg'),
 	},
 	keywords: ['documentation', 'web3'],

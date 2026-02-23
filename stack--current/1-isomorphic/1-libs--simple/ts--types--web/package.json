@@ -6,7 +6,8 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/index.ts"
+		".": "./module/index.ts",
+		"./_expect": "./module/__specs/_entrypoint.ts"
 	},
 	"source": "module/index.ts",
 	"peerDependencies": {
@@ -29,6 +30,7 @@
 		"@monorepo-private/timestamps": "*",
 		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

@@ -7,7 +7,7 @@ import generateꓽwebsiteᝍentryᝍpoints from '@monorepo-private/generator--we
 
 import type { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@monorepo-private/ts--types--web'
 
-import { AUTHOR } from '@monorepo-private/marketing/offirmo'
+import { AUTHOR } from '@monorepo-private/marketing/creator'
 
 import type { WebProperty, WebPropertyEntryPointSpec } from '@monorepo-private/generator--website-entry-points'
 

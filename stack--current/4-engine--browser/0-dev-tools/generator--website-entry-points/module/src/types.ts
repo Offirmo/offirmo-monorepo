@@ -89,13 +89,6 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	// optional '?:' = truly optional (can be easily derived)
 	// TODO use zod? or tRPC?
 
-	// meta selector that triggers different defaults
-	preset?:
-		| 'app--immersive' // webapp, uses full screen, no nav nor browser controls ex. game
-		| 'blog' // content oriented
-		| 'landing' // "rebound" page trying to promote the real content with a CTA: buy, install app... https://growth.design/case-studies/landing-page-ux-psychology
-	// TODO more on-demand
-
 	/////// SPA
 	isꓽcatching_all_routes?: boolean // if true, we may NOT want a 404.html, ex. https://developers.cloudflare.com/pages/configuration/serving-pages/#single-page-application-spa-rendering
 

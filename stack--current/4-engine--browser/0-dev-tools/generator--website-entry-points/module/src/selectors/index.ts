@@ -67,9 +67,6 @@ function wantsꓽinstall(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 
 	// not provided
 
-	if (spec.preset === 'app--immersive')
-		return true
-
 	return false
 }
 
@@ -79,9 +76,6 @@ function wantsꓽinstall(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 function hasꓽown_navigation(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	if (typeof spec.hasꓽown_navigation === 'boolean')
 		return spec.hasꓽown_navigation
-
-	if (spec.preset === 'app--immersive')
-		return true
 
 	return false
 }
@@ -115,9 +109,6 @@ function prefersꓽorientation(spec: Immutable<WebPropertyEntryPointSpec>): bool
 
 function getꓽfeatures(spec: Immutable<WebPropertyEntryPointSpec>): FeatureSnippets[] {
 	const features = new Set<FeatureSnippets>(spec.features ?? [])
-
-	if (spec.preset === 'app--immersive')
-		features.add('cssⳇviewport--full' as FeatureSnippets)
 
 	features.add('cssⳇbox-layout--natural')
 
@@ -229,7 +220,6 @@ function getꓽbasenameⵧwebmanifest(spec: Immutable<WebPropertyEntryPointSpec>
 }
 
 function getꓽiconⵧemoji(spec: Immutable<WebPropertyEntryPointSpec>): Emoji {
-	// TODO generate default from preset or other hints?
 	return spec.icon?.emoji ?? '🌍'
 }
 

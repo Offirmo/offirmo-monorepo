@@ -1,2 +1,2 @@
-// ./x
+// ./creator
 export * from './index.ts'

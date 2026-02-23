@@ -16,7 +16,7 @@ WebPropertyEntryPointSpec
 */
 /////////////////////////////////////////////////
 
-import { AUTHOR } from '@monorepo-private/marketing/offirmo'
+import { AUTHOR } from '@monorepo-private/marketing/creator'
 
 const THING: Thing = {
 	description: 'Placeholders generator',
