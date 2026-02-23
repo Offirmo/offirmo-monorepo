@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import { LIB } from './consts.ts'
 import type { State, CodeSpec, CodeRedemption } from './types.ts'

@@ -9,7 +9,7 @@
 /////////////////////////////////////////////////
 
 import { Tags as EXIFTags } from 'exiftool-vendored'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { TimestampUTCMs } from '@monorepo-private/timestamps'
 
 import {
 	Basename,

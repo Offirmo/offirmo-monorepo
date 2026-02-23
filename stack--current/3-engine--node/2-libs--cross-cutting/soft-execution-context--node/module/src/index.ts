@@ -1,6 +1,6 @@
 import * as os from 'node:os'
 
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 
 /////////////////////
 
@@ -69,7 +69,7 @@ function decorateWithDetectedEnv() {
 
 /////////////////////
 
-export * from '@offirmo-private/soft-execution-context'
+export * from '@monorepo-private/soft-execution-context'
 export {
 	listenToUncaughtErrors,
 	listenToUnhandledRejections,

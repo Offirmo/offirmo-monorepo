@@ -1,8 +1,8 @@
 /////////////////////
 
-import { type Immutable} from '@offirmo-private/ts-types'
-import { type UUID } from '@offirmo-private/uuid'
-import { type TimestampUTCMs } from '@offirmo-private/timestamps'
+import { type Immutable} from '@monorepo-private/ts--types'
+import { type UUID } from '@monorepo-private/uuid'
+import { type TimestampUTCMs } from '@monorepo-private/timestamps'
 
 /////////////////////
 

@@ -1,11 +1,11 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	toꓽstring,
-} from '@offirmo-private/ts-utils'
-import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@offirmo-private/timestamps'
-import * as NORMALIZERS from '@offirmo-private/normalize-string'
-import * as RichText from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/ts--utils'
+import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@monorepo-private/timestamps'
+import * as NORMALIZERS from '@monorepo-private/normalize-string'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import type {
 	WithRevision,
@@ -15,7 +15,7 @@ import type {
 	UTBundle,
 	BaseUState,
 	BaseTState,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 import {
 	is_time_stamped,
 	getꓽschema_versionⵧloose,
@@ -23,7 +23,7 @@ import {
 	isꓽBaseState,
 	isꓽUState, isꓽTState, isꓽUTBundle,
 	isꓽRootState,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 /////////////////////////////////////////////////
 

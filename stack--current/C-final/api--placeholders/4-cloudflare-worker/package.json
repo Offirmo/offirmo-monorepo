@@ -1,8 +1,6 @@
 {
-	"name": "@offirmo-private/cloudflare-worker",
+	"name": "@monorepo-private/cloudflare-worker",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"engines": {
 		"cloudflare--wrangler": "*"
@@ -14,9 +12,9 @@
 	},
 	"source": "module/src/index.ts",
 	"dependencies": {
-		"@offirmo-private/generator--svg": "*",
-		"@offirmo-private/offirmo-api--interface": "*",
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/generator--svg": "*",
+		"@monorepo-private/offirmo-api--interface": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/practical-logger-core": "^3",
 		"hono": "^4",
@@ -26,7 +24,7 @@
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/cloudflare-worker\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/cloudflare-worker\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s tests check--ts",
@@ -35,8 +33,8 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4",
-		"@offirmo-private/monorepo--decisions": "*",
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo--decisions": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@offirmo/universal-debug-api-interface": "^1",
 		"@parcel/core": "^2",

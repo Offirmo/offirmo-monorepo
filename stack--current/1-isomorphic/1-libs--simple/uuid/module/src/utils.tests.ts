@@ -13,7 +13,7 @@ interface Test extends WithUUID {
 	another: UUID
 }
 
-describe('@offirmo-private/uuid - utils', function() {
+describe('@monorepo-private/uuid - utils', function() {
 
 	describe('xxx_test_unrandomize_element()', function() {
 

@@ -5,7 +5,7 @@ import {
 } from './index.ts'
 
 
-describe('@offirmo-private/type-detection -- shape', function() {
+describe('@monorepo-private/type-detection -- shape', function() {
 
 	describe('hasꓽshape()', function() {
 		const REFERENCE = {

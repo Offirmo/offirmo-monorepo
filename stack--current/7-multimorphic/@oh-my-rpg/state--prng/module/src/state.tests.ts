@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { getꓽrandom } from '@offirmo/random'
-import { xxx_test_unrandomize_element } from '@offirmo-private/uuid'
+import { xxx_test_unrandomize_element } from '@monorepo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 

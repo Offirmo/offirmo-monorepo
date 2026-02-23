@@ -2,8 +2,8 @@ import React, { type CSSProperties } from 'react'
 
 import {
 	getꓽuriⵧnormalized‿str,
-} from '@offirmo-private/ts-types-web'
-import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
+} from '@monorepo-private/ts--types--web'
+import renderⵧto_react from '@monorepo-private/rich-text-format--to-react'
 
 import {
 	type OHAHyperMedia,
@@ -13,11 +13,11 @@ import {
 	getꓽcta,
 	OHAHyperActionBlueprint,
 	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer, OHAPendingEngagement,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 import ᄆHyperAnchor from '../l0-hyper-anchor/index.tsx'
 import './component.css'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 const NAME = `<OHAViewPort>/1`

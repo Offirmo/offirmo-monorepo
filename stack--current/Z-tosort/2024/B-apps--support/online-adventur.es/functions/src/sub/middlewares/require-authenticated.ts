@@ -1,6 +1,6 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 import { normalizeError } from '@offirmo/error-utils'
-import { get_db, Users, get_connection_string } from '@offirmo-private/db'
+import { get_db, Users, get_connection_string } from '@monorepo-private/db'
 
 import { HEADER_IMPERSONATE } from '@online-adventur.es/api-interface'
 

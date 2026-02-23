@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 import {
 	renderⵧto_terminal,
-} from '@offirmo-private/rich-text-format--to-terminal'
+} from '@monorepo-private/rich-text-format--to-terminal'
 
 import { Book, BookInstance, BookPart, BookPage } from '../../src/library/book/types'
 import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from '../../src/library/book/types--guards'

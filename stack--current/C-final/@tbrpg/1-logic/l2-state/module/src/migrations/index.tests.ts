@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
-import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migration-tester'
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { itㆍshouldㆍmigrateㆍcorrectly } from '@monorepo-private/state-migration-tester'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import * as CharacterState from '@tbrpg/state--character'
 import * as WalletState from '@tbrpg/state--wallet'

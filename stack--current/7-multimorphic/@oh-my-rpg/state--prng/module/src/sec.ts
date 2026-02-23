@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
+import { type SoftExecutionContext, getRootSXC } from '@monorepo-private/soft-execution-context'
 import type { Logger } from '@offirmo/practical-logger-types'
 
 import { LIB } from './consts.ts'

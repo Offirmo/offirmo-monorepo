@@ -2,8 +2,8 @@
  */
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { getꓽnodeⵧby_pathⵧensure_file } from '@offirmo-private/data-structures'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { getꓽnodeⵧby_pathⵧensure_file } from '@monorepo-private/data-structures'
 
 import type { StoryUId, StoryEntry, StoryFolder } from '../types.ts'
 import type { State } from './types.ts'

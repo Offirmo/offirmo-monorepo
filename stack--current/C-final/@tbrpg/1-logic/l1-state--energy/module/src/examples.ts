@@ -1,5 +1,5 @@
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
-import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
+import { TEST_TIMESTAMP_MS } from '@monorepo-private/timestamps'
 
 import type { UState, TState } from './types.ts'
 

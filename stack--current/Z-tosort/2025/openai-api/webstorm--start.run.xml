@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false"
-		name="@offirmo-private/openai-api -- Start"
+		name="@monorepo-private/openai-api -- Start"
 		type="NodeJSConfigurationType"
 		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node"
 		node-parameters="--experimental-strip-types"

@@ -4,11 +4,11 @@
  * - React useReducer() https://react.dev/reference/react/useReducer
  */
 
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type ReducerAction,
 	type Reducer,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

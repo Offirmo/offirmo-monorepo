@@ -1,4 +1,4 @@
-import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { InventorySlot } from '@tbrpg/definitions'
 import { DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrpg/logic--weapons'

@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { elapsed_time_ms } from '@offirmo-private/async-utils'
+import { elapsed_time_ms } from '@monorepo-private/utils--async'
 
 import { LIB } from '../../consts.js'
 import { getꓽSXC } from '../../services/sec.js'

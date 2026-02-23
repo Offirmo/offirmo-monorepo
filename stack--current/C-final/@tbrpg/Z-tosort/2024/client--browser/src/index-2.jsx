@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom'
 
-import { set_xoff_flag } from '@offirmo-private/xoff'
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import { set_xoff_flag } from '@monorepo-private/xoff'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 import { overrideHook } from '@offirmo/universal-debug-api-browser'
-import get_loader from '@offirmo-private/iframe--loading'
-import { asap_but_out_of_immediate_execution, schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
+import get_loader from '@monorepo-private/iframe--loading'
+import { asap_but_out_of_immediate_execution, schedule_when_idle_but_within_human_perception } from '@monorepo-private/async-utils'
 
 import { inject_text_encoder } from '@tbrpg/flux'
 

@@ -1,5 +1,5 @@
-import create from '@offirmo-private/murmurhash'
-import { Immutable } from '@offirmo-private/ts-types'
+import create from '@monorepo-private/murmurhash'
+import { Immutable } from '@monorepo-private/ts--types'
 
 export function hash_state(state: Immutable<Object>): string {
 	const Murmur = create()

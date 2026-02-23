@@ -6,8 +6,8 @@ import {
 	type LastMigrationStep,
 	type MigrationStep,
 	migrate_toꓽlatestⵧgeneric,
-} from '@offirmo-private/state-utils'
-import { generate_uuid } from '@offirmo-private/uuid'
+} from '@monorepo-private/state-utils'
+import { generate_uuid } from '@monorepo-private/uuid'
 import { type PRNGState } from '@offirmo/random'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'

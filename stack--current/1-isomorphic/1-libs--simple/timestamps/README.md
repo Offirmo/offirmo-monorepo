@@ -1,9 +1,9 @@
-# @offirmo-private/timestamps
+# @monorepo-private/timestamps
 
 string timestamps generators
 
 ```ts
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
 import {
 	getꓽUTC_timestamp‿ms,
@@ -18,5 +18,5 @@ import {
 	getꓽISO8601ⵧsimplified‿days,
 
 	TEST_TIMESTAMP_MS,
-} from '@offirmo-private/timestamps'
+} from '@monorepo-private/timestamps'
 ```

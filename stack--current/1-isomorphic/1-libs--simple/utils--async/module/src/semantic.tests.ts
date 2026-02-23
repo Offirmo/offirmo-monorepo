@@ -10,7 +10,7 @@ import {
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/async-utils', function() {
+describe('@monorepo-private/utils--async', function() {
 
 	describe('semantic functions', function() {
 		//this.retries(3)

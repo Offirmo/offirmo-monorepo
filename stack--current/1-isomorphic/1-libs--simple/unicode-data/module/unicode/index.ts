@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 interface UnicodeCharDetails {
 	code_point: number

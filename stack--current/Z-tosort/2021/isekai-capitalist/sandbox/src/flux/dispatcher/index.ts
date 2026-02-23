@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { dequal as is_deep_equal } from 'dequal'
-import { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import { SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 import {
 	AnyOffirmoState,
 	BaseAction,
@@ -8,7 +8,7 @@ import {
 	get_schema_version_loose,
 	is_RootState,
 	get_base_loose,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import { Dispatcher, Store } from '../types'
 

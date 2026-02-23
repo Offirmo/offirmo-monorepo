@@ -1,9 +1,9 @@
 import path from 'path'
 import assert from 'tiny-invariant'
 import { Tags as EXIFTags } from 'exiftool-vendored'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
 import { FILE_EXTENSIONSⵧTO_BE_FIXED‿LC } from '../../consts.js'
 import { getꓽparams } from '../../params.js'

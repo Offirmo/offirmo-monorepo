@@ -34,7 +34,7 @@
 		"demo": "run-s start:parcel"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	}

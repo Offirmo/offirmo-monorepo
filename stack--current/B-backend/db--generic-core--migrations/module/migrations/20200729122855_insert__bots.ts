@@ -1,7 +1,7 @@
 import * as assert from 'assert'
 import { type Knex } from 'knex'
 
-import { normalizeꓽemailⵧsafe } from '@offirmo-private/normalize-string'
+import { normalizeꓽemailⵧsafe } from '@monorepo-private/normalize-string'
 
 import { NAME as USERS_TABLE } from './20190915112614_create__users.ts'
 

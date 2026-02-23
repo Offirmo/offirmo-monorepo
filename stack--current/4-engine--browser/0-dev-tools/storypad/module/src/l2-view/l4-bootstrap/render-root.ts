@@ -1,7 +1,7 @@
 /* Root render function
  */
 
-import { isꓽframed } from '../../__vendor/@offirmo-private/browser-features-detection/is-framed.ts'
+import { isꓽframed } from '../../__vendor/@monorepo-private/browser-features-detection/is-framed.ts'
 
 import { RenderMode } from '../../l1-flux/l1-state/types.ts'
 import type { ObservableState } from '../../l1-flux/l2-observable/index.ts'
@@ -24,7 +24,7 @@ function renderꓽroot(state: ObservableState, container: HTMLElement = document
 	}
 	else {
 		// our stuff, we can be more free
-		//import('@offirmo-private/css--framework/viewport.css')
+		//import('@monorepo-private/css--framework/viewport.css')
 		import('../index.css')
 
 		const root = document.createElement('div')

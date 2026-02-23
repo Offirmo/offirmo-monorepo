@@ -232,8 +232,8 @@ Description:
 			}
 
 			zip.file('index.tsx',`
-import { Thing, WithOnlinePresence, ThingWithOnlinePresence, Asset, registerꓽasset_usageⵧload } from '@offirmo-private/credits'
-import AUTHOR from "@offirmo-private/credits/src/authors/${author_id}/index.ts"
+import { Thing, WithOnlinePresence, ThingWithOnlinePresence, Asset, registerꓽasset_usageⵧload } from '@monorepo-private/credits'
+import AUTHOR from "@monorepo-private/credits/src/authors/${author_id}/index.ts"
 
 import type { Background } from '../../../types.ts'
 

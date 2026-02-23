@@ -1,2 +1,2 @@
 
-export const LIB = '@offirmo-private/view--chat'
+export const LIB = '@monorepo-private/view--chat'

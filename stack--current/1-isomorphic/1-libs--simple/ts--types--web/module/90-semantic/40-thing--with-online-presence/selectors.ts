@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { normalize_unicode, normalizeꓽemailⵧsafe, normalizeꓽurl } from '@offirmo-private/normalize-string'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { normalize_unicode, normalizeꓽemailⵧsafe, normalizeꓽurl } from '@monorepo-private/normalize-string'
 
 import type { Url‿str } from '../../01-links/index.ts'
 import * as ThingSelectors from '../30-thing/selectors.ts'

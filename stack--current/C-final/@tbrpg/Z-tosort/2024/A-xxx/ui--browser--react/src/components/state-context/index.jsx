@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 ////////////
 

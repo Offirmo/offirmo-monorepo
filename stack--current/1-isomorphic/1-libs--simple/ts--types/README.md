@@ -5,9 +5,9 @@ Complement https://github.com/sindresorhus/type-fest?tab=readme-ov-file
 
 
 ```js
-import type { Immutable } from '@offirmo-private/ts-types'
-import { NumberMap } from '@offirmo-private/ts-types'
-import { I18nMessages } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { NumberMap } from '@monorepo-private/ts--types'
+import { I18nMessages } from '@monorepo-private/ts--types'
 
 import {
 	JSPrimitiveType,
@@ -21,7 +21,7 @@ import {
 	I18nMessages,
 
 	ImmutabilityEnforcer,
-} from '@offirmo-private/ts-types'
+} from '@monorepo-private/ts--types'
 ```
 
 

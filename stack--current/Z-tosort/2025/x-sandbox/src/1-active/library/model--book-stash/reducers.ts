@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import type { BookCover, BookUId } from '../model--book/types/index.ts'
 import * as BookExperienceLib from '../model--book-experience/index.ts'

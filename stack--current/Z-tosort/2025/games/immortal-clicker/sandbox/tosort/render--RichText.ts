@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
-import * as RichText from '@offirmo-private/rich-text-format'
+import { Immutable } from '@monorepo-private/ts--types'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { BookUId } from '../book/types.js'
 import { isꓽBook } from '../book/types--guards.js'

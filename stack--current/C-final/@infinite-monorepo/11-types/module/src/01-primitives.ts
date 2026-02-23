@@ -1,4 +1,4 @@
-import type { SemVerⳇExact, SemVerⳇRange } from '@offirmo-private/ts-types'
+import type { SemVerⳇExact, SemVerⳇRange } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 // primitives

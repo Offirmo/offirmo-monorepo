@@ -8,7 +8,7 @@
 
 	_overrides: {
 		dependencies: {
-			'@offirmo-private/css--reset': { type:  'dev' },
+			'@monorepo-private/css--reset': { type:  'dev' },
 		},
 	}
 }

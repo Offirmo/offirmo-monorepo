@@ -1,11 +1,11 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { elapsed_time_ms } from '@offirmo-private/async-utils'
+import { elapsed_time_ms } from '@monorepo-private/async-utils'
 import schedule_on_next_repaint from 'raf-schd'
 
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
-import { create as create_chat } from '@offirmo-private/view-chat'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
+import { create as create_chat } from '@monorepo-private/view-chat'
 
 import { AutoScrollDown } from '../auto-scroll-down'
 import logger from '../../../services/logger'

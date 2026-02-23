@@ -1,11 +1,11 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import { type InventorySlot, ITEM_SLOTS } from '@tbrpg/definitions'
 import { CHARACTER_ATTRIBUTES, type CharacterAttribute } from '@tbrpg/state--character'
 import { i18n_messages as I18N_ADVENTURES } from '@tbrpg/logic--adventures'
 import { type ResolvedAdventure } from '@tbrpg/logic--adventure--resolved'
 import { ALL_CURRENCIES, type Currency } from '@tbrpg/state--wallet'
 
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { render_item_short } from './items.ts'
 import { render_currency_amount } from './wallet.ts'

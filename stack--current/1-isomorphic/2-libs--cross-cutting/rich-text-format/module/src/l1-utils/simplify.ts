@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { isꓽobjectⵧliteral } from '@monorepo-private/type-detection'
 import { SCHEMA_VERSION } from '../consts.ts'
 
 import { NodeType, type CheckedNode, type Node, type NodeLike } from '../l1-types/types.ts'

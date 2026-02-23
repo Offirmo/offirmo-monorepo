@@ -4,8 +4,8 @@ import * as path from 'node:path'
 import { expect } from 'chai'
 import * as sinon from 'sinon'
 
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
-import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migration-tester'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
+import { itㆍshouldㆍmigrateㆍcorrectly } from '@monorepo-private/state-migration-tester'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { migrate_toꓽlatest, MIGRATION_HINTS_FOR_TESTS } from './migrations.js'

@@ -1,9 +1,9 @@
 import { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import { get_top_ish_window } from '@offirmo-private/xoff'
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
-import { get_debug_snapshot } from '@offirmo-private/features-detection-browser'
+import { get_top_ish_window } from '@monorepo-private/xoff'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
+import { get_debug_snapshot } from '@monorepo-private/features-detection-browser'
 
 import { BUILD_DATE } from '../../../build.json'
 import './index.css'
@@ -101,7 +101,7 @@ export default class DevArea extends Component {
 			<tr key="INFO">
 				<td>
 					<button onClick={() => {
-						console.info('❓INFO', { location, '@offirmo-private/features-detection-browser': get_debug_snapshot() })
+						console.info('❓INFO', { location, '@monorepo-private/features-detection-browser': get_debug_snapshot() })
 					}}>❓INFO<br/><small>{BUILD_DATE}</small></button>
 				</td>
 			</tr>,

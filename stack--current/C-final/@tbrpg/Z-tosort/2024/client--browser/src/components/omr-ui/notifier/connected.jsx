@@ -2,8 +2,8 @@ import * as React from 'react'
 import { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
-import { THE_BORING_RPG } from '@offirmo-private/marketing-rsrc'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
+import { THE_BORING_RPG } from '@monorepo-private/marketing-rsrc'
 import { NUMERIC_VERSION } from '@tbrpg/flux'
 
 import rich_text_to_react from '../../../services/rich-text-to-react'

@@ -27,7 +27,7 @@ export default {
 	},*/
 	decorators: [
 		(Story) => {
-			import('@offirmo-private/css--framework')
+			import('@monorepo-private/css--framework')
 			return Story
 		},
 		(Story) => (

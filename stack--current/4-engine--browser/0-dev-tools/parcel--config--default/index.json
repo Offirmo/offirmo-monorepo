@@ -4,6 +4,6 @@
 	"resolvers": [
 		"@parcel/resolver-glob",
 		"...",
-		"@offirmo-private/parcel-resolver"
+		"@monorepo-private/parcel-resolver"
 	]
 }

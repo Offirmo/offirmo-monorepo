@@ -8,7 +8,7 @@ import meow from 'meow'
 import { Parcel } from '@parcel/core'
 import type { InitialParcelOptions, TargetDescriptor } from '@parcel/types';
 
-import { NODE_MAJOR_VERSION } from '@offirmo-private/monorepo--decisions'
+import { NODE_MAJOR_VERSION } from '@monorepo-private/monorepo--decisions'
 
 /////////////////////////////////////////////////
 
@@ -39,7 +39,7 @@ const OPTIONS: InitialParcelOptions = {
 	// https://parceljs.org/plugin-system/api/#InitialParcelOptions
 
 	entries: INPUT_DIR + '/*.html',
-	defaultConfig: '@offirmo-private/parcel-config',
+	defaultConfig: '@monorepo-private/parcel-config',
 
 	targets: {
 		'web': {

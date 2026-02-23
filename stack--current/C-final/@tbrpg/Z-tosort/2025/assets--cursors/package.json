@@ -15,7 +15,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/credits": "*",
+		"@monorepo-private/credits": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -25,7 +25,7 @@
 		"test": "run-s test--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

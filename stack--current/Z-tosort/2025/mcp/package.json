@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/mcp",
+	"name": "@monorepo-private/mcp",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -17,14 +17,14 @@
 		"zod": "^3"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/mcp\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/mcp\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
 		"start": "node --experimental-strip-types ./module/src/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"typescript": "^5"

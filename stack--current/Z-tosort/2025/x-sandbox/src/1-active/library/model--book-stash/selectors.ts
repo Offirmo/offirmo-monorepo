@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import type { WithLastUserInvestmentTimestamp } from '@offirmo-private/state-utils'
+import type { Immutable } from '@monorepo-private/ts--types'
+import type { WithLastUserInvestmentTimestamp } from '@monorepo-private/state-utils'
 
 import type { BookCover, BookNodeReference, PageResult, BookPageReference, Text } from '../model--book/index.ts'
 import { getꓽpage } from '../model--book/index.ts'

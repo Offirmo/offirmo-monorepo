@@ -2,7 +2,7 @@ import { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { MemoryRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 //import floating from 'floating.js'
-import { get_xoff_flag, set_xoff_flag } from '@offirmo-private/xoff'
+import { get_xoff_flag, set_xoff_flag } from '@monorepo-private/xoff'
 
 import get_game_instance from '../services/game-instance-browser'
 import { get_base_route, ROUTES } from '../services/routes'

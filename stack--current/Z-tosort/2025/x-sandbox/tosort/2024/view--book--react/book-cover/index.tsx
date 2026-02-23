@@ -1,6 +1,6 @@
 import React, { use, useId, useEffect } from 'react'
 
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import type { BookCover } from '../../model--book/types/index.ts'
 

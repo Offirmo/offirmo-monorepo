@@ -27,7 +27,7 @@ let { code, map } = await bundleAsync({
 	resolver: {
 		read(filePath) {
 			DEBUG && console.log(`Reading "${filePath}"`)
-			if (filePath.endsWith(`npm:@offirmo-private/css--foundation`))
+			if (filePath.endsWith(`npm:@monorepo-private/css--foundation`))
 				filePath = path.join(__dirname, '../../../css--foundation/public/index.css')
 
 			return fs.readFileSync(filePath, 'utf8');

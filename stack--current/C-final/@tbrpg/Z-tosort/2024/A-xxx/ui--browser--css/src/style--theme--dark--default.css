@@ -1,4 +1,4 @@
-@import '@offirmo-private/css--framework/src/style--theme--dark--default.css';
+@import '@monorepo-private/css--framework/src/style--theme--dark--default.css';
 
 /* light on dark theme */
 [data-o-theme="dark--default"] {

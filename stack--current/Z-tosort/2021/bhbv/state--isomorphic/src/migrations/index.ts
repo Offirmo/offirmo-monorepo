@@ -6,7 +6,7 @@ import {
 	SubStatesMigrations,
 	CleanupStep,
 	generic_migrate_to_latest,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 import { SoftExecutionContext } from '../sec'
 
 import { LIB, SCHEMA_VERSION } from '../consts'

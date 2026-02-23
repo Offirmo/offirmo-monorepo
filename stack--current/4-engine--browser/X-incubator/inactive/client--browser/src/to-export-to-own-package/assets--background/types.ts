@@ -1,5 +1,5 @@
-import { Percentage } from '@offirmo-private/ts-types'
-import { Url‿str } from '@offirmo-private/ts-types-web'
+import { Percentage } from '@monorepo-private/ts--types'
+import { Url‿str } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

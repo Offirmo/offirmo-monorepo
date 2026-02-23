@@ -1,8 +1,9 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { useParams, useOutletContext, Link } from 'react-router'
 import type { Node, NodeId } from '@devdocs/types'
 import type { State } from '@devdocs/state'
 import { getꓽall } from '@devdocs/db'
+import { MarkdownRenderer } from '../../markdown-renderer/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -40,7 +41,10 @@ export function NodePage() {
 		const node = id ? nodeById.get(id) : undefined
 		if (!node) return { node: undefined, children: [], childrenAreLeaves: false }
 
-		const disabledNodes = new Set(state.shared.disabled_nodes)
+		const disabledNodes = new Set<string>()
+		for (const [id, settings] of Object.entries(state.shared.node_settings)) {
+			if (settings.isꓽdisabled) disabledNodes.add(id)
+		}
 		const disabledStatuses = new Set(state.shared.disabled_statuses)
 
 		function isDisabled(n: Node): boolean {
@@ -77,6 +81,8 @@ export function NodePage() {
 					<a href={node.original‿url} target="_blank" rel="noopener noreferrer">Original source</a>
 				</p>
 			)}
+
+			<NodeContent node={node} />
 
 			{children.length === 0 ? (
 				<p className="page-node__empty">No children.</p>
@@ -149,6 +155,74 @@ function ChildrenTable({ nodes }: { nodes: Array<Node> }) {
 }
 
 /////////////////////////////////////////////////
+
+function NodeContent({ node }: { node: Node }) {
+	if (node['content‿md']) {
+		return <MarkdownRenderer content={node['content‿md']} className="page-node__content" />
+	}
+
+	if (node['original‿url']) {
+		return <RemoteMarkdown url={node['original‿url']} />
+	}
+
+	return null
+}
+
+function RemoteMarkdown({ url }: { url: string }) {
+	const { content, loading, error } = useRemoteMarkdown(url)
+
+	if (loading) return <p className="page-node__loading">Loading…</p>
+	if (error) return <p className="page-node__error">{error}</p>
+	if (!content) return null
+
+	return <MarkdownRenderer content={content} className="page-node__content" />
+}
+
+function useRemoteMarkdown(url: string): { content: string | null, loading: boolean, error: string | null } {
+	const [content, setContent] = useState<string | null>(null)
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState<string | null>(null)
+
+	useEffect(() => {
+		let cancelled = false
+		setContent(null)
+		setLoading(true)
+		setError(null)
+
+		const rawUrl = getꓽraw_url(url)
+		fetch(rawUrl)
+			.then(res => {
+				if (!res.ok) throw new Error(`Failed to fetch (${res.status})`)
+				return res.text()
+			})
+			.then(text => {
+				if (!cancelled) {
+					setContent(text)
+					setLoading(false)
+				}
+			})
+			.catch(err => {
+				if (!cancelled) {
+					setError(String(err.message ?? err))
+					setLoading(false)
+				}
+			})
+
+		return () => { cancelled = true }
+	}, [url])
+
+	return { content, loading, error }
+}
+
+// https://github.com/{owner}/{repo}/blob/{ref}/{path}
+// → https://raw.githubusercontent.com/{owner}/{repo}/{ref}/{path}
+const GITHUB_BLOB_RE = /^https:\/\/github\.com\/([^/]+\/[^/]+)\/blob\/(.+)$/
+
+function getꓽraw_url(url: string): string {
+	const m = url.match(GITHUB_BLOB_RE)
+	if (m) return `https://raw.githubusercontent.com/${m[1]}/${m[2]}`
+	return url
+}
 
 function formatDate(date: Date | string): string {
 	const d = typeof date === 'string' ? new Date(date) : date

@@ -1,7 +1,7 @@
 const path = require('path')
 
-//const { dumpꓽanyⵧprettified } = require('@offirmo-private/prettify-any')
-//const rich_text_to_terminal = require('@offirmo-private/rich-text-format--to-terminal')
+//const { dumpꓽanyⵧprettified } = require('@monorepo-private/prettify-any')
+//const rich_text_to_terminal = require('@monorepo-private/rich-text-format--to-terminal')
 const fs = require('@offirmo/cli-toolbox/fs/extra')
 const { getLogger } = require('@offirmo/universal-debug-api-node')
 
@@ -194,7 +194,7 @@ const target_path = path.resolve(process.cwd(), DATA_SOURCEFILE_PATH)
 let data = `// THIS FILE IS AUTO GENERATED!
 // ${(new Date()).toISOString()}
 
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts-types'
 
 import { Background, BiomeId } from './types'
 

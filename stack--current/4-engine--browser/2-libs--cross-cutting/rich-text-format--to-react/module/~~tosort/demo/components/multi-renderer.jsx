@@ -1,8 +1,8 @@
 import { Component } from 'react'
 
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
-const RichText = require('@offirmo-private/rich-text-format')
+const RichText = require('@monorepo-private/rich-text-format')
 import rich_text_to_react from '../services/rich-text-to-react.jsx'
 
 const RichTextView = ({doc, mode = 'to_html'}) => {

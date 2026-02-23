@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import * as sinon from 'sinon'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
+import { dumpꓽanyⵧprettified } from '@monorepo-private/prettify-any'
 
 import { LIB } from './consts.ts'
 import { Fraction } from './utils.ts'

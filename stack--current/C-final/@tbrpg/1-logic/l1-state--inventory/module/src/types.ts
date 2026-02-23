@@ -1,4 +1,4 @@
-import { type BaseUState } from '@offirmo-private/state-utils'
+import { type BaseUState } from '@monorepo-private/state-utils'
 
 import { type Item, InventorySlot } from '@tbrpg/definitions'
 import { type Armor } from '@tbrpg/logic--armors'

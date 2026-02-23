@@ -1,11 +1,11 @@
 import { expect } from 'chai'
 
-import * as RichText from '@offirmo-private/rich-text-format'
-import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
+import * as RichText from '@monorepo-private/rich-text-format'
+import { dumpꓽanyⵧprettified } from '@monorepo-private/prettify-any'
 
 import { generate_random_demo_weapon, DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrpg/logic--weapons'
 
-import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import { render_weapon_detailed } from './index.ts'
 import { LIB } from './consts.ts'

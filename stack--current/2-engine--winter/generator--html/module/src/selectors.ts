@@ -1,13 +1,13 @@
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import type { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
+import type { Immutable, IETFLanguageType, Charset } from '@monorepo-private/ts--types'
 
-import { hasꓽcontent } from '@offirmo-private/type-detection'
-import type { Url‿str, Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
-import * as Selectors from '@offirmo-private/ts-types-web'
+import { hasꓽcontent } from '@monorepo-private/type-detection'
+import type { Url‿str, Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@monorepo-private/ts--types--web'
+import * as Selectors from '@monorepo-private/ts--types--web'
 import {
 	normalize_unicode,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 import {
 	FeatureSnippets,
@@ -101,7 +101,7 @@ function getꓽmetas(spec: Immutable<HtmlFileSpec>): Immutable<HtmlMetas> {
 		pragmas: {
 			'content-language': getꓽlang(spec),
 			'content-type': `text/html;charset=${charset}`,
-			generator: '@offirmo-private/generator--html',
+			generator: '@monorepo-private/generator--html',
 			keywords: [] as string[],
 			...(spec?.metas?.pragmas as any),
 		},
@@ -210,7 +210,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlFileSpec>): Imm
 					break
 
 				case 'cssⳇfoundation--offirmo':
-					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--foundation';`]
+					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@monorepo-private/css--foundation';`]
 					// reminder: foundation includes reset
 					_enqueue_layer_if_not_present('offirmo--reset')
 					_enqueue_layer_if_not_present('offirmo--foundation')
@@ -218,7 +218,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlFileSpec>): Imm
 					break
 
 				case 'cssⳇframework--offirmo':
-					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--framework';`]
+					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@monorepo-private/css--framework';`]
 					// reminder: framework includes foundation which includes reset
 					_enqueue_layer_if_not_present('offirmo--reset')
 					_enqueue_layer_if_not_present('offirmo--foundation') // bc included in framework

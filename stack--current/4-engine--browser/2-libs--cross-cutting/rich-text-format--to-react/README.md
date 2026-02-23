@@ -8,6 +8,6 @@ TODO check https://github.com/mohsinulhaq/react-popper-tooltip
 TODO https://www.w3.org/Style/Examples/007/leaders.en.html
 
 ```ts
-import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
+import renderⵧto_react from '@monorepo-private/rich-text-format--to-react'
 
 ```

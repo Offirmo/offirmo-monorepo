@@ -1,4 +1,4 @@
-import poll_window_variable, { poll } from '@offirmo-private/poll-window-variable'
+import poll_window_variable, { poll } from '@monorepo-private/poll-window-variable'
 
 import { ACCOUNT_STATE } from './game-instance-browser'
 import { set_user_context } from './raven'

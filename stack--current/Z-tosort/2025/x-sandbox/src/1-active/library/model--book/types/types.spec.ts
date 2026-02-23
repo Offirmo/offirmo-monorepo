@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import * as RichText from '@offirmo-private/rich-text-format'
-import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import * as RichText from '@monorepo-private/rich-text-format'
+import to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import { LIB } from '../../consts.ts'
 

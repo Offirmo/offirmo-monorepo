@@ -2,7 +2,7 @@ import { Enum } from 'typescript-string-enums'
 
 import { RelativePath, TimeZone } from '../../types.js'
 import { BetterDate, DateRange } from '../../services/better-date.js'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { TimestampUTCMs } from '@monorepo-private/timestamps'
 
 ////////////////////////////////////
 

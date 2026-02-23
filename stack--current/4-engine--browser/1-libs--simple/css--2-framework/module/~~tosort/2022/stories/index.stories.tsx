@@ -1,15 +1,15 @@
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
-import WithIphoneNotches from '@offirmo-private/toolbox--storybook/src/wrappers/with-iphone-notches'
+import WithIphoneNotches from '@monorepo-private/toolbox--storybook/src/wrappers/with-iphone-notches'
 
 import WithOffirmoCssSetup from '../.storybook/wrapper--with-offirmo-css-setup'
 import WithBodyFullWidth from '../.storybook/wrapper--with-body-full-width'
 
-import { default_viewport__mobile } from '@offirmo-private/toolbox--storybook/src/custom_viewports.js'
+import { default_viewport__mobile } from '@monorepo-private/toolbox--storybook/src/custom_viewports.js'
 
 import './index.css'
 
-const LIB = '@offirmo-private/css--framework'
+const LIB = '@monorepo-private/css--framework'
 
 ////////////////////////////////////////////////////////////////////////////////////
 

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { create, play } from '@tbrpg/state'

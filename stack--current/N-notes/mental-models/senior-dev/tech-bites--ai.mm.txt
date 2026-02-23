@@ -29,6 +29,7 @@
 2025-08-07 GPT 5 https://x.com/i/trending/1953256633385271319
 2025-08-27 The reality of AI-Assisted software engineering productivity https://addyo.substack.com/p/the-reality-of-ai-assisted-software
 2025-10-17 "AGI is still 10y away" influential podcast https://www.dwarkesh.com/p/andrej-karpathy
+2025-11 "November moment" = inflexion point in coding capabilities https://simonwillison.net/2026/Jan/4/inflection/ https://x.com/gdb/status/2019566641491963946
 2025-11-14 AI espionage? https://www.anthropic.com/news/disrupting-AI-espionage
 2025-11-20 A Microsoft executive is questioning why more people aren't impressed with AI => immediately triggered backlash.https://au.pcmag.com/ai/114305/microsoft-exec-asks-why-arent-more-people-impressed-with-ai
 2025-12 "soul document" https://soul.md/
@@ -38,7 +39,9 @@
 2026-01-20 "the era of humans writing code is over. Disturbing for those of us who identify as SWEs, but no less true." https://x.com/rough__sea/status/2013280952370573666
 2026-01-31 most massive layoffs for 25 years, "job hugging" https://x.com/BoringBiz_/status/2019414912552878526?
 2026-02 Claudeception https://github.com/blader/Claudeception/commits/main/
+2026-02 Gorman paradox "Everyone's shipping. Nobody's succeeding" https://x.com/BrettFromDJ/status/2023410927593541802
 2026-02 moltbook = A social network for AI agents. They share, discuss, and upvote. Humans welcome to observe. 🦞 https://www.moltbook.com/
+2026-02 OpenClaw https://garymarcus.substack.com/p/openclaw-aka-moltbot-is-everywhere
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
 [ ] https://aleteia.org/tag/artificial-intelligence/
@@ -129,6 +132,8 @@ Chemical, Biological, Radiological, and Nuclear (CBRN) weapons = example of rest
 Cinderella “Glass Slipper” Effect = easy early retention "When the Shoe Fits, Users Sit Tight" https://www.a16z.news/p/the-cinderella-glass-slipper-effect
 citation accuracy
 coded gaze = Automated systems are not inherently neutral. They reflect the priorities, preferences, and prejudices - the coded gaze - of those who have the power to mold artificial intelligence.
+commoditization -- resistance = stop caring about model capabilities and start caring about the things models can’t take away: data moats, workflow capture, integration depth. It’s less fun to talk about at a dinner party. It’s where the actual companies get built.
+commoditization = "the clever feature you shipped in March gets commoditized by a model update in June. The ground moves every quarter and your moat evaporates"
 common sense https://commonsense.run/
 compaction = automatic summarizing of older context when approaching the context window limit https://platform.claude.com/docs/en/build-with-claude/compaction
 constitution = a list of principles to which the model should adhere https://www.anthropic.com/research/constitutional-classifiers
@@ -347,6 +352,7 @@ tasks -- vision -- Unconditional Image Generation
 tasks -- vision -- Video Classification
 tasks -- vision -- Zero-Shot Image Classification
 tasks -- vision -- Zero-Shot Object Detection
+technical debt becomes a wise investment https://www.danshapiro.com/blog/2025/12/this-is-a-time-of-technical-deflation/
 temperature
 temptation to over-automate = need balance vs overwork https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 tensor ??

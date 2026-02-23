@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/flux",
+	"name": "@monorepo-private/flux",
 	"description": "Flux pattern implementation",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -18,15 +18,15 @@
 	"source": "src/index.ts",
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/state-utils": "*",
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/ts-utils": "*",
+		"@monorepo-private/utils--async": "^0",
+		"@monorepo-private/state-utils": "*",
+		"@monorepo-private/timestamps": "*",
+		"@monorepo-private/ts--types": "*",
+		"@monorepo-private/ts--utils": "*",
 		"emittery": "^1",
 		"tiny-invariant": "^1"
 	},
@@ -42,9 +42,9 @@
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/soft-execution-context--node": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context--node": "*",
 		"@offirmo/unit-test-toolbox": "*",
 		"@offirmo/universal-debug-api-node": "^0",
 		"npm-run-all": "^4",

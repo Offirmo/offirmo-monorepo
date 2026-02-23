@@ -1,9 +1,9 @@
 /////////////////////
 
-import { type Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@monorepo-private/ts--types'
 import { getꓽrandom, getꓽengine } from '@offirmo/random'
-import { getꓽUTC_timestampⵧhuman_readable‿days } from '@offirmo-private/timestamps'
-import { getꓽrevision, complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
+import { getꓽUTC_timestampⵧhuman_readable‿days } from '@monorepo-private/timestamps'
+import { getꓽrevision, complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@monorepo-private/state-utils'
 
 /////////////////////
 

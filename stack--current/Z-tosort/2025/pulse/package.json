@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/pulse",
+	"name": "@monorepo-private/pulse",
 	"description": "Subscribe to a periodic pulse",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -9,9 +9,9 @@
 	"source": "src/index.ts",
 
 	"dependencies": {
-		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/utils--async": "^0",
+		"@monorepo-private/timestamps": "*",
+		"@monorepo-private/ts--types": "*",
 		"memoize-one": "^6",
 		"tiny-invariant": "^1"
 	}

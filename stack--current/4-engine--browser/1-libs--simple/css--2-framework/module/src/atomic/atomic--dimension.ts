@@ -1,4 +1,4 @@
-import style_once from "@offirmo-private/style-once"
+import style_once from "@monorepo-private/style-once"
 
 //console.log('Hello from atomic--dimension.ts!')
 
@@ -6,12 +6,12 @@ function adjust_css() {
 	const referer = (new URLSearchParams(window.location.search)).get('ref')
 	if (referer !== 'webmanifest') return
 
-	console.log('Hello from @offirmo-private/css--framework / atomic--dimension.tsx: dynamically tweaking some CSS: o⋄full-viewport for iOs pinned app...')
+	console.log('Hello from @monorepo-private/css--framework / atomic--dimension.tsx: dynamically tweaking some CSS: o⋄full-viewport for iOs pinned app...')
 	style_once({
 		id: 'pinned-webapp-adjustments--viewport',
 		css: `
 :root {
-	/* see @offirmo-private/css--framework/src/atomic/atomic--dimension.css#L28
+	/* see @monorepo-private/css--framework/src/atomic/atomic--dimension.css#L28
 	 * pinned apps on iOs: dv* are not full screen
 	 */
 	--o⋄full-viewport__width: 100lvw;

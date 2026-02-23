@@ -1,6 +1,6 @@
 import * as Bowser from 'bowser'
-import { type BaseInjections, type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
-//import ensureDeviceUUID from '@offirmo-private/ensure-device-uuid-browser'
+import { type BaseInjections, type SoftExecutionContext, getRootSXC } from '@monorepo-private/soft-execution-context'
+//import ensureDeviceUUID from '@monorepo-private/ensure-device-uuid-browser'
 
 import { LS_KEYS } from './consts.ts'
 
@@ -109,7 +109,7 @@ function decorateWithDetectedEnv<Injections, AnalyticsDetails, ErrorDetails>(SXC
 
 /////////////////////////////////////////////////
 
-export * from '@offirmo-private/soft-execution-context'
+export * from '@monorepo-private/soft-execution-context'
 export {
 	listenToErrorEvents,
 	listenToUnhandledRejections,

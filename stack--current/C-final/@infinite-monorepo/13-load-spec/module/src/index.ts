@@ -1,4 +1,4 @@
-import type { AnyPath, Immutable } from '@offirmo-private/ts-types'
+import type { AnyPath, Immutable } from '@monorepo-private/ts--types'
 
 import type { InfiniteMonorepoSpec } from '@infinite-monorepo/types'
 

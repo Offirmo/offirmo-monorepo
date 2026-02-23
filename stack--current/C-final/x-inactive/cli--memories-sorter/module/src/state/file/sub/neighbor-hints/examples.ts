@@ -1,5 +1,5 @@
 
-import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { REAL_CREATION_DATE‿TMS } from '../../../../__test_shared/utils.js'
 import { create_better_date_from_utc_tms } from '../../../../services/better-date.js'

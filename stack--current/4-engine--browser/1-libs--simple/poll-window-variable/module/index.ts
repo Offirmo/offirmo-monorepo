@@ -1,4 +1,4 @@
-import { poll, type Options } from '@offirmo-private/poll'
+import { poll, type Options } from '@monorepo-private/poll'
 
 function pollꓽWindowVariable(varname: string, options: Partial<Options> = {}) {
 	options = {

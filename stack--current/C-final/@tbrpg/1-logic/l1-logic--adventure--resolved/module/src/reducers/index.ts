@@ -1,7 +1,7 @@
-import { type Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@monorepo-private/ts--types'
 import { Enum } from 'typescript-string-enums'
 
-import { generate_uuid } from '@offirmo-private/uuid'
+import { generate_uuid } from '@monorepo-private/uuid'
 import { getꓽrandom, type RNGEngine } from '@offirmo/random'
 
 import {

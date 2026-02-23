@@ -3,8 +3,8 @@
 import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
 
-import type { Immutable } from '@offirmo-private/ts-types'
-import { type SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { type SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 import {
 	AnyOffirmoState,
 	BaseAction,
@@ -12,19 +12,19 @@ import {
 	cast_toꓽimmutable,
 	getꓽrevision,
 	getꓽschema_version,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 /*
-import { type Immutable, StorageⳇSync } from '@offirmo-private/ts-types'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { type Immutable, StorageⳇSync } from '@monorepo-private/ts--types'
+import { get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
 
-import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
+import { schedule_when_idle_but_not_too_far } from '@monorepo-private/utils--async'
 import {
 	AnyOffirmoState,
 	OverallMigrateToLatest,
 	BaseAction,
 	get_revision_loose,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 */
 
 import { LIB } from '../consts.js'

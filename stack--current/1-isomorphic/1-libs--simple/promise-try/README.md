@@ -1,4 +1,4 @@
-# @offirmo-private/promise-try
+# @monorepo-private/promise-try
 
 Promise.try will only be available:
 - in node LTS 24 (2025/10)

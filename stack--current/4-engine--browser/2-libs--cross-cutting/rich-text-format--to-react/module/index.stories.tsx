@@ -1,6 +1,6 @@
-import type { Meta, Story } from '@offirmo-private/storypad/types'
+import type { Meta, Story } from '@monorepo-private/storypad/types'
 
-import type { NodeLike } from '@offirmo-private/rich-text-format'
+import type { NodeLike } from '@monorepo-private/rich-text-format'
 
 import renderⵧto_react from './index.tsx'
 
@@ -29,13 +29,13 @@ import {
 	DOC_DEMO_RPG_02,
 	DOC_DEMO_RPG_03,
 	DOC_DEMO_INVENTORY,
-} from '@offirmo-private/rich-text-format/examples'
+} from '@monorepo-private/rich-text-format/examples'
 
 export default {
 	component: Component,
 	decorators: [
 		(stuff: any) => {
-			import('@offirmo-private/css--framework')
+			import('@monorepo-private/css--framework')
 			return stuff
 		},
 	]

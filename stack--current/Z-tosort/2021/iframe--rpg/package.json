@@ -11,11 +11,11 @@
 	"sideEffects": false,
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "^0",
+		"@monorepo-private/soft-execution-context": "^0",
 		"react": "^17"
 	},
 	"dependencies": {
-		"@offirmo-private/react-error-boundary": "^0",
+		"@monorepo-private/react-error-boundary": "^0",
 		"classnames": "^2",
 		"react-burger-menu": "^2",
 		"react-notification-system": "^0.4",
@@ -30,7 +30,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7",
-		"@offirmo-private/xoff": "^0",
+		"@monorepo-private/xoff": "^0",
 		"parcel-bundler": "^1"
 	}
 }

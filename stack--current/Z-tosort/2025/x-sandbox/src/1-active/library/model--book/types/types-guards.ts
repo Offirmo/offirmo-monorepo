@@ -1,6 +1,6 @@
-import type { Immutable } from '@offirmo-private/ts-types'
-import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
-import { isꓽNode } from '@offirmo-private/rich-text-format'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { isꓽobjectⵧliteral } from '@monorepo-private/type-detection'
+import { isꓽNode } from '@monorepo-private/rich-text-format'
 
 import type { Text, BookPage, BookPageLike, BookPart, Book, BookCover } from './types.ts'
 

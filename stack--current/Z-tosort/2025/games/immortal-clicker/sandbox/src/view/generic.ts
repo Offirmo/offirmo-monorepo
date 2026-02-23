@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { Options, State, dumpꓽanyⵧprettified, getꓽoptionsⵧfull } from '@offirmo-private/prettify-any'
-import { isꓽWithSchemaVersion, isꓽBaseState, isꓽUState, isꓽTState, isꓽRootState } from '@offirmo-private/state-utils'
-import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@offirmo-private/timestamps'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { Options, State, dumpꓽanyⵧprettified, getꓽoptionsⵧfull } from '@monorepo-private/prettify-any'
+import { isꓽWithSchemaVersion, isꓽBaseState, isꓽUState, isꓽTState, isꓽRootState } from '@monorepo-private/state-utils'
+import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@monorepo-private/timestamps'
 
 /////////////////////////////////////////////////
 

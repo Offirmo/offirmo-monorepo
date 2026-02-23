@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
-import * as RichText from '@offirmo-private/rich-text-format'
-import * as DEMOS from '@offirmo-private/rich-text-format/examples'
+import * as RichText from '@monorepo-private/rich-text-format'
+import * as DEMOS from '@monorepo-private/rich-text-format/examples'
 
 import { LIB, renderⵧto_terminal } from './index.ts'
 

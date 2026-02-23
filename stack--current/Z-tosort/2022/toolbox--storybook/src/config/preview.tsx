@@ -2,7 +2,7 @@
 
 import '@storybook/addon-console'
 
-import VIEWPORTS from '@offirmo-private/toolbox--storybook/src/custom_viewports.js'
+import VIEWPORTS from '@monorepo-private/toolbox--storybook/src/custom_viewports.js'
 
 
 export const parameters = {

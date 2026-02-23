@@ -65,9 +65,9 @@ DEMO
 	_overrides: {
 		dependencies: {
 			// possibly unresurrected cross-cutting nice to have
-			'@offirmo-private/react--error-boundary': 'ignore',
+			'@monorepo-private/react--error-boundary': 'ignore',
 			
-			'@offirmo-private/css--reset': { type:  'dev' },
+			'@monorepo-private/css--reset': { type:  'dev' },
 		},
 		files: {
 			packageᐧjson: {

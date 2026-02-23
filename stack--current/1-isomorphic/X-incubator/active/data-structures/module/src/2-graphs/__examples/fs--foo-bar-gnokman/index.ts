@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { RelativePath } from '@offirmo-private/ts-types'
+import type { RelativePath } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 

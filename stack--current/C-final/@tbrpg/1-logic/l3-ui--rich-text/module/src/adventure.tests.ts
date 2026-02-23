@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import strip_terminal_escape_codes from 'strip-ansi'
 
-import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { ALL_GOOD_ADVENTURE_ARCHETYPES, ALL_BAD_ADVENTURE_ARCHETYPES } from '@tbrpg/logic--adventures'
 import {

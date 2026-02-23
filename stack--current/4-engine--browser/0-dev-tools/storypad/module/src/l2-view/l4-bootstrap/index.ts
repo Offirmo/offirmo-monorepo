@@ -1,9 +1,9 @@
 //import './__shared/x-logger.ts'
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
-//import { ೱᐧpage_loaded } from '@offirmo-private/page-loaded'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { asap_but_out_of_immediate_execution } from '@monorepo-private/utils--async'
+//import { ೱᐧpage_loaded } from '@monorepo-private/page-loaded'
 
 import { LIB, DEBUG } from '../../consts.ts'
 import type { Config } from '../../l0-types/l2-config/index.ts'

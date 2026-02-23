@@ -1,4 +1,4 @@
-import { BaseState } from '@offirmo-private/state-utils'
+import { BaseState } from '@monorepo-private/state-utils'
 
 import { State as FlagsState } from '../state--flags/types'
 import { State as GuildState } from '../state--guild-membership/types'

@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { getꓽmutable_copy } from '@offirmo-private/state-utils'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
+import { getꓽmutable_copy } from '@monorepo-private/state-utils'
 import stylize_string from 'chalk'
 
 import logger from '../../services/logger.js'

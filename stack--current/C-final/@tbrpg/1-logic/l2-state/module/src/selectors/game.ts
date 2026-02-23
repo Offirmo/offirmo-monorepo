@@ -1,8 +1,8 @@
 import { Enum } from 'typescript-string-enums'
-import { type Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@monorepo-private/ts--types'
 
 import { CharacterClass } from '@tbrpg/state--character'
-import { type TimestampUTCMs } from '@offirmo-private/timestamps'
+import { type TimestampUTCMs } from '@monorepo-private/timestamps'
 
 import type { State, UState } from '../types.ts'
 import { getꓽavailable_energy‿float } from './energy.ts'

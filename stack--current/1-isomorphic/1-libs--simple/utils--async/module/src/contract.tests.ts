@@ -4,7 +4,7 @@ import { expect } from 'chai'
 // This is a sort of "contract spec"
 // to ensure our understanding of the underlying functions is correct
 
-describe('@offirmo-private/async-utils', function() {
+describe('@monorepo-private/utils--async', function() {
 
 	describe('underlying functions', function() {
 		this.retries(3)

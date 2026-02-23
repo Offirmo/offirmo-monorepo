@@ -6,7 +6,7 @@
  * - We assume our own code can be compromised (ex. supply chain)
  * - We assume the opener of our page may have injected some js https://krausefx.com//blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
  */
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 
 /////////////////////////////////////////////////
 

@@ -1,4 +1,4 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 
 import { get_next, SSRRank } from '../type--SSR-rank'
 

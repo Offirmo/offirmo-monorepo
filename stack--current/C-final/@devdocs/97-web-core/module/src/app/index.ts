@@ -1,4 +1,4 @@
-//import type { Immutable } from '@offirmo-private/ts-types'
+//import type { Immutable } from '@monorepo-private/ts--types'
 import assert from 'tiny-invariant'
 
 /////////////////////////////////////////////////
@@ -15,7 +15,7 @@ console.info(
 
 /////////////////////////////////////////////////
 
-import { asap_but_out_of_immediate_execution, forArray } from '@offirmo-private/async-utils'
+import { asap_but_out_of_immediate_execution, forArray } from '@monorepo-private/utils--async'
 
 export async function start(DEBUG = false) {
 	// do NOT use groupCollapsed before the logger/'better console group' is installed

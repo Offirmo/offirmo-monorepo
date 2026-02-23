@@ -1,7 +1,7 @@
-import { type Immutable} from '@offirmo-private/ts-types'
-import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
-import * as RichText from '@offirmo-private/rich-text-format'
+import { type Immutable} from '@monorepo-private/ts--types'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
+import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@monorepo-private/state-utils'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { type HypermediaContentType } from '@tbrpg/definitions'
 import * as EnergyState from '@tbrpg/state--energy'

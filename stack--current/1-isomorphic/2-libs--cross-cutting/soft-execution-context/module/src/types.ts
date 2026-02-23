@@ -1,5 +1,5 @@
 import Emittery from 'emittery'
-import { type TimestampUTCMs } from '@offirmo-private/timestamps'
+import { type TimestampUTCMs } from '@monorepo-private/timestamps'
 import { type XXError } from '@offirmo/error-utils'
 
 /////////////////////////////////////////////////

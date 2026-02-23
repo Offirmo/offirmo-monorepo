@@ -1,5 +1,5 @@
-import { Thing, WithOnlinePresence, ThingWithOnlinePresence, Asset, Url‿str, registerꓽasset_usageⵧload } from '@offirmo-private/credits'
-import AUTHOR from "@offirmo-private/credits/src/authors/vyznev/index.ts"
+import { Thing, WithOnlinePresence, ThingWithOnlinePresence, Asset, Url‿str, registerꓽasset_usageⵧload } from '@monorepo-private/credits'
+import AUTHOR from "@monorepo-private/credits/src/authors/vyznev/index.ts"
 
 import './index.css'
 

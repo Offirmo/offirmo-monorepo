@@ -1,7 +1,7 @@
 Useful TypeScript types for Web
 
 ```
-import type { Url‿str, Html‿str } from '@offirmo-private/ts-types-web'
+import type { Url‿str, Html‿str } from '@monorepo-private/ts--types--web'
 
 import {
 	type ReducerAction, type Reducer, type ReducerMap,
@@ -10,6 +10,6 @@ import {
 	ACTION_TYPEꘌNOOP,          type ActionNoop,        createꓽactionꘌnoop,
 	ACTION_TYPEꘌSET,           type ActionSet_,        createꓽactionꘌset,
 	ACTION_TYPEꘌHACK,          type ActionHack_,       createꓽactionꘌhack,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
 ```

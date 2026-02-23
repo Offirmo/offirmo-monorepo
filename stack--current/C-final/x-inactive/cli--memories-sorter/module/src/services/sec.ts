@@ -1,5 +1,5 @@
 import memoize_once from 'memoize-one'
-import { getRootSXC, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import { getRootSXC, SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 
 
 import { LIB } from '../consts.js'

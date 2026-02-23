@@ -2,9 +2,15 @@ import type { NodeId } from '@devdocs/types'
 
 /////////////////////////////////////////////////
 
+interface NodeSettings {
+	isꓽdisabled?: boolean // if absent, auto behavior (ex. status filtering). If present, override any other behavior
+	isꓽstarred?: boolean
+	isꓽread?: boolean
+}
+
 // shared across tabs
 interface SharedState {
-	disabled_nodes: Array<NodeId>
+	node_settings: { [id: NodeId]: NodeSettings }
 	disabled_statuses: Array<string>
 }
 
@@ -15,4 +21,4 @@ interface State {
 
 /////////////////////////////////////////////////
 
-export { type SharedState, type State }
+export { type NodeSettings, type SharedState, type State }

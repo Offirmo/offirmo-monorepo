@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
-import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import { type Immutable } from '@monorepo-private/ts--types'
+import to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import {
 	BookPageReference,

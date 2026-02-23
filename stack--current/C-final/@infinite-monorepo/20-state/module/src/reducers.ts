@@ -6,7 +6,7 @@ import type {
 	AbsolutePath,
 	JSON,
 	AbsoluteDirPath,
-} from '@offirmo-private/ts-types'
+} from '@monorepo-private/ts--types'
 import { mergeꓽjson } from '@infinite-monorepo/read-write-any-structured-file'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'

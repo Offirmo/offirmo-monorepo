@@ -7,7 +7,7 @@ import type {
 	DependencyDetails,
 } from '../types.ts'
 
-import type { FileEntry } from '@offirmo-private/file-entry'
+import type { FileEntry } from '@monorepo-private/file-entry'
 
 /////////////////////////////////////////////////
 

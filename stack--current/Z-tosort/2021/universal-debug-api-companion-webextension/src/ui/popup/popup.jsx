@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import ErrorBoundary from '@monorepo-private/react-error-boundary'
 
 import Root from './components/root'
 import './popup.css'

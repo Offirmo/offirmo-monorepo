@@ -1,4 +1,4 @@
-import { BaseState, WithLastUserInvestmentTimestamp } from '@offirmo-private/state-utils'
+import { BaseState, WithLastUserInvestmentTimestamp } from '@monorepo-private/state-utils'
 
 import { PersistedNotes as FileNotes } from '../file/index.js'
 

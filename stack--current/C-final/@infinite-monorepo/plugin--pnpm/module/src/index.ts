@@ -1,5 +1,5 @@
 import * as semver from 'semver'
-import type { Immutable, JSONObject } from '@offirmo-private/ts-types'
+import type { Immutable, JSONObject } from '@monorepo-private/ts--types'
 import {
 	type StructuredFsⳇFileManifest,
 	type Node,
@@ -16,7 +16,7 @@ import assert from 'tiny-invariant'
 import { manifestꓽpackageᐧjson } from '@infinite-monorepo/plugin--npm'
 import { isꓽError } from '@offirmo/error-utils/v2'
 import path from 'node:path'
-import { lsDirsSync } from '@offirmo-private/fs--ls'
+import { lsDirsSync } from '@monorepo-private/fs--ls'
 
 /////////////////////////////////////////////////
 

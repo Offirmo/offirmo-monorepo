@@ -1,1 +1,1 @@
-export * from '@offirmo-private/storypad/stories/html/elements/blockquote'
+export * from '@monorepo-private/storypad/stories/html/elements/blockquote'

@@ -1,0 +1,29 @@
+
+.markdown-outline {
+	font-size: 0.875em;
+}
+
+.markdown-outline__list {
+	list-style: none;
+	padding-inline-start: 0;
+	margin: 0;
+}
+
+.markdown-outline__item {
+	margin-block: 0.25em;
+}
+
+/* Indent deeper headings */
+.markdown-outline__item--depth-3 { padding-inline-start: 1em; }
+.markdown-outline__item--depth-4 { padding-inline-start: 2em; }
+.markdown-outline__item--depth-5 { padding-inline-start: 3em; }
+.markdown-outline__item--depth-6 { padding-inline-start: 4em; }
+
+.markdown-outline__link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.markdown-outline__link:hover {
+	text-decoration: underline;
+}

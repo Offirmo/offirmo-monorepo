@@ -14,9 +14,9 @@
 		"openai": "^4"
 	},
 	"devDependencies": {
-		"@offirmo-private/generator--website-entry-points": "*",
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/generator--website-entry-points": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "*",
 		"npm-run-all": "^4",
 		"tslib": "^2"

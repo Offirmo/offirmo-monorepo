@@ -1,5 +1,5 @@
 import { normalizeError } from '@offirmo/error-utils'
-import { Users } from '@offirmo-private/db'
+import { Users } from '@monorepo-private/db'
 
 import {
 	NetlifyContext,

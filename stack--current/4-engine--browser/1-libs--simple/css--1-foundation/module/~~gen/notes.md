@@ -20,7 +20,7 @@ TODO review https://www.mcmaster.com/products/pipe-hangers/seismic-bracing-brack
 
 
 Special header, removed = we don't care, not public, unlikely it will ever be
-/*! @offirmo-private/css--foundation v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--browser/css--foundation */
+/*! @monorepo-private/css--foundation v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--browser/css--foundation */
 
 
 TODO review https://tailwindcss.com/docs/preflight

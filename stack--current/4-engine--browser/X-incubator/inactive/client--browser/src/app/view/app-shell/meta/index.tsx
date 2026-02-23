@@ -2,7 +2,7 @@
  */
 import 'react'
 
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 import Signature from '../signature/index.tsx'
 import Help from '../help/index.tsx'

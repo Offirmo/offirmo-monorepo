@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { type SoftExecutionContext, getRootSXC } from '@monorepo-private/soft-execution-context'
 
 import { LIB } from './consts.ts'
 
@@ -23,7 +23,7 @@ import {
 
 describe(`${LIB} - migration`, function() {
 	const TEST_SXC = getRootSXC()
-	const LIB = '@offirmo-private/state-utils--UNIT-TEST'
+	const LIB = '@monorepo-private/state-utils--UNIT-TEST'
 	TEST_SXC.setLogicalStack({module: LIB})
 
 	describe('migrate_toꓽlatestⵧgeneric()', function() {

@@ -1,4 +1,4 @@
-import type { Author as SimplerAuthor } from '@offirmo-private/ts-types'
+import type { Author as SimplerAuthor } from '@monorepo-private/ts--types'
 
 import type { Url‿str } from '../../01-links/index.ts'
 import type { Email‿str } from '../../40-email/index.ts'

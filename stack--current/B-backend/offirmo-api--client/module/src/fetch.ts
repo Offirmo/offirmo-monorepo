@@ -1,14 +1,14 @@
 import fetch_ponyfill from 'fetch-ponyfill'
 import { XXError, createError } from '@offirmo/error-utils'
-import { getRootSEC, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { getRootSEC, SoftExecutionContext } from '@monorepo-private/soft-execution-context'
+import { Immutable, enforce_immutability } from '@monorepo-private/state-utils'
 
 import {
 	ReleaseChannel,
 	OAServerResponseBody,
 	OAResponse,
 	get_api_base_url,
-} from '@offirmo-private/offirmo-api--interface'
+} from '@monorepo-private/offirmo-api--interface'
 
 /////////////////////////////////////////////////
 

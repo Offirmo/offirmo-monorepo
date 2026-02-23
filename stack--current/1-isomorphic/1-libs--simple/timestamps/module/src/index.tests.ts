@@ -19,7 +19,7 @@ import {
 //declare const console: any
 
 
-describe('@offirmo-private/timestamps', function() {
+describe('@monorepo-private/timestamps', function() {
 
 	describe('getꓽUTC_timestamp‿ms()', function() {
 

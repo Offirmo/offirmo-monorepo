@@ -1,8 +1,8 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 import {
 	AnyOffirmoState,
 	BaseAction,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 export type ActionReducer<State, Action> = (state: Immutable<State>, action: Immutable<Action>) => Immutable<State>
 

@@ -1,1 +1,1 @@
-module.exports = require('@offirmo-private/toolbox--storybook/src/config/main')
+module.exports = require('@monorepo-private/toolbox--storybook/src/config/main')

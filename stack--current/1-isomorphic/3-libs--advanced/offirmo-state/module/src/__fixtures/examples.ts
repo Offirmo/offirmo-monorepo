@@ -1,5 +1,5 @@
-import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
-import type { Immutable } from '@offirmo-private/ts-types'
+import { TEST_TIMESTAMP_MS } from '@monorepo-private/timestamps'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import type {
 	BaseRootState,
@@ -11,7 +11,7 @@ import type {
 import { enforceꓽimmutable } from '../utils.ts'
 
 // needed only for changing the default level
-//import { _force_set_level_of_uda_default_logger } from '@offirmo-private/soft-execution-context--node'
+//import { _force_set_level_of_uda_default_logger } from '@monorepo-private/soft-execution-context--node'
 //_force_set_level_of_uda_default_logger('silly')
 
 /////////////////////////////////////////////////

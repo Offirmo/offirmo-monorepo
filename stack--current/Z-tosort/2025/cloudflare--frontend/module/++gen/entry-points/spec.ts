@@ -2,8 +2,8 @@ import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
-import type { WebProperty, WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
+import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@monorepo-private/ts--types--web'
+import type { WebProperty, WebPropertyEntryPointSpec } from '@monorepo-private/generator--website-entry-points'
 
 /////////////////////////////////////////////////
 /*
@@ -16,7 +16,7 @@ WebPropertyEntryPointSpec
 */
 /////////////////////////////////////////////////
 
-import { AUTHOR } from '@offirmo-private/marketing'
+import { AUTHOR } from '@monorepo-private/marketing/offirmo'
 
 const THING: Thing = {
 	description: 'An advanced demo web app on Cloudflare',

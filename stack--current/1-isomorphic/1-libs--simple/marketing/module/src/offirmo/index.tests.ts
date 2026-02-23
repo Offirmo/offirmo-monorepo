@@ -1,6 +1,6 @@
 import { strict as assert } from 'node:assert'
 import { expect } from 'chai'
-import { normalizeꓽemailⵧreasonable, normalize_unicode } from '@offirmo-private/normalize-string'
+import { normalizeꓽemailⵧreasonable, normalize_unicode } from '@monorepo-private/normalize-string'
 
 import {
 	AUTHOR,

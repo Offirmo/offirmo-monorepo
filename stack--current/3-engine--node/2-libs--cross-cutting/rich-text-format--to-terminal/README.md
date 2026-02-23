@@ -1,6 +1,6 @@
 
 ```
-import renderⵧto_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import renderⵧto_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 	const $node = RichText.heading()
 		.pushText(book.title)

@@ -1,4 +1,4 @@
 
-import { displayError } from '@offirmo-private/print-error-to-terminal'
+import { displayError } from '@monorepo-private/print-error-to-terminal'
 
 displayError(new Error('test!'))

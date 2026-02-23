@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '../../../_vendor/@offirmo-private/ts-types/index.js'
-import { combine_normalizers, normalize_unicode, trim} from '../../../_vendor/@offirmo-private/normalize-string/index.js'
+import { Immutable } from '../../../_vendor/@monorepo-private/ts--types/index.js'
+import { combine_normalizers, normalize_unicode, trim} from '../../../_vendor/@monorepo-private/normalize-string/index.js'
 
 import {
 	Tree, TreeⳇNode, NodeUIdⳇCustom, NodeUIdⳇInternal,

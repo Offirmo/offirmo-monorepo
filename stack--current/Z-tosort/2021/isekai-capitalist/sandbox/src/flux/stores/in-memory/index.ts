@@ -1,13 +1,13 @@
 import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 import {
 	AnyOffirmoState,
 	BaseAction,
 	get_revision_loose,
 	fluid_select,
 	get_base_loose,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import { SoftExecutionContext } from '../../sec'
 import { Store } from '../../types'

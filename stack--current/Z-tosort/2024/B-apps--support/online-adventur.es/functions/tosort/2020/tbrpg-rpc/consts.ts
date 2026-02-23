@@ -1,6 +1,6 @@
 ////////////////////////////////////
 
-import { JSONRpcResponse } from '@offirmo-private/json-rpc-types'
+import { JSONRpcResponse } from '@monorepo-private/json-rpc-types'
 
 ////////////////////////////////////
 

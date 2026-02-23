@@ -14,7 +14,7 @@ import { getꓽstylize_optionsⵧterminal } from './options--stylize--terminal.t
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/prettify-any', function() {
+describe('@monorepo-private/prettify-any', function() {
 	const should_test_verbose = false
 
 	describe('prettifyꓽany()', function() {

@@ -7,11 +7,11 @@
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
-import { AUTHOR } from '@offirmo-private/marketing'
+import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@monorepo-private/ts--types--web'
+import { AUTHOR } from '@monorepo-private/marketing/offirmo'
 
-import generateꓽwebsiteᝍentryᝍpoints, { type WebProperty, type WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
-import { Category } from '@offirmo-private/generator--website-entry-points/src'
+import generateꓽwebsiteᝍentryᝍpoints, { type WebProperty, type WebPropertyEntryPointSpec } from '@monorepo-private/generator--website-entry-points'
+import { Category } from '@monorepo-private/generator--website-entry-points/src'
 
 /////////////////////////////////////////////////
 

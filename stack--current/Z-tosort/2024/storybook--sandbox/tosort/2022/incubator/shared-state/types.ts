@@ -1,4 +1,4 @@
-import { WithRevision } from '@offirmo-private/state-utils'
+import { WithRevision } from '@monorepo-private/state-utils'
 
 ////////////////////////////////////
 

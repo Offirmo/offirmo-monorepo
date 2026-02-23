@@ -1,8 +1,8 @@
 import { Component, Fragment, createRef } from 'react'
 import ToolTip from 'react-portal-tooltip'
 import { Modal } from 'react-overlays'
-import { hasꓽhover } from '@offirmo-private/browser-features-detection/has-hover'
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import { hasꓽhover } from '@monorepo-private/browser-features-detection/has-hover'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 const modal_style = {
 	zIndex: 1040,

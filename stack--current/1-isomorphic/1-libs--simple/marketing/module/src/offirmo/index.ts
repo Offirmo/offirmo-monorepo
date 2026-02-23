@@ -1,4 +1,4 @@
-import type { Author, SocialNetworkLink, Url‿str } from '@offirmo-private/ts-types-web'
+import type { Author, SocialNetworkLink, Url‿str } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 
@@ -6,6 +6,7 @@ const EMAIL = 'offirmo.net@gmail.com'
 
 const WEBSITE = 'https://www.offirmo.net/' as Url‿str
 
+// prettier-ignore
 const SOCIAL_LINKⵧARTSTATION: SocialNetworkLink  = { network: 'artstation',  handle: 'Offirmo',   url: 'https://www.artstation.com/offirmo'   } satisfies SocialNetworkLink
 const SOCIAL_LINKⵧGITHUB: SocialNetworkLink      = { network: 'github',      handle: 'Offirmo',   url: 'https://github.com/Offirmo'           } satisfies SocialNetworkLink
 const SOCIAL_LINKⵧINSTAGRAM: SocialNetworkLink   = { network: 'instagram',   handle: 'offirmo',   url: 'https://www.instagram.com/offirmo'    } satisfies SocialNetworkLink

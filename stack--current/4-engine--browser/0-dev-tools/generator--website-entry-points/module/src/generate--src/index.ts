@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import type { EntryPoints, WebPropertyEntryPointSpec } from '../types.ts'
 import {
@@ -15,7 +15,7 @@ import { ifꓽdebug } from '../utils/debug.ts'
 
 const CODE_TEMPLATEⵧGENERIC = `
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 //import {  } from './types.ts'
 
@@ -119,7 +119,7 @@ const CODE_TEMPLATEⳇINITⳇSECURITY = `
  * - We assume our own code can be compromised (ex. supply chain)
  * - We assume the opener of our page may have injected some js https://krausefx.com//blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
  */
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 
 /////////////////////////////////////////////////
 
@@ -188,7 +188,7 @@ export default init
 `.trim()
 
 const CODE_TEMPLATEⳇINITⳇSXC = `
-import { getRootSXC, decorateWithDetectedEnv } from '@offirmo-private/soft-execution-context--browser'
+import { getRootSXC, decorateWithDetectedEnv } from '@monorepo-private/soft-execution-context--browser'
 
 import { LIB } from '../consts.ts'
 import { VERSION } from '../../entry-points/build.ts'
@@ -233,8 +233,8 @@ export default init
 `.trim()
 
 const CODE_TEMPLATEⳇINITⳇERRORS = `
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
-import {	listenToErrorEvents, listenToUnhandledRejections } from '@offirmo-private/soft-execution-context--browser'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
+import {	listenToErrorEvents, listenToUnhandledRejections } from '@monorepo-private/soft-execution-context--browser'
 
 /////////////////////////////////////////////////
 
@@ -283,9 +283,9 @@ const CODE_TEMPLATEⳇINITⳇVIEWⵧREACT = `
 import { Fragment, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
-import { schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
+import { schedule_when_idle_but_within_human_perception } from '@monorepo-private/utils--async'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 import { LIB } from '../consts.ts'
 
@@ -320,7 +320,7 @@ export default init
 `.trim()
 
 const CODE_TEMPLATEⳇINITⳇGENERIC = (feat: string) => `
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 
 /////////////////////////////////////////////////
 
@@ -341,7 +341,7 @@ function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 	return {
 		'./app/consts.ts': `export const LIB = '${getꓽtitleⵧlib(spec)}'`,
 		'./app/index.ts': `
-import { asap_but_out_of_immediate_execution, forArray } from '@offirmo-private/async-utils'
+import { asap_but_out_of_immediate_execution, forArray } from '@monorepo-private/utils--async'
 import { VERSION, BUILD_DATE } from '../entry-points/build.ts'
 import './init/00-security.ts' // as early as possible, side effects expected
 

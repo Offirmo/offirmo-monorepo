@@ -134,7 +134,7 @@ TODO one day add a linting feature:
 
 
 ```js
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 const $doc = RichText.fragmentⵧblock()
 		.pushNode(RichText.heading().pushText('Identity:').done(), {id: 'header'})
@@ -151,14 +151,14 @@ console.log(RichText.renderⵧto_actions($doc))
 ```
 
 ```ts
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import {
 	type BaseRenderingOptions,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 	type WalkerCallbacks,
 	walk,
-} from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/rich-text-format'
 
 ```
 

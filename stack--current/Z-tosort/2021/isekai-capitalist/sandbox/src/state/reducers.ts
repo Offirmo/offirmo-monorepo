@@ -1,5 +1,5 @@
-import { Immutable } from '@offirmo-private/ts-types'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { Immutable } from '@monorepo-private/ts--types'
+import { TimestampUTCMs, get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
 import assert from 'tiny-invariant'
 
 import * as FlagsLib from '../state--flags'

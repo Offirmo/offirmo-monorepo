@@ -4,13 +4,13 @@ import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
 
-import type { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@offirmo-private/ts-types'
-import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
-import type { CssⳇColor‿str } from '@offirmo-private/ts-types-web'
-import { FeatureSnippets } from '@offirmo-private/generator--html'
-import { type SVG } from '@offirmo-private/generator--svg'
+import type { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@monorepo-private/ts--types'
+import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@monorepo-private/ts--types--web'
+import type { CssⳇColor‿str } from '@monorepo-private/ts--types--web'
+import { FeatureSnippets } from '@monorepo-private/generator--html'
+import { type SVG } from '@monorepo-private/generator--svg'
 
-import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest, normalizeꓽtextⵧsentence } from '@offirmo-private/normalize-string'
+import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest, normalizeꓽtextⵧsentence } from '@monorepo-private/normalize-string'
 
 import type { WebPropertyEntryPointSpec } from '../types.ts'
 
@@ -28,7 +28,7 @@ export {
 	getꓽcontactⵧhuman,
 	getꓽcontactⵧsecurity,
 	getꓽcontactⵧsupport,
-} from '@offirmo-private/ts-types-web';
+} from '@monorepo-private/ts--types--web';
 
 /////////////////////////////////////////////////
 // meta

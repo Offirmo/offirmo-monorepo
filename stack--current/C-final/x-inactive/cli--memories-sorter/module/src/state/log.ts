@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	LogLevel,
 	LogDetails,
@@ -7,7 +7,7 @@ import {
 	ALL_LOG_LEVELS,
 	normalizeArguments,
 } from '@offirmo/practical-logger-core'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
 interface WithLogs {
 	logs: {

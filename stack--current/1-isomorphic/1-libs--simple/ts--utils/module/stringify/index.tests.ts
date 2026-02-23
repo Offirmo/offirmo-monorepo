@@ -6,7 +6,7 @@ import {
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/ts-utils -- stringify', function () {
+describe('@monorepo-private/ts--utils -- stringify', function () {
 
 	describe('compare()', function () {
 

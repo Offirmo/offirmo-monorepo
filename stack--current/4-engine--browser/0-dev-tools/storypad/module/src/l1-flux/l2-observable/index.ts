@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import EventEmitter from 'emittery'
-import { isꓽframed } from '../../__vendor/@offirmo-private/browser-features-detection/is-framed.ts'
+import { isꓽframed } from '../../__vendor/@monorepo-private/browser-features-detection/is-framed.ts'
 
 import type { ImportGlob } from '../../l0-types/l0-glob/index.ts'
 import type { Config } from '../../l0-types/l2-config/index.ts'

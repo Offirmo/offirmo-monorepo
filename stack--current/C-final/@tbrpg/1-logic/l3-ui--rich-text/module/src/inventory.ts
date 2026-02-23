@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	InventorySlot,
 	type Item,
@@ -13,7 +13,7 @@ import {
 } from '@tbrpg/state--inventory'
 
 import { type State as WalletState } from '@tbrpg/state--wallet'
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 import { appraise_power } from '@tbrpg/logic--shop'
 
 import { render_item_short } from './items.ts'

@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { SCHEMA_VERSION } from '../consts.ts'
 

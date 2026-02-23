@@ -1,11 +1,11 @@
 import assert from 'tiny-invariant'
-import type { Immutable} from '@offirmo-private/ts-types'
-import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
+import type { Immutable} from '@monorepo-private/ts--types'
+import { isꓽobjectⵧliteral } from '@monorepo-private/type-detection'
 
 import {
 	FAKE_ORIGIN,
 	normalizeꓽurl,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 import type {
 	Uri‿x,

@@ -1,5 +1,5 @@
-/*import { type Immutable} from '@offirmo-private/ts-types'
-import * as RichText from '@offirmo-private/rich-text-format'
+/*import { type Immutable} from '@monorepo-private/ts--types'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { type Engagement } from '@oh-my-rpg/state--engagement'
 import { type HypermediaContentType } from '@tbrpg/definitions'

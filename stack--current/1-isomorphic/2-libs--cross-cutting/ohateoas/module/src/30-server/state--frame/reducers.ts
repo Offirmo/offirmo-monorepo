@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable, Url‿str } from '@offirmo-private/ts-types'
-import * as RichText from '@offirmo-private/rich-text-format'
+import type { Immutable, Url‿str } from '@monorepo-private/ts--types'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import type { State } from './types.js'
 import { ROOT_URI } from '../index.ts'

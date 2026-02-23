@@ -1,4 +1,4 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 
 import { MSG_ENTRY } from '../consts'
 import * as OriginState from '../state/origin'

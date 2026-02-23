@@ -1,4 +1,4 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 import Fraction from 'fraction.js'
 
 import { State } from './types'

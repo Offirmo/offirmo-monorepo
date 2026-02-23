@@ -3,7 +3,7 @@ import { Component } from 'react'
 import memoize_one from 'memoize-one'
 
 import BurgerMenu from 'react-burger-menu/lib/menus/scaleDown'
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 import './index.css'
 

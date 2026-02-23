@@ -6,8 +6,8 @@ import { stdin as input, stdout as output } from 'node:process'
 
 import {PProgress} from 'p-progress'
 
-import * as RichText from '@offirmo-private/rich-text-format'
-import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import * as RichText from '@monorepo-private/rich-text-format'
+import to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import { type ChatPrimitives, type InputParameters, type SelectParameters } from '../primitives/types.js'
 import * as console from 'node:console'

@@ -2,7 +2,7 @@ const fs = require('fs')
 const assert = require('assert')
 const parse = require('csv-parse/lib/sync')
 const json = require('../../../../cli-toolbox/fs/json')
-const { dump_prettified_any, prettify_json } = require('@offirmo-private/prettify-any')
+const { dump_prettified_any, prettify_json } = require('@monorepo-private/prettify-any')
 
 
 
@@ -196,5 +196,3 @@ load_stops()
 	.then(extract_network_tram)
 	.then(export_network_tram)
 	.then(() => console.log('* done'))
-
-

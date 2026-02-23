@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import * as semver from 'semver'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type Node,
 	type NodeⳇPackage,
@@ -12,7 +12,7 @@ import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import { manifestꓽpackageᐧjson } from '@infinite-monorepo/plugin--npm'
 import * as path from 'node:path'
-import { lsDirsSync } from '@offirmo-private/fs--ls'
+import { lsDirsSync } from '@monorepo-private/fs--ls'
 import { isꓽError } from '@offirmo/error-utils/v2'
 
 /////////////////////////////////////////////////

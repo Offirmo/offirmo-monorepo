@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 
 <script type="module">
-	import * as storiesⵧerrors from '@offirmo-private/css--utils--diagnostics/module/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
-	import * as storiesⵧshared from '@offirmo-private/storypad/module/src/__shared/stories/html/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as storiesⵧerrors from '@monorepo-private/css--utils--diagnostics/module/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as storiesⵧshared from '@monorepo-private/storypad/module/src/__shared/stories/html/*.stories.@(js|jsx|ts|tsx|mdx)'
 	import * as stories_reset from '../../../../css--0-reset/module/**/*.stories.@(js|jsx|ts|tsx|mdx)'
-	import * as stories_foundation from '@offirmo-private/css--foundation/module/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
-	import * as stories_framework from '@offirmo-private/css--framework/module/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as stories_foundation from '@monorepo-private/css--foundation/module/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as stories_framework from '@monorepo-private/css--framework/module/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
 
 	import nearest_pkg from '~/package.json'
 
-	import start_storypad from '@offirmo-private/storypad'
+	import start_storypad from '@monorepo-private/storypad'
 
 	const stories = {
 		'.sharedⳇhtml': storiesⵧshared,
 		'0-reset': stories_reset,
 		'1-foundation': stories_foundation,
 		'2-framework': stories_framework,
-		'@offirmo-privateⳇcss--utils--diagnostics': storiesⵧerrors,
+		'@monorepo-privateⳇcss--utils--diagnostics': storiesⵧerrors,
 	}
 	start_storypad(stories, {
 		root_title: nearest_pkg?.name,
 		decorators: [
 			(story) => {
-				//import('@offirmo-private/css--reset')
-				//import('@offirmo-private/css--foundation')
-				import('@offirmo-private/css--framework')
+				//import('@monorepo-private/css--reset')
+				//import('@monorepo-private/css--foundation')
+				import('@monorepo-private/css--framework')
 				//import('../../src/themes/theme--dark--colorhunt212.css')
 
-				//import('@offirmo-private/css--utils--diagnostics')
+				//import('@monorepo-private/css--utils--diagnostics')
 				return story
 			}
 		]

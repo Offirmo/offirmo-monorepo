@@ -24,7 +24,7 @@
 		"_test": "run-s test--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/howler": "^2",
 		"npm-run-all": "^4",

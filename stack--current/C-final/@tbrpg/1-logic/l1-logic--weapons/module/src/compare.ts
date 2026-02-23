@@ -1,6 +1,6 @@
 /////////////////////
 
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import { compareꓽitemsⵧby_quality } from '@tbrpg/definitions'
 
 import type { Weapon } from './types.ts'

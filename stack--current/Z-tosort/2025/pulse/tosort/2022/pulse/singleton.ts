@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
 import memoize_one from 'memoize-one'
-import { Immutable } from '@offirmo-private/ts-types'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
-import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
+import { Immutable } from '@monorepo-private/ts--types'
+import { get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
+import { schedule_when_idle_but_not_too_far } from '@monorepo-private/utils--async'
 
 import {
 	is_browser_connected_to_a_network,

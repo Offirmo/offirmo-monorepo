@@ -2,7 +2,7 @@
 import { Enum } from 'typescript-string-enums'
 import assert from 'tiny-invariant'
 import { createError, type XXError} from '@offirmo/error-utils'
-import { HTTP_STATUS_CODE } from '@offirmo-private/offirmo-api--interface'
+import { HTTP_STATUS_CODE } from '@monorepo-private/offirmo-api--interface'
 
 import { FailureMode } from './types.ts'
 import type { XSoftExecutionContext } from '../../services/sxc.ts'

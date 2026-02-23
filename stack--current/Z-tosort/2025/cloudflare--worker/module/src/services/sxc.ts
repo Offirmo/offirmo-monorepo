@@ -7,14 +7,14 @@ import {
 	type SoftExecutionContext,
 	type WithSXC as _WithSXC,
 	type EventDataMap,
-} from '@offirmo-private/soft-execution-context'
-//import { JSONRpcRequest, JSONRpcResponse } from '@offirmo-private/json-rpc-types'
+} from '@monorepo-private/soft-execution-context'
+//import { JSONRpcRequest, JSONRpcResponse } from '@monorepo-private/json-rpc-types'
 import {
 	listenToUncaughtErrors,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,
-} from '@offirmo-private/soft-execution-context--node'
-//import { Users } from '@offirmo-private/db'
+} from '@monorepo-private/soft-execution-context--node'
+//import { Users } from '@monorepo-private/db'
 
 import { APP } from '../consts'
 import { CHANNEL } from './channel'

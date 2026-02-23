@@ -2,8 +2,8 @@ import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
 import memoize_once from 'memoize-one'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { TimestampUTCMs } from '@monorepo-private/timestamps'
 
 import { FILE_EXTENSIONSⵧEXIF_POWERED‿LC } from './consts.js'
 import { SimpleYYYYMMDD, AbsolutePath, TimeZone } from './types.js'

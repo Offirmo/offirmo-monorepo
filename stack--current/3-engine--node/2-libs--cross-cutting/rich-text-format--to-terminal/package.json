@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/rich-text-format--to-terminal",
+	"name": "@monorepo-private/rich-text-format--to-terminal",
 	"description": "Rendering rich text format for display on a Terminal (with escape codes)",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
@@ -15,20 +15,20 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/rich-text-format": "*",
+		"@monorepo-private/rich-text-format": "*",
 		"chalk": "^5",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/rich-text-format--to-terminal\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/rich-text-format--to-terminal\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

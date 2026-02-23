@@ -1,7 +1,7 @@
 'use strict'
 
 import Raven from 'raven-js'
-import ensureDeviceUUID from '@offirmo-private/ensure-device-uuid-browser'
+import ensureDeviceUUID from '@monorepo-private/ensure-device-uuid-browser'
 import { VERSION, BUILD_DATE } from '@tbrpg/flux'
 
 import { CHANNEL } from './channel'

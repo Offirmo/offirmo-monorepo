@@ -1,4 +1,4 @@
-import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad/types'
+import type { Meta‿v3, Story‿v3 } from '@monorepo-private/storypad/types'
 
 
 interface Props {

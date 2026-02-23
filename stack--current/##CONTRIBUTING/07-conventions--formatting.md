@@ -24,7 +24,7 @@ TODO one day prettify
  */
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import type {  } from './types.ts'
 
@@ -51,7 +51,8 @@ TODO express a resilient function who technically should never crash?
  */
 
 // prettier-ignore
-
+// eslint-disable-next-line no-console
+/* eslint-disable no-console */
 }
 
 /////////////////////////////////////////////////

@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import * as RichText from '@offirmo-private/rich-text-format'
+import type { Immutable } from '@monorepo-private/ts--types'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import type { Text, Book, BookPart, BookPage, BookNodeReference, BookPartKey } from './types/types.ts'
 import { isꓽBookCover, isꓽPageⵧlike } from './types/types-guards.ts'

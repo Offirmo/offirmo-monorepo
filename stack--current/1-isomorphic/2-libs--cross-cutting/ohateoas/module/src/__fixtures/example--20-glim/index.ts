@@ -2,9 +2,9 @@ import {
 	normalizeꓽuri‿str,
 	getꓽscheme_specific_part,
 	type SchemeSpecificURIPart,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 import chalk from 'chalk'
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 import {
 	type OHARichTextHints,
 	type OHAServer,
@@ -13,12 +13,12 @@ import {
 	type OHAFeedback,
 	OHALinkRelation,
 	type OHAHyperMedia,
-} from '@offirmo-private/ohateoas'
-import type { Story } from '@offirmo-private/ts-types'
+} from '@monorepo-private/ohateoas'
+import type { Story } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 import { getꓽrandom, getꓽengine } from '@offirmo/random'
-import type { Builder } from '@offirmo-private/rich-text-format'
+import type { Builder } from '@monorepo-private/rich-text-format'
 
 //const gen = getꓽrandom.picker.of(ARMOR_BASES)
 //const gen getꓽrandom.generator_of.integer.in_interval(BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)

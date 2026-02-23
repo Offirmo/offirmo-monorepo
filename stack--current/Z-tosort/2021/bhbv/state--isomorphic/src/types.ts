@@ -1,9 +1,9 @@
 import { Enum } from 'typescript-string-enums'
 
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { TimestampUTCMs } from '@monorepo-private/timestamps'
 import {
 	BaseState,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 /////////////////////
 
@@ -28,4 +28,3 @@ export interface State extends BaseState {
 }
 
 /////////////////////
-

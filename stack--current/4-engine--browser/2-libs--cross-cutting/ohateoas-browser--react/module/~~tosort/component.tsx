@@ -3,8 +3,8 @@ import React, { useState, useRef } from 'react'
 import {
 	type Url‿str,
 	getꓽuriⵧnormalized‿str,
-} from '@offirmo-private/ts-types-web'
-import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
+} from '@monorepo-private/ts--types--web'
+import renderⵧto_react from '@monorepo-private/rich-text-format--to-react'
 
 import {
 	type OHAHyperMedia,
@@ -14,7 +14,7 @@ import {
 	getꓽcta,
 	OHAHyperActionBlueprint,
 	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer, OHALinkRelation,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 import ᄆChrome from './chrome/index.tsx'
 

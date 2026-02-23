@@ -6,4 +6,4 @@ export * from './lib-sxc.ts'
 export * from './logger.ts'
 
 // for convenience when dealing with elements (which have a UUID)
-export { xxx_test_unrandomize_element } from '@offirmo-private/uuid'
+export { xxx_test_unrandomize_element } from '@monorepo-private/uuid'

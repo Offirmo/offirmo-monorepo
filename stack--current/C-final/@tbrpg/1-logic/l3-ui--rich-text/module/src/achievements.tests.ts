@@ -6,7 +6,7 @@ import {
 	getꓽachievements_snapshot,
 } from '@tbrpg/state'
 
-import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import { render_achievements_snapshot } from './index.ts'
 import { LIB } from './consts.ts'

@@ -1,9 +1,9 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type Url‿str,
 	getꓽuriⵧnormalized‿str as _getꓽuriⵧnormalized‿str, type Uri‿x,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
 import type { OHAHyperLink, OHAHyperLink‿x, OHALinkRelation } from './types.ts'
 import { isꓽOHAHyperLink } from './type-guards.ts'

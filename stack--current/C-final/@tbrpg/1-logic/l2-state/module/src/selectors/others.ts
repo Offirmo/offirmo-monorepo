@@ -1,5 +1,5 @@
-import { type Immutable} from '@offirmo-private/ts-types'
-import { type UUID } from '@offirmo-private/uuid'
+import { type Immutable} from '@monorepo-private/ts--types'
+import { type UUID } from '@monorepo-private/uuid'
 
 import { ITEM_SLOTS, type InventorySlot, type Element, type HypermediaContentType } from '@tbrpg/definitions'
 import { appraise_power } from '@tbrpg/logic--shop'

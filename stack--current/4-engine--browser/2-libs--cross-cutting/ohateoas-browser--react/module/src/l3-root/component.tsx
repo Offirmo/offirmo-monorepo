@@ -8,7 +8,7 @@ import {
 	type OHAHyperLink, type OHAHyperLink‿x, type OHAHyperAction,
 	type OHAStory, type Url‿str,
 	getꓽuriⵧnormalized‿str,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 import ᄆFrame from '../l2-frame/index.tsx'
 

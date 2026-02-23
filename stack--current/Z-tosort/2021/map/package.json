@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/map",
+	"name": "@monorepo-private/map",
 	"description": "map",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -7,10 +7,10 @@
 	"private": true,
 
 	"dependencies": {
-		"@offirmo-private/ensure-device-uuid-browser": "^0",
-		"@offirmo-private/poll-window-variable": "^0",
-		"@offirmo-private/prettify-any": "^0",
-		"@offirmo-private/view-css": "^0",
+		"@monorepo-private/ensure-device-uuid-browser": "^0",
+		"@monorepo-private/poll-window-variable": "^0",
+		"@monorepo-private/prettify-any": "^0",
+		"@monorepo-private/view-css": "^0",
 		"@offirmo/tiny-singleton": "^0",
 		"@offirmo/universal-debug-api-placeholder": "^1",
 		"leaflet": "^1",

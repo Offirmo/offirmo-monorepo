@@ -1,10 +1,10 @@
-import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 import {
 	normalizeꓽuri‿str,
 	getꓽscheme_specific_part,
 	type ReducerAction,
-} from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 import {
 	ROOT_URI,
 	type OHARichTextHints,
@@ -12,7 +12,7 @@ import {
 	type OHAStory,
 	type OHAHyperActionBlueprint,
 	type OHAFeedback, OHALinkRelation, type OHAHyperLink, type OHAPendingEngagement, type OHAHyperMedia,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 import {ActionType, createꓽall_store_fns} from '@tbrpg/interfaces'
 import * as UIRT from '@tbrpg/ui--rich-text'
 import * as TBRPGState from "@tbrpg/state";

@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Comparator, compare as _compare } from '@offirmo-private/ts-utils'
+import { Comparator, compare as _compare } from '@monorepo-private/ts--utils'
 
 import { RelationshipLevel } from './types'
 import { Quality } from '../type--quality/types'

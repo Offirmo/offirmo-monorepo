@@ -4,7 +4,7 @@ import {
 	type Contentⳇweb,
 	type HtmlFileSpec,
 	getꓽhtml‿str,
-} from '@offirmo-private/generator--html'
+} from '@monorepo-private/generator--html'
 
 /////////////////////////////////////////////////
 

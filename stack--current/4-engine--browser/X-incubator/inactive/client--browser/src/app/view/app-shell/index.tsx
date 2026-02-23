@@ -5,7 +5,7 @@
  */
 import 'react'
 
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 import Meta from './meta/index.tsx'
 import FakeInset from '../../../to-export-to-own-package/react-fake-inset/index.tsx'

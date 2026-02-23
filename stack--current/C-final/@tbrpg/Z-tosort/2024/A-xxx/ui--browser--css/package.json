@@ -13,8 +13,8 @@
 	"dependencies": {
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/css--framework": "^0",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/css--framework": "^0",
 		"clean-css-cli": "^5",
 		"cpx": "^1",
 		"npm-run-all": "^4"

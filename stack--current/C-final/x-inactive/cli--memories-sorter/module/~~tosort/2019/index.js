@@ -21,13 +21,13 @@ const columnify = require('../../../cli-toolbox//string/columnify')
 const {
 	get_human_readable_UTC_timestamp_seconds,
 	get_human_readable_UTC_timestamp_days,
-} = require('@offirmo-private/timestamps')
+} = require('@monorepo-private/timestamps')
 const exif_parser = require('exif-parser')
 
 const DATE_TS_LENGTH = '20xxMMDD'.length
 const NOW = +(new Date())
 
-const { prettify_json, dump_pretty_json } = require('@offirmo-private/prettify-json')
+const { prettify_json, dump_pretty_json } = require('@monorepo-private/prettify-json')
 
 const root = `/Users/${process.env.USER}/Documents/- photos/02 - en cours/00000000 - inbox`
 //const root = `/Users/${process.env.USER}/Documents/- photos/xxTESTxx/inbox`

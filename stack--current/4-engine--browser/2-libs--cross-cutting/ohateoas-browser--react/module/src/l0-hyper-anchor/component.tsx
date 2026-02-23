@@ -2,13 +2,13 @@ import React, { useState, useRef } from 'react'
 
 import {
 	getꓽuriⵧnormalized‿str,
-} from '@offirmo-private/ts-types-web'
-import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
+} from '@monorepo-private/ts--types--web'
+import renderⵧto_react from '@monorepo-private/rich-text-format--to-react'
 
 import {
 	type OHAHyperLink,
 	getꓽcta,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 /////////////////////////////////////////////////
 const NAME = `<OHAAnchor>/1`

@@ -1,15 +1,15 @@
 // TODO move into dedicated package
 
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/state-utils'
+import { Immutable } from '@monorepo-private/state-utils'
 import {
 	type Uri‿str,
 	type Uri‿x,
 	type SchemeSpecificURIPart,
 	normalizeꓽuri‿str,
 	promote_toꓽscheme_specific_part,
-} from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 

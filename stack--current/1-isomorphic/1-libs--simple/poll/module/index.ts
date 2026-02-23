@@ -35,7 +35,7 @@ function poll(predicate: () => boolean, options: Partial<Options> = {}) {
 
 		const waitForTimeout = setTimeout(() => {
 			clearInterval(waitForElement)
-			reject(new Error(`@offirmo-private/poll: Timed out while waiting for "${debugId}"`))
+			reject(new Error(`@monorepo-private/poll: Timed out while waiting for "${debugId}"`))
 		}, timeoutMs)
 	})
 }

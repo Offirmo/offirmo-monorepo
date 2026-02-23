@@ -2,7 +2,7 @@ import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-import type { WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
+import type { WebPropertyEntryPointSpec } from '@monorepo-private/generator--website-entry-points'
 
 import { WEBSITE } from '@devdocs/marketing'
 

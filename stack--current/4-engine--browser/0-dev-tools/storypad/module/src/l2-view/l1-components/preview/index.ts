@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import type { StoryEntry } from '../../../l1-flux/l1-state/types.ts'
 import { type Story‿v2, isꓽStory‿v2 } from '../../../l0-types/l1-csf/v2/index.ts'
@@ -122,7 +122,7 @@ async function _renderⵧstory_v3(state: ObservableState, render_params: Immutab
 		if (layout === 'bare')
 			return container
 
-		//import('../../../__vendor/@offirmo-private/css--framework/atomic/atomic--dimension.css')
+		//import('../../../__vendor/@monorepo-private/css--framework/atomic/atomic--dimension.css')
 		import('./index.css')
 
 		const storyContainer = document.createElement('div')

@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import stylize_string from 'chalk'
 
 import {
@@ -8,11 +8,11 @@ import {
 	type RenderToTextState,
 	DEFAULT_RENDERING_OPTIONSⵧToText,
 	renderⵧto_text,
-} from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 
-const LIB = '@offirmo-private/rich-text-format--to-terminal'
+const LIB = '@monorepo-private/rich-text-format--to-terminal'
 
 interface RenderingOptionsⵧToTerminal extends RenderingOptionsⵧToText {
 	// TODO one day color dithering

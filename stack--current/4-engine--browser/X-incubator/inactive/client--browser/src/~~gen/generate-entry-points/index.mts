@@ -2,9 +2,9 @@
 import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 
-import generateꓽwebsiteᝍentryᝍpoints, { type WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
+import generateꓽwebsiteᝍentryᝍpoints, { type WebPropertyEntryPointSpec } from '@monorepo-private/generator--website-entry-points'
 
-import { SPEC as _SPEC } from '@offirmo-private/generator--website-entry-points/tbrpg'
+import { SPEC as _SPEC } from '@monorepo-private/generator--website-entry-points/tbrpg'
 
 /////////////////////////////////////////////////
 

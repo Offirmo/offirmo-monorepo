@@ -1,8 +1,8 @@
 const path = require('path')
 
 const { /*trim, replace,*/ capitalize } = require('lodash')
-const { dumpꓽanyⵧprettified, prettifyꓽjson } = require('@offirmo-private/prettify-any')
-const rich_text_to_terminal = require('@offirmo-private/rich-text-format--to-terminal')
+const { dumpꓽanyⵧprettified, prettifyꓽjson } = require('@monorepo-private/prettify-any')
+const rich_text_to_terminal = require('@monorepo-private/rich-text-format--to-terminal')
 const fs = require('@offirmo/cli-toolbox/fs/extra')
 
 const { AUTHORS_BY_NAME, ELEMENTS, render_artwork_legend } = require('../dist/src.es2019.cjs')

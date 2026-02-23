@@ -6,7 +6,7 @@ import {
 
 /////////////////////////////////////////////////
 
-describe(`@offirmo-private/ts-types-web -- HTML`, function() {
+describe(`@monorepo-private/ts--types--web -- HTML`, function() {
 
 	describe('getꓽdimensions2D()', function () {
 

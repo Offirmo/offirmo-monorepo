@@ -1,13 +1,13 @@
-import type { Emoji, Basename, AnyPath } from '@offirmo-private/ts-types'
+import type { Emoji, Basename, AnyPath } from '@monorepo-private/ts--types'
 import type {
 	Author,
 	Contentⳇweb,
 	CssⳇColor‿str,
 	Thing,
 	ThingWithOnlinePresence,
-} from '@offirmo-private/ts-types-web'
-import type { FeatureSnippets } from '@offirmo-private/generator--html'
-import type { SVG } from '@offirmo-private/generator--svg'
+} from '@monorepo-private/ts--types--web'
+import type { FeatureSnippets } from '@monorepo-private/generator--html'
+import type { SVG } from '@monorepo-private/generator--svg'
 
 /////////////////////////////////////////////////
 

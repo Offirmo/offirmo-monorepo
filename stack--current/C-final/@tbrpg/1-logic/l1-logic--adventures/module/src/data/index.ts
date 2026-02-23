@@ -1,4 +1,4 @@
-import type { I18nMessages } from '@offirmo-private/ts-types'
+import type { I18nMessages } from '@monorepo-private/ts--types'
 
 import { type AdventureHumanReadableID } from '../types.ts'
 import { messages as en } from './i18n_en.ts'

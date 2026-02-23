@@ -14,7 +14,7 @@
 /src.es2019/      ->  /src.es2024.esm/
 /src.es2019.cjs/  ->  DELETE!
 3. add "devDependencies": {
-   "@offirmo-private/monorepo-scripts": "*",
+   "@monorepo-private/monorepo-scripts": "*",
 4. `bolt` again and fix outdated/missing dependencies
 5. `yarn outdated` and fix
 6. fix the "scripts" section:

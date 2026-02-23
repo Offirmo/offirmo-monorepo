@@ -11,7 +11,7 @@
 1980 precursors https://ethereum.org/en/whitepaper/#history
 2005 precursors -- reusable proof of work https://nakamotoinstitute.org/finney/rpow/
 2009 Bitcoin by Satoshi Nakamoto
-2009-01-09 "Chancellor on brink of second bailout for banks" Bitcoin genesis
+2009-01-09 Bitcoin genesis "Chancellor on brink of second bailout for banks"
 2010-05-22 = Bitcoin Pizza day = well-known Bitcoin purchase of two pizzas for 10,000 BTC https://crypto.com/en/glossary/bitcoin-pizza https://www.forbes.com/sites/rufaskamau/2022/05/09/what-is-bitcoin-pizza-day-and-why-does-the-community-celebrate-on-may-22/
 2014 Ethereum whitepaper by Vitalik Buterin https://ethereum.org/en/whitepaper/
 2016-06-17 attack on DAO smart contract's vulnerabilities https://en.wikipedia.org/wiki/The_DAO https://www.gemini.com/en-AU/cryptopedia/the-dao-hack-makerdao
@@ -211,6 +211,7 @@ creator coins https://x.com/VitalikButerin/status/2017956762347835488
 cross-chain
 cross-chain -- chain abstraction
 cross-chain -- swaps = swidge??
+CRQC "Cryptographically Relevant Quantum Computer" = a quantum computer powerful and stable enough to break the public-key cryptographic algorithms that currently secure most of the world's digital communications and data.
 crypto cash machine
 crypto crashes (at the bottom) https://caladan.xyz/crypto-black-friday/
 crypto image problem -- crypto-adjacent = pejorative for "borderline crypto" = "borderline scam/shit"
@@ -283,6 +284,7 @@ EIP-1559 (Type 2) transactions
 EIP-6963: Multi Injected Provider Discovery = Using window events to announce injected Wallet Providers https://eips.ethereum.org/EIPS/eip-6963
 Enjin
 ENS - history https://ens.swiss-knife.xyz/history
+ENS -- .limo https://eth.limo/
 Epstein close to BTC https://x.com/beincrypto/status/2018680040934769074
 ERC-1155 = fungible + non-fungible tokens = good for games currency + items
 ERC-20 = fungible tokens "each token of a given type is identical and interchangeable with another token of the same type"  https://trezor.io/learn/supported-assets/ethereum-layer-2-EVM/what-are-erc20-tokens
@@ -538,6 +540,8 @@ prediction markets -- distribution = what is betted on https://predictions.parad
 predictions https://polymarket.com/
 price oracles = pricing of some resource
 programmable recovery = ??
+proof of personhood -- World ID https://world.org/world-id
+proof of personhood = https://world.org/blog/world/proof-of-personhood-what-it-is-why-its-needed
 proof-of -- 1999 proof of work (PoW) = keep chain secure by needing 51% of the network's computing power to defraud the chain. This would require such huge investments in equipment and energy; you're likely to spend more than you'd gain. https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/ https://en.wikipedia.org/wiki/Proof_of_work
 proof-of -- 2011 proof of stake (PoS) = keep chain secure by needing to destroy tokens to control the chain + rewards incentives https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/
 proof-of -- 2017 proof of authority (PoA) = modified version of proof-of-stake (PoS) that is a reputation-based consensus algorithm instead https://ethereum.org/en/developers/docs/consensus-mechanisms/poa/
@@ -602,6 +606,7 @@ smart contracts -- attacks https://red.anthropic.com/2025/smart-contracts/
 smart property = ownership of an underlying physical device https://en.bitcoin.it/wiki/Smart_Property
 social tokens = digital assets issued by creators to monetize their content and engage with their fan base https://www.coinbase.com/en-au/learn/crypto-basics/what-are-social-tokens-and-how-do-they-redefine-value-in-the-creator-economy
 Solana -- advocacy = fastest, cheapest, designed from the ground up to maximise the throughput of the chain https://blog.labeleven.dev/why-solana
+Solana -- challenges -- superminority = Solana's validator set has been criticized because a relatively small number of validators (sometimes as few as 19–20) have historically controlled over 33% of staked SOL — meaning a small group could theoretically collude to halt the network.
 Solana -- gaming https://www.playsolana.com/about
 Solana -- Meteora platform ??
 Solana -- scanner https://solscan.io/
@@ -640,6 +645,10 @@ staking -- Liquid Staking Token (LST) = ex. stETH from Lido
 staking -- types -- solo / non-custodial / custodial / liquid https://www.sec.gov/newsroom/speeches-statements/corpfin-certain-liquid-staking-activities-080525
 staking = https://www.britannica.com/money/what-is-crypto-staking https://www.coinbase.com/en-au/learn/crypto-basics/what-is-staking https://www.bitpanda.com/academy/en/lessons/what-is-staking/
 Succinct Proofs of Random Access (SPoRAs) https://github.com/ArweaveTeam/arweave/releases/tag/N.2.3.0.0
+superminority -- Nakamoto Coefficient = directly measures the superminority = minimum number of validators needed to reach 33.3% of stake. A higher Nakamoto Coefficient = more decentralized and harder to attack.
+superminority -- threshold 1 = 1/3 + 1 of the stake is enough to break the network.
+superminority -- threshold 2 = ⅔ (66.7%) of stake is enough to control the consensus
+superminority = a group of validators that collectively control enough stake to disrupt or halt a blockchain network, without necessarily having enough to control or manipulate it outright
 sUSD = USD on Synthetix
 swidge -- bridge
 swidge -- provider

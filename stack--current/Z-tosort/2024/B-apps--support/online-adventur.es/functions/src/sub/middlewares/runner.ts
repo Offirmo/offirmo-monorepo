@@ -2,17 +2,17 @@ import '../services/sec'
 
 import assert from 'tiny-invariant'
 import stable_stringify from 'json-stable-stringify'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { getRootSEC, SoftExecutionContext, OperationParams } from '@offirmo-private/soft-execution-context'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
+import { getRootSEC, SoftExecutionContext, OperationParams } from '@monorepo-private/soft-execution-context'
 import { XXError } from '@offirmo/error-utils'
-import { getꓽbaseⵧloose, Immutable, is_revisioned } from '@offirmo-private/state-utils'
+import { getꓽbaseⵧloose, Immutable, is_revisioned } from '@monorepo-private/state-utils'
 import {
 	OAServerResponseBody,
 	create_server_response_body__data,
 	create_server_response_body__error,
 	is_server_response_body,
 } from '@online-adventur.es/api-interface'
-import { end_of_current_event_loop } from '@offirmo-private/async-utils'
+import { end_of_current_event_loop } from '@monorepo-private/utils--async'
 
 import {
 	APIGatewayEvent,

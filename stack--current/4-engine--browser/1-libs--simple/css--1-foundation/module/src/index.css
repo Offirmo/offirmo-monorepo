@@ -1,4 +1,4 @@
-@import 'npm:@offirmo-private/css--reset';
+@import 'npm:@monorepo-private/css--reset';
 
 @import 'vars--const/index.css'                    layer(offirmo--foundation);
 @import 'vars--tokens/index.css'                   layer(offirmo--foundation);

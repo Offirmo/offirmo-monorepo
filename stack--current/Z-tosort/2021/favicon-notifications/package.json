@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/favicon-notifications",
+	"name": "@monorepo-private/favicon-notifications",
 	"description": "Dynamic notifications in your favicon",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -12,8 +12,8 @@
 	"sideEffects": false,
 
 	"dependencies": {
-		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/xoff": "^0",
+		"@monorepo-private/utils--async": "^0",
+		"@monorepo-private/xoff": "^0",
 		"favico.js": "^0.3",
 		"piecon": "^0.5"
 	},

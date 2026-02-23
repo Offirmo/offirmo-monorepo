@@ -1,6 +1,6 @@
-import { Immutable } from '@offirmo-private/ts-types'
-import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { UUID } from '@offirmo-private/uuid'
+import { Immutable } from '@monorepo-private/ts-types'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
+import { UUID } from '@monorepo-private/uuid'
 import { CharacterClass } from '@tbrpg/state--character'
 import { State } from '@tbrpg/state'
 import {

@@ -1,4 +1,4 @@
-import { create as create_chat } from '@offirmo-private/view--chat'
+import { create as create_chat } from '@monorepo-private/view--chat'
 
 import { create as create_tty_chat_ui } from '../src/index.js'
 import { to_prettified_str } from '../src/libs.js'

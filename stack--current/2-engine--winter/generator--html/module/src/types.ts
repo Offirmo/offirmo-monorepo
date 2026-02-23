@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
-import type { PositiveIntegerInRange, FloatInRange, Charset, IETFLanguageType } from '@offirmo-private/ts-types'
-import type { CssⳇColor‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
+import type { PositiveIntegerInRange, FloatInRange, Charset, IETFLanguageType } from '@monorepo-private/ts--types'
+import type { CssⳇColor‿str, Contentⳇweb } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

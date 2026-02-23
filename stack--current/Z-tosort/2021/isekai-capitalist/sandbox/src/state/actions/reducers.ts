@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
-import { finalize_action_if_needed } from '@offirmo-private/state-utils'
+import { Immutable } from '@monorepo-private/ts--types'
+import { finalize_action_if_needed } from '@monorepo-private/state-utils'
 
 import { State } from '../types'
 import { Action, ActionType } from './types'

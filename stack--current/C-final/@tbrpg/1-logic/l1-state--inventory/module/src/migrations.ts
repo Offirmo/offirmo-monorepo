@@ -5,7 +5,7 @@ import {
 	enforceꓽimmutable,
 	type LastMigrationStep,
 	migrate_toꓽlatestⵧgeneric,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 import { type State } from './types.ts'

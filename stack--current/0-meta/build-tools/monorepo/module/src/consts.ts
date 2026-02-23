@@ -4,7 +4,7 @@ import * as path from 'node:path'
 import * as fs from 'node:fs'
 import { EOL as _os_EOL } from 'node:os'
 
-import { NODE_MAJOR_VERSION, EOL, SEP } from '@offirmo-private/monorepo--decisions'
+import { NODE_MAJOR_VERSION, EOL, SEP } from '@monorepo-private/monorepo--decisions'
 
 /////////////////////////////////////////////////
 

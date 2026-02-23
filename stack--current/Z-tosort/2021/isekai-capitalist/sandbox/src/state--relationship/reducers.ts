@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 
 import { SharedMemoryType, State } from './types'
 import { RelationshipLevel } from '../type--relationship-level/types'

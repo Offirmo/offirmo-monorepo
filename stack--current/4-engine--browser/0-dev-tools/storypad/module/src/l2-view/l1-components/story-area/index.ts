@@ -1,9 +1,9 @@
 // https://storybook.js.org/docs/configure/user-interface/sidebar-and-urls
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
-import type { Url‿str } from '@offirmo-private/ts-types'
+import type { Url‿str } from '@monorepo-private/ts--types'
 
 //import { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
 

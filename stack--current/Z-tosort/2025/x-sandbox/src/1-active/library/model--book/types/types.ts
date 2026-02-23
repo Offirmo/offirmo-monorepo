@@ -19,9 +19,9 @@
 //
 // Hence we do not use Thing, Author bc we are "in-character" (also, bc. using rich text)
 
-import type { Emoji, PositiveInteger } from '@offirmo-private/ts-types'
-import type { Url‿str, CssⳇColor‿str } from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+import type { Emoji, PositiveInteger } from '@monorepo-private/ts--types'
+import type { Url‿str, CssⳇColor‿str } from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 // Those types purely describe the technical aspect of displaying a book

@@ -1,7 +1,7 @@
 import { Enum } from 'typescript-string-enums'
-import { Immutable } from '@offirmo-private/ts-types'
-import { BaseAction } from '@offirmo-private/state-utils'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { Immutable } from '@monorepo-private/ts--types'
+import { BaseAction } from '@monorepo-private/state-utils'
+import { TimestampUTCMs } from '@monorepo-private/timestamps'
 
 import { State } from '../types'
 import {

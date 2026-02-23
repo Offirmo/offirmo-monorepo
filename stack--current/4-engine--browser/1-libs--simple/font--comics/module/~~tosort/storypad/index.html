@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <script type="module">
-	import startꓽstorypad from '@offirmo-private/storypad'
+	import startꓽstorypad from '@monorepo-private/storypad'
 	import nearest_pkg from '~/package.json'
 
 	const DEBUG = false
@@ -17,8 +17,8 @@
 			root_title: nearest_pkg?.name,
 			decorators: [
 				(story) => {
-					import('npm:@offirmo-private/css--foundation')
-					import('npm:@offirmo-private/css--foundation/src/xoptional/body--full-width.css')
+					import('npm:@monorepo-private/css--foundation')
+					import('npm:@monorepo-private/css--foundation/src/xoptional/body--full-width.css')
 					return story
 				},
 				//decoratorⵧdiagnostics,

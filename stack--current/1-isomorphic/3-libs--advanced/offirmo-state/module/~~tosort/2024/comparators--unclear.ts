@@ -3,7 +3,7 @@ import { Enum } from 'typescript-string-enums'
 import memoize_one from 'memoize-one'
 import * as jsondiffpatch from 'jsondiffpatch'
 
-import { Immutable, JSONObject } from '@offirmo-private/ts-types'
+import { Immutable, JSONObject } from '@monorepo-private/ts--types'
 
 import {
 	isꓽRootState,

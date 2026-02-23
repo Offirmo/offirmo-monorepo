@@ -1,5 +1,5 @@
-import type { BaseUState } from '@offirmo-private/state-utils'
-import type { UUID } from '@offirmo-private/uuid'
+import type { BaseUState } from '@monorepo-private/state-utils'
+import type { UUID } from '@monorepo-private/uuid'
 import type { PRNGState } from '@offirmo/random'
 
 /////////////////////////////////////////////////

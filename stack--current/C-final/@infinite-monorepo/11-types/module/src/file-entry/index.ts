@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
-import type { AbsolutePath } from '@offirmo-private/ts-types'
+import type { AbsolutePath } from '@monorepo-private/ts--types'
 
 import type { FileEntry } from './types.ts'
 

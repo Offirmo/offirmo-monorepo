@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import ErrorBoundary from '@monorepo-private/react-error-boundary'
 import { overrideHook } from '@offirmo/universal-debug-api-browser'
-import { asap_but_out_of_immediate_execution, schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
+import { asap_but_out_of_immediate_execution, schedule_when_idle_but_within_human_perception } from '@monorepo-private/utils--async'
 
 import init_SEC from '../services/sec'
 import Root from './root'

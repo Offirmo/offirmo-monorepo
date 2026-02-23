@@ -1,9 +1,9 @@
 import { isDeepStrictEqual } from 'node:util'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import assert from 'tiny-invariant'
 import { createError } from '@offirmo/error-utils'
-import { type AnyOffirmoState, fluid_select } from '@offirmo-private/state-utils'
+import { type AnyOffirmoState, fluid_select } from '@monorepo-private/state-utils'
 
 import type { WithoutTimestamps } from '../types.ts'
 import get_db from '../db.ts'

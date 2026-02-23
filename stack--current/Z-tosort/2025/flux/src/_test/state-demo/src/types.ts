@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
 
-import { BaseUState } from '@offirmo-private/state-utils'
+import { BaseUState } from '@monorepo-private/state-utils'
 
 /////////////////////
 

@@ -1,7 +1,7 @@
 
 
 ```js
-import style_once from '@offirmo-private/style-once'
+import style_once from '@monorepo-private/style-once'
 
 style_once({ id: 'style', css: `
 

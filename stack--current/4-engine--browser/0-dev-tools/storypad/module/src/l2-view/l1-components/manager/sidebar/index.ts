@@ -2,7 +2,7 @@
  */
 
 import assert from 'tiny-invariant'
-import type { Immutable, Basename } from '@offirmo-private/ts-types'
+import type { Immutable, Basename } from '@monorepo-private/ts--types'
 
 import { LIB, SEPⵧSEGMENTS } from '../../../../consts'
 import type { StoryEntry, StoryFolder, StoryTree } from '../../../../l1-flux/l1-state/types.ts'

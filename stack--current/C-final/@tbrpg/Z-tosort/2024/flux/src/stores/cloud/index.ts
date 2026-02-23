@@ -4,15 +4,15 @@ import debounce from 'lodash/debounce'
 import stable_stringify from 'json-stable-stringify'
 import { normalizeError } from '@offirmo/error-utils'
 import { overrideHook } from '@offirmo/universal-debug-api-placeholder'
-import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { Immutable, Storage } from '@offirmo-private/ts-types'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
+import { Immutable, Storage } from '@monorepo-private/ts-types'
 import {
 	fluid_select,
 	getꓽschema_versionⵧloose,
 	getꓽbaseⵧloose,
 	getꓽrevisionⵧloose,
 	UNCLEAR_get_difference__full,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
 
 import * as TBRPGState from '@tbrpg/state'

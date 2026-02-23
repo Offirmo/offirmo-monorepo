@@ -7,7 +7,7 @@ import {
 	type SoftExecutionContext,
 	type WithSXC as _WithSXC,
 	type EventDataMap,
-} from '@offirmo-private/soft-execution-context'
+} from '@monorepo-private/soft-execution-context'
 
 import { APP } from '../consts'
 import logger from './logger'

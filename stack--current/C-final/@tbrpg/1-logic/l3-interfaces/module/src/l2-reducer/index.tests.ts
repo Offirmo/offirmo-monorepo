@@ -7,7 +7,7 @@ import {
 	ACTION_TYPEꘌNOOP,          type ActionNoop,        createꓽactionꘌnoop,
 	ACTION_TYPEꘌSET,           type ActionSet_,        createꓽactionꘌset,
 	ACTION_TYPEꘌHACK,          type ActionHack_,       createꓽactionꘌhack,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
 import {
 	createꓽall_store_fns,

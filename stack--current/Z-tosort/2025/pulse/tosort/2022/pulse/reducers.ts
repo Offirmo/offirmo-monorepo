@@ -1,6 +1,6 @@
-import { Immutable } from '@offirmo-private/ts-types/src'
+import { Immutable } from '@monorepo-private/ts--types/src'
 import assert from 'tiny-invariant'
-import { asap_but_out_of_current_event_loop, } from '@offirmo-private/async-utils'
+import { asap_but_out_of_current_event_loop, } from '@monorepo-private/utils--async'
 
 import {
 	State,

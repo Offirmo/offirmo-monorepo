@@ -1,4 +1,4 @@
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 import {
 	OAServerResponseBody,
 	create_server_response_body__data,

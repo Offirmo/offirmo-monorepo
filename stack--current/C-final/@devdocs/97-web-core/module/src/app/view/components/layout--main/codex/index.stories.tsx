@@ -1,4 +1,4 @@
-import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad'
+import type { Meta‿v3, Story‿v3 } from '@monorepo-private/storypad'
 import React from 'react'
 
 import Main2 from './index.tsx'

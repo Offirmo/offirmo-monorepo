@@ -1,5 +1,5 @@
 {
-"name": "@offirmo-private/html--boilerplate",
+"name": "@monorepo-private/html--boilerplate",
 "version": "0.0.1",
 "description": "My personal HTML5 template",
 "author": "Offirmo <offirmo.net@gmail.com>",
@@ -21,8 +21,8 @@
 		"demo": "offirmo-simple-upgradable-template-apply --template=./src/index.html --destination=./doc/demo/index.html"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/simple-upgradable-template": "^0",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/simple-upgradable-template": "^0",
 		"@size-limit/preset-small-lib": "^8",
 		"npm-run-all": "^4"
 	}

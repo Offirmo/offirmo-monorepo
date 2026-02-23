@@ -12,7 +12,7 @@ import JSON5 from 'json5'
 import { parse as parseImports } from 'parse-imports-ts'
 import { writeJsonFile as write_json_file } from 'write-json-file'
 
-import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
 
 import type {
 	AbsolutePath,
@@ -22,7 +22,7 @@ import type {
 	DependencyType,
 } from './types'
 
-import { type FileEntry, createꓽfile_entry, updateꓽfile_entry } from '@offirmo-private/file-entry'
+import { type FileEntry, createꓽfile_entry, updateꓽfile_entry } from '@monorepo-private/file-entry'
 
 import {
 	type PureModuleDetails,
@@ -707,7 +707,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				// intercept aggregations
 				if (dependency_name === 'chai' || dependency_name === 'sinon') {
 					if (dep_type !== 'dev' && ![
-							'@offirmo-private/state-migration-tester',
+							'@monorepo-private/state-migration-tester',
 							'@offirmo/unit-test-toolbox',
 						].includes(result.fqname)
 					) {
@@ -763,8 +763,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			unprocessed_langs.delete('html')
 			//throw new Error(`HTML imports detection not implemented!`)
 			// TODO one day use parcel to track deps
-			console.log(`${indent}    ↘ auto-dep to @offirmo-private/toolbox--parcel`)
-			raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
+			console.log(`${indent}    ↘ auto-dep to @monorepo-private/toolbox--parcel`)
+			raw_deps.push({ label: '@monorepo-private/toolbox--parcel', type: 'dev'})
 		}
 		if (langs.includes('css')) {
 			unprocessed_langs.delete('css')
@@ -821,8 +821,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 <!DOCTYPE html>
 
 <script type="module">
-	import startꓽstorypad from '@offirmo-private/storypad'
-	import decoratorⵧdiagnostics from '@offirmo-private/storypad/decorators/diagnostics'
+	import startꓽstorypad from '@monorepo-private/storypad'
+	import decoratorⵧdiagnostics from '@monorepo-private/storypad/decorators/diagnostics'
 	import nearest_pkg from '~/package.json'
 
 	const DEBUG = false
@@ -841,7 +841,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			root_title: nearest_pkg?.name,
 			decorators: [
 				/*(story) => {
-					import('npm:@offirmo-private/css--foundation')
+					import('npm:@monorepo-private/css--foundation')
 					return story
 				},*/
 				decoratorⵧdiagnostics
@@ -901,8 +901,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		result.engines['browser'] = '*'
 
 	if (targets_runtimeꓽbrowser) {
-		raw_deps.push({ label: '@offirmo-private/storypad', type: 'dev'})
-		raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
+		raw_deps.push({ label: '@monorepo-private/storypad', type: 'dev'})
+		raw_deps.push({ label: '@monorepo-private/toolbox--parcel', type: 'dev'})
 	}
 
 	raw_deps.forEach(({label, type}) => {
@@ -942,9 +942,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	for (const dep of result.depsⵧnormal) {
 		// small control
 		if ([
-			'@offirmo-private/monorepo-scripts',
-			'@offirmo-private/storypad',
-			'@offirmo-private/toolbox--parcel',
+			'@monorepo-private/monorepo-scripts',
+			'@monorepo-private/storypad',
+			'@monorepo-private/toolbox--parcel',
 			'@offirmo/unit-test-toolbox',
 			'npm-run-all',
 			'tslib',
@@ -955,7 +955,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		const is_peer_candidate = [
 			'tslib',
 			'react',
-			'@offirmo-private/soft-execution-context',
+			'@monorepo-private/soft-execution-context',
 		].includes(dep)
 		if (is_peer_candidate) {
 			// note: will be moved back to normal if not a lib, see below

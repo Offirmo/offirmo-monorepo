@@ -1,12 +1,12 @@
 import {
 	type InputSpec,
 	type InputType, type ValueInputSpec,
-} from '@offirmo-private/ts-types'
+} from '@monorepo-private/ts--types'
 import {
 	normalizeꓽuri‿str,
 	getꓽscheme_specific_part,
-} from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 import type {
 	OHAHyperMedia, OHARichTextHints,
 	OHAHyperActionBlueprint,
@@ -15,10 +15,10 @@ import type {
 	OHAHyperLink, OHAHyper,
 	OHAServer,
 	OHAFeedback,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 import {
 	OHALinkRelation,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 /////////////////////////////////////////////////
 

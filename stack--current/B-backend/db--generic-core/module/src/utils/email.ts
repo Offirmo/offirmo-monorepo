@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { normalizeꓽemailⵧsafe, normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@offirmo-private/normalize-string'
+import { normalizeꓽemailⵧsafe, normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@monorepo-private/normalize-string'
 
 
 export function get_gravatar_url(email: string): string {

@@ -1,4 +1,4 @@
-import { Normalization as _Norm, DemoꓽAll } from '@offirmo-private/storypad/src/__shared/stories/css/typography/index.stories.ts'
+import { Normalization as _Norm, DemoꓽAll } from '@monorepo-private/storypad/src/__shared/stories/css/typography/index.stories.ts'
 import { All } from '../__shared/use-cases.stories'
 
 import { CSS_CLASS as KLASS } from './index.tsx'

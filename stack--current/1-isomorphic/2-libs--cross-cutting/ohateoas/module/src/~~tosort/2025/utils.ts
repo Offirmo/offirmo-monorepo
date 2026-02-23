@@ -1,13 +1,13 @@
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@monorepo-private/ts--types'
 
-import { getꓽmutable_copy } from '@offirmo-private/state-utils'
+import { getꓽmutable_copy } from '@monorepo-private/state-utils'
 import {
 	type NodeLike,
 	type Node,
 	type CheckedNode,
 	createⵧfrom_content,
-} from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/rich-text-format'
 import {
 	type TrackedEngagement,
 	type PendingEngagementUId,

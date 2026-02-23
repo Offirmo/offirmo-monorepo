@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/heroku",
+	"name": "@monorepo-private/heroku",
 	"description": "Heroku empty server",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",

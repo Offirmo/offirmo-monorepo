@@ -1,4 +1,4 @@
-import { hasꓽcontent, isꓽnegative_zero, isꓽcontainer } from '@offirmo-private/type-detection'
+import { hasꓽcontent, isꓽnegative_zero, isꓽcontainer } from '@monorepo-private/type-detection'
 
 /////////////////////////////////////////////////
 

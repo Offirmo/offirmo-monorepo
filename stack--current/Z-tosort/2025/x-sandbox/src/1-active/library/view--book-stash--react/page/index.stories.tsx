@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@offirmo-private/storypad/types'
+import type { Meta, Story } from '@monorepo-private/storypad/types'
 
 import Component from './index.tsx'
 
@@ -13,7 +13,7 @@ export default {
 	},
 	decorators: [
 		(stuff: any) => {
-			import('@offirmo-private/css--framework')
+			import('@monorepo-private/css--framework')
 			return stuff
 		},
 	]

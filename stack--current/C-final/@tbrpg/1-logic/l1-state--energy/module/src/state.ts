@@ -1,7 +1,7 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 import { getꓽlogger } from '@tbrpg/definitions'
 
 import { LIB, SCHEMA_VERSION, TICK_MS } from './consts.ts'

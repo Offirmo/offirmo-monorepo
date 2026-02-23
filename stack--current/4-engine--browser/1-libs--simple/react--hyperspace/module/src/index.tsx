@@ -4,7 +4,7 @@ import {
 	type Url‿str,
 	type CssⳇFilterSpec,
 	getꓽCssⳇfilter__value,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
 import './index.css'
 

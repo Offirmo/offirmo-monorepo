@@ -1,4 +1,4 @@
-import { AUTHOR } from '@offirmo-private/marketing'
+import { AUTHOR } from '@monorepo-private/marketing/offirmo'
 
 /////////////////////////////////////////////////
 

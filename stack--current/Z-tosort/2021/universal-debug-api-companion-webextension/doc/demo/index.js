@@ -7,7 +7,7 @@ import {
 	addDebugCommand,
 	globalThis,
 } from '@offirmo/universal-debug-api-placeholder'
-import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
+import { asap_but_out_of_immediate_execution } from '@monorepo-private/utils--async'
 
 import {
 	demo_legacy_console,

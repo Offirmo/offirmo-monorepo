@@ -1,4 +1,4 @@
-import { isꓽnegative_zero } from './__vendor/@offirmo-private/type-detection/index.ts'
+import { isꓽnegative_zero } from './__vendor/@monorepo-private/type-detection/index.ts'
 
 import type {
 	PrettifyOptions,

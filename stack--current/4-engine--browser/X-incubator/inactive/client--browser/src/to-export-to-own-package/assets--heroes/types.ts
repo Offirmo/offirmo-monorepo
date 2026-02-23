@@ -1,4 +1,4 @@
-import { Url‿str } from '@offirmo-private/ts-types-web'
+import { Url‿str } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

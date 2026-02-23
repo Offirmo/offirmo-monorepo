@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
-import type { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+import type { Immutable, IETFLanguageType } from '@monorepo-private/ts--types'
 
-import type { Contentⳇweb } from '@offirmo-private/ts-types-web';
+import type { Contentⳇweb } from '@monorepo-private/ts--types--web';
 import {
 	type HtmlFileSpec,
-} from '@offirmo-private/generator--html'
+} from '@monorepo-private/generator--html'
 
 import type { WebPropertyEntryPointSpec } from '../../types.ts'
 import { LIB } from '../../consts.ts'

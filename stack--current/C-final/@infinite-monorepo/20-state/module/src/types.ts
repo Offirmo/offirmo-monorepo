@@ -1,4 +1,4 @@
-import type { Immutable, JSONObject } from '@offirmo-private/ts-types'
+import type { Immutable, JSONObject } from '@monorepo-private/ts--types'
 import type {
 	InfiniteMonorepoSpec,
 	Node,

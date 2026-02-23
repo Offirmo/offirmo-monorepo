@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import type { Dimensions2D } from '@offirmo-private/ts-types-web'
+import type { Immutable } from '@monorepo-private/ts--types'
+import type { Dimensions2D } from '@monorepo-private/ts--types--web'
 
 import { EOL, TAB } from './consts.ts'
 import type { SVG, SVGGroupElement, Svg‿str, WithId } from './types.ts'

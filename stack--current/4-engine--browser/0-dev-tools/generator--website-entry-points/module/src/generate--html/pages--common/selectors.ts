@@ -1,14 +1,14 @@
 import assert from 'tiny-invariant'
 const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
 
-import type { Immutable } from '@offirmo-private/ts-types'
-import type { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web';
-import * as ContentⳇwebᐧSelectors from '@offirmo-private/ts-types-web';
+import type { Immutable } from '@monorepo-private/ts--types'
+import type { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@monorepo-private/ts--types--web';
+import * as ContentⳇwebᐧSelectors from '@monorepo-private/ts--types--web';
 import type {
 	HtmlMetas,
 	HtmlMetaContentⳇViewport,
 	HtmlFileSpec,
-} from '@offirmo-private/generator--html'
+} from '@monorepo-private/generator--html'
 
 import type { WebPropertyEntryPointSpec } from '../../types.ts'
 import { LIB } from '../../consts.ts'

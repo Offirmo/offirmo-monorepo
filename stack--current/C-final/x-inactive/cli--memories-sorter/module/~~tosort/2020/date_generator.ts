@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import moment, { Moment } from 'moment'
 import 'moment-timezone'
-import { Immutable} from '@offirmo-private/ts-types'
+import { Immutable} from '@monorepo-private/ts--types'
 
 import { SimpleYYYYMMDD, TimeZone } from '../types'
 

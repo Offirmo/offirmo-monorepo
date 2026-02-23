@@ -2,7 +2,7 @@
 
 import { Enum } from 'typescript-string-enums'
 import Bowser from 'bowser'
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
 import memoize_one from 'memoize-one'
 import assert from 'tiny-invariant'
 

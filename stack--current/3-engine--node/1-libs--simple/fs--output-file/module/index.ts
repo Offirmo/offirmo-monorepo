@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs'
 import * as fsp from 'node:fs/promises'
-import { promiseTry } from '@offirmo-private/promise-try'
+import { promiseTry } from '@monorepo-private/promise-try'
 
 
 export function outputFileSync() {

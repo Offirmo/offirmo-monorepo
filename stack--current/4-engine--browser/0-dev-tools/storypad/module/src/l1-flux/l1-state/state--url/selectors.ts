@@ -2,7 +2,7 @@
  */
 
 import assert from 'tiny-invariant'
-import type { Url‿str } from '@offirmo-private/ts-types'
+import type { Url‿str } from '@monorepo-private/ts--types'
 
 import { QUERYPARAMS } from './consts.ts'
 import { type StoryUId, RenderMode, isꓽrender_mode } from '../types.ts'

@@ -4,7 +4,7 @@ import assert from 'tiny-invariant'
 import memoize_one from 'memoize-one'
 import { Enum } from 'typescript-string-enums'
 
-import { Immutable, Mutable } from '@offirmo-private/ts-types'
+import { Immutable, Mutable } from '@monorepo-private/ts-types'
 
 import {
 	Background, BiomeId,

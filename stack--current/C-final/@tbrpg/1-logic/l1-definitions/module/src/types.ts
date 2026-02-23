@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
-import { type WithUUID } from '@offirmo-private/uuid'
-import { type NodeLike } from '@offirmo-private/rich-text-format'
+import { type WithUUID } from '@monorepo-private/uuid'
+import { type NodeLike } from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 

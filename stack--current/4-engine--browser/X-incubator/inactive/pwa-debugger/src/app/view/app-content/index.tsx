@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
 import actual from 'actual'
 
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
-import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
+import { schedule_when_idle_but_not_too_far } from '@monorepo-private/utils--async'
 
 import './index.css'
 
@@ -15,7 +15,7 @@ const { format } = new Intl.NumberFormat('en', {
 })
 
 const CSS_ENV_VARS = [
-	// PREREQUISITE those vars are defined from env() in @offirmo-private/css--framework
+	// PREREQUISITE those vars are defined from env() in @monorepo-private/css--framework
 	'--safe-area-inset-top',
 	'--safe-area-inset-right',
 	'--safe-area-inset-bottom',

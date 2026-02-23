@@ -45,7 +45,6 @@ brand -- 6 what's? = what we stand for, what we believe in, what people we seek 
 build vs buy = example https://www.svix.com/build-vs-buy/
 build-boost-discard cycle of internet applications = scourge https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h
 business -- as a by-product = structure that ultimately has to exist around a group of people to make things and service customers over the long term, but not inherently interesting https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96/
-case studies -- growth, funnel, onboarding https://growth.design/case-studies
 CEO "If I/we got fired today, what would the new CEO do?"
 churn
 churn -- subscription -- involuntary or delinquent churn = missed payments causing an automated cancellation
@@ -85,7 +84,6 @@ deep appeal = something that a few people love, even if most people don't get it
 deployment gap = between lab/demo to actual use https://www.a16z.news/p/the-physical-ai-deployment-gap
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 dogfooding "Eating our own Dogfood" = ranges wider than testing your end-product, and can be the difference between good and great products https://gregtidanian.substack.com/p/eating-our-own-dog-food
-don't build castles in others people's kingdoms
 duty of care = actively shield users from harm — “rather than the reactive system that exists now” https://ia.acs.org.au/article/2025/govt-ramps-up-big-tech--duty-of-care--reforms.html
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
@@ -161,6 +159,7 @@ good business = one that makes good products at a fair price to a sustainable an
 growth +++ https://growth.design/
 growth -- bootstrapping
 growth -- bundles
+growth -- case studies = https://growth.design/case-studies
 growth -- case studies https://growth.design/case-studies
 growth -- cognitive load
 growth -- concepts https://growth.design/psychology
@@ -224,6 +223,7 @@ market fit -- traction = measurable proof that you’re already making progress 
 marketing -- "killer app"
 marketing -- case studies
 marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
+marketing -- don't build castles in others people's kingdoms
 marketing = transfer of enthusiasm https://x.com/jasonfried/status/1961157371235111304
 mature market
 mediocre success = the worst thing that can happen to your startup = enough to keep you going but not enough to change your life. most founders are trapped there. respect to shutting down or doubling down on projects https://x.com/gregisenberg/status/1906697683089101113

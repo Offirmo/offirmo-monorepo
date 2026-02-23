@@ -1,6 +1,6 @@
 import {
 	promiseTry,
-} from '@offirmo-private/promise-try'
+} from '@monorepo-private/promise-try'
 
 promiseTry(() => { throw new Error('Oups!') })
 	.then(

@@ -7,7 +7,7 @@
 		<link rel="preconnect" href="https://tlk.io">
 
 		<style>
-			/************** excerpt from @offirmo-private/css--framework *******/
+			/************** excerpt from @monorepo-private/css--framework *******/
 			.o⋄top-container {
 				display: flex;
 				flex-direction: column;
@@ -130,7 +130,7 @@
 							const anon_uuid = crypto.getRandomValues(new Uint32Array(1))[0].toString(16)
 
 							try { // defensive!
-								const LS_KEY = `@offirmo-private/iframe--chat/anon_uuid`
+								const LS_KEY = `@monorepo-private/iframe--chat/anon_uuid`
 								let already_generated_anon_uuid = localStorage.getItem(LS_KEY)
 								if (!!already_generated_anon_uuid && already_generated_anon_uuid.length === anon_uuid.length)
 									return already_generated_anon_uuid

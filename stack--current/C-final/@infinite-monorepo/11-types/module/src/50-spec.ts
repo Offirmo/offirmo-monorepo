@@ -5,7 +5,7 @@ import type {
 	EndOfLine,
 	AbsoluteDirPath,
 	AbsoluteFilePath,
-} from '@offirmo-private/ts-types'
+} from '@monorepo-private/ts--types'
 
 import type { VersionSpecification } from './01-primitives.ts'
 import type {

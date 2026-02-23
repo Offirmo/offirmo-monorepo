@@ -1,7 +1,7 @@
 /** inspired from https://github.com/andersonba/yve-bot/blob/master/examples/chat.yaml
  */
 
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import {
 	type Step,

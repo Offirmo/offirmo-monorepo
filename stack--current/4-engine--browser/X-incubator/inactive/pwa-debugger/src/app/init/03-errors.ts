@@ -1,5 +1,5 @@
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
-import { listenToErrorEvents, listenToUnhandledRejections } from '@offirmo-private/soft-execution-context--browser'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
+import { listenToErrorEvents, listenToUnhandledRejections } from '@monorepo-private/soft-execution-context--browser'
 
 /////////////////////////////////////////////////
 

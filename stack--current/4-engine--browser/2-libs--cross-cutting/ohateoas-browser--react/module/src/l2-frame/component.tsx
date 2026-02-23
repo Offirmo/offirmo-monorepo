@@ -1,7 +1,7 @@
 import React, { type CSSProperties, useState, useRef } from 'react'
 
-import * as RichText from '@offirmo-private/rich-text-format'
-import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
+import * as RichText from '@monorepo-private/rich-text-format'
+import renderⵧto_react from '@monorepo-private/rich-text-format--to-react'
 
 import {
 	OHALinkRelation,
@@ -10,7 +10,7 @@ import {
 	OHAHyperActionBlueprint,
 	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction,
 	isꓽOHAHyperLink,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 import ᄆChrome from './chrome/index.tsx'
 

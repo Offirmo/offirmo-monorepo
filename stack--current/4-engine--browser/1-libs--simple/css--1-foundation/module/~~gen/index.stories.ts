@@ -45,7 +45,7 @@ export function ResetꓽBase() {
 			<h2>Sphinx of black quartz, judge my vow!</h2>
 			<h3>Pack my box with five dozen liquor jugs!</h3>
 			<p>
-				${LIB} does NOT provide CSS reset/normalization. Use your own, @offirmo-private/css--reset is recommended.
+				${LIB} does NOT provide CSS reset/normalization. Use your own, @monorepo-private/css--reset is recommended.
 			</p>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at varius eros. Curabitur pulvinar metus diam, nec aliquet felis pellentesque et. Ut iaculis aliquam augue, sed vestibulum lacus varius at. Mauris et facilisis massa. Sed vehicula placerat convallis. Sed dui magna, semper non neque non, semper dapibus lacus.

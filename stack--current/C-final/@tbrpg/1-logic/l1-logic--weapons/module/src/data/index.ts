@@ -1,6 +1,6 @@
 /////////////////////
 
-import type { I18nMessages } from '@offirmo-private/ts-types'
+import type { I18nMessages } from '@monorepo-private/ts--types'
 
 import { WeaponPartType } from '../types.ts'
 import en from './i18n_en.ts'

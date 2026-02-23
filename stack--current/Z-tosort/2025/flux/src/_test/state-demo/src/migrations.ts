@@ -6,7 +6,7 @@ import {
 	LastMigrationStep,
 	MigrationStep,
 	migrate_toꓽlatestⵧgeneric,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { type State } from './types.js'

@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
 import { Resvg } from '@resvg/resvg-js'
 
-import type { Immutable } from '@offirmo-private/ts-types'
-import { getꓽsvg‿str, createꓽfrom_emoji, type Svg‿str } from '@offirmo-private/generator--svg'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { getꓽsvg‿str, createꓽfrom_emoji, type Svg‿str } from '@monorepo-private/generator--svg'
 
 import type { WebPropertyEntryPointSpec, EntryPoints } from '../types.ts'
 import { getꓽicon__sizes, getꓽiconⵧemoji, getꓽiconⵧsvg, getꓽicon__path } from '../selectors/index.ts'

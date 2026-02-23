@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 
 import { State, LifeGreatness } from './types'
 

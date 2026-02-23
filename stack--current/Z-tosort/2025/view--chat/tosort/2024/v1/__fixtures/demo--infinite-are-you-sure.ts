@@ -1,4 +1,4 @@
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import {
 	type StepIterator,

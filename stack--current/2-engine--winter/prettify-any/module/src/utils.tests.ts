@@ -9,7 +9,7 @@ import {
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/prettify-any - utils', function() {
+describe('@monorepo-private/prettify-any - utils', function() {
 
 	describe('cmp()', function() {
 

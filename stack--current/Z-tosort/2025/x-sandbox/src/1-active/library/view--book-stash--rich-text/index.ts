@@ -1,12 +1,12 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import * as RichText from '@offirmo-private/rich-text-format'
+import type { Immutable } from '@monorepo-private/ts--types'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { type BookCover, type BookPage, type BookPart, type BookUId, type PageResult, type Text } from '../model--book/index.ts'
 import * as BookStashLib from '../model--book-stash/index.ts'
 import { renderꓽcover__spine } from '../view--book--rich-text/index.ts'
 import { getꓽbookshelf } from '../model--book-stash/index.ts'
-import type { NodeLike } from '@offirmo-private/rich-text-format'
+import type { NodeLike } from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 

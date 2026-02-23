@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 type Key = string | number
 type Node = Parameters<JSON['stringify']>[0]

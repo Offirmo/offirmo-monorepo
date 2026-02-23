@@ -1,6 +1,6 @@
 import 'react'
 
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 import SettingsIconUrl from './icon2.png'
 

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import {
 	isꓽarrayⵧempty,
@@ -11,7 +11,7 @@ import {
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/type-detection -- containers', function () {
+describe('@monorepo-private/type-detection -- containers', function () {
 
 
 	describe('isꓽarrayⵧempty()', function() {

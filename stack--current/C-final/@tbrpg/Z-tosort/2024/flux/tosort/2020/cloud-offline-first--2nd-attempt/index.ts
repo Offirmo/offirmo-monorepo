@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
 import stable_stringify from 'json-stable-stringify'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
 import { overrideHook } from '@offirmo/universal-debug-api-placeholder'
-import { Storage } from '@offirmo-private/ts-types'
+import { Storage } from '@monorepo-private/ts-types'
 import { ReleaseChannel, get_api_base_url, Endpoint } from '@online-adventur.es/functions-interface'
 import { NUMERIC_VERSION, State } from '@tbrpg/state'
 import {

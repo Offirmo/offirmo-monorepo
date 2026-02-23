@@ -1,6 +1,6 @@
 
 // APP = use a port dedicated to your engine
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 
 import * as libⵧgood from './lib--good.ts'
 import * as libⵧbad from './lib--bad.ts'

@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 import logger from '../logger'
 
 /////////////////////////////////////////////////
@@ -38,9 +38,9 @@ async function init(): Promise<void> {
 
 	/*
 
-	import { set_xoff_flag } from '@offirmo-private/xoff'
+	import { set_xoff_flag } from '@monorepo-private/xoff'
 	import { overrideHook } from '@offirmo/universal-debug-api-browser'
-	import get_loader from '@offirmo-private/iframe--loading'
+	import get_loader from '@monorepo-private/iframe--loading'
 
 	import { injectꓽtext_encoder } from '@tbrpg/flux'
 

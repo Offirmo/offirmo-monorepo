@@ -7,7 +7,7 @@ import {
 } from './index.ts'
 
 
-describe('@offirmo-private/type-detection -- primitives', function() {
+describe('@monorepo-private/type-detection -- primitives', function() {
 
 	describe('isꓽnegative_zero()', function() {
 

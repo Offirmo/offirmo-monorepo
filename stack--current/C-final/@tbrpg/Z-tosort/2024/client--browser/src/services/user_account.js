@@ -2,12 +2,12 @@
 
 import assert from 'tiny-invariant'
 
-import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
-import { poll } from '@offirmo-private/poll-window-variable'
+import { schedule_when_idle_but_not_too_far } from '@monorepo-private/async-utils'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
+import { poll } from '@monorepo-private/poll-window-variable'
 import Deferred from '@offirmo/deferred'
 //import fetch from '@tbrpg/flux/src/utils/fetch'
-import { load_script_from_top, execute_from_top, get_log_symbol, get_top_ish_window } from '@offirmo-private/xoff'
+import { load_script_from_top, execute_from_top, get_log_symbol, get_top_ish_window } from '@monorepo-private/xoff'
 import { Endpoint, fetch_oa, get_api_base_url } from '@online-adventur.es/api-client'
 
 import { CHANNEL } from './channel'

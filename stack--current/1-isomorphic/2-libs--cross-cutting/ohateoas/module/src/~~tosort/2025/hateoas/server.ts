@@ -2,13 +2,13 @@
 // https://restfulapi.net/hateoas/
 
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/state-utils'
+import { Immutable } from '@monorepo-private/state-utils'
 import {
 	type Hyperlink,
 	promote_toꓽscheme_specific_part,
 	normalizeꓽuri‿str,
-} from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { type HypermediaContentType } from '@tbrpg/definitions'
 import * as AppState from '@tbrpg/state'

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
-import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
+import { TEST_TIMESTAMP_MS } from '@monorepo-private/timestamps'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 

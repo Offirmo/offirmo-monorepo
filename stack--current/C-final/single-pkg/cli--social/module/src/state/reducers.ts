@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import {
 	// base
@@ -45,7 +45,7 @@ import {
 
 	// arrays
 	normalizeꓽarrayⵧof_strings,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 import type { RelationshipType, Relationship, State } from './types.ts'
 import type { PersonId, Person, Org, OrgId, LooseDateAnnotated, Nationality } from '../types.ts'

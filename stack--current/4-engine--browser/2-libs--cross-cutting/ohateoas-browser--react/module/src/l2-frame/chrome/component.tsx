@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { Uri‿str } from '@offirmo-private/ts-types-web'
+import type { Uri‿str } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

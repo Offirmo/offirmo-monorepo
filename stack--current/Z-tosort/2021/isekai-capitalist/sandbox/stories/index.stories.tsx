@@ -2,12 +2,12 @@ import { useState, useReducer } from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import { Enum } from 'typescript-string-enums'
-import { to_react } from '@offirmo-private/rich-text-format-to-react'
+import { to_react } from '@monorepo-private/rich-text-format-to-react'
 
-import WithIphoneNotches from '@offirmo-private/storybook--utils/src/wrapper--with-iphone-notches'
+import WithIphoneNotches from '@monorepo-private/storybook--utils/src/wrapper--with-iphone-notches'
 
-import WithOffirmoCssSetup from '@offirmo-private/ui--browser--css/.storybook/wrapper--with-offirmo-css-setup'
-import WithBodyFullWidth from '@offirmo-private/ui--browser--css/.storybook/wrapper--with-body-full-width'
+import WithOffirmoCssSetup from '@monorepo-private/ui--browser--css/.storybook/wrapper--with-offirmo-css-setup'
+import WithBodyFullWidth from '@monorepo-private/ui--browser--css/.storybook/wrapper--with-body-full-width'
 
 //import { default_viewport__mobile } from '../../../../0-meta/storybook-viewports'
 
@@ -90,7 +90,7 @@ export function TypeꓽRelationshipLevel() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
-import { Immutable } from '@offirmo-private/ts-types/src'
+import { Immutable } from '@monorepo-private/ts--types/src'
 import { State } from '../src/state/types'
 import { Action } from '../src/state/actions/types'
 import { create, randomize_post_create, reduceⵧupdate_to_now } from '../src/state/reducers'

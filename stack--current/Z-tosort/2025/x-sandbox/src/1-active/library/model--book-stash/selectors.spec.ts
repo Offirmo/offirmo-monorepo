@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 import { renderꓽstateⵧrich_text } from '../../../0-shared/view/offirmo-state/generic--to-rich-text.ts'
 
 import { LIB } from '../consts.ts'

@@ -1,7 +1,7 @@
 /////////////////////
 
 import { expect } from 'chai'
-import { normalizeꓽemailⵧsafe, normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@offirmo-private/normalize-string'
+import { normalizeꓽemailⵧsafe, normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@monorepo-private/normalize-string'
 
 import { LIB } from '../consts.ts'
 import { normalize_email_safe, normalize_email_reasonable, normalize_email_full} from './email.ts'

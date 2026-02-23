@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import {
 	Currency,
@@ -9,7 +9,7 @@ import {
 	add_amount,
 } from '@tbrpg/state--wallet'
 
-import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import {
 	render_wallet,

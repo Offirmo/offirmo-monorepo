@@ -3,7 +3,7 @@
 // = meta customization
 
 import { Enum } from 'typescript-string-enums'
-import type { WithLastUserInvestmentTimestamp } from '@offirmo-private/state-utils'
+import type { WithLastUserInvestmentTimestamp } from '@monorepo-private/state-utils'
 
 import type { BookUId, BookPageReference, BookNodeReference, Text } from '../model--book/index.ts'
 

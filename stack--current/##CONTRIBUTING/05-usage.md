@@ -55,11 +55,11 @@ bolt --only-fs "A-apps--core/**/*" ws run check
 bolt --only-fs "B-apps--support/**/*" ws run check
 bolt --only-fs "C-apps--clients/**/*" ws run check
 bolt w @tbrpg/definitions run build
-bolt ws run check --only @offirmo-private/*
+bolt ws run check --only @monorepo-private/*
 
 ## misc:
 bolt ws run cheatsheet
-bolt ws run cheatsheet --only @offirmo-private/*
+bolt ws run cheatsheet --only @monorepo-private/*
 bolt ws run cheatsheet --only @oh-my-rpg/*
 bolt --only-fs "1-stdlib/*" ws run ensure-size
 ```

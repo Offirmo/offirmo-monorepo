@@ -1,6 +1,6 @@
 /////////////////////
 
-import { type Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@monorepo-private/ts--types'
 import { Enum } from 'typescript-string-enums'
 
 import { type AdventureArchetype } from '@tbrpg/logic--adventures'

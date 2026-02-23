@@ -1,7 +1,7 @@
-import { lsFilesSync } from '@offirmo-private/fs--ls'
+import { lsFilesSync } from '@monorepo-private/fs--ls'
 import { strict as assert } from 'node:assert'
 
-import { createꓽfile_entry } from '@offirmo-private/file-entry'
+import { createꓽfile_entry } from '@monorepo-private/file-entry'
 import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
 import {
 	type StructuredFileFormat,
@@ -12,7 +12,7 @@ import { type Node } from '@devdocs/types'
 import { fileURLToPath } from 'node:url'
 
 import * as path from 'node:path'
-import type { AnyFilePath, Immutable, JSONObject } from '@offirmo-private/ts-types'
+import type { AnyFilePath, Immutable, JSONObject } from '@monorepo-private/ts--types'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DATASOURCE_ROOT = path.resolve(__dirname, '../../../../../../../../yvem/dev-docs')

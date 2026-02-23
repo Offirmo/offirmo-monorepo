@@ -1,8 +1,8 @@
 import {PProgress} from 'p-progress'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import assert from 'tiny-invariant'
 
-import { isꓽthenable } from '@offirmo-private/type-detection'
+import { isꓽthenable } from '@monorepo-private/type-detection'
 
 import {type ChatPrimitives, InputParameters} from '../primitives/types.js'
 import {type InputStep, type Step, StepType} from '../steps/index.js'

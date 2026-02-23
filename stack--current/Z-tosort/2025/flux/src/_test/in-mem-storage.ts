@@ -1,4 +1,4 @@
-import { StorageⳇSync, HashOf } from '@offirmo-private/ts-types'
+import { StorageⳇSync, HashOf } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 

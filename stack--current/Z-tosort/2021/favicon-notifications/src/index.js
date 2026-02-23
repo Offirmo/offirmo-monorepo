@@ -1,5 +1,5 @@
-import { get_top_ish_window } from '@offirmo-private/xoff'
-import { schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
+import { get_top_ish_window } from '@monorepo-private/xoff'
+import { schedule_when_idle_but_within_human_perception } from '@monorepo-private/utils--async'
 
 import Piecon from './piecon'
 import Favico from './favico.js'

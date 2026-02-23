@@ -4,9 +4,9 @@ import micro_memoize from 'micro-memoize'
 import stylize_string from 'chalk'
 import assert from 'tiny-invariant'
 import { ExifDateTime } from 'exiftool-vendored'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
-import { NORMALIZERS } from '@offirmo-private/normalize-string'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { TimestampUTCMs } from '@monorepo-private/timestamps'
+import { NORMALIZERS } from '@monorepo-private/normalize-string'
 
 import {
 	FILE_EXTENSIONSⵧTO_BE_FIXED‿LC,

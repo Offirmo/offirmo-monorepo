@@ -2,7 +2,7 @@
 // put the comments in the code, it's up to the consumer to optimize or not
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import type { WebPropertyEntryPointSpec, EntryPoints } from '../types.ts'
 import {

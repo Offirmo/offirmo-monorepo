@@ -37,7 +37,7 @@
 		"test": "./_doc/demo.mjs"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"loud-rejection": "^2",
 		"pokemon": "^3",
 		"sum-up": "^3"

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Component } from 'react'
 import NotificationSystem from 'react-notification-system'
 
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 import './index.css'
 

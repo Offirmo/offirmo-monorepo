@@ -1,9 +1,9 @@
 import { Fragment, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
-import { schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
-import ErrorBoundary from '@offirmo-private/react--error-boundary'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
+import { schedule_when_idle_but_within_human_perception } from '@monorepo-private/utils--async'
+import ErrorBoundary from '@monorepo-private/react--error-boundary'
 
 import { LIB } from '../consts.ts'
 

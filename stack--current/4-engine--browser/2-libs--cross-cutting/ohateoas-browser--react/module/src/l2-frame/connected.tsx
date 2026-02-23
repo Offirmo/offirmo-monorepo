@@ -3,15 +3,15 @@ import React, { type CSSProperties, useState, useEffect } from 'react'
 import {
 	type Url‿str,
 	getꓽuriⵧnormalized‿str,
-} from '@offirmo-private/ts-types-web'
-import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
+} from '@monorepo-private/ts--types--web'
+import renderⵧto_react from '@monorepo-private/rich-text-format--to-react'
 
 import {
 	type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer,
 	create,
 	navigate_to,
 	onꓽloaded, isꓽOHAHyperLink,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 import { ᄆComponent as ᄆComponent_ } from './component.tsx'
 

@@ -1,4 +1,4 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 import memoize_one from 'memoize-one'
 
 import { State } from './types'

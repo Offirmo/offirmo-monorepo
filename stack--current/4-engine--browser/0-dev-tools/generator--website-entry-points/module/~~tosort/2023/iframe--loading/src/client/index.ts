@@ -1,4 +1,4 @@
-import { extend_xoff, get_xoff } from '@offirmo-private/xoff'
+import { extend_xoff, get_xoff } from '@monorepo-private/xoff'
 
 import {
 	LoaderConfig,

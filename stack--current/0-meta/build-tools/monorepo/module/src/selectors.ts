@@ -1,8 +1,8 @@
 import { strict as assert } from 'node:assert'
 import * as path from 'node:path'
 import * as fs from 'node:fs'
-import { lsDirsSync } from '@offirmo-private/fs--ls'
-import { getꓽbolt_monorepo__workspaces } from '@offirmo-private/utils--bolt'
+import { lsDirsSync } from '@monorepo-private/fs--ls'
+import { getꓽbolt_monorepo__workspaces } from '@monorepo-private/utils--bolt'
 
 import { MONOREPO_ROOT } from './consts.ts'
 import { existsSync, renameSync } from 'node:fs'

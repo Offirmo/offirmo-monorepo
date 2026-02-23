@@ -1,2 +1,2 @@
 // for convenience
-export type { Emoji, Url‿str } from '@offirmo-private/ts-types'
+export type { Emoji, Url‿str } from '@monorepo-private/ts--types'

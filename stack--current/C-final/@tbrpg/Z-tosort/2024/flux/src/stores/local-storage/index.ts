@@ -3,7 +3,7 @@ import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
 import stable_stringify from 'json-stable-stringify'
 import { normalizeError } from '@offirmo/error-utils'
-import { JSONObject, Storage } from '@offirmo-private/ts-types'
+import { JSONObject, Storage } from '@monorepo-private/ts-types'
 import {
 	fluid_select,
 	Immutable,
@@ -11,8 +11,8 @@ import {
 	getꓽbaseⵧloose,
 	getꓽrevisionⵧloose,
 	UNCLEAR_compare,
-} from '@offirmo-private/state-utils'
-import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
+} from '@monorepo-private/state-utils'
+import { schedule_when_idle_but_not_too_far } from '@monorepo-private/async-utils'
 
 import { State, SCHEMA_VERSION } from '@tbrpg/state'
 import { Action } from '@tbrpg/interfaces'

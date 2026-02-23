@@ -22,7 +22,7 @@ lib_udaⵧnode = await
 
 try {
 	let lib_sxcⵧnode = await
-		import('@offirmo-private/soft-execution-context--node')
+		import('@monorepo-private/soft-execution-context--node')
 		.catch(err => import('../../../../3-engine--node/2-libs--cross-cutting/soft-execution-context--node/module/src/index.ts'))
 		.catch(err => {
 			if (process.env['IS_OFFIRMO_DEV_ENV']) {
@@ -50,6 +50,6 @@ try {
 catch (err) {
 	// monorepo case where this module is not available / broken / not built yet
 	if (process.env['IS_OFFIRMO_DEV_ENV']) {
-		console.warn(`${terminal_escapeꘌfgⵧred}([from @offirmo/unit-test-toolbox] @offirmo-private/soft-execution-context--node init failure)${terminal_escapeꘌreset}`)
+		console.warn(`${terminal_escapeꘌfgⵧred}([from @offirmo/unit-test-toolbox] @monorepo-private/soft-execution-context--node init failure)${terminal_escapeꘌreset}`)
 	}
 }

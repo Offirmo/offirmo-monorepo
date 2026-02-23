@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
 
 import {
 	NUMERIC_VERSION,

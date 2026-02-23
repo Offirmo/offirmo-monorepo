@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { hasꓽemoji } from '@offirmo-private/type-detection'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { hasꓽemoji } from '@monorepo-private/type-detection'
 import {
 	assertꓽstringⵧnormalized,
 	assertꓽstringⵧnormalized_and_trimmed,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 import { LIB, SCHEMA_VERSION } from '../consts.ts'
 

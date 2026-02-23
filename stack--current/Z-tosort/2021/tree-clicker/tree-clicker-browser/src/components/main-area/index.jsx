@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react'
 import throttle from 'lodash/throttle'
 import hotkeys from 'hotkeys-js'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
 
 import ReactAnimationFrame from 'react-animation-frame'
 

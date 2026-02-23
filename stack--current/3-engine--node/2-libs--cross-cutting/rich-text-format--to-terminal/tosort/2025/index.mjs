@@ -3,11 +3,11 @@ import stylize_string from 'chalk'
 import {
 	DEFAULT_RENDERING_OPTIONSⵧToText,
 	renderⵧto_text,
-} from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 
-const LIB = '@offirmo-private/rich-text-format--to-terminal'
+const LIB = '@monorepo-private/rich-text-format--to-terminal'
 
 const DEFAULT_RENDERING_OPTIONSⵧToAnsi = Object.freeze({
 	...DEFAULT_RENDERING_OPTIONSⵧToText,

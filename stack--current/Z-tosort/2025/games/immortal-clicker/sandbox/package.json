@@ -17,15 +17,15 @@
 	"typings": "dist/src.es2024.esm/index.d.ts",
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/rich-text-format": "*",
-		"@offirmo-private/state-utils": "*",
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/uuid": "*",
+		"@monorepo-private/rich-text-format": "*",
+		"@monorepo-private/state-utils": "*",
+		"@monorepo-private/timestamps": "*",
+		"@monorepo-private/ts--types": "*",
+		"@monorepo-private/uuid": "*",
 		"@offirmo/random": "^3",
 		"@offirmo/universal-debug-api-placeholder": "^1",
 		"@oh-my-rpg/state--codes": "^0",
@@ -51,11 +51,11 @@
 	},
 
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/prettify-any": "*",
-		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/state-migration-tester": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/prettify-any": "*",
+		"@monorepo-private/soft-execution-context": "*",
+		"@monorepo-private/state-migration-tester": "*",
 		"@offirmo/unit-test-toolbox": "*",
 		"icepick": "^2",
 		"npm-run-all": "^4",

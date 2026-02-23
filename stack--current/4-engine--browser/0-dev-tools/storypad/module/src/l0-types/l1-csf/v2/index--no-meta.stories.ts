@@ -1,6 +1,6 @@
 import type { Meta‿v2, Story‿v2 } from './index.ts'
 
-import { $EXAMPLE_COMPLETE_NODE } from '@offirmo-private/rich-text-format'
+import { $EXAMPLE_COMPLETE_NODE } from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 

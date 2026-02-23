@@ -8,7 +8,7 @@ import {
 } from './selectors.ts'
 
 import { BOOK } from '../__fixtures/wow-alliance-of-lordaeron/content.ts'
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 

@@ -1,6 +1,6 @@
-import type { SemVer } from '@offirmo-private/ts-types'
-import { normalizeꓽuri‿str, getꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+import type { SemVer } from '@monorepo-private/ts--types'
+import { normalizeꓽuri‿str, getꓽscheme_specific_part } from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 import {
 	type OHARichTextHints,
 	type OHAServer,
@@ -8,7 +8,7 @@ import {
 	type OHAHyperActionBlueprint,
 	type OHAFeedback,
 	OHALinkRelation,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 /////////////////////////////////////////////////
 

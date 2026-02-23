@@ -1,5 +1,5 @@
-import { Immutable } from '@offirmo-private/ts-types'
-import * as RichText from '@offirmo-private/rich-text-format'
+import { Immutable } from '@monorepo-private/ts--types'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { render as _render_flags } from '../state--flags/selectors--rich-text'
 import { render as _render_guild_membership } from '../state--guild-membership/selectors--rich-text'

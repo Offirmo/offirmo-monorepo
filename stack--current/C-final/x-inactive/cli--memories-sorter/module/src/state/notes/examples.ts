@@ -1,4 +1,4 @@
-import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { SCHEMA_VERSION } from './consts.js'
 import { type State } from './types.js'

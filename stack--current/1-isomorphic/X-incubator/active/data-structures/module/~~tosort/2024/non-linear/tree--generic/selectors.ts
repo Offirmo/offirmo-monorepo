@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '../../../_vendor/@offirmo-private/ts-types/index.js'
+import { Immutable } from '../../../_vendor/@monorepo-private/ts--types/index.js'
 
 
 import {

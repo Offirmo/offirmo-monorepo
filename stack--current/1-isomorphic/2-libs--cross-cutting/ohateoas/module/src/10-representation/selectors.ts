@@ -1,5 +1,5 @@
-import type {Immutable, WithHints} from '@offirmo-private/ts-types'
-import * as RichText from '@offirmo-private/rich-text-format'
+import type {Immutable, WithHints} from '@monorepo-private/ts--types'
+import * as RichText from '@monorepo-private/rich-text-format'
 import {
 	normalize,
 	normalize_unicode,
@@ -8,7 +8,7 @@ import {
 	trim,
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 
 import { OHALinkRelation } from '../01-types/types.ts'
@@ -20,7 +20,7 @@ import type {
 } from '../01-types/types.ts'
 import { promote_toꓽOHAHyperLink } from '../01-types/selectors.ts'
 import { isꓽOHAHyperLink, isꓽOHAHyperActionBlueprint } from '../01-types/type-guards.ts'
-import { getꓽuriⵧnormalized‿str } from '@offirmo-private/ts-types-web'
+import { getꓽuriⵧnormalized‿str } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

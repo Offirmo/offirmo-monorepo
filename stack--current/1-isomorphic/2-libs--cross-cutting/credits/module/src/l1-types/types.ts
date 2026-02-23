@@ -2,8 +2,8 @@
  * aiming at properly crediting the author(s)
  */
 
-import type { Url‿str, Thing, Author } from '@offirmo-private/ts-types-web'
-import type { SemVer } from '@offirmo-private/ts-types'
+import type { Url‿str, Thing, Author } from '@monorepo-private/ts--types--web'
+import type { SemVer } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 /* Reminder:

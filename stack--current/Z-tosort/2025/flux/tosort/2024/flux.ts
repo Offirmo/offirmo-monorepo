@@ -2,16 +2,16 @@
  */
 import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
-import { Immutable, Storage } from '@offirmo-private/ts-types'
-import { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
-import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
+import { get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
+import { Immutable, Storage } from '@monorepo-private/ts--types'
+import { SoftExecutionContext } from '@monorepo-private/soft-execution-context'
+import { schedule_when_idle_but_not_too_far } from '@monorepo-private/utils--async'
 import {
 	AnyOffirmoState,
 	OverallMigrateToLatest,
 	BaseAction,
 	get_revision_loose,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 
 import { LIB } from './consts'
@@ -20,7 +20,7 @@ import { create as create_dispatcher } from './dispatcher'
 import create_store__local_storage from './stores/local-storage'
 import create_store__in_memory from './stores/in-memory'
 import { get_lib_SEC } from './sec'
-import { finalize_action_if_needed } from '@offirmo-private/state-utils/src'
+import { finalize_action_if_needed } from '@monorepo-private/state-utils/src'
 //import create_store__cloud_storage from './stores/cloud'
 
 

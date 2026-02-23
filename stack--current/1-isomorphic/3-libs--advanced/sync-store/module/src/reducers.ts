@@ -3,7 +3,7 @@
  */
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type ReducerMap,
 	type ReducerAction, type Reducer,
@@ -12,7 +12,7 @@ import {
 	ACTION_TYPEꘌNOOP, type ActionNoop, createꓽactionꘌnoop,
 	ACTION_TYPEꘌHACK, type ActionHack_, createꓽactionꘌhack,
 	ACTION_TYPEꘌSET, type ActionSet_, createꓽactionꘌset,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { DEMO_STATE } from '@tbrpg/state--character'
-import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import {
 	render_attributes,

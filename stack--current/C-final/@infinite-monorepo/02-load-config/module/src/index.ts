@@ -13,8 +13,8 @@ import type {
 	AbsoluteFilePath,
 	PathSeparator,
 	AnyPath,
-} from '@offirmo-private/ts-types'
-import { lsDirsSync, lsFilesSync } from '@offirmo-private/fs--ls'
+} from '@monorepo-private/ts--types'
+import { lsDirsSync, lsFilesSync } from '@monorepo-private/fs--ls'
 import { strict as assert } from 'node:assert'
 
 /////////////////////////////////////////////////

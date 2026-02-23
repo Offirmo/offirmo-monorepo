@@ -14,17 +14,17 @@
 	"sideEffects": false,
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "^0",
+		"@monorepo-private/soft-execution-context": "^0",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/murmurhash": "^0",
-		"@offirmo-private/rich-text-format": "^0",
-		"@offirmo-private/state-utils": "^0",
-		"@offirmo-private/timestamps": "^0",
-		"@offirmo-private/ts-types": "^0",
-		"@offirmo-private/uuid": "^0",
+		"@monorepo-private/async-utils": "^0",
+		"@monorepo-private/murmurhash": "^0",
+		"@monorepo-private/rich-text-format": "^0",
+		"@monorepo-private/state-utils": "^0",
+		"@monorepo-private/timestamps": "^0",
+		"@monorepo-private/ts-types": "^0",
+		"@monorepo-private/uuid": "^0",
 		"@offirmo/deferred": "^4",
 		"@offirmo/error-utils": "^0",
 		"@offirmo/globalthis-ponyfill": "^3",
@@ -59,7 +59,7 @@
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"@offirmo/practical-logger-node": "^0",
 		"@offirmo/unit-test-toolbox": "^8",
 		"fetch-mock": "^9",

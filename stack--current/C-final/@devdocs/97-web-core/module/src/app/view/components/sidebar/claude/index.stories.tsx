@@ -1,4 +1,4 @@
-import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad'
+import type { Meta‿v3, Story‿v3 } from '@monorepo-private/storypad'
 import type { State } from '@devdocs/state'
 import { getꓽall } from '@devdocs/db'
 
@@ -12,8 +12,12 @@ function makeState(
 	disabled_nodes: Array<string> = [],
 	disabled_statuses: Array<string> = [],
 ): State {
+	const node_settings: { [id: string]: { isꓽdisabled: true } } = {}
+	for (const id of disabled_nodes) {
+		node_settings[id] = { isꓽdisabled: true }
+	}
 	return {
-		shared: { disabled_nodes, disabled_statuses },
+		shared: { node_settings, disabled_statuses },
 	}
 }
 

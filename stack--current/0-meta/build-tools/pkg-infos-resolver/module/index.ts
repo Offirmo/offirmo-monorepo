@@ -5,7 +5,7 @@
 import { strict as assert } from 'node:assert'
 import packageJson from 'package-json'
 import * as semver from 'semver'
-import { NODE_MAJOR_VERSION } from '@offirmo-private/monorepo'
+import { NODE_MAJOR_VERSION } from '@monorepo-private/monorepo'
 
 /////////////////////////////////////////////////
 
@@ -43,7 +43,7 @@ class PkgInfosResolver {
 		if (pkg_name.startsWith('@types/'))
 			return undefined
 
-		if (this.is_unpublished_monorepo_package(pkg_name)) {
+		if (this.is_monorepo_package(pkg_name)) {
 			// no way this can appear in the public @types project!
 			return undefined
 		}
@@ -83,7 +83,7 @@ class PkgInfosResolver {
 			return
 		}
 
-		if (this.is_unpublished_monorepo_package(pkg_name)) {
+		if (this.is_monorepo_package(pkg_name)) {
 			// for now
 			return
 		}
@@ -219,16 +219,16 @@ class PkgInfosResolver {
 		return true
 	}
 
-	// TODO review usage!!
-	// TODO should be auto-detected!!
-	// internal = from this monorepo
-	// vs. external = npm
+	// is_monorepo_package = from this monorepo
+	// vs. from npm
+	// TODO should be auto-detected
 	// TODO externalize
-	private is_unpublished_monorepo_package(pkg_name: string) {
+	private is_monorepo_package(pkg_name: string) {
 		if (
-			pkg_name.startsWith('@offirmo-private/')
-			|| pkg_name.startsWith('@infinite-monorepo/')
+			pkg_name.startsWith('@monorepo-private/')
 			|| pkg_name.startsWith('@oh-my-rpg/')
+			|| pkg_name.startsWith('@devdocs/')
+			|| pkg_name.startsWith('@infinite-monorepo/')
 			|| pkg_name.startsWith('@tbrpg/')
 		)
 			return true // always for those one
@@ -247,7 +247,7 @@ class PkgInfosResolver {
 		// TRICKY!!!
 		// TODO if published, use the version in package.json
 		// NOOO it's if the CALLER is published, use an exact version
-		return this.is_unpublished_monorepo_package(pkg_name)
+		return this.is_monorepo_package(pkg_name)
 	}
 }
 

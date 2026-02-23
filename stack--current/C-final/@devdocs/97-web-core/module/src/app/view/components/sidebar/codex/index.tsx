@@ -11,7 +11,7 @@ SPECIFICATIONS
 - Display roots (`parent_id: null`) in the main tree unless they are disabled.
 - If no root exists in the graph, show an explicit empty-state message.
 - Skip from the main tree:
-  - nodes whose `id` is present in `state.shared.disabled_nodes`
+  - nodes whose `state.shared.node_settings[id]?.isꓽdisabled` is true
   - nodes whose `status` is present in `state.shared.disabled_statuses` (only when `status` exists)
   - descendants of skipped nodes
 - Render a dedicated "Disabled" section at the bottom with all skipped nodes, preserving ancestry:
@@ -28,7 +28,7 @@ SPECIFICATIONS
 const DEFAULT_STORAGE_KEY = '@devdocs/web-core/sidebar/codex/open-state/v1'
 const DEFAULT_STATE: State = {
 	shared: {
-		disabled_nodes: [],
+		node_settings: {},
 		disabled_statuses: [],
 	},
 }
@@ -63,8 +63,14 @@ export default function SidebarTree({
 	const effectiveState = state ?? DEFAULT_STATE
 
 	const disabledNodeIds = React.useMemo(
-		() => new Set(effectiveState.shared.disabled_nodes),
-		[effectiveState.shared.disabled_nodes],
+		() => {
+			const ids = new Set<string>()
+			for (const [id, settings] of Object.entries(effectiveState.shared.node_settings)) {
+				if (settings.isꓽdisabled) ids.add(id)
+			}
+			return ids
+		},
+		[effectiveState.shared.node_settings],
 	)
 	const disabledStatuses = React.useMemo(
 		() => new Set(effectiveState.shared.disabled_statuses),

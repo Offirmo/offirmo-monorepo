@@ -19,7 +19,7 @@ https://cdn.jsdelivr.net/gh/Offirmo/offirmo-monorepo@master/3-advanced--browser/
 			referrerpolicy="same-origin"
 			allow=""
 			sandbox="allow-same-origin allow-scripts"
-			src="../node_modules/@offirmo-private/iframe--chat/src/single-chat-container.html?id=test&nickname=dev&theme=night"
+			src="../node_modules/@monorepo-private/iframe--chat/src/single-chat-container.html?id=test&nickname=dev&theme=night"
 		>The chat should load here</iframe>
 
 xsrc="../../src/single-chat-container.html?id=test&nickname=dev&theme=night&bg_color=transparent"
@@ -69,4 +69,4 @@ https://www.offirmo.net/offirmo-monorepo/3-advanced--browser/iframe--chat/src/si
 
 
 
-		"@offirmo-private/xoff": "^0"
+		"@monorepo-private/xoff": "^0"

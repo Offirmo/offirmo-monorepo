@@ -1,4 +1,4 @@
-import type { Contentⳇweb } from '@offirmo-private/ts-types-web'
+import type { Contentⳇweb } from '@monorepo-private/ts--types--web'
 
 import { type HtmlFileSpec } from '../..'
 

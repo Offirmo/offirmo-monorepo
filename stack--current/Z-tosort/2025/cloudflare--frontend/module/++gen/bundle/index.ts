@@ -12,7 +12,7 @@ const OPTIONS = {
 	// https://parceljs.org/plugin-system/api/#InitialParcelOptions
 
 	entries: INPUT_DIR + '/*.html',
-	defaultConfig: '@offirmo-private/parcel-config',
+	defaultConfig: '@monorepo-private/parcel-config',
 	mode: 'production',
 	defaultTargetOptions: {
 		distDir: OUTPUT_DIR,

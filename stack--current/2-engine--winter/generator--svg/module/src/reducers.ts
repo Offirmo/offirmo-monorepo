@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
-import type { Immutable, Emoji } from '@offirmo-private/ts-types'
-import type { CssⳇColor‿str, Dimensions2DSpec } from '@offirmo-private/ts-types-web'
-import { getꓽdimensions2D } from '@offirmo-private/ts-types-web'
+import type { Immutable, Emoji } from '@monorepo-private/ts--types'
+import type { CssⳇColor‿str, Dimensions2DSpec } from '@monorepo-private/ts--types--web'
+import { getꓽdimensions2D } from '@monorepo-private/ts--types--web'
 
 import type { SVG, SVGGroupElement, SVGElement, SVGId, SVGViewBox, Svg‿str, WithId, WithLayerId } from './types.ts'
 import { getꓽviewbox__dimensions, getꓽlayer } from './selectors.ts'

@@ -4,6 +4,7 @@
 
 use this pkg? https://github.com/privatenumber/tasuku
 
+TODO check for https://e18e.dev/docs/replacements/
 
 - JS/TS oriented
 - manage the "cruft" = everything not our cool source code

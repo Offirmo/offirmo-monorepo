@@ -1,7 +1,7 @@
 import { expect } from 'chai'
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
 
-import { ReleaseChannel, Endpoint } from '@offirmo-private/offirmo-api--interface'
+import { ReleaseChannel, Endpoint } from '@monorepo-private/offirmo-api--interface'
 
 import { LIB } from './consts.ts'
 import { fetch_oa } from './fetch.ts'

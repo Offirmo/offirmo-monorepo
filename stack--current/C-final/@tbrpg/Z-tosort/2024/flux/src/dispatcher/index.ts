@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, getꓽschema_versionⵧloose, isꓽRootState, getꓽbaseⵧloose } from '@offirmo-private/state-utils'
+import { Immutable, getꓽschema_versionⵧloose, isꓽRootState, getꓽbaseⵧloose } from '@monorepo-private/state-utils'
 import { dequal as is_deep_equal } from 'dequal'
 
 import { Action } from '@tbrpg/interfaces'

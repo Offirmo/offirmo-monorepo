@@ -1,5 +1,5 @@
-export * from '@offirmo-private/storypad/stories/html/elements/a'
-import { _link } from '@offirmo-private/storypad/stories/html/elements/a'
+export * from '@monorepo-private/storypad/stories/html/elements/a'
+import { _link } from '@monorepo-private/storypad/stories/html/elements/a'
 
 export function CustomStyling1() {
 	return `

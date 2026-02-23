@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { create_server_response_body__data } from "@offirmo-private/offirmo-api--interface";
+import { create_server_response_body__data } from "@monorepo-private/offirmo-api--interface";
 
 const app = new Hono()
 

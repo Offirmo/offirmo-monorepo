@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforce_immutability } from '@monorepo-private/state-utils'
 
 /////////////////////
 

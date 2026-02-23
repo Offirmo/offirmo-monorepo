@@ -1,4 +1,4 @@
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 import { createError as _createError, normalizeError, type XXError } from '@offirmo/error-utils'
 
 import type { Operation } from '../../../types.ts'

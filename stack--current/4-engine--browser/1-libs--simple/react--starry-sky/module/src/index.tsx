@@ -9,8 +9,8 @@ import {
 } from "@tsparticles/engine"
 // https://www.npmjs.com/package/@tsparticles/basic
 import { loadBasic as loadPlugins } from "@tsparticles/basic"
-import type {CssⳇColor‿str} from "@offirmo-private/ts-types-web";
-import type {PositiveInteger, PositiveFloat} from "@offirmo-private/ts-types";
+import type {CssⳇColor‿str} from "@monorepo-private/ts--types--web";
+import type {PositiveInteger, PositiveFloat} from "@monorepo-private/ts--types";
 
 /////////////////////////////////////////////////
 

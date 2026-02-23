@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/state-utils'
+import { Immutable } from '@monorepo-private/state-utils'
 
-import { ChatPrimitivesConsole } from '@offirmo-private/view--chat/primitives--terminal--vanilla'
-import { create } from '@offirmo-private/view--chat'
+import { ChatPrimitivesConsole } from '@monorepo-private/view--chat/primitives--terminal--vanilla'
+import { create } from '@monorepo-private/view--chat'
 import { HypermediaBrowserWithChatInterface } from './browser.js'
 import { AppHateoasServer } from '../server.js'
 

@@ -7,7 +7,7 @@ Fonts:
 
 
 -
-      "@offirmo-private/storybook--utils": "^0",
+      "@monorepo-private/storybook--utils": "^0",
       "@storybook/react": "^6",
       "clean-css-cli": "^5",
 

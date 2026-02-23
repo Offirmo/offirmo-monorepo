@@ -14,16 +14,16 @@
 	"sideEffects": false,
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "^0",
+		"@monorepo-private/soft-execution-context": "^0",
 		"tslib": "^2"
 	},
 	"dependencies": {
 		"@bhbv/state--isomorphic": "^0",
-		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/state-utils": "^0",
-		"@offirmo-private/timestamps": "^0",
-		"@offirmo-private/ts-types": "^0",
-		"@offirmo-private/uuid": "^0",
+		"@monorepo-private/utils--async": "^0",
+		"@monorepo-private/state-utils": "^0",
+		"@monorepo-private/timestamps": "^0",
+		"@monorepo-private/ts--types": "^0",
+		"@monorepo-private/uuid": "^0",
 		"@offirmo/deferred": "^4",
 		"@offirmo/globalthis-ponyfill": "^3",
 		"@offirmo/tiny-singleton": "^0",
@@ -48,7 +48,7 @@
 		"build": "run-s refresh-build-variables _build:prod"
 	},
 	"devDependencies": {
-		"@offirmo-private/state-migration-tester": "^0",
+		"@monorepo-private/state-migration-tester": "^0",
 		"@offirmo/unit-test-toolbox": "^7",
 		"icepick": "^2",
 		"npm-run-all": "^4"

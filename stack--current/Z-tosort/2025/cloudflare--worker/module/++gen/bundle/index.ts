@@ -15,7 +15,7 @@ const OPTIONS: InitialParcelOptions = {
 	// https://parceljs.org/plugin-system/api/#InitialParcelOptions
 
 	entries: INPUT_DIR + '/index.ts',
-	defaultConfig: '@offirmo-private/parcel-config',
+	defaultConfig: '@monorepo-private/parcel-config',
 	//mode: 'production',
 
 	targets: {

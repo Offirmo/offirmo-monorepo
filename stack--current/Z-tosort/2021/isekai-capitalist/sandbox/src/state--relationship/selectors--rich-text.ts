@@ -1,5 +1,5 @@
-import { Immutable } from '@offirmo-private/ts-types'
-import * as RichText from '@offirmo-private/rich-text-format'
+import { Immutable } from '@monorepo-private/ts--types'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 import { render as render_relationship_level } from '../type--relationship-level'
 import { State } from './types'

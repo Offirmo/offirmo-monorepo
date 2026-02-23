@@ -245,7 +245,7 @@ if (MONOREPO_PKG_JSON.bolt) (function _hoist_local_packages_to_root_node_modules
 	// yarn workspace does it, not bolt.
 	// Use cases?
 	// - CONS hoisting make pkgs immune to forgetting to declare a dep in package.json
-	// - PROS it helps for complex monorepo situations such as @offirmo-private/parcel-config
+	// - PROS it helps for complex monorepo situations such as @monorepo-private/parcel-config
 	//return // TODO from time to time, uncomment this return to check whether pkgs have their deps properly declared
 	// TODO
 

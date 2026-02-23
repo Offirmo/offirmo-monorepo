@@ -6,20 +6,23 @@ import type { State } from './types.ts'
 function create(): State {
 	return {
 		shared: {
-			disabled_nodes: [],
+			node_settings: {},
 			disabled_statuses: [],
 		},
 	}
 }
 
 function disable_node(state: State, node_id: NodeId): State {
-	if (state.shared.disabled_nodes.includes(node_id)) return state
+	if (state.shared.node_settings[node_id]?.isꓽdisabled) return state
 
 	return {
 		...state,
 		shared: {
 			...state.shared,
-			disabled_nodes: [...state.shared.disabled_nodes, node_id],
+			node_settings: {
+				...state.shared.node_settings,
+				[node_id]: { ...state.shared.node_settings[node_id], isꓽdisabled: true },
+			},
 		},
 	}
 }

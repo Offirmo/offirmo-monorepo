@@ -1,8 +1,8 @@
 import path from 'path'
 import { expect } from 'chai'
 
-import type { Immutable } from '@offirmo-private/ts-types'
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { LIB } from '../../consts.js'
 import {

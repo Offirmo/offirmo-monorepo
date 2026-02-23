@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { _TEST_ONLY__reset_root_SXC } from '@offirmo-private/soft-execution-context'
+import { _TEST_ONLY__reset_root_SXC } from '@monorepo-private/soft-execution-context'
 
 import { LIB, NOTES_FILE__BASENAME‿LC } from '../../consts.js'
 import * as Notes from '../notes/index.js'

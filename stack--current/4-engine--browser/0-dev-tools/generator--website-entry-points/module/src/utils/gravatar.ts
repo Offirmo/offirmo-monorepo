@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto'
 import {
 	type Url‿str,
 	type Email‿str,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

@@ -2,7 +2,7 @@
 -		"clean": "npm-run-all _clean--pkg",
 -
 -		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
--		"check--ts": "echo \"@offirmo-private/cloudflare--worker\" && tsc --noEmit",
+-		"check--ts": "echo \"@monorepo-private/cloudflare--worker\" && tsc --noEmit",
 -		"check--ts--watch": "tsc --noEmit --watch",
 -		"start": "wrangler --no-bundle dev",
 -		"refresh-types": "wrangler types",

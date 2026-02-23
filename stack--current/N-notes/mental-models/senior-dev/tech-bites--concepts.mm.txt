@@ -149,6 +149,7 @@ caching -- S3 FIFO https://s3fifo.com/
 caching -- service affinity = some apps can't be cached, ex. atomic or read-write in transaction, but good for immutable assets, config, etc https://developers.cloudflare.com/kv/concepts/how-kv-works/#guidance
 Cambrian explosion = time of quick development / pattern emergence, alluding to the period of rapid animal diversification 540 million years ago
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
+career -- "close to the frontier" The ones staying are making a bet that the stability and comp are worth more than being close to the frontier. The ones leaving are making a bet that the frontier is where the next decade of career value gets built and every quarter they wait is a quarter of compounding they miss https://x.com/amytam01/status/2023593365401636896
 career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
 career -- staff engineer https://www.linkedin.com/posts/alexewerlof_no-one-is-talking-about-staff-engineer-mental-activity-7297125140159471617-_J1-
 cargo cult = Let’s face it. You are not Google scale and you never will be. Stop cargo-culting technology just because “Google uses it” and therefore “it’s an industry best-practice.” https://reasonablypolymorphic.com/blog/protos-are-wrong/
@@ -374,7 +375,8 @@ DRY (don't repeat yourself)
 DRY -- see premature abstraction
 DRY -- WET (write everything twice) https://overreacted.io/the-wet-codebase/
 dry run
-durable execution = development paradigm that preserves complete application state so that upon host or software failure it can seamlessly migrate execution to another machine https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
+durable execution = crucial layer of fault tolerance that shields applications from external issues, such as API or internal infrastructure failures. It's a key part of keeping everything running smoothly https://www.inngest.com/blog/introducing-durable-endpoints
+durable execution = development paradigm that preserves application state so that upon host or software failure it can seamlessly retry (sometimes on another machine) https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
 dynamic config https://docs.getjoystick.com/quick/
 eBPF https://ebpf.io/ https://en.wikipedia.org/wiki/EBPF
 ecosystem -- ADK "App Development Kit" = https://medium.com/disney-streaming/introducing-the-disney-application-development-kit-adk-ad85ca139073
@@ -468,6 +470,7 @@ garbage collector
 general dependency injection and inversion of control problem
 geohash = compact representations of latitude and longitude https://en.wikipedia.org/wiki/Geohash
 git
+git -- worktrees https://git-scm.com/docs/git-worktree
 gitattributes
 gitignore https://git-scm.com/docs/gitignore#_pattern_format
 global variable
@@ -1054,8 +1057,6 @@ types -- union -- discriminated & = a special kind of union in which a) all the 
 typescript -- declaration merging https://stackoverflow.com/a/52416229/31353119
 typescript -- learning resource https://github.com/type-challenges/type-challenges
 typescript -- performance https://trpc.io/blog/typescript-performance-lessons
-typography -- quotes https://smartquotesforsmartpeople.com/
-UI layout algorithms https://www.youtube.com/watch?v=by9lQvpvMIc
 uid -- use strings = "2^64 isn’t as big as it used to be" https://protobuf.dev/programming-guides/api/
 unicode -- byte-order mark
 unicode -- encoding -- WTF-8 "wobbly" (not needed with normalization / well formed) https://simonsapin.github.io/wtf-8/
@@ -1098,8 +1099,8 @@ Wirth's law = software systems grow faster in size and complexity than methods t
 WORA "write once, run anywhere" https://en.m.wikipedia.org/wiki/Write_once,_run_anywhere
 WORA -- Write Once, Debug Everywhere = because of subtle incompatibilities
 worse is better https://www.dreamsongs.com/WorseIsBetter.html
-XML (Extensible Markup Language)
-xml - zalgo is tony the pony = You can't parse [X]HTML with regex https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454
+XML "Extensible Markup Language" = no
+XML -- zalgo is tony the pony = You can't parse [X]HTML with regex https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454
 XSLT
 XSS (Cross-site scripting)
 YAGNI (you aren't gonna need it) -- Too general too soon https://frontendatscale.com/issues/15/

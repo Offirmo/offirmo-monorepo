@@ -1,4 +1,4 @@
-import type { AbsoluteDirPath, RelativeFilePath, RelativeDirPath } from '@offirmo-private/ts-types'
+import type { AbsoluteDirPath, RelativeFilePath, RelativeDirPath } from '@monorepo-private/ts--types'
 import type { InfiniteMonorepoSpec } from './50-spec.ts'
 import type { PureModuleDetails } from './module-details'
 

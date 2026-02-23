@@ -1,4 +1,4 @@
-import type { AbsolutePath, RelativePath } from '@offirmo-private/ts-types'
+import type { AbsolutePath, RelativePath } from '@monorepo-private/ts--types'
 import type { StructuredFileFormat } from '@infinite-monorepo/read-write-any-structured-file'
 import type { MultiRepoRelativeFilePath } from './20-graph.ts'
 

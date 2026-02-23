@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
 
-import { type UUID } from '@offirmo-private/uuid'
+import { type UUID } from '@monorepo-private/uuid'
 
 import { type Weapon } from '@tbrpg/logic--weapons'
 import { type Armor } from '@tbrpg/logic--armors'

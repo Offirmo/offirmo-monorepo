@@ -4,7 +4,7 @@ import { expect } from 'chai'
 import MurmurHash from './index.ts'
 
 
-describe('@offirmo-private/murmurhash', function() {
+describe('@monorepo-private/murmurhash', function() {
 
 	describe('v3', function() {
 

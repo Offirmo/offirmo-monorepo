@@ -1,10 +1,10 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	AchievementStatus,
 	type AchievementSnapshot,
 } from '@tbrpg/state--achievements'
 
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 
 function render_achievement_snapshot_short(achievement_snapshot: Immutable<AchievementSnapshot>): RichText.Document {

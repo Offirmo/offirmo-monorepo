@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
-import * as RichText from '@offirmo-private/rich-text-format'
-import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import * as RichText from '@monorepo-private/rich-text-format'
+import to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import { renderꓽstateⵧprettified_text } from '../../../0-shared/view/offirmo-state/generic--to-text.ts'
 import { renderꓽstateⵧrich_text } from '../../../0-shared/view/offirmo-state/generic--to-rich-text.ts'

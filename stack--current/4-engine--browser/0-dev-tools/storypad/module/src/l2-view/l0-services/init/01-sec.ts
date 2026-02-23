@@ -1,4 +1,4 @@
-import type { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import type { SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 
 import { LIB } from '../../../consts.ts'
 import { getꓽlogger } from '../logger.ts'
@@ -8,7 +8,7 @@ import { getꓽlogger } from '../logger.ts'
 async function init(): Promise<void> {
 	try {
 		// x@ts-expect-error during monorepo resurrection, the package below may not yet be available
-		const { getRootSXC, decorateWithDetectedEnv } = await import('@offirmo-private/soft-execution-context--browser')
+		const { getRootSXC, decorateWithDetectedEnv } = await import('@monorepo-private/soft-execution-context--browser')
 
 		const rootSXC: SoftExecutionContext = getRootSXC()
 

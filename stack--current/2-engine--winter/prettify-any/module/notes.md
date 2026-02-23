@@ -4,20 +4,20 @@ Why chalk should be injected???
 
 
 ```ts
-// "@offirmo-private/prettify-any": "*",
+// "@monorepo-private/prettify-any": "*",
 import chalk from 'chalk'
 import {
 	injectꓽlibꓽchalk,
 	prettifyꓽany,
 	prettifyꓽjson,
-} from '@offirmo-private/prettify-any'
+} from '@monorepo-private/prettify-any'
 
 injectꓽlibꓽchalk(chalk)
 
 prettifyꓽjson(foo)
 prettifyꓽjson({foo}, {outline: true})
 
-import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
+import { dumpꓽanyⵧprettified } from '@monorepo-private/prettify-any'
 
 dumpꓽanyⵧprettified('hello', {foo}, {outline: true})
 

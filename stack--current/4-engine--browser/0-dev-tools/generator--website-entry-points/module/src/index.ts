@@ -1,10 +1,10 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
-import { ೱoutputꓽfile } from '@offirmo-private/fs--output-file'
+import { ೱoutputꓽfile } from '@monorepo-private/fs--output-file'
 
 import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
-import type { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
+import type { Immutable, AbsolutePath } from '@monorepo-private/ts--types'
 
 import type { EntryPoints, WebPropertyEntryPointSpec } from './types.ts'
 
@@ -155,4 +155,4 @@ export * from './utils/gravatar.ts'
 export * from './types.ts'
 
 // for convenience
-export * from '@offirmo-private/ts-types-web'
+export * from '@monorepo-private/ts--types--web'

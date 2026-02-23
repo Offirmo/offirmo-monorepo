@@ -2,7 +2,7 @@ import type { IETFLanguageType } from '../l1-i18n/index.ts'
 
 /////////////////////////////////////////////////
 // building blocks
-// REFINED in @offirmo-private/ts-types-web
+// REFINED in @monorepo-private/ts--types--web
 
 export type Emoji = string // TODO more advanced emoji data struct following https://github.com/jdecked/twemoji
 export type Uri‿str = string

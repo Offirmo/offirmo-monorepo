@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { normalizeꓽarrayⵧof_strings } from '@offirmo-private/normalize-string'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { normalizeꓽarrayⵧof_strings } from '@monorepo-private/normalize-string'
 
 import type { Html‿str } from '../10-html/index.ts'
 import type { Css‿str } from '../20-css/index.ts'

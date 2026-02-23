@@ -1,7 +1,7 @@
 // https://storybook.js.org/docs/configure/user-interface/sidebar-and-urls
 
 import assert from 'tiny-invariant'
-import type { Url‿str } from '@offirmo-private/ts-types'
+import type { Url‿str } from '@monorepo-private/ts--types'
 
 import type { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
 import { ObservableState } from '../../../l1-flux/l2-observable'
@@ -17,8 +17,8 @@ function renderꓽmanager(state: ObservableState): HTMLElement {
 	root.classList.add('o⋄full-viewport', 'storypad⋄manager')
 
 	// render the full UI:
-	import('../../../__vendor/@offirmo-private/css--foundation/index.css')
-	import('../../../__vendor/@offirmo-private/css--framework/index.css')
+	import('../../../__vendor/@monorepo-private/css--foundation/index.css')
+	import('../../../__vendor/@monorepo-private/css--framework/index.css')
 	import('./index.css')
 
 	// 1. side panel

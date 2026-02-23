@@ -1,4 +1,4 @@
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 import { expect } from 'chai'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'

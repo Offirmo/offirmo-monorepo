@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
-import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
+import { type Immutable } from '@monorepo-private/ts--types'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
+import { schedule_when_idle_but_not_too_far } from '@monorepo-private/utils--async'
 
 import { ೱᐧpage_loaded } from '../../to-export-to-own-package/viewport-utils'
 

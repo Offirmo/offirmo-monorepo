@@ -1,6 +1,6 @@
 import { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
-import { set_xoff_flag } from '@offirmo-private/xoff'
+import { set_xoff_flag } from '@monorepo-private/xoff'
 
 import OhMyRpg, { OhMyRPGUIContext } from '../../src'
 

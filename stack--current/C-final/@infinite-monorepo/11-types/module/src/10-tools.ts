@@ -1,4 +1,4 @@
-import type { PathSeparator, EndOfLine } from '@offirmo-private/ts-types'
+import type { PathSeparator, EndOfLine } from '@monorepo-private/ts--types'
 
 import type { VersionSpecification } from './01-primitives.ts'
 

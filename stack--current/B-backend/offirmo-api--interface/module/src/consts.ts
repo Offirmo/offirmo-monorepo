@@ -2,7 +2,7 @@ import { Enum } from 'typescript-string-enums'
 
 /////////////////////////////////////////////////
 
-export const LIB = '@offirmo-private/offirmo-api--interface'
+export const LIB = '@monorepo-private/offirmo-api--interface'
 
 /////////////////////////////////////////////////
 

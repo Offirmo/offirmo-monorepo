@@ -1,9 +1,9 @@
 import assert from 'tiny-invariant'
 import { normalizeError } from '@offirmo/error-utils'
 import { exiftool, Tags, ExifDateTime } from 'exiftool-vendored'
-import { type Immutable, HashOf } from '@offirmo-private/ts-types'
+import { type Immutable, HashOf } from '@monorepo-private/ts--types'
 import micro_memoize from 'micro-memoize'
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { AbsolutePath, TimeZone } from '../types.js'
 import {
@@ -15,7 +15,7 @@ import {
 	are_tms_within_24h_of_each_other,
 } from './better-date.js'
 import logger from './logger.js'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { TimestampUTCMs } from '@monorepo-private/timestamps'
 
 /////////////////////////////////////////////////
 

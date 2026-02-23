@@ -1,1 +1,1 @@
-export { parameters, decorators } from '@offirmo-private/toolbox--storybook/src/config/preview'
+export { parameters, decorators } from '@monorepo-private/toolbox--storybook/src/config/preview'

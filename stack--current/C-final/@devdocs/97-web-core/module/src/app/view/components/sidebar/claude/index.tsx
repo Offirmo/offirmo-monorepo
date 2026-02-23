@@ -16,14 +16,14 @@
  * ## State Input
  *
  * - Type: `State` from `@devdocs/state`
- * - `state.shared.disabled_nodes`: `Array<NodeId>` — specific node IDs to disable
+ * - `state.shared.node_settings`: `{ [NodeId]: NodeSettings }` — per-node settings (isꓽdisabled, etc.)
  * - `state.shared.disabled_statuses`: `Array<string>` — status values that cause disabling
  * - The state is immutable and used directly without copying
  *
  * ## Filtering Rules
  *
  * A node is "directly disabled" if:
- *   1. Its `id` is in `state.shared.disabled_nodes`, OR
+ *   1. `state.shared.node_settings[id]?.isꓽdisabled` is true, OR
  *   2. It has a `status` attribute AND that status is in `state.shared.disabled_statuses`
  * A node is "effectively disabled" if it or any ancestor is directly disabled.
  * Nodes WITHOUT a `status` attribute are NOT filtered by `disabled_statuses`.
@@ -89,7 +89,7 @@ import { getꓽall } from '@devdocs/db'
 // Constants
 
 const DEFAULT_STORAGE_KEY = 'devdocs-tree:expanded'
-const DEFAULT_STATE: State = { shared: { disabled_nodes: [], disabled_statuses: [] } }
+const DEFAULT_STATE: State = { shared: { node_settings: {}, disabled_statuses: [] } }
 const DISABLED_SECTION_KEY = '__disabled_section__'
 const DISABLED_PREFIX = '__d:'
 
@@ -146,13 +146,13 @@ function computeDisabledInfo(
 	state: State,
 	{ nodeById, childrenByParent }: TreeMaps,
 ): DisabledInfo {
-	const { disabled_nodes, disabled_statuses } = state.shared
+	const { node_settings, disabled_statuses } = state.shared
 
 	// 1) Directly disabled nodes
 	const directlyDisabledNodes: Array<Node> = []
 	const directlyDisabledIds = new Set<NodeId>()
 	for (const node of nodes) {
-		const byId = disabled_nodes.includes(node.id)
+		const byId = !!node_settings[node.id]?.isꓽdisabled
 		const byStatus = node.status !== undefined && disabled_statuses.includes(node.status)
 		if (byId || byStatus) {
 			directlyDisabledIds.add(node.id)

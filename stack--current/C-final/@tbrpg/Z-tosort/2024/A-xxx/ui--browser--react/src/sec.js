@@ -1,4 +1,4 @@
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
 
 const LIB = 'OMR:view-browser-react'
 

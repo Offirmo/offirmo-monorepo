@@ -2,10 +2,10 @@
 // put the comments in the code, it's up to the consumer to optimize or not
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import type { Html‿str } from '@offirmo-private/ts-types-web';
-import { normalize_unicode } from '@offirmo-private/normalize-string'
-import { getꓽhtml‿str } from '@offirmo-private/generator--html'
+import type { Immutable } from '@monorepo-private/ts--types'
+import type { Html‿str } from '@monorepo-private/ts--types--web';
+import { normalize_unicode } from '@monorepo-private/normalize-string'
+import { getꓽhtml‿str } from '@monorepo-private/generator--html'
 
 import type { WebPropertyEntryPointSpec } from '../../types.ts'
 import { getꓽhtml_doc_spec } from './selectors.ts'

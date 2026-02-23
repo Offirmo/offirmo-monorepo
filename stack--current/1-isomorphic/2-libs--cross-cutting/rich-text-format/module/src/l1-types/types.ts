@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
-import type { Emoji } from '@offirmo-private/ts-types'
-import type { Hyperlink‿x } from '@offirmo-private/ts-types-web'
+import type { Emoji } from '@monorepo-private/ts--types'
+import type { Hyperlink‿x } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

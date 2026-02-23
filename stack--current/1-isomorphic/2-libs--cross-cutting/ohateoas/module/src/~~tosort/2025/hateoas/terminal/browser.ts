@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 
-import { getꓽcompareFnⵧby_string_key } from '@offirmo-private/ts-utils'
-import { Immutable } from '@offirmo-private/state-utils'
+import { getꓽcompareFnⵧby_string_key } from '@monorepo-private/ts--utils'
+import { Immutable } from '@monorepo-private/state-utils'
 import {
 	type Uri‿str,
 	type Hyperlink,
@@ -9,8 +9,8 @@ import {
 	promote_toꓽhyperlink,
 	normalizeꓽuri‿str,
 	promote_toꓽscheme_specific_part,
-} from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 import { PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 
 import { prettifyꓽjson } from '../../services/misc.js'
@@ -24,7 +24,7 @@ import {
 	type StepIteratorTNext,
 	type StepIteratorYieldResult,
 	type StepIteratorReturnResult,
-} from '@offirmo-private/view--chat'
+} from '@monorepo-private/view--chat'
 
 import {
 	HATEOASPendingEngagement, type HATEOASServer} from '../../to-export-to-own-package/hateoas/types.js'

@@ -6,8 +6,8 @@ import {
 	type SubStatesMigrationFns,
 	type CleanupStep,
 	migrate_toꓽlatestⵧgeneric,
-} from '@offirmo-private/state-utils'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+} from '@monorepo-private/state-utils'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
 import * as CharacterState from '@tbrpg/state--character'
 import * as WalletState from '@tbrpg/state--wallet'

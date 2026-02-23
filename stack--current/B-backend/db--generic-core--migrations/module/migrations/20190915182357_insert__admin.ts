@@ -1,6 +1,6 @@
 import { type Knex } from 'knex'
 
-import { normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@offirmo-private/normalize-string'
+import { normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@monorepo-private/normalize-string'
 
 import { NAME as USERS_TABLE } from './20190915112614_create__users.ts'
 

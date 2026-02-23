@@ -7,7 +7,7 @@ import { elapsed_time_ms } from './awaitable.ts'
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/async-utils', function() {
+describe('@monorepo-private/utils--async', function() {
 
 	describe('promises', function() {
 

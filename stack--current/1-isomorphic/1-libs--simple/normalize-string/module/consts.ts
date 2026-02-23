@@ -1,2 +1,2 @@
 
-export const LIB = '@offirmo-private/normalize-string'
+export const LIB = '@monorepo-private/normalize-string'

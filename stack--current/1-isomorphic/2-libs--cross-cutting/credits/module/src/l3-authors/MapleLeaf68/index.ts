@@ -1,4 +1,4 @@
-import type { Author, SocialNetworkLink, Url‿str } from '@offirmo-private/ts-types-web'
+import type { Author, SocialNetworkLink, Url‿str } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

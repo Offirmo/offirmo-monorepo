@@ -1,7 +1,7 @@
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 import type {
 	SemVer,
-} from '@offirmo-private/ts-types'
+} from '@monorepo-private/ts--types'
 import {
 	type OHAHyperMedia,
 	type OHAHyperActionBlueprint,
@@ -12,7 +12,7 @@ import {
 import type {
 	OHAServer,
 } from '../../30-server/types.ts'
-import { getꓽscheme_specific_part, normalizeꓽuri‿str } from '@offirmo-private/ts-types-web'
+import { getꓽscheme_specific_part, normalizeꓽuri‿str } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

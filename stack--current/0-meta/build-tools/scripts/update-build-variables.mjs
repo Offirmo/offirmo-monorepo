@@ -34,7 +34,7 @@ const cli = meow('build', {
 
 /////////////////////////////////////////////////
 
-// copied from @offirmo-private/timestamps
+// copied from @monorepo-private/timestamps
 // ex. 20181121_06h00
 function getꓽUTC_timestampⵧhuman_readable‿minutes(now = new Date()) {
 	const YYYY = now.getUTCFullYear()

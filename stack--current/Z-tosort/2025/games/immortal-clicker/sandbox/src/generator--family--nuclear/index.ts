@@ -1,6 +1,6 @@
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import { get_randomꓽBiologicalSex, BiologicalSex } from '../torefine/index.js'

@@ -1,4 +1,4 @@
-import type { AbsolutePath, RelativePath, Basename, Extension } from '@offirmo-private/ts-types'
+import type { AbsolutePath, RelativePath, Basename, Extension } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 

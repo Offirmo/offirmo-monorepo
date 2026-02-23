@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import { type CheckedNode, type Node } from '../../l1-types/index.ts'
 

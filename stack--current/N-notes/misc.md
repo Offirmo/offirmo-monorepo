@@ -5,3 +5,4 @@ unclean url
 - gmail 
 - twitter
 - 
+- https://github.com/ljharb/qs

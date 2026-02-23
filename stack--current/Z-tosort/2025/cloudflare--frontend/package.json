@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/cloudflare--frontend",
+	"name": "@monorepo-private/cloudflare--frontend",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -11,8 +11,8 @@
 	},
 	"source": "module/++gen/entry-points/index.ts",
 	"dependencies": {
-		"@offirmo-private/generator--website-entry-points": "*",
-		"@offirmo-private/marketing": "*",
+		"@monorepo-private/generator--website-entry-points": "*",
+		"@monorepo-private/marketing": "*",
 		"@parcel/core": "^2",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
@@ -20,7 +20,7 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/cloudflare--frontend\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/cloudflare--frontend\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"_check": "run-s check--ts",
 		"dev": "run-s clean check--ts--watch",
@@ -37,8 +37,8 @@
 		"xbuild": "npm-run-all  clean  refresh--entry-points  build:parcel"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^22",
 		"npm-run-all": "^4",

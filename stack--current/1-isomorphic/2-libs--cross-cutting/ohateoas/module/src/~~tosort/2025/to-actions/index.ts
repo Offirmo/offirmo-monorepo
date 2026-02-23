@@ -1,5 +1,5 @@
-import type { Immutable } from '@offirmo-private/ts-types'
-import { type Hyper, type Hyperlink, promote_toꓽhyperlink } from '@offirmo-private/ts-types-web'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { type Hyper, type Hyperlink, promote_toꓽhyperlink } from '@monorepo-private/ts--types--web'
 
 import {
 	type BaseRenderingOptions,

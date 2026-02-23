@@ -3,7 +3,7 @@ import { createLogger as createLoggerCore } from '@offirmo/practical-logger-core
 
 import type { SinkOptions } from './types.ts'
 import { create } from './sinks/index.ts'
-import { _request_install_better_console_groups_if_not_already } from '@offirmo-private/better-console-groups'
+import { _request_install_better_console_groups_if_not_already } from '@monorepo-private/better-console-groups'
 
 /////////////////////////////////////////////////
 

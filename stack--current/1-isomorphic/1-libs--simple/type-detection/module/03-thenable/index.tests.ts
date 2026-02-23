@@ -5,7 +5,7 @@ import {
 } from './index.ts'
 
 
-describe('@offirmo-private/type-detection -- thenable', function() {
+describe('@monorepo-private/type-detection -- thenable', function() {
 
 	describe('isꓽthenable()', function() {
 

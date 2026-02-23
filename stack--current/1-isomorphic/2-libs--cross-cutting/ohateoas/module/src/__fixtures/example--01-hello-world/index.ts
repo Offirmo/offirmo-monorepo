@@ -1,16 +1,16 @@
 import {
 	normalizeꓽuri‿str,
 	getꓽscheme_specific_part,
-} from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 import type {
 	OHARichTextHints,
 	OHAServer
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 import {
 	OHALinkRelation,
 	ROOT_URI,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 /////////////////////////////////////////////////
 

@@ -1,4 +1,4 @@
-import { type Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@monorepo-private/ts--types'
 
 import {
 	getꓽavailable_energy‿float as _get_available_energy_float,

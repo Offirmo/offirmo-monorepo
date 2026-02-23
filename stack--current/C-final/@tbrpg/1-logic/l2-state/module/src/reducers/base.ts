@@ -1,9 +1,9 @@
 /////////////////////
 
-import { type Immutable} from '@offirmo-private/ts-types'
-import { type UUID } from '@offirmo-private/uuid'
-import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
+import { type Immutable} from '@monorepo-private/ts--types'
+import { type UUID } from '@monorepo-private/uuid'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
+import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@monorepo-private/state-utils'
 
 /////////////////////
 

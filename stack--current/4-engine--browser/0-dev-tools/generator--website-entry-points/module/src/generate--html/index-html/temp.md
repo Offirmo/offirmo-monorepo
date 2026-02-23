@@ -166,10 +166,10 @@ function generateꓽhtml__body(spec: Immutable<WebPropertyEntryPointSpec>): Html
 		...getꓽfeatures(spec).reduce((acc, feature_id: FeatureSnippets) => {
 			switch (feature_id) {
 				case 'cssⳇfoundation--offirmo':
-					acc.push(`@import 'npm:@offirmo-private/css--foundation';`)
+					acc.push(`@import 'npm:@monorepo-private/css--foundation';`)
 					break
 				case 'cssⳇframework--offirmo':
-					acc.push(`@import 'npm:@offirmo-private/css--framework';`)
+					acc.push(`@import 'npm:@monorepo-private/css--framework';`)
 					break
 				default:
 					// This feature does not have a body CSS component

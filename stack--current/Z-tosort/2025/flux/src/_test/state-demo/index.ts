@@ -1,4 +1,4 @@
-import { createꓽaction } from '@offirmo-private/state-utils'
+import { createꓽaction } from '@monorepo-private/state-utils'
 
 export * from './src/index.js'
 
@@ -9,7 +9,7 @@ import {
 	BaseAction,
 	ActionReducer,
 	ActionⳇReconcile,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import {
 	State,

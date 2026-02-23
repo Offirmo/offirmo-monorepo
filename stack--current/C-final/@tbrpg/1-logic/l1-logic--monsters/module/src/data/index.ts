@@ -1,8 +1,8 @@
 import {
 	type UnicodeCharDetails,
 	UNICODE_CHARS,
-} from '@offirmo-private/unicode-data'
-import type { Immutable } from '@offirmo-private/ts-types'
+} from '@monorepo-private/unicode-data'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 interface RawMonsterEntry {
 	name: string

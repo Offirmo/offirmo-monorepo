@@ -1,4 +1,4 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 
 import { State, LogEntry } from './types'
 import {
@@ -107,4 +107,3 @@ export function report_data_synced_with_the_cloud(state: Immutable<State>, id: s
 		revision: state.revision + 1,
 	}
 }
-

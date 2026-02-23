@@ -1,4 +1,4 @@
-import type { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import type { SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 
 const STYLES = 'padding: .5em; background-color: red; color: white; font-weight: bold;'
 
@@ -31,7 +31,7 @@ async function init(): Promise<void> {
 
 	try {
 		// x@ts-expect-error during monorepo resurrection, the package below may not yet be available
-		const { getRootSXC, listenToErrorEvents, listenToUnhandledRejections } = await import('@offirmo-private/soft-execution-context--browser')
+		const { getRootSXC, listenToErrorEvents, listenToUnhandledRejections } = await import('@monorepo-private/soft-execution-context--browser')
 
 		const rootSXC: SoftExecutionContext = getRootSXC()
 		rootSXC.emitter.on('final-error', ({err}) => {

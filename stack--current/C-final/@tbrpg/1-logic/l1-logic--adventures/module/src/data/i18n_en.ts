@@ -1,4 +1,4 @@
-import type { I18nMessages } from '@offirmo-private/ts-types'
+import type { I18nMessages } from '@monorepo-private/ts--types'
 
 const BAD_ADVENTURES: I18nMessages = {
 	// https://www.thesaurus.com/browse/tired

@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
+import type { Immutable, IETFLanguageType, Charset } from '@monorepo-private/ts--types'
 
 
 import type { Dimensions2DSpec, Dimensions2D } from './types.ts'

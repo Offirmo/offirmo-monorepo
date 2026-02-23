@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable, RelativePath } from '@offirmo-private/ts-types'
-import { createꓽfilesystem, insertꓽfile } from '@offirmo-private/data-structures'
+import type { Immutable, RelativePath } from '@monorepo-private/ts--types'
+import { createꓽfilesystem, insertꓽfile } from '@monorepo-private/data-structures'
 
 import type { Config } from '../../../l0-types/l2-config/index.ts'
 import type { StoryUId, StoryEntry, StoryFolder } from '../types.ts'

@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/interview--dsa",
+	"name": "@monorepo-private/interview--dsa",
 	"description": "Fixtures to train for interviews in data structures and algorithms",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
@@ -18,14 +18,14 @@
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/interview--dsa\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/interview--dsa\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts",
 		"start": "node --experimental-strip-types ./module/src/index.tests.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^22",
 		"npm-run-all": "^4",

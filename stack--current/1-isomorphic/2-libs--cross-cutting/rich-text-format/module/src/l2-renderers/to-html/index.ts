@@ -1,5 +1,5 @@
 import memoize_one from 'memoize-one'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import { type CheckedNode, type Node, isꓽlist, type NodeLike } from '../../l1-types/index.ts'
 

@@ -1,4 +1,4 @@
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
 import { OMRSoftExecutionContext, decorate_SEC } from '@tbrpg/definitions'
 
 import { LIB } from './consts'

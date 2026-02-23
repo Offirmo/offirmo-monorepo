@@ -2,14 +2,14 @@
 import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 
-import generateꓽwebsiteᝍentryᝍpoints from '@offirmo-private/generator--website-entry-points'
+import generateꓽwebsiteᝍentryᝍpoints from '@monorepo-private/generator--website-entry-points'
 
 
-import type { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
+import type { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@monorepo-private/ts--types--web'
 
-import { AUTHOR } from '@offirmo-private/marketing'
+import { AUTHOR } from '@monorepo-private/marketing/offirmo'
 
-import type { WebProperty, WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
+import type { WebProperty, WebPropertyEntryPointSpec } from '@monorepo-private/generator--website-entry-points'
 
 /////////////////////////////////////////////////
 /*

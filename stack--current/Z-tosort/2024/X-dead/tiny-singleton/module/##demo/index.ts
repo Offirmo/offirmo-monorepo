@@ -1,4 +1,4 @@
-import tiny_singleton from '@offirmo-private/tiny-singleton'
+import tiny_singleton from '@monorepo-private/tiny-singleton'
 
 console.log('starting…', { tiny_singleton })
 

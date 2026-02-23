@@ -1,6 +1,6 @@
-import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad'
+import type { Meta‿v3, Story‿v3 } from '@monorepo-private/storypad'
 
-import { DOC_DEMO_RPG_03 } from '@offirmo-private/rich-text-format/examples'
+import { DOC_DEMO_RPG_03 } from '@monorepo-private/rich-text-format/examples'
 import { ᄆComponent } from './component.tsx'
 
 /////////////////////////////////////////////////

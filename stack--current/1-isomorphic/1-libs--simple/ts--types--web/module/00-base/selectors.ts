@@ -1,9 +1,9 @@
 import assert from 'tiny-invariant'
-import type { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
+import type { Immutable, IETFLanguageType, Charset } from '@monorepo-private/ts--types'
 import {
 	normalizeꓽIETFLanguageType,
 	normalizeꓽtextⵧsentence,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 import type { WithLang, WithCharset, WithTitle } from './types.ts'
 

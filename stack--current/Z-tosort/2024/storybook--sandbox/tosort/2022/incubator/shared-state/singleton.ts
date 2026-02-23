@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import memoize_one from 'memoize-one'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts--types'
 
 import EventEmitter from 'emittery'
 

@@ -2,10 +2,10 @@ import throttle from 'lodash/throttle'
 import * as React from 'react'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { asap_but_out_of_current_event_loop } from '@offirmo-private/async-utils'
+import { asap_but_out_of_current_event_loop } from '@monorepo-private/async-utils'
 
 import ReactAnimationFrame from 'react-animation-frame'
-import {getꓽUTC_timestamp‿ms} from '@offirmo-private/timestamps'
+import {getꓽUTC_timestamp‿ms} from '@monorepo-private/timestamps'
 
 import get_game_instance from '../services/game-instance-browser'
 import logger from '../services/logger'

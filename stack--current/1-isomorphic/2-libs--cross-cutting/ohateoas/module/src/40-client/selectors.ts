@@ -1,10 +1,10 @@
-import type { Immutable, JSONPrimitiveType } from '@offirmo-private/ts-types'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import type { Immutable, JSONPrimitiveType } from '@monorepo-private/ts--types'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
 import {
 	type OHAHyperActionBlueprint, type OHAHyperAction,
 	type OHAFeedback,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 /////////////////////////////////////////////////
 

@@ -3,9 +3,9 @@
  */
 
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { hasꓽshape, isꓽexact_stringified_number } from '@offirmo-private/type-detection'
-import { capitalizeⵧfirst } from '@offirmo-private/normalize-string'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { hasꓽshape, isꓽexact_stringified_number } from '@monorepo-private/type-detection'
+import { capitalizeⵧfirst } from '@monorepo-private/normalize-string'
 
 import { LIB } from '../consts.ts'
 import { getꓽcontent‿nodes_list } from './common.ts'

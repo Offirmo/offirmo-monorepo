@@ -25,10 +25,10 @@
 
 * `"@parcel/reporter-bundle-analyzer": "^2"`
   * for https://parceljs.org/features/production/#bundle-analyzer
-* `"@offirmo-private/parcel-resolver": "*"`
+* `"@monorepo-private/parcel-resolver": "*"`
   * this monorepo custom resolver for hacks
 * `"@parcel/config-default": "^2"`
-  * no need, transitively installed by `@offirmo-private/parcel-config`
+  * no need, transitively installed by `@monorepo-private/parcel-config`
 
 * `"@parcel/core": "^2"`
   * was it needed at some point?

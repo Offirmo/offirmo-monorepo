@@ -4,7 +4,7 @@ import { expect, assert } from 'chai'
 
 import {
 	DEMO_ROOT_STATE,
-} from '@offirmo-private/state-utils/examples'
+} from '@monorepo-private/state-utils/examples'
 
 import { LIB } from '../consts.ts'
 import get_db from '../db.ts'

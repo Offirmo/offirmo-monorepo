@@ -1,5 +1,5 @@
 import { Enum } from 'typescript-string-enums'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type BaseReducerAction,
 	createꓽaction__base, createꓽaction,
@@ -7,9 +7,9 @@ import {
 	ACTION_TYPEꘌNOOP, type ActionNoop, createꓽactionꘌnoop,
 	ACTION_TYPEꘌHACK, type ActionHack_, createꓽactionꘌhack,
 	ACTION_TYPEꘌSET, type ActionSet_, createꓽactionꘌset,
-} from '@offirmo-private/ts-types-web'
-import { type UUID } from '@offirmo-private/uuid'
-import { type TimestampUTCMs } from '@offirmo-private/timestamps'
+} from '@monorepo-private/ts--types--web'
+import { type UUID } from '@monorepo-private/uuid'
+import { type TimestampUTCMs } from '@monorepo-private/timestamps'
 import { type PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 import {
 	type State,

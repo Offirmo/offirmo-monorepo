@@ -1,8 +1,8 @@
 import * as path from 'node:path'
-import type { JSONObject, AnyFilePath, Immutable, JSON } from '@offirmo-private/ts-types'
+import type { JSONObject, AnyFilePath, Immutable, JSON } from '@monorepo-private/ts--types'
 
 import type { StructuredFileFormat } from '../types.ts'
-import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
+import { isꓽobjectⵧliteral } from '@monorepo-private/type-detection'
 
 /////////////////////////////////////////////////
 

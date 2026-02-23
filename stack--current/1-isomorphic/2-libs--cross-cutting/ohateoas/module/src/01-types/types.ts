@@ -8,12 +8,12 @@ import type {
 	Story,
 	WithHints,
 	InputSpec,
-} from '@offirmo-private/ts-types'
-import type { ReducerAction, Uri‿x } from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types'
+import type { ReducerAction, Uri‿x } from '@monorepo-private/ts--types--web'
 import type {
 	Hints as RichTextHints,
 	NodeLike as RichTextNodeLike,
-} from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/rich-text-format'
 import { type TrackedEngagement, type Engagement } from '@oh-my-rpg/state--engagement'
 
 /////////////////////////////////////////////////
@@ -205,13 +205,13 @@ interface OHARichTextHints<UnderlyingData = JSON> extends RichTextHints<Underlyi
 
 export type {
 	InputType, InputSpec,
-} from '@offirmo-private/ts-types'
+} from '@monorepo-private/ts--types'
 
 export {
 	type Uri‿str, type Url‿str,
 	type SchemeSpecificURIPart,
 	type Uri‿x,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
 export {
 	type RichTextNodeLike,

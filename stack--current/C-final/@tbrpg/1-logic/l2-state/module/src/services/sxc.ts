@@ -1,4 +1,4 @@
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 import { type TBRSoftExecutionContext, decorateꓽSXC } from '@tbrpg/definitions'
 
 import { LIB } from '../consts.ts'

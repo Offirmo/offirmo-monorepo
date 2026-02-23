@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////
 
-import { inferꓽchannel } from '@offirmo-private/browser-features-detection'
+import { inferꓽchannel } from '@monorepo-private/browser-features-detection'
 
 import { WEBSITE } from '@devdocs/marketing'
 

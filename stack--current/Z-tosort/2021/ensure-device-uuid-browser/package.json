@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/ensure-device-uuid-browser",
+	"name": "@monorepo-private/ensure-device-uuid-browser",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
@@ -11,7 +11,7 @@
 	"sideEffects": false,
 
 	"dependencies": {
-		"@offirmo-private/uuid": "^0"
+		"@monorepo-private/uuid": "^0"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/2-foundation/ensure-device-uuid-browser"
 }

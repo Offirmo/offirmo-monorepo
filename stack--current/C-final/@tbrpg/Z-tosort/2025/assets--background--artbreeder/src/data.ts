@@ -1,7 +1,7 @@
 // THIS FILE IS AUTO GENERATED!
 // 2022-03-18T10:34:36.826Z
 
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '@monorepo-private/ts-types'
 
 import { Background, BiomeId } from './types'
 

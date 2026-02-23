@@ -8,7 +8,7 @@ import {
 	getꓽcta,
 	OHAHyperActionBlueprint,
 	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 
 
 import { ᄆComponent as ᄆComponent_ } from './component.tsx'

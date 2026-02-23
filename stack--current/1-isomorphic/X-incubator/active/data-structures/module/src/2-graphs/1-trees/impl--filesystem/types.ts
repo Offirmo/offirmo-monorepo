@@ -1,4 +1,4 @@
-import type { Basename, RelativePath } from '@offirmo-private/ts-types'
+import type { Basename, RelativePath } from '@monorepo-private/ts--types'
 
 import type { WithOptions, WithPayload } from '../../../1-common/types.ts'
 

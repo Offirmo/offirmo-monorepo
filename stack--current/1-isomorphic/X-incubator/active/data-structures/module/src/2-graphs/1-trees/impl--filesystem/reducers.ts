@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { RelativePath } from '@offirmo-private/ts-types'
-import { normalizeꓽpath } from '@offirmo-private/normalize-string'
+import type { RelativePath } from '@monorepo-private/ts--types'
+import { normalizeꓽpath } from '@monorepo-private/normalize-string'
 
 import type {
 	FileSystemNodeⳇFile,

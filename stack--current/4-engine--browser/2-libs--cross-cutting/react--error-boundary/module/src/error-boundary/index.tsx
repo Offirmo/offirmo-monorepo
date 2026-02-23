@@ -1,8 +1,8 @@
 import { Component, type ErrorInfo } from 'react'
 
 import assert from 'tiny-invariant'
-import { asap_but_not_synchronous } from '@offirmo-private/async-utils'
-import { getRootSXC, type SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import { asap_but_not_synchronous } from '@monorepo-private/utils--async'
+import { getRootSXC, type SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 
 import { render_any_children } from '../render-anything/index.tsx'
 import { ErrorOverlay } from '../error-overlay/index.tsx'

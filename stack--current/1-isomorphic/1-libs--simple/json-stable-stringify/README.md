@@ -5,7 +5,7 @@ turned to typescript + no incompatible cjs export + modernized
 TODO add a feature to validate JSON
 
 ```
-import stringifyⵧstable from '@offirmo-private/json-stable-stringify'
+import stringifyⵧstable from '@monorepo-private/json-stable-stringify'
 ```
 
 See also

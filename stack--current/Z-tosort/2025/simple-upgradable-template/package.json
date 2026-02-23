@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/simple-upgradable-template",
+	"name": "@monorepo-private/simple-upgradable-template",
 	"description": "Tool to create files from a template then keeping them up to date",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -22,7 +22,7 @@
 		"test": "mocha  --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json --file ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'src/**/*spec.cjs'"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "*"
 	}
 }

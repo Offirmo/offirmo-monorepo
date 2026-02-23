@@ -1,9 +1,9 @@
 import { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import { get_debug_snapshot } from '@offirmo-private/features-detection-browser'
+import { get_debug_snapshot } from '@monorepo-private/features-detection-browser'
 
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
 
 
 function get_data() {

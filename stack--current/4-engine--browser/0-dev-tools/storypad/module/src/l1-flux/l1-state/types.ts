@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
 
-import { type FileSystemNodeⳇFolder } from '@offirmo-private/data-structures'
+import { type FileSystemNodeⳇFolder } from '@monorepo-private/data-structures'
 
 import {
 	type Story, isꓽStory,

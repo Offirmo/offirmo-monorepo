@@ -6,9 +6,9 @@ import * as fs from 'node:fs'
 const { expect } = require('chai')
 const sinon = require('sinon')
 const { cloneDeep } = require('lodash')
-const { prettify_json } = require('@offirmo-private/prettify-any')
-const { TEST_TIMESTAMP_MS, get_human_readable_UTC_timestamp_minutes } = require('@offirmo-private/timestamps')
-const { get_schema_version, get_schema_version_loose } = require('@offirmo-private/state-utils')
+const { prettify_json } = require('@monorepo-private/prettify-any')
+const { TEST_TIMESTAMP_MS, get_human_readable_UTC_timestamp_minutes } = require('@monorepo-private/timestamps')
+const { get_schema_version, get_schema_version_loose } = require('@monorepo-private/state-utils')
 
 const { LIB, HINTS_FILENAME } = require('./consts')
 const { get_advanced_diff: base_get_json_diff } = require('./json-diff')

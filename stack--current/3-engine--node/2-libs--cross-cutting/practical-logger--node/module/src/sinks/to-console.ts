@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 
-import { injectꓽlibꓽchalk, prettifyꓽany } from '@offirmo-private/prettify-any'
-import { displayError } from '@offirmo-private/print-error-to-terminal'
+import { injectꓽlibꓽchalk, prettifyꓽany } from '@monorepo-private/prettify-any'
+import { displayError } from '@monorepo-private/print-error-to-terminal'
 
 injectꓽlibꓽchalk(chalk)
 

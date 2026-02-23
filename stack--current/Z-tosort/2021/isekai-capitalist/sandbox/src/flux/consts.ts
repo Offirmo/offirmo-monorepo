@@ -1,4 +1,4 @@
-const LIB = '@offirmo-private/flux'
+const LIB = '@monorepo-private/flux'
 
 export {
 	LIB,

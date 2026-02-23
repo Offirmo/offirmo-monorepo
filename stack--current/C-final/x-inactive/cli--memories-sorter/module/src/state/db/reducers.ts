@@ -2,8 +2,8 @@ import path from 'path'
 
 import assert from 'tiny-invariant'
 import { Tags } from 'exiftool-vendored'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { getꓽbaseⵧloose } from '@offirmo-private/state-utils'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { getꓽbaseⵧloose } from '@monorepo-private/state-utils'
 
 import { AbsolutePath, RelativePath, SimpleYYYYMMDD } from '../../types.js'
 import { Action, ActionType } from '../actions.js'

@@ -2,7 +2,7 @@ import {
 	type BaseUState,
 	type BaseTState,
 	type BaseRootState,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import { type HypermediaContentType } from '@tbrpg/definitions'
 import { type State as CharacterState } from '@tbrpg/state--character'

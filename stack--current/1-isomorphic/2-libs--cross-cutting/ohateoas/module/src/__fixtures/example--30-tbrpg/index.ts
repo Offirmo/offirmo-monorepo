@@ -1,11 +1,11 @@
 import type {
 	SemVer,
-} from '@offirmo-private/ts-types'
+} from '@monorepo-private/ts--types'
 import {
 	normalizeꓽuri‿str,
 	getꓽscheme_specific_part,
-} from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
 import { OHALinkRelation } from '../../01-types/types.ts'
 import type {
 	OHAHyperMedia, OHARichTextHints,

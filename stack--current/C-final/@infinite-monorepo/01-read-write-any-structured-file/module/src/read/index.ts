@@ -6,7 +6,7 @@ import * as fs from 'node:fs/promises'
 import strip_bom from 'strip-bom'
 import split_lines from 'split-lines'
 
-import type { JSONObject, AnyFilePath } from '@offirmo-private/ts-types'
+import type { JSONObject, AnyFilePath } from '@monorepo-private/ts--types'
 
 import type {
 	ContentⳇJson5,

@@ -2,7 +2,7 @@ import {
 	BaseUState,
 	BaseTState,
 	BaseRootState,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import * as PRNGState from '@oh-my-rpg/state--prng'
 import * as EngagementState from '@oh-my-rpg/state--engagement'

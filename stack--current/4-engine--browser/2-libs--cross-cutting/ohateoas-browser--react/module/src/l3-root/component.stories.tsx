@@ -1,12 +1,12 @@
-import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad'
+import type { Meta‿v3, Story‿v3 } from '@monorepo-private/storypad'
 
 import { ᄆComponent } from './component.tsx'
 
-import { createꓽserver as createꓽserverⵧhello_world } from '@offirmo-private/ohateoas/examples/01-hello_world'
-//import { createꓽserver as createꓽserverⵧcfu } from '@offirmo-private/ohateoas/examples/10-check-for-updates'
-//import { createꓽserver as createꓽserverⵧtbrpg } from '@offirmo-private/ohateoas/examples/30-tbrpg'
-//import { createꓽserver as createꓽserverⵧhyp } from '@offirmo-private/ohateoas/examples/40-hyperspace'
-//import { createꓽserver as createꓽserverⵧbroken } from '@offirmo-private/ohateoas/examples/90-errors'
+import { createꓽserver as createꓽserverⵧhello_world } from '@monorepo-private/ohateoas/examples/01-hello_world'
+//import { createꓽserver as createꓽserverⵧcfu } from '@monorepo-private/ohateoas/examples/10-check-for-updates'
+//import { createꓽserver as createꓽserverⵧtbrpg } from '@monorepo-private/ohateoas/examples/30-tbrpg'
+//import { createꓽserver as createꓽserverⵧhyp } from '@monorepo-private/ohateoas/examples/40-hyperspace'
+//import { createꓽserver as createꓽserverⵧbroken } from '@monorepo-private/ohateoas/examples/90-errors'
 
 /////////////////////////////////////////////////
 

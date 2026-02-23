@@ -5,7 +5,7 @@ import {
    listenToUnhandledRejections,
    decorateWithDetectedEnv,
    getRootSXC,
-} from '@offirmo-private/soft-execution-context--browser'
+} from '@monorepo-private/soft-execution-context--browser'
 listenToUncaughtErrors()
 listenToUnhandledRejections()
 decorateWithDetectedEnv()

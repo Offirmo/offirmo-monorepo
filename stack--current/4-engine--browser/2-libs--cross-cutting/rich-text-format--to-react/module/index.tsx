@@ -3,12 +3,12 @@ import { type ReactNode } from 'react'
 import classNames from 'classnames'
 
 import memoize_one from 'memoize-one'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	normalize_unicode,
 	capitalizeⵧfirst,
 	normalizeꓽurl,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 import {
 	type NodeLike,
 	type Node,
@@ -25,7 +25,7 @@ import {
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 	promoteꓽto_node,
 	isꓽdisplayⵧblock,
-} from '@offirmo-private/rich-text-format'
+} from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 
@@ -58,7 +58,7 @@ const _warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
 
 const _load_styles = memoize_one(() => {
 	//console.info(`loading RichText styles on-demand`)
-	//import('@offirmo-private/rich-text-format/styles.css')
+	//import('@monorepo-private/rich-text-format/styles.css')
 })
 
 function _is_react_element(n: React.ReactNode): n is React.ReactElement {

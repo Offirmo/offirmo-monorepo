@@ -1,4 +1,4 @@
-import type { JSONObject } from '@offirmo-private/ts-types'
+import type { JSONObject } from '@monorepo-private/ts--types'
 
 export const STRUCTURED_FILE_FORMATS = [
 	'default-export', // js/ts exporting a default JSONObject

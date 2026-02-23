@@ -1,4 +1,4 @@
-import create from '@offirmo-private/murmurhash'
+import create from '@monorepo-private/murmurhash'
 
 export function hash_state<State>(state: State): string {
 	const Murmur = create()

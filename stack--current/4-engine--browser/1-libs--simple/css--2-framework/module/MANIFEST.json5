@@ -8,7 +8,7 @@
 
 	_overrides: {
 		dependencies: {
-			'@offirmo-private/css--foundation': { type: 'dev' },
+			'@monorepo-private/css--foundation': { type: 'dev' },
 		},
 	}
 }

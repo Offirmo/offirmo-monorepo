@@ -11,8 +11,8 @@ import {
 	getꓽnodesⵧchildren_of,
 	getꓽrepresentationⵧtxt,
 } from './non-linear/tree/generic/index.js'
-import { Immutable } from './_vendor/@offirmo-private/ts-types/index.js'
-import { combine_normalizers, normalizeꓽtextⵧsentence } from './_vendor/@offirmo-private/normalize-string/index.js'
+import { Immutable } from './_vendor/@monorepo-private/ts--types/index.js'
+import { combine_normalizers, normalizeꓽtextⵧsentence } from './_vendor/@monorepo-private/normalize-string/index.js'
 
 
 /////////////////////////////////////////////////

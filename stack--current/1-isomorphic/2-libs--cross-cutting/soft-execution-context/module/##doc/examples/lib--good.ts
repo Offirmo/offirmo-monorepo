@@ -1,4 +1,4 @@
-import { type SoftExecutionContext, getRootSXC, type WithSXC } from '@offirmo-private/soft-execution-context'
+import { type SoftExecutionContext, getRootSXC, type WithSXC } from '@monorepo-private/soft-execution-context'
 
 /////////////////////////////////////////////////
 

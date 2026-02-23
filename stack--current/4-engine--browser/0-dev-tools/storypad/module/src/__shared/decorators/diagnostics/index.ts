@@ -1,6 +1,6 @@
 function decorateWithCSSDiagnostics(story: any) {
 	// @ts-expect-error TODO fake TS
-	import('@offirmo-private/css--utils--diagnostics')
+	import('@monorepo-private/css--utils--diagnostics')
 	return story
 }
 

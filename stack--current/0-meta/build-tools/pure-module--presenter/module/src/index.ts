@@ -6,10 +6,10 @@ import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
 import * as process from 'node:process'
 
-import { setꓽpropertyⵧdeep } from '@offirmo-private/set-deep-property'
+import { setꓽpropertyⵧdeep } from '@monorepo-private/set-deep-property'
 import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
-import { type Basename, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
-import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
+import { type Basename, type PureModuleDetails } from '@monorepo-private/pure-module--analyzer'
+import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
 
 /////////////////////////////////////////////////
 
@@ -159,7 +159,7 @@ ${pure_module_details.description || ''}
 
 	if (pure_module_details.engines['browser']) {
 		_schedule_root_file_creation('.parcelrc', {
-			"extends": "@offirmo-private/parcel-config",
+			"extends": "@monorepo-private/parcel-config",
 		})
 	}
 	else {
@@ -188,8 +188,8 @@ ${pure_module_details.description || ''}
 			"name": pure_module_details.fqname,
 			...(pure_module_details.description && {"description": pure_module_details.description}),
 			"version": pure_module_details.version,
-			"author": pure_module_details.author,
-			"license": pure_module_details.license || 'Unlicense',
+			...(pure_module_details.isꓽpublished && {"author": pure_module_details.author }),
+			...(pure_module_details.license && { "license": pure_module_details.license }),
 			...(pure_module_details.isꓽpublished ? {} : { "private": true}),
 
 			...(Object.keys(enginesⵧcleaned).length && { engines: enginesⵧcleaned }),

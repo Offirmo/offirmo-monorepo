@@ -468,6 +468,7 @@ The web will always win = over confidence? https://aifoc.us/a-link-is-all-you-ne
 There’s an app for that
 Three Cs: 🤝 Concatenate, 🗜️ Compress, 🗳️ Cache https://csswizardry.com/2023/10/the-three-c-concatenate-compress-cache/
 transclusion = the inclusion of part or all of an electronic document into one or more other documents by reference via hypertext. Transclusion is usually performed when the referencing document is displayed and is normally automatic and transparent to the end user. The result of transclusion is a single integrated document made of parts assembled dynamically from separate sources, possibly stored on different computers in disparate places. https://aifoc.us/a-link-is-all-you-need/ https://en.wikipedia.org/wiki/Transclusion
+typography -- quotes https://smartquotesforsmartpeople.com/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site
@@ -515,6 +516,7 @@ UI -- tooltip -- should not exist https://tkdodo.eu/blog/tooltip-components-shou
 UI -- transitions
 UI -- views
 UI = https://en.wikipedia.org/wiki/User_interface
+UI layout algorithms https://www.youtube.com/watch?v=by9lQvpvMIc
 user -- agency = give them some slack/choice/affordance, ex. "interestingly, they still chose to use it as a two-step process for some of the questions, presumably to reduce cognitive load for difficult to answer questions by breaking down the decision into two smaller ones" https://lea.verou.me/blog/2024/context-chips/#what-worked-well%3A-context-chips
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 user effort --
@@ -588,3 +590,4 @@ WebXR / WebVR = VR / AR
 Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/
 XSS -- injection sinks https://devdocs.io/dom/trusted_types_api
 “Your” vs “My” in user interfaces = In summary 1) Use “your” when communicating to the user 2) Use “my” when the user is communicating to us https://adamsilver.io/blog/your-vs-my-in-user-interfaces/
+📦 https://transparenttextures.com/

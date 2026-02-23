@@ -1,7 +1,7 @@
 import * as fs from 'node:fs'
 
 import assert from 'tiny-invariant'
-import { normalize, NORMALIZERS, combineꓽnormalizers } from '@offirmo-private/normalize-string'
+import { normalize, NORMALIZERS, combineꓽnormalizers } from '@monorepo-private/normalize-string'
 
 
 // https://github.com/dundalek/latinize/blob/master/latinize.js

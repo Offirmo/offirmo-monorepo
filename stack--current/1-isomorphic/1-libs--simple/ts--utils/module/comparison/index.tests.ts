@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import {
 	compare,
@@ -9,7 +9,7 @@ import {
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/ts-utils -- comparison', function () {
+describe('@monorepo-private/ts--utils -- comparison', function () {
 
 	interface Person {
 		name: string

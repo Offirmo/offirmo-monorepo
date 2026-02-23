@@ -1,5 +1,5 @@
-import { UUID } from '@offirmo-private/uuid'
-import { Immutable } from '@offirmo-private/ts-types'
+import { UUID } from '@monorepo-private/uuid'
+import { Immutable } from '@monorepo-private/ts-types'
 import { get_unslotted_item } from '@tbrpg/state--inventory'
 import { UState } from '@tbrpg/state'
 import {

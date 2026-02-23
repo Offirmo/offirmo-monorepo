@@ -21,8 +21,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/rich-text-format": "*",
-		"@offirmo-private/ts-types": "^0",
+		"@monorepo-private/rich-text-format": "*",
+		"@monorepo-private/ts-types": "^0",
 		"memoize-one": "^6",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
@@ -44,9 +44,9 @@
 		"demo--browser": "rm -rf cache .parcel && run-s start:parcel"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/prettify-any": "^0",
-		"@offirmo-private/rich-text-format--to-terminal": "^0",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/prettify-any": "^0",
+		"@monorepo-private/rich-text-format--to-terminal": "^0",
 		"@offirmo/cli-toolbox": "^2",
 		"@offirmo/unit-test-toolbox": "^8",
 		"@offirmo/universal-debug-api-node": "^0",

@@ -1,7 +1,7 @@
 /////////////////////
 
 import { getꓽrandom, getꓽengine, type RNGEngine } from '@offirmo/random'
-import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import {
 	ItemQuality,

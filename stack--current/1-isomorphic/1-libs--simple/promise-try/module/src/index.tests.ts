@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 
-import promiseTry from '@offirmo-private/promise-try'
+import promiseTry from '@monorepo-private/promise-try'
 
 
-describe('@offirmo-private/promise-try', function() {
+describe('@monorepo-private/promise-try', function() {
 
 	it('should work - resolution', () => {
 		return promiseTry(() => 42)

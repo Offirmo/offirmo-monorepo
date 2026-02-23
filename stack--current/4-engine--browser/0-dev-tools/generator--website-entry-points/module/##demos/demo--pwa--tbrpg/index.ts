@@ -2,7 +2,7 @@
 import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 
-import generateꓽwebsiteᝍentryᝍpoints from '@offirmo-private/generator--website-entry-points'
+import generateꓽwebsiteᝍentryᝍpoints from '@monorepo-private/generator--website-entry-points'
 
 import { SPEC } from '../../src/__fixtures/specs--game--tbrpg/index.ts'
 

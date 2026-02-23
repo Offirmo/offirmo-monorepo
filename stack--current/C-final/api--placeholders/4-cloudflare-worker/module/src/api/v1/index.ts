@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 
-import * as SvgGenLib from '@offirmo-private/generator--svg'
-import { getꓽcontentꘌcat } from '@offirmo-private/generator--svg/examples'
+import * as SvgGenLib from '@monorepo-private/generator--svg'
+import { getꓽcontentꘌcat } from '@monorepo-private/generator--svg/examples'
 
 /////////////////////////////////////////////////
 

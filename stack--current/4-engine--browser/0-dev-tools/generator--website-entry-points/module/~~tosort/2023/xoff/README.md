@@ -16,7 +16,7 @@ Design
 
 ## Usage
 ```ts
-import { get_xoff } from '@offirmo-private/xoff'
+import { get_xoff } from '@monorepo-private/xoff'
 ```
 
 
@@ -26,4 +26,3 @@ Contributing
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 Reminder https://developers.google.com/web/fundamentals/performance/resource-prioritization
-

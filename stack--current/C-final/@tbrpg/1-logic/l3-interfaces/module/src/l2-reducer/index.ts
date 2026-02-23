@@ -3,7 +3,7 @@ import EventEmitter from 'emittery'
 
 
 
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type ReducerAction, type Reducer, type ReducerMap,
 	createꓽaction__base, createꓽaction,
@@ -11,14 +11,14 @@ import {
 	ACTION_TYPEꘌNOOP,          type ActionNoop,        createꓽactionꘌnoop,
 	ACTION_TYPEꘌSET,           type ActionSet_,        createꓽactionꘌset,
 	ACTION_TYPEꘌHACK,          type ActionHack_,       createꓽactionꘌhack,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 import {
 	type AllStoreFns,
 	type Snapshot, type SyncStoreUnsubscribeFn,
 	reduceꓽnoop,
 	reduceꓽset,
 	reduceꓽhack,
-} from '@offirmo-private/sync-store'
+} from '@monorepo-private/sync-store'
 
 import { type TBRSoftExecutionContext } from '@tbrpg/definitions'
 import * as TBRPGState from '@tbrpg/state'

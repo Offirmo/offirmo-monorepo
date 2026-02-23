@@ -22,11 +22,11 @@
 
 	"dependencies": {
 		"@immortal-clicker/name-generator": "^0",
-		"@offirmo-private/css--framework": "^0"
+		"@monorepo-private/css--framework": "^0"
 	},
 
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@parcel/config-default": "^2",
 		"@parcel/transformer-typescript-tsc": "^2",
 		"@size-limit/file": "^5",

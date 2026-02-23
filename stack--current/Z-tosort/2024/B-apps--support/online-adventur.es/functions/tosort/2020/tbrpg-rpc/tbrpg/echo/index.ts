@@ -1,4 +1,4 @@
-//import { JSONRpcRequest, JSONRpcResponse } from '@offirmo-private/json-rpc-types'
+//import { JSONRpcRequest, JSONRpcResponse } from '@monorepo-private/json-rpc-types'
 import { RpcEcho, RpcEchoResponse } from '@tbrpg/interfaces'
 
 async function handle(

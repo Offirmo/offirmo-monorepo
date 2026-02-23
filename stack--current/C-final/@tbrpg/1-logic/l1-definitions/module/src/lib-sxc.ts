@@ -1,4 +1,4 @@
-import type { BaseInjections, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import type { BaseInjections, SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 import type { Logger } from '@offirmo/practical-logger-types'
 
 import { APP } from './consts.ts'

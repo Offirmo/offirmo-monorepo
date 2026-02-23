@@ -1,7 +1,7 @@
 import {
 	injectꓽlibꓽchalk,
 	prettifyꓽany as to_prettified_str,
-} from '@offirmo-private/prettify-any'
+} from '@monorepo-private/prettify-any'
 
 import indent_string from 'indent-string'
 

@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import {
 	normalize_unicode,
@@ -11,7 +11,7 @@ import {
 	normalizeꓽIETFLanguageType,
 	normalizeꓽurl,
 	normalizeꓽurlⵧhttpₓ,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 import type {
 	LooseDateAnnotated,
@@ -29,7 +29,7 @@ import type {
 import { type Relationship, RELATIONSHIP_TYPES, isꓽRelationshipType, type State } from '../state/types.ts'
 import * as Reducers from '../state/reducers.ts'
 import * as LooseDateLib from '../to-own/loose-dates/index.ts'
-import { hasꓽemoji } from '@offirmo-private/type-detection'
+import { hasꓽemoji } from '@monorepo-private/type-detection'
 
 /////////////////////////////////////////////////
 

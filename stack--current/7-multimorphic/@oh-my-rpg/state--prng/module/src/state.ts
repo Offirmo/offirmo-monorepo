@@ -1,9 +1,9 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/state-utils'
+import { type Immutable } from '@monorepo-private/state-utils'
 import { type Seed, getꓽengine, type PRNGEngine, type PRNGState } from '@offirmo/random'
-import { generate_uuid } from '@offirmo-private/uuid'
+import { generate_uuid } from '@monorepo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 import { type State } from './types.ts'

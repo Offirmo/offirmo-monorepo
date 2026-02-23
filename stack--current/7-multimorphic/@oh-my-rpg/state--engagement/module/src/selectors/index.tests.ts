@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { LIB } from '../consts.ts'
 

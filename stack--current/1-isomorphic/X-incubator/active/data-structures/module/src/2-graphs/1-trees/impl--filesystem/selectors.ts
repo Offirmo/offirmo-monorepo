@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable, RelativePath } from '@offirmo-private/ts-types'
-import { normalizeꓽpath } from '@offirmo-private/normalize-string'
+import type { Immutable, RelativePath } from '@monorepo-private/ts--types'
+import { normalizeꓽpath } from '@monorepo-private/normalize-string'
 
 import { type TreeForRL, getꓽrepresentationⵧlinesⵧgeneric } from '../selectors--representation--lines.ts'
 import {

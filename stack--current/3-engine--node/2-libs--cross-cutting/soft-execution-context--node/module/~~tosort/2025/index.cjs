@@ -1,6 +1,6 @@
 const os = require('os')
 
-const { getRootSXC } = require('@offirmo-private/soft-execution-context')
+const { getRootSXC } = require('@monorepo-private/soft-execution-context')
 
 /////////////////////
 
@@ -70,7 +70,7 @@ function _force_set_level_of_uda_default_logger(suggestedLevel) {
 /////////////////////
 
 module.exports = {
-	...require('@offirmo-private/soft-execution-context'),
+	...require('@monorepo-private/soft-execution-context'),
 	listenToUncaughtErrors,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,

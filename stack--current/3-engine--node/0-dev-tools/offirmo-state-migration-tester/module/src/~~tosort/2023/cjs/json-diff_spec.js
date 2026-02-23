@@ -36,7 +36,7 @@ describe(`${LIB} - json diff`, function() {
 			})
 		})
 
-		context('when non-semantic difference: @offirmo-private/state-migration-tester', function () {
+		context('when non-semantic difference: @monorepo-private/state-migration-tester', function () {
 
 			it('should work', () => {
 				const test_obj_a = { uuid: '<uuid1>' }

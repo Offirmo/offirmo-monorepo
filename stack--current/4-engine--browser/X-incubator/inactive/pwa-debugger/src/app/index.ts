@@ -1,4 +1,4 @@
-import { asap_but_out_of_immediate_execution, forArray } from '@offirmo-private/async-utils'
+import { asap_but_out_of_immediate_execution, forArray } from '@monorepo-private/utils--async'
 import { VERSION, BUILD_DATE } from '../entry-points/build.ts'
 import './init/00-security.ts' // as early as possible, side effects expected
 

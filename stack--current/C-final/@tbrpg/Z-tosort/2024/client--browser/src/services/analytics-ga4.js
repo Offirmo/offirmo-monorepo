@@ -2,10 +2,10 @@
 
 import assert from 'tiny-invariant'
 
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
-import { load_script_from_top } from '@offirmo-private/xoff'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
+import { load_script_from_top } from '@monorepo-private/xoff'
 import { overrideHook } from '@offirmo/universal-debug-api-browser'
-import { asap_but_out_of_immediate_execution, schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
+import { asap_but_out_of_immediate_execution, schedule_when_idle_but_not_too_far } from '@monorepo-private/async-utils'
 
 import { VERSION } from '../build.json'
 

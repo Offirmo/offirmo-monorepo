@@ -2,8 +2,6 @@
 	"name": "@tbrpg/ui--rich-text",
 	"description": "UI (rich text) for TBRPG",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,7 +13,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/rich-text-format": "*",
+		"@monorepo-private/rich-text-format": "*",
 		"@oh-my-rpg/state--meta": "*",
 		"@tbrpg/definitions": "*",
 		"@tbrpg/logic--adventures": "*",
@@ -38,10 +36,10 @@
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/prettify-any": "*",
-		"@offirmo-private/rich-text-format--to-terminal": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/prettify-any": "*",
+		"@monorepo-private/rich-text-format--to-terminal": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--prng": "*",
 		"@tbrpg/logic--adventure--resolved": "*",

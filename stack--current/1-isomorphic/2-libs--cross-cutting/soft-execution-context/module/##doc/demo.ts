@@ -1,5 +1,5 @@
 import { createLogger } from '@offirmo/practical-logger-core'
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 
 const logger = createLogger({
 	name: 'root',

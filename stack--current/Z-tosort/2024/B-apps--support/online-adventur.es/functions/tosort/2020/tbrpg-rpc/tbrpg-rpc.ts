@@ -9,7 +9,7 @@ import '@offirmo/universal-debug-api-node'
 
 import { Enum } from 'typescript-string-enums'
 import { Method, TbrpgRpc, TbrpgRpcResponse } from '@tbrpg/interfaces'
-import { ReleaseChannel, get_allowed_origin } from '@offirmo-private/functions-interface'
+import { ReleaseChannel, get_allowed_origin } from '@monorepo-private/functions-interface'
 
 import {
 	APIGatewayEvent,

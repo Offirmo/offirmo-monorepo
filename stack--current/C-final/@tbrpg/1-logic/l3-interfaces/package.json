@@ -2,8 +2,6 @@
 	"name": "@tbrpg/interfaces",
 	"description": "TBRPG interfaces for advanced features, ex. persistence",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/sync-store": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/sync-store": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"@tbrpg/state": "*",
 		"@tbrpg/state--character": "*",
 		"emittery": "^1",
@@ -35,12 +33,12 @@
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/toolbox--parcel": "*",
-		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/uuid": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/timestamps": "*",
+		"@monorepo-private/toolbox--parcel": "*",
+		"@monorepo-private/ts--types": "*",
+		"@monorepo-private/uuid": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--engagement": "*",
 		"@tbrpg/definitions": "*",

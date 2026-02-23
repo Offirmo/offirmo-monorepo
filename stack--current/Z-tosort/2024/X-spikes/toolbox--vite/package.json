@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/toolbox--vite",
+	"name": "@monorepo-private/toolbox--vite",
 	"version": "0.0.1",
 	"description": "An aggregation of npm modules related to the vite frontend tool",
 	"author": "Offirmo <offirmo.net@gmail.com>",

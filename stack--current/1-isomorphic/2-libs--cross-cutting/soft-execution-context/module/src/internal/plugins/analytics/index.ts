@@ -1,4 +1,4 @@
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
 import type { SXCPlugin } from '../types.ts'
 

@@ -1,4 +1,4 @@
-import * as SVGLib from '@offirmo-private/generator--svg'
+import * as SVGLib from '@monorepo-private/generator--svg'
 
 let $svg = SVGLib.createꓽempty()
 $svg = SVGLib.setꓽviewBox($svg, [ 0, 0, 5000, 5000])
@@ -46,7 +46,7 @@ await fs.writeFile(path.join(__dirname, 'index.svg'), svgⵧformatted‿str)
 /////////////////////////////////////////////////
 // render to png
 import { Resvg } from '@resvg/resvg-js'
-import { addꓽcontentꘌmire } from '@offirmo-private/generator--svg'
+import { addꓽcontentꘌmire } from '@monorepo-private/generator--svg'
 
 const resvg__opts = {
 	font: {

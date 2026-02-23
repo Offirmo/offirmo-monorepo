@@ -1,1 +1,1 @@
-import '@offirmo-private/toolbox--storybook/src/config/manager'
+import '@monorepo-private/toolbox--storybook/src/config/manager'

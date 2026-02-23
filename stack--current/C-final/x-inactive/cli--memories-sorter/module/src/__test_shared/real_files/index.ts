@@ -3,9 +3,9 @@ import * as path from 'node:path'
 
 import memoize_once from 'memoize-one'
 import micro_memoize from 'micro-memoize'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import { expect } from 'chai'
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 import { utimes } from 'utimes'
 
 import { AbsolutePath, Basename, SimpleYYYYMMDD, ISODateString, RelativePath, TimeZone } from '../../types.js'

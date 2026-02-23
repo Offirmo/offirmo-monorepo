@@ -1,4 +1,4 @@
-import { type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
+import { type SoftExecutionContext, getRootSXC } from '@monorepo-private/soft-execution-context'
 
 import { LIB } from './consts.ts'
 

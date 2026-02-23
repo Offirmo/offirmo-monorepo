@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
-import type { Author, Url‿str, Immutable } from '@offirmo-private/ts-types'
+import type { Author, Url‿str, Immutable } from '@monorepo-private/ts--types'
 import {
 	normalize_unicode,
 	normalizeꓽemailⵧsafe,
 	normalizeꓽurl,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 /////////////////////////////////////////////////
 // Author extends WithOnlinePresence

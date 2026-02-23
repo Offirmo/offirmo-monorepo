@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url'
 
 import assert from 'tiny-invariant'
 
-const LIB = '@offirmo-private/parcel-resolver'
+const LIB = '@monorepo-private/parcel-resolver'
 const DEBUG = false
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -15,9 +15,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const POSSIBLY_UNRESURRECTED_OFFIRMO_MODULES = [
 
 	// cross-cutting
-	'@offirmo-private/react--error-boundary',
-	'@offirmo-private/rich-text-format--to-react',
-	'@offirmo-private/soft-execution-context--browser',
+	'@monorepo-private/react--error-boundary',
+	'@monorepo-private/rich-text-format--to-react',
+	'@monorepo-private/soft-execution-context--browser',
 	'@offirmo/practical-logger-browser',
 	'@offirmo/universal-debug-api-browser',
 ]
@@ -66,7 +66,7 @@ export default new Resolver({
 		// Since this plugin is a "last resort", this will very likely cause a failure:
 
 		if (true || DEBUG) {
-			console.error('@offirmo-private/parcel-resolver ABOUT TO FAIL')
+			console.error('@monorepo-private/parcel-resolver ABOUT TO FAIL')
 			console.error('Params=', params)
 			const { specifier, specifierType, sourcePath, resolveFrom } = params.dependency
 			console.error('Dependency=', { specifier, specifierType, sourcePath, resolveFrom })

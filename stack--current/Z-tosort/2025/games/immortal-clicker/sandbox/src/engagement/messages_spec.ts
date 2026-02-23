@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 import { EngagementType } from '@oh-my-rpg/state--engagement'
 
 import { LIB } from './consts.js'

@@ -53,7 +53,7 @@ function create(root‿abspath: AbsolutePath): PureModuleDetails {
 			// common tools
 			'npm-run-all',
 			// obvious in our monorepo
-			'@offirmo-private/monorepo-scripts',
+			'@monorepo-private/monorepo-scripts',
 			// encourage unit tests
 			'@offirmo/unit-test-toolbox',
 		]),

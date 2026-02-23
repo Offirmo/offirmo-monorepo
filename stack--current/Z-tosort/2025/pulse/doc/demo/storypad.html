@@ -8,7 +8,7 @@
 
 	import nearest_pkg from '~/package.json'
 
-	import start_storypad from '@offirmo-private/storypad'
+	import start_storypad from '@monorepo-private/storypad'
 
 	const stories = {
 		reset: stories_reset,
@@ -19,11 +19,11 @@
 		root_title: nearest_pkg?.name,
 		decorators: [
 			(story) => {
-				//import('@offirmo-private/css--reset')
-				//import('@offirmo-private/css--foundation')
-				import('@offirmo-private/css--framework')
-				//import('@offirmo-private/css--utils--diagnostics/src/debug/index.css')
-				//import('@offirmo-private/css--utils--diagnostics/src/diagnostics/index.css')
+				//import('@monorepo-private/css--reset')
+				//import('@monorepo-private/css--foundation')
+				import('@monorepo-private/css--framework')
+				//import('@monorepo-private/css--utils--diagnostics/src/debug/index.css')
+				//import('@monorepo-private/css--utils--diagnostics/src/diagnostics/index.css')
 				return story
 			}
 		]

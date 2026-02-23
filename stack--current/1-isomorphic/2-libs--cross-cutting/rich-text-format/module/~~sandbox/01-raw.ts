@@ -1,4 +1,4 @@
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
 let count = 0
 
@@ -106,7 +106,7 @@ let count = 0
 
 /////////////////////////////////////////////////
 /*
-import * as DEMOS from '@offirmo-private/rich-text-format/demos'
+import * as DEMOS from '@monorepo-private/rich-text-format/demos'
 
 function demo(wrapped_doc) {
 	const key = Object.keys(wrapped_doc)[0]

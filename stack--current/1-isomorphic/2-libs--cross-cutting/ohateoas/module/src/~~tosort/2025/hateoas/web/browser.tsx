@@ -1,15 +1,15 @@
 import assert from 'tiny-invariant'
 import React, { Component, type ReactNode } from "react"
 
-import { Immutable } from '@offirmo-private/state-utils'
+import { Immutable } from '@monorepo-private/state-utils'
 import {
 	type Hyperlink,
 	type Uri‿str,
 	type Uri‿x,
 	type SchemeSpecificURIPart,
-} from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
-import { to_react } from '@offirmo-private/rich-text-format--to-react'
+} from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
+import { to_react } from '@monorepo-private/rich-text-format--to-react'
 
 import { type HATEOASServer } from '../../to-export-to-own-package/hateoas/types'
 import {

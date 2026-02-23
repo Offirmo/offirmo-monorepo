@@ -1,12 +1,12 @@
-import type { Immutable } from '@offirmo-private/ts-types'
-import { type Builder } from '@offirmo-private/rich-text-format'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { type Builder } from '@monorepo-private/rich-text-format'
 import { InventorySlot } from '@tbrpg/definitions'
 import {
 	MAX_ENHANCEMENT_LEVEL,
 	type Armor,
 	getꓽdamage_reduction_interval as get_armor_damage_reduction_interval,
 } from '@tbrpg/logic--armors'
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 import { i18n_messages as I18N_ARMORS } from '@tbrpg/logic--armors'
 import { appraise_power, appraise_sell_value } from '@tbrpg/logic--shop'
 

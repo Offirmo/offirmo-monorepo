@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import { getꓽrandom, RNGEngine } from '@offirmo/random'
-import { NORMALIZERS } from '@offirmo-private/normalize-string'
+import { NORMALIZERS } from '@monorepo-private/normalize-string'
 
 import { Sect } from './types.js'
 import { GenderRequirement } from '../../torefine/index.js'

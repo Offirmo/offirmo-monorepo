@@ -1,4 +1,4 @@
-console.group('@offirmo-private/browserlist-config')
+console.group('@monorepo-private/browserlist-config')
 
 const fs = require('fs')
 const assert = require('assert').strict

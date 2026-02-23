@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	normalize_unicode,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 import * as AuthorSelectors from '../20-author/selectors.ts'
 

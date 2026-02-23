@@ -16,7 +16,7 @@ This module should cover everything:
 ## Usage
 
 ```ts
-import spawnCorrectlyAndResolvesWithStdout from '@offirmo-private/spawn-correctly'
+import spawnCorrectlyAndResolvesWithStdout from '@monorepo-private/spawn-correctly'
 
 const result = await spawnCorrectlyAndResolvesWithStdout({
   // same arg as [spawn](https://devdocs.io/node~18_lts/child_process#child_processspawncommand-args-options)

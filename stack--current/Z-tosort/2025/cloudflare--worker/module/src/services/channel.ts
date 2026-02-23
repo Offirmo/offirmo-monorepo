@@ -1,5 +1,5 @@
 import { Enum } from 'typescript-string-enums'
-import { ReleaseChannel } from '@offirmo-private/offirmo-api--interface'
+import { ReleaseChannel } from '@monorepo-private/offirmo-api--interface'
 
 /////////////////////////////////////////////////
 

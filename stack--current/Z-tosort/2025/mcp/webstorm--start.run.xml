@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false"
-		name="@offirmo-private/mcp -- Start"
+		name="@monorepo-private/mcp -- Start"
 		type="NodeJSConfigurationType"
 		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node"
 		node-parameters="--experimental-strip-types"

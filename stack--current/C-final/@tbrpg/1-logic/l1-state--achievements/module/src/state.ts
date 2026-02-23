@@ -3,8 +3,8 @@
 import assert from 'tiny-invariant'
 import {
 	getꓽUTC_timestampⵧhuman_readable‿days,
-} from '@offirmo-private/timestamps'
-import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+} from '@monorepo-private/timestamps'
+import { type Immutable, enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 

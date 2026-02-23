@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/incubator--storybook",
+	"name": "@monorepo-private/incubator--storybook",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
@@ -24,7 +24,7 @@
 		"storybook": "start-storybook -p 6006"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@types/react-swipeable-views": "^0",
 		"@types/react-swipeable-views-core": "^0",
 		"@types/react-swipeable-views-utils": "^0",

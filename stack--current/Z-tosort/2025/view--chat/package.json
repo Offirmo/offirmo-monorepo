@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/view--chat",
+	"name": "@monorepo-private/view--chat",
 	"description": "chat-like generic interface",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -24,8 +24,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/ts--types": "*",
 		"p-progress": "^1",
 		"tiny-invariant": "^1",
 		"typescript-string-enums":"^1"
@@ -44,7 +44,7 @@
 		"demo": "node ./dist/src.es2024.esm/loop/demo.js"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "*",
 		"@size-limit/preset-small-lib": "^11",
 		"npm-run-all": "^4",

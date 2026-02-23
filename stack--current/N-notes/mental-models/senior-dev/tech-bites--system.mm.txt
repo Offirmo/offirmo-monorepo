@@ -141,9 +141,9 @@ bastion host = special-purpose computer on a network specifically designed and c
 benchmarks https://planetscale.com/benchmarks
 blue/green deployment
 cache
-cache -- &eviction = Time-Based Eviction, Count-Based Eviction, Query Result Eviction, Cache Region Clearing
-cache -- &invalidation -- &busting = using url modifiers to avoid incorrect caching https://www.keycdn.com/support/what-is-cache-busting
-cache -- counter& = solution to an active record issue in RoR https://thoughtbot.com/blog/what-is-counter-cache
+cache -- & eviction = Time-Based Eviction, Count-Based Eviction, Query Result Eviction, Cache Region Clearing
+cache -- & invalidation -- &busting = using url modifiers to avoid incorrect caching https://www.keycdn.com/support/what-is-cache-busting
+cache -- counter & = solution to an active record issue in RoR https://thoughtbot.com/blog/what-is-counter-cache
 cache -- invalidation|control
 caching -- stale-if-error
 caching -- stale-while-revalidate https://www.mnot.net/blog/2007/12/12/stale
@@ -178,7 +178,7 @@ containers -- images -- Red Hat Universal Base Image (UBI) = minimal, freely red
 Content Delivery Network (CDN) ex. CloudFront
 coordination -- quorum, leader election
 CRUD "Create, Read, Update, Delete" = In SQL, the four related commands are: INSERT/POST (for Create), SELECT/GET (for Read), UPDATE/PUT (for Update), and DELETE (for Delete).
-data -- 0. raw& = need to be processed, OLAP, OLTP https://www.snowflake.com/guides/olap-vs-oltp/
+data -- 0. raw & = need to be processed, OLAP, OLTP https://www.snowflake.com/guides/olap-vs-oltp/
 data -- 1. &analytics = useful
 data -- 2. predictive& = forecast and predict from data
 data -- 3. prescriptive& = recommend actions based on data

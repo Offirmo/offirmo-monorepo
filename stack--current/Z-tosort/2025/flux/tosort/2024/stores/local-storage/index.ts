@@ -1,8 +1,8 @@
 /*import memoize_one from 'memoize-one'*/
 import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
-import stringifyⵧstable from '@offirmo-private/json-stable-stringify'
-import { Immutable, JSONObject, Storage } from '@offirmo-private/ts-types'
+import stringifyⵧstable from '@monorepo-private/json-stable-stringify'
+import { Immutable, JSONObject, Storage } from '@monorepo-private/ts--types'
 import {
 	AnyOffirmoState,
 	BaseAction,
@@ -12,8 +12,8 @@ import {
 	get_revision_loose,
 	UNCLEAR_compare,
 	OverallMigrateToLatest,
-} from '@offirmo-private/state-utils'
-import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
+} from '@monorepo-private/state-utils'
+import { schedule_when_idle_but_not_too_far } from '@monorepo-private/utils--async'
 
 import { Store, Dispatcher, ActionReducer } from '../../types'
 import { SoftExecutionContext } from '../../sec'

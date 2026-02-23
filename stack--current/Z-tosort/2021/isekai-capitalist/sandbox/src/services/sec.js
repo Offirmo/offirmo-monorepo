@@ -1,11 +1,11 @@
 'use strict'
 
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
 import {
 	listenToErrorEvents,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,
-} from '@offirmo-private/soft-execution-context-browser'
+} from '@monorepo-private/soft-execution-context-browser'
 
 import { LIB } from '../consts'
 import logger from './logger'

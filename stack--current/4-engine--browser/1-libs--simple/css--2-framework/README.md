@@ -1,4 +1,4 @@
-## @offirmo-private/css--framework
+## @monorepo-private/css--framework
 
 A micro CSS framework (like Bootstrap but with minimal features), mostly for my personal use.
 **[live demo on CodePen](https://codepen.io/Offirmo/pen/qYYWVy)** TODO BROKEN
@@ -28,7 +28,7 @@ By default, this stylesheet will activate a page like "mother fucking website".
 ```
 alternatively:
 ```css
-@import 'npm:@offirmo-private/css--framework';
+@import 'npm:@monorepo-private/css--framework';
 ```
 
 ### On-demand

@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
-import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@monorepo-private/state-utils'
 import {
 	LastMigrationStep,
 	MigrationStep,
 	migrate_toꓽlatestⵧgeneric,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { type State } from './types.js'

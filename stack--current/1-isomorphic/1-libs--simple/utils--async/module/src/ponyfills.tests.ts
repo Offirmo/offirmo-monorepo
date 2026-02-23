@@ -8,7 +8,7 @@ import {
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/async-utils', function() {
+describe('@monorepo-private/utils--async', function() {
 
 	describe('ponyfills', function() {
 		this.retries(5)

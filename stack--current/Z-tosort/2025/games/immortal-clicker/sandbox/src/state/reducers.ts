@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 import { PRNGEngine, getꓽrandom } from '@offirmo/random'
 
 import * as PRNGState from '@oh-my-rpg/state--prng'

@@ -1,6 +1,6 @@
-import type { Immutable } from '@offirmo-private/ts-types'
-import type { HumanReadableTimestampUTCMinutes } from '@offirmo-private/timestamps'
-import type { BaseUState } from '@offirmo-private/state-utils'
+import type { Immutable } from '@monorepo-private/ts--types'
+import type { HumanReadableTimestampUTCMinutes } from '@monorepo-private/timestamps'
+import type { BaseUState } from '@monorepo-private/state-utils'
 
 /////////////////////////////////////////////////
 

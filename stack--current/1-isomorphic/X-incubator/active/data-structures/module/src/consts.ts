@@ -1,1 +1,1 @@
-export const LIB = '@offirmo-private/data-structures'
+export const LIB = '@monorepo-private/data-structures'

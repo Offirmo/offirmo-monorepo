@@ -5,8 +5,8 @@ import * as os from 'node:os'
 import {
 	coerce_to_tokens,
 	normalize_unicode,
-} from '@offirmo-private/normalize-string'
-import { coerce_blanks_to_single_spaces } from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
+import { coerce_blanks_to_single_spaces } from '@monorepo-private/normalize-string'
 
 /////////////////////////////////////////////////
 

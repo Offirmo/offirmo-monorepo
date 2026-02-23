@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types'
+import { Immutable, Author, Thing, ThingWithOnlinePresence } from '@monorepo-private/ts--types'
 import * as path from 'node:path'
 import * as util from 'node:util'
 import { fileURLToPath } from 'node:url'

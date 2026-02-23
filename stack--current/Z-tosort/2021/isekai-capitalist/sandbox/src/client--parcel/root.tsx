@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { to_react } from '@offirmo-private/rich-text-format-to-react'
+import { to_react } from '@monorepo-private/rich-text-format-to-react'
 
 import '@oh-my-rpg/ui--browser--css/src/style.css'
 

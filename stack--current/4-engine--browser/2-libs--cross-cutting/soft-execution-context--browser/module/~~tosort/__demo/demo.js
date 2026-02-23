@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { createLogger } from '@offirmo/practical-logger-browser'
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 
 import {
 	listenToErrorEvents,

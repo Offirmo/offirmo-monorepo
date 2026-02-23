@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { set_number_in_favicon } from '@offirmo-private/favicon-notifications'
+import { set_number_in_favicon } from '@monorepo-private/favicon-notifications'
 
 import './index.css'
 

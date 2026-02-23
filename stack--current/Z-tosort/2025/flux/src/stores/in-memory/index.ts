@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	AnyOffirmoState,
 	BaseAction,
@@ -8,7 +8,7 @@ import {
 	fluid_select,
 	getꓽbaseⵧloose,
 	isꓽvalid_offirmo_state_object,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import { type SoftExecutionContext } from '../../services/sec.js'
 import { Store } from '../../types'

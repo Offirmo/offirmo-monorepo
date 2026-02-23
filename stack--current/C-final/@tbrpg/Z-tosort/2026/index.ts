@@ -1,8 +1,8 @@
 import chalk from 'chalk'
 
-import { injectꓽlibꓽchalk, prettifyꓽjson } from '@offirmo-private/prettify-any'
-import * as RichText from '@offirmo-private/rich-text-format'
-import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import { injectꓽlibꓽchalk, prettifyꓽjson } from '@monorepo-private/prettify-any'
+import * as RichText from '@monorepo-private/rich-text-format'
+import to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import * as State from '@tbrpg/state'
 import * as RRT from '@tbrpg/ui--rich-text'
@@ -22,7 +22,7 @@ console.log(state)
 */
 /*
 console.log('/////////////////////////////////////////////////')
-import { prettifyꓽjson } from '@offirmo-private/prettify-any'
+import { prettifyꓽjson } from '@monorepo-private/prettify-any'
 console.log(prettifyꓽjson(state))
 */
 /*

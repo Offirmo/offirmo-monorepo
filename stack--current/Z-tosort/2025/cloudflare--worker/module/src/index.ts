@@ -4,7 +4,7 @@
 import { Hono } from 'hono'
 import { HTTPException } from 'hono/http-exception'
 import { normalizeError } from '@offirmo/error-utils'
-import { create_server_response_body__data, create_server_response_body__error } from '@offirmo-private/offirmo-api--interface'
+import { create_server_response_body__data, create_server_response_body__error } from '@monorepo-private/offirmo-api--interface'
 
 import { APP } from './consts.ts'
 import type { HonoEnv } from './types.ts'

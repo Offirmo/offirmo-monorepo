@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/db",
+	"name": "@monorepo-private/db",
 	"description": "Database declarations",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -17,9 +17,9 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/normalize-string": "^0",
-		"@offirmo-private/state-utils": "^0",
-		"@offirmo-private/ts-types": "^0",
+		"@monorepo-private/normalize-string": "^0",
+		"@monorepo-private/state-utils": "^0",
+		"@monorepo-private/ts--types": "^0",
 		"@offirmo/error-utils": "^0",
 		"@offirmo/tiny-singleton": "^1",
 		"@offirmo/universal-debug-api-placeholder": "^1",

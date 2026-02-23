@@ -1,5 +1,5 @@
 import { Enum } from 'typescript-string-enums'
-import { BaseState } from '@offirmo-private/state-utils'
+import { BaseState } from '@monorepo-private/state-utils'
 
 /*
 There are usually 4 common goals for a film’s story. Will your story be about:

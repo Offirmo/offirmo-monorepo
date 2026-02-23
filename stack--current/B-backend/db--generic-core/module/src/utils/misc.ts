@@ -1,6 +1,6 @@
-import stable_stringify from '@offirmo-private/json-stable-stringify'
+import stable_stringify from '@monorepo-private/json-stable-stringify'
 
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 
 export function deep_equals_stable<T>(a: Immutable<T>, b: Immutable<T>): boolean {

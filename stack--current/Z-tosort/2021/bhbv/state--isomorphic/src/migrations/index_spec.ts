@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import { enforce_immutability } from '@offirmo-private/state-utils'
-import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migration-tester'
+import { enforce_immutability } from '@monorepo-private/state-utils'
+import { itㆍshouldㆍmigrateㆍcorrectly } from '@monorepo-private/state-migration-tester'
 
 import { LIB, SCHEMA_VERSION } from '../consts'
 import { DEMO_STATE } from '../examples'

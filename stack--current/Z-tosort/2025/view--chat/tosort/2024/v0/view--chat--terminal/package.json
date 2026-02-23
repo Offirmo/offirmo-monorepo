@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/view--chat--terminal",
+	"name": "@monorepo-private/view--chat--terminal",
 	"description": "A terminal implementation of the generic view--chat interface",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -16,7 +16,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/prettify-any": "*",
+		"@monorepo-private/prettify-any": "*",
 		"ansi-escapes": "^7",
 		"chalk": "^5",
 		"gauge": "^5",
@@ -32,7 +32,7 @@
 		"demo": "node doc/demo.js"
 	},
 	"devDependencies": {
-		"@offirmo-private/view--chat": "^0",
+		"@monorepo-private/view--chat": "^0",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	}

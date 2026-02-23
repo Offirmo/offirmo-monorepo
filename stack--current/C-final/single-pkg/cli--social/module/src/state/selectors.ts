@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { Temporal } from 'temporal-polyfill'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import {
 	capitalizeⵧfirst,
@@ -8,7 +8,7 @@ import {
 	remove_all_spaces,
 	coerce_underscores_to_space,
 	coerce_delimiters_to_space,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 import * as LooseDateLib from '../to-own/loose-dates/index.ts'
 import { RELATIONSHIP_TYPES__PARTNER, RELATIONSHIP_TYPES__CLOSEST, RELATIONSHIP_TYPES__CLOSE, type State } from './types.ts'

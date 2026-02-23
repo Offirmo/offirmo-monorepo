@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@monorepo-private/soft-execution-context'
 
 const LIB = 'GOOD_LIB'
 

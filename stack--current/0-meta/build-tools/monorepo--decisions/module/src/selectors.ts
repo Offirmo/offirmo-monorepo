@@ -14,7 +14,7 @@ function getꓽdefault_namespace(module_details: {
 
 	return module_details.isꓽpublished
 		? '@offirmo'
-		: '@offirmo-private'
+		: '@monorepo-private'
 }
 
 /////////////////////////////////////////////////

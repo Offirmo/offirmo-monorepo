@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSEC } from '@monorepo-private/soft-execution-context'
 import { Enum } from 'typescript-string-enums'
 
 import { fetch_oa, ReleaseChannel, Endpoint, SERVER_RESPONSE_VERSION } from '@online-adventur.es/api-client'

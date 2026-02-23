@@ -9,9 +9,9 @@ root_logger.setLevel('silly')
 /////////////////////////////////////////////////
 
 //import chalk from 'chalk'
-//import { injectꓽlibꓽchalk } from '@offirmo-private/prettify-any'
+//import { injectꓽlibꓽchalk } from '@monorepo-private/prettify-any'
 //injectꓽlibꓽchalk(chalk)
 
 /////////////////////////////////////////////////
 
-export { prettifyꓽjson } from '@offirmo-private/prettify-any'
+export { prettifyꓽjson } from '@monorepo-private/prettify-any'

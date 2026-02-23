@@ -1,10 +1,10 @@
-import type { Immutable, JSONPrimitiveType } from '@offirmo-private/ts-types'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import type { Immutable, JSONPrimitiveType } from '@monorepo-private/ts--types'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 import { getꓽrandom, getꓽengine } from '@offirmo/random'
 
-import { normalizeꓽuri‿str, type Uri‿str } from '@offirmo-private/ts-types-web'
-import * as RichText from '@offirmo-private/rich-text-format'
-import { prettifyꓽjson } from '@offirmo-private/prettify-any'
+import { normalizeꓽuri‿str, type Uri‿str } from '@monorepo-private/ts--types--web'
+import * as RichText from '@monorepo-private/rich-text-format'
+import { prettifyꓽjson } from '@monorepo-private/prettify-any'
 import {
 	normalize,
 	normalize_unicode,
@@ -13,7 +13,7 @@ import {
 	trim,
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 //import { createꓽserver } from '../__fixtures/example--01-hello-world/index.ts'
 //import { createꓽserver } from '../__fixtures/example--02-hello-world-interactive/index.ts'
@@ -30,7 +30,7 @@ import {
 	getꓽaction_blueprints,
 	getꓽcta,
 	OHALinkRelation,
-} from '@offirmo-private/ohateoas'
+} from '@monorepo-private/ohateoas'
 import assert from 'tiny-invariant'
 
 /////////////////////////////////////////////////

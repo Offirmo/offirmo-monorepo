@@ -1,4 +1,4 @@
-@import '@offirmo-private/css--framework/src/style--theme--dark--colorhunt212.css';
+@import '@monorepo-private/css--framework/src/style--theme--dark--colorhunt212.css';
 
 [data-o-theme="dark--colorhunt212"] {
 	--o⋄color⁚quality--poor:      hsl(0, 0%, 62%);

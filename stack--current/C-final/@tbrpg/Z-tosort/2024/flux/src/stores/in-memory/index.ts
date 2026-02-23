@@ -7,7 +7,7 @@ import {
 	getꓽrevisionⵧloose,
 	fluid_select,
 	getꓽbaseⵧloose,
-} from '@offirmo-private/state-utils'
+} from '@monorepo-private/state-utils'
 
 import { OMRSoftExecutionContext } from '../../sec.js'
 import { Store } from '../../types'

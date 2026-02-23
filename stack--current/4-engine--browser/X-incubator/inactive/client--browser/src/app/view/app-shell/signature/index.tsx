@@ -5,7 +5,7 @@
  */
 import 'react'
 
-import { CSS_CLASS as SMALL_FONT_CLASS } from '@offirmo-private/font--smallest'
+import { CSS_CLASS as SMALL_FONT_CLASS } from '@monorepo-private/font--smallest'
 
 import { title } from '../../../../entry-points/~~gen/logs/spec.json'
 import { message as version } from '../../../../entry-points/build--badge--version.json'

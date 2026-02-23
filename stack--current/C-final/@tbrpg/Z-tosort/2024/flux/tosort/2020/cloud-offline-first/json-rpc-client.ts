@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import Deferred from '@offirmo/deferred'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
-import { JSONRpcRequest, JSONRpcResponse } from '@offirmo-private/json-rpc-types'
+import { TimestampUTCMs, get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
+import { JSONRpcRequest, JSONRpcResponse } from '@monorepo-private/json-rpc-types'
 
 import { OMRSoftExecutionContext } from '../../sec'
 import fetch from '../../utils/fetch'

@@ -33,7 +33,7 @@ By default, this stylesheet will activate a page like "mother fucking website".
 ```
 alternatively:
 ```css
-@import 'npm:@offirmo-private/css--foundation';
+@import 'npm:@monorepo-private/css--foundation';
 @namespace svg url(http://www.w3.org/2000/svg);
 ```
 

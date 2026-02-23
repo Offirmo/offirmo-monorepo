@@ -9,16 +9,16 @@
 	"dependencies": {
 		"@babel/core": "^7",
 		"@bhbv/flux--isomorphic": "^0",
-		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/ensure-device-uuid-browser": "^0",
-		"@offirmo-private/features-detection-browser": "^0",
-		"@offirmo-private/iframe-loading": "^0",
-		"@offirmo-private/poll-window-variable": "^0",
-		"@offirmo-private/react-error-boundary": "^0",
-		"@offirmo-private/soft-execution-context": "^0",
-		"@offirmo-private/soft-execution-context-browser": "^0",
-		"@offirmo-private/timestamps": "^0",
-		"@offirmo-private/xoff": "^0",
+		"@monorepo-private/utils--async": "^0",
+		"@monorepo-private/ensure-device-uuid-browser": "^0",
+		"@monorepo-private/features-detection-browser": "^0",
+		"@monorepo-private/iframe-loading": "^0",
+		"@monorepo-private/poll-window-variable": "^0",
+		"@monorepo-private/react-error-boundary": "^0",
+		"@monorepo-private/soft-execution-context": "^0",
+		"@monorepo-private/soft-execution-context-browser": "^0",
+		"@monorepo-private/timestamps": "^0",
+		"@monorepo-private/xoff": "^0",
 		"@offirmo/deferred": "^4",
 		"@offirmo/tiny-singleton": "^0",
 		"@offirmo/universal-debug-api-browser": "^1",
@@ -47,7 +47,7 @@
 		"build": "npm-run-all clean refresh-build-variables build:parcel"
 	},
 	"devDependencies": {
-		"@offirmo-private/simple-upgradable-template": "^0",
+		"@monorepo-private/simple-upgradable-template": "^0",
 		"npm-run-all": "^4"
 	}
 }

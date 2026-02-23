@@ -1,8 +1,6 @@
 {
 	"name": "@infinite-monorepo/read-write-any-structured-file",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -16,7 +14,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/type-detection": "*",
+		"@monorepo-private/type-detection": "*",
 		"json5": "^2",
 		"split-lines": "^3",
 		"strip-bom": "^5",
@@ -31,8 +29,8 @@
 		"sandbox": "node --experimental-strip-types ./module/sandbox/read.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"@types/strip-bom": "^4",

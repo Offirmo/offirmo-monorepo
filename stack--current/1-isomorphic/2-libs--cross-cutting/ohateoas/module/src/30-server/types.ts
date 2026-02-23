@@ -1,4 +1,4 @@
-import type { Immutable, Story } from '@offirmo-private/ts-types'
+import type { Immutable, Story } from '@monorepo-private/ts--types'
 
 import type {
 	OHAHyperMedia,

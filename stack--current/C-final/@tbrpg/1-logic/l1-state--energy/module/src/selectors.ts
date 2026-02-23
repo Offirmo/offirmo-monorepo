@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import memoize_one from 'memoize-one'
 
 import { getꓽlogger } from '@tbrpg/definitions'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
 import { LIB, TICK_MS } from './consts.ts'
 import { type UState, type TState } from './types.ts'

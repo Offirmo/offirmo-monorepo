@@ -46,9 +46,11 @@ Libs:
   - viem https://viem.sh/docs/getting-started
   - ethers https://docs.ethers.org/v6/getting-started/
   - web3 js https://docs.web3js.org/ deprecated but good doc https://blog.chainsafe.io/web3-js-sunset/
+  - https://www.npmjs.com/package/@adraffy/ens-normalize
 - Solana
   - https://solana.com/docs/clients/javascript
   - https://www.anza.xyz/blog/meet-kit-the-new-solana-javascript-sdk https://www.solanakit.com/ (ex. web3.js)
+  - @solana/pay https://docs.solanapay.com/core/overview
 - Sui
   - @mysten/sui
 

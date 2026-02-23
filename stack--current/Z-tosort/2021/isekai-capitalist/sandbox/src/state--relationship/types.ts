@@ -1,5 +1,5 @@
 import { Enum } from 'typescript-string-enums'
-import { BaseState } from '@offirmo-private/state-utils'
+import { BaseState } from '@monorepo-private/state-utils'
 
 import { RelationshipLevel } from '../type--relationship-level'
 

@@ -15,6 +15,6 @@ MUST be semantic!!
 TODO https://css-tricks.com/recipes-for-detecting-support-for-css-at-rules/
 
 ```ts
-import { hasꓽhover } from '@offirmo-private/browser-features-detection/has-hover'
+import { hasꓽhover } from '@monorepo-private/browser-features-detection/has-hover'
 
 ```

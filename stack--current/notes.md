@@ -102,12 +102,12 @@ bolt --only-fs "B-apps--support/**/*" ws run test
 bolt --only-fs "C-apps--clients/**/*" ws run build
 bolt --only-fs "C-apps--clients/**/*" ws run test
 bolt w @tbrpg/definitions run build
-bolt ws run build --only @offirmo-private/*
-bolt ws run test  --only @offirmo-private/*
+bolt ws run build --only @monorepo-private/*
+bolt ws run test  --only @monorepo-private/*
 
 ## misc:
 bolt ws run cheatsheet
-bolt ws run cheatsheet --only @offirmo-private/*
+bolt ws run cheatsheet --only @monorepo-private/*
 bolt ws run cheatsheet --only @oh-my-rpg/*
 bolt --only-fs "1-stdlib/*" ws run ensure-size
 ```

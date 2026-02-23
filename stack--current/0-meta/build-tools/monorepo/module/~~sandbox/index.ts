@@ -1,11 +1,11 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs'
 
-import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
-import { getꓽpure_module_details, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
-import { present } from '@offirmo-private/pure-module--presenter'
+import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
+import { getꓽpure_module_details, type PureModuleDetails } from '@monorepo-private/pure-module--analyzer'
+import { present } from '@monorepo-private/pure-module--presenter'
 
-import { getꓽdefault_namespace } from '@offirmo-private/monorepo--decisions'
+import { getꓽdefault_namespace } from '@monorepo-private/monorepo--decisions'
 import {
 	GIT_ROOT,
 	MONOREPO_ROOT,

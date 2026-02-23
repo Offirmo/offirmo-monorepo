@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
-import { renderⵧto_text } from '@offirmo-private/rich-text-format'
-import renderⵧto_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import { renderⵧto_text } from '@monorepo-private/rich-text-format'
+import renderⵧto_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import { LIB } from '../consts.ts'
 

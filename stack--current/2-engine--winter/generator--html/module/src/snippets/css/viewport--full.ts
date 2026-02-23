@@ -1,4 +1,4 @@
-import type { Css‿str } from '@offirmo-private/ts-types-web'
+import type { Css‿str } from '@monorepo-private/ts--types--web'
 
 /////////////////////////////////////////////////
 

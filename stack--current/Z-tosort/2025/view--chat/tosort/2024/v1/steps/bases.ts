@@ -4,7 +4,7 @@ import {
 	ensure_string,
 	normalize_unicode,
 	trim,
-} from '@offirmo-private/normalize-string'
+} from '@monorepo-private/normalize-string'
 
 /////////////////////////////////////////////////
 

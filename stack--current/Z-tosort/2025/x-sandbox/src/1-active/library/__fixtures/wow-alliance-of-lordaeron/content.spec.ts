@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import { LIB } from '../../consts.ts'
 import type { Book, BookNodeReference, BookPage, BookPart, BookPartKey, Text } from '../../model--book/types/types.ts'
@@ -9,7 +9,7 @@ import { NODE_REFERENCEⵧSEPARATOR, NODE_REFERENCEꘌROOT } from '../../model--
 import { getꓽpage } from '../../model--book/selectors.ts'
 
 import { BOOK } from './content.ts'
-import { keyꓺvalue } from '@offirmo-private/rich-text-format'
+import { keyꓺvalue } from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 

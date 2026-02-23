@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/iframe--chat",
+	"name": "@monorepo-private/iframe--chat",
 	"description": "A top-level index.html loading a chat, to be used as an iframe",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
@@ -22,7 +22,7 @@
 		"build": "npm-run-all clean build:parcel"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"npm-run-all": "^4"
 	}
 }

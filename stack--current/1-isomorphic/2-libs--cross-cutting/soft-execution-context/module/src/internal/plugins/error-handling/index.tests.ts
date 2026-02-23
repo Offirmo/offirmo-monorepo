@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { displayError } from '@offirmo-private/print-error-to-terminal'
+import { displayError } from '@monorepo-private/print-error-to-terminal'
 
 import { LIB } from '../../../consts.ts'
 import {

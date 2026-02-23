@@ -3,7 +3,7 @@ import { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import { ElementType } from '@tbrpg/definitions'
-import { InteractiveRichTextFragment } from '@offirmo-private/rich-text-format--to-react'
+import { InteractiveRichTextFragment } from '@monorepo-private/rich-text-format--to-react'
 import {
 	render_item_short,
 	render_item_detailed,

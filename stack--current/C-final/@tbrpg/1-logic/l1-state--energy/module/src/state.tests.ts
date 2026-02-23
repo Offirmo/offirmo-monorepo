@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import * as sinon from 'sinon'
-import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
-import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
+import { TEST_TIMESTAMP_MS } from '@monorepo-private/timestamps'
+import { dumpꓽanyⵧprettified } from '@monorepo-private/prettify-any'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 

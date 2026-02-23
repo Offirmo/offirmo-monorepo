@@ -5,9 +5,9 @@ import type {
 	Thing,
 	WithOnlinePresence,
 	ThingWithOnlinePresence,
-} from '@offirmo-private/ts-types-web'
+} from '@monorepo-private/ts--types--web'
 
-import type { WebProperty } from '@offirmo-private/generator--website-entry-points'
+import type { WebProperty } from '@monorepo-private/generator--website-entry-points'
 
 /////////////////////////////////////////////////
 /*

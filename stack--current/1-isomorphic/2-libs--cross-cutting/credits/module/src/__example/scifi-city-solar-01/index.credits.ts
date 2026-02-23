@@ -6,9 +6,9 @@ import {
 	type Asset,
 	registerꓽasset_usageⵧload,
 	_getꓽurl_tobind, _getꓽpath_tobind,
-} from '@offirmo-private/credits'
+} from '@monorepo-private/credits'
 
-import AUTHOR from "@offirmo-private/credits/authors/neon.dimensionss"
+import AUTHOR from "@monorepo-private/credits/authors/neon.dimensionss"
 
 /////////////////////////////////////////////////
 

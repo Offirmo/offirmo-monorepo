@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import * as icepick from 'icepick'
-import type { Immutable, Mutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types'
-import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import type { Immutable, Mutable, ImmutabilityEnforcer } from '@monorepo-private/ts--types'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
 import type {
 	BaseUState,
@@ -250,4 +250,4 @@ export {
 export {
 	type Immutable,
 	type ImmutabilityEnforcer
-} from '@offirmo-private/ts-types'
+} from '@monorepo-private/ts--types'

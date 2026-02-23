@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import * as sinon from 'sinon'
-import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
+import { TEST_TIMESTAMP_MS } from '@monorepo-private/timestamps'
 
 import { LIB } from '../../../consts.ts'
 import {

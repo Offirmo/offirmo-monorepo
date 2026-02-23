@@ -1,4 +1,4 @@
-import type { SemVer, SoftwareLicense‿SPDX } from '@offirmo-private/ts-types'
+import type { SemVer, SoftwareLicense‿SPDX } from '@monorepo-private/ts--types'
 
 import type { ProgLang, DependencyFQName, DependencyDetails } from '../01-primitives.ts'
 

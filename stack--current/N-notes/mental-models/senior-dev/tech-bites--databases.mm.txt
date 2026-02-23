@@ -51,6 +51,7 @@ orm -- drizzle
 orm -- drizzle -- gotchas -- insert behaviour = references all known cols
 polyglot persistence = using multiple data storage technologies within a single system, in order to meet varying data storage needs https://en.wikipedia.org/wiki/Polyglot_persistence
 Postgres
+PostgreSQL -- exam https://www.postgresql.org/about/news/call-for-technical-members-3233/
 prepared statements = you do SQL concatenation once on the ORM side and then database driver is able to reuse precompiled binary SQL instead of parsing query all the time. It has extreme performance benefits on large SQL queries.
 primary / replica
 ranged scan
@@ -63,9 +64,11 @@ selectivity
 sharding
 sharding -- middleware -- gizzard (legacy) = sharding middleware https://github.com/twitter-archive/gizzard
 sharding https://www.mongodb.com/docs/manual/sharding/
-solution -- GUI tool -- DataGrip
-solution -- GUI tool -- TablePlus https://tableplus.com/
-solution -- MySQL https://dev.mysql.com/
+solutions -- Google Spreadsheet -- npm https://github.com/theoephraim/node-google-spreadsheet
+solutions -- Google Spreadsheet = https://www.levels.fyi/blog/scaling-to-millions-with-google-sheets.html
+solutions -- GUI tool -- DataGrip
+solutions -- GUI tool -- TablePlus https://tableplus.com/
+solutions -- MySQL = NO, destroyed by Oracle https://dev.mysql.com/
 sql
 sql -- CURRENT_TIMESTAMP()
 sql -- dialect = ex. Postgres vs Mysql

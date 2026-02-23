@@ -60,6 +60,7 @@ médaille -- miraculeuse
 médaille -- st Benoit
 natural religiosity
 original sin
+parody https://en.wikipedia.org/wiki/Parody_religion
 philosophical problems -- consciousness
 philosophical problems -- impossibility of proving any truth, even in the fields of logic and mathematics?
 philosophical problems -- mind-body problem

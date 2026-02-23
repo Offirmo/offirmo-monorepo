@@ -9,9 +9,9 @@
 import { strict as assert } from 'node:assert'
 
 import { ExifDateTime } from 'exiftool-vendored'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
-import { getꓽjson_difference } from '@offirmo-private/state-utils'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { TimestampUTCMs } from '@monorepo-private/timestamps'
+import { getꓽjson_difference } from '@monorepo-private/state-utils'
 
 ///////
 // Note: we defaulted on Luxon bc

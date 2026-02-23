@@ -4,7 +4,7 @@ import { expect } from 'chai'
 import sinon from 'sinon'
 import { createLocalStorage } from 'localstorage-ponyfill'
 import { createLogger } from '@offirmo/practical-logger-node'
-import { isꓽRootState } from '@offirmo-private/state-utils'
+import { isꓽRootState } from '@monorepo-private/state-utils'
 import { State, DEMO_STATE, EngagementKey } from '@tbrpg/state'
 import { StorageKey } from './stores/local-storage'
 

@@ -5,7 +5,7 @@ process.env.UDA_OVERRIDE__LOGGER_OA_API_LOGLEVEL = '"silly"'
 process.env.UDA_OVERRIDE__KNEX_DEBUG = 'true'
 import '@offirmo/universal-debug-api-node'
 
-import { get_db, KVs } from '@offirmo-private/db'
+import { get_db, KVs } from '@monorepo-private/db'
 import {
 	OAServerResponseBody,
 	create_server_response_body__data,

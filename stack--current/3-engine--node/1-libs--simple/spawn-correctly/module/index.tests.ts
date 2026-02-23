@@ -7,7 +7,7 @@ import type { SpawnError, ChildProcess } from './index.ts'
 
 /////////////////////////////////////////////////
 
-describe(`@offirmo-private/spawn-correctly`, function() {
+describe(`@monorepo-private/spawn-correctly`, function() {
 
 	describe('error handling', function () {
 

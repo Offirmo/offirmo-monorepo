@@ -7,7 +7,7 @@ import {
 	listenToUncaughtErrors,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,
-} from '@offirmo-private/soft-execution-context--node'
+} from '@monorepo-private/soft-execution-context--node'
 
 
 const logger = createLogger({
@@ -46,7 +46,7 @@ listenToUnhandledRejections()
 decorateWithDetectedEnv()
 
 //import { start } from '../../../../../1-isomorphic/2-libs--cross-cutting/soft-execution-context/module/##doc/examples/app.ts'
-//import { start } from '@offirmo-private/soft-execution-context/foo'
-//import { start } from '@offirmo-private/soft-execution-context/_examples/app.ts'
-//import { start } from '@offirmo-private/soft-execution-context/module/##doc/examples/app.ts'
+//import { start } from '@monorepo-private/soft-execution-context/foo'
+//import { start } from '@monorepo-private/soft-execution-context/_examples/app.ts'
+//import { start } from '@monorepo-private/soft-execution-context/module/##doc/examples/app.ts'
 //start()

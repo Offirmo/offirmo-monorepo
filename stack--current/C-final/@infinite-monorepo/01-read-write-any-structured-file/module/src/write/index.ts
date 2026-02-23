@@ -4,7 +4,7 @@ import { strict as assert } from 'node:assert'
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
 
-import type { JSONObject, AnyFilePath, Immutable } from '@offirmo-private/ts-types'
+import type { JSONObject, AnyFilePath, Immutable } from '@monorepo-private/ts--types'
 
 import type {
 	ContentⳇJson5,

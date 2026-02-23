@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
-import { Immutable } from '@offirmo-private/ts-types'
-import { are_ustate_revision_requirements_met } from '@offirmo-private/state-utils'
+import { Immutable } from '@monorepo-private/ts-types'
+import { are_ustate_revision_requirements_met } from '@monorepo-private/state-utils'
 import { State } from '@tbrpg/state'
 import * as TBRPGState from '@tbrpg/state'
 import { Action, ActionType } from '@tbrpg/interfaces'

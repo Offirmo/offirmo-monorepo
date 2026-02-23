@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import type { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
-import type { CssⳇColor‿str, Url‿str, } from '@offirmo-private/ts-types-web'
+import type { Immutable, IETFLanguageType } from '@monorepo-private/ts--types'
+import type { CssⳇColor‿str, Url‿str, } from '@monorepo-private/ts--types--web'
 
 import type { Category } from '../types.ts'
 

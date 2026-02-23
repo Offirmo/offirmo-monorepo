@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { getꓽrevision } from '@offirmo-private/state-utils'
+import { getꓽrevision } from '@monorepo-private/state-utils'
 
 import get_game_instance from '../services/game-instance-browser'
 import logger from '../services/logger'
-import { getꓽtimestamp } from '@offirmo-private/state-utils/src'
+import { getꓽtimestamp } from '@monorepo-private/state-utils/src'
 
 
 // https://reactjs.org/docs/context.html

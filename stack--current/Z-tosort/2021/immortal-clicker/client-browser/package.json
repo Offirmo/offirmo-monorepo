@@ -7,16 +7,16 @@
 	"private": true,
 
 	"dependencies": {
-		"@offirmo-private/ensure-device-uuid-browser": "^0",
-		"@offirmo-private/favicon-notifications": "^0",
-		"@offirmo-private/features-detection-browser": "^0",
-		"@offirmo-private/marketing-rsrc": "^0",
-		"@offirmo-private/poll-window-variable": "^0",
-		"@offirmo-private/react-error-boundary": "^0",
-		"@offirmo-private/rich-text-format": "^0",
-		"@offirmo-private/rich-text-format-to-react": "^0",
-		"@offirmo-private/soft-execution-context": "^0",
-		"@offirmo-private/soft-execution-context-browser": "^0.0.2",
+		"@monorepo-private/ensure-device-uuid-browser": "^0",
+		"@monorepo-private/favicon-notifications": "^0",
+		"@monorepo-private/features-detection-browser": "^0",
+		"@monorepo-private/marketing-rsrc": "^0",
+		"@monorepo-private/poll-window-variable": "^0",
+		"@monorepo-private/react-error-boundary": "^0",
+		"@monorepo-private/rich-text-format": "^0",
+		"@monorepo-private/rich-text-format-to-react": "^0",
+		"@monorepo-private/soft-execution-context": "^0",
+		"@monorepo-private/soft-execution-context-browser": "^0.0.2",
 		"@offirmo/tiny-singleton": "^0",
 		"@offirmo/universal-debug-api-placeholder": "^1",
 		"@oh-my-rpg/audio-browser": "^0",
@@ -48,7 +48,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7",
-		"@offirmo-private/timestamps": "^0",
+		"@monorepo-private/timestamps": "^0",
 		"npm-run-all": "^4"
 	}
 }

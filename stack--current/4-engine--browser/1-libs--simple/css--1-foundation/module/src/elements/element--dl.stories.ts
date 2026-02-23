@@ -1,1 +1,1 @@
-export * from '@offirmo-private/storypad/stories/html/elements/dl'
+export * from '@monorepo-private/storypad/stories/html/elements/dl'

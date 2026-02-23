@@ -1,4 +1,4 @@
-import type { SocialNetworkLink as SimplerSocialNetworkLink } from '@offirmo-private/ts-types'
+import type { SocialNetworkLink as SimplerSocialNetworkLink } from '@monorepo-private/ts--types'
 
 import type { WithLang } from '../00-base/index.ts'
 

@@ -1,8 +1,8 @@
 import { Enum } from 'typescript-string-enums'
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '@monorepo-private/rich-text-format'
 
-import type { Immutable, JSONObject, JSON } from '@offirmo-private/ts-types'
-import { getꓽschema_versionⵧloose } from '@offirmo-private/state-utils'
+import type { Immutable, JSONObject, JSON } from '@monorepo-private/ts--types'
+import { getꓽschema_versionⵧloose } from '@monorepo-private/state-utils'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { CharacterClass } from '@tbrpg/state--character'

@@ -1,5 +1,5 @@
 
-export const LIB = '📝 @offirmo-private/storypad'
+export const LIB = '📝 @monorepo-private/storypad'
 export const DEBUG = false
 
 export const SEPⵧSEGMENTS = '/'

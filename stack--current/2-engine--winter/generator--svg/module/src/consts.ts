@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////
 
-const LIB = '@offirmo-private/generator--svg'
+const LIB = '@monorepo-private/generator--svg'
 
 const EOL = '\n'
 const TAB = '	'

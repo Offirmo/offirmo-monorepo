@@ -17,7 +17,7 @@ XXX uuid are not what we want! (esp. raw)
 
 
 ```js
-import { UUID, generate_uuid } from '@offirmo-private/uuid'
+import { UUID, generate_uuid } from '@monorepo-private/uuid'
 
 generate_uuid() // "uu1I0D2MihtF1GK0MqE5VtfM"
 ```

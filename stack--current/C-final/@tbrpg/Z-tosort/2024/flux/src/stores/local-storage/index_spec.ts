@@ -2,14 +2,14 @@
 
 import { expect } from 'chai'
 import sinon from 'sinon'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforce_immutability } from '@monorepo-private/state-utils'
 import stable_stringify from 'json-stable-stringify'
 import { createLocalStorage } from 'localstorage-ponyfill'
 import { createLogger } from '@offirmo/practical-logger-node'
-import { getꓽschema_versionⵧloose, WithRevision, WithSchemaVersion } from '@offirmo-private/state-utils'
+import { getꓽschema_versionⵧloose, WithRevision, WithSchemaVersion } from '@monorepo-private/state-utils'
 import { State, DEMO_STATE, SCHEMA_VERSION, migrate_to_latest } from '@tbrpg/state'
 import { create_action_noop } from '@tbrpg/interfaces'
-import { end_of_current_event_loop, all_planned_idle_executed } from '@offirmo-private/async-utils'
+import { end_of_current_event_loop, all_planned_idle_executed } from '@monorepo-private/async-utils'
 
 import { LIB } from '../../consts'
 import { getꓽSEC } from '../../sec.js'

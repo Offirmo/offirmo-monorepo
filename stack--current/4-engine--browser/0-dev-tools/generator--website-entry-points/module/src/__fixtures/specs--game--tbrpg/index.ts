@@ -2,8 +2,8 @@ import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
-import { AUTHOR } from '@offirmo-private/marketing'
+import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@monorepo-private/ts--types--web'
+import { AUTHOR } from '@monorepo-private/marketing/offirmo'
 
 import type { WebProperty, WebPropertyEntryPointSpec } from '../..'
 

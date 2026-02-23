@@ -2,9 +2,9 @@ import path from 'path'
 
 import assert from 'tiny-invariant'
 import stylize_string from 'chalk'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { prettifyꓽjson } from '@offirmo-private/prettify-any'
-import { enforceꓽimmutable } from '@offirmo-private/state-utils'
+import type { Immutable } from '@monorepo-private/ts--types'
+import { prettifyꓽjson } from '@monorepo-private/prettify-any'
+import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { LIB as APP } from '../../consts.js'
 import { AbsolutePath, RelativePath } from '../../types.js'

@@ -1,8 +1,8 @@
 /* TypeScript types useful when manipulating email related data
  */
 
-import type { Email‿str } from '@offirmo-private/ts-types'
-import { hasꓽemail_structure } from '@offirmo-private/normalize-string'
+import type { Email‿str } from '@monorepo-private/ts--types'
+import { hasꓽemail_structure } from '@monorepo-private/normalize-string'
 
 /////////////////////////////////////////////////
 

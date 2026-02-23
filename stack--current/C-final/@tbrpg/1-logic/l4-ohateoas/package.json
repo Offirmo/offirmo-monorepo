@@ -1,8 +1,6 @@
 {
 	"name": "@tbrpg/l4-ohateoas",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -14,10 +12,10 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/ohateoas": "*",
-		"@offirmo-private/rich-text-format": "*",
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/ohateoas": "*",
+		"@monorepo-private/rich-text-format": "*",
+		"@monorepo-private/timestamps": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"@tbrpg/interfaces": "*",
 		"@tbrpg/state": "*",
 		"@tbrpg/ui--rich-text": "*",
@@ -35,10 +33,10 @@
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ohateoas-browser--react": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ohateoas-browser--react": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

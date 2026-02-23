@@ -1,7 +1,7 @@
 import {
 	getRootSXC,
 	decorateWithDetectedEnv,
-} from '@offirmo-private/soft-execution-context--browser'
+} from '@monorepo-private/soft-execution-context--browser'
 
 import { LIB } from '../consts.ts'
 //import { VERSION } from '../../entry-points/build.ts'

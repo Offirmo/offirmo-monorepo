@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/interview--plf",
+	"name": "@monorepo-private/interview--plf",
 	"version": "0.0.1",
 	"private": true,
 
@@ -29,8 +29,8 @@
 	},
 	"devDependencies": {
 		"serve": "^14",
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"npm-run-all": "^4"
 	}
 }

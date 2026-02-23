@@ -1,15 +1,15 @@
 import { expect } from 'chai'
 
-import { normalizeꓽurl } from '@offirmo-private/normalize-string'
+import { normalizeꓽurl } from '@monorepo-private/normalize-string'
 import { getꓽuriⵧnormalized‿str } from './selectors.ts'
 
 /////////////////////////////////////////////////
 
-describe(`@offirmo-private/ts-types-web -- 01-links -- selectors`, function() {
+describe(`@monorepo-private/ts--types--web -- 01-links -- selectors`, function() {
 
 	describe('getꓽuriⵧnormalized‿str()', function () {
 
-		// copied from normalizeꓽurl() from @offirmo-private/normalize-string
+		// copied from normalizeꓽurl() from @monorepo-private/normalize-string
 		const TEST_CASES: any = {
 			// mailto:
 			'mailto:a@b.c': 'mailto:a@b.c',

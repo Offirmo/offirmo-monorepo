@@ -1,8 +1,8 @@
 import { Enum } from 'typescript-string-enums'
-import { Immutable } from '@offirmo-private/ts-types'
-import { BaseAction as _BaseAction } from '@offirmo-private/state-utils'
-import { UUID } from '@offirmo-private/uuid'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { Immutable } from '@monorepo-private/ts--types'
+import { BaseAction as _BaseAction } from '@monorepo-private/state-utils'
+import { UUID } from '@monorepo-private/uuid'
+import { TimestampUTCMs, get_UTC_timestamp_ms } from '@monorepo-private/timestamps'
 
 import { State } from '../types'
 import {

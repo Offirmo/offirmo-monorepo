@@ -1,4 +1,4 @@
-import { type WithUUID, generate_uuid } from '@offirmo-private/uuid'
+import { type WithUUID, generate_uuid } from '@monorepo-private/uuid'
 
 import { ElementType, type Element} from './types.ts'
 

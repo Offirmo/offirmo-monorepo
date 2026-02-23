@@ -1,12 +1,12 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@monorepo-private/ts--types'
 
 import { getLogger } from '@offirmo/universal-debug-api-placeholder'
 const root_logger = getLogger()
 root_logger.setLevel('silly')
 
-import * as RichText from '@offirmo-private/rich-text-format'
-import renderⵧto_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import * as RichText from '@monorepo-private/rich-text-format'
+import renderⵧto_terminal from '@monorepo-private/rich-text-format--to-terminal'
 
 import * as State from '../state/index.js'
 import { renderⵧgeneric } from './generic.js'

@@ -4,7 +4,7 @@ import { getꓽRNGⵧISAAC32 } from '@offirmo/random'
 import { generate_uuid, UUID_LENGTH } from './index.ts'
 
 
-describe('@offirmo-private/uuid - generate', function() {
+describe('@monorepo-private/uuid - generate', function() {
 
 	describe('generate_uuid()', function() {
 

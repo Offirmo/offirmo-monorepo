@@ -1,6 +1,6 @@
-import type { Meta‿v3, Story‿v3, StoryContext } from '@offirmo-private/storypad/types'
+import type { Meta‿v3, Story‿v3, StoryContext } from '@monorepo-private/storypad/types'
 
-import { decorateWithCSSDiagnostics } from '@offirmo-private/storypad/decorators/diagnostics'
+import { decorateWithCSSDiagnostics } from '@monorepo-private/storypad/decorators/diagnostics'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
