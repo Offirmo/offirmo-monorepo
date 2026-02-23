@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
-		name="@offirmo-private/print-error-to-terminal -- Demo"
+		name="@monorepo-private/print-error-to-terminal -- Demo"
 		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/0-meta/build-tools/print-error--to-terminal"
 		path-to-js-file="module/src/##doc/demo.ts">
 		<node-interpreter>project</node-interpreter>

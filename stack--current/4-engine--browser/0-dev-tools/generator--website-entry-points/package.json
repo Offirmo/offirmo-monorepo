@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/generator--website-entry-points",
+	"name": "@monorepo-private/generator--website-entry-points",
 	"description": "Generator of all the known entry points for a website/webapp: index.html, webmanifest, favicons, 404, well-known, etc.",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,12 +13,12 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/fs--output-file": "*",
-		"@offirmo-private/generator--html": "*",
-		"@offirmo-private/generator--svg": "*",
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/fs--output-file": "*",
+		"@monorepo-private/generator--html": "*",
+		"@monorepo-private/generator--svg": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/timestamps": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"@resvg/resvg-js": "^2",
 		"chroma-js": "^3",
 		"prettier": "^3",
@@ -28,16 +26,16 @@
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/generator--website-entry-points\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/generator--website-entry-points\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
 		"demo": "node --experimental-strip-types ./module/##demos/demo--pwa--tbrpg/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/marketing": "*",
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/marketing": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/chroma-js": "^3",
 		"@types/node": "^24",

@@ -3,7 +3,6 @@
 	"description": "Common internal code for Offirmo’s practical logger",
 	"version": "3.1.0",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
@@ -33,7 +32,7 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",

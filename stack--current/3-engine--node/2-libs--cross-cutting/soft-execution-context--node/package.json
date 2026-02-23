@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/soft-execution-context--node",
+	"name": "@monorepo-private/soft-execution-context--node",
 	"description": "node-specific Software Execution Context",
 	"version": "0.0.2",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": true,
 	"type": "module",
@@ -12,22 +10,22 @@
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/soft-execution-context--node\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/soft-execution-context--node\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts",
 		"demo": "node --experimental-strip-types ./module/##doc/demo.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"@offirmo/practical-logger-node": "^0.3",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",

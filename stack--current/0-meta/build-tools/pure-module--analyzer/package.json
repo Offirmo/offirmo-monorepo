@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/pure-module--analyzer",
+	"name": "@monorepo-private/pure-module--analyzer",
 	"description": "Walk/parse a pure module and extract infos from it in order to generate build-related files",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/file-entry": "*",
-		"@offirmo-private/pkg-infos-resolver": "*",
+		"@monorepo-private/file-entry": "*",
+		"@monorepo-private/pkg-infos-resolver": "*",
 		"ignore-walk": "^8",
 		"json5": "^2",
 		"parse-imports-ts": "^1",
@@ -24,14 +22,14 @@
 		"write-json-file": "^7"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/pure-module--analyzer\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/pure-module--analyzer\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts",
 		"demo": "node --experimental-strip-types ./module/##demo/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/ignore-walk": "^4",
 		"@types/node": "^24",

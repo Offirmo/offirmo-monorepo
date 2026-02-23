@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/soft-execution-context--browser",
+	"name": "@monorepo-private/soft-execution-context--browser",
 	"description": "browser-specific Software Execution Context",
 	"version": "0.0.2",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": true,
 	"type": "module",
@@ -12,7 +10,7 @@
 	},
 	"source": "module/index.ts",
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
@@ -22,16 +20,16 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/soft-execution-context--browser\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/soft-execution-context--browser\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/soft-execution-context": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

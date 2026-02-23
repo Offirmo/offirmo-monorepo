@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/data-structures",
+	"name": "@monorepo-private/data-structures",
 	"description": "Various advanced data structure, esp. graphs and trees",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,19 +13,19 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/normalize-string": "*",
+		"@monorepo-private/normalize-string": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/data-structures\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/data-structures\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

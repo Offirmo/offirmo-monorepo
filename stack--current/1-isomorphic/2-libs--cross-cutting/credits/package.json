@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/credits",
+	"name": "@monorepo-private/credits",
 	"description": "Lib for crediting creators (mainly of assets) and tracking the recent usage of assets for dynamic crediting",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": true,
 	"type": "module",
@@ -16,20 +14,20 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/marketing": "*",
+		"@monorepo-private/marketing": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/credits\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/credits\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
 		"demo": "node --experimental-strip-types ./module/##demo/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

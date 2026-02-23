@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/type-detection",
+	"name": "@monorepo-private/type-detection",
 	"description": "Primitive type guards and assertions",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -19,14 +17,14 @@
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/type-detection\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/type-detection\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

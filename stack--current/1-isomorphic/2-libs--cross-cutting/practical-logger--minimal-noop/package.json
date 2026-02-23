@@ -3,7 +3,6 @@
 	"description": "Implementation of Offirmo’s practical logger doing nothing at all",
 	"version": "3.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
@@ -30,7 +29,7 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/practical-logger-core": "^3",
 		"@offirmo/practical-logger-types": "^3",
 		"@offirmo/unit-test-toolbox": "^9",

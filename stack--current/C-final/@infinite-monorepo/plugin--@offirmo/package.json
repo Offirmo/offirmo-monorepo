@@ -1,8 +1,6 @@
 {
 	"name": "@infinite-monorepo/plugin--@offirmo",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -25,8 +23,8 @@
 	},
 	"devDependencies": {
 		"@infinite-monorepo/types": "*",
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

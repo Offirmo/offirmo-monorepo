@@ -1,8 +1,6 @@
 {
-	"name": "@offirmo-private/offirmo-api--interface",
+	"name": "@monorepo-private/offirmo-api--interface",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -19,13 +17,13 @@
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/offirmo-api--interface\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/offirmo-api--interface\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",

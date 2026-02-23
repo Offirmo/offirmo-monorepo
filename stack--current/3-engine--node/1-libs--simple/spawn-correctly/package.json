@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/spawn-correctly",
+	"name": "@monorepo-private/spawn-correctly",
 	"description": "spawn a process correctly and safely",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -20,13 +18,13 @@
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/spawn-correctly\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/spawn-correctly\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/cross-spawn": "^6",
 		"@types/node": "^24",

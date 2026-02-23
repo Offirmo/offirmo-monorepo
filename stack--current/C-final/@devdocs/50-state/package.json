@@ -1,8 +1,6 @@
 {
 	"name": "@devdocs/state",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -23,8 +21,8 @@
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@devdocs/types": "^0.0.1",
-		"@offirmo-private/monorepo-scripts": "*",
+		"@devdocs/types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

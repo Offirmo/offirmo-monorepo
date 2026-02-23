@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
-		name="@offirmo-private/ohateoas -- Demo"
+		name="@monorepo-private/ohateoas -- Demo"
 		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/ohateoas"
 		path-to-js-file="module/src/~~demo/index.ts">
 		<node-interpreter>project</node-interpreter>

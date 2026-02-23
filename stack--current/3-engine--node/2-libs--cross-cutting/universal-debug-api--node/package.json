@@ -3,7 +3,6 @@
 	"description": "Implementation of Offirmo’s Universal Debug Api for node",
 	"version": "0.2.0",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
@@ -14,7 +13,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/type-detection": "*",
+		"@monorepo-private/type-detection": "*",
 		"@offirmo/practical-logger-core": "^3",
 		"@offirmo/practical-logger-node": "^0.3",
 		"@offirmo/universal-debug-api-interface": "^1"
@@ -34,7 +33,7 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

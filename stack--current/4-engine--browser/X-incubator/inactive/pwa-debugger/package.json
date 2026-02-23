@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/viewport-debugger",
+	"name": "@monorepo-private/viewport-debugger",
 	"description": "a tool for PWA",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -31,18 +31,18 @@
 
 
 	"dependencies": {
-		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/css--foundation": "*",
-		"@offirmo-private/css--utils--diagnostics": "*",
-		"@offirmo-private/browser-features-detection": "*",
-		"@offirmo-private/poll-window-variable": "^0",
-		"@offirmo-private/react--error-boundary": "*",
-		"@offirmo-private/rich-text-format": "*",
-		"@offirmo-private/rich-text-format--to-react": "^0",
-		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/soft-execution-context--browser": "*",
-		"@offirmo-private/state-utils": "*",
-		"@offirmo-private/timestamps": "*",
+		"@monorepo-private/async-utils": "^0",
+		"@monorepo-private/css--foundation": "*",
+		"@monorepo-private/css--utils--diagnostics": "*",
+		"@monorepo-private/browser-features-detection": "*",
+		"@monorepo-private/poll-window-variable": "^0",
+		"@monorepo-private/react--error-boundary": "*",
+		"@monorepo-private/rich-text-format": "*",
+		"@monorepo-private/rich-text-format--to-react": "^0",
+		"@monorepo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context--browser": "*",
+		"@monorepo-private/state-utils": "*",
+		"@monorepo-private/timestamps": "*",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"actual": "^0.4",
 		"react": "^19",
@@ -51,9 +51,9 @@
 		"tslib": "^2"
 	},
 	"devDependencies": {
-		"@offirmo-private/generator--website-entry-points": "*",
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/generator--website-entry-points": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "*",
 		"@size-limit/file": "^11",
 		"npm-run-all": "^4"

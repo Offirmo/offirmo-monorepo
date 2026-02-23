@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/css--foundation",
+	"name": "@monorepo-private/css--foundation",
 	"description": "A thin layer of universal, semantically great, strongly recommended modern CSS",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": true,
 	"type": "module",
@@ -20,7 +18,7 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/css--foundation\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/css--foundation\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"check": "run-s check--ts",
@@ -34,10 +32,10 @@
 		"build": "run-s _build:bundle"
 	},
 	"devDependencies": {
-		"@offirmo-private/css--reset": "*",
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/css--reset": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"lightningcss": "^1",

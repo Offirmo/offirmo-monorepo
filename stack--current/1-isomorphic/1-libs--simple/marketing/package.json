@@ -1,16 +1,16 @@
 {
-	"name": "@offirmo-private/marketing",
+	"name": "@monorepo-private/marketing",
 	"description": "Offirmo marketing definitions",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/x/index.ts",
+		"./offirmo": "./module/src/offirmo/_entrypoint.ts",
+		"./x": "./module/src/x/_entrypoint.ts"
 	},
-	"source": "module/src/index.ts",
+	"source": "module/src/x/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -18,16 +18,16 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/marketing\" && tsc --noEmit",
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/x/**/*.tests.ts'",
+		"check--ts": "echo \"@monorepo-private/marketing\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

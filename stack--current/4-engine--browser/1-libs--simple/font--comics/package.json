@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/font--comics",
+	"name": "@monorepo-private/font--comics",
 	"description": "Graphical assets for an RPG UI: fonts, comic style",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": true,
 	"type": "module",
@@ -20,7 +18,7 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/font--comics\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/font--comics\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s check--ts",
@@ -28,9 +26,9 @@
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

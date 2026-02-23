@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/poll-window-variable",
+	"name": "@monorepo-private/poll-window-variable",
 	"description": "Poll the window until the presence of a given variable",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,21 +13,21 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/poll": "*",
+		"@monorepo-private/poll": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/poll-window-variable\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/poll-window-variable\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

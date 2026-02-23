@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
-		name="@offirmo-private/cli--social -- Sandbox"
+		name="@monorepo-private/cli--social -- Sandbox"
 		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/C-final/single-pkg/cli--social"
 		path-to-js-file="module/src/~~sandbox/index.ts">
 		<node-interpreter>project</node-interpreter>

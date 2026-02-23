@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false"
-		name="@offirmo-private/minisites-generation -- Sandbox"
+		name="@monorepo-private/minisites-generation -- Sandbox"
 		type="NodeJSConfigurationType"
 		path-to-node="$USER_HOME$/.nvm/versions/node/v22.17.1/bin/node"
 		node-parameters="--experimental-strip-types"

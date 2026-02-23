@@ -2,8 +2,6 @@
 	"name": "@oh-my-rpg/state--prng",
 	"description": "evolving serializable pseudo random generator state and reducer",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -12,12 +10,12 @@
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/state-utils": "*",
-		"@offirmo-private/uuid": "*",
+		"@monorepo-private/state-utils": "*",
+		"@monorepo-private/uuid": "*",
 		"@offirmo/random": "^3",
 		"tiny-invariant": "^1"
 	},
@@ -29,10 +27,10 @@
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/state-migration-tester": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/soft-execution-context": "*",
+		"@monorepo-private/state-migration-tester": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/practical-logger-types": "^3",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",

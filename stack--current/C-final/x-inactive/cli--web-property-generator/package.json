@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/minisites-generation",
+	"name": "@monorepo-private/minisites-generation",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -11,14 +11,14 @@
 	},
 	"source": "module/sandbox/index.ts",
 	"dependencies": {
-		"@offirmo-private/generator--website-entry-points": "*",
+		"@monorepo-private/generator--website-entry-points": "*",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/minisites-generation\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/minisites-generation\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s check--ts",
@@ -31,9 +31,9 @@
 		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

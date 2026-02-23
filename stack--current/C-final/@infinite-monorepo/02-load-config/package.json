@@ -1,8 +1,6 @@
 {
 	"name": "@infinite-monorepo/load-config",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,7 +13,7 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/read-write-any-structured-file": "*",
-		"@offirmo-private/fs--ls": "*",
+		"@monorepo-private/fs--ls": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -26,8 +24,8 @@
 		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

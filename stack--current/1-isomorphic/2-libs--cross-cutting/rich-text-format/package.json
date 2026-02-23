@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/rich-text-format",
+	"name": "@monorepo-private/rich-text-format",
 	"description": "A rich text format for rendering to different platforms: ascii, html...",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,24 +13,24 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/type-detection": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/type-detection": "*",
 		"memoize-one": "^6",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/rich-text-format\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/rich-text-format\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts",
 		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

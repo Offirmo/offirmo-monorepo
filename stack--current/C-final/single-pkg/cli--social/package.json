@@ -1,8 +1,6 @@
 {
-	"name": "@offirmo-private/cli--social",
+	"name": "@monorepo-private/cli--social",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -14,21 +12,21 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/type-detection": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/type-detection": "*",
 		"temporal-polyfill": "^0.3",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/cli--social\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/cli--social\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts",
 		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

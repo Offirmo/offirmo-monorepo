@@ -3,7 +3,6 @@
 	"description": "node-specific practical logger",
 	"version": "0.3.0",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
@@ -14,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/prettify-any": "*",
-		"@offirmo-private/print-error-to-terminal": "*",
+		"@monorepo-private/prettify-any": "*",
+		"@monorepo-private/print-error-to-terminal": "*",
 		"@offirmo/practical-logger-core": "^3",
 		"@offirmo/practical-logger-types": "^3",
 		"chalk": "^5"
@@ -36,7 +35,7 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

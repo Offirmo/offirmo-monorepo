@@ -3,7 +3,6 @@
 	"description": "TypeScript types for a universal debug API (no code)",
 	"version": "1.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
@@ -30,7 +29,7 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

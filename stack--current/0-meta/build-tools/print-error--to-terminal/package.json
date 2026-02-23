@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/print-error-to-terminal",
+	"name": "@monorepo-private/print-error-to-terminal",
 	"description": "nicely print an error object to a terminal (using escape codes)",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -21,14 +19,14 @@
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/print-error-to-terminal\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/print-error-to-terminal\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts",
 		"demo": "node --experimental-strip-types ./module/src/##doc/demo.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"strip-ansi": "^7",

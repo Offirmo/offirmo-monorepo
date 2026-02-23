@@ -1,8 +1,6 @@
 {
 	"name": "@devdocs/db",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -14,7 +12,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@devdocs/types": "^0.0.1",
+		"@devdocs/types": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -26,10 +24,10 @@
 	},
 	"devDependencies": {
 		"@infinite-monorepo/read-write-any-structured-file": "*",
-		"@offirmo-private/file-entry": "*",
-		"@offirmo-private/fs--ls": "*",
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/file-entry": "*",
+		"@monorepo-private/fs--ls": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

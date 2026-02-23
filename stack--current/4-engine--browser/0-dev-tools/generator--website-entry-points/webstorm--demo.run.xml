@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
-		name="@offirmo-private/generator--website-entry-points -- Demo"
+		name="@monorepo-private/generator--website-entry-points -- Demo"
 		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/4-engine--browser/0-dev-tools/generator--website-entry-points"
 		path-to-js-file="module/##demos/demo--pwa--tbrpg/index.ts">
 		<node-interpreter>project</node-interpreter>

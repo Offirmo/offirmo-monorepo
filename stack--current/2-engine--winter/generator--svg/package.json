@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/generator--svg",
+	"name": "@monorepo-private/generator--svg",
 	"description": "Dynamic generator of SVG images",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -16,14 +14,14 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/generator--svg\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/generator--svg\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s tests check--ts",
@@ -32,10 +30,10 @@
 		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/toolbox--parcel": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/toolbox--parcel": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

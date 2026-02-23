@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/droppable-feature--egress--navigation",
+	"name": "@monorepo-private/droppable-feature--egress--navigation",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -17,13 +17,13 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/droppable-feature--egress--navigation\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/droppable-feature--egress--navigation\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

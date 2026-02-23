@@ -1,8 +1,6 @@
 {
-	"name": "@offirmo-private/db--generic-core--migrations",
+	"name": "@monorepo-private/db--generic-core--migrations",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -11,7 +9,7 @@
 	},
 	"source": "module/deps.ts",
 	"dependencies": {
-		"@offirmo-private/normalize-string": "*",
+		"@monorepo-private/normalize-string": "*",
 		"knex": "^3",
 		"pg": "^8",
 		"pg-connection-string": "^2",
@@ -19,7 +17,7 @@
 		"tslib": "^2"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/db--generic-core--migrations\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/db--generic-core--migrations\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
@@ -32,7 +30,7 @@
 		"new": "knex migrate:make TODO -x ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"@types/pg": "^8",

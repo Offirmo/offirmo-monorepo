@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/ohateoas-browser--terminal",
+	"name": "@monorepo-private/ohateoas-browser--terminal",
 	"description": "Terminal implementation of a Offirmo’s Hypermedia Architecture browser",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,25 +13,25 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/ohateoas": "*",
-		"@offirmo-private/prettify-any": "*",
-		"@offirmo-private/rich-text-format": "*",
-		"@offirmo-private/rich-text-format--to-terminal": "*",
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/ohateoas": "*",
+		"@monorepo-private/prettify-any": "*",
+		"@monorepo-private/rich-text-format": "*",
+		"@monorepo-private/rich-text-format--to-terminal": "*",
+		"@monorepo-private/timestamps": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"tiny-invariant": "^1",
 		"zx": "^8"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/ohateoas-browser--terminal\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/ohateoas-browser--terminal\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

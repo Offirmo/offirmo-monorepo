@@ -2,8 +2,6 @@
 	"name": "@oh-my-rpg/state--engagement",
 	"description": "feedback messages state and reducer",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -12,11 +10,11 @@
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/state-utils": "*",
+		"@monorepo-private/state-utils": "*",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
@@ -28,10 +26,10 @@
 		"_check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/state-migration-tester": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/soft-execution-context": "*",
+		"@monorepo-private/state-migration-tester": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

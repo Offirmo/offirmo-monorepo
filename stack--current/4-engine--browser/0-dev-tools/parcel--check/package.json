@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/parcel--check",
+	"name": "@monorepo-private/parcel--check",
 	"description": "Unfortunately parcel JS is very unstable 😢 This basic project tries to use it in a very simple way, to pinpoint issues.",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -18,7 +16,7 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/parcel--check\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/parcel--check\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"check": "run-s check--ts",
@@ -26,9 +24,9 @@
 		"start": "npm-run-all clean --parallel _start:parcel:main"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/storypad": "*",
-		"@offirmo-private/toolbox--parcel": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/storypad": "*",
+		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"typescript": "^5"

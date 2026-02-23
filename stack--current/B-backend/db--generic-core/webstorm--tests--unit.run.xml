@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false" name="@offirmo-private/db--generic-core -- TESTS -- UNIT" type="mocha-javascript-test-runner">
+	<configuration default="false" name="@monorepo-private/db--generic-core -- TESTS -- UNIT" type="mocha-javascript-test-runner">
 		<node-interpreter>project</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>

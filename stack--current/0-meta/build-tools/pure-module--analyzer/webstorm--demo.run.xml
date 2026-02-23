@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" type="NodeJSConfigurationType"
-		name="@offirmo-private/pure-module--analyzer -- Demo"
+		name="@monorepo-private/pure-module--analyzer -- Demo"
 		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/0-meta/build-tools/pure-module--analyzer"
 		path-to-js-file="module/##demo/index.ts">
 		<node-interpreter>project</node-interpreter>

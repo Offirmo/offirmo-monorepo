@@ -1,8 +1,6 @@
 {
-	"name": "@offirmo-private/fs--output-file",
+	"name": "@monorepo-private/fs--output-file",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -14,17 +12,17 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/promise-try": "*",
+		"@monorepo-private/promise-try": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/fs--output-file\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/fs--output-file\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

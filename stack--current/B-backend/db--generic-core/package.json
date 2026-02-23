@@ -1,8 +1,6 @@
 {
-	"name": "@offirmo-private/db--generic-core",
+	"name": "@monorepo-private/db--generic-core",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -14,9 +12,9 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/json-stable-stringify": "*",
-		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/state-utils": "*",
+		"@monorepo-private/json-stable-stringify": "*",
+		"@monorepo-private/normalize-string": "*",
+		"@monorepo-private/state-utils": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/universal-debug-api-placeholder": "^1",
 		"knex": "^3",
@@ -25,14 +23,14 @@
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/db--generic-core\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/db--generic-core\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

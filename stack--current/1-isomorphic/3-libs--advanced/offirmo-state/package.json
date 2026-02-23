@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/state-utils",
+	"name": "@monorepo-private/state-utils",
 	"description": "Base types + base utils for Offirmo style states",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -16,8 +14,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/ts-types": "*",
+		"@monorepo-private/timestamps": "*",
+		"@monorepo-private/ts--types": "*",
 		"icepick": "^2",
 		"jsondiffpatch": "^0.7",
 		"memoize-one": "^6",
@@ -26,14 +24,14 @@
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/state-utils\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/state-utils\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/soft-execution-context": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/soft-execution-context": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/icepick": "^2",

@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/utils--bolt",
+	"name": "@monorepo-private/utils--bolt",
 	"description": "Bolt monorepo related utils",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -18,14 +16,14 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/utils--bolt\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/utils--bolt\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
 		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",

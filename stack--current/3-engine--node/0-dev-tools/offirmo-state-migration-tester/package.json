@@ -1,9 +1,7 @@
 {
-	"name": "@offirmo-private/state-migration-tester",
+	"name": "@monorepo-private/state-migration-tester",
 	"description": "helper for testing migrations",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
-	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
@@ -15,10 +13,10 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/fs--ls": "*",
-		"@offirmo-private/prettify-any": "*",
-		"@offirmo-private/state-utils": "*",
-		"@offirmo-private/timestamps": "*",
+		"@monorepo-private/fs--ls": "*",
+		"@monorepo-private/prettify-any": "*",
+		"@monorepo-private/state-utils": "*",
+		"@monorepo-private/timestamps": "*",
 		"jsondiffpatch": "^0.7",
 		"load-json-file": "^7",
 		"tiny-invariant": "^1",
@@ -26,13 +24,13 @@
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@offirmo-private/state-migration-tester\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/state-migration-tester\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
+		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"npm-run-all": "^4",
