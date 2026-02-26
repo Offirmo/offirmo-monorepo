@@ -9,7 +9,7 @@ import { WEBSITE } from '@devdocs/marketing'
 /////////////////////////////////////////////////
 const SPEC: WebPropertyEntryPointSpec = {
 	...WEBSITE,
-	...PRESETꘌblog,
+	//...PRESETꘌblog,
 
 	/////// SPA
 	isꓽcatching_all_routes: true,

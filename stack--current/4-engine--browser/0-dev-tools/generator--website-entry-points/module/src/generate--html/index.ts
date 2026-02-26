@@ -4,6 +4,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@monorepo-private/ts--types'
 
+import { DIR_FILES_TO_SERVE } from '../consts.ts'
 import type { WebPropertyEntryPointSpec, EntryPoints } from '../types.ts'
 import {
 	getꓽbasenameⵧindexᐧhtml,
@@ -35,29 +36,46 @@ function generateꓽerror_handling(spec: Immutable<WebPropertyEntryPointSpec>): 
 	const needsꓽ404ᐧhtml = !spec.host || !needsꓽerrorᐧhtml
 
 	return {
-			...(needsꓽerrorᐧhtml && { [getꓽbasenameⵧerrorᐧhtml(spec)]: generateꓽerrorᐧhtml(spec) }),
-			...(needsꓽ404ᐧhtml && { '404.html': generateꓽ404ᐧhtml(spec) }),
+			...(needsꓽerrorᐧhtml && { [`${DIR_FILES_TO_SERVE}/${getꓽbasenameⵧerrorᐧhtml(spec)}`]: generateꓽerrorᐧhtml(spec) }),
+			...(needsꓽ404ᐧhtml && { [`${DIR_FILES_TO_SERVE}/404.html}`]: generateꓽ404ᐧhtml(spec) }),
 		}
 }
 
 function generateꓽcomplimentary(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
-	if (spec.isꓽcatching_all_routes)
+	if (spec.isꓽcatching_all_routes) {
+		// TODO review, could be more complex than that, ex. priorities to assets
 		return {}
+	}
 
+	// ex. footer https://clerk.com/blog/zod-fellowship
 	return {
-		[getꓽbasenameⵧaboutᐧhtml(spec)]: generateꓽaboutᐧhtml(spec),
-		[getꓽbasenameⵧcontactᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
-		[getꓽbasenameⵧprivacy_policyᐧhtml(spec)]: generateꓽprivacy_policyᐧhtml(spec),
-		[getꓽbasenameⵧsupportᐧhtml(spec)]: generateꓽsupportᐧhtml(spec),
-		[getꓽbasenameⵧterms_and_conditionsᐧhtml(spec)]: generateꓽterms_and_conditionsᐧhtml(spec),
-
+		/////// technical
 		...generateꓽerror_handling(spec),
+
+		/////// Resources
+		// TODO changelog
+
+		/////// Org/Company details
+		[`${DIR_FILES_TO_SERVE}/${getꓽbasenameⵧaboutᐧhtml(spec)}`]: generateꓽaboutᐧhtml(spec),
+		// TODO careers
+		// TODO blog
+		[`${DIR_FILES_TO_SERVE}/${getꓽbasenameⵧsupportᐧhtml(spec)}`]: generateꓽsupportᐧhtml(spec),
+		[`${DIR_FILES_TO_SERVE}/${getꓽbasenameⵧcontactᐧhtml(spec)}`]: generateꓽcontactᐧhtml(spec),
+		// TODO brand assets
+
+		/////// Legal
+		[`${DIR_FILES_TO_SERVE}/${getꓽbasenameⵧterms_and_conditionsᐧhtml(spec)}`]: generateꓽterms_and_conditionsᐧhtml(spec),
+		// TODO Terms of engagement = support <=> users
+		[`${DIR_FILES_TO_SERVE}/${getꓽbasenameⵧprivacy_policyᐧhtml(spec)}`]: generateꓽprivacy_policyᐧhtml(spec),
+		// TODO Data Processing Addendum
+		// TODO cookie management
 	}
 }
 
 function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 	return {
-		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
+		[`${DIR_FILES_TO_SERVE}/${getꓽbasenameⵧindexᐧhtml(spec)}`]: generateꓽindexᐧhtml(spec),
+
 		'~~gen/logs/spec.html.json': JSON.stringify(getꓽhtml_doc_spec(spec), undefined, '	'),
 
 		...generateꓽcomplimentary(spec),

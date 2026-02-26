@@ -7,9 +7,9 @@
  * We keep it but we improve it.
  */
 
-code,
-kbd,
 pre,
+code:not(pre code), /* no double styling for <code> already inside a <pre> */
+kbd,
 samp {
 	/* First cancel the browser-engine level font resizing.
 	 * Strangely, the solution is to redefine the font-family twice.

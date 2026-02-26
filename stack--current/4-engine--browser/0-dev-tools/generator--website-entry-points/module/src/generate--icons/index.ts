@@ -4,6 +4,7 @@ import { Resvg } from '@resvg/resvg-js'
 import type { Immutable } from '@monorepo-private/ts--types'
 import { getꓽsvg‿str, createꓽfrom_emoji, type Svg‿str } from '@monorepo-private/generator--svg'
 
+import { DIR_FILES_TO_SERVE } from '../consts.ts'
 import type { WebPropertyEntryPointSpec, EntryPoints } from '../types.ts'
 import { getꓽicon__sizes, getꓽiconⵧemoji, getꓽiconⵧsvg, getꓽicon__path } from '../selectors/index.ts'
 
@@ -74,7 +75,7 @@ function generateꓽfixed_sizes(spec: Immutable<WebPropertyEntryPointSpec>): Ent
 function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 	return {
 		// size-less version (SVG) if possible
-		...(getꓽiconⵧsvg(spec) && { [getꓽicon__path(spec, null)]: generateꓽfile(spec, null) }),
+		...(getꓽiconⵧsvg(spec) && { [`${DIR_FILES_TO_SERVE}/${getꓽicon__path(spec, null)}`]: generateꓽfile(spec, null) }),
 
 		...generateꓽfixed_sizes(spec),
 	}

@@ -32,16 +32,20 @@ function inferꓽchannel(
 		if (currentWindow.location.hostname === URLⵧCANONICAL‿obj.hostname) return 'prod'
 	}
 
-	// then detect common "hosted" locations, which mean staging
+	// then detect common "hosted" locations, which means "public but not canonical" = ~staging (YMMV)
 	if (currentWindow.location.hostname.endsWith('.netlify.app')) return 'staging'
 	if (currentWindow.location.hostname.endsWith('.github.io')) return 'staging'
-	if (currentWindow.location.hostname.endsWith('.pages.dev')) return 'staging' // cloudflare
+	if (currentWindow.location.hostname.endsWith('.vercel.app')) return 'staging'
+	if (currentWindow.location.hostname.endsWith('.pages.dev')) return 'staging' // cloudflare pages
+	if (currentWindow.location.hostname.endsWith('.workers.dev')) return 'staging' // cloudflare workers
 	if (currentWindow.location.hostname.endsWith('.cloudfront.net')) return 'staging' // AWS
 
 	// TODO 1D cordova
 	// TODO 1D itch.io
 
 	// everything else is unknown = unsafe
+	// XXX TODO REVIEW: in "separation of concerns" / "shearing layers" the app may not know its canonical URL (and not care)
+	// so 'prod' could be the right answer. esp. if ending with '.com' or '.org'
 	return 'dev'
 }
 

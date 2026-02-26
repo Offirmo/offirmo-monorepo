@@ -279,6 +279,8 @@ domain names = .crypto https://support.unstoppabledomains.com/support/solutions/
 domain names = .eth
 domain names = .xyz introduced in 2014, but "top 5 for malicious domain registrations [2024]" https://en.wikipedia.org/wiki/.xyz
 dominance = coin dominance (BitCoin) https://www.coingecko.com/en/charts/bitcoin-dominance
+dWebsite -- .limo https://eth.limo/
+dWebsite https://eth-limo.gitbook.io/documentation/introduction/what-is-a-dwebsite
 DYOR
 EIP-1559 (Type 2) transactions
 EIP-6963: Multi Injected Provider Discovery = Using window events to announce injected Wallet Providers https://eips.ethereum.org/EIPS/eip-6963

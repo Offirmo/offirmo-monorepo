@@ -6,6 +6,7 @@ import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
 import type { Immutable, AbsolutePath } from '@monorepo-private/ts--types'
 
+import { DIR_FILES_TO_SERVE } from './consts.ts'
 import type { EntryPoints, WebPropertyEntryPointSpec } from './types.ts'
 
 import { needsꓽwebmanifest, getꓽbasenameⵧwebmanifest, shouldꓽgenerateꓽjscode } from './selectors/index.ts'
@@ -36,13 +37,6 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 		// XXX
 		'~~gen/logs/spec.json': JSON.stringify(spec, undefined, '	'),
 	}
-}
-
-// for unit testing
-function __getꓽwebsiteᝍentryᝍpoints__specs(spec: Immutable<WebPropertyEntryPointSpec>): {
-	[relpath: string]: any // TODO better type
-} {
-	throw new Error('NIMP!')
 }
 
 /////////////////////////////////////////////////
@@ -88,6 +82,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'css' })
 						break
 					case '.json':
+					case '.jsonc':
 						assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
 						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'json' })
 						break
@@ -112,7 +107,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 			if (typeof file__content === 'string')
 				file__content = file__content.replace(process.env['HOME'] ?? '$HOME', '~')
 
-			return ೱoutputꓽfile(file__path, file__content, {
+			return await ೱoutputꓽfile(file__path, file__content, {
 					...(typeof file__content === 'string' && { encoding: 'utf8' }),
 				})
 				.catch((err: any) => {

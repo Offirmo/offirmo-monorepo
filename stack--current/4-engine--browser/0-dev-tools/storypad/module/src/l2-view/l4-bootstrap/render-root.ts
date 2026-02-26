@@ -1,7 +1,7 @@
 /* Root render function
  */
 
-import { isꓽframed } from '../../__vendor/@monorepo-private/browser-features-detection/is-framed.ts'
+import { isꓽframed } from '@monorepo-private/browser-features-detection/is-framed'
 
 import { RenderMode } from '../../l1-flux/l1-state/types.ts'
 import type { ObservableState } from '../../l1-flux/l2-observable/index.ts'

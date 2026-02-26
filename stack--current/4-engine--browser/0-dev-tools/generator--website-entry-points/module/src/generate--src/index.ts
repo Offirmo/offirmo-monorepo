@@ -1,6 +1,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@monorepo-private/ts--types'
 
+import { DIR_FILES_TO_SERVE } from '../consts.ts'
 import type { EntryPoints, WebPropertyEntryPointSpec } from '../types.ts'
 import {
 	getꓽtitleⵧapp,
@@ -339,8 +340,8 @@ export default init
 
 function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 	return {
-		'./app/consts.ts': `export const LIB = '${getꓽtitleⵧlib(spec)}'`,
-		'./app/index.ts': `
+		[`${DIR_FILES_TO_SERVE}/app/consts.ts`]: `export const LIB = '${getꓽtitleⵧlib(spec)}'`,
+		[`${DIR_FILES_TO_SERVE}/app/index.ts`]: `
 import { asap_but_out_of_immediate_execution, forArray } from '@monorepo-private/utils--async'
 import { VERSION, BUILD_DATE } from '../entry-points/build.ts'
 import './init/00-security.ts' // as early as possible, side effects expected
@@ -378,29 +379,29 @@ asap_but_out_of_immediate_execution(async () => {
 
 		// service layer
 		// ~syncing view with external data sources
-		'./app/services/auth.ts': CODE_TEMPLATEⵧGENERIC,
-		'./app/services/channel.ts': genꓽCODE_TEMPLATEⵧSERVICESⳇCHANNEL(spec),
-		'./app/services/loader.ts': CODE_TEMPLATEⵧGENERIC,
-		'./app/services/logger.ts': CODE_TEMPLATEⵧSERVICESⳇLOGGER,
+		[`${DIR_FILES_TO_SERVE}/app/services/auth.ts`]: CODE_TEMPLATEⵧGENERIC,
+		[`${DIR_FILES_TO_SERVE}//app/services/channel.ts`]: genꓽCODE_TEMPLATEⵧSERVICESⳇCHANNEL(spec),
+		[`${DIR_FILES_TO_SERVE}/app/services/loader.ts`]: CODE_TEMPLATEⵧGENERIC,
+		[`${DIR_FILES_TO_SERVE}/app/services/logger.ts`]: CODE_TEMPLATEⵧSERVICESⳇLOGGER,
 
 		// controllers
 		// ~shared state and stateful logic
-		'./app/controllers/state--app.tsx': CODE_TEMPLATEⵧGENERIC,
-		'./app/controllers/flux.tsx': CODE_TEMPLATEⵧGENERIC,
+		[`${DIR_FILES_TO_SERVE}/app/controllers/state--app.tsx`]: CODE_TEMPLATEⵧGENERIC,
+		[`${DIR_FILES_TO_SERVE}/app/controllers/flux.tsx`]: CODE_TEMPLATEⵧGENERIC,
 
 		// view
-		'./app/view/index.tsx': CODE_TEMPLATEⵧGENERIC,
+		[`${DIR_FILES_TO_SERVE}/app/view/index.tsx`]: CODE_TEMPLATEⵧGENERIC,
 
 		// init
-		'./app/init/00-security.ts':  CODE_TEMPLATEⳇINITⳇSECURITY,
-		'./app/init/01-logger.ts':    CODE_TEMPLATEⳇINITⳇLOGGER,
-		'./app/init/02-sxc.ts':       CODE_TEMPLATEⳇINITⳇSXC,
-		'./app/init/03-errors.ts':    CODE_TEMPLATEⳇINITⳇERRORS,
-		'./app/init/10-loader.tsx':   CODE_TEMPLATEⳇINITⳇGENERIC('loader'),
-		'./app/init/11-flux.tsx':     CODE_TEMPLATEⳇINITⳇGENERIC('flux'),
-		'./app/init/12-view.tsx':     CODE_TEMPLATEⳇINITⳇVIEWⵧREACT,
-		'./app/init/20-auth.ts':      CODE_TEMPLATEⳇINITⳇGENERIC('auth'),
-		'./app/init/30-analytics.ts': CODE_TEMPLATEⳇINITⳇGENERIC('analytics'),
+		[`${DIR_FILES_TO_SERVE}/app/init/00-security.ts`]:  CODE_TEMPLATEⳇINITⳇSECURITY,
+		[`${DIR_FILES_TO_SERVE}/app/init/01-logger.ts`]:    CODE_TEMPLATEⳇINITⳇLOGGER,
+		[`${DIR_FILES_TO_SERVE}/app/init/02-sxc.ts`]:       CODE_TEMPLATEⳇINITⳇSXC,
+		[`${DIR_FILES_TO_SERVE}/app/init/03-errors.ts`]:    CODE_TEMPLATEⳇINITⳇERRORS,
+		[`${DIR_FILES_TO_SERVE}/app/init/10-loader.tsx`]:   CODE_TEMPLATEⳇINITⳇGENERIC('loader'),
+		[`${DIR_FILES_TO_SERVE}/app/init/11-flux.tsx`]:     CODE_TEMPLATEⳇINITⳇGENERIC('flux'),
+		[`${DIR_FILES_TO_SERVE}/app/init/12-view.tsx`]:     CODE_TEMPLATEⳇINITⳇVIEWⵧREACT,
+		[`${DIR_FILES_TO_SERVE}/app/init/20-auth.ts`]:      CODE_TEMPLATEⳇINITⳇGENERIC('auth'),
+		[`${DIR_FILES_TO_SERVE}/app/init/30-analytics.ts`]: CODE_TEMPLATEⳇINITⳇGENERIC('analytics'),
 	}
 }
 

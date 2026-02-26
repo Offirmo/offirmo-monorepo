@@ -113,7 +113,7 @@ function isꓽignored_file(entry: FileEntry): boolean {
 		return true
 	}
 
-	if (entry.ext === '.json') {
+	if (entry.ext === '.json' || entry.ext === '.jsonc' || entry.ext === '.json5') {
 		// technically some json files can reference resources
 		// ex. website manifest
 		// However for now we consider no deps
@@ -139,7 +139,7 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 		case ['.jsx'].includes(ext):
 			return [ 'js', 'jsx' ]
 
-		case ['.json'].includes(ext):
+		case ['.json', '.jsonc', ',json5'].includes(ext):
 			return [ 'json' ]
 
 		case ['.ts'].includes(ext): // mts sometimes needed for node scripts
@@ -159,9 +159,6 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 
 		case ['.mdx'].includes(ext):
 			return [ 'md', 'jsx' ]
-
-		/*case ['.json',].includes(ext):
-			return [ 'json' ]*/
 
 		default:
 			throw new Error(`Unsupported language for extension "${ext}" (${entry.basename})!`)
@@ -288,8 +285,11 @@ function getꓽtrailing_score(entry: FileEntry): NonNullable<Score> {
 	// ~~ are lowest
 	score.push(
 		entry.path‿rel.includes('~~')
-			? 1
-			: 0
+			? 2
+			// __ are debug stuff, also low
+			: entry.path‿rel.includes('__')
+				? 1
+				: 0
 	)
 
 	// top in the dir structure wins
@@ -358,6 +358,12 @@ function getꓽentrypointⵧmain__affinity‿score(entry: FileEntry | undefined)
 		// those are sub-entrypoints, not the main one
 		return null
 	}
+
+	/*
+	if (entry.path‿rel.includes('__')) {
+		// __ are debug stuff, can't be main
+		return null
+	}*/
 
 	const score: NonNullable<Score> = []
 
@@ -656,8 +662,10 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			&& !isꓽentrypointⵧbuild(entry)
 			&& result.entrypointⵧstorypad !== entry) {
 			const main_entrypoint‿score = getꓽentrypointⵧmain__affinity‿score(entry)
+			console.log(main_entrypoint‿score)
 			if (main_entrypoint‿score) {
 				const previous_candidate_score = getꓽentrypointⵧmain__affinity‿score(result.entrypointⵧmain)
+				console.log(previous_candidate_score)
 				if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
 					// "A should come before B"
 					// keep previous
@@ -776,6 +784,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			// need a jsx transform.
 			// Parcel does it for us.
 		}
+		// txt, json should not make it there = ignored
 		if (unprocessed_langs.size) {
 			throw new Error(`Unknown language(s) "${Array.from(unprocessed_langs).join(', ')}" for "${entry.basename}"!`)
 		}

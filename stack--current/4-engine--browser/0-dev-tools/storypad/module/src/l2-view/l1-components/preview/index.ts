@@ -122,7 +122,6 @@ async function _renderⵧstory_v3(state: ObservableState, render_params: Immutab
 		if (layout === 'bare')
 			return container
 
-		//import('../../../__vendor/@monorepo-private/css--framework/atomic/atomic--dimension.css')
 		import('./index.css')
 
 		const storyContainer = document.createElement('div')

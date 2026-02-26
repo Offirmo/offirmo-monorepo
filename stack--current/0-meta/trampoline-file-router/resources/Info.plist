@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.offirmo.TrampolineFileRouter</string>
+
+    <key>CFBundleName</key>
+    <string>TrampolineFileRouter</string>
+
+    <key>CFBundleDisplayName</key>
+    <string>Trampoline File Router</string>
+
+    <key>CFBundleExecutable</key>
+    <string>TrampolineFileRouter</string>
+
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+
+    <!-- Hide from Dock — this is a background/agent app -->
+    <key>LSUIElement</key>
+    <true/>
+
+    <!-- URL Scheme: x-ide:// -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>X-IDE URL</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>x-ide</string>
+            </array>
+        </dict>
+    </array>
+
+    <!-- Supported file types -->
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <!-- Source code -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Source Code</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <!-- TypeScript / JavaScript -->
+                <string>ts</string>
+                <string>tsx</string>
+                <string>js</string>
+                <string>jsx</string>
+                <string>mjs</string>
+                <string>cjs</string>
+                <string>mts</string>
+                <string>cts</string>
+                <!-- Python -->
+                <string>py</string>
+                <string>pyw</string>
+                <!-- Rust -->
+                <string>rs</string>
+                <!-- Go -->
+                <string>go</string>
+                <!-- Swift -->
+                <string>swift</string>
+                <!-- Java / Kotlin -->
+                <string>java</string>
+                <string>kt</string>
+                <string>kts</string>
+                <!-- Ruby -->
+                <string>rb</string>
+                <!-- PHP -->
+                <string>php</string>
+                <!-- C / C++ / Obj-C -->
+                <string>c</string>
+                <string>cpp</string>
+                <string>cc</string>
+                <string>cxx</string>
+                <string>h</string>
+                <string>hpp</string>
+                <string>hxx</string>
+                <string>m</string>
+                <string>mm</string>
+                <!-- C# -->
+                <string>cs</string>
+                <!-- Scala -->
+                <string>scala</string>
+                <!-- Clojure -->
+                <string>clj</string>
+                <string>cljs</string>
+                <string>cljc</string>
+                <string>edn</string>
+                <!-- Elm -->
+                <string>elm</string>
+                <!-- Haskell -->
+                <string>hs</string>
+                <!-- Lua -->
+                <string>lua</string>
+                <!-- R -->
+                <string>r</string>
+                <!-- Julia -->
+                <string>jl</string>
+                <!-- Dart -->
+                <string>dart</string>
+                <!-- Zig -->
+                <string>zig</string>
+                <!-- Nim -->
+                <string>nim</string>
+                <!-- Elixir / Erlang -->
+                <string>ex</string>
+                <string>exs</string>
+                <string>erl</string>
+                <string>hrl</string>
+                <!-- Groovy -->
+                <string>groovy</string>
+            </array>
+        </dict>
+
+        <!-- Web -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Web Files</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>css</string>
+                <string>scss</string>
+                <string>sass</string>
+                <string>less</string>
+                <string>vue</string>
+                <string>svelte</string>
+                <string>astro</string>
+            </array>
+        </dict>
+
+        <!-- Config / Data -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Configuration Files</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>json</string>
+                <string>json5</string>
+                <string>jsonc</string>
+                <string>jsonl</string>
+                <string>yaml</string>
+                <string>yml</string>
+                <string>toml</string>
+                <string>xml</string>
+                <string>ini</string>
+                <string>cfg</string>
+                <string>conf</string>
+                <string>env</string>
+                <string>properties</string>
+                <string>plist</string>
+            </array>
+        </dict>
+
+        <!-- Shell scripts -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Shell Scripts</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>sh</string>
+                <string>bash</string>
+                <string>zsh</string>
+                <string>fish</string>
+            </array>
+        </dict>
+
+        <!-- Documentation -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Documentation</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>md</string>
+                <string>mdx</string>
+                <string>txt</string>
+                <string>rst</string>
+            </array>
+        </dict>
+
+        <!-- Data / Query -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Data Files</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>sql</string>
+                <string>graphql</string>
+                <string>gql</string>
+                <string>prisma</string>
+                <string>csv</string>
+            </array>
+        </dict>
+
+        <!-- DevOps / Build -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>DevOps Files</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>dockerfile</string>
+                <string>tf</string>
+                <string>hcl</string>
+                <string>gradle</string>
+                <string>cmake</string>
+            </array>
+        </dict>
+
+        <!-- SVG (often edited as code) -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>SVG</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>svg</string>
+            </array>
+        </dict>
+
+        <!-- Log files -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Log Files</string>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>log</string>
+            </array>
+        </dict>
+        <!-- Catch-all: appear in "Open With" for any file -->
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>All Files</string>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>LSItemContentTypes</key>
+            <array>
+                <string>public.data</string>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>
