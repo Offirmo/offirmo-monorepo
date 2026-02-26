@@ -5,9 +5,9 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.html"
+		".": "./module/src/index.ts"
 	},
-	"source": "module/src/index.html",
+	"source": "module/src/index.ts",
 	"dependencies": {
 		"@devdocs/db": "*",
 		"@devdocs/marketing": "*",
@@ -22,8 +22,8 @@
 		"@offirmo/universal-debug-api-browser": "^1",
 		"agentation": "^2",
 		"github-slugger": "^2",
-		"highlight.js": "^11",
 		"limit-once": "^0.16",
+		"markdown-to-jsx": "^9",
 		"react": "^19",
 		"react-dom": "^19",
 		"react-markdown": "^10",
@@ -43,8 +43,8 @@
 		"_check": "run-s check--ts",
 		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall",
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
-		"_start:parcel:main": "parcel serve module/src/index.html --port 1981 --lazy --no-autoinstall",
-		"start": "npm-run-all clean --parallel _start:parcel:main"
+		"_start:parcel:sandbox": "parcel serve module/__sandbox/index.html --port 1981 --lazy --no-autoinstall",
+		"sandbox": "npm-run-all clean --parallel _start:parcel:sandbox"
 	},
 	"devDependencies": {
 		"@devdocs/types": "*",

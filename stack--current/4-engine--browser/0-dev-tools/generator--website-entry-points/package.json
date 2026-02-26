@@ -16,6 +16,7 @@
 		"@monorepo-private/fs--output-file": "*",
 		"@monorepo-private/generator--html": "*",
 		"@monorepo-private/generator--svg": "*",
+		"@monorepo-private/json-stable-stringify": "*",
 		"@monorepo-private/normalize-string": "*",
 		"@monorepo-private/timestamps": "*",
 		"@monorepo-private/ts--types--web": "*",

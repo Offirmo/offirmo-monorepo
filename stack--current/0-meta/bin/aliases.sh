@@ -105,6 +105,7 @@ alias     monoC@8='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.s
 alias     monoC@9='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/90-spike-workers/;                               tabset --badge monoC@9'
 alias    monoC@92='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/97-web-core/;                                    tabset --badge monoC@92'
 alias    monoC@93='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/98-web-property/;                                tabset --badge monoC@93'
+alias    monoC@94='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @devdocs/99-web-app-final/;                               tabset --badge monoC@94'
 alias     monoC@0='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/01-read-write-any-structured-file/;    tabset --badge monoC@0'
 alias    monoC@02='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/02-load-config/;                       tabset --badge monoC@02'
 alias    monoC@12='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/11-types/;                             tabset --badge monoC@12'

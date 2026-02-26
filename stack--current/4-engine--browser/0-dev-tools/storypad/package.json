@@ -18,6 +18,7 @@
 	"source": "module/src/index.ts",
 	"dependencies": {
 		"@monorepo-private/better-console-groups": "*",
+		"@monorepo-private/browser-features-detection": "*",
 		"@monorepo-private/data-structures": "*",
 		"@monorepo-private/rich-text-format": "*",
 		"@monorepo-private/utils--async": "*",
