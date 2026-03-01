@@ -1,5 +1,5 @@
 
-import { AbsolutePath } from '../../types.js'
+import { PathⳇAbsolute } from '../../types.js'
 import { Action } from '../actions.js'
 
 import * as Folder from '../folder/index.js'
@@ -13,7 +13,7 @@ import { FileHash } from '../../services/hash.js'
 /////////////////////
 
 export interface State {
-	root: AbsolutePath
+	root: PathⳇAbsolute
 
 	extra_notes: Notes.State,
 	folders: { [id: FolderId ]: Folder.State }

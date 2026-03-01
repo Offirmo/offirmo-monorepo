@@ -2,12 +2,12 @@ import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
 
-import type { AbsolutePath, ProgLang } from '../types.ts'
+import type { PathⳇAbsolute, ProgLang } from '../types.ts'
 import type { PureModuleDetails, PureModuleManifest } from './types.ts'
 
 /////////////////////////////////////////////////
 
-function create(root‿abspath: AbsolutePath): PureModuleDetails {
+function create(root‿abspath: PathⳇAbsolute): PureModuleDetails {
 	const name = (() => {
 		let _path = path.resolve(root‿abspath).split(path.sep)
 		if (_path.at(-1) === 'src')

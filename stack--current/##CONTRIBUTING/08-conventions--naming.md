@@ -64,8 +64,8 @@ function square_root(x: number): number { ...
 
 CamelCase is reserved for types:
 ```
-export type RelativePath = string
-export type AbsolutePath = string
+export type DirPathⳇRelative = string
+export type FilePathⳇRelative = string
 ```
 
 Exception: since CamelCase is commonly used in JS,

@@ -4,7 +4,7 @@ import { strict as assert } from 'node:assert'
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
 
-import type { JSONObject, AnyFilePath, Immutable } from '@monorepo-private/ts--types'
+import type { JSONObject, FilePathⳇAny, Immutable } from '@monorepo-private/ts--types'
 
 import type {
 	ContentⳇJson5,
@@ -19,27 +19,27 @@ import { inferꓽformat_from_path, ↆimportꓽjson5, ↆimportꓽyaml } from '.
 /////////////////////////////////////////////////
 /*
 async function ೱwriteꓽfile(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	format: 'json5',
 	content: Immutable<ContentⳇJson5>,
 ): Promise<void>
 async function ೱwriteꓽfile(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	format: 'yaml',
 	content: Immutable<ContentⳇYaml>,
 ): Promise<void>
 async function ೱwriteꓽfile(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	format: 'list',
 	content: Immutable<ContentⳇList>,
 ): Promise<void>
 async function ೱwriteꓽfile(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	format: 'single-value',
 	content: Immutable<ContentⳇSingleValue>,
 ): Promise<void>*/
 async function ೱwriteꓽfile(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content: Immutable<JSONObject>,
 	format?: StructuredFileFormat | undefined, // SSoT: format will be inferred from extension if absent
 ): Promise<void> {
@@ -79,7 +79,7 @@ function _post_process_text(text: string): string {
 }
 
 async function ೱwriteꓽfileⵧjson5(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇJson5>,
 ): Promise<void> {
 	const pkgꓽjson5 = await ↆimportꓽjson5()
@@ -94,7 +94,7 @@ async function ೱwriteꓽfileⵧjson5(
 }
 
 async function ೱwriteꓽfileⵧjson(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content: Immutable<JSONObject>,
 ): Promise<void> {
 	let content_serialized = JSON.stringify(content, null, 2)
@@ -108,7 +108,7 @@ async function ೱwriteꓽfileⵧjson(
 }
 
 async function ೱwriteꓽfileⵧyaml(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇYaml>,
 ): Promise<void> {
 	const pkgꓽyaml = await ↆimportꓽyaml()
@@ -123,7 +123,7 @@ async function ೱwriteꓽfileⵧyaml(
 }
 
 async function ೱwriteꓽfileⵧlist(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇList>,
 ): Promise<void> {
 	// assume it's a set
@@ -140,7 +140,7 @@ async function ೱwriteꓽfileⵧlist(
 }
 
 async function ೱwriteꓽfileⵧsingle_value(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇSingleValue>,
 ): Promise<void> {
 	let content_serialized = `${content.value}\n`
@@ -154,7 +154,7 @@ async function ೱwriteꓽfileⵧsingle_value(
 }
 
 async function ೱwriteꓽfileⵧtext(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇText>,
 ): Promise<void> {
 	let content_serialized = `${content.text}`
@@ -168,7 +168,7 @@ async function ೱwriteꓽfileⵧtext(
 }
 
 async function ೱwriteꓽfileⵧdefault_export(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇText>,
 ): Promise<void> {
 	const pkgꓽjson5 = await ↆimportꓽjson5()

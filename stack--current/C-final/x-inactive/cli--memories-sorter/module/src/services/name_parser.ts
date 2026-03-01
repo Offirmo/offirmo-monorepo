@@ -27,7 +27,7 @@ import {
 	getꓽdebug_representation,
 } from './better-date.js'
 import logger from './logger.js'
-import { Basename, RelativePath } from '../types.js'
+import { Basename, PathⳇRelative } from '../types.js'
 
 ////////////////////////////////////
 
@@ -847,7 +847,7 @@ export function getꓽfolder_basename_normalisation_version(basename: Basename):
 	return undefined
 }
 
-export function getꓽfolder_relpath_normalisation_version(relpath: RelativePath): number | undefined {
+export function getꓽfolder_relpath_normalisation_version(relpath: PathⳇRelative): number | undefined {
 	const splitted = relpath.split(path.sep)
 
 	const basename = splitted.at(-1)
@@ -860,7 +860,7 @@ export function getꓽfolder_relpath_normalisation_version(relpath: RelativePath
 	return undefined
 }
 
-export function is_normalized_event_folder_relpath(relpath: RelativePath): boolean {
+export function is_normalized_event_folder_relpath(relpath: PathⳇRelative): boolean {
 	return getꓽfolder_relpath_normalisation_version(relpath) === RELATIVE_PATH_NORMALIZATION_VERSION
 }
 

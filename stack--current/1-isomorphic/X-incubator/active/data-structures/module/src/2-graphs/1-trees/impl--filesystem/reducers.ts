@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { RelativePath } from '@monorepo-private/ts--types'
+import type { PathⳇRelative } from '@monorepo-private/ts--types'
 import { normalizeꓽpath } from '@monorepo-private/normalize-string'
 
 import type {
@@ -51,7 +51,7 @@ function createꓽfilesystem<FilePayload = undefined, FolderPayload = FilePayloa
 	return result
 }
 
-function insertꓽfile<FilePayload, FolderPayload>(tree: FileSystemNodeⳇFolder<FilePayload, FolderPayload>, path: RelativePath, payload: FilePayload): RelativePath {
+function insertꓽfile<FilePayload, FolderPayload>(tree: FileSystemNodeⳇFolder<FilePayload, FolderPayload>, path: PathⳇRelative, payload: FilePayload): PathⳇRelative {
 	path = normalizeꓽpath(path, 'file')
 	const { options } = tree.root
 	const segments = path.split(options.SEP)
@@ -76,7 +76,7 @@ function insertꓽfile<FilePayload, FolderPayload>(tree: FileSystemNodeⳇFolder
 	return path
 }
 
-function upsertꓽfolder<FilePayload, FolderPayload>(tree: FileSystemNodeⳇFolder<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
+function upsertꓽfolder<FilePayload, FolderPayload>(tree: FileSystemNodeⳇFolder<FilePayload, FolderPayload>, path: PathⳇRelative): PathⳇRelative {
 	path = normalizeꓽpath(path, 'folder')
 	const { options } = tree.root
 	const segments = path.split(options.SEP)

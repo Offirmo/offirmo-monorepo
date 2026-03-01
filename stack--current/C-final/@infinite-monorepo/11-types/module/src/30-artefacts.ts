@@ -1,11 +1,11 @@
-import type { AbsolutePath, RelativePath } from '@monorepo-private/ts--types'
+import type { PathⳇAbsolute, PathⳇRelative } from '@monorepo-private/ts--types'
 import type { StructuredFileFormat } from '@infinite-monorepo/read-write-any-structured-file'
-import type { MultiRepoRelativeFilePath } from './20-graph.ts'
+import type { MultiRepoFilePathⳇRelative } from './20-graph.ts'
 
 /////////////////////////////////////////////////
 
 export interface StructuredFsⳇFileManifest {
-	path‿ar: MultiRepoRelativeFilePath
+	path‿ar: MultiRepoFilePathⳇRelative
 
 	// SSOT: only needed if not inferrable, ex. from the extension
 	format?: StructuredFileFormat

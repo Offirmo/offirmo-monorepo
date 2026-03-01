@@ -4,16 +4,16 @@
 type Basename = string
 type Extension = string // '.' included, ex. '.ts'
 
-type RelativePath = string // relative to some known/conventional "root" dir
-type AbsolutePath = string
+type PathⳇRelative = string // relative to some known/conventional "root" dir
+type PathⳇAbsolute = string
 
 /////////////////////////////////////////////////
 
 // prettier-ignore
 interface FileEntry {
-	path‿abs: AbsolutePath      // ex. /Users/sam/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/0-dev-tools/storypad/module/src/index.stories.ts
-	path‿rel: RelativePath      // ex. src/index.stories.ts
-	root‿abspath: AbsolutePath  // ex. /Users/sam/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/0-dev-tools/storypad/module
+	path‿abs: PathⳇAbsolute      // ex. /Users/sam/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/0-dev-tools/storypad/module/src/index.stories.ts
+	path‿rel: PathⳇRelative      // ex. src/index.stories.ts
+	root‿abspath: PathⳇAbsolute  // ex. /Users/sam/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/0-dev-tools/storypad/module
 
 	basename: Basename          // ex.     index.stories.ts
 	ext: Extension              // ex.                  .ts
@@ -27,4 +27,4 @@ interface FileEntry {
 
 /////////////////////////////////////////////////
 
-export { type Basename, type Extension, type RelativePath, type AbsolutePath, type FileEntry }
+export { type Basename, type Extension, type PathⳇRelative, type PathⳇAbsolute, type FileEntry }

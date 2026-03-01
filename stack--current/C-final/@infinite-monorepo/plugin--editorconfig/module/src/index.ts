@@ -2,7 +2,7 @@ import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	PATHVARⵧROOTⵧNODE,
 	type StructuredFsⳇFileManifest,
-	type NodeRelativePath,
+	type NodePathⳇRelative,
 	type Node,
 } from '@infinite-monorepo/types'
 import * as StateLib from '@infinite-monorepo/state'
@@ -11,7 +11,7 @@ import { manifestꓽᐧgitignore } from '@infinite-monorepo/plugin--git'
 
 /////////////////////////////////////////////////
 
-const ᐧeditorconfig__path‿ar: NodeRelativePath = `${PATHVARⵧROOTⵧNODE}/.editorconfig`
+const ᐧeditorconfig__path‿ar: NodePathⳇRelative = `${PATHVARⵧROOTⵧNODE}/.editorconfig`
 
 const manifestꓽᐧeditorconfig: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧeditorconfig__path‿ar,

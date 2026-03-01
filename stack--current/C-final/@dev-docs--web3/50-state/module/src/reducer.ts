@@ -6,8 +6,21 @@ import type { State } from './types.ts'
 function create(): State {
 	return {
 		shared: {
-			node_settings: {},
-			disabled_statuses: [],
+			node_settings: {
+
+			},
+			disabled_statuses: [
+				// dev docs for builders,
+				// by default we want only stuff we can build on
+				'draft',
+				//'final',
+				//'last call',
+				//'living',
+				'moved',
+				'review',
+				'stagnant',
+				'withdrawn',
+			],
 		},
 	}
 }
@@ -34,6 +47,7 @@ function disable_status(state: State, status: string): State {
 		...state,
 		shared: {
 			...state.shared,
+			// TODO set! XXX bug
 			disabled_statuses: [...state.shared.disabled_statuses, status],
 		},
 	}

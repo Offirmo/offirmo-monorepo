@@ -3,9 +3,9 @@ import assert from 'tiny-invariant'
 import type {
 	JSONObject,
 	Immutable,
-	AbsolutePath,
+	PathⳇAbsolute,
 	JSON,
-	AbsoluteDirPath,
+	DirPathⳇAbsolute,
 } from '@monorepo-private/ts--types'
 import { mergeꓽjson } from '@infinite-monorepo/read-write-any-structured-file'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
@@ -18,7 +18,7 @@ import {
 	type Node,
 	type NodeⳇWorkspace,
 	type StructuredFsⳇFileManifest,
-	type MultiRepoRelativeFilePath,
+	type MultiRepoFilePathⳇRelative,
 	PATHVARⵧROOTⵧNODE,
 	PATHVARⵧROOTⵧREPO,
 	PATHVARⵧROOTⵧWORKSPACE,
@@ -66,7 +66,7 @@ function onꓽspec_chain_loaded(
 	DEBUG && console.debug('On spec chain loaded...')
 
 	// traverse the chain, discovering nodes
-	const PENDING: AbsoluteDirPath = 'PENDING/'
+	const PENDING: DirPathⳇAbsolute = 'PENDING/'
 	const nodeⵧscm_root: NodeⳇRepo = {
 		type: 'repository',
 		path‿abs: PENDING,
@@ -282,9 +282,9 @@ function declareꓽfile_manifest(
 
 function _resolveꓽarpath(
 	state: Immutable<State>,
-	path‿ar: MultiRepoRelativeFilePath,
+	path‿ar: MultiRepoFilePathⳇRelative,
 	node?: Immutable<Node> | undefined,
-): AbsolutePath {
+): PathⳇAbsolute {
 	const first_segment = path‿ar.split('/')[0]
 	assert(
 		!!first_segment && first_segment.startsWith('$') && first_segment.endsWith('$'),

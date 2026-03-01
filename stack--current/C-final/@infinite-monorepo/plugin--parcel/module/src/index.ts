@@ -4,8 +4,8 @@ import {
 	PATHVARⵧROOTⵧNODE,
 	type StructuredFsⳇFileManifest,
 	type Node,
-	type NodeRelativePath,
-	type RepoRelativePath,
+	type NodePathⳇRelative,
+	type RepoPathⳇRelative,
 	PATHVARⵧROOTⵧREPO,
 } from '@infinite-monorepo/types'
 import type { State, Plugin } from '@infinite-monorepo/state'

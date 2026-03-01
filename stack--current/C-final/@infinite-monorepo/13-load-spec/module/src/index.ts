@@ -1,4 +1,4 @@
-import type { AnyPath, Immutable } from '@monorepo-private/ts--types'
+import type { PathⳇAny, Immutable } from '@monorepo-private/ts--types'
 
 import type { InfiniteMonorepoSpec } from '@infinite-monorepo/types'
 
@@ -13,7 +13,7 @@ import { completeꓽspec } from '@infinite-monorepo/defaults'
 /////////////////////////////////////////////////
 
 // useful to build the graph
-async function loadꓽspecⵧchainⵧraw(from?: AnyPath): ReturnType<typeof loadꓽconfigⵧchain> {
+async function loadꓽspecⵧchainⵧraw(from?: PathⳇAny): ReturnType<typeof loadꓽconfigⵧchain> {
 	return await loadꓽconfigⵧchain('.monorepo', { ...(from && { from }) })
 }
 

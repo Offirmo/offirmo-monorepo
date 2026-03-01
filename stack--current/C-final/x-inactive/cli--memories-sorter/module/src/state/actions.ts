@@ -2,7 +2,7 @@
 import { Enum } from 'typescript-string-enums'
 import type { Immutable } from '@monorepo-private/ts--types'
 
-import { RelativePath } from '../types.js'
+import { PathⳇRelative } from '../types.js'
 import { FolderId } from './folder/index.js'
 import { FileId } from './file/index.js'
 import { type State as NotesState } from './notes/index.js'
@@ -51,12 +51,12 @@ export interface ActionHash extends BaseAction {
 
 export interface ActionLoadNotes extends BaseAction {
 	type: typeof ActionType.load_notes
-	path: RelativePath
+	path: PathⳇRelative
 }
 
 export interface ActionPersistNotes extends BaseAction {
 	type: typeof ActionType.persist_notes
-	folder_path?: RelativePath // where we'll write the file. default to root. We choose to store several backups of the notes, typically in "years" folder
+	folder_path?: PathⳇRelative // where we'll write the file. default to root. We choose to store several backups of the notes, typically in "years" folder
 	data?: Immutable<NotesState> // full data can be queried at action exec time. However, we may choose to not save the full set every time
 }
 
@@ -126,13 +126,13 @@ export function create_action_hash(id: FileId): ActionHash {
 		id,
 	}
 }
-export function create_action_load_notes(path: RelativePath): ActionLoadNotes {
+export function create_action_load_notes(path: PathⳇRelative): ActionLoadNotes {
 	return {
 		type: ActionType.load_notes,
 		path,
 	}
 }
-export function create_action_persist_notes(folder_path?: RelativePath, data?: Immutable<NotesState>): ActionPersistNotes {
+export function create_action_persist_notes(folder_path?: PathⳇRelative, data?: Immutable<NotesState>): ActionPersistNotes {
 	return {
 		type: ActionType.persist_notes,
 		folder_path,

@@ -12,18 +12,22 @@ import { type Node } from '@dev-docs--web3/types'
 import { fileURLToPath } from 'node:url'
 
 import * as path from 'node:path'
-import type { AnyFilePath, Immutable, JSONObject } from '@monorepo-private/ts--types'
+import type { FilePathⳇAny, Immutable, JSONObject } from '@monorepo-private/ts--types'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const DATASOURCE_ROOT = path.resolve(__dirname, '../../../../../../../../yvem/dev-docs')
+assert(!!process.env.OFFIRMO__DEV_DOCS_WEB3__DATA_SOURCE_REPO_ROOT, `Please define $OFFIRMO__DEV_DOCS_WEB3__DATA_SOURCE_REPO_ROOT`)
+const DATA_SOURCE_REPO_ROOT = path.resolve(process.env.OFFIRMO__DEV_DOCS_WEB3__DATA_SOURCE_REPO_ROOT)
 
-const { getꓽdata_sources } = await import(path.resolve(DATASOURCE_ROOT, 'module/++gen/index.ts'))
+const DATA_SOURCE_ROOT = path.join(DATA_SOURCE_REPO_ROOT, 'data-sources')
+
+const { getꓽdata_sources } = await import(path.resolve(DATA_SOURCE_REPO_ROOT, 'module/++gen/index.ts'))
 
 const nodes: Array<Node> = []
 const statuses = new Set()
 
 await Promise.all(
-	getꓽdata_sources().map(async ({ url, path‿abs }): Promise<void> => {
+	getꓽdata_sources().map(async ({ url, path‿rel }): Promise<void> => {
+		const path‿abs = path.join(DATA_SOURCE_REPO_ROOT, path‿rel)
 		switch (url) {
 			case 'https://github.com/bitcoin/bips.git': {
 				nodes.push({ id: 'BIPs', parent_id: 'Bitcoin', name: 'Improvement Proposals' })
@@ -74,21 +78,22 @@ await Promise.all(
 							status = 'unknown',
 							created: created_at,
 						} = frontmatter
-						assert(!!eip_index, `EIP should have an index!`)
+						assert(Number.isSafeInteger(eip_index), `EIP should have an index!`)
 
 						status = status.toLowerCase().trim()
 						statuses.add(status)
 
-						const id = `EIP-${String(eip_index).padStart(5, '0')}`
+						const id = `EIP-${String(eip_index).padStart(4, '0')}`
 						const node: Node = {
 							parent_id: 'EIPs',
 							id,
-							...(frontmatter.title && { name: `${id} ${frontmatter.title}` }),
+							...(title && { name: `${id} ${title}` }),
 							index_for_sorting: eip_index,
 							created_at,
 							status,
 							links: [],
-							tags: [type, category],
+							tags: [type, category].filter(t => !!t).sort(),
+							path‿rel: path.relative(DATA_SOURCE_ROOT, fe.path‿abs),
 							original‿url,
 						}
 
@@ -173,7 +178,7 @@ await Promise.all(
 function getꓽmarkup_files_from_datasource(path‿abs: string) {
 	const filesⵧall = lsFilesSync(path‿abs)
 
-	const feⵧall = filesⵧall.map(absp => createꓽfile_entry(absp, DATASOURCE_ROOT))
+	const feⵧall = filesⵧall.map(absp => createꓽfile_entry(absp, DATA_SOURCE_REPO_ROOT))
 
 	const feⵧmarkup = feⵧall.filter(
 		fe =>

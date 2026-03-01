@@ -4,10 +4,10 @@ import {
 	PATHVARⵧROOTⵧNODE,
 	type StructuredFsⳇFileManifest,
 	type Node,
-	type NodeRelativePath,
-	type RepoRelativePath,
+	type NodePathⳇRelative,
+	type RepoPathⳇRelative,
 	PATHVARⵧROOTⵧREPO,
-	type WorkspaceRelativePath,
+	type WorkspacePathⳇRelative,
 	PATHVARⵧROOTⵧWORKSPACE,
 } from '@infinite-monorepo/types'
 import type { State, Plugin } from '@infinite-monorepo/state'
@@ -17,7 +17,7 @@ import type { FileOutputPresent } from '@infinite-monorepo/state'
 /////////////////////////////////////////////////
 
 // about global gitignore https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
-const ᐧgitignore__path‿ar: WorkspaceRelativePath = `${PATHVARⵧROOTⵧWORKSPACE}/.gitignore`
+const ᐧgitignore__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧWORKSPACE}/.gitignore`
 const manifestꓽᐧgitignore: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitignore__path‿ar,
 	format: 'list',
@@ -27,7 +27,7 @@ const manifestꓽᐧgitignore: StructuredFsⳇFileManifest = {
 	],
 }
 
-const ᐧgitattributes__path‿ar: RepoRelativePath = `${PATHVARⵧROOTⵧREPO}/.gitattributes`
+const ᐧgitattributes__path‿ar: RepoPathⳇRelative = `${PATHVARⵧROOTⵧREPO}/.gitattributes`
 const manifestꓽᐧgitattributes: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitattributes__path‿ar,
 	format: 'text',

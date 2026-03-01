@@ -8,7 +8,7 @@ import { expect } from 'chai'
 import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 import { utimes } from 'utimes'
 
-import { AbsolutePath, Basename, SimpleYYYYMMDD, ISODateString, RelativePath, TimeZone } from '../../types.js'
+import { PathⳇAbsolute, Basename, SimpleYYYYMMDD, ISODateString, PathⳇRelative, TimeZone } from '../../types.js'
 import { _UNSAFE_CURRENT_SYSTEM_TIMEZONE } from '../../params.js'
 import { load_real_media_file as _load_real_media_file } from '../utils.js'
 import {
@@ -27,13 +27,13 @@ import * as FileLib from '../../state/file/index.js'
 
 /////////////////////////////////////////////////
 
-const TEST_FILES_DIR: RelativePath = '../../../../src/__test_shared/real_files'
+const TEST_FILES_DIR: PathⳇRelative = '../../../../src/__test_shared/real_files'
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const TEST_FILES_DIR_ABS = path.join(__dirname, TEST_FILES_DIR)
 
 interface MediaDemo {
 	BASENAME: Basename
-	ABS_PATH: AbsolutePath
+	ABS_PATH: PathⳇAbsolute
 
 	UTIME_MS: number
 	EXIF_DATA: null | {

@@ -8,8 +8,11 @@ function getꓽall(): Array<Node> {
 		...getꓽroots(),
 		{ id: 'Satoshi Labs', parent_id: 'Shared' },
 		{ id: 'Chain Agnostic', parent_id: 'Shared' },
-		...data,
+		...data as Node[],
 	]
 }
 
 export { getꓽroots, getꓽall }
+
+import all_statuses from './statuses.ts'
+export { all_statuses }

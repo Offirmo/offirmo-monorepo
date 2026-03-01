@@ -1,4 +1,4 @@
-import type { Emoji, Basename, AnyPath } from '@monorepo-private/ts--types'
+import type { Emoji, Basename, PathⳇAny } from '@monorepo-private/ts--types'
 import type {
 	Author,
 	Contentⳇweb,
@@ -49,9 +49,9 @@ type Category =
 
 interface IconSet {
 	emoji?: Emoji // will be used as favicon if present
-	svg?: SVG | AnyPath
+	svg?: SVG | PathⳇAny
 	pngs?: {
-		[resolution: string]: AnyPath
+		[resolution: string]: PathⳇAny
 	}
 }
 

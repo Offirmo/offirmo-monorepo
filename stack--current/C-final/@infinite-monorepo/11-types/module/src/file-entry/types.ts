@@ -1,10 +1,10 @@
-import type { AbsolutePath, RelativePath, Basename, Extension } from '@monorepo-private/ts--types'
+import type { PathⳇAbsolute, PathⳇRelative, Basename, Extension } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 
 export interface FileEntry {
-	path‿abs: AbsolutePath // ex. /Users/sam/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/0-dev-tools/storypad/module/src/index.stories.ts
-	path‿rel: RelativePath // ex. src/index.stories.ts
+	path‿abs: PathⳇAbsolute // ex. /Users/sam/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/0-dev-tools/storypad/module/src/index.stories.ts
+	path‿rel: PathⳇRelative // ex. src/index.stories.ts
 
 	basename: Basename // ex. index.stories.ts
 	ext: Extension // ex.              .ts

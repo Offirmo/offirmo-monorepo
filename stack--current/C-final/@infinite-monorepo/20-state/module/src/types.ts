@@ -2,7 +2,7 @@ import type { Immutable, JSONObject } from '@monorepo-private/ts--types'
 import type {
 	InfiniteMonorepoSpec,
 	Node,
-	MultiRepoRelativeFilePath,
+	MultiRepoFilePathⳇRelative,
 	StructuredFsⳇFileManifest,
 } from '@infinite-monorepo/types'
 import * as StateLib from './index.ts'
@@ -15,13 +15,13 @@ export type FileOutputIntent =
 	| 'not-present'
 
 interface BaseFileOutput {
-	path‿ar?: MultiRepoRelativeFilePath // optional if manifest is provided
+	path‿ar?: MultiRepoFilePathⳇRelative // optional if manifest is provided
 	parent_node?: Node | Immutable<Node> // if path and needed to resolve the path
 	intent: FileOutputIntent
 }
 
 export interface FileOutputAbsent extends BaseFileOutput {
-	path‿ar: MultiRepoRelativeFilePath // mandatory
+	path‿ar: MultiRepoFilePathⳇRelative // mandatory
 	intent: 'not-present'
 }
 export interface FileOutputPresent extends BaseFileOutput {
@@ -59,7 +59,7 @@ export interface State {
 		nodesⵧworkspace: { [id: string]: Node & { status: 'new' | 'analyzed' } }
 	}
 
-	file_manifests: Record<MultiRepoRelativeFilePath, StructuredFsⳇFileManifest>
+	file_manifests: Record<MultiRepoFilePathⳇRelative, StructuredFsⳇFileManifest>
 
 	facts: {
 		files: {
@@ -74,10 +74,10 @@ export interface State {
 
 	// XXX
 	/*files_existing: Record<
-		AbsoluteFilePath,
+		FilePathⳇAbsolute,
 		{
-			manifest_key: MultiRepoRelativeFilePath
-			abspath: AbsoluteFilePath
+			manifest_key: MultiRepoFilePathⳇRelative
+			abspath: FilePathⳇAbsolute
 
 			data: unknown // TODO
 		}

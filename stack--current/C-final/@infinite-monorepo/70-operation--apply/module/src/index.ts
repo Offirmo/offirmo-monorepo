@@ -1,6 +1,6 @@
 import * as fs from 'node:fs/promises'
 import assert from 'tiny-invariant'
-import type { Immutable, AnyPath } from '@monorepo-private/ts--types'
+import type { Immutable, PathⳇAny } from '@monorepo-private/ts--types'
 import type { Node } from '@infinite-monorepo/types'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 import * as StateLib from '@infinite-monorepo/state'
@@ -33,7 +33,7 @@ function noop(state: Immutable<State>): Immutable<State> {
 	return state
 }
 
-async function apply(from?: AnyPath) {
+async function apply(from?: PathⳇAny) {
 	console.log(`@infinite-monorepo/apply…`)
 
 	////////////

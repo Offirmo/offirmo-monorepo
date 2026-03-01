@@ -16,7 +16,7 @@ import {
 } from '../../consts.js'
 import {
 	Basename,
-	RelativePath,
+	PathⳇRelative,
 	SimpleYYYYMMDD,
 	TimeZone,
 } from '../../types.js'
@@ -53,7 +53,7 @@ import { getꓽbcd_from_parent_path } from './sub/neighbor-hints/index.js'
 
 ////////////////////////////////////
 
-export function getꓽcurrent_relative_path(state: Immutable<State>): RelativePath {
+export function getꓽcurrent_relative_path(state: Immutable<State>): PathⳇRelative {
 	return state.id
 }
 
@@ -82,11 +82,11 @@ export function getꓽcurrent_extension‿normalized(state: Immutable<State>): s
 	return getꓽfile_basename_extension‿normalized(getꓽcurrent_basename(state))
 }
 
-export function getꓽcurrent_parent_folder_id(state: Immutable<State>): RelativePath {
+export function getꓽcurrent_parent_folder_id(state: Immutable<State>): PathⳇRelative {
 	return getꓽcurrent_path‿pparsed(state).dir || '.'
 }
 
-export function getꓽcurrent_top_parent_folder_id(state: Immutable<State>): RelativePath {
+export function getꓽcurrent_top_parent_folder_id(state: Immutable<State>): PathⳇRelative {
 	return getꓽcurrent_relative_path(state).split(path.sep)[0] || '.'
 }
 

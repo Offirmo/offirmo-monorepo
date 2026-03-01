@@ -25,7 +25,7 @@ export default function json_stable_stringify(
 	if (typeof indent === 'number')
 		indent = Array(indent + 1).join(' ')
 
-	function _stringify (parent: Node, key: Key, node: Node, depth: number, encountered_nodes: Immutable<Set<Node>>): ReturnType<typeof JSON['stringify']> | undefined {
+	function _stringify (parent: Node, key: Key, node: Node, depth: number, encountered_nodes: Immutable<Set<Node>>): ReturnType<typeof JSON['stringify']> {
 		const current_indent = indent ? ('\n' + new Array(depth + 1).join(indent as string)) : ''
 		const colonSeparator = indent ? ': ' : ':'
 

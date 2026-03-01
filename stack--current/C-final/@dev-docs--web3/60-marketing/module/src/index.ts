@@ -24,7 +24,7 @@ WebPropertyEntryPointSpec
 
 const THING: Thing = {
 	lang: 'en',
-	description: 'Useful builder docs in a single place',
+	description: 'Useful Web3 builder docs in a single place',
 	author: AUTHOR,
 	since‿y: 2026,
 }

@@ -5,9 +5,9 @@
 type Basename = string
 type Extension = string // '.' included, ex. '.ts'
 
-type RelativePath = string // implied relative to some "working dir"
-type AbsolutePath = string
-type AnyPath = RelativePath | AbsolutePath
+type PathⳇRelative = string // implied relative to some "working dir"
+type PathⳇAbsolute = string
+type PathⳇAny = PathⳇRelative | PathⳇAbsolute
 
 type Semver = string
 type SPDXLicense = string
@@ -50,9 +50,9 @@ export {
 	type Basename,
 	type Extension,
 
-	type RelativePath,
-	type AbsolutePath,
-	type AnyPath,
+	type PathⳇRelative,
+	type PathⳇAbsolute,
+	type PathⳇAny,
 
 	type Semver,
 	type SPDXLicense,

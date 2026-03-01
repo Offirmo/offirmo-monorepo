@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
 
-import { RelativePath, TimeZone } from '../../types.js'
+import { PathⳇRelative, TimeZone } from '../../types.js'
 import { BetterDate, DateRange } from '../../services/better-date.js'
 import { TimestampUTCMs } from '@monorepo-private/timestamps'
 
@@ -20,7 +20,7 @@ export const Type = Enum(
 )
 export type Type = Enum<typeof Type> // eslint-disable-line no-redeclare
 
-export type FolderId = RelativePath
+export type FolderId = PathⳇRelative
 
 export interface State {
 	id: FolderId

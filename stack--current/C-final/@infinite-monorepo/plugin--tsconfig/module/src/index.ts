@@ -2,13 +2,13 @@ import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type Plugin,
 	type StructuredFsⳇFileManifest,
-	type WorkspaceRelativePath,
+	type WorkspacePathⳇRelative,
 } from '@infinite-monorepo/types'
 import * as StateLib from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////
 
-const ᐧnvmrc__path: WorkspaceRelativePath = '$WORKSPACE_ROOT/.nvmrc'
+const ᐧnvmrc__path: WorkspacePathⳇRelative = '$WORKSPACE_ROOT/.nvmrc'
 
 const ᐧnvmrc__manifest: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧnvmrc__path,

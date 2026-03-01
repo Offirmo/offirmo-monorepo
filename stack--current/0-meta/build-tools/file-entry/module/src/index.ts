@@ -1,10 +1,10 @@
 import * as path from 'node:path'
 
-import type { AbsolutePath, FileEntry } from './types.ts'
+import type { PathⳇAbsolute, FileEntry } from './types.ts'
 
 /////////////////////////////////////////////////
 
-function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsolutePath): FileEntry {
+function createꓽfile_entry(path‿abs: PathⳇAbsolute, root‿abspath: PathⳇAbsolute): FileEntry {
 	const basename = path.basename(path‿abs)
 	const ext = path.extname(basename)
 	const extⵧsub = path.extname(path.basename(basename, ext))
@@ -49,8 +49,8 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 // for rare uses where we want to keep the reference
 function updateꓽfile_entry(
 	entry: FileEntry,
-	new_path‿abs: AbsolutePath,
-	root‿abspath: AbsolutePath = entry.root‿abspath,
+	new_path‿abs: PathⳇAbsolute,
+	root‿abspath: PathⳇAbsolute = entry.root‿abspath,
 ): void {
 	const new_entry = createꓽfile_entry(new_path‿abs, root‿abspath)
 	Object.keys(entry).forEach(k => {

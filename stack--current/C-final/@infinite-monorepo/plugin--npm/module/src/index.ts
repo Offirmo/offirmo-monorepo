@@ -3,9 +3,9 @@ import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type StructuredFsⳇFileManifest,
 	type Node,
-	type NodeRelativePath,
-	type RepoRelativePath,
-	type WorkspaceRelativePath,
+	type NodePathⳇRelative,
+	type RepoPathⳇRelative,
+	type WorkspacePathⳇRelative,
 	PATHVARⵧROOTⵧPACKAGE,
 } from '@infinite-monorepo/types'
 import type { State, Plugin } from '@infinite-monorepo/state'
@@ -15,7 +15,7 @@ import assert from 'tiny-invariant'
 
 /////////////////////////////////////////////////
 
-const packageᐧjson__path‿ar: WorkspaceRelativePath = `${PATHVARⵧROOTⵧPACKAGE}/package.json`
+const packageᐧjson__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧPACKAGE}/package.json`
 const manifestꓽpackageᐧjson: StructuredFsⳇFileManifest = {
 	path‿ar: packageᐧjson__path‿ar,
 	doc: [
@@ -24,7 +24,7 @@ const manifestꓽpackageᐧjson: StructuredFsⳇFileManifest = {
 	],
 }
 
-const packageᝍlockᐧjson__path‿ar: WorkspaceRelativePath = `${PATHVARⵧROOTⵧPACKAGE}/package-lock.json`
+const packageᝍlockᐧjson__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧPACKAGE}/package-lock.json`
 const manifestꓽpackageᝍlockᐧjson: StructuredFsⳇFileManifest = {
 	path‿ar: packageᝍlockᐧjson__path‿ar,
 	doc: [

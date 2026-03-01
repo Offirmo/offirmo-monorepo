@@ -20,22 +20,26 @@ export type Extension = string // '.' included, ex. '.ts'
 
 /////////////////////////////////////////////////
 
-export type RelativePath = string // implied relative to some "working dir"
-export type AbsolutePath = string
-export type AnyPath =
-	| RelativePath
-	| AbsolutePath
+export type PathⳇRelative = string // implied relative to some "working dir"
+export type PathⳇAbsolute = string
+export type PathⳇAny =
+	| PathⳇRelative
+	| PathⳇAbsolute
 
 /////////////////////////////////////////////////
 
-export type RelativeDirPath = `${RelativePath}${PathSeparator}`
-export type AbsoluteDirPath = `${AbsolutePath}${PathSeparator}`
-export type AnyDirPath = RelativeDirPath | AbsoluteDirPath
+export type DirPathⳇRelative = `${PathⳇRelative}${PathSeparator}`
+export type DirPathⳇAbsolute = `${PathⳇAbsolute}${PathSeparator}`
+export type DirPathⳇAny =
+	| DirPathⳇRelative
+	| DirPathⳇAbsolute
 
 /////////////////////////////////////////////////
 
-export type RelativeFilePath = RelativePath
-export type AbsoluteFilePath = AbsolutePath
-export type AnyFilePath = RelativeFilePath | AbsoluteFilePath
+export type FilePathⳇRelative = PathⳇRelative
+export type FilePathⳇAbsolute = PathⳇAbsolute
+export type FilePathⳇAny =
+	| FilePathⳇRelative
+	| FilePathⳇAbsolute
 
 /////////////////////////////////////////////////

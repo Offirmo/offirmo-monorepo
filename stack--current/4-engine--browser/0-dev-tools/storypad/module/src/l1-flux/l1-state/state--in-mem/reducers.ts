@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { Immutable, RelativePath } from '@monorepo-private/ts--types'
+import type { Immutable, PathⳇRelative } from '@monorepo-private/ts--types'
 import { createꓽfilesystem, insertꓽfile } from '@monorepo-private/data-structures'
 
 import type { Config } from '../../../l0-types/l2-config/index.ts'
@@ -50,7 +50,7 @@ function setꓽconfig(state: State, config: Immutable<Config> | undefined): Stat
 /////////////////////////////////////////////////
 // setup
 
-function registerꓽstory(state: State, story: StoryEntry, path: RelativePath): State {
+function registerꓽstory(state: State, story: StoryEntry, path: PathⳇRelative): State {
 	const uid = insertꓽfile(state.tree, path, story)
 	assert(uid === story.uid, `uid should be as expected! "${story.uid}" vs. "${uid}"`)
 

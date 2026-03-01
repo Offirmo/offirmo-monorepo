@@ -5,7 +5,7 @@ import { Tags } from 'exiftool-vendored'
 import type { Immutable } from '@monorepo-private/ts--types'
 import { getꓽbaseⵧloose } from '@monorepo-private/state-utils'
 
-import { AbsolutePath, RelativePath, SimpleYYYYMMDD } from '../../types.js'
+import { PathⳇAbsolute, PathⳇRelative, SimpleYYYYMMDD } from '../../types.js'
 import { Action, ActionType } from '../actions.js'
 import * as Actions from '../actions.js'
 import { FileHash } from '../../services/hash.js'
@@ -36,7 +36,7 @@ import { NOTES_FILE__BASENAME‿LC } from '../../consts.js'
 
 ///////////////////// REDUCERS /////////////////////
 
-export function create(root: AbsolutePath): Immutable<State> {
+export function create(root: PathⳇAbsolute): Immutable<State> {
 	logger.trace(`${LIB} create(…)`, { root })
 
 	let state: State = {
@@ -113,7 +113,7 @@ function _register_folder(state: Immutable<State>, id: Folder.FolderId, just_cre
 	return state
 }
 
-export function on_folder_found(state: Immutable<State>, parent_id: RelativePath, sub_id: RelativePath, just_created: boolean = false): Immutable<State> {
+export function on_folder_found(state: Immutable<State>, parent_id: PathⳇRelative, sub_id: PathⳇRelative, just_created: boolean = false): Immutable<State> {
 	const id = path.join(parent_id, sub_id)
 	logger.trace(`${LIB} on_folder_found(…)`, { parent_id, sub_id, id })
 	logger.verbose(`${LIB} found a folder`, { id })
@@ -127,7 +127,7 @@ export function on_folder_found(state: Immutable<State>, parent_id: RelativePath
 	return state
 }
 
-export function on_file_found(state: Immutable<State>, parent_id: RelativePath, sub_id: RelativePath, called_from_notes_write: boolean = false): Immutable<State> {
+export function on_file_found(state: Immutable<State>, parent_id: PathⳇRelative, sub_id: PathⳇRelative, called_from_notes_write: boolean = false): Immutable<State> {
 	const id = path.join(parent_id, sub_id)
 	logger.trace(`${LIB} on_file_found(…)`, { parent_id, sub_id, id })
 	assert(!state.files[id], `on_file_found("${id}"): should not be already registered!`)
@@ -258,7 +258,7 @@ export function on_hash_computed(state: Immutable<State>, file_id: FileId, hash:
 
 ///////
 
-export function on_file_moved(state: Immutable<State>, id: RelativePath, targetꓽid: RelativePath): Immutable<State> {
+export function on_file_moved(state: Immutable<State>, id: PathⳇRelative, targetꓽid: PathⳇRelative): Immutable<State> {
 	logger.trace(`${LIB} on_file_moved(…)`, { id, targetꓽid })
 
 	assert(id !== targetꓽid, 'on_file_moved(): should be an actual move!')

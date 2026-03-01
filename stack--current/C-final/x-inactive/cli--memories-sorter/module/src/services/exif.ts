@@ -5,7 +5,7 @@ import { type Immutable, HashOf } from '@monorepo-private/ts--types'
 import micro_memoize from 'micro-memoize'
 import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 
-import { AbsolutePath, TimeZone } from '../types.js'
+import { PathⳇAbsolute, TimeZone } from '../types.js'
 import {
 	LegacyDate,
 	create_better_date_from_ExifDateTime,
@@ -89,7 +89,7 @@ const USEFUL_FIELDS = [
 
 ////////////////////////////////////
 
-export async function readꓽexif_data(abs_path: AbsolutePath): Promise<Immutable<Tags>> {
+export async function readꓽexif_data(abs_path: PathⳇAbsolute): Promise<Immutable<Tags>> {
 	//console.log('??? readꓽexif_data()…', abs_path)
 	return exiftool.read(abs_path)
 		.then(_exif_data => {

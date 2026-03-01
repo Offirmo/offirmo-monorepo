@@ -15,8 +15,8 @@ import { writeJsonFile as write_json_file } from 'write-json-file'
 import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
 
 import type {
-	AbsolutePath,
-	AnyPath,
+	PathⳇAbsolute,
+	PathⳇAny,
 	ProgLang,
 	Dependency,
 	DependencyType,
@@ -193,8 +193,8 @@ function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
 
 /////////////////////////////////////////////////
 
-function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { indent?: string, root‿abspath: AbsolutePath}): void {
-	let migration_target : AbsolutePath | null = null
+function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { indent?: string, root‿abspath: PathⳇAbsolute}): void {
+	let migration_target : PathⳇAbsolute | null = null
 
 	const { path‿abs, basename‿no_ᐧext, ext, extⵧextended } = entry
 
@@ -488,7 +488,7 @@ interface Options {
 	pkg_infos_resolver: PkgInfosResolver,
 }
 
-async function getꓽpure_module_details(module_path: AnyPath, options: Partial<Options> = {}): Promise<PureModuleDetails> {
+async function getꓽpure_module_details(module_path: PathⳇAny, options: Partial<Options> = {}): Promise<PureModuleDetails> {
 	const {
 		indent = '',
 		getꓽdefault_namespace,

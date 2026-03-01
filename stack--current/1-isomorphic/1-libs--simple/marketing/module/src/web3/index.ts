@@ -12,8 +12,8 @@ const SOCIAL_LINKⵧPRODUCTHUNT: SocialNetworkLink = { network: 'producthunt', h
 const SOCIAL_LINKⵧTWITTER: SocialNetworkLink     = { network: 'twitter',     handle: 'Offirmo',   url: 'https://twitter.com/Offirmo'          } satisfies SocialNetworkLink
 
 const AUTHOR: Author = {
-	name: 'TODO',
-	intro: 'software engineer, open-source developer & creator',
+	name: 'TODO web3 identity',
+	intro: 'Software Engineer, Product Engineer, open-source developer',
 	email: EMAIL,
 
 	urlⵧcanonical: WEBSITE,

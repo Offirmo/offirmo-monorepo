@@ -1,5 +1,5 @@
 import * as path from 'node:path'
-import type { JSONObject, AnyFilePath, Immutable, JSON } from '@monorepo-private/ts--types'
+import type { JSONObject, FilePathⳇAny, Immutable, JSON } from '@monorepo-private/ts--types'
 
 import type { StructuredFileFormat } from '../types.ts'
 import { isꓽobjectⵧliteral } from '@monorepo-private/type-detection'
@@ -16,7 +16,7 @@ async function ↆimportꓽyaml() {
 
 /////////////////////////////////////////////////
 
-function inferꓽformat_from_path(file_path: AnyFilePath): StructuredFileFormat | undefined {
+function inferꓽformat_from_path(file_path: FilePathⳇAny): StructuredFileFormat | undefined {
 	const basename = path.basename(file_path)
 	const basename‿lc = basename.toLowerCase()
 	const ᐧext‿lc = path.extname(basename‿lc)

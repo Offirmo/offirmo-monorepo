@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { Immutable, RelativePath } from '@monorepo-private/ts--types'
+import type { Immutable, PathⳇRelative } from '@monorepo-private/ts--types'
 import { normalizeꓽpath } from '@monorepo-private/normalize-string'
 
 import { type TreeForRL, getꓽrepresentationⵧlinesⵧgeneric } from '../selectors--representation--lines.ts'
@@ -11,7 +11,7 @@ import {
 
 /////////////////////////////////////////////////
 
-function getꓽparent__path<FilePayload, FolderPayload>(node: FileSystemNode<FilePayload, FolderPayload>): RelativePath {
+function getꓽparent__path<FilePayload, FolderPayload>(node: FileSystemNode<FilePayload, FolderPayload>): PathⳇRelative {
 	let segments: string[] = []
 
 	const { options } = node.root
@@ -19,9 +19,9 @@ function getꓽparent__path<FilePayload, FolderPayload>(node: FileSystemNode<Fil
 	return "TODO getꓽparent__path()"
 }
 
-function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNode<FilePayload, FolderPayload>
-function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: RelativePath): Immutable<FileSystemNode<FilePayload, FolderPayload>>
-function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNode<FilePayload, FolderPayload> {
+function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: PathⳇRelative): FileSystemNode<FilePayload, FolderPayload>
+function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: PathⳇRelative): Immutable<FileSystemNode<FilePayload, FolderPayload>>
+function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: PathⳇRelative): FileSystemNode<FilePayload, FolderPayload> {
 	path = normalizeꓽpath(path)
 	const { options } = tree.root
 	const segments = path.split(options.SEP)
@@ -41,17 +41,17 @@ function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<F
 	}, tree)
 }
 
-function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFolder<FilePayload, FolderPayload>
-function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: RelativePath): Immutable<FileSystemNodeⳇFolder<FilePayload, FolderPayload>>
-function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFolder<FilePayload, FolderPayload> {
+function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: PathⳇRelative): FileSystemNodeⳇFolder<FilePayload, FolderPayload>
+function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: PathⳇRelative): Immutable<FileSystemNodeⳇFolder<FilePayload, FolderPayload>>
+function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: PathⳇRelative): FileSystemNodeⳇFolder<FilePayload, FolderPayload> {
 	const node = getꓽnodeⵧby_path(tree, path)
 	assert(isꓽFileSystemNodeⳇFolder(node), `expected a folder node!`)
 	return node
 }
 
-function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFile<FilePayload, FolderPayload>
-function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: RelativePath): Immutable<FileSystemNodeⳇFile<FilePayload, FolderPayload>>
-function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFile<FilePayload, FolderPayload> {
+function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: PathⳇRelative): FileSystemNodeⳇFile<FilePayload, FolderPayload>
+function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: PathⳇRelative): Immutable<FileSystemNodeⳇFile<FilePayload, FolderPayload>>
+function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: PathⳇRelative): FileSystemNodeⳇFile<FilePayload, FolderPayload> {
 	const node = getꓽnodeⵧby_path(tree, path)
 	assert(isꓽFileSystemNodeⳇFile(node), `expected a file node!`)
 	return node

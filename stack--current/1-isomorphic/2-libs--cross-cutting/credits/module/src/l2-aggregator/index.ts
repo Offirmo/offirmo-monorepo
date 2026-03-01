@@ -6,7 +6,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@monorepo-private/ts--types'
 
-import type { Asset, Url‿str, AnyPath } from '../l1-types/index.ts'
+import type { Asset, Url‿str, PathⳇAny } from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -76,7 +76,7 @@ function _getꓽurl_tobind(this: Immutable<Asset>): Url‿str {
 	return getꓽurl(this)
 }
 
-function getꓽpath(asset: Immutable<Asset>): AnyPath {
+function getꓽpath(asset: Immutable<Asset>): PathⳇAny {
 	const url = getꓽurl(asset)
 	assert(url.startsWith('file://'), 'Credits: asset Url is expected to start with file://!')
 	const url_obj = new URL(url)

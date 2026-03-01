@@ -1,8 +1,8 @@
 
 // TODO move to ts-types
 export type Basename = string
-export type RelativePath = string // implied relative to "root"
-export type AbsolutePath = string
+export type PathⳇRelative = string // implied relative to "root"
+export type PathⳇAbsolute = string
 
 export type SimpleYYYYMMDD = number
 export type ISODateString = string

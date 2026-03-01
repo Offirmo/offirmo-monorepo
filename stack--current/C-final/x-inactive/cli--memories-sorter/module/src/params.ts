@@ -6,7 +6,7 @@ import type { Immutable } from '@monorepo-private/ts--types'
 import { TimestampUTCMs } from '@monorepo-private/timestamps'
 
 import { FILE_EXTENSIONSⵧEXIF_POWERED‿LC } from './consts.js'
-import { SimpleYYYYMMDD, AbsolutePath, TimeZone } from './types.js'
+import { SimpleYYYYMMDD, PathⳇAbsolute, TimeZone } from './types.js'
 import logger from './services/logger.js'
 
 /////////////////////////////////////////////////
@@ -20,7 +20,7 @@ interface DefaultTzChange {
 }
 
 interface Params {
-	root: AbsolutePath
+	root: PathⳇAbsolute
 	dateⵧlower_bound‿ₓyear: number
 	dateⵧupper_bound‿ₓyear: number
 	dateⵧlower_bound‿symd: SimpleYYYYMMDD

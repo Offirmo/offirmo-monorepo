@@ -4,9 +4,9 @@ import * as fs from 'node:fs'
 
 //console.log('XXXXXXXX fse im\n', Object.keys(fse).sort().filter(k => k[0].toLowerCase() === k[0]).join('\n'))
 
-import type { AbsolutePath } from '../types.js'
+import type { PathⳇAbsolute } from '../types.js'
 
-export function _is_same_inode(abs_path_a: AbsolutePath, abs_path_b: AbsolutePath): boolean {
+export function _is_same_inode(abs_path_a: PathⳇAbsolute, abs_path_b: PathⳇAbsolute): boolean {
 	// TODO shortcut if paths are equal? or throw?
 
 	const stats_a = fs.statSync(abs_path_a)

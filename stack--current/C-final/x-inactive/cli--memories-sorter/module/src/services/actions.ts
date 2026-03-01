@@ -9,7 +9,7 @@ import { normalize_unicode } from '@monorepo-private/normalize-string'
 import { normalizeError } from '@offirmo/error-utils'
 import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
-import { Basename, RelativePath } from '../types.js'
+import { Basename, PathⳇRelative } from '../types.js'
 import { NOTES_FILE__BASENAME‿LC } from '../consts.js'
 import { getꓽparams, Params } from '../params.js'
 
@@ -94,7 +94,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 	}
 
 	// read only
-	async function explore_folder(id: RelativePath): Promise<void> {
+	async function explore_folder(id: PathⳇRelative): Promise<void> {
 		logger.trace(`[Action] initiating explore_folder "${id}"…`)
 
 		try {
@@ -107,7 +107,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 				// TODO async
 				const sub_dirs = fs_extra.lsDirsSync(abs_path, { full_path: false })
 				sub_dirs
-					.forEach((sub_id: RelativePath) => {
+					.forEach((sub_id: PathⳇRelative) => {
 						_report.folder_count++
 						db = DB.on_folder_found(db, id, sub_id)
 					})
@@ -150,7 +150,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function query_fs_stats(id: RelativePath): Promise<void> {
+	async function query_fs_stats(id: PathⳇRelative): Promise<void> {
 		logger.trace(`[Action] initiating query_fs_stats for "${id}"…`)
 
 		try {
@@ -165,7 +165,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function query_exif(id: RelativePath): Promise<void> {
+	async function query_exif(id: PathⳇRelative): Promise<void> {
 		logger.trace(`[Action] initiating query_exif for "${id}"…`)
 
 		try {
@@ -180,7 +180,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function compute_hash(id: RelativePath): Promise<void> {
+	async function compute_hash(id: PathⳇRelative): Promise<void> {
 		logger.trace(`[Action] initiating compute_hash for "${id}"…`)
 
 		try {
@@ -195,7 +195,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function load_notes(path: RelativePath): Promise<void> {
+	async function load_notes(path: PathⳇRelative): Promise<void> {
 		logger.trace(`[Action] initiating load_notes from "${path}"…`)
 
 		try {
@@ -214,7 +214,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 
 	// because of unicode normalization, we have to check the OS for the existence of the folder :-(
 	// since we never delete until the end
-	async function ensure_folder(id: RelativePath): Promise<void> {
+	async function ensure_folder(id: PathⳇRelative): Promise<void> {
 		const split_path = id.split(path.sep)
 		const depth = split_path.length
 		logger.trace(`[Action] initiating ensure_folder "${id}"…`, { depth })
@@ -275,7 +275,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function delete_file(id: RelativePath): Promise<void> {
+	async function delete_file(id: PathⳇRelative): Promise<void> {
 		logger.trace(`[Action] initiating  "${id}"…`)
 		logger.verbose(`- ✍️ deleting file "${id}"…`)
 
@@ -299,7 +299,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function persist_notes(folder_path: RelativePath = '.', data: Immutable<Notes.State> | undefined): Promise<void> {
+	async function persist_notes(folder_path: PathⳇRelative = '.', data: Immutable<Notes.State> | undefined): Promise<void> {
 		logger.trace(`[Action] initiating persist_notes "${folder_path}"…`)
 		logger.verbose(`- ✍️ persisting notes into "${folder_path}"…`)
 
@@ -347,7 +347,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 	// - needs to be sync bc we'll do a check for conflict = race condition
 	// - expecting the folder to be pre-existing
 	function _intelligently_normalize_file_basename_sync(
-		id: RelativePath,
+		id: PathⳇRelative,
 		targetꓽfolder: FolderId = File.getꓽcurrent_parent_folder_id(db.files[id])
 	): void {
 		logger.trace(`[Action] (sub-INFB) _intelligently_normalize_file_basename_sync() "${id}"…`)
@@ -496,7 +496,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function move_file_to_ideal_location(id: RelativePath): Promise<void> {
+	async function move_file_to_ideal_location(id: PathⳇRelative): Promise<void> {
 		const targetꓽid = DB.getꓽideal_file_relative_path(db, id)
 
 		logger.trace(`[Action] initiating move_file_to_ideal_location "${id}" to DIFFERENT "${targetꓽid}"…`)
@@ -550,7 +550,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function normalize_file(id: RelativePath): Promise<void> {
+	async function normalize_file(id: PathⳇRelative): Promise<void> {
 		logger.trace(`[Action] initiating normalize_file "${id}"…`)
 
 		try {
@@ -585,7 +585,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 	}
 
-	async function delete_folder_if_empty(id: RelativePath): Promise<void> {
+	async function delete_folder_if_empty(id: PathⳇRelative): Promise<void> {
 		logger.trace(`[Action] initiating delete_folder_if_empty "${id}"…`)
 
 		try {

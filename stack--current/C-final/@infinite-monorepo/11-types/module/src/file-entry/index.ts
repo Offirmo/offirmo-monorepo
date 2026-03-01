@@ -1,13 +1,13 @@
 import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
-import type { AbsolutePath } from '@monorepo-private/ts--types'
+import type { PathⳇAbsolute } from '@monorepo-private/ts--types'
 
 import type { FileEntry } from './types.ts'
 
 /////////////////////////////////////////////////
 
-function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsolutePath): FileEntry {
+function createꓽfile_entry(path‿abs: PathⳇAbsolute, root‿abspath: PathⳇAbsolute): FileEntry {
 	const basename = path.basename(path‿abs)
 	const ext = path.extname(basename)
 	const extⵧsub = path.extname(path.basename(basename, ext))
@@ -50,8 +50,8 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 // in-place, mutate!
 function updateꓽfile_entry(
 	entry: FileEntry,
-	new_path‿abs: AbsolutePath,
-	root‿abspath: AbsolutePath,
+	new_path‿abs: PathⳇAbsolute,
+	root‿abspath: PathⳇAbsolute,
 ): void {
 	const new_entry = createꓽfile_entry(new_path‿abs, root‿abspath)
 	Object.keys(entry).forEach(k => {

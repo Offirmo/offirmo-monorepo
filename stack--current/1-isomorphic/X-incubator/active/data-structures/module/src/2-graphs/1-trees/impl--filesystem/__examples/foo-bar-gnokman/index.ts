@@ -1,4 +1,4 @@
-import type { RelativePath } from '@monorepo-private/ts--types'
+import type { PathⳇRelative } from '@monorepo-private/ts--types'
 
 import { createꓽgraph } from '../../../../__examples/fs--foo-bar-gnokman/index.ts'
 
@@ -18,7 +18,7 @@ function createⵧsub(): FileSystemNodeⳇFolder<FilePayload, FolderPayload> {
 	type Graph = FileSystemNodeⳇFolder<FilePayload, FolderPayload>
 	const { graph, ...rest } = createꓽgraph<Graph>(
 		createꓽfilesystem,
-		(g: Graph, path: RelativePath) => insertꓽfile(g, path, undefined),
+		(g: Graph, path: PathⳇRelative) => insertꓽfile(g, path, undefined),
 		upsertꓽfolder,
 	)
 

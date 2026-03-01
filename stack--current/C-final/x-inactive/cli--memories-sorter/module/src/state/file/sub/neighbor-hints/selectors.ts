@@ -18,7 +18,7 @@ import {
 	parse_folder_basename,
 	pathㆍparse_memoized,
 } from '../../../../services/name_parser.js'
-import { RelativePath } from '../../../../types.js'
+import { PathⳇRelative } from '../../../../types.js'
 import { getꓽparams, Params } from '../../../../params.js'
 
 /////////////////////////////////////////////////
@@ -39,7 +39,7 @@ export function getꓽfs_reliability‿numeric_score(reliability: FsReliability 
 	}
 }
 
-export function getꓽbcd_from_parent_path(parent_path: RelativePath): null | undefined | BetterDate {
+export function getꓽbcd_from_parent_path(parent_path: PathⳇRelative): null | undefined | BetterDate {
 	// try to infer a date from parent path
 
 	const folder_path‿pparsed = pathㆍparse_memoized(parent_path)
@@ -55,7 +55,7 @@ export function getꓽbcd_from_parent_path(parent_path: RelativePath): null | un
 }
 
 // TODO review usage
-export function getꓽexpected_bcd_range_from_parent_path(parent_path: RelativePath, PARAMS: Immutable<Params> = getꓽparams()): null | undefined | DateRange {
+export function getꓽexpected_bcd_range_from_parent_path(parent_path: PathⳇRelative, PARAMS: Immutable<Params> = getꓽparams()): null | undefined | DateRange {
 
 	// try to infer a date from parent path
 	const date = getꓽbcd_from_parent_path(parent_path)

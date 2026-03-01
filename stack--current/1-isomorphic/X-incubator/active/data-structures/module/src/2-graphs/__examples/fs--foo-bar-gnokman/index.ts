@@ -1,15 +1,15 @@
 import assert from 'tiny-invariant'
-import type { RelativePath } from '@monorepo-private/ts--types'
+import type { PathⳇRelative } from '@monorepo-private/ts--types'
 
 /////////////////////////////////////////////////
 
 function createꓽgraph<Graph = any>(
 	create: () => Graph,
-	insertꓽfile: (graph: Graph, path: RelativePath) => RelativePath,
-	upsertꓽfolder: (graph: Graph, path: RelativePath) => RelativePath,
-): { graph: Graph, files: RelativePath[] } {
+	insertꓽfile: (graph: Graph, path: PathⳇRelative) => PathⳇRelative,
+	upsertꓽfolder: (graph: Graph, path: PathⳇRelative) => PathⳇRelative,
+): { graph: Graph, files: PathⳇRelative[] } {
 
-	let files: RelativePath[] = []
+	let files: PathⳇRelative[] = []
 	let _insertꓽfile = insertꓽfile
 	insertꓽfile = (graph, path) => {
 		const normalized_path = _insertꓽfile(graph, path)

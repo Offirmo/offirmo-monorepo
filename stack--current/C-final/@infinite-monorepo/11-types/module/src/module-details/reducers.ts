@@ -1,14 +1,14 @@
 import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
-import type { AbsolutePath } from '@monorepo-private/ts--types'
+import type { PathⳇAbsolute } from '@monorepo-private/ts--types'
 
 import type { ProgLang } from '../01-primitives.ts'
 import type { PureModuleDetails, PureModuleManifest } from './types.ts'
 
 /////////////////////////////////////////////////
 
-function create(root‿abspath: AbsolutePath): PureModuleDetails {
+function create(root‿abspath: PathⳇAbsolute): PureModuleDetails {
 	const name = (() => {
 		let _path = path.resolve(root‿abspath).split(path.sep)
 		if (_path.at(-1) === 'src') _path.pop()

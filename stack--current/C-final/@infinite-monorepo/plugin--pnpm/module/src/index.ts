@@ -3,7 +3,7 @@ import type { Immutable, JSONObject } from '@monorepo-private/ts--types'
 import {
 	type StructuredFsⳇFileManifest,
 	type Node,
-	type WorkspaceRelativePath,
+	type WorkspacePathⳇRelative,
 	PATHVARⵧROOTⵧWORKSPACE,
 	type NodeⳇWorkspaceLine,
 	type NodeⳇPackage,
@@ -20,13 +20,13 @@ import { lsDirsSync } from '@monorepo-private/fs--ls'
 
 /////////////////////////////////////////////////
 
-const pnpmᝍworkspaceᐧyaml__path‿ar: WorkspaceRelativePath = `${PATHVARⵧROOTⵧWORKSPACE}/pnpm-workspace.yaml`
+const pnpmᝍworkspaceᐧyaml__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧWORKSPACE}/pnpm-workspace.yaml`
 const manifestꓽpnpmᝍworkspaceᐧyaml: StructuredFsⳇFileManifest = {
 	path‿ar: pnpmᝍworkspaceᐧyaml__path‿ar,
 	doc: ['https://pnpm.io/settings', 'https://pnpm.io/pnpm-workspace_yaml'],
 }
 
-const ᐧpnpmfileᐧcjs__path‿ar: WorkspaceRelativePath = `${PATHVARⵧROOTⵧWORKSPACE}/.pnpmfile.cjs`
+const ᐧpnpmfileᐧcjs__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧWORKSPACE}/.pnpmfile.cjs`
 const manifestꓽᐧpnpmfileᐧcjs: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧpnpmfileᐧcjs__path‿ar,
 	doc: ['https://pnpm.io/pnpmfile'],

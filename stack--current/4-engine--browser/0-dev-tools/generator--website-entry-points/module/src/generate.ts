@@ -4,7 +4,7 @@ import { ೱoutputꓽfile } from '@monorepo-private/fs--output-file'
 
 import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
-import type { Immutable, AbsolutePath } from '@monorepo-private/ts--types'
+import type { Immutable, PathⳇAbsolute } from '@monorepo-private/ts--types'
 
 import { DIR_FILES_TO_SERVE } from './consts.ts'
 import type { EntryPoints, WebPropertyEntryPointSpec } from './types.ts'
@@ -54,7 +54,7 @@ const PRETTIER_OPTIONS = {
 } satisfies Partial<Prettier.RequiredOptions>
 
 // dir must be absolute bc. from where would we resolve it?
-async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>, targetDir: AbsolutePath): Promise<EntryPoints> {
+async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>, targetDir: PathⳇAbsolute): Promise<EntryPoints> {
 	targetDir = path.normalize(targetDir)
 	assert(path.isAbsolute(targetDir), `dir must be absolute, got "${targetDir}"`)
 	console.log(`📁 ${targetDir}`)
@@ -122,7 +122,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 
 async function generateꓽwebsiteᝍentryᝍpoints(
 	spec: Immutable<WebPropertyEntryPointSpec>,
-	targetDir: AbsolutePath,
+	targetDir: PathⳇAbsolute,
 	options: {
 		rm?: boolean
 	} = {},

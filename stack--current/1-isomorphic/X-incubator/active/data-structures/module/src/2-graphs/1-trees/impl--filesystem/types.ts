@@ -1,4 +1,4 @@
-import type { Basename, RelativePath } from '@monorepo-private/ts--types'
+import type { Basename, PathⳇRelative } from '@monorepo-private/ts--types'
 
 import type { WithOptions, WithPayload } from '../../../1-common/types.ts'
 
@@ -51,7 +51,7 @@ interface FileSystemRoot<FilePayload, FolderPayload> extends FileSystemNodeⳇFo
 interface Aggregated<FilePayload, FolderPayload> {
 	basename: Basename
 	type: 'file' | 'folder'
-	pathⵧfrom_root: RelativePath // inc. basename
+	pathⵧfrom_root: PathⳇRelative // inc. basename
 
 	node: FileSystemNode<FilePayload, FolderPayload>
 }

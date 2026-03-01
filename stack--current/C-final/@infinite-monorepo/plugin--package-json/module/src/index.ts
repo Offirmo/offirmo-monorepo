@@ -1,15 +1,15 @@
 import type { Immutable } from '@monorepo-private/ts--types'
 import {
-	type PackageRelativePath,
+	type PackagePathⳇRelative,
 	type Plugin,
 	type StructuredFsⳇFileManifest,
-	type WorkspaceRelativePath,
+	type WorkspacePathⳇRelative,
 } from '@infinite-monorepo/types'
 import * as StateLib from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////
 
-const packageᐧjson__path: PackageRelativePath = '$PACKAGE_ROOT$/package.json'
+const packageᐧjson__path: PackagePathⳇRelative = '$PACKAGE_ROOT$/package.json'
 const packageᐧjson__manifest: StructuredFsⳇFileManifest = {
 	path‿ar: packageᐧjson__path,
 	format: 'json',

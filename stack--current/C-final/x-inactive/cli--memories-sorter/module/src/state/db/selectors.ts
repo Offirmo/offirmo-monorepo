@@ -7,7 +7,7 @@ import { prettifyꓽjson } from '@monorepo-private/prettify-any'
 import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 import { LIB as APP } from '../../consts.js'
-import { AbsolutePath, RelativePath } from '../../types.js'
+import { PathⳇAbsolute, PathⳇRelative } from '../../types.js'
 import { Action } from '../actions.js'
 import { getꓽfile_basename_without_copy_index } from '../../services/name_parser.js'
 import * as BetterDateLib from '../../services/better-date.js'
@@ -23,7 +23,7 @@ import { getꓽparams } from '../../params.js'
 import { LIB } from './consts.js'
 import {	State } from './types.js'
 
-export function getꓽabsolute_path(state: Immutable<State>, id: RelativePath): AbsolutePath {
+export function getꓽabsolute_path(state: Immutable<State>, id: PathⳇRelative): PathⳇAbsolute {
 	return path.join(state.root, id)
 }
 
@@ -101,7 +101,7 @@ export function is_folder_existing(state: Immutable<State>, id: FolderId): boole
 }
 
 // CORE LOGIC
-export function getꓽideal_file_relative_folder(state: Immutable<State>, id: FileId): RelativePath {
+export function getꓽideal_file_relative_folder(state: Immutable<State>, id: FileId): PathⳇRelative {
 	logger.trace(`✴️ getꓽideal_file_relative_folder()`, { id })
 	const DEBUG = false
 
@@ -266,7 +266,7 @@ export function getꓽideal_file_relative_folder(state: Immutable<State>, id: Fi
 	return path.join(year, event_folder_base)
 }
 
-export function getꓽideal_file_relative_path(state: Immutable<State>, id: FileId): RelativePath {
+export function getꓽideal_file_relative_path(state: Immutable<State>, id: FileId): PathⳇRelative {
 	logger.trace(`getꓽideal_file_relative_path()`, { id })
 
 	const file_state = state.files[id]

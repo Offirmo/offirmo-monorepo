@@ -8,11 +8,11 @@ import {
 
 import type {
 	JSONObject,
-	AbsoluteDirPath,
-	AbsolutePath,
-	AbsoluteFilePath,
+	DirPathⳇAbsolute,
+	PathⳇAbsolute,
+	FilePathⳇAbsolute,
 	PathSeparator,
-	AnyPath,
+	PathⳇAny,
 } from '@monorepo-private/ts--types'
 import { lsDirsSync, lsFilesSync } from '@monorepo-private/fs--ls'
 import { strict as assert } from 'node:assert'
@@ -21,8 +21,8 @@ import { strict as assert } from 'node:assert'
 
 interface Result {
 	data: JSONObject | null // can be null if no file, ex. just reporting a boundary, also if no defaults provided
-	parent_folder_path‿abs: AbsoluteDirPath
-	exact_file_path‿abs: AbsoluteFilePath | null // can be null if no file
+	parent_folder_path‿abs: DirPathⳇAbsolute
+	exact_file_path‿abs: FilePathⳇAbsolute | null // can be null if no file
 	hasꓽpackageᐧjson: boolean // is there a package.json in the same folder?
 	boundary?: // is that a boundary?
 		| 'git' // parent_folder_path‿abs is a git repo root
@@ -42,7 +42,7 @@ interface Result {
 export declare namespace loadꓽconfigⵧchain {
 	type Options = {
 		defaults: JSONObject | undefined
-		from: AnyPath
+		from: PathⳇAny
 	}
 }
 export async function loadꓽconfigⵧchain(
@@ -53,8 +53,8 @@ export async function loadꓽconfigⵧchain(
 		defaults: undefined,
 		...options,
 	}
-	const HOME_path‿abs: AbsoluteDirPath = `${homedir()}${path.sep}` // TODO XDG? TODO can it fail in CI?
-	options.from = ((): AbsolutePath => {
+	const HOME_path‿abs: DirPathⳇAbsolute = `${homedir()}${path.sep}` // TODO XDG? TODO can it fail in CI?
+	options.from = ((): PathⳇAbsolute => {
 		if (!options.from) return process.cwd()
 
 		if (options.from.startsWith('~')) {
@@ -69,7 +69,7 @@ export async function loadꓽconfigⵧchain(
 	let hasꓽencountered_a_boundary_already = false
 
 	while (segments.length > 0) {
-		const current_path‿abs: AbsoluteDirPath = `${segments.join(path.sep)}${path.sep as PathSeparator}` // trailing sep also handles root
+		const current_path‿abs: DirPathⳇAbsolute = `${segments.join(path.sep)}${path.sep as PathSeparator}` // trailing sep also handles root
 
 		try {
 			const child_dirs_pathes‿rel = lsDirsSync(current_path‿abs, { full_path: false })
@@ -181,7 +181,7 @@ async function loadꓽconfigⵧtopmost(
 async function loadꓽconfigⵧclosest(
 	radix: string,
 	options = {},
-): Promise<[JSONObject, AbsoluteDirPath, AbsoluteFilePath | null]> {
+): Promise<[JSONObject, DirPathⳇAbsolute, FilePathⳇAbsolute | null]> {
 	throw new Error(`No "${radix}/index.ts" found within the closest git repo!`)
 }
 

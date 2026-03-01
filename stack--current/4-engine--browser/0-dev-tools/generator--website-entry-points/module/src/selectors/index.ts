@@ -4,7 +4,7 @@ import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
 
-import type { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@monorepo-private/ts--types'
+import type { PathⳇAny, Basename, Emoji, Immutable, PathⳇRelative } from '@monorepo-private/ts--types'
 import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@monorepo-private/ts--types--web'
 import type { CssⳇColor‿str } from '@monorepo-private/ts--types--web'
 import { FeatureSnippets } from '@monorepo-private/generator--html'
@@ -239,8 +239,8 @@ function getꓽiconⵧsvg(spec: Immutable<WebPropertyEntryPointSpec>): Immutable
 	return spec.icon.svg as any
 }
 
-function getꓽiconsⵧpng(spec: Immutable<WebPropertyEntryPointSpec>): Map<number, AnyPath> {
-	const map = new Map<number, AnyPath>()
+function getꓽiconsⵧpng(spec: Immutable<WebPropertyEntryPointSpec>): Map<number, PathⳇAny> {
+	const map = new Map<number, PathⳇAny>()
 	const pngs_value = spec.icon?.pngs
 
 	if (pngs_value) {
@@ -327,7 +327,7 @@ function getꓽicon__basename(spec: Immutable<WebPropertyEntryPointSpec>, size: 
 	return `icon-${size}.png`
 }
 
-function getꓽicon__path(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): RelativePath {
+function getꓽicon__path(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): PathⳇRelative {
 	const basename = getꓽicon__basename(spec, size)
 	const path = [ basename ]
 	if (basename !== 'favicon.ico')

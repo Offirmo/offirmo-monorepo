@@ -3,8 +3,8 @@ import type {
 	SemVerⳇRange,
 	PathSeparator,
 	EndOfLine,
-	AbsoluteDirPath,
-	AbsoluteFilePath,
+	DirPathⳇAbsolute,
+	FilePathⳇAbsolute,
 } from '@monorepo-private/ts--types'
 
 import type { VersionSpecification } from './01-primitives.ts'
@@ -33,7 +33,7 @@ export interface InfiniteMonorepoSpec {
 	runtimeⵧlocal: LocalJsRuntimeKey | JsRuntimeSpec<LocalJsRuntimeKey>
 
 	/////// GRAPH ///////
-	root_path‿abs: AbsoluteDirPath
+	root_path‿abs: DirPathⳇAbsolute
 	workspaces: Array<string> // TODO refine
 
 	/////// TOOLING ///////
@@ -46,5 +46,5 @@ export interface InfiniteMonorepoSpec {
 	PATH_SEP: PathSeparator // useful?
 
 	/////// META ///////
-	_config_fileⵧroot: AbsoluteFilePath | null | undefined
+	_config_fileⵧroot: FilePathⳇAbsolute | null | undefined
 }

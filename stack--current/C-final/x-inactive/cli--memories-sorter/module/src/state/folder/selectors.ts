@@ -6,7 +6,7 @@ import { NORMALIZERS } from '@monorepo-private/normalize-string'
 import micro_memoize from 'micro-memoize'
 
 import { DIGIT_PROTECTION_SEPARATOR } from '../../consts.js'
-import { Basename, RelativePath, SimpleYYYYMMDD, TimeZone } from '../../types.js'
+import { Basename, PathⳇRelative, SimpleYYYYMMDD, TimeZone } from '../../types.js'
 import logger from '../../services/logger.js'
 import { is_digit } from '../../services/matchers.js'
 import {
@@ -35,7 +35,7 @@ export const ERROR__RANGE_TOO_BIG = `Folder: range is too big!`
 
 ////////////////////////////////////
 
-export function getꓽcurrent_relative_path(state: Immutable<State>): RelativePath {
+export function getꓽcurrent_relative_path(state: Immutable<State>): PathⳇRelative {
 	return state.id
 }
 

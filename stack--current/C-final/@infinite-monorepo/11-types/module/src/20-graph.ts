@@ -1,4 +1,4 @@
-import type { AbsoluteDirPath, RelativeFilePath, RelativeDirPath } from '@monorepo-private/ts--types'
+import type { DirPathⳇAbsolute, FilePathⳇRelative, DirPathⳇRelative } from '@monorepo-private/ts--types'
 import type { InfiniteMonorepoSpec } from './50-spec.ts'
 import type { PureModuleDetails } from './module-details'
 
@@ -13,31 +13,31 @@ export const NODE_TYPEⵧPACKAGE = 'package' as const
 // inspired by https://www.jetbrains.com/help/idea/absolute-path-variables.html
 
 export const PATHVARⵧROOTⵧREPO = `$REPO_ROOT$` as const
-export type RepoRelativePath = `${typeof PATHVARⵧROOTⵧREPO}/${string}`
+export type RepoPathⳇRelative = `${typeof PATHVARⵧROOTⵧREPO}/${string}`
 
 export const PATHVARⵧROOTⵧWORKSPACE = `$${NODE_TYPEⵧWORKSPACE.toUpperCase()}_ROOT$` as const
-export type WorkspaceRelativePath = `${typeof PATHVARⵧROOTⵧWORKSPACE}/${string}`
+export type WorkspacePathⳇRelative = `${typeof PATHVARⵧROOTⵧWORKSPACE}/${string}`
 
 export const PATHVARⵧROOTⵧWORKSPACE__LINE =
 	`$${NODE_TYPEⵧWORKSPACE__LINE.toUpperCase()}_ROOT$` as const
-export type WorkspaceLineRelativePath = `${typeof PATHVARⵧROOTⵧWORKSPACE__LINE}/${string}`
+export type WorkspaceLinePathⳇRelative = `${typeof PATHVARⵧROOTⵧWORKSPACE__LINE}/${string}`
 
 export const PATHVARⵧROOTⵧPACKAGE = `$${NODE_TYPEⵧPACKAGE.toUpperCase()}_ROOT$` as const
-export type PackageRelativePath = `${typeof PATHVARⵧROOTⵧPACKAGE}/${string}`
+export type PackagePathⳇRelative = `${typeof PATHVARⵧROOTⵧPACKAGE}/${string}`
 
 // any node
 export const PATHVARⵧROOTⵧNODE = `$NODE_ROOT$` as const
-export type NodeRelativePath = `${typeof PATHVARⵧROOTⵧNODE}/${string}`
+export type NodePathⳇRelative = `${typeof PATHVARⵧROOTⵧNODE}/${string}`
 
-export type MultiRepoRelativePath =
-	| RepoRelativePath
-	| WorkspaceRelativePath
-	| WorkspaceLineRelativePath
-	| PackageRelativePath
-	| NodeRelativePath
+export type MultiRepoPathⳇRelative =
+	| RepoPathⳇRelative
+	| WorkspacePathⳇRelative
+	| WorkspaceLinePathⳇRelative
+	| PackagePathⳇRelative
+	| NodePathⳇRelative
 
-export type MultiRepoRelativeFilePath = MultiRepoRelativePath
-export type MultiRepoRelativeDirPath = MultiRepoRelativePath
+export type MultiRepoFilePathⳇRelative = MultiRepoPathⳇRelative
+export type MultiRepoDirPathⳇRelative = MultiRepoPathⳇRelative
 
 /////////////////////////////////////////////////
 
@@ -45,8 +45,8 @@ export type MultiRepoRelativeDirPath = MultiRepoRelativePath
 export type NodeId = string
 
 export interface NodeBase {
-	path‿abs: AbsoluteDirPath
-	path‿ar: MultiRepoRelativePath
+	path‿abs: DirPathⳇAbsolute
+	path‿ar: MultiRepoPathⳇRelative
 
 	// Any node can override stuff from the root spec
 	// Will be intelligently cascaded from parents (prototypically)
@@ -67,7 +67,7 @@ export interface NodeBase {
 
 // in the sense of a ~npm package with a package.json
 export interface Package extends NodeBase {
-	path‿ar: WorkspaceRelativePath | WorkspaceLineRelativePath
+	path‿ar: WorkspacePathⳇRelative | WorkspaceLinePathⳇRelative
 
 	details: PureModuleDetails
 
@@ -79,14 +79,14 @@ export interface Package extends NodeBase {
 // subset of a workspace
 // usually ~ a line in the workspace definition
 export interface WorkspaceLine extends NodeBase {
-	path‿ar: WorkspaceRelativePath
+	path‿ar: WorkspacePathⳇRelative
 }
 
 /////////////////////////////////////////////////
 
 // group of packages linked together by a monorepo tool
 export interface Workspace extends NodeBase {
-	path‿ar: WorkspaceRelativePath
+	path‿ar: WorkspacePathⳇRelative
 }
 
 /////////////////////////////////////////////////

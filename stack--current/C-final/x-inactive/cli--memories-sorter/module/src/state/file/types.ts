@@ -13,7 +13,7 @@ import { TimestampUTCMs } from '@monorepo-private/timestamps'
 
 import {
 	Basename,
-	RelativePath,
+	PathⳇRelative,
 	SimpleYYYYMMDD,
 } from '../../types.js'
 import { FsStatsSubset } from '../../services/fs_stats.js'
@@ -35,7 +35,7 @@ export interface HistoricalData {
 
 	// from path
 	basename: Basename // can contain the date + we "clean" it, maybe with bugs
-	parent_path: RelativePath // can contain the event description + useful to manually re-sort in multi-level folder cases
+	parent_path: PathⳇRelative // can contain the event description + useful to manually re-sort in multi-level folder cases
 
 	// from fs
 	// we should always store it in case it changes for some reason + we may overwrite it
@@ -62,13 +62,13 @@ export interface PersistedNotes {
 
 	// for debug
 	// NOTE it has to be properly re-set on change! TODO add auto checks?
-	_currently_known_as: RelativePath // not strictly useful, intended at humans reading the notes manually
+	_currently_known_as: PathⳇRelative // not strictly useful, intended at humans reading the notes manually
 	_bcd_afawk‿symd: undefined | SimpleYYYYMMDD
 	_bcd_source: undefined | string
 }
 
 // Id = path relative to root so far
-export type FileId = RelativePath
+export type FileId = PathⳇRelative
 
 export interface State {
 	id: FileId

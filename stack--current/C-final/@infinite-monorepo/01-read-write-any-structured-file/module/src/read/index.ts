@@ -6,7 +6,7 @@ import * as fs from 'node:fs/promises'
 import strip_bom from 'strip-bom'
 import split_lines from 'split-lines'
 
-import type { JSONObject, AnyFilePath } from '@monorepo-private/ts--types'
+import type { JSONObject, FilePathⳇAny } from '@monorepo-private/ts--types'
 
 import type {
 	ContentⳇJson5,
@@ -24,7 +24,7 @@ import { inferꓽformat_from_path, ↆimportꓽjson5, ↆimportꓽyaml } from '.
 /////////////////////////////////////////////////
 
 async function ↆreadꓽfile(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	hints?: Partial<{ format: StructuredFileFormat | undefined }>,
 ): Promise<StructuredContent> {
 	const result: StructuredContent = {
@@ -97,13 +97,13 @@ async function ↆreadꓽfile(
 
 /////////////////////////////////////////////////
 
-async function ↆloadꓽfileⵧdefault_export(file_path: AnyFilePath): Promise<ContentⳇDefaultExport> {
+async function ↆloadꓽfileⵧdefault_export(file_path: FilePathⳇAny): Promise<ContentⳇDefaultExport> {
 	const ೱdata = import(path.resolve(process.cwd(), file_path)).then(x => x.default as any)
 	return await ೱdata
 }
 
 async function ↆloadꓽfileⵧjson5(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content_hint?: Promise<string> | string,
 ): Promise<ContentⳇJson5> {
 	const ↆpkgꓽjson5 = ↆimportꓽjson5()
@@ -113,7 +113,7 @@ async function ↆloadꓽfileⵧjson5(
 }
 
 async function ↆloadꓽfileⵧyaml(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content_hint?: Promise<string> | string,
 ): Promise<ContentⳇYaml> {
 	const ↆpkgꓽyaml = ↆimportꓽyaml()
@@ -123,7 +123,7 @@ async function ↆloadꓽfileⵧyaml(
 }
 
 async function ↆloadꓽfileⵧlist(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content_hint?: Promise<string> | string,
 ): Promise<ContentⳇList> {
 	const ↆcontent‿raw = _readRawTextFile(file_path, content_hint)
@@ -137,7 +137,7 @@ async function ↆloadꓽfileⵧlist(
 }
 
 async function ↆloadꓽfileⵧsingle_value(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content_hint?: Promise<string> | string,
 ): Promise<ContentⳇSingleValue> {
 	let lines = (await ↆloadꓽfileⵧlist(file_path, content_hint)).entries
@@ -150,7 +150,7 @@ async function ↆloadꓽfileⵧsingle_value(
 }
 
 async function ↆloadꓽfileⵧmarkdown(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content_hint?: Promise<string> | string,
 ): Promise<ContentⳇMarkup> {
 	const ↆcontent‿raw = _readRawTextFile(file_path, content_hint)
@@ -179,7 +179,7 @@ async function ↆloadꓽfileⵧmarkdown(
 }
 
 async function _readRawTextFile(
-	file_path: AnyFilePath,
+	file_path: FilePathⳇAny,
 	content_hint?: Promise<string> | string,
 ): Promise<string> {
 	return await (content_hint ?

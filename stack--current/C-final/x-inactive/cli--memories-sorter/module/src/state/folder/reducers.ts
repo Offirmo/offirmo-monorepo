@@ -2,7 +2,7 @@ import path from 'path'
 import assert from 'tiny-invariant'
 import type { Immutable } from '@monorepo-private/ts--types'
 
-import { RelativePath, SimpleYYYYMMDD } from '../../types.js'
+import { PathⳇRelative, SimpleYYYYMMDD } from '../../types.js'
 import { Params, getꓽparams, getꓽtimezoneⵧdefault } from '../../params.js'
 import { pathㆍparse_memoized } from '../../services/name_parser.js'
 import logger from '../../services/logger.js'
@@ -50,7 +50,7 @@ function _getꓽinferred_folder_type_from_path(id: FolderId, pathㆍparsed: path
 
 ////////////////////////////////////
 
-export function create(id: RelativePath): Immutable<State> {
+export function create(id: PathⳇRelative): Immutable<State> {
 	logger.trace(`${LIB} create(…)`, { id })
 
 	const pathㆍparsed = pathㆍparse_memoized(id)
