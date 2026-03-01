@@ -2,6 +2,7 @@
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
 2003 "Manna" prediction https://marshallbrain.com/manna1
+2019-02-14 ChatGPT 2 https://openai.com/index/better-language-models/
 2022 -> 2030 self driving car bet https://blog.codinghorror.com/the-2030-self-driving-car-bet/
 2022-12 ChatGPT lauched https://x.com/sama/status/1599668808285028353 https://openai.com/index/chatgpt/
 2023-10 Claude 2
@@ -274,6 +275,9 @@ NN Neural Networks "computer architecture inspired by the human brain"
 not gonna make it
 not left behind
 NotebookLM
+open standards -- A2A
+open standards -- MCP
+open standards -- UCP https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/
 OpenAI GPTs = custom versions of ChatGPT that you can create for a specific purpose with instructions, expanded knowledge, and custom capabilities
 OpenWebUi https://openwebui.com/
 paper -- "attention is all you need" https://arxiv.org/pdf/1706.03762.pdf
@@ -341,6 +345,8 @@ solution -- evals ? https://www.reddit.com/r/node/comments/1d09u4b/introducing_e
 solutions -- typescript -- https://vercel.com/blog/ai-sdk-5
 solved problems = don't use AI for that
 Stable Diffusion
+stochastic
+stochastic -- non-&& = deterministic systems, models, or effects that lack random, probabilistic elements, meaning the same inputs always yield the same, predictable outputs https://www.mcherm.com/deterministic-programming-with-llms.html
 superintelligence "AI vastly smarter than humans" https://openai.com/research/weak-to-strong-generalization
 Support Vector Machines
 symbolic logic

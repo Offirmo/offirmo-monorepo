@@ -136,6 +136,7 @@ CSS -- isolate
 CSS -- layers
 CSS -- layout -- layout, paint and composite
 CSS -- layout -- reflow
+CSS -- layout -- subgrid https://www.joshwcomeau.com/css/subgrid/
 CSS -- layout modes -- flex
 CSS -- layout modes -- flow -- block = fill whole horizontal space (unless `width: fit-content`)
 CSS -- layout modes -- flow -- inline = treated as typography, not sizable!, can line-wrap, whitespace between elements have magic space
@@ -470,6 +471,7 @@ Three Cs: 🤝 Concatenate, 🗜️ Compress, 🗳️ Cache https://csswizardry.
 transclusion = the inclusion of part or all of an electronic document into one or more other documents by reference via hypertext. Transclusion is usually performed when the referencing document is displayed and is normally automatic and transparent to the end user. The result of transclusion is a single integrated document made of parts assembled dynamically from separate sources, possibly stored on different computers in disparate places. https://aifoc.us/a-link-is-all-you-need/ https://en.wikipedia.org/wiki/Transclusion
 TUI "Text User Interface" / "terminal user interfaces" https://ratatui.rs/
 TUI -- showcase -- Claude CLI https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built
+TUI -- solutions https://github.com/Dicklesworthstone/frankentui https://ratatui.rs
 typography -- quotes https://smartquotesforsmartpeople.com/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site

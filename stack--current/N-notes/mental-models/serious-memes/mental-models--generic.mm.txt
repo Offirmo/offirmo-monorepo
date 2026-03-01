@@ -176,6 +176,7 @@ Blue Monday -- stressors -- Weather/Light exposure
 Blue Monday = worse of the year https://en.wikipedia.org/wiki/Blue_Monday_(date)
 blue-chip = (publicly traded company) known for its stability, consistent earnings, sound financials, and long-standing reputation = "most wanted in the industry (investment)"
 bonnes et mauvaises cartes
+bouba-kiki effect = languages spontaneously associate the nonwords “kiki” and “bouba” with spiky and round shapes, respectively https://www.science.org/doi/10.1126/science.adq7188
 brain -- fast & slow
 brain -- fast & slow -- fast = training / education / culture = biased = knee-jerk = LLM
 brain -- fast & slow -- slow = real you
@@ -230,6 +231,7 @@ cherchez la femme https://en.m.wikipedia.org/wiki/Cherchez_la_femme
 child of deaf adult (CODA) https://en.wikipedia.org/wiki/Child_of_deaf_adult
 choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
+clearance -- "I was suspected of being a Japanese spy" https://milk.com/wall-o-shame/security_clearance.html
 clubs https://en.wikipedia.org/wiki/Gentlemen%27s_club
 coach vs mentor vs sponsor = A coach talks to you, a mentor talks with you, and a sponsor talks about you https://www.linkedin.com/posts/addyosmani_softwareengineering-productivity-leadership-activity-6996942888802598912-hUgl
 cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
@@ -1027,6 +1029,7 @@ planning fallacy
 pointy-haired boss
 political correctness -- rise of = due to lack of other things to be morally pure about. Previous generations of prigs had been prigs mostly about religion and sex.
 political philosophy https://en.wikipedia.org/wiki/Political_philosophy
+polygraph https://antipolygraph.org/statements/statement-038.shtml
 ponzi
 Ponzi, Madoff
 Pope Francis 15 spiritual diseases -- 01 = thinking we are “immortal”, “immune” or downright “indispensable”, neglecting the need for regular check-ups. One who is not self-critical, which does not seek to be more fit, is a sick body
@@ -1069,6 +1072,7 @@ prig = self-righteously moralistic person who behaves as if superior to others
 primals https://myprimals.com https://templetonreligiontrust.org/explore/discovering-peoples-primal-world-beliefs/
 primate dominance hierarchy = At the end of the day we’re all just mammals trying to map every organization we’re a part of onto a primate dominance hierarchy https://blog.staysaasy.com/p/a-practical-guide-to-executive-presence-1de
 priming
+Principal Place of Residence (PPOR), or main residence, is the primary home where an individual lives, acts as their registered address, and usually, where their belongings are kept
 principal-agent problem https://en.wikipedia.org/wiki/Principal–agent_problem
 Principle of Least Power
 priorities -- 0 life extinction = global catastrophic risk / existential threat https://en.wikipedia.org/wiki/Global_catastrophic_risk https://en.wikipedia.org/wiki/Global_catastrophe_scenarios
@@ -1321,6 +1325,7 @@ stereotypes -- karen -- https://en.wikipedia.org/wiki/Central_Park_birdwatching_
 stereotypes -- karen -- Miss Ann / Becky / Barbecue Becky / Cornerstore Caroline / Permit Patty
 stereotypes -- karen = difficult / unreasonable white women, "speak to the manager" a middle class woman who is perceived as entitled or excessively demanding, racist https://en.wikipedia.org/wiki/Karen_(slang)
 stereotypes -- soccer mom https://en.wikipedia.org/wiki/Soccer_mom
+sterilizations -- spiral case https://en.wikipedia.org/wiki/Spiral_case
 Steve Jobs Roll Your Own = to satisfy never happy boss https://folklore.org/Calculator_Construction_Set.htmlcastle law https://x.com/LibertariansNSW/status/1960523186790924667
 Stigler's law of eponymy = inventor = the one who bring to attention, not the discoverer https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy
 stochastic mindset = abandon determinism = understand what maybe can / can't do
@@ -1457,6 +1462,7 @@ what we are NOT = ex. https://en.wikipedia.org/wiki/Wikipedia:What_Wikipedia_is_
 What would you do if you weren't afraid? - Spencer Johnson
 What’s in a name?
 when in Rome…
+where there smoke there's fire
 whitewashing
 who moved my cheese?
 Who's Who -- Aristote
@@ -1505,4 +1511,5 @@ you feel like shit -- 2. Emotional -- 4. Are you feeling dissociated, depersonal
 you feel like shit -- 2. Emotional -- 5. Are you feeling depressed, sad, or upset?
 you feel like shit -- 2. Emotional -- 6. Are you feeling lonely or in need of attention?
 you feel like shit = a self care game https://youfeellikeshit.com/
+yuppy = Young Urban Professionals
 zero-sum game https://en.wikipedia.org/wiki/Zero-sum_game

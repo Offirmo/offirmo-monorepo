@@ -284,6 +284,7 @@ data -- description = for discoverability
 data -- hydration
 data -- lake
 data -- lineage tracking = who created it, transformed it, enriched it...
+data -- parse-dont-validate = avoiding validation functions and encoding invariants in the type level instead (can be heavy on the type system + not always doable) https://www.harudagondi.space/blog/parse-dont-validate-and-type-driven-design-in-rust/
 data -- privacy
 data -- re-extraction = of vx.y.z
 data -- versioning = of content + schema
@@ -356,6 +357,8 @@ desirables -- readability
 desirables -- reliability
 desirables -- resilience
 desirables -- side-effect free
+deterministic -- entropy sources = bad, ex. date, path
+deterministic = always returning the same https://blog.onepatchdown.net/2026/02/22/are-compilers-deterministic-nerd-version/ https://www.mcherm.com/deterministic-programming-with-llms.html
 dev style -- TDD
 dev style -- TDD -- red → green → refactor
 development containers https://containers.dev/implementors/spec/
@@ -764,6 +767,7 @@ perf
 perf -- as a feature
 perf -- only pay for what you need
 performance -- analysis https://www.brendangregg.com/methodology.html
+permacomputing = a design practice that encourages the maximization of hardware lifespan, minimization of energy usage and focuses on the use of already available computational resources. It values maintenance and refactoring of systems to keep them efficient, instead of planned obsolescence, permacomputing practices planned longevity. It is about using computation only when it has a strengthening effect on ecosystems https://wiki.xxiivv.com/site/permacomputing.html
 permissions -- AppArmor https://en.wikipedia.org/wiki/AppArmor
 personal data
 personal data (PD)

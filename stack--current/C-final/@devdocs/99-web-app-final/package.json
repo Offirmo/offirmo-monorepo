@@ -19,8 +19,10 @@
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"check": "run-s check--ts",
-		"_start:parcel:main": "parcel serve module/src/index.html --port 1981 --lazy --no-autoinstall",
-		"start": "npm-run-all clean --parallel _start:parcel:main"
+		"_start:parcel:main": "parcel serve 'module/src/*' --port 1981 --lazy --no-autoinstall",
+		"start": "npm-run-all clean --parallel _start:parcel:main",
+		"_build:parcel": "parcel build 'module/src/*.*' 'module/src/.well-known/*'",
+		"build": "npm-run-all clean --parallel _build:parcel"
 	},
 	"devDependencies": {
 		"@monorepo-private/monorepo-scripts": "*",

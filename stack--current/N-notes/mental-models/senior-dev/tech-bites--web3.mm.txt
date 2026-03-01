@@ -64,6 +64,7 @@
 [ ] abstracts on many chains https://www.circle.com/multi-chain-usdc
 [ ] criticism https://bitfinexed.medium.com/
 [ ] digital security -- solutions -- https://www.privacyguides.org/
+[ ] documentaries https://www.tomsguide.com/entertainment/streaming/watch-vitalik-an-ethereum-story-online
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
 [ ] Gitcoin https://grants.gitcoin.co/
 [ ] great videos on DeFi https://www.youtube.com/@Finematics
@@ -251,6 +252,7 @@ dapp "decentralized application" = app built on a decentralized network that com
 dapps -- cryptokitties
 dapps -- stores = https://dappradar.com/
 decentralization -- as a strategy = "& as a strategy, a kind of adaptive trait to resist censorship. It should be obvious from this definition that regulation is from this perspective a form of censorship." https://web.archive.org/web/20180702220151/https://blog.havven.io/defining-decentralisation-60afa00efa2a
+decentralization -- challenges -- incentives = ex. Bluesky. In theory P2P but in practice no one has incentives to do so https://kevinak.se/blog/be-wary-of-bluesky
 decentralization -- continuum = no perfect decentralization
 decentralization -- limits = hard to iterate, ex. Synthetix trade-off until PMF
 decentralization -- metric -- insider attack test = if your team itself tries to attack the system, how much will break, and how much harm could you do?
@@ -539,8 +541,10 @@ polymarkets -- arbitrage https://x.com/browomo/status/2018630984015483061
 ponzi https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25794
 portfolio -- viewer https://1inch.com/portfolio/overview/address/0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
 prediction markets -- distribution = what is betted on https://predictions.paradigm.xyz/
+prediction markets -- insiders https://x.com/peterjliu/status/2024901585806225723 https://www.reddit.com/r/OpenAI/comments/1rgg1gt/openai_fires_an_employee_for_prediction_market/
 predictions https://polymarket.com/
 price oracles = pricing of some resource
+privacy -- "I Verified My LinkedIn Identity. Here's What I Actually Handed Over" https://thelocalstack.eu/posts/linkedin-identity-verification-privacy/
 programmable recovery = ??
 proof of personhood -- World ID https://world.org/world-id
 proof of personhood = https://world.org/blog/world/proof-of-personhood-what-it-is-why-its-needed

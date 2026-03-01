@@ -1,3 +1,7 @@
 {
-	"extends": "@monorepo-private/parcel-config"
+	"extends": "@monorepo-private/parcel-config",
+
+	"transformers": {
+		"*.json": ["@parcel/transformer-raw"]
+	}
 }
