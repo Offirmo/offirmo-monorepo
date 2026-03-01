@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { logger } from '../cross-cutting/logger.ts'
+import logger from '../cross-cutting/logger.ts'
 
 /////////////////////////////////////////////////
 

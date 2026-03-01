@@ -108,22 +108,18 @@
 	</head>
 
 	<body>
-		<header>
-			<ul>
-				<li><a href="/">Home</a></li>
-			</ul>
-		</header>
-		<main id="root">
-			<h1>Dev Docs Web3</h1>
-			<article>
-				<p>Lorem ipsum dolor amet…</p>
-			</article>
-		</main>
-		<footer>TODO footer</footer>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		Loading...
 
 		<style>
 			/* NON-critical styles https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
 			@import 'npm:@monorepo-private/css--framework';
 		</style>
+
+		<script type="module">
+			/* NON-critical JS */
+			import { start } from '@dev-docs--web3/web-core'
+			start()
+		</script>
 	</body>
 </html>

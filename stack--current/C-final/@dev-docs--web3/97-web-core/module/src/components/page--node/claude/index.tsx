@@ -5,6 +5,7 @@ import type { State } from '@dev-docs--web3/state'
 import { getꓽall } from '@dev-docs--web3/db'
 import { MarkdownRenderer } from '../../markdown-renderer'
 
+import './index.css'
 /////////////////////////////////////////////////
 
 export function NodePage() {
@@ -70,19 +71,25 @@ export function NodePage() {
 	return (
 		<div className="page-node">
 			<h1 className="page-node__title">{node.name ?? node.id}</h1>
+			<ul>
 			{node.name && node.name !== node.id && (
-				<p className="page-node__id"><code>{node.id}</code></p>
+				<li className="page-node__id"><code>{node.id}</code></li>
 			)}
 			{node.status && (
-				<p className="page-node__status">Status: {node.status}</p>
+				<li className="page-node__status">Status: {node.status}</li>
 			)}
 			{node.original‿url && (
-				<p className="page-node__link">
+				<li className="page-node__link">
 					<a href={node.original‿url} target="_blank" rel="noopener noreferrer">Original source</a>
-				</p>
+				</li>
 			)}
+			</ul>
+
+			<hr />
 
 			<NodeContent node={node} />
+
+			<hr />
 
 			{children.length === 0 ? (
 				<p className="page-node__empty">No children.</p>
