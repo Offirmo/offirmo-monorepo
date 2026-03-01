@@ -1,6 +1,6 @@
-import 'react'
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import type { Node } from '@markdoc/markdoc';
+import Markdoc, { nodes } from '@markdoc/markdoc';
+
 
 /////////////////////////////////////////////////
 // Types

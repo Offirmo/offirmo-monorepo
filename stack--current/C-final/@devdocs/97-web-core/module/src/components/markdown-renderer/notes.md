@@ -9,3 +9,5 @@ import rehypeHighlight from 'rehype-highlight'
 
 
 https://github.com/remarkjs/react-markdown
+
+https://github.com/lukilabs/beautiful-mermaid#readme
