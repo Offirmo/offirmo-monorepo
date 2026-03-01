@@ -475,6 +475,7 @@ garbage collector
 general dependency injection and inversion of control problem
 geohash = compact representations of latitude and longitude https://en.wikipedia.org/wiki/Geohash
 git
+git -- forges = github, gitlab, gitea, forgejo, bitbucket
 git -- worktrees https://git-scm.com/docs/git-worktree
 gitattributes
 gitignore https://git-scm.com/docs/gitignore#_pattern_format
