@@ -1,0 +1,13 @@
+/////////////////////////////////////////////////
+
+import { inferꓽchannel } from '@monorepo-private/browser-features-detection'
+
+import { WEBSITE } from '@dev-docs--web3/marketing'
+
+/////////////////////////////////////////////////
+
+const CHANNEL = inferꓽchannel(WEBSITE.urlⵧcanonical)
+
+/////////////////////////////////////////////////
+
+export { CHANNEL }

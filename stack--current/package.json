@@ -68,7 +68,7 @@
 
 			"B-backend/*",
 
-			"C-final/@devdocs/*",
+			"C-final/@dev-docs--web3/*",
 			"C-final/@infinite-monorepo/*",
 			"C-final/@tbrpg/1-logic/*",
 			"C-final/api--placeholders/*",
@@ -98,6 +98,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4",
+		"@markdoc/markdoc": "^0.5",
 		"@parcel/config-default": "^2",
 		"@parcel/core": "^2",
 		"@parcel/packager-raw-url": "^2",

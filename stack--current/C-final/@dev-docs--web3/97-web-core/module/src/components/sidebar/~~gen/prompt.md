@@ -1,0 +1,26 @@
+Create a state-of-the-art functional React component that:
+- displays a collapsible tree view of a specific graph
+- the graph is the output of `import { getꓽall } from '@dev-docs--web3/db'` (follow the code to find the types and data structure)
+  - no need for a prop, or make the prop defaulting to getꓽall() 
+  - nodes starts collapsed
+  - the root elements (no parent) should always be displayed, unless disabled
+  - if no root element, display an appropriate empty state
+  - if a node is collapsed by the user, recursively collapses all its children as well. However, if a node is expanded by the user, it does not recursively expand its children (they remain collapsed unless the user explicitly expands them)
+  - the graph is correct and node ids are unique across the graph, no need for mitigations
+  - if a node is not a leaf, show the number of immediate children in parentheses next to the node name
+- optionally takes as input an instance of `import type { State } from '@dev-docs--web3/state'` (follow the code to find the types and data structure)
+  - the tree view should skip disabled nodes and all their children
+  - the tree view should skip nodes with a status attribute in the disabled list (don't skip if no status attribute)
+  - this state is immutable, so you can use it directly without worrying about mutations
+- disabled nodes should be displayed in a special "disabled" entry at the bottom of the tree
+  - all skipped nodes should be listed there, with their children, with their intermediate parent nodes
+  - the "disabled" entry is not needed if there is no disabled node
+- use semantic HTML = <ol> with <summary>
+- don't style colors and fonts, but use relevant CSS classes to allow styling
+- keep track of the open/close state of the nodes across refreshes. On refresh, the nodes should be in the same open/close state as before
+  - however if a node becomes disabled, you must forget its open/close state
+- a vertical scrollbar should appear if overflow
+- write the code in the folder 97-web-core/module/src/app/view/components/sidebar/codex/
+- in a file called index.tsx
+- write the full specs at the top of the file as a comment
+- write a Storybook with test cases in index.stories.tsx

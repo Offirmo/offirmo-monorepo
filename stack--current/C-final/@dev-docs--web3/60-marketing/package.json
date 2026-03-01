@@ -1,0 +1,33 @@
+{
+	"name": "@dev-docs--web3/marketing",
+	"version": "0.0.1",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@monorepo-private/marketing": "*",
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"check--ts": "echo \"@dev-docs--web3/marketing\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts"
+	},
+	"devDependencies": {
+		"@monorepo-private/generator--website-entry-points": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types--web": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	}
+}

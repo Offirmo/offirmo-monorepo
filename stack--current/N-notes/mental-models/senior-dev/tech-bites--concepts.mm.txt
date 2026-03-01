@@ -433,6 +433,7 @@ execution model https://en.wikipedia.org/wiki/Execution_model
 express
 extreme programming
 FAANG https://www.faangfire.com/
+fallback chains = ex. Forgejo checks .forgejo/ → .gitea/ → .github/
 feature flags -- addiction https://newsletter.manager.dev/p/feature-flags-are-ruining-your-codebase
 feature flags -- also called toggle, feature control
 feature flags -- dynamic config = more generic, can be injected at several levels

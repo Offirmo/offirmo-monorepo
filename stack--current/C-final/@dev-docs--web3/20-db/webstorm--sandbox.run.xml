@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false" type="NodeJSConfigurationType"
+		name="@dev-docs--web3/db -- Sandbox"
+		working-dir="$USER_HOME$/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/C-final/@dev-docs--web3/20-db"
+		path-to-js-file="module/~~sandbox/index.ts">
+		<node-interpreter>project</node-interpreter>
+		<method v="2" />
+	</configuration>
+</component>

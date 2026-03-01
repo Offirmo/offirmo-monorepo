@@ -1,0 +1,5 @@
+import { type Node, ROOT_CATEGORIES_ORDERED } from '@dev-docs--web3/types'
+
+export default function get(): Array<Node> {
+	return ROOT_CATEGORIES_ORDERED.map(id => ({id, parent_id: null}));
+}
