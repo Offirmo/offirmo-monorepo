@@ -140,7 +140,7 @@
 		"chroma-js": "^3",
 		"classnames": "^2",
 		"cross-spawn": "^7",
-		"emittery": "^1",
+		"emittery": "^2",
 		"eslint-plugin-chai-expect": "^3",
 		"eslint-plugin-mocha": "^11",
 		"fetch-ponyfill": "^7",
