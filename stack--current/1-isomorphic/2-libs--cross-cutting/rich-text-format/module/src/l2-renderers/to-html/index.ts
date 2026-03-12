@@ -1,7 +1,7 @@
 import memoize_one from 'memoize-one'
 import type { Immutable } from '@monorepo-private/ts--types'
 
-import { type CheckedNode, type Node, isꓽlist, type NodeLike } from '../../l1-types/index.ts'
+import { type StrictNode, type Node, isꓽlist, type NodeLike } from '../../l1-types/index.ts'
 
 import { isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from '../common.ts'
 import {
@@ -26,7 +26,7 @@ const DEFAULT_RENDERING_OPTIONSⵧToHtml = Object.freeze<RenderingOptionsⵧToHt
 })
 
 type State = {
-	sub_nodes: Immutable<CheckedNode>[]
+	sub_nodes: Immutable<StrictNode>[]
 	str: string
 }
 

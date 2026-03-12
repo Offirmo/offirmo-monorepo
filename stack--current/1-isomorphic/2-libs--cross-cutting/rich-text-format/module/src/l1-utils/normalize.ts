@@ -3,16 +3,16 @@ import type { Immutable } from '@monorepo-private/ts--types'
 import { normalize_unicode } from '@monorepo-private/normalize-string'
 import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
-import { NodeType, type CheckedNode, type Node } from '../l1-types/types.ts'
+import { NodeType, type StrictNode, type Node } from '../l1-types/types.ts'
 import { getꓽtype } from './misc.ts'
 
 /////////////////////////////////////////////////
 
 /** normalize the given node (not deeply, only 1st level)
  */
-function normalizeꓽnode($raw_node: Node): CheckedNode
-function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode>
-function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
+function normalizeꓽnode($raw_node: Node): StrictNode
+function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<StrictNode>
+function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<StrictNode> {
 	assert(!!$raw_node, `normalize_node(): param should be defined!`)
 
 	let {
@@ -49,7 +49,7 @@ function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 		throw new Error(`[${LIB}] normalizeꓽnode(): unknown schema version "${$v}"!`)
 	}
 
-	const $node: Immutable<CheckedNode> = {
+	let $node: Immutable<StrictNode> = {
 		$v,
 		$type,
 		$heading,
@@ -58,7 +58,10 @@ function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 		$classes,
 		$hints,
 	}
-	$node.$type = getꓽtype($node)
+	$node = {
+		...$node,
+		$type: getꓽtype($node),
+	}
 
 	return $node
 }

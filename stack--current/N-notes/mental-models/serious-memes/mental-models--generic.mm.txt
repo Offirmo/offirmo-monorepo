@@ -94,8 +94,8 @@ ally -- howto = Be Present, Provide Options, Know Your Role, follow/beware laws/
 ally = s/o who actively seeks to bridge differences, stand for fairness or harmony, and encourage equal opportunities for others in the workplace through thoughtful and respectful communication
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
 amoral familism = backwardness, inability to act together for their common good or, indeed, for any end transcending the immediate, material interest of the nuclear family https://en.wikipedia.org/wiki/The_Moral_Basis_of_a_Backward_Society
+amour -- vs attraction
 amour = vouloir le bien
-amour vs attraction
 animals -- pigeons https://thewhshatchet.org/why-pigeons-might-be-the-best-pet-bird/
 Anna Karenina principle = https://en.wikipedia.org/wiki/Anna_Karenina_principle
 anti-fragile
@@ -121,9 +121,8 @@ attention -- marketplace = Netflix, Fortnite, Social media...
 attention -- TikTokification = of the internet
 aunt sally = an argument or idea that is easily refutable and set up to invite criticism https://en.wikipedia.org/wiki/Aunt_Sally
 authentic life despite the apparent absurdity or incomprehensibility of existence https://en.wikipedia.org/wiki/Existentialism
+autism spectrum
 autocracy https://en.wikipedia.org/wiki/Autocracy
-availability cascade = a self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
-avoir vs prendre le temps
 Babbitt = person and especially a business or professional man who conforms unthinkingly to prevailing middle-class standards https://en.wikipedia.org/wiki/Babbitt_(novel)
 bad randomness -- color + single digit = blue & 7
 bad randomness -- tool + color = hammer red
@@ -140,11 +139,8 @@ being like planes = they only make news when they crash, even though so many of 
 being right for the right reason
 being right for the wrong reason = ex. being carried along by momentum or catching a narrative
 Bell curve = bottom 20%, middle 60%, top 20%
-best decision based on the information available at the time
 best time to plant a tree = was 20 years ago. The second best time is now
 bet you’re fun at parties
-better ask for forgiveness than for permission
-better safe than sorry
 better to have sth to hate than nothing at all
 biases -- attractiveness
 biases -- baby-face
@@ -210,6 +206,8 @@ care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
 career -- career limiting (action/move)
 career https://en.wikipedia.org/wiki/List_of_obsolete_occupations
 cargo cult
+cascade -- availability && = a self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
+cascade -- model = modeling graph transitions, ex. stock market crash, opinions change https://en.wikipedia.org/wiki/Global_cascades_model
 CER framework = answer with Claim, Evidence, Reasoning (+ use keywords) https://www.edutopia.org/blog/science-inquiry-claim-evidence-reasoning-eric-brunsell
 chacun chez soi et les vaches sont bien gardées
 chaine trophique = salsepareille <- schtroumpf <- Gargamel
@@ -229,6 +227,7 @@ Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-thes
 charts -- hill = position on a "hill" figuring things out -> making it happen https://basecamp.com/shapeup/4.0-appendix-01#track-scopes-on-the-hill-chart
 cherchez la femme https://en.m.wikipedia.org/wiki/Cherchez_la_femme
 child of deaf adult (CODA) https://en.wikipedia.org/wiki/Child_of_deaf_adult
+CHLCA "chimpanzee–human last common ancestor" https://en.wikipedia.org/wiki/Chimpanzee%E2%80%93human_last_common_ancestor
 choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 clearance -- "I was suspected of being a Japanese spy" https://milk.com/wall-o-shame/security_clearance.html
@@ -256,6 +255,7 @@ comparison -- the only comparison worth making is you vs. you 1y ago
 competition -- healthy = critical source of progress and innovation
 competition -- is for losers = Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
 competitive mindset = competition as the key driver of innovation and progress
+complex contagion = the phenomenon in social networks in which multiple sources of exposure to an innovation are required before an individual adopts the change of behavior https://en.wikipedia.org/wiki/Complex_contagion
 conditioning -- classical
 conditioning -- operant
 conformism -- quadrants -- 1 aggressively conventional-minded = tattletales, believe not only that rules must be obeyed, but that those who disobey them must be punished.
@@ -317,6 +317,7 @@ curses -- resource curse = the paradox of plenty: Countries with an abundance of
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 danger of danger dogma and ideology = They provide us with the answers, and put boundaries around our thinking. Ignoring the dogma invites ridicule, or even punishment. More ideological societies are less innovative. If we aren't free to wander outside the realms of conventional thinking, then we won't happen upon the opportunities that others have missed. https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 danger of experience = We already know better, we already know that an idea or business won't work. This is one reason that naive, young founders are often the ones who start the most successful companies -- they just don't know any better, and they're often too arrogant to listen to those who do.  https://paulbuchheit.blogspot.com/2014/07/the-technology.html
+dark forest = an environment in which detection means certain death at the hands of advanced predators https://www.paradigm.xyz/2020/08/ethereum-is-a-dark-forest
 dark forest https://en.wikipedia.org/wiki/Dark_forest_hypothesis
 data driven
 dead horse theory https://www.linkedin.com/posts/kais-mejri-tunisie_deadabrhorseabrtheory-activity-7286736656194310146-MrM7
@@ -327,8 +328,6 @@ death -- mortality salience = awareness that one's death is inevitable and that 
 death by committee
 debanking = close/refuse account https://www.austrac.gov.au/news-and-media/media-release/austrac-statement-2021-de-banking
 debate -- https://en.wikipedia.org/wiki/Principle_of_charity
-decision -- doors -- 1 way = If you walk through and don’t like what you see on the other side, you can’t get back to where you were before
-decision -- doors -- 2 ways doors = If you’ve made a suboptimal Type 2 decision, you don’t have to live with the consequences for that long. You can reopen the door and go back through. https://growthmethod.com/two-way-doors/
 decoy effect https://en.wikipedia.org/wiki/Decoy_effect
 degree mills = https://www.dice.com/career-advice/coding-bootcamp-popularity-growth-2019
 DEI
@@ -368,12 +367,16 @@ differences -- introvert/extrovert
 disability
 disability -- flag +++
 disability -- overcoming
-discernement -- Choose the more interesting path. Interestingness is a sign of unexplored or under-explored territory.  If I already know what the outcome is going to be, that's not very interesting https://paulbuchheit.blogspot.com/2014/07/the-technology.html
-discernement -- coin flipping = don't look, which one do you wish is not?
-discernement -- example avec plusieurs questions https://archive.md/zpgip
-discernement -- regret minimization https://theprokit.com/posts/a-jeff-bezos-classic-the-regret-minimization-framework/
-discernment -- 1 vs. 2 way door
+discernment -- best decision based on the information available at the time
+discernment -- better ask for forgiveness than for permission
+discernment -- better safe than sorry
+discernment -- choose the more interesting path. Interestingness is a sign of unexplored or under-explored territory.  If I already know what the outcome is going to be, that's not very interesting https://paulbuchheit.blogspot.com/2014/07/the-technology.html
+discernment -- coin flipping = don't look, which one did you fear?
+discernment -- doors -- 1 way = If you walk through and don’t like what you see on the other side, you can’t get back to where you were before
+discernment -- doors -- 2 ways doors = If you’ve made a suboptimal Type 2 decision, you don’t have to live with the consequences for that long. You can reopen the door and go back through. https://growthmethod.com/two-way-doors/
+discernment -- example avec plusieurs questions https://archive.md/zpgip
 discernment -- recoverable vs. irrecoverable
+discernment -- regret minimization https://theprokit.com/posts/a-jeff-bezos-classic-the-regret-minimization-framework/
 discrimination
 discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
 discrimination -- indirect = when a neutral rule, policy, practice or criterion applies to everyone but disproportionately disadvantages a particular group with a protected characteristic, without objective justification
@@ -387,13 +390,13 @@ diversité des esprits humains
 do fewer things well
 Do I contradict myself? Very well then I contradict myself, I am large, I contain multitudes
 do I want my name on this? = tool to decide if sth is good https://lynnandtonic.com/thoughts/entries/put-your-name-on-it/
-dog energy vs cat energy
+dog energy vs. cat energy
 don't blame the audience
 don't expect perfection -> trigger self-consciousness = counter-productive
 don't feed the trolls
 don't judge me / You do you. I’ll do me / I’m just living my truth. You live yours. https://aleteia.org/2022/12/18/why-saying-dont-judge-me-isnt-quite-right
 don't shoot the messenger
-doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
+doublespeak = people often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
 dreams -- unattainable = People sometimes have unattainable dreams and set unrealistic aspirations for themselves, guaranteeing continued discrepancies between who they perceive themselves to be and who they ideally want to become. Even when they meet their more realistic aspirations, they often develop new ones that are harder to meet
 dreams and aspirations -- be a player
 dreams and aspirations -- interpersonal = as a team, couple, or family. an ally in this process is invaluable, particularly when the ally is a gifted sculptor.
@@ -418,7 +421,7 @@ efficient market hypothesis = (false) https://quant.stackexchange.com/questions/
 effort paradox = Betty Crocker eggs https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 ego
 ego -- vs. craftman's pride?
-Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
+Eisenhower's Urgent/Important = https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 email -- burner https://au.lifehacker.com/apple/49245/news/how-to-get-a-burner-email-address-with-iclouds-hide-my-email
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
@@ -432,8 +435,8 @@ employees exchange skills and time for money
 English
 entrepreneurship -- billing -- free day https://blog.jpl-consulting.com/2011/05/the-free-day/
 entrepreneurship -- billing -- hourly rate vs fixed price
-envy -- I wish people could see how ugly it is to be envious, and how obvious it is to those around you when that's what's happening (from narcissist dishonest) https://www.sandofsky.com/lambda-school/
-envy -- There's not much uglier than trying to tear someone down because they achieved what you wish you had  (from narcissist dishonest)  https://www.sandofsky.com/lambda-school/
+envy -- "I wish people could see how ugly it is to be envious, and how obvious it is to those around you when that's what's happening" (from narcissist dishonest) https://www.sandofsky.com/lambda-school/
+envy -- "There's not much uglier than trying to tear someone down because they achieved what you wish you had" (from narcissist dishonest) https://www.sandofsky.com/lambda-school/
 Epstein -- Ghislaine Maxwell sadly passes away tomorrow https://x.com/NormalIslandNws/status/2020202329274831110
 Epstein case, no arrests
 equality -- gender -- Scully effect
@@ -635,6 +638,7 @@ infotainment https://amitaycohen.substack.com/p/rip-traditional-news
 ingratitude = is a crime more despicable than revenge, which is only returning evil for evil, while ingratitude returns evil for good (William George Jordan)
 ingroup/outgroup
 innate desire to be useful, resourceful, valuable …and needed
+innovation -- recombination = much of innovation is just the recombination of ideas. And humans have probably only explored a tiny fraction of the possible recombination between disciplines
 integrity -- high = https://x.com/shreyas/status/1276956843361763328
 intellectual honesty -- 1 Is this true?
 intellectual honesty -- 2 What evidence do I have for and against this?
@@ -922,6 +926,7 @@ narcissism -- overlaps with neuroticism
 natural order of things in society = established by the dominant ideology
 needs / wants https://en.wikipedia.org/wiki/Need
 network effect
+neuro-divergent
 Never interrupt someone doing what you said couldn't be done.
 Never job backwards. What-might-have-been was a waste of time. Follow your fate, and be satisfied with it, and be glad not to be a second-hand motor salesman, or a yellow-press journalist, pickled in gin and nicotine, or a cripple—or dead (Fleming / James Bond)
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
@@ -1183,6 +1188,7 @@ root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root
 Russell Conjugation = Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
 safety -- psychological = critical
 safety -- Swiss cheese model
+sandbagging = strategic intentional underperformance, feigned lack of ability, or deliberate lowering of expectations to gain a future advantage. It is a form of deception used in various contexts, including sports, business, and artificial intelligence, to avoid scrutiny or to surprise opponents/employers later.
 satisfied with his lot, adjusted to his environment, happy in his work, and representative of all that is best in the American tradition https://en.wikipedia.org/wiki/Ed_Ricketts#Philosophy
 SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e20ce52c9357
 SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
@@ -1270,7 +1276,7 @@ skin tones -- tanning https://en.wikipedia.org/wiki/Sun_tanning#Tanning_behavior
 slavery -- Atlantic trade https://en.wikipedia.org/wiki/Atlantic_slave_trade
 slavery -- France https://en.wikipedia.org/wiki/Slavery_in_France
 slavery -- servitude
-slavery -- servitude -- indentured & = https://en.wikipedia.org/wiki/Indentured_servitude
+slavery -- servitude -- indentured && = https://en.wikipedia.org/wiki/Indentured_servitude
 slavery -- USA https://en.wikipedia.org/wiki/Slavery_in_the_United_States
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 sleep on it
@@ -1368,6 +1374,7 @@ tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
 taxation -- Bernie Senders https://imgur.com/gallery/im-member-of-1-im-voting-bernie-sanders-heres-why-v5hWg
 teacher https://paulgraham.com/raq.html
 the best defense is a good offense
+the bony, blue-fingered hand of Puritanism, eager to push people into bed earlier, and get them up earlier, to make them healthy, wealthy and wise in spite of themselves https://muddy.jprs.me/links/2026-03-06-the-surprising-whimsy-of-the-time-zone-database/
 The Boy Who Cried Wolf https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf
 The Map Is Not the Territory = Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
 The Medium Is the Message = We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.
@@ -1384,6 +1391,7 @@ third place = meeting places, ex. Starbucks
 thought leader
 tier list = ranking by desirability/viability/fitness https://en.wikipedia.org/wiki/Tier_list
 tier-3 meme
+time -- avoir vs prendre le temps
 time -- evening waste = You're on the sofa. You know you should get up - exercise, read, cook a real meal - but you can't make yourself move. So you sit there, not resting, not working, scrolling through your phone while mentally rehearsing the tasks you're not doing. You tell yourself you're lazy. https://x.com/DrDominicNg/status/2018735498622087346
 time management
 time-tested

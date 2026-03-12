@@ -127,7 +127,6 @@ function getꓽRNGⵧISAAC32(options: {
 		}
 		const remainder = call_count % SIZE || 256 // remainder = 0 means we used the whole batch = 256 results
 		if (remainder) {
-			//_generate_next_batch_of_results()
 			next_available_result_index -= remainder
 		}
 	}

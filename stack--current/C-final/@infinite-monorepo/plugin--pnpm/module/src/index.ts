@@ -36,7 +36,7 @@ const manifestꓽᐧpnpmfileᐧcjs: StructuredFsⳇFileManifest = {
 
 const PLUGIN_ENTRY = Symbol('pnpm')
 
-interface Spec = JSONObject
+type Spec = JSONObject
 
 interface NodeState {
 	spec: Spec

@@ -108,6 +108,7 @@ attacks -- ex. of recel https://thenewscrypto.com/crypto-hacker-behind-infini-ex
 attacks -- fake price (illiquid) = manipulating the price of a low-liquidity token to fake its value
 attacks -- kidnappings and Robberies = https://x.com/beausecurity/status/1995487124544491784
 attacks -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hack-june-2025
+attacks -- seed phrase leak https://gizmodo.com/south-korean-police-lose-seized-crypto-by-posting-password-online-2000728191
 attacks -- spam tokens = sent to leaked address to pollute and maybe phish
 attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-chain-attack-in-crypto-and-how-to-prevent-it
 attacks -- transaction malleability (BitCoin) = old vulnerability in Bitcoin that caused the closure of Mt Gox https://en.wikipedia.org/wiki/Transaction_malleability_problem
@@ -231,6 +232,7 @@ culture -- "Ignoring sensible advice is what we do in crypto"
 culture -- "skill issue" = newbie hostile culture, learn by yourself etc.
 culture -- "to the moon"
 culture -- cypherpunk = (1993) "The Cypherpunks are actively engaged in making the networks safer for privacy" https://www.activism.net/cypherpunk/manifesto.html
+culture -- dark forest = detection means certain death at the hands of advanced predators, ex. frontrunning, wrench etc.  https://www.paradigm.xyz/2020/08/ethereum-is-a-dark-forest
 culture -- slang -- degen = slang derived from "degenerate", typically refers to someone who engages in high-risk, speculative trading or investment with the potential for high rewards. It describes individuals who prioritize potential gains over calculated risks and are known for their aggressive and sometimes reckless approach.
 culture -- slang -- GM = good morning
 culture -- slang -- KOL = Key Opinion Leader = crypto influencer (can also be booster / rug puller)
@@ -342,6 +344,7 @@ Fogo = L1 built for DeFi applications. It is based on Solana's architecture and 
 Fogo https://www.fogo.io/
 fork -- hard
 fork -- soft
+frontrunning -- generalized frontrunning bots https://www.paradigm.xyz/2020/08/ethereum-is-a-dark-forest
 FTX -- FTT = FTX's token
 FTX = cryptocurrency derivatives exchanges known for its bankruptcy https://en.wikipedia.org/wiki/Bankruptcy_of_FTX
 FTX crash
@@ -400,6 +403,7 @@ launchpads
 launchpads
 layer 0 = ??? https://www.coingecko.com/en/categories/layer-0-l0
 layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
+Libra 2.0 https://x.com/MikeZajko/status/2029233637925818855
 licenses -- MiCA license in the European Union
 licenses -- Money Service Business (MSB) = license in the U.S
 liquidity -- & drive = ??
@@ -417,13 +421,14 @@ Markets in Crypto Assets (MiCA) regulation to oversee the crypto industry
 MegaETH = MegaETH is real-time Ethereum, streaming transactions at lightning speed: 10-millisecond latency and over 20,000 transactions per second https://x.com/megaeth
 memecoin
 memecoins -- $WHITEWHALE  https://beincrypto.com/white-whale-solana-meme-coin-analysis/ https://whitewhale.watch/
-memecoins -- distribution tiers -- 1 Whales (10M+)
-memecoins -- distribution tiers -- 2 Sharks (1M+)
-memecoins -- distribution tiers -- 3 Dolphins (100k+)
-memecoins -- distribution tiers -- 4 Sprats (10k+)
-memecoins -- distribution tiers -- 5 Minnows (1k+)
-memecoins -- distribution tiers -- 6 Krill (<1k)
+memecoins -- bucketing / distribution tiers -- 1 Whales
+memecoins -- bucketing / distribution tiers -- 2 Sharks
+memecoins -- bucketing / distribution tiers -- 3 Dolphins
+memecoins -- bucketing / distribution tiers -- 4 Fishes
+memecoins -- bucketing / distribution tiers -- 5 Crabs
+memecoins -- bucketing / distribution tiers -- 6 Shrimps, krill
 memecoins -- spirit "the entire point of a meme is that it doesn’t try to dress up as something it’s not. Many projects fail because they try to pretend to be more than what they are" https://beincrypto.com/white-whale-solana-meme-coin-analysis/
+MetaDAO = “a place for crypto-native enterprises to raise money that doesn’t suck.” https://docs.metadao.fi/benefits/founders
 metas -- revenue = have revenue, generate a token, buy back
 metrics -- active addresses count
 metrics -- TPS "Transactions Per Second"
@@ -545,8 +550,9 @@ prediction markets -- insiders https://x.com/peterjliu/status/202490158580622572
 predictions https://polymarket.com/
 price oracles = pricing of some resource
 privacy -- "I Verified My LinkedIn Identity. Here's What I Actually Handed Over" https://thelocalstack.eu/posts/linkedin-identity-verification-privacy/
+privacy-maximalists vs normal non-technical user
 programmable recovery = ??
-proof of personhood -- World ID https://world.org/world-id
+proof of personhood -- World ID XXX Sam Altman https://world.org/world-id
 proof of personhood = https://world.org/blog/world/proof-of-personhood-what-it-is-why-its-needed
 proof-of -- 1999 proof of work (PoW) = keep chain secure by needing 51% of the network's computing power to defraud the chain. This would require such huge investments in equipment and energy; you're likely to spend more than you'd gain. https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/ https://en.wikipedia.org/wiki/Proof_of_work
 proof-of -- 2011 proof of stake (PoS) = keep chain secure by needing to destroy tokens to control the chain + rewards incentives https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/
@@ -624,6 +630,7 @@ Solana network
 solidity -- ABI
 solidity -- calldata = ??
 solidity -- events
+Solidity -- ex. of abuse + frontrunning https://www.paradigm.xyz/2020/08/ethereum-is-a-dark-forest
 Solidity -- known bugs https://etherscan.io/solcbuginfo
 solidity https://en.wikipedia.org/wiki/Solidity
 solo validating
@@ -633,6 +640,7 @@ solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/we
 solutions -- Cloudflare -- IFPS
 solutions -- CoinGecko = ranking website https://www.coingecko.com/
 solutions -- Geth (Go Ethereum) = an open source blockchain protocol implementing the standard Ethereum specification plus other useful features such as a pluggable consensus engine. Geth is among the most widely used implementations of Ethereum nodes. It supports both the standard DAG based Proof-of-Work consensus and Proof-of-Authority (PoA) consensus with its implementation called Clique https://github.com/ethereum/go-ethereum
+solutions -- https://www.infura.io/
 solutions -- https://www.moderntreasury.com/
 solutions -- https://x.com/meshpay ?
 solutions -- Lighter = a decentralized trading platform that is designed to deliver unmatched security and scale. Lighter is the first and only exchange that provides verifiable matching and liquidations, while operating at the best in class traditional exchange level performances.

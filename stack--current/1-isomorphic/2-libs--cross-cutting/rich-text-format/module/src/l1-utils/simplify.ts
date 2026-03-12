@@ -3,14 +3,14 @@ import type { Immutable } from '@monorepo-private/ts--types'
 import { isꓽobjectⵧliteral } from '@monorepo-private/type-detection'
 import { SCHEMA_VERSION } from '../consts.ts'
 
-import { NodeType, type CheckedNode, type Node, type NodeLike } from '../l1-types/types.ts'
-import { getꓽtype } from './misc.ts'
+import { NodeType, type StrictNode, type Node, type NodeLike } from '../l1-types/types.ts'
+import {getꓽtype, isꓽdisplayⵧinline} from './misc.ts'
 
 /////////////////////////////////////////////////
 
 function simplifyꓽnode($any_node: NodeLike): NodeLike
 function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
-	assert(!!$any_node, `simplifyꓽnode(): param should be defined!`)
+	assert($any_node != null, `simplifyꓽnode(): param should be defined!`)
 
 	if (!isꓽobjectⵧliteral($any_node)) {
 		return $any_node // already simplest
@@ -35,8 +35,12 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 		$refs,
 		$classes,
 		$hints,
-	} satisfies CheckedNode
-	if (!$type) $node.$type = getꓽtype($node) // only if not explicitly set
+	} satisfies StrictNode
+	$type = getꓽtype($node)
+	$node = {
+		...$node,
+		$type,
+	}
 
 	if ($v === SCHEMA_VERSION) {
 		delete $node.$v
@@ -50,17 +54,22 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 	if (Object.keys($node.$hints).length === 0) {
 		delete $node.$hints
 	}
+	if (!$heading) {
+		delete $node.$heading
+	}
 
 	// content & type are a bit more complicated
 	let $content_: Array<NodeLike> = Array.isArray($content) ? $content : [$content]
 	$content_ = $content_.map(simplifyꓽnode)
 
-	if ($content_.length <= 1) {
+	if(isꓽdisplayⵧinline($node)) {
 		$node.$content = $content_[0] ?? ''
 		if ($type === NodeType.fragmentⵧinline) {
 			delete $node.$type
 		}
-	} else {
+	}
+	else {
+		$node.$content = $content_
 		if ($type === NodeType.fragmentⵧblock) {
 			delete $node.$type
 		}

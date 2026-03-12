@@ -48,14 +48,6 @@ Good articles:
 
 Note that Chrome timeouts are capped at >=1ms
 
-TODO Cancellation tokens?
-* https://devdocs.io/dom/idledeadline
-* see an impl in typescript
-
-TODO scheduler.postTask() ?
-* https://blog.chromium.org/2021/08/chrome-94-beta-webcodecs-webgpu.html
-* https://www.chromestatus.com/feature/6031161734201344
-
 
 ```
 "@monorepo-private/utils--async": "*",

@@ -41,20 +41,24 @@ bloated, forgettable software dripping with mediocrity. Blech. https://basecamp.
 boring -- culture
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
+bottom-up adoption = Individual users adopt it → teams follow → company pays
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 build vs buy = example https://www.svix.com/build-vs-buy/
 build-boost-discard cycle of internet applications = scourge https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h
 business -- as a by-product = structure that ultimately has to exist around a group of people to make things and service customers over the long term, but not inherently interesting https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96/
 CEO "If I/we got fired today, what would the new CEO do?"
-churn
+churn -- involuntary = issues often beyond a customer’s control, such as a company no longer offering that product or service, technical or payment issues, and natural disasters. There can also be an unforeseen reason why a customer can no longer use a service. Examples include a company no longer paying for an individual to use a service or a change in occupation renders that product or service no longer valuable.
 churn -- subscription -- involuntary or delinquent churn = missed payments causing an automated cancellation
 churn -- subscription -- voluntary = subscriber actively cancelling their subscription
+churn -- voluntary = customers’ change in preference. Examples of voluntary churn include customers choosing to no longer use a product in that category, switching to a competitors’ product, reaction to price increases or bad customer experience.
+churn = change that occurs in a business over a period of time as existing customers are lost and new customers are added
 click fraud = very important, we can't trust anything / analytics / etc. https://www.cloudflare.com/learning/bots/what-is-click-fraud/
 commoditization -- commodity businesses generally compete on price alone and are plagued by high inventories and low profit margins. In other non-commodity businesses, you would say “innovate”
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
 competition -- for narrative
 competition -- for revenue
 competition -- for users
+complex contagion = the phenomenon in social networks in which multiple sources of exposure to an innovation are required before an individual adopts the change of behavior https://en.wikipedia.org/wiki/Complex_contagion
 compliance -- due diligence -- Enhanced customer due diligence (ECDD) https://www.austrac.gov.au/business/core-guidance/amlctf-programs/enhanced-customer-due-diligence-ecdd-program
 compliance -- due diligence -- ongoing customer due diligence (OCDD)
 compliance -- know your customer (KYC) https://www.austrac.gov.au/business/core-guidance/customer-identification-and-verification
@@ -150,8 +154,21 @@ flexible planning = scope changes and unexpected risks: adaptability is crucial
 flintstoning = when your app, product, or business itself lacks a feature… buuuuuuuuut, you can make up for it manually https://stackingthebricks.com/the-fine-art-of-flintstoning/
 full-stack builder = If you're going it alone, you can't afford to be blocked on anything. You need to build, sell, recruit, and fundraise, all by yourself https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 funding -- CAP table = ???
-funding -- SAFE: Simple Agreement for Future Equity
+funding -- SAFE "Simple Agreement for Future Equity"
 funnel
+funnel -- "feature" = funnel of using a feature
+funnel -- AARRR -- 1 Acquisition = How do users find you? (SEO, ads, social, referrals)
+funnel -- AARRR -- 2 Activation = Do users have a great first experience? (onboarding, "aha moment")
+funnel -- AARRR -- 3 Retention = Do users come back? (DAU/WAU, churn rate)
+funnel -- AARRR -- 4 Referral = Do users tell others? (NPS, viral coefficient)
+funnel -- AARRR -- 5 Revenue = Do users pay? (LTV, MRR, conversion rate)
+funnel -- AARRR / Pirate Metrics = Coined by Dave McClure in 2007, a framework for tracking and optimizing the customer lifecycle across five stages
+funnel -- RARRA (reordered AARRR) = Retention → Activation → Referral → Revenue → Acquisition important in high churn products, where retention is critical https://www.chameleon.io/blog/aarrr-vs-rarra
+funnel -- RARRA -- 1 Retention = Focuses on building a customer-centric platform, with great UX/UI. It focuses on making your app a place users love.
+funnel -- RARRA -- 2 Activation = Focuses on mapping your users’ journeys with repeat value moments. Enabling users to get their job done, go beyond that job, and discover new “aha!” moments with new tools and features.
+funnel -- RARRA -- 3 Revenue = It’s 60-70% easier to sell to current customers than it is to new ones. It makes sense that retaining customers should be more financially viable than trying to acquire new ones.
+funnel -- RARRA -- 4 Referral = Build products your users will love, and let them do the legwork for you. Studies show that people are 4x more likely to buy because of a recommendation from a friend or colleague than from any marketing material. Plus, it leads to a near 40% higher retention rate. Give your users the tools they need to refer your product: make it easy.
+funnel -- RARRA -- 5 Acquisition = All of your above efforts should lead to you acquiring more customers. Sure, it may happen at a slower rate, but at a much longer lifespan. Hence, an increase in customer lifetime value.
 get big fast / get large or get lost
 go-to-market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 gold rush tools = during a gold rush, the one selling tools is the one making money
@@ -293,6 +310,9 @@ pitch -- extra -- YC application https://docs.google.com/document/d/1lkRIGrssL5W
 pitch -- extra -- “what we don’t know” or “what assumptions we’ve made that need to be true” (to make it more rounded and less pitchy. Maybe that’s why I’ve never got an investor! Ha)
 pitch -- first = The goal of the first pitch should be to get a second meeting https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 pitch -- Q -- If you get no investments what alternatives do you have in mind
+PLG "Product-Led Growth" Companies = go-to-market strategy where the product itself is the primary driver of customer acquisition, conversion, and expansion — rather than a sales or marketing team.
+PLG -- vs. traditional SLG "Sales-Led Growth" = Marketing → Sales → Product
+PLG = Product → Adoption → Revenue using freemium, self-serve, viral loops, usage thresholds, bottom-up adoption
 policy -- internal -- no politics https://www.linkedin.com/posts/jason-fried_inevitably-around-major-elections-or-political-activity-7260061274544234496-tSB1
 PRD "product requirements document" https://www.atlassian.com/agile/product-management/requirements
 pre-product = doesn't mean that you don't have a waitlist or LOIs (letters of intent) https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
@@ -401,6 +421,7 @@ UX -- principles and cognitive bias relevant https://growth.design/psychology
 UX -- stick to established patterns https://medium.com/@daniel.stoyanov/not-following-well-established-ux-design-patterns-is-almost-always-a-bad-idea-58ae01b4f48a
 value extraction -- creating value, not extracting it
 VC -- founder dilution https://www.linkedin.com/feed/update/urn:li:activity:7341812076463439873/
+verbal contracts -- beware https://old.reddit.com/r/KitchenConfidential/comments/1ro61g2/how_the_sriracha_guys_screwed_over_their_supplier/
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
 what is the actual problem we're trying to solve?

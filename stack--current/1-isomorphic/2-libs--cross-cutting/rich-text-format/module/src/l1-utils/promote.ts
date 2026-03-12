@@ -55,6 +55,5 @@ function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node> {
 /////////////////////////////////////////////////
 
 export {
-	promoteꓽto_string_for_node_content,
 	promoteꓽto_node,
 }

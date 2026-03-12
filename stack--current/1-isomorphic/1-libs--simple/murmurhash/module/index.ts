@@ -7,27 +7,14 @@ const MurmurHash3 = (_MurmurHash3_cjs as any).default
 
 /////////////////////////////////////////////////
 
-type TextEncoderConstructor = any // TODO one day
-let tec: TextEncoderConstructor | undefined = undefined
-function injectꓽtext_encoder(c: TextEncoderConstructor) {
-	tec = c
-}
-
-
 const MurmurHash = {
 	v3: {
 		x64ⵧ128: {
-			hashꓽstring(str: string, TextEncoder: TextEncoderConstructor = tec): string {
-				if (!TextEncoder)
-					throw new Error('@monorepo-private/murmurhash: a textEncoder implementation must be provided!')
-
+			hashꓽstring(str: string): string {
 				const bytes = new TextEncoder().encode(str)
 				return MurmurHash3.x64.hash128(bytes)
 			},
-			hashꓽobject(o: Readonly<any>, TextEncoder: TextEncoderConstructor = tec): string {
-				if (!TextEncoder)
-					throw new Error('@monorepo-private/murmurhash: a textEncoder implementation must be provided!')
-
+			hashꓽobject(o: Readonly<any>): string {
 				const str = stringifyⵧstable(o)
 				const bytes = new TextEncoder().encode(str)
 				return MurmurHash3.x64.hash128(bytes)
@@ -39,8 +26,6 @@ const MurmurHash = {
 /////////////////////////////////////////////////
 
 export {
-	injectꓽtext_encoder,
-
 	MurmurHash,
 }
 

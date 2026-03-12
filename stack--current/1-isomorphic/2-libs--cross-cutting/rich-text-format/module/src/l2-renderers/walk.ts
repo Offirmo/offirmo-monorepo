@@ -12,7 +12,7 @@ import { getꓽcontent‿nodes_list } from './common.ts'
 import {
 	type NodeLike,
 	NodeType,
-	type CheckedNode,
+	type StrictNode,
 	type Node,
 } from '../l1-types/index.ts'
 
@@ -39,7 +39,7 @@ const DEFAULT_RENDERING_OPTIONSⵧWalk = Object.freeze<BaseRenderingOptions>({
 // Hooks
 
 interface BaseWalkState {
-	aggregated_refs: CheckedNode['$refs']
+	aggregated_refs: StrictNode['$refs']
 
 	depthⵧh: number // header depth
 	depthⵧlist: number // list depth
@@ -50,7 +50,7 @@ interface BaseWalkState {
 
 interface BaseHookParams<RendererState> {
 	// shared generic state, see BaseWalkState for explanations
-	$node: Immutable<CheckedNode>
+	$node: Immutable<StrictNode>
 
 	// base, common state
 	bstate: Immutable<BaseWalkState> // hooks can peek, but are not allowed to mutate it
@@ -238,7 +238,7 @@ function _walk_StringWithRefs<CustomWalkState, RenderingOptions extends BaseRend
 	options: RenderingOptions,
 	bstate: BaseWalkState,
 	xstate: CustomWalkState,
-	$node: Immutable<CheckedNode>,
+	$node: Immutable<StrictNode>,
 	$content: string, // looks like "Hello ⎨⎨world⎬⎬, welcome to ⎨⎨place|filter1|filter2⎬⎬
 ) {
 	const splitⵧby_opening_brace = $content.split('⎨⎨')
@@ -288,7 +288,7 @@ function _walk_StringWithRefs<CustomWalkState, RenderingOptions extends BaseRend
 			assert($ref_key, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
 
 			let $referenced_node = promoteꓽto_node(
-				(function _resolve_ref_by_id(): Immutable<CheckedNode>['$refs'][string] {
+				(function _resolve_ref_by_id(): Immutable<StrictNode>['$refs'][string] {
 					if ($ref_key === 'br') {
 						assert(
 							!bstate.aggregated_refs[$ref_key],
@@ -412,7 +412,7 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
 	options: RenderingOptions,
 	bstate: BaseWalkState,
 	xstate: CustomWalkState,
-	$node: Immutable<CheckedNode>,
+	$node: Immutable<StrictNode>,
 ) {
 	if ($node.$heading) {
 		assert(
@@ -566,6 +566,6 @@ export {
 
 	// for convenience
 	NodeType,
-	type CheckedNode,
+	type StrictNode,
 	type Node,
 }

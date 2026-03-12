@@ -6,3 +6,8 @@ unclean url
 - twitter
 - 
 - https://github.com/ljharb/qs
+
+
+https://e-mail.wtf/
+
+https://lemire.me/blog/2026/02/28/you-can-use-newline-characters-in-urls/

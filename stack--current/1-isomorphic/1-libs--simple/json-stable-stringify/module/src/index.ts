@@ -7,7 +7,7 @@ type Replacer = (this: Immutable<Node>, key: Key, value: Immutable<Node>) => Imm
 interface Options {
 	replacer: Replacer // cf. 2nd param of JSON.stringify
 	indent: Parameters<JSON['stringify']>[2]
-	cmp: Function // comparison function generator for sorting object's keys
+	cmp: (a: string, b: string) => number // comparison function generator for sorting object's keys
 
 	// DEBUG
 	cycles: boolean // if true, don't throw on circular refs but stringify them as "__cycle__"
@@ -19,7 +19,7 @@ export default function json_stable_stringify(
 		replacer = (key, value) => value,
 		indent = '',
 		cycles = false,
-		cmp = () => {},
+		cmp = (a: string, b: string) => a.localeCompare(b)
 	}: Immutable<Partial<Options>> = {},
 ): ReturnType<typeof JSON['stringify']> {
 	if (typeof indent === 'number')
@@ -69,7 +69,7 @@ export default function json_stable_stringify(
 		}
 
 		// TODO test numeric keys
-		const keys: Key[] = Object.keys(node).sort(/*cmp && cmp(node)*/)
+		const keys: Key[] = Object.keys(node).sort(cmp)
 		const out: string[] = []
 		for (let i = 0; i < keys.length; i++) {
 			const key = keys[i]!

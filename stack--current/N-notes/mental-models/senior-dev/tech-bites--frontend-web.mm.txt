@@ -206,6 +206,7 @@ dialogs -- alert
 dialogs -- confirmation
 DNS = distributed database for IP address translation
 Document = The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. It provides functionality globally to the document, like how to obtain the page's URL and create new elements in the document.
+document.currentScript = https://frontendmasters.com/blog/document-currentscript-is-more-useful-than-i-thought/
 DOM -- CSSOM "CSS Object Model" = part of the DOM
 DOM -- fake = JSDOM, HappyDOM https://github.com/capricorn86/happy-dom/wiki/
 DOM -- Nodes -- 01 Elements = like <p> or <div>.
@@ -255,6 +256,13 @@ frontend testing pyramid -- confidence vs time / cost / flakiness
 frontend testing pyramid = unit < VR < Integ < E2E
 frontend treadmill -- working closer to the web platform with a lot less complex abstractions. We need to relearn what the web is capable of and go back to that.
 frontend treadmill https://polotek.net/posts/the-frontend-treadmill/
+funnel -- CREATE -- 1. Cue = Capturing the user’s attention and reminding them of the action.
+funnel -- CREATE -- 2. Reaction: Ensuring the cue triggers the right emotional or cognitive response.
+funnel -- CREATE -- 3. Evaluation: Helping the user assess whether the action is worth their effort.
+funnel -- CREATE -- 4. Ability: Ensuring the user can perform the action without significant barriers.
+funnel -- CREATE -- 5. Timing: Ensuring the action is prompted at the most opportune moment.
+funnel -- CREATE -- 6. Execution: Supporting the user in completing the action successfully.
+funnel -- CREATE = "action" funnel for UX https://medium.com/@kusumadoni77/stephen-wendels-create-action-funnel-for-ux-design-7ae7d7fe80de
 GraphQL
 GraphQL -- against https://bessey.dev/blog/2024/05/24/why-im-over-graphql/
 GraphQL -- relay
@@ -428,18 +436,18 @@ security -- CSP
 security -- CSP -- scanner = good? https://centralcsp.com/
 security -- domain name registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
 security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review
-security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+security -- injections -- Apple "isolated world" WKContentWorld
+security -- injections -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
 security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 security https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
 Server Side Rendering = an umbrella term that includes several different rendering strategies. They all have one thing in common: the initial render happens in a server runtime like Node.js, using the ReactDOMServer APIs. It doesn't actually matter when this happens, whether it's on-demand or at compile-time. https://www.joshwcomeau.com/react/server-components/
-settings -- Mac = https://aresluna.org/frame-of-preference/
 settings -- Mac https://aresluna.org/frame-of-preference/ (with cool virtual machines)
 skew -- flags skew
 skew -- occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior https://www.industrialempathy.com/posts/version-skew/
 skew -- version skew -- protection https://vercel.com/docs/skew-protection
 solutions -- http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
 solutions -- jQuery
-solutions -- js -- ocx https://oxc.rs/
+solutions -- js -- oxf formatter & linter https://oxc.rs/
 solutions -- mobile apps https://expo.dev/
 SPA -- what is even a SPA? https://jakelazaroff.com/words/whats-a-single-page-app/
 SPA https://www.matuzo.at/blog/2023/single-page-applications-criticism
@@ -587,6 +595,7 @@ web text editing https://lord.io/text-editing-hates-you-too/
 web workers -- dedicated = utilized by a single script https://devdocs.io/dom/worker
 web workers -- service = proxy https://devdocs.io/dom/service_worker_api
 web workers -- shared = can be utilized by multiple scripts running in different windows, IFrames, etc., as long as they are in the same domain as the worker https://devdocs.io/dom/sharedworker
+WebAssembly https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/
 WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-with-webdriver-bidi
 WebGPU / WebGL = https://devdocs.io/dom/webgpu_api
 website critique https://americabydesign.fail/ https://americabydesign.gov/

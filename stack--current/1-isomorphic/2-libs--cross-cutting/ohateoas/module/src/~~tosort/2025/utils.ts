@@ -5,7 +5,7 @@ import { getꓽmutable_copy } from '@monorepo-private/state-utils'
 import {
 	type NodeLike,
 	type Node,
-	type CheckedNode,
+	type StrictNode,
 	createⵧfrom_content,
 } from '@monorepo-private/rich-text-format'
 import {
@@ -18,8 +18,8 @@ import { type HATEOASPendingEngagement } from './types.js'
 /////////////////////////////////////////////////
 
 const EXPECTED_FIELDS = new Set(['$sub', '$hints'])
-function assertꓽparams__shape(params: TrackedEngagement<NodeLike>['params']): Pick<CheckedNode, '$sub' | '$hints'> {
-	const result: Pick<CheckedNode, '$sub' | '$hints'> = {
+function assertꓽparams__shape(params: TrackedEngagement<NodeLike>['params']): Pick<StrictNode, '$sub' | '$hints'> {
+	const result: Pick<StrictNode, '$sub' | '$hints'> = {
 		$sub: {},
 		$hints: {},
 	}

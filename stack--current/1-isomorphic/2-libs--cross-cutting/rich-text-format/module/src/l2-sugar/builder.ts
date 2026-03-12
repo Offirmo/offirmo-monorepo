@@ -12,7 +12,7 @@ import {
 	NodeType,
 	type SubNodeId,
 	type Hints as DefaultHints,
-	type CheckedNode,
+	type StrictNode,
 	type Node,
 	type Document,
 	type NodeLike,
@@ -30,8 +30,8 @@ interface CommonOptions {
 	classes?: string[]
 }
 
-type SubNodes = CheckedNode['$refs']
-type SubNode = CheckedNode['$refs'][string]
+type SubNodes = StrictNode['$refs']
+type SubNode = StrictNode['$refs'][string]
 
 interface Builder {
 	// content NOT a node = text/number only
@@ -74,12 +74,12 @@ interface Builder {
 
 	assemble(fn: ($builder: Builder) => void): NodeLike
 
-	$node: CheckedNode
+	$node: StrictNode
 }
 
 /////////////////////////////////////////////////
 
-function _createꓽbuilder($node: CheckedNode): Builder {
+function _createꓽbuilder($node: StrictNode): Builder {
 	const builder: Builder = {
 		addClass,
 		addHints,
@@ -335,14 +335,14 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 		return promoteꓽto_node(content)
 	})()
 
-	const $node: CheckedNode = {
+	const $node: StrictNode = {
 		$v: SCHEMA_VERSION,
 		$type,
 		$classes: [...($node_base.$classes || [])],
 		$content: $node_base.$content || [], // XXX
 		$refs: $node_base.$refs || {},
 		$hints:
-			$node_base.$hints ? structuredClone<CheckedNode['$hints']>($node_base.$hints as any) : {},
+			$node_base.$hints ? structuredClone<StrictNode['$hints']>($node_base.$hints as any) : {},
 	}
 
 	return _createꓽbuilder($node)

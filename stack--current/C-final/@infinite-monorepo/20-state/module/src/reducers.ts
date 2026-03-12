@@ -334,7 +334,7 @@ function requestꓽfactsⵧabout_file(
 				ↆretrieval: ↆreadꓽfile(path_abs, { format: manifest.format }).catch(err => {
 					if (isꓽErrorⵧrsrc_not_found(err)) return null
 
-					return normalizeError(err) // NOTE: throw turned into a RETURN
+					throw err
 				}),
 				pending_callbacks: [],
 			} as SubStateⳇFactsFile
@@ -430,26 +430,40 @@ async function resolveꓽasync(state: Immutable<State>): Promise<Immutable<State
 
 	Object.entries(state.facts.files).forEach(([path, substate]) => {
 		if (substate.ↆretrieval) {
-			const p: Promise<void> = substate.ↆretrieval.then(content => {
-				DEBUG && console.debug('File read:', path)
-				const new_substate: Immutable<SubStateⳇFactsFile> = {
-					manifest: substate.manifest,
-					content,
-				}
-				state = {
-					...state,
-					facts: {
-						...state.facts,
-						files: {
-							...state.facts.files,
-							[path]: new_substate,
-						},
-					},
-				}
-				state = (substate.pending_callbacks || []).reduce((state, acb) => {
-					return acb(state, content)
-				}, state)
-			})
+			const p: Promise<void> = substate.ↆretrieval
+				.then(content => {
+					DEBUG && console.debug('File read:', path)
+					const new_substate: Immutable<SubStateⳇFactsFile> = {
+						manifest: substate.manifest,
+						content,
+					}
+					return new_substate
+				},
+				err => {
+					// not found already handled, most likely syntax error or anything
+					DEBUG && console.warn('Irrecoverable error while reading:', path)
+					console.error(`ↆretrieval failure`, err)
+					const new_substate: Immutable<SubStateⳇFactsFile> = {
+						manifest: substate.manifest,
+						content: 'error',
+						_error: normalizeError(err)
+					}
+					return new_substate
+				}).then(new_substate => {
+						state = {
+							...state,
+							facts: {
+								...state.facts,
+								files: {
+									...state.facts.files,
+									[path]: new_substate,
+								},
+							},
+						}
+						state = (substate.pending_callbacks || []).reduce((state, acb) => {
+							return acb(state, new_substate.content)
+						}, state)
+					})
 			pending.push(p)
 		}
 	})

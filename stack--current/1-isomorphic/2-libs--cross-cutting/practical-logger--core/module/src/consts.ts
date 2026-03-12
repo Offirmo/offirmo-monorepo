@@ -33,11 +33,9 @@ export const ALL_LOG_LEVELS: ReadonlyArray<LogLevel> =
 	(Object.keys(LOG_LEVEL_TO_INTEGER) as LogLevel[])
 		.sort((a: LogLevel, b: LogLevel) => LOG_LEVEL_TO_INTEGER[a]! - LOG_LEVEL_TO_INTEGER[b]!)
 
-// rationalization to a clear, human understandable string
-// generated to shave a few bytes
-// not using fromEntries bc not available in node <12
+// rationalization to a clear, human-understandable string
 export const LOG_LEVEL_TO_HUMAN: Readonly<Record<LogLevel, string>> = ALL_LOG_LEVELS.reduce((acc, ll) => {
-	acc[ll] = ({ em: 'emergency', wa: 'warn'} as any)[ll.slice(0, 1)] || ll
+	acc[ll] = ({ em: 'emergency', wa: 'warn'} as any)[ll.slice(0, 2)] || ll
 	return acc
 }, {} as any)
 

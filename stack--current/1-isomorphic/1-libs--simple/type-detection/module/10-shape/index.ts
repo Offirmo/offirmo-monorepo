@@ -1,5 +1,5 @@
 
-import {assert } from '../00-embedded-deps/assert/index.ts'
+import assert from 'tiny-invariant'
 import {
 	isꓽobjectⵧkv,
 	isꓽobjectⵧliteral,
@@ -96,11 +96,10 @@ function assertꓽshape<T extends object>(reference: T, under_test: object, {
 	}
 
 	if (!allow_extra_props) {
-		const u = keysⵧunder_test.union(keysⵧref)
-		if (u.size > keysⵧref.size)
-			throw new Error(`assertꓽshape: unexpected extraneous props, ex. "${Array.from(u.keys())[0]!}"!`)
+		const extra = keysⵧunder_test.difference(keysⵧref)
+		if (extra.size > 0)
+			throw new Error(`assertꓽshape: unexpected extraneous props, ex. "${Array.from(extra.keys())[0]!}"!`)
 	}
-
 
 	switch (type_match) {
 		case 'any':

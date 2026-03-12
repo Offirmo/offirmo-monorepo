@@ -32,7 +32,7 @@ function inferꓽchannel(
 		if (currentWindow.location.hostname === URLⵧCANONICAL‿obj.hostname) return 'prod'
 	}
 
-	// then detect common "hosted" locations, which means "public but not canonical" = ~staging (YMMV)
+	// then detect common "hosted" locations, which usually means "public but not canonical" = ~staging (YMMV)
 	if (currentWindow.location.hostname.endsWith('.netlify.app')) return 'staging'
 	if (currentWindow.location.hostname.endsWith('.github.io')) return 'staging'
 	if (currentWindow.location.hostname.endsWith('.vercel.app')) return 'staging'

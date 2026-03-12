@@ -50,9 +50,14 @@ TODO express a resilient function who technically should never crash?
 ᄆComponent
  */
 
+/** @deprecated Use xyz... */
+// @ts-expect-error
+// @ts-ignore
+
 // prettier-ignore
 // eslint-disable-next-line no-console
 /* eslint-disable no-console */
+
 }
 
 /////////////////////////////////////////////////

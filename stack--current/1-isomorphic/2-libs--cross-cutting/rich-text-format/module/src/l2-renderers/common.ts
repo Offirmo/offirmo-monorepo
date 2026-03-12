@@ -1,17 +1,17 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@monorepo-private/ts--types'
-import type { CheckedNode, NodeLike } from '../l1-types/types.ts'
+import type { StrictNode, NodeLike } from '../l1-types/types.ts'
 import { wrap, isꓽlist } from '../l1-utils/index.ts'
 import { isꓽNodeLike } from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
 
-function isꓽlink($node: Immutable<CheckedNode>): boolean {
+function isꓽlink($node: Immutable<StrictNode>): boolean {
 	return !!$node.$hints.href
 }
 
 // for iterating only
-function getꓽcontent‿nodes_list($node: Immutable<CheckedNode>): Array<Immutable<NodeLike>> {
+function getꓽcontent‿nodes_list($node: Immutable<StrictNode>): Array<Immutable<NodeLike>> {
 	if (isꓽNodeLike($node.$content)) {
 		// simply promote to array
 		return [ $node.$content ]

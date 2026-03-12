@@ -6,6 +6,8 @@ use this pkg? https://github.com/privatenumber/tasuku
 
 TODO check for https://e18e.dev/docs/replacements/
 
+TODO https://oxc.rs/
+
 - JS/TS oriented
 - manage the "cruft" = everything not our cool source code
 - high level

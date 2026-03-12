@@ -1,4 +1,5 @@
 import type { Immutable, JSONObject } from '@monorepo-private/ts--types'
+import { type XXError } from '@offirmo/error-utils'
 import type {
 	InfiniteMonorepoSpec,
 	Node,
@@ -40,13 +41,14 @@ export type AsyncCallbackReducer<T> = (
 export interface SubStateⳇFactsFile {
 	manifest: StructuredFsⳇFileManifest // useful to validate compat if concurrent requests
 	content:
-		| undefined // not loaded yet (promise pending)
-		| null // null = file not found
-		| 'error' // issue reading this structured file, ex. parse error
+		| undefined  // not loaded yet (promise pending)
+		| null       // null = file not found
+		| 'error'    // issue reading this structured file, ex. parse error
 		| JSONObject // structured result
 	// those props are only present when content is undefined
 	ↆretrieval: Promise<JSONObject>
 	pending_callbacks?: Array<AsyncCallbackReducer<JSONObject | null>>
+	_error?: XXError
 }
 
 export interface State {

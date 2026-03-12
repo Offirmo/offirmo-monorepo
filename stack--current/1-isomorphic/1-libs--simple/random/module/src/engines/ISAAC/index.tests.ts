@@ -493,6 +493,109 @@ b032a4c7 21d11bfa 17fbb322 518364ae fee830b6 6768f078 dc5fd237 093d7780
 `.trim()
 				)
 			})
+
+			describe('[Claude code] discard()', function() {
+				const SEED = [1, 2, 3]
+
+				function _get_next_n(engine: ReturnType<typeof getꓽRNGⵧISAAC32>, n: number): Int32[] {
+					const results: Int32[] = []
+					for (let i = 0; i < n; i++) {
+						results.push(engine.get_Int32())
+					}
+					return results
+				}
+
+				it('should produce the same state as calling get_Int32() N times — small N (within first batch)', () => {
+					const N = 10
+
+					const engine_manual = getꓽRNGⵧISAAC32()
+					engine_manual.seed(SEED)
+					_get_next_n(engine_manual, N) // consume N results
+
+					const engine_discard = getꓽRNGⵧISAAC32()
+					engine_discard.seed(SEED)
+					engine_discard.discard(N)
+
+					// the next results should be identical
+					const manual_next = _get_next_n(engine_manual, 10)
+					const discard_next = _get_next_n(engine_discard, 10)
+					expect(discard_next).to.deep.equal(manual_next)
+				})
+
+				it('should produce the same state as calling get_Int32() N times — exactly one batch (256)', () => {
+					const N = 256
+
+					const engine_manual = getꓽRNGⵧISAAC32()
+					engine_manual.seed(SEED)
+					_get_next_n(engine_manual, N)
+
+					const engine_discard = getꓽRNGⵧISAAC32()
+					engine_discard.seed(SEED)
+					engine_discard.discard(N)
+
+					const manual_next = _get_next_n(engine_manual, 10)
+					const discard_next = _get_next_n(engine_discard, 10)
+					expect(discard_next).to.deep.equal(manual_next)
+				})
+
+				it('should produce the same state as calling get_Int32() N times — across batch boundary', () => {
+					const N = 300 // 256 + 44
+
+					const engine_manual = getꓽRNGⵧISAAC32()
+					engine_manual.seed(SEED)
+					_get_next_n(engine_manual, N)
+
+					const engine_discard = getꓽRNGⵧISAAC32()
+					engine_discard.seed(SEED)
+					engine_discard.discard(N)
+
+					const manual_next = _get_next_n(engine_manual, 10)
+					const discard_next = _get_next_n(engine_discard, 10)
+					expect(discard_next).to.deep.equal(manual_next)
+				})
+
+				it('should produce the same state as calling get_Int32() N times — multiple full batches', () => {
+					const N = 512 // exactly 2 full batches
+
+					const engine_manual = getꓽRNGⵧISAAC32()
+					engine_manual.seed(SEED)
+					_get_next_n(engine_manual, N)
+
+					const engine_discard = getꓽRNGⵧISAAC32()
+					engine_discard.seed(SEED)
+					engine_discard.discard(N)
+
+					const manual_next = _get_next_n(engine_manual, 10)
+					const discard_next = _get_next_n(engine_discard, 10)
+					expect(discard_next).to.deep.equal(manual_next)
+				})
+
+				it('should produce the same state as calling get_Int32() N times — multiple batches + remainder', () => {
+					const N = 700 // 2*256 + 188
+
+					const engine_manual = getꓽRNGⵧISAAC32()
+					engine_manual.seed(SEED)
+					_get_next_n(engine_manual, N)
+
+					const engine_discard = getꓽRNGⵧISAAC32()
+					engine_discard.seed(SEED)
+					engine_discard.discard(N)
+
+					const manual_next = _get_next_n(engine_manual, 10)
+					const discard_next = _get_next_n(engine_discard, 10)
+					expect(discard_next).to.deep.equal(manual_next)
+				})
+
+				it('should correctly report used_results_count via get_state().call_count', () => {
+					const N = 300
+
+					const engine = getꓽRNGⵧISAAC32()
+					engine.seed(SEED)
+					engine.discard(N)
+
+					expect(engine.get_state().call_count).to.equal(N)
+				})
+			})
 		})
 	})
 })

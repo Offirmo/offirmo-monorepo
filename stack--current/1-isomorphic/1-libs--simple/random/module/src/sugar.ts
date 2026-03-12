@@ -55,10 +55,10 @@ const getꓽengine = {
 				}
 			})()
 
-			if (state.seed) {
+			if (state.seed != null) {
 				engine.seed(state.seed)
 			}
-			if (state.call_count) {
+			if (!!state.call_count) {
 				engine.discard(state.call_count)
 			}
 

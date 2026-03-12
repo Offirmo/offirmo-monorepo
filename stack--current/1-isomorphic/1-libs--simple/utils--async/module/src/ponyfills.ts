@@ -37,7 +37,8 @@ const setImmediate: (callback: (...args: any[]) => void, ...args: any[]) => Imme
 	}
 
 
-// browser only + not supported on Safari
+// Originally browser only + not supported on Safari
+// "will schedule work when there is free time at the end of a frame, or when the user is inactive"
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback
 // Strange semantic of being clamped to 50ms
 // https://developers.google.com/web/updates/2015/08/using-requestidlecallback
@@ -45,7 +46,7 @@ const MIN_IDLE_TIMEOUT_MS = 2 // since <=1 is all the same
 const MAX_IDLE_TIMEOUT_MS = 50 // according to https://developers.google.com/web/updates/2015/08/using-requestidlecallback
 interface IdleDeadline {
 	didTimeout: boolean
-	timeRemaining: () => number
+	timeRemaining: () => number // limited avail https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/timeRemaining
 }
 type IdleCallbackId = any
 const requestIdleCallback: (callback: (info: IdleDeadline) => void, options?: { timeout?: number }) => IdleCallbackId
@@ -54,19 +55,22 @@ const requestIdleCallback: (callback: (info: IdleDeadline) => void, options?: { 
 		// inspired from https://developers.google.com/web/updates/2015/08/using-requestidlecallback#checking_for_requestidlecallback
 
 		if (timeout !== undefined) {
-			assert (timeout >= MIN_IDLE_TIMEOUT_MS, 'whats the point in requesting idle with a short timeout??')
-			assert (timeout <= MAX_IDLE_TIMEOUT_MS, 'must be an error requesting idle with a timeout of more than 50ms??')
+			assert(timeout >= MIN_IDLE_TIMEOUT_MS, 'whats the point in requesting idle with a short timeout??')
+			assert(timeout <= MAX_IDLE_TIMEOUT_MS, 'must be an error requesting idle with a timeout of more than 50ms??') // unsure, cf. https://developer.chrome.com/blog/using-requestidlecallback
 		}
 
 		let startTime = Date.now()
 		function timeRemaining() {
-			return Math.max(0, Date.now() - startTime)
+			// remaining in the idle period, NOT relative to timeout
+			// 50 = doing the same as Google https://developer.chrome.com/blog/using-requestidlecallback#checking_for_requestidlecallback
+			// TODO improve (if useful)
+			return Math.max(0, (timeout || 50) - (Date.now() - startTime))
 		}
 
 		const simulated_idle_delay_ms = Math.min(
 			timeout || Infinity,
 			// There is no concept of "idle" in node.js see https://github.com/nodejs/node/issues/2543
-			// So when should we run this payload?
+			// So, when should we run this payload?
 			// - not too quickly, since the semantic of this function is for "background" work
 			// - but not too far either, cf. discussions in comments above, no more than 50ms
 			//   according to Chrome, rIC replaces a direct invocation, so its default should be short
@@ -84,7 +88,7 @@ const requestIdleCallback: (callback: (info: IdleDeadline) => void, options?: { 
 
 		return setTimeout(() => {
 			callback({
-				didTimeout: false, // this is a shim
+				didTimeout: false, // this is a shim https://developer.chrome.com/blog/using-requestidlecallback#checking_for_requestidlecallback
 				timeRemaining,
 			})
 		}, simulated_idle_delay_ms)

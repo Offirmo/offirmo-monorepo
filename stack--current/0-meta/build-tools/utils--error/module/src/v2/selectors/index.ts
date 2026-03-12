@@ -40,15 +40,23 @@ function isꓽError(thrown: unknown): boolean {
 }
 
 function isꓽErrorⵧrsrc_not_found(thrown: unknown): boolean {
+	if (thrown instanceof NotFoundError) {
+		return true
+	}
+
 	if (getꓽattribute<number>(thrown, 'statusCode') === 404) {
 		return true
 	}
 
-	if (getꓽmessage(thrown).toLowerCase().includes('not found')) {
+	// node
+	if (getꓽattribute<string>(thrown, 'code') === 'ENOENT') {
 		return true
 	}
 
-	if (thrown instanceof NotFoundError) {
+	if (getꓽmessage(thrown).toLowerCase().includes('no such file or directory')) {
+		return true
+	}
+	if (getꓽmessage(thrown).toLowerCase().includes('not found')) {
 		return true
 	}
 

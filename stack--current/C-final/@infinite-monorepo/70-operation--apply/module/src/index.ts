@@ -34,7 +34,7 @@ function noop(state: Immutable<State>): Immutable<State> {
 }
 
 async function apply(from?: PathⳇAny) {
-	console.log(`@infinite-monorepo/apply…`)
+	console.group(`@infinite-monorepo/apply…`)
 
 	////////////
 	let state = StateLib.create()

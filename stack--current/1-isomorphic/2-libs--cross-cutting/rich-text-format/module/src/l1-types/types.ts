@@ -6,13 +6,13 @@ import type { Hyperlink‿x } from '@monorepo-private/ts--types--web'
 
 // using type instead of interface to prevent extra properties
 // (bc not supposed to extend this. See $hints for an open-ended extension point)
-// TODO review "checked" naming
-type CheckedNode = {
+type StrictNode = {
 	$v: number // schema version
 
-	// if not provided, inferred from $content to inline or block
+	// if not provided, inferred from $content shape: Array → block, otherwise → inline
+	// (this is the key invariant: block-level nodes MUST have an Array $content)
 	// Not in $hints because it's core to the rendering
-	$type: NodeType | 'auto' // auto = "I don't know yet, don't infer too early, decide later" TODO review
+	$type: NodeType | 'auto' // auto = "resolve later from $content shape" (see getꓽtype() in misc.ts)
 
 	// Heading, in the generic/semantic sense =
 	// - word or phrase that or sentence that explains what the following part is about
@@ -22,16 +22,16 @@ type CheckedNode = {
 	// - indicates that the content is collapsible into just the heading (if UI allows it)
 	// - ~maps to a heading (HTML h1..h6, Markdown # ## ###) most of the time
 	//   - thus heading is supposed to be an inline fragment
-	//   - an document outline algorithm will tell the renderer the depth of the heading in the document structure
+	//   - a document outline algorithm will tell the renderer the depth of the heading in the document structure
 	// - MAY map to a caption/figcaption if the node is a figure
 	// - may map to simple text if the content is a list (no <h>)
 	$heading: NodeLike | null
 	// Note: no footer, no known use case so far + not the same "collapsible" semantics
 
 	// Content of the node
-	// - MAY be an array, but should be reserved for nodes that really need it: lists, blocks
-	// - if only inline, should stay a string as much as possible for readability
-	// - if an array, automatically makes this node a block-level element
+	// KEY INVARIANT: Array $content ↔ block-level node (this is how 'auto' $type is resolved)
+	// - block-level nodes MUST have an Array $content
+	// - inline nodes should stay a string/number as much as possible for readability
 	// can refer sub-nodes with ⎨⎨key⎬⎬ syntax
 	$content: NodeLike | Array<NodeLike>
 
@@ -65,7 +65,7 @@ const NodeType = Enum(
 	// TODO 1D pills?
 
 	// display "block"
-	//'heading' -> being reviewed, now a dedicated $heading prop
+	//'heading' -> now a dedicated $heading prop
 	'ol',
 	'ul',
 	'hr',
@@ -85,16 +85,18 @@ const NodeType = Enum(
 	// REMINDER the client should be the one doing line breaks for long content
 	// TODO 1D 'wbr'
 
-	// internally used, don't use directly
+	// internally used, do NOT use directly
 	'_h', // header
 	'_li', // list item
+
+	// 'auto' is intentionally not listed here: it's NOT a NodeType but a special internal hint to ask the NodeType to be resolved.
 )
 type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 
 // hints for progressive enhancement
 // - for rendering, hints should be OPTIONAL and any renderer should be able to render decently without them
 // - for non-rendering (ex. hypermedia features) hints can be made mandatory
-// UnderlyingData = JSON = no, causes error "Type instantiation is excessively deep and possibly infinite."
+// UnderlyingData = JSON = no, causes the error "Type instantiation is excessively deep and possibly infinite."
 interface Hints<UnderlyingData = any, HyperLink = Hyperlink‿x> {
 	// string or keyword to use as bullets. to remove bullets: ''
 	// https://www.w3schools.com/cssref/pr_list-style-type.php
@@ -119,7 +121,7 @@ interface Hints<UnderlyingData = any, HyperLink = Hyperlink‿x> {
 
 type SubNodeKey = string
 
-type Node = Partial<CheckedNode>
+type Node = Partial<StrictNode>
 
 // Node + stuff trivial+safe to promote to a Node
 type NodeLike = string | number | Node
@@ -137,7 +139,7 @@ export {
 	NodeType,
 	type Hints,
 	type SubNodeKey,
-	type CheckedNode,
+	type StrictNode,
 	type Node,
 	type NodeLike,
 	type Document,

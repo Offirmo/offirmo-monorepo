@@ -12,7 +12,7 @@ import {
 import {
 	type NodeLike,
 	type Node,
-	type CheckedNode,
+	type StrictNode,
 	Enum,
 	NodeType,
 	walk,
@@ -79,7 +79,7 @@ function _generate_own_react_key({
 	$node,
 }: {
 	$id: string
-	$node: Immutable<CheckedNode> | Immutable<Node>
+	$node: Immutable<StrictNode> | Immutable<Node>
 }) {
 	let key = $id
 
@@ -150,7 +150,7 @@ function _get_aggregated_keyed_children({ state }: { state: WalkState }): Array<
 	return children
 }
 
-function _get_aggregated_classes({ $node }: { $node: Immutable<CheckedNode> }): Set<string> {
+function _get_aggregated_classes({ $node }: { $node: Immutable<StrictNode> }): Set<string> {
 	const { $type, $classes, $hints } = $node
 
 	const classes = new Set<string>([...$classes, ...(NODE_TYPE_TO_EXTRA_CLASSES[$type] || [])])
@@ -187,7 +187,7 @@ function _get_final_element_creator({
 	$id,
 	classes,
 }: {
-	$node: Immutable<CheckedNode>
+	$node: Immutable<StrictNode>
 	$id: string
 	classes: Set<string>
 }): (children: ReactNode[]) => React.ReactNode {

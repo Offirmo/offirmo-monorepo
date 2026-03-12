@@ -42,7 +42,7 @@ function hasꓽcontent(x: any, prop?: string): boolean {
 			return false
 
 		case typeof x === 'number':
-			return !isNaN(x) && (x !== 0)
+			return !isNaN(x)
 
 		case typeof x === 'string':
 			return x.length > 0

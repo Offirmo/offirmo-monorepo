@@ -57,6 +57,8 @@ function getꓽpackage_manager(state: Immutable<State>): PackageManagerSpec {
 		switch (raw_spec) {
 			case 'pnpm':
 				return structuredClone(PKG_MANAGER_SPECⵧPNPM)
+			//case 'bolt':
+
 			default:
 				throw new Error(`Unhandled package_manager "${raw_spec}"!`)
 		}

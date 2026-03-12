@@ -2,7 +2,7 @@
 
 import type { Immutable } from '@monorepo-private/ts--types'
 
-import { type CheckedNode, type Node } from '../../l1-types/index.ts'
+import { type StrictNode, type Node } from '../../l1-types/index.ts'
 
 import {
 	type BaseRenderingOptions,
@@ -20,7 +20,7 @@ function indent(n: number) {
 
 ////////////////////////////////////
 
-function debug_node_short($node: Immutable<CheckedNode>) {
+function debug_node_short($node: Immutable<StrictNode>) {
 	const { $type, $content } = $node
 
 	return `${$type}."${$content}"`

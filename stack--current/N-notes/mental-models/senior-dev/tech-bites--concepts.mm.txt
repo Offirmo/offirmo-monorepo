@@ -121,6 +121,7 @@ battle short = a condition in which some military equipment can be placed so it 
 BDD "Behavior-Driven Development" https://cucumber.io/school/   Discovery -> Formulation -> Automation
 Beyoncé Principle = If you liked it, then you shoulda put a test on it
 big companies software = At big companies, software tends to be written by large and frequently changing teams of mediocre programmers https://paulgraham.com/noop.html
+bit-flips causing 25% of errors in Firefox https://mas.to/@gabrielesvelto/116171750653898304
 blocking
 blocklist/blacklist -- https://paulgraham.com/spamhausblacklist.html
 bootcamps https://www.sandofsky.com/lambda-school/
@@ -410,6 +411,7 @@ end-of-life -- debate https://github.com/endoflife-date/endoflife.date/pull/6684
 end-of-life https://endoflife.date/
 engineer's notions of simplicity, economies of scale, and design integrity https://en.wikipedia.org/wiki/Planned_obsolescence#History
 engineering https://en.wikipedia.org/wiki/Citicorp_Center_engineering_crisis
+engineering manager -- don't (2026 / AI) https://newsletter.manager.dev/p/dont-become-an-engineering-manager
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
 EOL software "end of life" https://www.herodevs.com/support
 epochs: a backward-compatible language evolution mechanism https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1881r0.html
@@ -552,6 +554,7 @@ internal developer platform (IDP) = central source of truth, golden paths, https
 internal developer platform -- private registry
 interpreters = make your own programming language https://craftinginterpreters.com/
 Inversion of control (IoC) = programming principle whereby flow is managed in the opposite way to traditional procedural programming. With inversion of control, custom-written portions of a program receive the flow of control from a generic framework, as opposed to the traditional procedural approach whereby custom code calls into reusable libraries to take care of generic tasks. With inversion of control, the framework calls into custom, or task-specific, code
+is it worth the time? https://will-keleher.com/posts/its-not-worth-the-time-yet/
 Joel test -- 01 Do you use source control?
 Joel test -- 02 Can you make a build in one step?
 Joel test -- 03 Do you make daily builds?
@@ -667,6 +670,7 @@ magic number
 manifest
 map
 math https://math4devs.com/
+mcp2cli https://github.com/knowsuchagency/mcp2cli
 MDN
 media types https://www.iana.org/assignments/media-types/media-types.xhtml
 memory -- heap
@@ -945,6 +949,7 @@ source maps -- should NOT be public = attack vector https://lachlan.nz/blog/x-ma
 space shuttle disasters -- Challenger = https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster
 space shuttle disasters -- Columbia = https://en.wikipedia.org/wiki/Space_Shuttle_Columbia_disaster
 spec
+spell corrector https://norvig.com/spell-correct.html
 SSH (Secure Shell)
 stack overflow
 standard deviation

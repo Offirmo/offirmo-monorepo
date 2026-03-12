@@ -84,8 +84,10 @@ function _remove_dots_from_local_part_if_insensitive(email: string): string {
 function _lowercase_local_part_if_insensitive(email: string): string {
 	const [ local_part, domain ] = email.split('@') as [string, string]
 
-	if (!RULES[domain]?.local_part_case_sensitive) // default to true
+	if (!RULES[domain]?.local_part_case_sensitive) {
+		// default to not sensitive unless explicitly asked
 		return email.toLowerCase()
+	}
 
 	return email
 }
