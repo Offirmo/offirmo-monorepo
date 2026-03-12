@@ -22,7 +22,7 @@
 		"@monorepo-private/data-structures": "*",
 		"@monorepo-private/rich-text-format": "*",
 		"@monorepo-private/utils--async": "*",
-		"emittery": "^1",
+		"emittery": "^2",
 		"prop-types": "^15",
 		"react": "^19",
 		"react-dom": "^19",

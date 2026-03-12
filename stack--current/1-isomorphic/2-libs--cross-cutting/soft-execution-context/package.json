@@ -15,7 +15,7 @@
 	"dependencies": {
 		"@monorepo-private/timestamps": "*",
 		"@offirmo/error-utils": "^0.0.1",
-		"emittery": "^1",
+		"emittery": "^2",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {

@@ -19,6 +19,7 @@ alias    mono0btu='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.s
 alias    mono0bub='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/utils--bolt/;                                 tabset --badge mono0bub'
 alias    mono0bue='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/utils--error/;                                tabset --badge mono0bue'
 
+alias     mono11a='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 1-libs--simple/assert/;                                   tabset --badge mono11a'
 alias     mono11j='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 1-libs--simple/json-stable-stringify/;                    tabset --badge mono11j'
 alias     mono11m='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 1-libs--simple/marketing/;                                tabset --badge mono11m'
 alias    mono11m2='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 1-libs--simple/murmurhash/;                               tabset --badge mono11m2'
