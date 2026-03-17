@@ -14,24 +14,6 @@ import {
 
 /////////////////////////////////////////////////
 
-function promoteꓽto_string_for_node_content(str: Immutable<Exclude<NodeLike, Node>>): string {
-	switch (typeof str) {
-		case 'string': {
-			// note: can be empty, esp. at node creation
-			assertꓽstringⵧnormalized(str)
-			break
-		}
-		case 'number':
-			// TODO one day number formatting with locale
-			break
-
-		default:
-			assert(false, `${LIB}: sugar: pushText(): Unknown pseudo-node type!`)
-	}
-
-	return '' + str
-}
-
 function promoteꓽto_node($raw: NodeLike): Node
 function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node>
 function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node> {
@@ -52,8 +34,28 @@ function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node> {
 	}
 }
 
+// for builder
+function promoteꓽto_string_for_node_content(str: Immutable<Exclude<NodeLike, Node>>): string {
+	switch (typeof str) {
+		case 'string': {
+			// note: can be empty, esp. at node creation
+			assertꓽstringⵧnormalized(str)
+			break
+		}
+		case 'number':
+			// TODO one day number formatting with locale
+			break
+
+		default:
+			assert(false, `${LIB}: sugar: pushText(): Unknown pseudo-node type!`)
+	}
+
+	return '' + str
+}
+
 /////////////////////////////////////////////////
 
 export {
 	promoteꓽto_node,
+	promoteꓽto_string_for_node_content,
 }

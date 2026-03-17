@@ -8,6 +8,8 @@ naming convention:
 - `folder` = intermediate, main contain any of the other
 
 
+TODO https://x.com/chongdashu/status/2031743032266043687
+
 
 ## REMINDER: The whole point is to USE AI to get VALUE.
 ### AI should bring value by:

@@ -1,3 +1,4 @@
++++ If Architects Had To Work Like Programmers = https://web.archive.org/web/20251214162602/https://paws.kettering.edu/~jhuggins/humor/design.html
 +++ important history https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
 1969 ARPANET, forerunner of the Internet, starts operating
 1971 email
@@ -212,6 +213,7 @@ compatibility -- window = duration deployed code needs to remain compatible
 compatibility = 2x things being able to live together without issues
 compatibility window = how long should we attempt to ensure that a deployment of code doesn’t get blown up by incompatible payloads. Ex. mobile app = 6 month, web page = 1d, server = 1 release
 compile to js
+compiler -- Dear Sir, You Have Built a Compiler = https://people.csail.mit.edu/rachit/post/you-have-built-a-compiler/
 compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
 compiler = translates code from one language to another at a different level of abstraction. As a result, the compiled code from a compiler is much harder for a human to read than the original.
 complexity -- tends to increase exponentially in multi-threaded systems, and quadratically in distributed parallel systems https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/CameronPurdy_TraditionalProgrammingModelsStoneKnivesAndBearskinsInTheGoogleAge.pdf
@@ -402,6 +404,7 @@ effective engineer -- LeadDev -- 09. Leave software projects better than you fou
 effective engineer -- LeadDev -- 10. Be comfortable taking on new challenges
 effective engineer -- LeadDev https://www.linkedin.com/posts/addyosmani_softwareengineering-programming-effectiveness-activity-7018966411389661184-pVev
 egress/ingress
+Emergency Stop (E-Stop) = fail-safe control switch used to immediately halt machinery in hazardous situations to prevent injury or equipment damage
 emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
 encoding -- binary-to-text -- risk of accidental words
@@ -641,7 +644,7 @@ languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-lang
 late/lazy evaluation vs fail fast
 layer -- abstraction
 layers
-layers -- shearing
+layers -- shearing &&
 lazy-loading
 leaking
 learning -- https://roadmap.sh/

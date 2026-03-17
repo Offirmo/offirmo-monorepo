@@ -1,3 +1,4 @@
+2009 Stuxnet https://en.wikipedia.org/wiki/Stuxnet
 2014-04-07 heart bleed = serious vulnerability in the popular OpenSSL cryptographic software library. This weakness allows stealing the information protected https://heartbleed.com/
 2015-09 XcodeGhost https://en.wikipedia.org/wiki/XcodeGhost
 2025-11-24 Shai Hulud 2 https://helixguard.ai/blog/malicious-sha1hulud-2025-11-24

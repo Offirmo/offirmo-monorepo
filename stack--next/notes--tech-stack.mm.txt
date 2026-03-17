@@ -1,4 +1,6 @@
-2024/11 https://vercel.com/blog/how-we-built-the-v0-ios-app
+2024-02 https://cep.dev/posts/every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup/
+2024-11 https://vercel.com/blog/how-we-built-the-v0-ios-app
+2026-02 https://cpojer.net/posts/fastest-frontend-tooling
 6 innovations that made the modern world = Glass, Cold, Sound, Clean, Time, Light https://www.theguardian.com/books/2014/oct/03/how-we-got-to-now-by-steven-johnson-six-innovations-made-modern-world
 ? corepack / pnpm ? https://blog.hyperknot.com/p/corepacks-packagemanager-field https://www.reddit.com/r/node/comments/1hw1iyh/the_curious_case_of_the_packagemanager_field_in/
 ? GraphQL https://gql-tada.0no.co/
@@ -64,7 +66,11 @@ polish https://number-flow.barvian.me/
 PostgreS queues https://news.ycombinator.com/item?id=37636841
 search -- postgres https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
+solutions -- containers -- Apple https://github.com/apple/container/blob/main/docs/tutorial.md
 solutions -- https://drizzle.team/
+solutions -- Lume VMs
+solutions -- VMs -- https://mac.getutm.app/
+solutions -- VMs -- Lume / Apple Virtualization
 syntax highlighter https://prismjs.com/
 tracing https://www.jaegertracing.io/ (used by Cloudflare)
 transactional emails https://react.email/

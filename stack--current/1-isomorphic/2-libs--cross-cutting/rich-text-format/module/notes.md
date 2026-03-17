@@ -64,6 +64,9 @@ Differences with other document formats ()
 
 ## TODO
 
+See also:
+- generative / "just in time" UI https://json-render.dev/
+
 TODO escaping (mitigated for now with a rare codepoint)
 - not a bad idea, though.
 - could use more: https://www.compart.com/en/unicode/block/U+2300

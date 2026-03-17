@@ -1203,6 +1203,7 @@ science -- research -- line of
 science -- scientific method https://en.wikipedia.org/wiki/Scientific_method
 science -- space https://en.wikipedia.org/wiki/Outline_of_space_science
 science accepts ideas only when they fit into the then-current state of the science https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy#Similar_concepts
+scientific method = an empirical method for acquiring knowledge through careful observation, rigorous skepticism, hypothesis testing, and experimental validation https://en.wikipedia.org/wiki/Scientific_method
 scientism
 scope–severity grid https://en.wikipedia.org/wiki/Global_catastrophic_risk#Defining_existential_risks
 scrum

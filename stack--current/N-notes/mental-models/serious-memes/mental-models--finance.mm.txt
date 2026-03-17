@@ -17,6 +17,7 @@ bond https://en.wikipedia.org/wiki/Bond_(finance)
 borrowing
 bull/bear = https://www.coinbase.com/en-au/learn/crypto-basics/what-is-a-bull-or-bear-market
 central bank
+central bank https://en.wikipedia.org/wiki/Central_bank
 churn = to make the account of a client excessively active by frequent purchases and sales primarily in order to generate commissions
 coin
 coinage -- free = bring gold / silver and have it minted for free or low fee
@@ -42,6 +43,7 @@ currency -- right to issue
 currency -- sign $ €
 currency -- standard = sub standard / high standard = less (weak) / more value (strong)
 currency = a system of money in common use within a specific environment over time, especially for people in a nation state https://en.wikipedia.org/wiki/Currency
+DCA "Dollar Cost Average"
 due diligence
 economic hardship
 economic order

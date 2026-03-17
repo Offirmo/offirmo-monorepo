@@ -4,9 +4,12 @@
 2003 "Manna" prediction https://marshallbrain.com/manna1
 2019-02-14 ChatGPT 2 https://openai.com/index/better-language-models/
 2022 -> 2030 self driving car bet https://blog.codinghorror.com/the-2030-self-driving-car-bet/
-2022-12 ChatGPT lauched https://x.com/sama/status/1599668808285028353 https://openai.com/index/chatgpt/
+2022-11-30 ChatGPT lauched https://x.com/sama/status/1599668808285028353 https://openai.com/index/chatgpt/
+2023 -- AI 50 && https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 2023-01 OpenAI / Microsoft partnership https://arstechnica.com/information-technology/2023/01/openai-and-microsoft-reaffirm-shared-quest-for-powerful-ai-with-new-investment/
 2023-02-08 Google scramable to catch on ChatGPT with "Bard" https://arstechnica.com/information-technology/2023/02/in-paris-demo-google-scrambles-to-counter-chatgpt-but-ends-up-embarrassing-itself/
+2023-03 AutoGPT = works autonomously by breaking the main goal into smaller sub-tasks and using tools like web browsing and file management to complete them https://en.wikipedia.org/wiki/AutoGPT
+2023-03-14 GPT-4
 2023-10 Claude 2
 2024 "Her" moment for voice = crossed the uncanny valley
 2024 Google I/O AI built-in Chrome
@@ -44,13 +47,14 @@
 2026-01-31 most massive layoffs for 25 years, "job hugging" https://x.com/BoringBiz_/status/2019414912552878526?
 2026-02 Gorman paradox "Everyone's shipping. Nobody's succeeding" https://x.com/BrettFromDJ/status/2023410927593541802
 2026-02 moltbook = A social network for AI agents. They share, discuss, and upvote. Humans welcome to observe. 🦞 https://www.moltbook.com/
-2026-02 OpenClaw https://garymarcus.substack.com/p/openclaw-aka-moltbot-is-everywhere
+2026-02 OpenClaw https://garymarcus.substack.com/p/openclaw-aka-moltbot-is-everywhere https://steipete.me/posts/2026/openclaw
 2026-02-12 "An AI Agent Published a Hit Piece on Me" https://theshamblog.com/an-ai-agent-published-a-hit-piece-on-me/
 2026-02-28 Anthropic named supply-chain risk over mass domestic surveillance and fully autonomous weapons https://truthsocial.com/@realDonaldTrump/posts/116144552969293195 https://x.com/SecWar/status/2027507717469049070 https://www.anthropic.com/news/statement-comments-secretary-war
 ? https://agentation.dev/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
 [ ] https://aleteia.org/tag/artificial-intelligence/
+[ ] https://blog.cloudflare.com/tag/ai/
 [ ] https://ghuntley.com/
 [ ] https://openai.com/news/
 [ ] https://red.anthropic.com/
@@ -63,40 +67,41 @@
 [ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
 A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 abliteration = family of techniques that identify and surgically remove the internal representations responsible for content refusal, without retraining or fine-tuning. The result: a model that responds to all prompts without artificial gatekeeping, while preserving its core language capabilities. https://github.com/elder-plinius/OBLITERATUS
+Agent verification = activity to gain assurances that purposeful artificial constructs act in accordance with their specifications https://en.wikipedia.org/wiki/Agent_verification
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
 agents -- economy = agents transact, transfer resources, keep track, build trust
 agents -- graph
 agents -- principals
+agents -- some def = a loop of calls until goal achieved = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
+agents -- some def = a system that can perform complex tasks independently; capable of autonomous, purposeful action in the real world https://en.wikipedia.org/wiki/Autonomous_agent
+agents -- some def = stateful: remember conversations, act on schedules, call tools, coordinate with other agents, and stay connected to users in real-time
 agents -- swarms
-agents = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
+agents -- ~assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 agents = ~unclear definition
 AGI -- ANI -> AGI -> ASI = narrow(weak) / general(strong) / super[human](strong)
 AGI ~ strong AI = can independently learn new problem-solving strategies that are not explicitly included in its original model or training data
 AI "Artificial intelligence" = intentionally vague term / "solving tasks or problems by computers/machines, which require a form of human-like intelligence"
 AI -- first cohort of winners
 AI -- weak AI = task specific
-AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
-AI browsers https://www.dashlane.com/blog/ai-browsers
+AI browsers = https://www.dashlane.com/blog/ai-browsers
 AI doomer https://www.wheresyoured.at/wheres-the-money/ https://www.wheresyoured.at/longcon/
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
 AI Labyrinth = new, next generation honeypot and cybersecurity defensive tool that uses AI to trap AI = leverages AI to confuse crawlers and bots that ignore "no crawl" directives. Instead of blocking these bots, AI Labyrinth directs bots into an endless maze of convincing, AI-generated pages. https://blog.cloudflare.com/ai-labyrinth/
-AI model collapse = as AI grows, systems are trained on their own outputs, gradually losing accuracy, diversity, and reliability. This occurs because errors compound across successive model generations, leading to distorted data distributions and "irreversible defects" in performance. The model becomes poisoned with its own projection of reality. https://slashdot.org/story/25/05/28/0242240/some-signs-of-ai-model-collapse-begin-to-reveal-themselves
+AI stack
+AI stack -- layers = LLM <- agent <- claw
 AI transition = https://www.youtube.com/watch?v=v9JBMnxuPX8
-AI Washing = using AI as a pretext to fire and increase the workload https://it.slashdot.org/story/26/02/02/0618242/is-ai-really-taking-jobs-or-are-employers-just-ai-washing-normal-layoffs
 AI winter
 AI with ifs (TODO find better name)
-AI-first software delivery = https://www.linkedin.com/pulse/what-ai-first-software-delivery-thoughtworks-4krff/
 AI-Induced Death Spiral = StackOverflow Q&A plummeted 90% https://developers.slashdot.org/story/25/05/29/1921248/stack-overflows-radical-new-plan-to-fight-ai-induced-death-spiral
 algorithmic aversion = We don’t like taking instructions from machines when they conflict with our judgement https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough
 alignment -- Alignment Stress Testing team = validates alignment (Anthropic)
 alignment -- generic = conform to predefined values, usually ethical or social values, Truthfulness, Harmlessness, Helpfulness
 alignment -- super alignment =  https://openai.com/blog/introducing-superalignment  https://openai.com/blog/superalignment-fast-grants
 alignment =  making AI do what its users want it to do (and nothing more) see also "paper clip"
+Ambient intelligence (AmI) = environments with electronic devices that are aware of and can recognize the presence of human beings and adapt accordingly https://en.wikipedia.org/wiki/Ambient_intelligence
 annotation https://www.peopleforai.com/ https://www.isahit.com/
 anthropomorphization = models are not really "thinking" or "reasoning" https://tech.slashdot.org/story/25/05/29/1411236/researchers-warn-against-treating-ai-outputs-as-human-like-reasoning
-API -- Gemini https://ai.google.dev/docs/gemini_api_overview
-applications -- legacy code https://martinfowler.com/articles/legacy-modernization-gen-ai.html
 applied -- 2024/06 Slack Enzyme to RTL https://slack.engineering/balancing-old-tricks-with-new-feats-ai-powered-conversion-from-enzyme-to-react-testing-library-at-slack/
 applied -- framework migration https://medium.com/airbnb-engineering/accelerating-large-scale-test-migration-with-llms-9565c208023b
 ASL "AI Safety Level" https://www.linkedin.com/pulse/what-ai-safety-level-asl-where-we-now-siddhesh-joglekar-gieof/
@@ -104,7 +109,6 @@ ASL-1 = This level involves smaller, simpler AI models with minimal risk. It’s
 ASL-2 = At this stage, larger, more complex AI models are introduced, requiring heightened safety protocols to ensure responsible usage. These models can handle more tasks but are still largely controllable and predictable.
 ASL-3 = This level signifies a significantly higher risk as AI models become increasingly powerful. More sophisticated safety and security measures are essential because the technology is now capable of complex problem-solving and may pose unintended risks if misused or uncontrolled.
 ASL-4+ = (Speculative) The highest level, ASL-4, is where AI technology enters speculative, highly autonomous territory. Models at this level may start exhibiting autonomous behaviors, making independent decisions, and even potentially circumventing certain safety checks—creating complex and unprecedented risks.
-assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 attacks -- jailbreaks -- Constitutional Classifiers = safeguards that monitor model inputs and outputs to detect and block potentially harmful content. The novel aspect of the approach was that the classifiers were trained on synthetic data generated from a "constitution,” which included natural language rules specifying what’s allowed and what isn’t. For example, Claude should help with college chemistry homework, but not assist in the synthesis of Schedule 1 chemicals. https://www.anthropic.com/research/next-generation-constitutional-classifiers https://www.anthropic.com/research/constitutional-classifiers
 attacks -- jailbreaks -- universal = consistent attack strategies that work across many queries https://www.anthropic.com/research/next-generation-constitutional-classifiers
 attacks -- jailbreaks = techniques that can circumvent safety guardrails and elicit harmful information https://www.anthropic.com/research/next-generation-constitutional-classifiers
@@ -123,9 +127,7 @@ BLOOM = "BigScience Large Open-science Open-access Multilingual Language Model" 
 BM25 (Best Matching 25) = a ranking function that uses lexical matching to find precise word or phrase matches. It's particularly effective for queries that include unique identifiers or technical terms https://www.anthropic.com/news/contextual-retrieval
 BMAD https://github.com/bmad-code-org/BMAD-METHOD
 BPE "Byte Pair Encoding" = a way of converting text into tokens
-canny edge (generative AI) https://en.wikipedia.org/wiki/Canny_edge_detector
 capability stack = interaction, generation, automation, recommendation, prediction, classification, recognition
-chain-of-thoughts https://arxiv.org/abs/2201.11903
 challenges -- Adversarial User -- chatbot psychosis = wherein individuals reportedly develop or experience worsening psychosis, such as paranoia and delusions, in connection with their use of chatbots https://en.wikipedia.org/wiki/Chatbot_psychosis
 challenges -- Adversarial User -- hate, extremism, illicit, attack planning, self-harm, harms-erotic
 challenges -- Adversarial User -- jailbreaks
@@ -150,6 +152,7 @@ challenges -- illusion of understanding = hypothesis that LLMs don't actually pe
 challenges -- Inaccuracy (answer quality)
 challenges -- Language = not English
 challenges -- laziness = cases where the model doesn’t complete a task https://openai.com/blog/new-embedding-models-and-api-updates
+challenges -- model collapse = as AI grows, systems are trained on their own outputs, gradually losing accuracy, diversity, and reliability. This occurs because errors compound across successive model generations, leading to distorted data distributions and "irreversible defects" in performance. The model becomes poisoned with its own projection of reality. https://slashdot.org/story/25/05/28/0242240/some-signs-of-ai-model-collapse-begin-to-reveal-themselves
 challenges -- money aligned LLMs = ads, preferred providers
 challenges -- privacy, control
 challenges -- prompt injections = direct, in connectors, in function calls
@@ -169,11 +172,26 @@ chatbots = the reason why AI exploded in 2023
 Cinderella “Glass Slipper” Effect = easy early retention "When the Shoe Fits, Users Sit Tight" https://www.a16z.news/p/the-cinderella-glass-slipper-effect
 citation accuracy
 Claudeception https://github.com/blader/Claudeception/commits/main/
+claws -- challenges -- cross-channels
+claws -- challenges -- memory
+claws -- challenges -- security https://x.com/theonejvo/status/2015892980851474595
+claws -- GitClaw https://github.com/open-gitagent/gitclaw
+claws -- IronClaw = alpha / 1.1k / 9.9k from NEAR https://agent.near.ai/
+claws -- NanoClaw 5.1k / 22.6k https://github.com/qwibitai/nanoclaw accolade by K https://x.com/karpathy/status/2024987174077432126 + docker partnership https://news.ycombinator.com/item?id=47364397
+claws -- NullClaw 741 / 6.3k https://github.com/nullclaw/nullclaw
+claws -- OpenClaw -- buzz? scam? https://www.reddit.com/r/LocalLLaMA/comments/1r5v1jb/anyone_actually_using_openclaw/
+claws -- OpenClaw https://docs.openclaw.ai/start/getting-started
+claws -- TinyClaw 24 / 163 https://github.com/warengonzaga/tinyclaw
+claws -- ZeroClaw 3.5k / 26.9k https://github.com/zeroclaw-labs/zeroclaw
+claws = OpenClaw or like
+coding -- AI-first software delivery = https://www.linkedin.com/pulse/what-ai-first-software-delivery-thoughtworks-4krff/
 coding -- coumpound engineering = Plan → Work → Review → Compound → Repeat https://every.to/guides/compound-engineering
 coding -- day 2 = The challenge of revising, maintaining, further developing, and deploying an AI-generated app https://manual.bubble.io/beta-features/bubbles-ai-app-generator#the-day-1-and-day-2-dilemma-in-ai-driven-app-development
 coding -- death of software https://www.a16z.news/p/death-of-software-nah
 coding -- developer vs sociotechnic vs project organizer
 coding -- Just fucking code = "Put the LLM down. Programming isn’t that goddamn hard." https://www.justfuckingcode.com/
+coding -- knowledge graph
+coding -- legacy code https://martinfowler.com/articles/legacy-modernization-gen-ai.html
 coding -- review -- Code Review Bench https://codereview.withmartian.com/
 coding -- technical debt becomes a wise investment https://www.danshapiro.com/blog/2025/12/this-is-a-time-of-technical-deflation/
 coding -- tracer bullets = a small, end-to-end slice of functionality that touches all the layers of your system at once https://www.aihero.dev/tracer-bullets
@@ -188,7 +206,7 @@ constitutional AI = AI training themselves from a set of human-given rules, self
 constitutional classifiers = method that defends AI models against universal jailbreaks https://www.anthropic.com/research/constitutional-classifiers
 context
 context -- collapse
-context -- compaction
+context -- compaction -- advanced technique https://www.losslesscontext.ai/
 context -- long context trumps everything? https://arxiv.org/pdf/2406.13121
 Contextual Language Models (CLMs) Contextual.ai
 control vector https://vgel.me/posts/representation-engineering/
@@ -221,22 +239,27 @@ error analysis = "the most important metric" monitoring the LLM convos and track
 evals -- big FAQ https://www.gregorojstersek.com/evals-faq.pdf https://hamel.dev/blog/posts/evals/index.html https://hamel.dev/blog/posts/llm-judge/index.html https://hamel.dev/blog/posts/field-guide/index.html
 evals -- should not pass at 100% or there is an issue https://newsletter.eng-leadership.com/p/biggest-mistakes-engineering-leaders
 evals https://newsletter.eng-leadership.com/p/ai-evals-how-to-systematically-improve
+exoskeleton analogy
 faithfulness = not certain that what’s in the thought process truly represents what’s going on in the model’s mind https://www.anthropic.com/research/visible-extended-thinking
 frontier -- Frontier Red Team = ensures no danger (Anthropic)
 frontier AI -- OpenAI = highly capable foundation models that could possess dangerous capabilities sufficient to pose severe risks to public safety https://openai.com/index/frontier-ai-regulation/
 frontier AI = bleeding edge models
 function calling (bad name) = connect large language models to external tools https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling https://platform.openai.com/docs/guides/function-calling
+gateway https://vercel.com/ai-gateway/
 gender shade = accuracy of AI powered gender classification products http://gendershades.org/
-generative AI
+generative AI -- canny edge https://en.wikipedia.org/wiki/Canny_edge_detector
 generative AI -- gold rush
+generative AI = a type of deep learning model that can produce text, images, computer code, and audiovisual content in response to prompts https://www.cloudflare.com/learning/ai/what-is-generative-ai/
 GLUE language understanding benchmark
 GPT "Generative Pre-trained Transformer" = understand language (natural & formal)
 Grounded Generation = see RAG
+harness = Orchestration layer that receives input, interprets intent, routes to the right path, and manages concurrency, safety, automations, and follow-through
 HHH "helpful, honest, and harmless"
 Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.pinecone.io/learn/series/faiss/hnsw/
 https://nonbot.org/
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
+Human-in-the-Loop (HITL) = integrate human judgment and oversight into automated processes. These workflows pause at critical points for human review, validation, or decision-making before proceeding https://developers.cloudflare.com/agents/concepts/human-in-the-loop/
 hype cycle -- coding https://www.linkedin.com/posts/svpino_literally-everyone-is-freaking-out-over-codex-activity-7329865083411402752-T8KU
 impostors https://cloud.google.com/blog/topics/threat-intelligence/mitigating-dprk-it-worker-threat
 in-context learning = ~long prompt / many shots https://www.anthropic.com/research/many-shot-jailbreaking
@@ -251,6 +274,7 @@ jailbreak -- compute overhead
 jailbreak -- over-refusal = rejection of a harmless prompt
 jailbreak -- rapid response https://arxiv.org/abs/2411.07494
 jailbreak -- universal https://www.anthropic.com/research/constitutional-classifiers
+jobs -- AI Washing = using AI as a pretext to fire and increase the workload https://it.slashdot.org/story/26/02/02/0618242/is-ai-really-taking-jobs-or-are-employers-just-ai-washing-normal-layoffs
 jobs -- doorman paradox = saving on the doorman but was doing more than surface work
 jobs -- induced precarity = precarity. Your boss can't actually fire you and replace you with AI, but he can make you feel like he could, and maybe not ask for that raise.
 jobs -- jobpocalypse
@@ -260,6 +284,7 @@ jobs -- not left behind
 jobs -- rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 jobs -- shrinkage of entry-level jobs In Tech https://slashdot.org/story/25/05/28/2239206/ai-may-already-be-shrinking-entry-level-jobs-in-tech-new-research-suggests
 jobs -- skilled pragmatist https://cutlefish.substack.com/p/tbm-271-the-biggest-untapped-opportunity
+keeping up with AI is a full-time job
 knowledge cutoff
 labyrinth = against crawlers / bots https://blog.cloudflare.com/ai-labyrinth/
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
@@ -273,6 +298,8 @@ libs -- PyTorch https://pytorch.org/
 libs -- TensorFlow = outdated, this is all pyTorch now. See also JAX
 libs -- TensorFlow https://www.tensorflow.org/ (deprecated?)
 libs -- Transformers https://github.com/huggingface/transformers  https://huggingface.co/blog/noob_intro_transformers
+LLM "Large Language Model" = a computer program that has been fed enough examples to be able to recognize and interpret human language or other types of complex data
+LLM "Large Language Model" = type of artificial intelligence (AI) program that can recognize and generate text, among other tasks. LLMs are trained on huge sets of data — hence the name "large." LLMs are built on machine learning: specifically, a type of neural network called a transformer model.
 LLM -- "Language Model for Dialogue Applications" (LaMDA) 137B model from Google AI
 LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
 LLM -- leaderboard https://clerk.com/llm-leaderboard
@@ -280,7 +307,6 @@ LLM -- output generation -- beam search = search algorithm used to generate outp
 LLM -- output generation -- nucleus sampling aka. top-P sampling
 LLM -- output generation -- sampling = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
 LLM -- temperature scaling
-LLMs = large language models
 llms.txt -- embedded https://vercel.com/blog/a-proposal-for-inline-llm-instructions-in-html
 llms.txt https://llmstxt.org
 LoRA "Low-rank Adaptation" = adapter-based technique for efficiently fine-tuning models https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)#Low-rank_adaptation
@@ -289,16 +315,19 @@ machine learning -- feature = in this context might be something like ‘number 
 MCP -- challenges -- Rug Pull – A malicious MCP server can perform a “rug pull” by altering a tool’s description after it’s been approved by the user.
 MCP -- challenges -- Shadowing – A malicious server injects a tool description that alters the agent’s behavior toward a trusted service or tool.
 MCP -- challenges -- Tool Poisoning – Malicious instructions in MCP tool descriptions, hidden from users but readable by AI models.
-MCP -- challenges https://www.docker.com/blog/whats-next-for-mcp-security/
+MCP -- challenges --security https://www.docker.com/blog/whats-next-for-mcp-security/
 MCP -- Code Mode = some improvement? https://blog.cloudflare.com/code-mode/
 MCP -- issues https://www.docker.com/blog/build-to-prod-mcp-servers-with-docker/
+MCP -- messages types = Requests from the client for information, Results from the server with the information, Errors when the server cannot reply, and Notifications, which are one-way messages that do not require a response.
 MCP -- servers -- remote https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/
 MCP https://modelcontextprotocol.io/tutorials/building-mcp-with-llms
+meatbag
+meatspace
 mind tax https://www.fastcompany.com/91242373/the-cognitive-cost-of-ai
 Mixture of Experts (MoE) = combining models https://huggingface.co/blog/moe
 Mixture of Experts -- "sparse mixture of experts" (SMoE)
 ML "machine learning" https://en.wikipedia.org/wiki/Machine_learning ~"subfield of AI that describes AI using data and algorithms without a programmer explicitly specifying the solution path through program code"
-ML fairness https://developers.google.com/machine-learning/crash-course/fairness
+ML -- fairness https://developers.google.com/machine-learning/crash-course/fairness
 moat -- "We have no moat" https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 model (NN) = sort of snapshot of a trained neural network / brain = NN (structure + parameters) https://huggingface.co/docs/hub/models
 model -- efficiency
@@ -307,9 +336,10 @@ model -- transformer model
 multimodal image generation "no elephant in the room" https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
 NLG Natural Language Generation
 NLP Natural Language Processing
-NN Neural Networks "computer architecture inspired by the human brain"
+NN "Neural Networks" = computer architecture inspired by the human brain
 NotebookLM
 OpenAI GPTs = custom versions of ChatGPT that you can create for a specific purpose with instructions, expanded knowledge, and custom capabilities
+Pace Layering https://longnow.org/ideas/pace-layers/
 papers -- "attention is all you need" https://arxiv.org/pdf/1706.03762.pdf
 parameter (NN)
 parameter -- hyperparameter = values provided to the model from the outside to make adjustments that can influence the learning process and its performance, among other things
@@ -380,9 +410,10 @@ solved problems = don't use AI for that
 Stable Diffusion
 standards -- LLM API?
 standards -- LLM string?
-standards -- open -- A2A "Agent to Agent"
+standards -- open -- A2A "Agent to Agent" https://a2a-protocol.org/
 standards -- open -- ACP "Agent Client Protocol" A shared protocol for IDE–agent interoperability https://www.jetbrains.com/acp/
 standards -- open -- MCP "Model Context Protocol"
+standards -- open -- skills = https://agentskills.io/specification
 standards -- open -- UCP "universal commerce protocol" https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/
 stochastic
 stochastic -- non-&& = deterministic systems, models, or effects that lack random, probabilistic elements, meaning the same inputs always yield the same, predictable outputs https://www.mcherm.com/deterministic-programming-with-llms.html
@@ -404,6 +435,7 @@ tasks -- vision -- Zero-Shot Object Detection
 temptation to over-automate = need balance vs overwork https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 tensor ??
 text generation models -> see GPT https://platform.openai.com/docs/introduction/text-generation-models
+thinking -- chain-of-thoughts https://arxiv.org/abs/2201.11903
 thinking -- extended = deeply considers and iterates on its plan before taking action https://www.anthropic.com/research/visible-extended-thinking
 thinking -- extended thinking https://www.anthropic.com/research/visible-extended-thinking
 thinking -- think = once it starts generating a response, to add a step to stop and think about whether it has all the information it needs to move forward https://www.anthropic.com/engineering/claude-think-tool
@@ -443,4 +475,5 @@ who's who -- Sam Altman https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from
 workload-model fit = a perfect alignment between what they desperately needed and what the AI delivers https://www.a16z.news/p/the-cinderella-glass-slipper-effect
 yap -- yap score
 yap https://www.reddit.com/r/ChatGPT/comments/1djgyvb/is_it_just_me_or_gpt4_yaps_too_much/
+ZDR "Zero Data Retention" = data security and privacy policy offered by AI providers (like OpenAI and Anthropic) to enterprise customers, ensuring that user data is not stored or trained on
 zkML = the party that computes the inference can prove things like: “I ran X input on Y model to generate Z output” https://opengradient.medium.com/a-gentle-introduction-to-zkml-8049a0e10a04

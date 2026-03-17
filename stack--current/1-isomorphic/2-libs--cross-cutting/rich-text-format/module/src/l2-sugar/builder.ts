@@ -10,23 +10,25 @@ import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
 import {
 	NodeType,
-	type SubNodeId,
+	type SubNodeKey,
 	type Hints as DefaultHints,
 	type StrictNode,
 	type Node,
 	type Document,
 	type NodeLike,
 	isꓽNode,
+} from '../l1-types/index.ts'
+import {
+	simplifyꓽnode,
 	getꓽtype,
 	getꓽdisplay_type,
-} from '../l1-types/index.ts'
-import { simplifyꓽnode } from '../l1-utils/normalize.ts'
+} from '../l1-utils/index.ts'
 import { promoteꓽto_node, promoteꓽto_string_for_node_content } from '../l1-utils/promote.ts'
 
 /////////////////////////////////////////////////
 
 interface CommonOptions {
-	id?: SubNodeId
+	id?: SubNodeKey
 	classes?: string[]
 }
 
@@ -43,7 +45,6 @@ interface Builder {
 	pushEmoji(e: string, options?: Immutable<CommonOptions>): Builder // TODO review
 	pushInlineFragment($doc: SubNode, options?: Immutable<CommonOptions>): Builder
 
-	pushHeading(str: SubNode, options?: Immutable<CommonOptions>): Builder
 	pushHorizontalRule(): Builder
 	pushLineBreak(): Builder
 	pushBlockFragment($doc: SubNode, options?: Immutable<CommonOptions>): Builder
@@ -63,8 +64,9 @@ interface Builder {
 	// 2. manual stuff
 	addSub(node: SubNode, options?: Immutable<CommonOptions>): Builder
 	addSubs(nodes: SubNodes): Builder
-	pushRef(node_id: SubNodeId): Builder // syntactic sugar for pushText(`⎨⎨${id}⎬⎬`)
+	pushRef(node_id: SubNodeKey): Builder // syntactic sugar for pushText(`⎨⎨${id}⎬⎬`)
 
+	//addHeading(str: SubNode, options?: Immutable<CommonOptions>): Builder
 	addClass(...classes: ReadonlyArray<string>): Builder
 	addHints<Hints = DefaultHints>(hints: Partial<Hints>): Builder
 
@@ -99,7 +101,6 @@ function _createꓽbuilder($node: StrictNode): Builder {
 		pushStrong,
 		pushEm,
 		pushWeak,
-		pushHeading,
 		pushHorizontalRule,
 		pushLineBreak,
 
@@ -211,7 +212,7 @@ function _createꓽbuilder($node: StrictNode): Builder {
 		Object.entries(nodes).forEach(([id, node]) => addSub(node, { id }))
 		return builder
 	}
-	function pushRef(id: SubNodeId): Builder {
+	function pushRef(id: SubNodeKey): Builder {
 		$node.$content += `⎨⎨${id}⎬⎬`
 		return builder
 	}
@@ -252,10 +253,6 @@ function _createꓽbuilder($node: StrictNode): Builder {
 
 	function pushWeak(str: SubNode, options?: Immutable<CommonOptions>): Builder {
 		return _buildAndPush(weak(), str, options)
-	}
-
-	function pushHeading(str: SubNode, options?: Immutable<CommonOptions>): Builder {
-		return _buildAndPush(heading(), str, options)
 	}
 
 	function pushHorizontalRule(): Builder {
@@ -338,9 +335,10 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 	const $node: StrictNode = {
 		$v: SCHEMA_VERSION,
 		$type,
+		$heading: null,
 		$classes: [...($node_base.$classes || [])],
-		$content: $node_base.$content || [], // XXX
-		$refs: $node_base.$refs || {},
+		$content: ($node_base.$content ? structuredClone<StrictNode['$content']>($node_base.$content as any) : (getꓽdisplay_type({ $type }) === 'block' ? [] : '')),
+		$refs: $node_base.$refs  ? structuredClone<StrictNode['$refs']>($node_base.$refs as any) : {},
 		$hints:
 			$node_base.$hints ? structuredClone<StrictNode['$hints']>($node_base.$hints as any) : {},
 	}
@@ -366,9 +364,6 @@ function emoji(content?: Immutable<NodeLike>): Builder {
 
 function fragmentⵧblock(content?: Immutable<NodeLike>): Builder {
 	return _create(NodeType.fragmentⵧblock, content)
-}
-function heading(content?: Immutable<NodeLike>): Builder {
-	return _create(NodeType.heading, content)
 }
 
 // reminder: lists should then be pushed addSub/addSubs/pushKeyValue
@@ -436,7 +431,6 @@ export {
 	emoji,
 
 	fragmentⵧblock,
-	heading,
 	listⵧordered,
 	listⵧunordered,
 

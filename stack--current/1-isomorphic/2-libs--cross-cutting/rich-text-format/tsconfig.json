@@ -1,6 +1,9 @@
 {
 	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
+		"lib": [
+			"ESNext"
+		],
 		"pretty": true
 	},
 	"include": [

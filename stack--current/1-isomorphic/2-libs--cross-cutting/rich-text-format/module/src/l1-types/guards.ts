@@ -25,7 +25,7 @@ const $EXAMPLE_COMPLETE_NODE: StrictNode = {
 
 // Adapt the reference value to match the candidate's type,
 // so that assertꓽshape's "simple" type_match doesn't reject valid NodeLike variants (number vs string).
-function _adaptꓽNodeLikeꓽref(reference_value: NodeLike, candidate_value: unknown): NodeLike {
+function _adaptꓽNodeLikeꓽref(reference_value: NodeLike, candidate_value: unknown): NodeLike | NodeLike[] {
 	if (typeof candidate_value === 'number')
 		return 0
 	if (Array.isArray(candidate_value))

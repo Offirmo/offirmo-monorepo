@@ -590,7 +590,9 @@ scams -- wash trading = artificially inflating volume https://bitfinexed.medium.
 seasons -- autumn = ex. altcoin autumn
 seasons -- summer = ex. DeFi summer
 seasons -- winter = ex. AI winter
+onramp -- solutions = https://apidocs.bridge.xyz/get-started/guides/move-money/virtualaccounts https://docs.onramper.com/
 secret splitting -- 2-of-3 multisig
+solutions -- ccxt = CryptoCurrency eXchange Trading Library https://github.com/ccxt/ccxt
 secret splitting -- https://groups.google.com/g/bitcoindev/c/8LkdxVc_nI0
 secure enclave https://whitepaper.turnkey.com/
 securities -- Howey Test -- four key criteria -- 1 Investment of Money: An investor must put their money into the venture.

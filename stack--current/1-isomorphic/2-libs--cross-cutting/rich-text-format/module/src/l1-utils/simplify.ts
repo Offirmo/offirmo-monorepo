@@ -51,7 +51,7 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 	if ($classes.filter(c => c?.trim()).length === 0) {
 		delete $node.$classes
 	}
-	if (Object.keys($node.$hints).length === 0) {
+	if (Object.keys($node.$hints!).length === 0) {
 		delete $node.$hints
 	}
 	if (!$heading) {

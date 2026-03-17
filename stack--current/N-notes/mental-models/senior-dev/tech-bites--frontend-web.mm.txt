@@ -105,6 +105,7 @@ client/server -- multi-tier architecture -- 02 application
 client/server -- multi-tier architecture -- 03 business
 client/server -- multi-tier architecture -- 04 data access
 client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
+coding -- Claude -- version history https://cchistory.mariozechner.at/
 components https://www.componentdriven.org/
 composition -- embed
 composition -- shared view
@@ -430,6 +431,9 @@ routing -- react-resource-router
 routing -- uri -- 1 path (incl path params)
 routing -- uri -- 2 query (incl query params)
 routing -- uri -- 3 fragment
+scraping -- crawling -- stealth -- camoufox https://camoufox.com/
+scraping -- crawling -- stealth https://camoufox.com/stealth/
+scraping https://github.com/omkarcloud/botasaurus
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- CSP
@@ -442,6 +446,8 @@ security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credi
 security https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
 Server Side Rendering = an umbrella term that includes several different rendering strategies. They all have one thing in common: the initial render happens in a server runtime like Node.js, using the ReactDOMServer APIs. It doesn't actually matter when this happens, whether it's on-demand or at compile-time. https://www.joshwcomeau.com/react/server-components/
 settings -- Mac https://aresluna.org/frame-of-preference/ (with cool virtual machines)
+shearing layers -- domain name
+shearing layers -- utils = outdated browser detection, error reporting, theming etc.
 skew -- flags skew
 skew -- occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior https://www.industrialempathy.com/posts/version-skew/
 skew -- version skew -- protection https://vercel.com/docs/skew-protection
@@ -570,6 +576,7 @@ viewport -- small <= dynamic <= large
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 virtualization = an advanced technique that uses JS to remove DOM nodes not currently on-screen
+viz -- solutions -- visx https://visx.airbnb.tech/gallery
 web -- positive aspects as a platform for users and developers -- SLICE -- Composable - Iframes and JavaScript allow us to quickly compose and embed new sites, apps and services just by dropping in some JS and hooking things together.
 web -- positive aspects as a platform for users and developers -- SLICE -- Ephemeral - There is nothing to install, you go to the page and interact with it, leave the page and when you do it stops taking up resources.
 web -- positive aspects as a platform for users and developers -- SLICE -- Indexable - Because you can link to anything, if public it can be discovered by any person or machine that can index it to make it universally discoverable to everyone.
@@ -596,6 +603,7 @@ web workers -- dedicated = utilized by a single script https://devdocs.io/dom/wo
 web workers -- service = proxy https://devdocs.io/dom/service_worker_api
 web workers -- shared = can be utilized by multiple scripts running in different windows, IFrames, etc., as long as they are in the same domain as the worker https://devdocs.io/dom/sharedworker
 WebAssembly https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/
+WebAuthn
 WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-with-webdriver-bidi
 WebGPU / WebGL = https://devdocs.io/dom/webgpu_api
 website critique https://americabydesign.fail/ https://americabydesign.gov/

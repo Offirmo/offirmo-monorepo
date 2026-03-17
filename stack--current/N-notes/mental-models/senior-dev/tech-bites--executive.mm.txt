@@ -23,10 +23,12 @@ DORA = (Google) largest and longest running research program (...) to understand
 executive presence
 executive presence -- don't panic
 executive presence -- dress code = don't make leaders, but they sure announce them
+failures -- leadership -- Quantas https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
 failures modes = possible wrong ways https://newsletter.posthog.com/p/tech-lead-failure-modes
 feedback -- Keeper Test = "If this person resigned today, would I fight to keep them?"
 invisible https://medium.com/change-your-mind/the-1-minute-introduction-that-makes-people-remember-you-forever-30d0e8265854
 leadership -- ask questions
+LT "Leadership Team"
 managing stakeholder expectations
 next scale issue?
 outputs vs. outcomes
