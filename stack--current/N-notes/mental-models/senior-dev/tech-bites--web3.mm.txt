@@ -186,6 +186,7 @@ chains -- Solidity compatible
 chains -- sovereign blockchains aka. parachains = ??? (Polkadot)
 chains -- superchain (Optimism) = a network of chains that share bridging, decentralized governance, upgrades, a communication layer and more https://www.superchain.eco/ https://docs.optimism.io/superchain/introduction/superchain-explainer
 chains -- tribalism
+challenges -- distribution
 challenges -- double spend
 challenges -- form vs substance = "the prosecution asked jurors to ignore the form of X — non-custodial, immutable smart contract code — and instead focus on the substance of what it enabled: money laundering"  In short, prosecutors accused X of using a technical innovation to cleverly sidestep the law. This is what the rest of crypto is often accused of, too. In substance, skeptics say,  tokens are stocks, protocols are companies, labs entities are c-suites, staking yields are dividends, token burns are buybacks, airdrops are sometimes IPOs, DAOs are general partnerships, and stablecoins are bank accounts. It’s often hard to argue with. https://blockworks.co/news/crypto-substance-vs-form
 challenges -- Governance = can be challenging in decentralized systems. It requires effective structures that involve community participation and don’t centralize power.
@@ -196,6 +197,7 @@ challenges -- quantum https://a16zcrypto.com/posts/podcast/quantum-computing-wha
 challenges -- Regulatory compliance = Web3 applications must follow existing data protection and financial security requirements.
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
+challenges -- UX
 CLOB "Central Limit Order Book" = system where all buy and sell orders for an asset are collected, sorted, and matched based on price and time priority
 code is law "Hundreds of millions stolen in a spree of massive crypto heists - but the hackers say they broke no laws" https://www.journeyman.tv/film/8785
 coinbase = some bitcoin concept
@@ -262,6 +264,7 @@ decentralization -- metric -- the walkaway test = if your team and servers disap
 decentralization = avoiding points of trust, minimizing censorship vulnerabilities and minimizing centralized infrastructure dependency
 Decentralized Application (DApp) = A web page that relies upon one or many Web3 platform APIs which are exposed to the web page via the Wallet https://eips.ethereum.org/EIPS/eip-6963
 decentralized autonomous organization (DAO) = agreed-upon smart contract that automates decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.
+decentralized identifiers https://www.w3.org/TR/did-1.0/#identifier
 decentralized identity = technology that aims to give individuals more control and ownership over their digital identity. In traditional online systems, users often rely on centralized identity providers (like social media platforms or email services) to manage their identities and access various online services. Decentralized identity shifts the control of identity information back to the individual user. It uses globally unique identifiers associated with a decentralized identifier (DID) document. This document contains public keys, cryptographic material, and service endpoints related to identity. The technology uses selective disclosure to share specific identity attributes and minimize exposure to personally identifiable information (PII) during identity verification processes.
 DeFi
 DeFi -- lending / borrowing -- Compound, AAVE
@@ -372,10 +375,6 @@ Hyperliquid -- HyperBFT consensus
 Hyperliquid -- HyperCore
 Hyperliquid -- HyperEVM
 Hyperliquid = https://hyperfoundation.org/
-i18n -- messages extraction
-i18n -- plurals
-i18n -- plurals -- interval & = many / a few / none https://www.i18next.com/overview/comparison-to-others#b-or-like-to-say-something-like-interval-plurals
-i18n -- solutions https://phrase.com/blog/posts/react-i18n-best-libraries/
 ICO (banned)
 ICO -- alternatives -- patrons https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick https://finance.yahoo.com/news/infinex-raises-67-7-million-140229371.html
 ICO -- boom
@@ -471,6 +470,7 @@ networks -- Neon EVM
 networks -- Optimism
 networks -- Polygon Mainnet
 networks -- Solana Mainnet Beta
+networks -- Tempo https://tempo.xyz/
 networks -- Zcash Mainnet
 networks = groups of connected computers that communicate using a protocol. There is only one Mainnet, but independent networks conforming to the same protocol rules can be created for testing and development purposes. There are many independent "networks" that conform to the protocol without interacting with each other. You can even start one locally on your own computer for testing your smart contracts and web3 apps. https://ethereum.org/developers/docs/networks/
 NFTs -- "BAYC wall" = pricier than BAYC
@@ -525,6 +525,7 @@ on-chain protocols = such as Ethena, Synthetix, Wormhole
 on-chain randomness = ??? https://www.pyth.network/entropy
 on/off ramp -- off-ramp = sell crypto for fiat
 on/off ramp -- on-ramp = buy crypto with fiat
+onramp -- solutions = https://apidocs.bridge.xyz/get-started/guides/move-money/virtualaccounts https://docs.onramper.com/
 open source -- benefits -- code being inspectable = to ensure security
 open source -- benefits -- enabling permissionless third-party improvements
 open source -- benefits -- reducing the risk of proprietary lock-in
@@ -590,9 +591,7 @@ scams -- wash trading = artificially inflating volume https://bitfinexed.medium.
 seasons -- autumn = ex. altcoin autumn
 seasons -- summer = ex. DeFi summer
 seasons -- winter = ex. AI winter
-onramp -- solutions = https://apidocs.bridge.xyz/get-started/guides/move-money/virtualaccounts https://docs.onramper.com/
 secret splitting -- 2-of-3 multisig
-solutions -- ccxt = CryptoCurrency eXchange Trading Library https://github.com/ccxt/ccxt
 secret splitting -- https://groups.google.com/g/bitcoindev/c/8LkdxVc_nI0
 secure enclave https://whitepaper.turnkey.com/
 securities -- Howey Test -- four key criteria -- 1 Investment of Money: An investor must put their money into the venture.
@@ -601,6 +600,7 @@ securities -- Howey Test -- four key criteria -- 3 Expectation of Profit: The in
 securities -- Howey Test -- four key criteria -- 4 Reliance on Efforts of Others: The investor's profits are primarily derived from the efforts of the promoters or a third party, not their own efforts.
 securities -- Howey Test = a legal framework used to determine if a transaction or scheme constitutes an "investment contract" and is therefore subject to U.S. securities law https://gordonlaw.com/learn/howey-test-is-your-token-security/
 securities -- jurisprudence -- SEC 2018 "If the network on which the token or coin is to function is sufficiently decentralized — where purchasers would no longer reasonably expect a person or group to carry out essential managerial or entrepreneurial efforts — the assets may not represent an investment contract." https://web.archive.org/web/20180702220151/https://blog.havven.io/defining-decentralisation-60afa00efa2a
+security -- token sniffer https://tokensniffer.com/
 seed phrase
 seed phrase -- split -- Codex32 https://secretcodex32.com/
 seed phrase -- split -- PenLock penlock.io
@@ -638,6 +638,7 @@ solidity https://en.wikipedia.org/wiki/Solidity
 solo validating
 solutions -- "the only nationally chartered bank built to enable developers and builders to create new financial products" https://column.com/
 solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-blockchain/
+solutions -- ccxt = CryptoCurrency eXchange Trading Library https://github.com/ccxt/ccxt
 solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/web3/ethereum-gateway/
 solutions -- Cloudflare -- IFPS
 solutions -- CoinGecko = ranking website https://www.coingecko.com/
@@ -646,10 +647,10 @@ solutions -- https://www.infura.io/
 solutions -- https://www.moderntreasury.com/
 solutions -- https://x.com/meshpay ?
 solutions -- Lighter = a decentralized trading platform that is designed to deliver unmatched security and scale. Lighter is the first and only exchange that provides verifiable matching and liquidations, while operating at the best in class traditional exchange level performances.
+solutions -- phishing detect https://github.com/MetaMask/eth-phishing-detect
 solutions -- Swapper
 some goals = immune to inflationary abuse, resistant to seizure, and adaptable to global economic growth https://woodcoincrypto.com/whitepaper/
 Sonic
-spot
 stablecoin -- peg -- depeg = can't withstand a bank run. https://www.theblock.co/post/261727/large-cap-stablecoins-have-depegged-609-times-this-year-moodys-analytics-says
 stablecoin -- peg https://privatebank.jpmorgan.com/apac/en/insights/markets-and-investing/demystifying-stablecoins
 stablecoins -- pro/cons https://mail.blockworks.com/p/thursday-links-448a
@@ -679,6 +680,7 @@ talent -- network https://careers.near.org/talent-network
 talent pools -- New-York = #1 many finance turned to crypto
 talent pools -- San Francisco = #3, focused on AI / robotics
 techno-optimism
+Telegram Distribution Layer https://tac.build/blog/deploy-evm-distribute-on-telegram
 terminology -- chain -- & runtime = All chains operate on a runtime that dictates the functionality and features of the chain, it’s smart contract support, etc. Some chains have a common chain runtime, notably those in the EVM ecosystem: Ethereum itself, Avalanche, Polygon... Ex. of runtimes: evm, svm, nearIntents
 terminology -- chain -- asset = an asset on a specific chain, ex. ETH on Ethereum, USDC on Solana, etc.
 terminology -- chain = a chain/blockchain. Ex. BitCoin, Ethereum, Arbitrum, Base, Optimism, Polygon, Solana... Testnets are considered different chain. aka. “networks” (EVM) or “clusters“ (Solana)
@@ -846,6 +848,7 @@ WLF "World Liberty Financial" = "Inspired by Trump" https://worldlibertyfinancia
 x402 -- "pay per crawl" https://blog.cloudflare.com/introducing-pay-per-crawl/
 x402 = "402 Payment Required response with pricing" https://www.x402.org/
 XMR = ??? https://x.com/PerpetualCow/status/2010820707991650542
+XMTP https://docs.xmtp.org/
 zCash https://z.cash/learn/
 zk-SNARKs = zero-knowledge succinct non-interactive arguments of knowledge
 zkVM

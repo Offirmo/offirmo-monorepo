@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […monorepo/…/aliases.sh] hello!"
 
 export OFFIRMO_MONOREPO_ROOT__CURRENT=${OFFIRMO_MONOREPO_ROOT__CURRENT:-"$HOME/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/"};
 
@@ -117,23 +117,23 @@ alias    monoC@13='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.s
 alias     monoC@2='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/20-state/;                             tabset --badge monoC@2'
 alias     monoC@7='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/70-operation--apply/;                  tabset --badge monoC@7'
 alias    monoC@p@='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--@offirmo/;                     tabset --badge monoC@p@'
+alias  monoC@paac='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--ai--agents--coding/;           tabset --badge monoC@paac'
 alias    monoC@pb='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--bolt/;                         tabset --badge monoC@pb'
 alias    monoC@pc='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--changelog/;                    tabset --badge monoC@pc'
 alias    monoC@pe='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--editorconfig/;                 tabset --badge monoC@pe'
-alias   monoC@pe2='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--eslint/;                       tabset --badge monoC@pe2'
 alias    monoC@pg='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--git/;                          tabset --badge monoC@pg'
 alias    monoC@pj='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--jetbrains/;                    tabset --badge monoC@pj'
 alias    monoC@pl='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--license/;                      tabset --badge monoC@pl'
+alias    monoC@pm='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--mise/;                         tabset --badge monoC@pm'
 alias    monoC@pn='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--npm/;                          tabset --badge monoC@pn'
 alias   monoC@pn2='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--nvm/;                          tabset --badge monoC@pn2'
+alias   monoC@poo='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--oxc--oxfmt/;                   tabset --badge monoC@poo'
 alias    monoC@pp='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--package-json/;                 tabset --badge monoC@pp'
 alias   monoC@pp2='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--parcel/;                       tabset --badge monoC@pp2'
 alias   monoC@pp3='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--pnpm/;                         tabset --badge monoC@pp3'
-alias   monoC@pp4='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--prettier/;                     tabset --badge monoC@pp4'
 alias    monoC@pr='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--readme/;                       tabset --badge monoC@pr'
 alias    monoC@pt='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--tsconfig/;                     tabset --badge monoC@pt'
 alias    monoC@pv='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--vscode/;                       tabset --badge monoC@pv'
-alias    monoC@py='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--yarn-berry/;                   tabset --badge monoC@py'
 alias    monoC@1l='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @tbrpg/1-logic/l1-definitions/;                           tabset --badge monoC@1l'
 alias  monoC@1lar='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @tbrpg/1-logic/l1-logic--adventure--resolved/;            tabset --badge monoC@1lar'
 alias   monoC@1la='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @tbrpg/1-logic/l1-logic--adventures/;                     tabset --badge monoC@1la'

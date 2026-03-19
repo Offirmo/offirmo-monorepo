@@ -226,11 +226,13 @@ Charlie Munger 3 basic rules -- Work only with people you enjoy
 Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-these-basic-career-rules-made-me-successful-in-life-with-warren-buffett-i-had-all-3.html
 charts -- hill = position on a "hill" figuring things out -> making it happen https://basecamp.com/shapeup/4.0-appendix-01#track-scopes-on-the-hill-chart
 cherchez la femme https://en.m.wikipedia.org/wiki/Cherchez_la_femme
+chess -- concepts https://randomlabs.ai/blog/slate
 child of deaf adult (CODA) https://en.wikipedia.org/wiki/Child_of_deaf_adult
 CHLCA "chimpanzee–human last common ancestor" https://en.wikipedia.org/wiki/Chimpanzee%E2%80%93human_last_common_ancestor
 choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 clearance -- "I was suspected of being a Japanese spy" https://milk.com/wall-o-shame/security_clearance.html
+climate -- carbon removal https://stripe.com/au/climate
 clubs https://en.wikipedia.org/wiki/Gentlemen%27s_club
 coach vs mentor vs sponsor = A coach talks to you, a mentor talks with you, and a sponsor talks about you https://www.linkedin.com/posts/addyosmani_softwareengineering-productivity-leadership-activity-6996942888802598912-hUgl
 cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
@@ -364,6 +366,7 @@ diagrams -- UML https://creately.com/blog/diagrams/uml-diagram-types-examples/
 diagrams -- Venn ex. Ikigai
 did all the right things and no-one is happy
 differences -- introvert/extrovert
+digital hygiene https://x.com/karpathy/status/1902046003567718810
 disability
 disability -- flag +++
 disability -- overcoming
@@ -407,8 +410,10 @@ dress code don't make leaders but they sure announce them
 drinking https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 drive by
 due diligence
+dumbing down (see links) https://en.wikipedia.org/wiki/Dumbing_down
 duty to retreat
 DYOR "do your own research"
+dysgenics (not confirmed empirically) https://en.wikipedia.org/wiki/Dysgenics
 dysthymia https://en.wikipedia.org/wiki/Dysthymia
 ecosystem -- engineers https://fr.wikipedia.org/wiki/Esp%C3%A8ce_ing%C3%A9nieure
 education -- checklist +++ https://www.artofmanliness.com/people/relationships/avoid-falling-in-love-with-the-wrong-person/

@@ -25,6 +25,7 @@ best practices -- Segmentation by user_id = Any table that can be related back t
 best practices -- timestamp Columns = should be named in the past tense (when practical) and should end with ..._at, (eg. created_at, not created or create_at). This convention should be followed even for columns that schedule events in the future (eg. expired_at not expires_at).
 cardinality
 case studies -- Reddit’s database has two tables = https://news.ycombinator.com/item?id=32407873
+case studies -- ugliest https://jimmyhmiller.com/ugliest-beautiful-codebase
 case-sensitivity = The concept of “case” isn’t as simple as it may seem and conversion is a non-trivial. https://dba.stackexchange.com/a/217502
 common table expressions (CTEs) = smaller sub-queries for expressing complex SQL queries
 connection string ex. mysql://user:pass@host:port/dbname
@@ -67,6 +68,7 @@ selectivity
 sharding
 sharding -- middleware -- gizzard (legacy) = sharding middleware https://github.com/twitter-archive/gizzard
 sharding https://www.mongodb.com/docs/manual/sharding/
+single table design https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb/
 solutions -- Google Spreadsheet -- npm https://github.com/theoephraim/node-google-spreadsheet
 solutions -- Google Spreadsheet = https://www.levels.fyi/blog/scaling-to-millions-with-google-sheets.html
 solutions -- GUI tool -- DataGrip

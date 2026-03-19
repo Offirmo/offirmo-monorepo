@@ -35,6 +35,7 @@ https://www.totaltypescript.com/how-to-create-an-npm-package
 IaC -- pulumi https://www.pulumi.com/
 IaC -- terraform / opentofu = more established but strange syntax
 IaC -- terraform https://github.com/cloudflare/terraform-provider-cloudflare/issues/5573
+images -- https://unpic.pics/
 JavaScript -- TypeScript -- https://openapi-ts.dev/
 JavaScript -- TypeScript -- tRPC https://trpc.io/docs/getting-started
 JavaScript -- TypeScript -- ts-pattern https://github.com/gvergnaud/ts-pattern

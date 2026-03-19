@@ -1,30 +1,26 @@
+import * as semver from 'semver'
 import type { Immutable } from '@monorepo-private/ts--types'
 import {
-	type Plugin,
+	PATHVARⵧROOTⵧNODE,
 	type StructuredFsⳇFileManifest,
-	type WorkspacePathⳇRelative,
+	type Node,
+	type NodePathⳇRelative,
+	type RepoPathⳇRelative,
+	PATHVARⵧROOTⵧREPO,
+	type MonorepoPathⳇRelative,
+	PATHVARⵧROOTⵧMONOREPO,
 } from '@infinite-monorepo/types'
+import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
+import type { FileOutputPresent } from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////
 
-const ᐧnvmrc__path: WorkspacePathⳇRelative = '$WORKSPACE_ROOT/.nvmrc'
-
-const ᐧnvmrc__manifest: StructuredFsⳇFileManifest = {
-	path‿ar: ᐧnvmrc__path,
-	format: 'text',
-	doc: [
-		'https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc',
-		'https://www.npmjs.com/package/nvmrc',
-	],
-}
 
 /////////////////////////////////////////////////
 
 const PLUGIN: Plugin = {
-	onꓽload(state: Immutable<StateLib.State>): Immutable<StateLib.State> {
-		state = StateLib.declareꓽfile_manifest(state, ᐧnvmrc__manifest)
-
+	onꓽload(state: Immutable<State>): Immutable<State> {
 		return state
 	},
 }
@@ -32,3 +28,4 @@ const PLUGIN: Plugin = {
 /////////////////////////////////////////////////
 
 export default PLUGIN
+//export { PLUGIN }

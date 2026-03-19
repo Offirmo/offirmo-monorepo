@@ -2,20 +2,19 @@ import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type Plugin,
 	type StructuredFsⳇFileManifest,
-	type WorkspacePathⳇRelative,
+	type MonorepoPathⳇRelative,
 } from '@infinite-monorepo/types'
 import * as StateLib from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////
 
-const ᐧnvmrc__path: WorkspacePathⳇRelative = '$WORKSPACE_ROOT/.nvmrc'
+const CHANGELOGᐧmd__path‿ar: MonorepoPathⳇRelative = '$WORKSPACE_ROOT/CHANGELOG.md'
 
-const ᐧnvmrc__manifest: StructuredFsⳇFileManifest = {
-	path‿ar: ᐧnvmrc__path,
+const CHANGELOGᐧmd__manifest: StructuredFsⳇFileManifest = {
+	path‿ar: CHANGELOGᐧmd__path‿ar,
 	format: 'text',
 	doc: [
-		'https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc',
-		'https://www.npmjs.com/package/nvmrc',
+		'https://openchangelog.com/blog/changelog-md',
 	],
 }
 
@@ -23,7 +22,7 @@ const ᐧnvmrc__manifest: StructuredFsⳇFileManifest = {
 
 const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<StateLib.State>): Immutable<StateLib.State> {
-		state = StateLib.declareꓽfile_manifest(state, ᐧnvmrc__manifest)
+		state = StateLib.declareꓽfile_manifest(state, CHANGELOGᐧmd__manifest)
 
 		return state
 	},

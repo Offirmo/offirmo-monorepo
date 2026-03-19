@@ -34,7 +34,7 @@ const PLUGIN: Plugin = {
 
 	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
 		switch (node?.type) {
-			case 'workspace': {
+			case 'repository': {
 				const output_spec: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽᐧeditorconfig,

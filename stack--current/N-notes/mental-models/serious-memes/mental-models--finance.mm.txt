@@ -142,6 +142,7 @@ security -- stocks, bonds, ETFs (exchange traded funds), options, and mutual fun
 security = a financial asset that can be sold or traded in a financial market + investments that can be exchanged and used to raise capital. https://gordonlaw.com/learn/what-is-a-security/
 shares
 solutions -- https://plaid.com/ ?
+spot
 stock = all the shares https://en.wikipedia.org/wiki/Stock
 stock market
 stock market -- crash = https://en.wikipedia.org/wiki/Stock_market_crash

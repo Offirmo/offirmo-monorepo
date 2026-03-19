@@ -4,10 +4,13 @@ import type { PureModuleDetails } from './module-details'
 
 /////////////////////////////////////////////////
 
-export const NODE_TYPEⵧREPO = 'repository' as const
-export const NODE_TYPEⵧWORKSPACE = 'workspace' as const
-export const NODE_TYPEⵧWORKSPACE__LINE = 'workspace__line' as const
-export const NODE_TYPEⵧPACKAGE = 'package' as const
+// prettier-ignore
+export const NODE_TYPEⵧREPO             = 'repository' as const // ~git repo
+// TODO review polyrepo
+// TODO review multirepo
+export const NODE_TYPEⵧMONOREPO         = 'monorepo' as const // monorepo (may have several per repo) https://monorepo.tools/
+export const NODE_TYPEⵧWORKSPACES__LINE = 'workspaces__line' as const // a subfolder containing packages. name from = a line in the "workspace" config of the monorepo
+export const NODE_TYPEⵧPACKAGE          = 'package' as const // also named "workspace" in yarn, but unclear
 
 /////////////////////////////////////////////////
 // inspired by https://www.jetbrains.com/help/idea/absolute-path-variables.html
@@ -15,11 +18,11 @@ export const NODE_TYPEⵧPACKAGE = 'package' as const
 export const PATHVARⵧROOTⵧREPO = `$REPO_ROOT$` as const
 export type RepoPathⳇRelative = `${typeof PATHVARⵧROOTⵧREPO}/${string}`
 
-export const PATHVARⵧROOTⵧWORKSPACE = `$${NODE_TYPEⵧWORKSPACE.toUpperCase()}_ROOT$` as const
-export type WorkspacePathⳇRelative = `${typeof PATHVARⵧROOTⵧWORKSPACE}/${string}`
+export const PATHVARⵧROOTⵧMONOREPO = `$${NODE_TYPEⵧMONOREPO.toUpperCase()}_ROOT$` as const
+export type MonorepoPathⳇRelative = `${typeof PATHVARⵧROOTⵧMONOREPO}/${string}`
 
 export const PATHVARⵧROOTⵧWORKSPACE__LINE =
-	`$${NODE_TYPEⵧWORKSPACE__LINE.toUpperCase()}_ROOT$` as const
+	`$${NODE_TYPEⵧWORKSPACES__LINE.toUpperCase()}_ROOT$` as const
 export type WorkspaceLinePathⳇRelative = `${typeof PATHVARⵧROOTⵧWORKSPACE__LINE}/${string}`
 
 export const PATHVARⵧROOTⵧPACKAGE = `$${NODE_TYPEⵧPACKAGE.toUpperCase()}_ROOT$` as const
@@ -31,7 +34,7 @@ export type NodePathⳇRelative = `${typeof PATHVARⵧROOTⵧNODE}/${string}`
 
 export type MultiRepoPathⳇRelative =
 	| RepoPathⳇRelative
-	| WorkspacePathⳇRelative
+	| MonorepoPathⳇRelative
 	| WorkspaceLinePathⳇRelative
 	| PackagePathⳇRelative
 	| NodePathⳇRelative
@@ -61,13 +64,13 @@ export interface NodeBase {
 
 /////////////////////////////////////////////////
 
-// TODO one day file? for ex. labelled "dev" ?
+// TODO one day file-level node? for ex. to label it "dev/prod/test" ?
 
 /////////////////////////////////////////////////
 
 // in the sense of a ~npm package with a package.json
 export interface Package extends NodeBase {
-	path‿ar: WorkspacePathⳇRelative | WorkspaceLinePathⳇRelative
+	path‿ar: MonorepoPathⳇRelative | WorkspaceLinePathⳇRelative
 
 	details: PureModuleDetails
 
@@ -79,14 +82,14 @@ export interface Package extends NodeBase {
 // subset of a workspace
 // usually ~ a line in the workspace definition
 export interface WorkspaceLine extends NodeBase {
-	path‿ar: WorkspacePathⳇRelative
+	path‿ar: MonorepoPathⳇRelative
 }
 
 /////////////////////////////////////////////////
 
 // group of packages linked together by a monorepo tool
 export interface Workspace extends NodeBase {
-	path‿ar: WorkspacePathⳇRelative
+	path‿ar: MonorepoPathⳇRelative
 }
 
 /////////////////////////////////////////////////
@@ -108,10 +111,10 @@ export interface NodeⳇRepo extends Workspace {
 }
 // XXX note that a workspace could be directly at the root of the repo = same path
 export interface NodeⳇWorkspace extends Workspace {
-	type: typeof NODE_TYPEⵧWORKSPACE
+	type: typeof NODE_TYPEⵧMONOREPO
 }
 export interface NodeⳇWorkspaceLine extends WorkspaceLine {
-	type: typeof NODE_TYPEⵧWORKSPACE__LINE
+	type: typeof NODE_TYPEⵧWORKSPACES__LINE
 }
 export interface NodeⳇPackage extends Package {
 	type: typeof NODE_TYPEⵧPACKAGE

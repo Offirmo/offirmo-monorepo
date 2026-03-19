@@ -3,8 +3,8 @@ import type { Immutable, JSONObject } from '@monorepo-private/ts--types'
 import {
 	type StructuredFsⳇFileManifest,
 	type Node,
-	type WorkspacePathⳇRelative,
-	PATHVARⵧROOTⵧWORKSPACE,
+	type MonorepoPathⳇRelative,
+	PATHVARⵧROOTⵧMONOREPO,
 	type NodeⳇWorkspaceLine,
 	type NodeⳇPackage,
 	PATHVARⵧROOTⵧWORKSPACE__LINE,
@@ -20,13 +20,13 @@ import { lsDirsSync } from '@monorepo-private/fs--ls'
 
 /////////////////////////////////////////////////
 
-const pnpmᝍworkspaceᐧyaml__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧWORKSPACE}/pnpm-workspace.yaml`
+const pnpmᝍworkspaceᐧyaml__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧMONOREPO}/pnpm-workspace.yaml`
 const manifestꓽpnpmᝍworkspaceᐧyaml: StructuredFsⳇFileManifest = {
 	path‿ar: pnpmᝍworkspaceᐧyaml__path‿ar,
 	doc: ['https://pnpm.io/settings', 'https://pnpm.io/pnpm-workspace_yaml'],
 }
 
-const ᐧpnpmfileᐧcjs__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧWORKSPACE}/.pnpmfile.cjs`
+const ᐧpnpmfileᐧcjs__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧMONOREPO}/.pnpmfile.cjs`
 const manifestꓽᐧpnpmfileᐧcjs: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧpnpmfileᐧcjs__path‿ar,
 	doc: ['https://pnpm.io/pnpmfile'],
@@ -44,7 +44,7 @@ interface NodeState {
 
 /////////////////////////////////////////////////
 
-const pluginꓽpnpm: Plugin = {
+const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽpnpmᝍworkspaceᐧyaml)
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧpnpmfileᐧcjs)
@@ -53,7 +53,7 @@ const pluginꓽpnpm: Plugin = {
 	},
 
 	onꓽnodeⵧdiscovered(state: Immutable<State>, node: Immutable<Node>) {
-		if (node.type !== 'workspace') return state
+		if (node.type !== 'monorepo') return state
 
 		node.plugin_area[PLUGIN_ENTRY] = {
 			spec: {
@@ -102,7 +102,7 @@ const pluginꓽpnpm: Plugin = {
 						const line_node: NodeⳇWorkspaceLine = {
 							type: 'workspace__line',
 							parent_id: node.path‿abs,
-							path‿ar: `${PATHVARⵧROOTⵧWORKSPACE}/${path_rel}`,
+							path‿ar: `${PATHVARⵧROOTⵧMONOREPO}/${path_rel}`,
 							path‿abs: path.join(node.path‿abs, path_rel) + '/',
 							plugin_area: {},
 						}
@@ -144,7 +144,7 @@ const pluginꓽpnpm: Plugin = {
 	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
 		switch (node?.type) {
 			// TODO 1D any node where parent node != current node
-			case 'workspace': {
+			case 'monorepo': {
 				const pnpm_config_output_spec: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽpnpmᝍworkspaceᐧyaml,
@@ -200,5 +200,5 @@ const pluginꓽpnpm: Plugin = {
 
 /////////////////////////////////////////////////
 
-export default pluginꓽpnpm
-export { manifestꓽpnpmᝍworkspaceᐧyaml, manifestꓽᐧpnpmfileᐧcjs, pluginꓽpnpm }
+export default PLUGIN
+export { manifestꓽpnpmᝍworkspaceᐧyaml, manifestꓽᐧpnpmfileᐧcjs }

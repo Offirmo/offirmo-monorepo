@@ -5,7 +5,7 @@ import {
 	type Node,
 	type NodeⳇPackage,
 	type NodeⳇWorkspaceLine,
-	PATHVARⵧROOTⵧWORKSPACE,
+	PATHVARⵧROOTⵧMONOREPO,
 	PATHVARⵧROOTⵧWORKSPACE__LINE,
 } from '@infinite-monorepo/types'
 import type { State, Plugin } from '@infinite-monorepo/state'
@@ -17,7 +17,7 @@ import { isꓽError } from '@offirmo/error-utils/v2'
 
 /////////////////////////////////////////////////
 
-const pluginꓽbolt: Plugin = {
+const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽpackageᐧjson)
 
@@ -25,7 +25,7 @@ const pluginꓽbolt: Plugin = {
 	},
 
 	onꓽnodeⵧdiscovered(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-		if (node.type !== 'workspace') return state
+		if (node.type !== 'monorepo') return state
 
 		state = StateLib.requestꓽfactsⵧabout_file(
 			state,
@@ -58,7 +58,7 @@ const pluginꓽbolt: Plugin = {
 						const line_node: NodeⳇWorkspaceLine = {
 							type: 'workspace__line',
 							parent_id: node.path‿abs,
-							path‿ar: `${PATHVARⵧROOTⵧWORKSPACE}/${path_rel}`,
+							path‿ar: `${PATHVARⵧROOTⵧMONOREPO}/${path_rel}`,
 							path‿abs: path.join(node.path‿abs, path_rel) + '/',
 							plugin_area: {},
 						}
@@ -103,5 +103,5 @@ const pluginꓽbolt: Plugin = {
 
 /////////////////////////////////////////////////
 
-export default pluginꓽbolt
-export { pluginꓽbolt }
+export default PLUGIN
+//export { PLUGIN }

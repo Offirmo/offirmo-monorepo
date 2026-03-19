@@ -65,6 +65,8 @@ async function ೱwriteꓽfile(
 			return await ೱwriteꓽfileⵧsingle_value(file_path, content as any)
 		case 'text':
 			return await ೱwriteꓽfileⵧtext(file_path, content as any)
+		case 'markupⵧmarkdown':
+			return await ೱwriteꓽfileⵧtext(file_path, content as any)
 		default:
 			throw new Error(`Writing to format ${format} not implemented!`)
 	}
@@ -72,39 +74,21 @@ async function ೱwriteꓽfile(
 
 /////////////////////////////////////////////////
 
-// TODO details EOL / trailing
-function _post_process_text(text: string): string {
-	text = text.trim() + '\n' // ensure trailing newline
-	return text
-}
-
 async function ೱwriteꓽfileⵧjson5(
 	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇJson5>,
 ): Promise<void> {
 	const pkgꓽjson5 = await ↆimportꓽjson5()
-	let content_serialized = pkgꓽjson5.stringify(content, null, 2)
-	await fs.writeFile(
-		path.resolve(process.cwd(), file_path),
-		_post_process_text(content_serialized),
-		{
-			encoding: 'utf8',
-		},
-	)
+	const content_serialized = pkgꓽjson5.stringify(content, null, 2)
+	await _ↆwrite_raw(file_path, content_serialized)
 }
 
 async function ೱwriteꓽfileⵧjson(
 	file_path: FilePathⳇAny,
 	content: Immutable<JSONObject>,
 ): Promise<void> {
-	let content_serialized = JSON.stringify(content, null, 2)
-	await fs.writeFile(
-		path.resolve(process.cwd(), file_path),
-		_post_process_text(content_serialized),
-		{
-			encoding: 'utf8',
-		},
-	)
+	const content_serialized = JSON.stringify(content, null, 2)
+	await _ↆwrite_raw(file_path, content_serialized)
 }
 
 async function ೱwriteꓽfileⵧyaml(
@@ -112,14 +96,8 @@ async function ೱwriteꓽfileⵧyaml(
 	content: Immutable<ContentⳇYaml>,
 ): Promise<void> {
 	const pkgꓽyaml = await ↆimportꓽyaml()
-	let content_serialized = pkgꓽyaml.stringify(content)
-	await fs.writeFile(
-		path.resolve(process.cwd(), file_path),
-		_post_process_text(content_serialized),
-		{
-			encoding: 'utf8',
-		},
-	)
+	const content_serialized = pkgꓽyaml.stringify(content)
+	await _ↆwrite_raw(file_path, content_serialized)
 }
 
 async function ೱwriteꓽfileⵧlist(
@@ -129,42 +107,24 @@ async function ೱwriteꓽfileⵧlist(
 	// assume it's a set
 	// TODO 1D options
 	const entries = new Set<string>(content.entries.map(s => s.trim()))
-	let content_serialized = Array.from(entries.keys()).sort().join('\n') + '\n'
-	await fs.writeFile(
-		path.resolve(process.cwd(), file_path),
-		_post_process_text(content_serialized),
-		{
-			encoding: 'utf8',
-		},
-	)
+	const content_serialized = Array.from(entries.keys()).sort().join('\n') + '\n'
+	await _ↆwrite_raw(file_path, content_serialized)
 }
 
 async function ೱwriteꓽfileⵧsingle_value(
 	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇSingleValue>,
 ): Promise<void> {
-	let content_serialized = `${content.value}\n`
-	await fs.writeFile(
-		path.resolve(process.cwd(), file_path),
-		_post_process_text(content_serialized),
-		{
-			encoding: 'utf8',
-		},
-	)
+	const content_serialized = `${content.value}\n`
+	await _ↆwrite_raw(file_path, content_serialized)
 }
 
 async function ೱwriteꓽfileⵧtext(
 	file_path: FilePathⳇAny,
 	content: Immutable<ContentⳇText>,
 ): Promise<void> {
-	let content_serialized = `${content.text}`
-	await fs.writeFile(
-		path.resolve(process.cwd(), file_path),
-		_post_process_text(content_serialized),
-		{
-			encoding: 'utf8',
-		},
-	)
+	const content_serialized = `${content.text}`
+	await _ↆwrite_raw(file_path, content_serialized)
 }
 
 async function ೱwriteꓽfileⵧdefault_export(
@@ -172,16 +132,22 @@ async function ೱwriteꓽfileⵧdefault_export(
 	content: Immutable<ContentⳇText>,
 ): Promise<void> {
 	const pkgꓽjson5 = await ↆimportꓽjson5()
-	let content_serialized = pkgꓽjson5.stringify(content, null, 2)
-	await fs.writeFile(
-		path.resolve(process.cwd(), file_path),
-		_post_process_text(`const data = ${content_serialized}
+	const content_serialized = `const data = ${pkgꓽjson5.stringify(content, null, 2)}
 
-export default data`),
-		{
-			encoding: 'utf8',
-		},
-	)
+export default data`
+	await _ↆwrite_raw(file_path, content_serialized)
+}
+
+async function _ↆwrite_raw(file_path: FilePathⳇAny, content_serialized: string): Promise<void> {
+	const abs_path = path.resolve(process.cwd(), file_path)
+	await fs.mkdir(path.dirname(abs_path), { recursive: true })
+	await fs.writeFile(abs_path, _post_process_text(content_serialized), { encoding: 'utf8' })
+}
+
+// TODO details EOL / trailing
+function _post_process_text(text: string): string {
+	text = text.trim() + '\n' // ensure trailing newline
+	return text
 }
 
 /////////////////////////////////////////////////

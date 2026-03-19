@@ -5,7 +5,7 @@ import {
 	type Node,
 	type NodePathⳇRelative,
 	type RepoPathⳇRelative,
-	type WorkspacePathⳇRelative,
+	type MonorepoPathⳇRelative,
 	PATHVARⵧROOTⵧPACKAGE,
 } from '@infinite-monorepo/types'
 import type { State, Plugin } from '@infinite-monorepo/state'
@@ -15,7 +15,7 @@ import assert from 'tiny-invariant'
 
 /////////////////////////////////////////////////
 
-const packageᐧjson__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧPACKAGE}/package.json`
+const packageᐧjson__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧPACKAGE}/package.json`
 const manifestꓽpackageᐧjson: StructuredFsⳇFileManifest = {
 	path‿ar: packageᐧjson__path‿ar,
 	doc: [
@@ -24,7 +24,7 @@ const manifestꓽpackageᐧjson: StructuredFsⳇFileManifest = {
 	],
 }
 
-const packageᝍlockᐧjson__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧPACKAGE}/package-lock.json`
+const packageᝍlockᐧjson__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧPACKAGE}/package-lock.json`
 const manifestꓽpackageᝍlockᐧjson: StructuredFsⳇFileManifest = {
 	path‿ar: packageᝍlockᐧjson__path‿ar,
 	doc: [
@@ -37,7 +37,7 @@ const manifestꓽpackageᝍlockᐧjson: StructuredFsⳇFileManifest = {
 
 /////////////////////////////////////////////////
 
-const pluginꓽnpm: Plugin = {
+const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽpackageᐧjson)
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽpackageᝍlockᐧjson)
@@ -48,7 +48,7 @@ const pluginꓽnpm: Plugin = {
 	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
 		switch (node?.type) {
 			// TODO 1D any node where parent node != current node
-			case 'workspace': {
+			case 'monorepo': {
 				const runtimeⵧlocal = StateLib.getꓽruntimeⵧlocal(state, node)
 				const runtimeⵧlocal__selector = (() => {
 					const vmin‿obj = semver.minVersion(runtimeⵧlocal.versionsⵧacceptable)
@@ -127,5 +127,5 @@ const pluginꓽnpm: Plugin = {
 
 /////////////////////////////////////////////////
 
-export default pluginꓽnpm
-export { manifestꓽpackageᐧjson, manifestꓽpackageᝍlockᐧjson, pluginꓽnpm }
+export default PLUGIN
+export { manifestꓽpackageᐧjson, manifestꓽpackageᝍlockᐧjson }

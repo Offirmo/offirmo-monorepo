@@ -1,6 +1,6 @@
 import type { SemVer, SoftwareLicense‿SPDX } from '@monorepo-private/ts--types'
 
-import type { ProgLang, DependencyFQName, DependencyDetails } from '../01-primitives.ts'
+import type { ProgrammingLanguage, DependencyFQName, DependencyDetails } from '../01-primitives.ts'
 
 import type { FileEntry } from '../file-entry/types.ts'
 
@@ -79,7 +79,7 @@ interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
 	depsⵧvendored: Set<string>
 
 	// needed to build "scripts"
-	languages: Set<ProgLang>
+	languages: Set<ProgrammingLanguage>
 
 	// in case
 	_manifest: PureModuleManifest

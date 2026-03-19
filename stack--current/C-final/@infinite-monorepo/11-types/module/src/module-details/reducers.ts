@@ -3,7 +3,7 @@ import * as path from 'node:path'
 import assert from 'tiny-invariant'
 import type { PathⳇAbsolute } from '@monorepo-private/ts--types'
 
-import type { ProgLang } from '../01-primitives.ts'
+import type { ProgrammingLanguage } from '../01-primitives.ts'
 import type { PureModuleDetails, PureModuleManifest } from './types.ts'
 
 /////////////////////////////////////////////////
@@ -50,7 +50,7 @@ function create(root‿abspath: PathⳇAbsolute): PureModuleDetails {
 		depsⵧoptional: new Set<string>(),
 		depsⵧvendored: new Set<string>(),
 
-		languages: new Set<ProgLang>(),
+		languages: new Set<ProgrammingLanguage>(),
 		engines: {},
 
 		_manifest: {},

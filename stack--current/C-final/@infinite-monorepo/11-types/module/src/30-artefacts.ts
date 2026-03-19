@@ -7,7 +7,7 @@ import type { MultiRepoFilePathⳇRelative } from './20-graph.ts'
 export interface StructuredFsⳇFileManifest {
 	path‿ar: MultiRepoFilePathⳇRelative
 
-	// SSOT: only needed if not inferrable, ex. from the extension
+	// SSoT: only needed if not inferrable, ex. from the extension
 	format?: StructuredFileFormat
 
 	hints?: {

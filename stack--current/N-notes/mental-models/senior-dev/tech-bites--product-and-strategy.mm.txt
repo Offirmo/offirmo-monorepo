@@ -93,6 +93,7 @@ decision -- avoiding hard decisions (bad)  https://newsletter.manager.dev/p/feat
 decision maker https://www.youtube.com/watch?v=qf-_bRjZ38U
 deep appeal = something that a few people love, even if most people don't get it right away https://paulbuchheit.blogspot.com/
 deployment gap = between lab/demo to actual use https://www.a16z.news/p/the-physical-ai-deployment-gap
+digital product strategy and marketing https://lukew.com/
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 dogfooding "Eating our own Dogfood" = ranges wider than testing your end-product, and can be the difference between good and great products https://gregtidanian.substack.com/p/eating-our-own-dog-food
 duty of care = actively shield users from harm “rather than the reactive system that exists now” https://ia.acs.org.au/article/2025/govt-ramps-up-big-tech--duty-of-care--reforms.html
@@ -244,9 +245,12 @@ market fit -- product-market = PMF https://www.sequoiacap.com/article/pmf-framew
 market fit -- team-market = Why are you the right team to do this? Why are you amazing? And then why is the problem you're working on important to you? https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 market fit -- traction = measurable proof that you’re already making progress toward product-market fit. just whatever validation you can get from the outside world https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 marketing -- "killer app"
+marketing -- apps https://www.businessofapps.com/
 marketing -- case studies
 marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
 marketing -- don't build castles in others people's kingdoms
+marketing -- mascot-dex https://octodex.github.com/
+marketing -- swag shop
 marketing = transfer of enthusiasm https://x.com/jasonfried/status/1961157371235111304
 mature market
 mediocre success = the worst thing that can happen to your startup = enough to keep you going but not enough to change your life. most founders are trapped there. respect to shutting down or doubling down on projects https://x.com/gregisenberg/status/1906697683089101113

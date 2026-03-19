@@ -368,6 +368,7 @@ development containers https://containers.dev/implementors/spec/
 DevEx
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
+digital hygiene = obvious if tech/dev https://x.com/karpathy/status/1902046003567718810
 DNS "Domain Name System"
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 dogfooding = practice of a company using its own products or services internally as a way to test, evaluate, and improve them. Essentially, the company's employees become the primary users of their own products.
@@ -827,8 +828,7 @@ programming paradigm -- reactive
 promises -- deferred
 promises -- pipelining https://capnproto.org/rpc.html
 prompt
-protobufs -- outdated by capnproto (same author)
-protocol buffers (protobuf) => see data interchange format
+protocol buffers (protobuf) =>  outdated by capnproto (same author). see data interchange format
 prototypes
 proxy
 pull vs push (IoC, promises vs observables...)
@@ -880,8 +880,9 @@ robustness https://en.wikipedia.org/wiki/Robustness_principle
 rollback
 rolling deploy
 RPC -- advocacy https://blog.cloudflare.com/javascript-native-rpc/
-rpc -- deadline https://protobuf.dev/programming-guides/api/
+RPC -- deadline https://protobuf.dev/programming-guides/api/
 RPC -- flawed = "RPC and its Offspring: Convenient, Yet Fundamentally Flawed" = can't hide the underlying distributed system  https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/RPC%2band%2bits%2bOffspring_%2bConvenient%2c%2bYet%2bFundamentally%2bFlawed.html https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/SteveVinoski_RPCAndItsOffspringConvenientYetFundamentallyFlawed.pdf
+RPC -- solution -- Google RPC https://grpc.io/
 RPC -- solution -- protocol = ex. https://capnproto.org/rpc.html
 RPC -- solution -- TS https://trpc.io/docs/concepts intro https://colinhacks.com/essays/painless-typesafety
 rule of composition https://www.linfo.org/rule_of_composition.html

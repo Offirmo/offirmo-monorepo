@@ -1,16 +1,27 @@
 import * as fs from 'node:fs/promises'
+import path from "path";
+
 import assert from 'tiny-invariant'
 import type { Immutable, PathⳇAny } from '@monorepo-private/ts--types'
 import type { Node } from '@infinite-monorepo/types'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 import * as StateLib from '@infinite-monorepo/state'
-import pluginꓽgit from '@infinite-monorepo/plugin--git'
-import pluginꓽnvm from '@infinite-monorepo/plugin--nvm'
-import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
+import pluginꓽaiᝍᝍagentsᝍᝍcoding from '@infinite-monorepo/plugin--ai--agents--coding'
 import pluginꓽbolt from '@infinite-monorepo/plugin--bolt'
-import pluginꓽnpm from '@infinite-monorepo/plugin--npm'
-import pluginꓽpnpm from '@infinite-monorepo/plugin--pnpm'
+import pluginꓽchangelog from '@infinite-monorepo/plugin--changelog'
 import pluginꓽeditorconfig from '@infinite-monorepo/plugin--editorconfig'
+import pluginꓽgit from '@infinite-monorepo/plugin--git'
+import pluginꓽjetbrains from '@infinite-monorepo/plugin--jetbrains'
+import pluginꓽlicense from '@infinite-monorepo/plugin--license'
+import pluginꓽmise from '@infinite-monorepo/plugin--mise'
+import pluginꓽnpm from '@infinite-monorepo/plugin--npm'
+import pluginꓽnvm from '@infinite-monorepo/plugin--nvm'
+import pluginꓽoxcᝍᝍoxfmt from '@infinite-monorepo/plugin--oxc--oxfmt'
+import pluginꓽpackageᐧjson from '@infinite-monorepo/plugin--package-json'
+import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
+import pluginꓽpnpm from '@infinite-monorepo/plugin--pnpm'
+import pluginꓽreadme from '@infinite-monorepo/plugin--readme'
+import pluginꓽtsconfig from '@infinite-monorepo/plugin--tsconfig'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
 import { mergeꓽjson, ೱwriteꓽfile } from '@infinite-monorepo/read-write-any-structured-file/write'
@@ -19,13 +30,22 @@ import { mergeꓽjson, ೱwriteꓽfile } from '@infinite-monorepo/read-write-any
 
 const plugins: Array<Plugin> = [
 	// TODO a way to include on-demand
+	pluginꓽaiᝍᝍagentsᝍᝍcoding,
 	pluginꓽbolt,
+	pluginꓽchangelog,
 	pluginꓽeditorconfig,
 	pluginꓽgit,
+	pluginꓽjetbrains,
+	pluginꓽlicense,
+	pluginꓽmise,
 	pluginꓽnpm,
 	pluginꓽnvm,
+	pluginꓽoxcᝍᝍoxfmt,
+	pluginꓽpackageᐧjson,
 	pluginꓽparcel,
 	pluginꓽpnpm,
+	pluginꓽreadme,
+	pluginꓽtsconfig,
 	// TODO plugins for everything!
 ]
 
@@ -116,14 +136,17 @@ async function apply(from?: PathⳇAny) {
 		.sort()
 		.forEach(([path, spec]) => {
 			switch (spec.intent) {
+
 				case 'not-present':
 					console.log(`- Removing file ${path}…`)
 					fs.rm(path, { force: true })
 					break
+
 				case 'present--exact':
 					console.log(`- Writing exact file ${path}…`)
 					ೱwriteꓽfile(path, spec.content as any, spec.manifest.format)
 					break
+
 				case 'present--containing':
 					console.log(`- Augmenting file ${path}…`)
 					const SSoT = true // XXX advanced!
@@ -146,6 +169,14 @@ async function apply(from?: PathⳇAny) {
 						},
 					)
 					break
+
+				case 'symlink': {
+					console.log(`- Ensuring symlink ${path}…`)
+					throw new Error('symlink not implemented')
+					ensureSymlink("../AGENTS.md", ".claude/CLAUDE.md");
+					break
+				}
+
 				default:
 					assert(false, `Unsupported intent: ${spec.intent}!`)
 			}
@@ -154,6 +185,33 @@ async function apply(from?: PathⳇAny) {
 	////////////
 	console.log('DONE!')
 	//dumpꓽanyⵧprettified('state', state)
+}
+
+/////////////////////////////////////////////////
+
+async function ensureSymlink(target, linkPath) {
+	await fs.mkdir(path.dirname(linkPath), { recursive: true });
+
+	try {
+		const stat = await fs.lstat(linkPath);
+
+		if (stat.isSymbolicLink()) {
+			const actual = await fs.readlink(linkPath);
+			if (actual === target) {
+				console.log("Symlink already exists with correct target, skipping.");
+			} else {
+				throw new Error(
+					`Symlink exists but points to wrong target: expected "${target}", got "${actual}"`
+				);
+			}
+		} else {
+			throw new Error(`Path exists but is not a symlink: ${linkPath}`);
+		}
+	} catch (err) {
+		if (err.code !== "ENOENT") throw err;
+		await fs.symlink(target, linkPath);
+		console.log(`Symlink created: ${linkPath} -> ${target}`);
+	}
 }
 
 /////////////////////////////////////////////////

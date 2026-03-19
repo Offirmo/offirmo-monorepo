@@ -32,7 +32,7 @@ const manifestꓽᐧnvmrc: StructuredFsⳇFileManifest = {
 
 /////////////////////////////////////////////////
 
-const pluginꓽnvm: Plugin = {
+const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧnvmrc)
 
@@ -55,7 +55,7 @@ const pluginꓽnvm: Plugin = {
 		const major = semver.major(vmin)
 		switch (node?.type) {
 			// TODO 1D any node where parent node != current node
-			case 'workspace': {
+			case 'monorepo': {
 				const output_spec: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽᐧnvmrc,
@@ -84,5 +84,5 @@ const pluginꓽnvm: Plugin = {
 
 /////////////////////////////////////////////////
 
-export default pluginꓽnvm
-export { manifestꓽᐧnvmrc, pluginꓽnvm }
+export default PLUGIN
+export { manifestꓽᐧnvmrc }

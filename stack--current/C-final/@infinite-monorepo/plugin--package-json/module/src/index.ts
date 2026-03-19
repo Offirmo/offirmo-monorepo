@@ -3,12 +3,13 @@ import {
 	type PackagePathⳇRelative,
 	type Plugin,
 	type StructuredFsⳇFileManifest,
-	type WorkspacePathⳇRelative,
+	type MonorepoPathⳇRelative,
 } from '@infinite-monorepo/types'
 import * as StateLib from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////
 
+// TODO vs npm
 const packageᐧjson__path: PackagePathⳇRelative = '$PACKAGE_ROOT$/package.json'
 const packageᐧjson__manifest: StructuredFsⳇFileManifest = {
 	path‿ar: packageᐧjson__path,
@@ -25,12 +26,6 @@ const packageᐧjson__manifest: StructuredFsⳇFileManifest = {
 
 const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<StateLib.State>): Immutable<StateLib.State> {
-		state = StateLib.declareꓽfile_manifest(state, packageᐧjson__manifest)
-		state = StateLib.declareꓽfile_manifest(state, {
-			...packageᐧjson__manifest,
-			path‿ar: '$WORKSPACE_ROOT$/package.json',
-		})
-
 		return state
 	},
 }

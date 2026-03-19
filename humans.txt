@@ -7,7 +7,7 @@ If you need to get in touch: https://github.com/Offirmo/offirmo-monorepo/issues
 
 ## website https://www.offirmo.net/offirmo-monorepo/
 
-This site is a personal test area, I don't think you should be here. Nothing interesting.
+This site is a personal test area; I don't think you should be here. Nothing interesting.
 
 
 ## repository https://github.com/Offirmo/offirmo-monorepo/

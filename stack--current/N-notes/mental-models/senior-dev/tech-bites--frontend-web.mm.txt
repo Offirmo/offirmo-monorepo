@@ -283,6 +283,10 @@ hypercard https://hypercard.org
 hypermedia
 hypertext
 i18n -- MessageFormat https://github.com/unicode-org/message-format-wg/tree/main/spec
+i18n -- messages extraction
+i18n -- plurals
+i18n -- plurals -- interval & = many / a few / none https://www.i18next.com/overview/comparison-to-others#b-or-like-to-say-something-like-interval-plurals
+i18n -- solutions https://phrase.com/blog/posts/react-i18n-best-libraries/
 i18n -- tab order
 iframe
 iframe -- fenced

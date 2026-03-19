@@ -44,11 +44,19 @@ function getꓽruntimeⵧlocal(state: Immutable<State>, node: Immutable<Node>): 
 	throw new Error('Unhandled runtimeⵧlocal!')
 }
 
+// TODO should be in dedicated package
 const PKG_MANAGER_SPECⵧPNPM: PackageManagerSpec = {
 	// https://pnpm.io/blog
 	name: 'pnpm',
 	versionsⵧacceptable: '^10', // current LTS 2025/10
 	versionⵧrecommended: '10.17',
+}
+// TODO should be in dedicated package
+const PKG_MANAGER_SPECⵧBOLT: PackageManagerSpec = {
+	// https://github.com/boltpkg/bolt
+	name: 'bolt',
+	versionsⵧacceptable: '^0',
+	versionⵧrecommended: '0.24.10',
 }
 
 function getꓽpackage_manager(state: Immutable<State>): PackageManagerSpec {
@@ -57,7 +65,8 @@ function getꓽpackage_manager(state: Immutable<State>): PackageManagerSpec {
 		switch (raw_spec) {
 			case 'pnpm':
 				return structuredClone(PKG_MANAGER_SPECⵧPNPM)
-			//case 'bolt':
+			case 'bolt':
+				return structuredClone(PKG_MANAGER_SPECⵧBOLT)
 
 			default:
 				throw new Error(`Unhandled package_manager "${raw_spec}"!`)

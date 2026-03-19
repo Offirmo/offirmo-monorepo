@@ -1,5 +1,5 @@
 {
-	"name": "@infinite-monorepo/plugin--prettier",
+	"name": "@infinite-monorepo/plugin--oxc--oxfmt",
 	"version": "0.0.1",
 	"private": true,
 	"sideEffects": false,
@@ -13,19 +13,21 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/state": "*",
+		"@infinite-monorepo/types": "*",
+		"semver": "^7",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@infinite-monorepo/plugin--prettier\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/plugin--oxc--oxfmt\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@infinite-monorepo/types": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/semver": "^7",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

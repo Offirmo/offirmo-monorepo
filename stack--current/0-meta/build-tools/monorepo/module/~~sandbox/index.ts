@@ -92,7 +92,7 @@ async function refreshꓽmonorepo() {
 	fs.writeFileSync(
 		path.resolve(MONOREPO_ROOT, '0-meta', 'bin', 'aliases.sh'),
 		`#@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […monorepo/…/aliases.sh] hello!"
 
 export OFFIRMO_MONOREPO_ROOT__CURRENT=\${OFFIRMO_MONOREPO_ROOT__CURRENT:-"$HOME/${path.relative(process.env['HOME']!, MONOREPO_ROOT)}/"};
 

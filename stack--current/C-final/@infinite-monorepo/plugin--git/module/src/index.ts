@@ -7,8 +7,8 @@ import {
 	type NodePathⳇRelative,
 	type RepoPathⳇRelative,
 	PATHVARⵧROOTⵧREPO,
-	type WorkspacePathⳇRelative,
-	PATHVARⵧROOTⵧWORKSPACE,
+	type MonorepoPathⳇRelative,
+	PATHVARⵧROOTⵧMONOREPO,
 } from '@infinite-monorepo/types'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
@@ -17,7 +17,7 @@ import type { FileOutputPresent } from '@infinite-monorepo/state'
 /////////////////////////////////////////////////
 
 // about global gitignore https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
-const ᐧgitignore__path‿ar: WorkspacePathⳇRelative = `${PATHVARⵧROOTⵧWORKSPACE}/.gitignore`
+const ᐧgitignore__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧMONOREPO}/.gitignore`
 const manifestꓽᐧgitignore: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitignore__path‿ar,
 	format: 'list',
@@ -36,7 +36,7 @@ const manifestꓽᐧgitattributes: StructuredFsⳇFileManifest = {
 
 /////////////////////////////////////////////////
 
-const pluginꓽgit: Plugin = {
+const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧgitignore)
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧgitattributes)
@@ -63,7 +63,7 @@ const pluginꓽgit: Plugin = {
 				state = StateLib.requestꓽfile_output(state, output_spec)
 				break
 			}
-			case 'workspace': {
+			case 'monorepo': {
 				const output_spec: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽᐧgitignore,
@@ -114,5 +114,5 @@ const pluginꓽgit: Plugin = {
 
 /////////////////////////////////////////////////
 
-export default pluginꓽgit
-export { manifestꓽᐧgitignore, pluginꓽgit }
+export default PLUGIN
+export { manifestꓽᐧgitignore }

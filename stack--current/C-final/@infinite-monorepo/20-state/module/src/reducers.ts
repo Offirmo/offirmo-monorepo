@@ -21,7 +21,7 @@ import {
 	type MultiRepoFilePathⳇRelative,
 	PATHVARⵧROOTⵧNODE,
 	PATHVARⵧROOTⵧREPO,
-	PATHVARⵧROOTⵧWORKSPACE,
+	PATHVARⵧROOTⵧMONOREPO,
 	type NodeⳇRepo,
 	PATHVARⵧROOTⵧPACKAGE,
 } from '@infinite-monorepo/types'
@@ -75,9 +75,9 @@ function onꓽspec_chain_loaded(
 		plugin_area: {},
 	}
 	const nodeⵧworkspace_root: NodeⳇWorkspace = {
-		type: 'workspace',
+		type: 'monorepo',
 		path‿abs: PENDING,
-		path‿ar: `${PATHVARⵧROOTⵧWORKSPACE}/`,
+		path‿ar: `${PATHVARⵧROOTⵧMONOREPO}/`,
 		parent_id: null, // bc root in its graph
 		plugin_area: {},
 	}
@@ -302,7 +302,7 @@ function _resolveꓽarpath(
 			return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
 		}
 
-		if (first_segment === PATHVARⵧROOTⵧPACKAGE && node.type === 'workspace') {
+		if (first_segment === PATHVARⵧROOTⵧPACKAGE && node.type === 'monorepo') {
 			// special: the workspace root is also a package
 			return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
 		}

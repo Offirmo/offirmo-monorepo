@@ -11,9 +11,10 @@ import * as StateLib from './index.ts'
 /////////////////////////////////////////////////
 
 export type FileOutputIntent =
+	| 'not-present'
 	| 'present--exact'
 	| 'present--containing'
-	| 'not-present'
+	| 'symlink'
 
 interface BaseFileOutput {
 	path‿ar?: MultiRepoFilePathⳇRelative // optional if manifest is provided
@@ -26,7 +27,7 @@ export interface FileOutputAbsent extends BaseFileOutput {
 	intent: 'not-present'
 }
 export interface FileOutputPresent extends BaseFileOutput {
-	intent: 'present--exact' | 'present--containing'
+	intent: 'present--exact' | 'present--containing' | 'symlink'
 	manifest: StructuredFsⳇFileManifest
 	content: Immutable<JSONObject>
 }

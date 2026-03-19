@@ -16,7 +16,7 @@ And above all it's hard to properly comment!
 
 I need a tool.
 
-
+TODO good "blog" https://lucumr.pocoo.org/2025/12/17/what-is-plan-mode/
 TODO CSP https://centralcsp.com/ https://domsignal.com/csp-test
 TODO everything here https://domsignal.com/toolbox
 
@@ -25,13 +25,13 @@ NOT IN SCOPE
 * SSR = maybe one day? but ideally we want full static on CDN
 
 
+TODO review https://github.com/rudrankriyam/App-Store-Connect-CLI
+
 TODO evaluate https://posthog.com
-TODO rename "web property" ?
 TODO auto "link tree" such as this complex one https://linktr.ee/infinex.xyz
 
 security -- domain name registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
 
-TODO .well-known/walletconnect.txt ??
 
 TODO public-assets/ ex. logos
 

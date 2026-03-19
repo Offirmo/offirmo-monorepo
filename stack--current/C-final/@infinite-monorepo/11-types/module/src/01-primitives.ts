@@ -19,7 +19,7 @@ export interface VersionSpecification {
 
 /////////////////////////////////////////////////
 
-export type ProgLang =
+export type ProgrammingLanguage =
 	| 'css'
 	| 'html'
 	| 'js'
@@ -41,7 +41,7 @@ export interface Dependency {
 
 export interface DependencyDetails {
 	type?: DependencyType
-	v?: Semver
+	v?: SemVerⳇRange
 }
 
 /////////////////////////////////////////////////

@@ -4,3 +4,7 @@ https://datatracker.ietf.org/doc/html/rfc8615
 
 
 TODO https://sneak.berlin/.well-known/pgpkey.txt
+
+TODO .well-known/ucp https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/
+
+TODO .well-known/walletconnect.txt ??
