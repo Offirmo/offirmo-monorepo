@@ -313,6 +313,7 @@ culture -- cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony htt
 culture -- differences -- https://www.youtube.com/watch?v=vi8pyS076a8
 culture -- Hofstede’s Dimensions http://www.na-businesspress.com/ajm/bergieleb_web12_1_.pdf
 culture -- taijin kyofusho = specific type of social anxiety, occurring primarily in Japanese culture, is called taijin kyofusho. Taijin kyofusho is characterized by an intense fear that one's body parts or functions displease, embarrass or are offensive to others. https://pubmed.ncbi.nlm.nih.gov/21911434/
+Current Population Survey (USA) https://www.bls.gov/opub/mlr/2018/article/the-current-population-survey-tracking-unemployment.htm
 curses -- curse of knowledge = person having a specialized knowledge assumse that other share in that k https://en.wikipedia.org/wiki/Curse_of_knowledge
 curses -- resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
 curses -- resource curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse

@@ -87,6 +87,7 @@ API -- guide developers into the pit of success.
 API -- Hyrum's Law = With a sufficient number of users of an API, all observable behaviors (public or not) of your system will be depended on by somebody https://www.hyrumslaw.com/ https://xkcd.com/1172/
 API -- input = Prefer objects for inputs. If a function accepts multiple pieces of data — or may accept multiple pieces of data in the future — create a single object parameter, rather than using multiple parameters. This ensures that: We can add parameters without breaking the contract + The order of the parameters becomes unimportant
 API -- internal / external / partner
+API -- keys -- format https://github.com/seamapi/prefixed-api-key
 API -- must not violate the principle of least astonishment.
 API -- output = prefer objects, same reasons as input = extensible without breaking the contract
 API -- pagination -- token https://protobuf.dev/best-practices/api/#define-pagination-api
@@ -297,6 +298,7 @@ data format -- do NOT conflate serialization w/ working representation w/ persis
 data format -- future proofing = vastly overrated now that we have semver!! (+ migrations)
 data format -- interchange -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
 data format -- interchange -- JS https://github.com/yahoo/serialize-javascript
+data format -- interchange -- JSON -- binary -- BSON https://bsonspec.org
 data format -- interchange -- JSON -- binary https://msgpack.org/
 data format -- interchange -- JSON -- JSX wire https://overreacted.io/jsx-over-the-wire/
 data format -- interchange -- JSON -- progressive https://overreacted.io/progressive-json/
@@ -617,7 +619,6 @@ lang -- JS -- parseInt http://stackoverflow.com/questions/17106681/parseint-vs-u
 lang -- JS -- realms https://stackoverflow.com/questions/49832187/how-to-understand-js-realms/49832343#49832343
 lang -- JS -- runtimes https://buttondown.com/whatever_jamie/archive/the-many-many-many-javascript-runtimes-of-the-last-decade/
 lang -- js/ts --tsconfig https://json.schemastore.org/tsconfig
-lang -- JSON
 lang -- JSX – Javascript XML, from React
 lang -- language types https://en.wikipedia.org/wiki/List_of_programming_languages_by_type
 lang -- Lean = Math language https://lean-lang.org/ https://overreacted.io/the-math-is-haunted/

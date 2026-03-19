@@ -347,7 +347,9 @@ Fogo = L1 built for DeFi applications. It is based on Solana's architecture and 
 Fogo https://www.fogo.io/
 fork -- hard
 fork -- soft
+frontrunning -- flashbots https://www.flashbots.net
 frontrunning -- generalized frontrunning bots https://www.paradigm.xyz/2020/08/ethereum-is-a-dark-forest
+frontrunning -- protection -- https://protectrpc.flashbots.net/about
 FTX -- FTT = FTX's token
 FTX = cryptocurrency derivatives exchanges known for its bankruptcy https://en.wikipedia.org/wiki/Bankruptcy_of_FTX
 FTX crash

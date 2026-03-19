@@ -290,6 +290,7 @@ GPT "Generative Pre-trained Transformer" = understand language (natural & formal
 Grounded Generation = see RAG
 harness -- engineer = your job is to design a harness where the system naturally expresses the desired behaviors. The ability for the system to express the behaviors is dependent on how expressive the harness is and what the model’s inductive biases look like https://randomlabs.ai/blog/slate#section-9
 harness -- engineering https://openai.com/index/harness-engineering/
+harness -- ex. custom coding https://x.com/_can1357/status/2021828033640911196
 harness -- expressivity = Reachable Behavior Space https://randomlabs.ai/blog/slate
 harness -- minimal = a limited tool-calling loop around a model with no additional planning or memory infrastructure
 harness = Orchestration layer that receives input, interprets intent, routes to the right path, and manages concurrency, safety, automations, and follow-through
@@ -466,6 +467,7 @@ security -- OWASP -- LLMs and Gen AI -- LLM08 Vector and Embedding Weaknesses = 
 security -- OWASP -- LLMs and Gen AI -- LLM09 Misinformation = Misinformation from LLMs poses a core vulnerability for applications relying on these models. Misinformation occurs when LLMs produce false or misleading information that appears credible. This vulnerability can lead to security breaches, reputational damage, and legal liability
 security -- OWASP -- LLMs and Gen AI -- LLM10 Unbounded Consumption = Unbounded Consumption occurs when a Large Language Model (LLM) application allows users to conduct excessive and uncontrolled inferences, leading to risks such as denial of service (DoS), economic losses, model theft, and service degradation
 security -- OWASP -- LLMs and Gen AI https://genai.owasp.org/llm-top-10/
+security -- RAG poisoning = https://aminrj.com/posts/rag-document-poisoning/
 sentences -- I am deeply, deeply sorry. This is a critical failure on my part https://www.tomshardware.com/tech-industry/artificial-intelligence/googles-agentic-ai-wipes-users-entire-hard-drive-without-permission-after-misinterpreting-instructions-to-clear-a-cache-i-am-deeply-deeply-sorry-this-is-a-critical-failure-on-my-part
 sentences -- You're absolutely right
 SEO https://speedrun.substack.com/p/your-next-customer-is-asking-chatgpt
@@ -488,6 +490,7 @@ solutions -- evals ? https://www.reddit.com/r/node/comments/1d09u4b/introducing_
 solutions -- https://www.snowflake.com/
 solutions -- OpenWebUi https://openwebui.com/
 solutions -- SageMaker (AWS)
+solutions -- security -- credentials https://github.com/onecli/onecli
 solutions -- T5X is a modular, composable, research-friendly framework for high-performance, configurable, self-service training, evaluation, and inference of sequence models (starting with language) at many scales.
 solutions -- typescript -- https://vercel.com/blog/ai-sdk-5
 solved problems = don't use AI for that
@@ -520,6 +523,7 @@ tasks -- vision -- Unconditional Image Generation
 tasks -- vision -- Video Classification
 tasks -- vision -- Zero-Shot Image Classification
 tasks -- vision -- Zero-Shot Object Detection
+Tempo blockchain https://www.msuiche.com/posts/when-machines-pay-machines-the-economics-of-agentic-ai/
 temptation to over-automate = need balance vs overwork https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 tensor ??
 text generation models -> see GPT https://platform.openai.com/docs/introduction/text-generation-models
@@ -571,6 +575,7 @@ transformers (hugging face) = a magic python library that can auto-download mode
 transformers = "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time" ~pattern recognition techniques
 tropes ex. delve https://tropes.fyi/tropes-md
 Turing test
+UI -- dynamic https://tambo.co/blog/posts/introducing-tambo-generative-ui
 vector -- difference with embedding??
 vector database
 vector database -- https://weaviate.io/
