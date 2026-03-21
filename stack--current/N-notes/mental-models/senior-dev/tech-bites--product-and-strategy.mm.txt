@@ -284,13 +284,13 @@ MVP -- 2 🛴 The Scooter = aka the Realist’s MVP = The minimum product that d
 MVP -- 3 🏍️ The Motorcycle = Post-launch highest priority items.
 MVP -- 4 🚗 The Car = Our ultimate vision, taking current constraints into account.
 MVP -- 5 🏎️ The Hovercar = aka the North Star UI = The ideal experience — unconstrained by time, resources, or backwards compatibility. Unlikely to ship, but a guiding light for all of the above. "what if the key to shipping great products wasn’t starting small — but starting big?" https://lea.verou.me/blog/2025/hovercar/
-MVP -- earliest -- 01 feedback-able product (EFP)
-MVP -- earliest -- 02 testable product = first release that customers can actually do something with
-MVP -- earliest -- 03 usable product = first release that early adopters will actually use, willingly
-MVP -- earliest -- 04 lovable product = first release that customers will love, tell their friends about, and be willing to pay for
-MVP -- earliest -- 05 marketable product = packaged?
-MVP -- earliest -- 06 "app store"-able product
-MVP -- earliest -- 07 "pro" = entitlements, billing, compliance...
+MVP -- earliest -- 01 && feedback-able product (EFP)
+MVP -- earliest -- 02 && testable product = first release that customers can actually do something with
+MVP -- earliest -- 03 && usable product = first release that early adopters will actually use, willingly
+MVP -- earliest -- 04 && lovable product = first release that customers will love, tell their friends about, and be willing to pay for
+MVP -- earliest -- 05 && marketable product = packaged?
+MVP -- earliest -- 06 && "app store"-able product
+MVP -- earliest -- 07 && "pro" = entitlements, billing, compliance...
 MVP -- earliest = "why I prefer Earliest Testable/Usable/Lovable" https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp
 MVP -- Most Advanced Yet Acceptable (MAYA) = UX concept https://every.to/p/the-most-advanced-yet-acceptable-products-win
 mvp -- satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing

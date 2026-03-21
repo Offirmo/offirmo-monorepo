@@ -1,5 +1,6 @@
 [ ] https://vitalik.eth.limo/general/2024/09/28/alignment.html
 commercial vs non-commercial OSS https://leerob.substack.com/p/reflections-on-the-react-community
+contribution ladder https://modelcontextprotocol.io/community/contributor-ladder
 definition -- FSF free software definition
 definition -- OSI open source definition
 fellowship https://clerk.com/blog/zod-fellowship

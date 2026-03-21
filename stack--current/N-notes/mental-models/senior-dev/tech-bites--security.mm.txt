@@ -32,6 +32,7 @@ authorization
 best practices -- CISA = https://www.cisa.gov/topics/cybersecurity-best-practices
 browser security -- PrivacyTests https://privacytests.org/ (close to Brave)
 browser security https://hackread.com/why-browser-security-matters-more-than-you-think/
+bucketsquatting = an attacker can register a bucket with the same name as a previously deleted bucket and potentially gain access to sensitive data or disrupt services that rely on that bucket https://onecloudplease.com/blog/bucketsquatting-is-finally-dead
 BULLRUN (decryption program) clandestine, highly classified program to crack encryption of online communications and data, which is run by the United States National Security Agency (NSA) https://en.wikipedia.org/wiki/Bullrun_(decryption_program)
 canary -- tokens = https://canarytokens.org/
 Capture The Flag (CTF) competitions = hacking contests consisting of challenges in categories such as web security, cryptography, reverse engineering, exploitation which are open to everyone

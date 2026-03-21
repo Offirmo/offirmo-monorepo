@@ -192,6 +192,7 @@ claws -- IronClaw = alpha / 1.1k / 9.9k from NEAR https://agent.near.ai/
 claws -- NanoClaw 5.1k / 22.6k https://github.com/qwibitai/nanoclaw accolade by K https://x.com/karpathy/status/2024987174077432126 + docker partnership https://news.ycombinator.com/item?id=47364397
 claws -- NullClaw 741 / 6.3k https://github.com/nullclaw/nullclaw
 claws -- OpenClaw -- buzz? scam? https://www.reddit.com/r/LocalLLaMA/comments/1r5v1jb/anyone_actually_using_openclaw/
+claws -- OpenClaw -- extensions https://github.com/VoltAgent/awesome-openclaw-skills
 claws -- OpenClaw https://docs.openclaw.ai/start/getting-started
 claws -- TinyClaw 24 / 163 https://github.com/warengonzaga/tinyclaw
 claws -- ZeroClaw 3.5k / 26.9k https://github.com/zeroclaw-labs/zeroclaw
@@ -228,6 +229,7 @@ commoditization -- resistance = stop caring about model capabilities and start c
 commoditization = "the clever feature you shipped in March gets commoditized by a model update in June. The ground moves every quarter and your moat evaporates"
 common sense https://commonsense.run/
 compaction = automatic summarizing of older context when approaching the context window limit https://platform.claude.com/docs/en/build-with-claude/compaction
+comprehension debt = the hidden cost to human intelligence and memory resulting from excessive reliance on AI and automation https://addyosmani.com/blog/comprehension-debt/
 computer-use = enabling agents to operate computers
 constitutional AI = AI training themselves from a set of human-given rules, self-critique and revision https://arxiv.org/abs/2212.08073
 constitutional classifiers = method that defends AI models against universal jailbreaks https://www.anthropic.com/research/constitutional-classifiers
@@ -364,6 +366,7 @@ MCP -- challenges -- Shadowing – A malicious server injects a tool description
 MCP -- challenges -- Tool Poisoning – Malicious instructions in MCP tool descriptions, hidden from users but readable by AI models.
 MCP -- code execution https://www.anthropic.com/engineering/code-execution-with-mcp
 MCP -- Code Mode = some improvement? https://blog.cloudflare.com/code-mode/
+MCP -- do LLM even use them well? https://github.com/Accenture/mcp-bench
 MCP -- examples https://github.com/ChromeDevTools/chrome-devtools-mcp
 MCP -- messages types = Requests from the client for information, Results from the server with the information, Errors when the server cannot reply, and Notifications, which are one-way messages that do not require a response.
 MCP -- servers -- remote https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/
@@ -576,6 +579,7 @@ transformers = "a new type of NLP model that demolished the reading comprehensio
 tropes ex. delve https://tropes.fyi/tropes-md
 Turing test
 UI -- dynamic https://tambo.co/blog/posts/introducing-tambo-generative-ui
+UI -- json https://github.com/vercel-labs/json-render
 vector -- difference with embedding??
 vector database
 vector database -- https://weaviate.io/

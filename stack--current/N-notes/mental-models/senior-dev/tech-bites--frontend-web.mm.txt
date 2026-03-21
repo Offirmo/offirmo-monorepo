@@ -548,6 +548,7 @@ user effort -- usability -- “But I just wanted to _________, why is it so hard
 user effort -- usability cliffs = When a small increase in use case complexity results in a disproportionately large increase in user effort cost "Incremental user effort cost should be proportional to incremental value gained"
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- action limiting = better delay effect than permission "I hate it when I get stopped from doing an action and being told to come back in X days"
+UX -- bad practices -- 50Mb webpages https://thatshubham.com/blog/news-audit
 UX -- cancel vs close https://www.nngroup.com/articles/cancel-vs-close/
 UX -- challenges -- information overload
 UX -- collaborative experiences https://zknill.io/posts/collaboration-no-crdts/

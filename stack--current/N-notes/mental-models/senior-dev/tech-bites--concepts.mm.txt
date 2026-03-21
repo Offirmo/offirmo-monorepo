@@ -139,6 +139,7 @@ bugs -- 3 questions https://mental-reverb.com/blog.php?id=42
 bugs -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
 bugs -- significant https://en.wikipedia.org/wiki/List_of_software_bugs
 build & delivery part of a product
+building blocks that just work = create building blocks that handle the undifferentiated heavy lifting, which freed developers to focus on higher-level work https://aws.amazon.com/blogs/aws/twenty-years-of-amazon-s3-and-building-whats-next/
 C++ 26 https://thenewstack.io/coming-to-iso-c-26-standard-an-ai-acceleration-edge/
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
 cache
@@ -272,6 +273,7 @@ coupling -- loose https://en.wikipedia.org/wiki/Loose_coupling
 courbe d'expertise
 CPU https://cpu.land/
 CQRS "command query responsibility segregation"
+CRDT -- against https://www.moment.dev/blog/lies-i-was-told-pt-2
 CRDT / automerge / local first https://automerge.org/
 cron -- explainer https://onlineornot.com/cron-jobs/crontab
 cron -- monitoring
@@ -517,6 +519,7 @@ hoisting des vars de boucle for et switch
 homoiconicity https://en.wikipedia.org/wiki/Homoiconicity
 hooks
 hotfix
+how to -- fix any bug https://overreacted.io/how-to-fix-any-bug/
 how to stay on the cutting edge without drawing blood? -- always keep experimenting
 how to stay on the cutting edge without drawing blood? -- build projects to test new ideas
 how to stay on the cutting edge without drawing blood? -- DON’T watch every new shiny new thing that appears... a new framework, a new approach, a new library. Sometimes the new hotness doesn’t really do anything new. But, if it fills a gap or expands a capability, I dive deeper. If it’s hype without a clear use case, I file it away. Maybe it’ll be useful some day, maybe it won’t… but I’ll at least be familiar with the idea, the name, and what it purports to do.
