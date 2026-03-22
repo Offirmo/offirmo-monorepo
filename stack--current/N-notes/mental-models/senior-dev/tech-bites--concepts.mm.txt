@@ -610,6 +610,9 @@ l10n -- truly local = more than just translation
 lang -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend
 lang -- Clojure https://clojure.org/guides/getting_started
 lang -- Clojure ~lisp https://clojure.org/
+lang -- confuguration -- https://medv.io/blog/things-i-dont-like-in-configuration-languages
+lang -- confuguration -- JSON5
+lang -- confuguration -- TS
 lang -- E = https://www.crockford.com/ec/etut.html
 lang -- F# https://en.wikipedia.org/wiki/F_Sharp_(programming_language)
 lang -- go

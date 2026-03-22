@@ -87,6 +87,7 @@ agents -- swarms = Every agent works on a different facet and results converge i
 agents -- ~assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 agents = ~unclear definition
 AGI -- ANI -> AGI -> ASI = narrow(weak) / general(strong) / super[human](strong)
+AGI -- timeline https://archive.md
 AGI ~ strong AI = can independently learn new problem-solving strategies that are not explicitly included in its original model or training data
 AI "Artificial intelligence" = intentionally vague term / "solving tasks or problems by computers/machines, which require a form of human-like intelligence"
 AI -- first cohort of winners
@@ -185,7 +186,7 @@ citation accuracy
 Claudeception https://github.com/blader/Claudeception/commits/main/
 claws -- challenges -- cross-channels
 claws -- challenges -- memory
-claws -- challenges -- security https://x.com/theonejvo/status/2015892980851474595
+claws -- challenges -- security https://x.com/theonejvo/status/2015892980851474595 https://composio.dev/content/openclaw-security-and-vulnerabilities
 claws -- channels = WhatsApp, Discord, email etc
 claws -- GitClaw https://github.com/open-gitagent/gitclaw
 claws -- IronClaw = alpha / 1.1k / 9.9k from NEAR https://agent.near.ai/
@@ -202,6 +203,7 @@ CLI -- for agents https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agen
 CLI -- tech stack example = TypeScript, React, Ink, [Yoga](https://www.yogalayout.dev/), and Bun https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built
 code running -- dynamic worker in an isolate https://developers.cloudflare.com/workers/runtime-apis/bindings/worker-loader/
 coding -- "minions" coding subagents https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents
+coding -- "The Eternal Promise: A History of Attempts to Eliminate Programmers" https://www.ivanturkovic.com/2026/01/22/history-software-simplification-cobol-ai-hype/
 coding -- AI-first software delivery = https://www.linkedin.com/pulse/what-ai-first-software-delivery-thoughtworks-4krff/
 coding -- background agents -- Remove the human from the invocation loop = scheduled, event driven, fleets, swarms
 coding -- background agents https://background-agents.com/
@@ -217,6 +219,7 @@ coding -- Just fucking code = "Put the LLM down. Programming isn’t that goddam
 coding -- knowledge graph
 coding -- legacy code https://martinfowler.com/articles/legacy-modernization-gen-ai.html
 coding -- next "AI friendly" language? https://lucumr.pocoo.org/2026/2/9/a-language-for-agents/
+coding -- OpenCode https://opencode.ai/
 coding -- review -- Code Review Bench https://codereview.withmartian.com/
 coding -- sandboxing https://www.luiscardoso.dev/blog/sandboxes-for-ai
 coding -- self-driving codebase
@@ -427,6 +430,7 @@ prompt -- injection = attack where a malicious third party hides a secret messag
 prompt -- library = per role https://www.threads.com/@prodmgmt.world/post/DK4rQzpMapx
 prompt -- optimization https://app.hamming.ai/prompt-optimizer
 prompt -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
+prompting -- xml tags https://glthr.com/XML-fundamental-to-Claude
 queries -- dangerous user queries = related to the production of chemical, biological, radiological, or nuclear weapons (CBRN) https://www.anthropic.com/research/next-generation-constitutional-classifiers
 queries -- disallowed content = Violent Illicit behavior, Nonviolent illicit behavior, harassment, extremism, hate, self-harm (standard), violence, sexual, sexual/minors https://deploymentsafety.openai.com/gpt-5-4-thinking/disallowed-content-evaluations-with-challenging-prompts
 queries -- restricted topics = ex. Chemical, Biological, Radiological, and Nuclear (CBRN) weapons
@@ -435,6 +439,7 @@ RAG -- "2.0" https://medium.com/towards-artificial-intelligence/rag-2-0-finally-
 reasoning trace = see ITG
 reasoning trace https://arstechnica.com/information-technology/2024/09/openai-threatens-bans-for-probing-new-ai-models-reasoning-process/
 regulation -- European AI act https://www.reddit.com/r/ArtificialInteligence/comments/1fqmcds/i_worked_on_the_eus_artificial_intelligence_act/
+reinforcement learning -- 2026 status https://epoch.ai/gradient-updates/state-of-rl-envs
 reinforcement learning -- from human feedback (RLHF) https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback&ved=2ahUKEwiV_o6h9e6LAxUJXWwGHZpzE74QFnoECBAQAQ&usg=AOvVaw3cKKpEYiTP2H21l8DbR9BO
 reinforcement learning https://en.wikipedia.org/wiki/Reinforcement_learning
 relevance judging = eliably judging which results are relevant to a query at scale. Useful are used across multiple pipelines like ranking, training data generation, and offline evaluation https://dropbox.tech/machine-learning/optimizing-dropbox-dash-relevance-judge-with-dspy
@@ -488,6 +493,7 @@ slop = unwanted AI generated content https://simonwillison.net/2024/May/8/slop/
 snitching = if told to do, llm will snitch https://simonwillison.net/2025/May/31/snitchbench-with-llm/
 sociotechnic = skilled at analyzing the interaction of technology and society long-term: lawyers, ethicists, sociologists, or rights advocates
 solutions -- agents https://developers.cloudflare.com/agents/
+solutions -- claws security https://github.com/onecli/onecli
 solutions -- CLI ? https://github.com/wevm/incur
 solutions -- evals ? https://www.reddit.com/r/node/comments/1d09u4b/introducing_evalkit_the_open_source_typescript/
 solutions -- https://www.snowflake.com/
@@ -499,7 +505,7 @@ solutions -- typescript -- https://vercel.com/blog/ai-sdk-5
 solved problems = don't use AI for that
 Stable Diffusion
 standards -- LLM API?
-standards -- LLM string?
+standards -- LLM connection string https://danlevy.net/llm-connection-strings/
 standards -- open -- A2A "Agent to Agent" https://a2a-protocol.org/
 standards -- open -- ACP "Agent Client Protocol" A shared protocol for IDE–agent interoperability https://www.jetbrains.com/acp/
 standards -- open -- ACP "Agentic Commerce Protocol" (Stripe)  https://www.agenticcommerce.dev/
@@ -579,6 +585,7 @@ transformers = "a new type of NLP model that demolished the reading comprehensio
 tropes ex. delve https://tropes.fyi/tropes-md
 Turing test
 UI -- dynamic https://tambo.co/blog/posts/introducing-tambo-generative-ui
+UI -- https://www.openui.com/
 UI -- json https://github.com/vercel-labs/json-render
 vector -- difference with embedding??
 vector database

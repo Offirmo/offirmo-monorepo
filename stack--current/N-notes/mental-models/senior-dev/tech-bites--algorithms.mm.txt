@@ -64,6 +64,7 @@ consensus -- raft https://en.wikipedia.org/wiki/Raft_(algorithm)  https://raft.g
 crossword generation https://puzzling.stackexchange.com/a/132987
 cryptocurrency mining
 Day–Stout–Warren = amortized binary tree balancing https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
+decision trees https://mlu-explain.github.io/decision-tree/
 deque = double-ended queue
 disjoint set union
 dynamic = ex. For an initial set of N numbers, dynamically maintain the maximal one when insertion and deletions are allowed.
