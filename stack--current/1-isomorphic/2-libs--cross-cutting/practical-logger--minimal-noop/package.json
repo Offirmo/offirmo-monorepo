@@ -29,13 +29,14 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/practical-logger-core": "^3",
 		"@offirmo/practical-logger-types": "^3",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/2-libs--cross-cutting/practical-logger--minimal-noop",
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/2-libs--cross-cutting/practical-logger--minimal-noop/README.md",

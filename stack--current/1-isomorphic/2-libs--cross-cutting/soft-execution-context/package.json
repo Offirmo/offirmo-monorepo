@@ -27,12 +27,13 @@
 		"demo": "node --experimental-strip-types ./module/##doc/demo.ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/print-error-to-terminal": "*",
 		"@offirmo/practical-logger-core": "^3",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

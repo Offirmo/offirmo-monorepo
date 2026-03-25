@@ -22,12 +22,13 @@
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/generator--website-entry-points": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/ts--types--web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

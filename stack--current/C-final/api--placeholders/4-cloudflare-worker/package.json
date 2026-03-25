@@ -33,6 +33,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4",
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo--decisions": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
@@ -42,7 +43,7 @@
 		"@types/node": "^24",
 		"meow": "^14",
 		"npm-run-all": "^4",
-		"typescript": "^5",
+		"typescript": "^6",
 		"wrangler": "^4"
 	}
 }

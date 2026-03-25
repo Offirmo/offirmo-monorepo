@@ -30,11 +30,12 @@
 		"new": "knex migrate:make TODO -x ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^24",
 		"@types/pg": "^8",
 		"npm-run-all": "^4",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

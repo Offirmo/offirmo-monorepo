@@ -8,7 +8,7 @@
 		<ui>bdd</ui>
 		<extra-mocha-options>--bail</extra-mocha-options>
 		<test-kind>PATTERN</test-kind>
-		<test-pattern>./module/src/**/*.tests.ts</test-pattern>
+		<test-pattern>./module/**/*.tests.ts</test-pattern>
 		<method v="2" />
 	</configuration>
 </component>

@@ -16,7 +16,6 @@
 		"@monorepo-private/offirmo-api--interface": "*",
 		"@monorepo-private/state-utils": "*",
 		"@offirmo/error-utils": "^0.0.1",
-		"fetch-ponyfill": "^7",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -27,11 +26,12 @@
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/soft-execution-context": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

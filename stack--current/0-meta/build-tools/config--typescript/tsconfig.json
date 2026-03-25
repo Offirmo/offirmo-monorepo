@@ -1,6 +1,6 @@
 {
 	"extends": [
-		"@monorepo-private/config--typescript/module/src/strictest/isomorphic/tsconfig.json"
+		"@monorepo-private/config--typescript/module/src/default/isomorphic/tsconfig.json"
 	],
 	"compilerOptions": {
 		"pretty": true

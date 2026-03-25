@@ -26,6 +26,7 @@
 		"build": "run-s _build:1-entry-points _build:2-bundle"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/generator--website-entry-points": "*",
 		"@monorepo-private/marketing": "*",
 		"@monorepo-private/monorepo--decisions": "*",
@@ -39,6 +40,6 @@
 		"@types/node": "^24",
 		"meow": "^14",
 		"npm-run-all": "^4",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

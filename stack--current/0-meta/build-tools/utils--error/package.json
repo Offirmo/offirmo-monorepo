@@ -30,13 +30,14 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/icepick": "^2",
 		"icepick": "^2",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/0-meta/build-tools/utils--error",
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/0-meta/build-tools/utils--error/README.md",

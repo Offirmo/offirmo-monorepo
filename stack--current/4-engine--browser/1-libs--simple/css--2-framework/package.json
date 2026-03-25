@@ -31,6 +31,7 @@
 		"build": "run-s _build:bundle"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/css--foundation": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
@@ -40,6 +41,6 @@
 		"lightningcss": "^1",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

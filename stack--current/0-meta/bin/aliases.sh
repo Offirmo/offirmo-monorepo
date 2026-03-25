@@ -5,6 +5,7 @@ export OFFIRMO_MONOREPO_ROOT__CURRENT=${OFFIRMO_MONOREPO_ROOT__CURRENT:-"$HOME/w
 
 
 alias     mono0bb='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/better-console-groups/;                       tabset --badge mono0bb'
+alias    mono0bct='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/config--typescript/;                          tabset --badge mono0bct'
 alias     mono0bf='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/file-entry/;                                  tabset --badge mono0bf'
 alias    mono0bfl='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/fs--ls/;                                      tabset --badge mono0bfl'
 alias    mono0bmd='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/monorepo--decisions/;                         tabset --badge mono0bmd'
@@ -133,6 +134,7 @@ alias   monoC@pp2='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.s
 alias   monoC@pp3='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--pnpm/;                         tabset --badge monoC@pp3'
 alias    monoC@pr='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--readme/;                       tabset --badge monoC@pr'
 alias    monoC@pt='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--tsconfig/;                     tabset --badge monoC@pt'
+alias   monoC@pt2='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--turbo/;                        tabset --badge monoC@pt2'
 alias    monoC@pv='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--vscode/;                       tabset --badge monoC@pv'
 alias    monoC@1l='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @tbrpg/1-logic/l1-definitions/;                           tabset --badge monoC@1l'
 alias  monoC@1lar='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd C-final/;          cd @tbrpg/1-logic/l1-logic--adventure--resolved/;            tabset --badge monoC@1lar'

@@ -35,11 +35,12 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/3-engine--node/2-libs--cross-cutting/practical-logger--node",
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/3-engine--node/2-libs--cross-cutting/practical-logger--node/README.md",

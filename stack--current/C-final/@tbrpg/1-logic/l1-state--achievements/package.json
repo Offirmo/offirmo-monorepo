@@ -28,6 +28,7 @@
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/soft-execution-context": "*",
 		"@monorepo-private/state-migration-tester": "*",
@@ -35,6 +36,6 @@
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

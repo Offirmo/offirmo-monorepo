@@ -34,6 +34,7 @@
 		"demo": "node --experimental-strip-types ./module/##demos/demo--pwa--tbrpg/index.ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/marketing": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/ts--types": "*",
@@ -42,6 +43,6 @@
 		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

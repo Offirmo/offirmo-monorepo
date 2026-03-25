@@ -2,7 +2,7 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 
 	"extends": [
-		"../../_strictest/isomorphic/node/tsconfig.json"
+		"../../_strictest/isomorphic/tsconfig.json"
 	],
 
 	"compilerOptions": {

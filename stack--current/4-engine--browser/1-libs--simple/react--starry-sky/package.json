@@ -28,6 +28,7 @@
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/css--framework": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
@@ -40,6 +41,6 @@
 		"react": "^19",
 		"react-dom": "^19",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

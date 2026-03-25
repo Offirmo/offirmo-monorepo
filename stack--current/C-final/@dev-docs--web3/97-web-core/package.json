@@ -21,7 +21,7 @@
 		"@monorepo-private/soft-execution-context--browser": "*",
 		"@monorepo-private/utils--async": "*",
 		"@offirmo/universal-debug-api-browser": "^1",
-		"agentation": "^2",
+		"agentation": "^3",
 		"github-slugger": "^2",
 		"limit-once": "^0.16",
 		"markdown-to-jsx": "^9",
@@ -49,6 +49,7 @@
 	},
 	"devDependencies": {
 		"@dev-docs--web3/types": "*",
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
 		"@monorepo-private/toolbox--parcel": "*",
@@ -57,6 +58,6 @@
 		"@types/react-dom": "^19",
 		"npm-run-all": "^4",
 		"react": "^19",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

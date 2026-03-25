@@ -32,6 +32,7 @@
 		"demo": "npm-run-all clean --parallel _start:parcel:demo"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/soft-execution-context": "*",
 		"@monorepo-private/storypad": "*",
@@ -42,6 +43,6 @@
 		"react": "^19",
 		"react-dom": "^19",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

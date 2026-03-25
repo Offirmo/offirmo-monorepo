@@ -28,6 +28,7 @@
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/prettify-any": "*",
 		"@monorepo-private/soft-execution-context": "*",
@@ -36,6 +37,6 @@
 		"fraction.js": "^4",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

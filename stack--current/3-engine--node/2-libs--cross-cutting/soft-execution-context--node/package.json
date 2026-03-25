@@ -24,6 +24,7 @@
 		"demo": "node --experimental-strip-types ./module/##doc/demo.ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/soft-execution-context": "*",
 		"@offirmo/practical-logger-node": "^0.3",
@@ -31,6 +32,6 @@
 		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

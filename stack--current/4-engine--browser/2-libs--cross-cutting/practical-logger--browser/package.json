@@ -36,13 +36,14 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
 		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/4-engine--browser/2-libs--cross-cutting/practical-logger--browser",
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/4-engine--browser/2-libs--cross-cutting/practical-logger--browser/README.md",

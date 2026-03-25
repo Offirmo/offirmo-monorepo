@@ -36,6 +36,7 @@
 		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/prettify-any": "*",
 		"@monorepo-private/rich-text-format--to-terminal": "*",
@@ -44,9 +45,9 @@
 		"@oh-my-rpg/state--prng": "*",
 		"@tbrpg/logic--adventure--resolved": "*",
 		"@tbrpg/logic--monsters": "*",
+		"@types/node": "^24",
 		"npm-run-all": "^4",
-		"strip-ansi": "^7",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

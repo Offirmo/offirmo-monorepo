@@ -28,11 +28,12 @@
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/1-libs--simple/random",
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/1-libs--simple/random/README.md",

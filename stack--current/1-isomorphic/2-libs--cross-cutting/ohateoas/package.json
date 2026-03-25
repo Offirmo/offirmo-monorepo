@@ -33,6 +33,7 @@
 		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/random": "^3",
 		"@offirmo/unit-test-toolbox": "^9",
@@ -40,6 +41,6 @@
 		"chalk": "^5",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }

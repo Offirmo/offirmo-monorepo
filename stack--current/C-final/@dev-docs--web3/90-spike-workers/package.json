@@ -30,11 +30,12 @@
 		"start": "npm-run-all clean --parallel _start:parcel:main"
 	},
 	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
 		"@monorepo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }
