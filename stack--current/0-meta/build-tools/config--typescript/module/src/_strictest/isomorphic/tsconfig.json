@@ -1,10 +1,11 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": [
-    /* https://github.com/tsconfig/bases?tab=readme-ov-file#strictest-tsconfigjson */
-    "@tsconfig/strictest/tsconfig.json"
-    //"../../_shared/isomorphic/tsconfig.json"
-  ],
+	"$schema": "https://json.schemastore.org/tsconfig",
+	// https://www.typescriptlang.org/tsconfig/
+
+	"extends": [
+		/* https://github.com/tsconfig/bases?tab=readme-ov-file#strictest-tsconfigjson */
+		"@tsconfig/strictest/tsconfig.json"
+	],
 
 	"compilerOptions": {
 		// ordered following the TS doc https://www.typescriptlang.org/tsconfig/#compiler-options
@@ -47,7 +48,7 @@
 		"downlevelIteration": true, // cleanest
 		"importHelpers": true, // most size efficient
 		"newLine": "lf",
-		"noEmitHelpers": true,// TODO unclear
+		"noEmitHelpers": true, // TODO unclear
 		"noEmitOnError": true, // avoid hiding errors
 		"sourceMap": true, // beneficial
 
@@ -74,21 +75,27 @@
 		/*** Language and Environment ***/
 		"emitDecoratorMetadata": false, // experimental, disputed
 		"experimentalDecorators": false, // experimental, disputed
-		"lib": [ "ES2025" ], // strict isomorphic
-		"target": "ES2025", // as og 2026/03 widely supported node LTS + FF ESR
+		"lib": [
+			// strict isomorphic
+			"ES2024" // see target
+		],
+
+		"target": "ES2024", // as og 2026/03 widely supported node LTS + FF ESR
 
 
 		/*** Compiler Diagnostics ***/
 		"listEmittedFiles": false,
 		"listFiles": false,
-
-
 		/*** Projects ***/
 		"composite": true, // enable advanced TS "Projects" feature
 
 
 		/*** Output Formatting ***/
 		"noErrorTruncation": true, // for deep debugging
-		"pretty": true, // why not?
+		"pretty": true // why not?
+
+
+		/* intentionally DON'T set "jsx" => use the DOM base instead!
+		 */
 	},
 }
