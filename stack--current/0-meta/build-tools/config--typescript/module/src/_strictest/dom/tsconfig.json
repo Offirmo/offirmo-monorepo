@@ -9,7 +9,7 @@
 		"moduleResolution": "bundler", // all web apps use bundlers
 
 		"lib": [
-			"ES2024", // see target
+			"ES2025", // see target
 			"DOM", // obviously
 		],
 

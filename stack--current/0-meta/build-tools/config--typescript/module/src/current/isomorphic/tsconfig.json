@@ -6,5 +6,9 @@
 	],
 
 	"compilerOptions": {
+		"noUnusedLocals": false, // too inconvenient
+		"noUnusedParameters": false,
+		"isolatedDeclarations": false, // Unfortunately this causes much headache for few benefit (for me) TODO activate it manually on PUBLIC modules
+		"types": ["*"], // same
 	}
 }

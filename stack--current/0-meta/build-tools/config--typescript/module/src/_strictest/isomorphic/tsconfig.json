@@ -34,7 +34,7 @@
 		"allowUmdGlobalAccess": false, // Umd deprecated
 		"allowImportingTsExtensions": true, // most future-oriented
 		"module": "ES2022", // note: small Safari bug
-		"moduleResolution": "nodenext", // we make no assumptions about a bundler
+		//"moduleResolution": "nodenext", // we make no assumptions about a bundler
 		"noUncheckedSideEffectImports": true, // stricter
 		"resolveJsonModule": true,
 		"resolvePackageJsonExports": true, // stricter
@@ -45,7 +45,6 @@
 		/*** Emit ***/
 		"declaration": true, // beneficial
 		"declarationMap": true, // beneficial
-		"downlevelIteration": true, // cleanest
 		"importHelpers": true, // most size efficient
 		"newLine": "lf",
 		"noEmitHelpers": true, // TODO unclear
@@ -61,9 +60,7 @@
 
 
 		/*** Interop Constraints ***/
-		"allowSyntheticDefaultImports": false, // backwards compatibility = no
 		"erasableSyntaxOnly": true, // enable type stripping = beneficial
-		"esModuleInterop": false, // backwards compatibility = no
 		"forceConsistentCasingInFileNames": true, // strict
 		"isolatedDeclarations": true, // best for tools
 		"verbatimModuleSyntax": true, // goes with isolatedDeclarations
@@ -77,10 +74,10 @@
 		"experimentalDecorators": false, // experimental, disputed
 		"lib": [
 			// strict isomorphic
-			"ES2024" // see target
+			"ES2025" // see target
 		],
 
-		"target": "ES2024", // as og 2026/03 widely supported node LTS + FF ESR
+		"target": "ES2025", // as og 2026/03 widely supported node LTS + FF ESR
 
 
 		/*** Compiler Diagnostics ***/

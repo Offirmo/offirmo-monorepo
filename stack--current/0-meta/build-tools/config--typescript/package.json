@@ -5,7 +5,8 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/index.ts",
+		"./module/src/current/isomorphic/tsconfig.json": "./module/src/current/isomorphic/tsconfig.json"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {

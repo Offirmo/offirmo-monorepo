@@ -51,7 +51,7 @@ https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/
 ### 2024/06 5.5
 https://devblogs.microsoft.com/typescript/announcing-typescript-5-5/
 
-🆕 `"isolatedDeclarations": false` Unfortunately this causes much headach for no benefit (for me) TODO activate it manually on PUBLIC modules
+🆕 `"isolatedDeclarations": false` Unfortunately this causes much headache for no benefit (for me) TODO activate it manually on PUBLIC modules
 
 TODO ${configDir} ?
 TODO deprecations https://devblogs.microsoft.com/typescript/announcing-typescript-5-5/#disabling-features-deprecated-in-typescript-5.0
