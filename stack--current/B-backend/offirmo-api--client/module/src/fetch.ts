@@ -1,4 +1,3 @@
-import fetch_ponyfill from 'fetch-ponyfill'
 import { XXError, createError } from '@offirmo/error-utils'
 import { getRootSEC, SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 import { Immutable, enforce_immutability } from '@monorepo-private/state-utils'
@@ -12,10 +11,8 @@ import {
 
 /////////////////////////////////////////////////
 
-const { fetch, Response: ResponseV, Headers: HeadersV } = fetch_ponyfill()
-export { HeadersV }
-export type FetchHeaders = typeof HeadersV
-type FetchResponse = typeof ResponseV
+export type FetchHeaders = typeof Headers
+type FetchResponse = typeof Response
 
 /////////////////////////////////////////////////
 

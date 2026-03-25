@@ -9,6 +9,7 @@
 [ ] https://stackingthebricks.com/bootstrapper-tech-stack/
 API → openapi → openapi trpc / hono ??
 auth -- ? https://www.propelauth.com/
+avatars https://www.facehash.dev/
 CI/CD -- ? https://mergify.com/
 cloud -- Cloudflare
 corepack https://github.com/nodejs/corepack?tab=readme-ov-file
@@ -18,7 +19,6 @@ cron https://croner.56k.guru/
 designed for Cloudflare/Vercel -- https://upstash.com/
 docker -- macos https://github.com/dockur/macos
 documentation site https://www.mintlify.com/
-presentation https://revealjs.com
 durable workflows https://www.inngest.com/uses/durable-workflows
 ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
 evaluation -- npm https://github.com/antfu/node-modules-inspector
@@ -66,6 +66,7 @@ pkg manager -- ✅ yarn v4
 pkg manager -- ✖ npm
 polish https://number-flow.barvian.me/
 PostgreS queues https://news.ycombinator.com/item?id=37636841
+presentation https://revealjs.com
 search -- postgres https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
 solutions -- containers -- Apple https://github.com/apple/container/blob/main/docs/tutorial.md

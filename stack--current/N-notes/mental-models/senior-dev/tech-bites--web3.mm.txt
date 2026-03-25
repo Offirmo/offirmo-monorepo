@@ -461,6 +461,7 @@ narratives = to bring interest into crypto
 near https://www.near.org/
 NEAR intents = a new type of transaction paradigm where "intents" — user goals or desired outcomes — can be executed by agents on behalf of users, abstracting away blockchain complexity and enabling powerful cross-chain and AI-native applications https://github.com/near/intents https://messari.io/copilot/share/understanding-near-intents-03a2c85b-3e29-47c3-8fb8-a1de5da81b3c
 network effect = when a product or service becomes more valuable to users as more people use it. In industries where network effects are strong, market leaders often benefit disproportionately, and the “winner takes most” or even “winner takes all” scenarios are common.
+networks -- network REV (Real Economic Value) = a blockchain metric measuring total user demand for transactions, calculated as the sum of in-protocol transaction fees and out-of-protocol tips (often MEV). It serves as a "top line" revenue metric for chains like Ethereum, representing the total value paid for blockspace execution https://blockworks.com/news/valuing-blockchains-rev-debate
 networks -- Avalanche C-Chain
 networks -- Base
 networks -- Bitcoin Mainnet

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    /* https://github.com/tsconfig/bases?tab=readme-ov-file#strictest-tsconfigjson */
+    "@tsconfig/strictest/tsconfig.json",
+    "../isomorphic/node/tsconfig.json"
+  ],
+	"compilerOptions": {
+		"preserveSymlinks": true, // reflects node behavious
+	}
+}

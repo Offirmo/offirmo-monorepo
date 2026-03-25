@@ -1,13 +1,26 @@
 +++ 2023 https://9elements.com/blog/ai-glossary/
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
+12-Factor Agents -- 01: Natural Language to Tool Calls
+12-Factor Agents -- 02: Own your prompts
+12-Factor Agents -- 03: Own your context window
+12-Factor Agents -- 04: Tools are just structured outputs
+12-Factor Agents -- 05: Unify execution state and business state
+12-Factor Agents -- 06: Launch/Pause/Resume with simple APIs
+12-Factor Agents -- 07: Contact humans with tool calls
+12-Factor Agents -- 08: Own your control flow
+12-Factor Agents -- 09: Compact Errors into Context Window
+12-Factor Agents -- 10: Small, Focused Agents
+12-Factor Agents -- 11: Trigger from anywhere, meet users where they are
+12-Factor Agents -- 12: Make your agent a stateless reducer
+12-Factor Agents = principles for building reliable LLM applications https://github.com/humanlayer/12-factor-agents
 2003 "Manna" prediction https://marshallbrain.com/manna1
 2019-02-14 ChatGPT 2 https://openai.com/index/better-language-models/
 2022 -> 2030 self driving car bet https://blog.codinghorror.com/the-2030-self-driving-car-bet/
 2022-11-30 ChatGPT lauched https://x.com/sama/status/1599668808285028353 https://openai.com/index/chatgpt/
 2023 -- AI 50 && https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 2023-01 OpenAI / Microsoft partnership https://arstechnica.com/information-technology/2023/01/openai-and-microsoft-reaffirm-shared-quest-for-powerful-ai-with-new-investment/
-2023-02-08 Google scramable to catch on ChatGPT with "Bard" https://arstechnica.com/information-technology/2023/02/in-paris-demo-google-scrambles-to-counter-chatgpt-but-ends-up-embarrassing-itself/
+2023-02-08 Google scramble to catch on ChatGPT with "Bard" https://arstechnica.com/information-technology/2023/02/in-paris-demo-google-scrambles-to-counter-chatgpt-but-ends-up-embarrassing-itself/
 2023-03 AutoGPT = works autonomously by breaking the main goal into smaller sub-tasks and using tools like web browsing and file management to complete them https://en.wikipedia.org/wiki/AutoGPT
 2023-03-14 GPT-4
 2023-10 Claude 2
@@ -53,6 +66,7 @@
 2026-02 OpenClaw https://garymarcus.substack.com/p/openclaw-aka-moltbot-is-everywhere https://steipete.me/posts/2026/openclaw
 2026-02-12 "An AI Agent Published a Hit Piece on Me" https://theshamblog.com/an-ai-agent-published-a-hit-piece-on-me/
 2026-02-28 Anthropic named supply-chain risk over mass domestic surveillance and fully autonomous weapons https://truthsocial.com/@realDonaldTrump/posts/116144552969293195 https://x.com/SecWar/status/2027507717469049070 https://www.anthropic.com/news/statement-comments-secretary-war
+2026-03-24 "Issue tracking is dead" https://linear.app/next
 ? https://agentation.dev/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
@@ -207,7 +221,10 @@ coding -- "The Eternal Promise: A History of Attempts to Eliminate Programmers" 
 coding -- AI-first software delivery = https://www.linkedin.com/pulse/what-ai-first-software-delivery-thoughtworks-4krff/
 coding -- background agents -- Remove the human from the invocation loop = scheduled, event driven, fleets, swarms
 coding -- background agents https://background-agents.com/
+coding -- challenges -- [comprehension debt]
 coding -- challenges -- bottlenecks: accountability and reviews https://lucumr.pocoo.org/2026/2/13/the-final-bottleneck/
+coding -- challenges -- code review bottleneck = no longer human code reviews? https://www.latent.space/p/reviews-dead
+coding -- challenges -- cognitive debt = debt compounded from going fast in the brains of the developers, affecting their lived experiences and abilities to “go fast” or to make changes "by weeks 7 or 8, one team hit a wall. They could no longer make even simple changes without breaking something unexpected. When I met with them, the team initially blamed technical debt: messy code, poor architecture, hurried implementations. But as we dug deeper, the real problem emerged: no one on the team could explain why certain design decisions had been made or how different parts of the system were supposed to work together. The code might have been messy, but the bigger issue was that the theory of the system, their shared understanding, had fragmented or disappeared entirely. They had accumulated cognitive debt faster than technical debt, and it paralyzed them." https://simonwillison.net/2026/Feb/15/cognitive-debt/
 coding -- Claude Code "December moment" (in 2025) https://www.anthropic.com/claude-code  https://kirshatrov.com/posts/claude-code-internals https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built
 coding -- code size explosion -- no longer humanly maintainable
 coding -- code size explosion = Velocity without comprehensibility is just entropy with good PR https://x.com/GenAI_is_real/status/2029995299972993458
@@ -237,13 +254,19 @@ computer-use = enabling agents to operate computers
 constitutional AI = AI training themselves from a set of human-given rules, self-critique and revision https://arxiv.org/abs/2212.08073
 constitutional classifiers = method that defends AI models against universal jailbreaks https://www.anthropic.com/research/constitutional-classifiers
 context
-context -- collapse
+context -- challenges -- collapse/rot
 context -- compaction -- advanced technique https://www.losslesscontext.ai/
 context -- compaction -- handoff = take existing context and move it into a new thread. Instead of summarizing a thread, you're extracting from it what matters for your next task https://ampcode.com/news/handoff
 context -- compaction = reliably drop irrelevant context periodically. (naive solution, unsolved https://randomlabs.ai/blog/slate)
+context -- engineering = building dynamic systems to provide the right information and tools in the right format such that the LLM can plausibly accomplish the task https://blog.langchain.com/the-rise-of-context-engineering/
+context -- engineering = the delicate art and science of filling the context window with just the right information for the next step https://x.com/karpathy/status/1937902205765607626 https://docs.google.com/presentation/d/1Z-TFQpSpqtRqWcY-rBpf7D3vmI0rnMhbhbfv01duUrk/ https://rlancemartin.github.io/2025/06/23/context_engineering/
 context -- long context trumps everything? https://arxiv.org/pdf/2406.13121
+context -- memory -- long term = If a user has expressed preferences in a previous conversation, being able to fetch that information.
+context -- memory -- short term = If a conversation is going on for a while, creating a summary of the conversation and using that in the future.
+context -- prompt = Instructions for how an agent should behave are clearly enumerated in the prompt.
+context -- retrieval = fetching information dynamically and inserting it into the prompt before calling the LLM.
+context -- Tool use = Making sure that if an agent needs access to external information, it has tools that can access it. When tools return information, they are formatted in a way that is maximally digestable for LLMs
 context -- window -- dumb zone / right edge = attention degrades when the window fills up https://randomlabs.ai/blog/slate
-context engineering = the delicate art and science of filling the context window with just the right information for the next step https://x.com/karpathy/status/1937902205765607626 https://docs.google.com/presentation/d/1Z-TFQpSpqtRqWcY-rBpf7D3vmI0rnMhbhbfv01duUrk/ https://rlancemartin.github.io/2025/06/23/context_engineering/
 Contextual Language Models (CLMs) Contextual.ai
 control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
@@ -415,22 +438,24 @@ processing -- TPU = Tensor Processing Units
 product overhang -- ex. Claude Code "Claude exploring the filesystem was pure product overhang. The model could already do this, but there wasn’t a product built around this capability!”
 product overhang = a model is able to do a specific thing, but the product that the AI runs in isn’t built in a way that captures this capability https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built
 professional services work = the target of most LLMs "It excels at creating long-horizon deliverables such as slide decks, financial models, and legal analysis..."
-prompt -- <context name="directoryStructure"> <context name="gitStatus"> https://kirshatrov.com/posts/claude-code-internals
-prompt -- <env> https://kirshatrov.com/posts/claude-code-internals
-prompt -- <filepaths>
-prompt -- <policy_spec>
 prompt -- best practices https://developers.cloudflare.com/workers/get-started/prompting/#additional-resources
 prompt -- design -- anthropic https://docs.anthropic.com/claude/docs/introduction-to-prompt-design
 prompt -- design -- google https://ai.google.dev/gemini-api/docs/prompting-strategies?hl=en
 prompt -- dev ex. https://developers.cloudflare.com/workers/get-started/prompting/#build-workers-using-a-prompt
 prompt -- dev tools https://developers.cloudflare.com/workers/get-started/prompting/#additional-uses
+prompt -- engineering -- vs. context engineering https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+prompt -- engineering = methods for writing and organizing LLM instructions for optimal outcomes https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview
 prompt -- generation https://www.anthropic.com/news/evaluate-prompts
 prompt -- IMPORTANT:
 prompt -- injection = attack where a malicious third party hides a secret message somewhere where AI may see it while using the computer, potentially tricking it into taking actions the user didn’t intend https://www.anthropic.com/research/visible-extended-thinking
 prompt -- library = per role https://www.threads.com/@prodmgmt.world/post/DK4rQzpMapx
 prompt -- optimization https://app.hamming.ai/prompt-optimizer
 prompt -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
-prompting -- xml tags https://glthr.com/XML-fundamental-to-Claude
+prompt -- xml tags -- <context name="directoryStructure"> <context name="gitStatus"> https://kirshatrov.com/posts/claude-code-internals
+prompt -- xml tags -- <env> https://kirshatrov.com/posts/claude-code-internals
+prompt -- xml tags -- <filepaths>
+prompt -- xml tags -- <policy_spec>
+prompt -- xml tags https://glthr.com/XML-fundamental-to-Claude
 queries -- dangerous user queries = related to the production of chemical, biological, radiological, or nuclear weapons (CBRN) https://www.anthropic.com/research/next-generation-constitutional-classifiers
 queries -- disallowed content = Violent Illicit behavior, Nonviolent illicit behavior, harassment, extremism, hate, self-harm (standard), violence, sexual, sexual/minors https://deploymentsafety.openai.com/gpt-5-4-thinking/disallowed-content-evaluations-with-challenging-prompts
 queries -- restricted topics = ex. Chemical, Biological, Radiological, and Nuclear (CBRN) weapons

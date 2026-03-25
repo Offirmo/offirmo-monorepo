@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import strip_terminal_escape_codes from 'strip-ansi'
+import { stripVTControlCharacters } from 'node:util'
 
 import rich_text_to_terminal from '@monorepo-private/rich-text-format--to-terminal'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
@@ -26,7 +26,7 @@ describe(`🔠  ${LIB} - adventure`, function() {
 		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_01)
 		//console.log(prettifyꓽjson($doc))
 
-		const str = strip_terminal_escape_codes(rich_text_to_terminal($doc))
+		const str = stripVTControlCharacters(rich_text_to_terminal($doc))
 		//console.log(str)
 		expect(str).to.be.a('string')
 		expect(str).to.include('You were attacked and nearly killed')
@@ -40,7 +40,7 @@ describe(`🔠  ${LIB} - adventure`, function() {
 		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_02)
 		//console.log(prettifyꓽjson($doc))
 
-		const str = strip_terminal_escape_codes(rich_text_to_terminal($doc))
+		const str = stripVTControlCharacters(rich_text_to_terminal($doc))
 		//console.log(str)
 		expect(str).to.be.a('string')
 		expect(str).to.include('A dying man on the street left you everything he had.')
@@ -52,7 +52,7 @@ describe(`🔠  ${LIB} - adventure`, function() {
 		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_03)
 		//console.log(prettifyꓽjson($doc))
 
-		const str = strip_terminal_escape_codes(rich_text_to_terminal($doc))
+		const str = stripVTControlCharacters(rich_text_to_terminal($doc))
 		//console.log(str)
 		expect(str).to.be.a('string')
 		expect(str).to.include('You come across an old man with eccentric apparel')
@@ -63,7 +63,7 @@ describe(`🔠  ${LIB} - adventure`, function() {
 		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_04)
 		//console.log(prettifyꓽjson($doc))
 
-		const str = strip_terminal_escape_codes(rich_text_to_terminal($doc))
+		const str = stripVTControlCharacters(rich_text_to_terminal($doc))
 		//console.log(str)
 		expect(str).to.be.a('string')
 		expect(str).to.include('You won’t take back the princess!')

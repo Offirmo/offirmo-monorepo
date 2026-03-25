@@ -1,6 +1,5 @@
 import { expect } from 'chai'
-import strip_terminal_escape_codes from 'strip-ansi'
-
+import { stripVTControlCharacters } from 'node:util'
 import {
 	displayError,
 	error_to_string,
@@ -17,7 +16,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 			const err = new Error('foo')
 			;(err as any).statusCode = 555
 
-			const s = strip_terminal_escape_codes(error_to_string(err))
+			const s = stripVTControlCharacters(error_to_string(err))
 			//console.error(error_to_string(err), '\n' + s)
 			expect(s).to.include('❗ Error ❗') // name
 			expect(s).to.include('message: "foo"')
@@ -28,7 +27,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 			const err = new TypeError('foo')
 			;(err as any).statusCode = 555
 
-			const s = strip_terminal_escape_codes(error_to_string(err))
+			const s = stripVTControlCharacters(error_to_string(err))
 			expect(s).to.include('❗ TypeError ❗') // name
 			expect(s).to.include('message: "foo"')
 			expect(s).to.include('statusCode: "555"')
@@ -39,7 +38,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 				framesToPop: 3, // REM createError() will +1 that
 			})
 
-			const s = strip_terminal_escape_codes(error_to_string(err))
+			const s = stripVTControlCharacters(error_to_string(err))
 			//console.error(error_to_string(err), '\n' + s)
 			expect(s).not.to.include('framesToPop: ') // should not be displayed as a prop
 			expect(s).to.include('↳ ⟨frames popped: 4⟩') // displayed as part of the stack
@@ -50,7 +49,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 				foo: 42,
 			})
 
-			const s = strip_terminal_escape_codes(error_to_string(err))
+			const s = stripVTControlCharacters(error_to_string(err))
 			//console.error(error_to_string(err), '\n' + s)
 			expect(s).to.include('details:')
 			expect(s).to.include('  foo: "42"')
@@ -69,7 +68,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 			// @ts-expect-error
 			const err = new CustomException('foo')
 
-			const s = strip_terminal_escape_codes(error_to_string(err))
+			const s = stripVTControlCharacters(error_to_string(err))
 			//console.error(error_to_string(err), '\n' + s)
 			expect(s).to.include('┏━❗ ⟨Error⟩ CustomException ❗')
 		})
@@ -88,7 +87,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 			// @ts-expect-error
 			const err = new CustomException('foo')
 
-			const s = strip_terminal_escape_codes(error_to_string(err))
+			const s = stripVTControlCharacters(error_to_string(err))
 			//console.error(error_to_string(err), '\n' + s)
 			expect(s).to.include('┏━❗ ⟨Error⟩ ⟨unnamed??⟩ ❗')
 		})
@@ -103,7 +102,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 				;(err2 as any).statusCode = 555
 				err2.cause = err1
 
-				const s = strip_terminal_escape_codes(error_to_string(err2))
+				const s = stripVTControlCharacters(error_to_string(err2))
 				//console.error(error_to_string(err2), '\n' + s)
 				expect(s).to.include('cause:')
 				expect(s).to.include('┃ ┏━❗ RangeError ❗')
@@ -125,7 +124,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 					cause: err1,
 				})
 
-				const s = strip_terminal_escape_codes(error_to_string(err2))
+				const s = stripVTControlCharacters(error_to_string(err2))
 				//console.error(error_to_string(err2), '\n' + s)
 				expect(s).to.include('┃ cause:')
 				expect(s).to.include('┃ ┏━❗ RangeError ❗')
@@ -140,7 +139,7 @@ describe(`@monorepo-private/print-error-to-terminal`, () => {
 				;(err as any).statusCode = 555
 				err.cause = err
 
-				const s = strip_terminal_escape_codes(error_to_string(err))
+				const s = stripVTControlCharacters(error_to_string(err))
 				//console.error(error_to_string(err), '\n' + s)
 				expect(s).to.include('cause: ⟨CIRCULAR REFERENCE!!⟩')
 			})

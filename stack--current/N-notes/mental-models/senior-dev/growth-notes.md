@@ -83,7 +83,7 @@ some code pathes may use “is tainted” to avoid double negations. It is the e
 
 We set a “tainted” cross-domain cookie to propagate a negative !organic detection to the whole browser profile and automatically “taint” any new account created/used on this profile.
 
-The assumption is if it’s a dev/CWG’s browser, then all infinex activity on the same browser is not organic (user is familiar with the product and don’t have the same activity pattern)
+The assumption is if it’s a dev/CWG’s browser, then all product activity on the same browser profile is not organic (user is familiar with the product and don’t have the same activity pattern)
 
 ## Actions / Activities
 

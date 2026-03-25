@@ -352,6 +352,7 @@ layout = determining the size and position of boxes https://www.yogalayout.dev/d
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
+memory leaks -- 2026 = useEffect without a cleanup return, .subscribe() without .unsubscribe(), and addEventListener without removeEventListener. Together these account for 42.2% of all findings https://stackinsight.dev/blog/memory-leak-empirical-study/
 MIME "Multipurpose Internet Mail Extensions"
 modals -- avoid https://modalzmodalzmodalz.com/
 monitoring -- labs = made by a lab, ex. camera

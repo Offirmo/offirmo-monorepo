@@ -872,6 +872,7 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 	if (result.languages.has('ts')) {
 		raw_deps.push({ label: 'tslib', type: 'peer' })
 		raw_deps.push({ label: 'typescript', type: 'dev' })
+		raw_deps.push({ label: '@monorepo-private/config--typescript', type: 'dev' })
 	}
 
 	// encourage safe practices

@@ -13,6 +13,7 @@ bateau https://en.wikipedia.org/wiki/File:Uluburun1.jpg
 bateau https://en.wikipedia.org/wiki/List_of_surviving_ancient_ships
 Bronze Age -- Europe https://en.wikipedia.org/wiki/Bronze_Age_Europe
 Bronze Age -- late & collapse = https://en.wikipedia.org/wiki/Late_Bronze_Age_collapse
+capital cities > regional hubs
 capitalism
 capitalism -- issues -- inability to collectively improve, ex. global warming
 capitalism -- late stage
