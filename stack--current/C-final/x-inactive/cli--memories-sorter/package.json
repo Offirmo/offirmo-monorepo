@@ -58,7 +58,7 @@
 		"@types/luxon": "^3",
 		"@types/node": "^24",
 		"npm-run-all": "^4",
-		"typescript": "^5",
+		"typescript": "^6",
 		"utimes": "^5"
 	}
 }

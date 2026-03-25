@@ -139,10 +139,12 @@ ${pure_module_details.description || ''}
 	// tsconfig.json
 	if (pure_module_details.languages.has('ts')) {
 		_schedule_root_file_creation('tsconfig.json', {
+			"$schema": "https://json.schemastore.org/tsconfig",
+
 			//"extends": path.relative(dest_dir‿abspath, ts__config__path),
 			"extends": [
 				// TODO browser / node
-				'@monorepo-private/config--typescript/module/src/default/isomorphic/tsconfig.json'
+				'@monorepo-private/config--typescript/module/src/current/isomorphic/tsconfig.json'
 			],
 			"compilerOptions": {
 				...(pure_module_details.engines['browser'] && { lib: [ "ES2024", "DOM" ] }),

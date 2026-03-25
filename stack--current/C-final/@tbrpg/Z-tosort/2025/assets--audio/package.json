@@ -29,6 +29,6 @@
 		"@types/howler": "^2",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^5"
+		"typescript": "^6"
 	}
 }
