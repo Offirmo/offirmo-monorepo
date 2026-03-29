@@ -101,6 +101,9 @@ const PLUGIN: Plugin = {
 							// logs
 							`*.log`,
 							`logs/`,
+
+							// built
+							'dist/',
 						],
 					},
 				}

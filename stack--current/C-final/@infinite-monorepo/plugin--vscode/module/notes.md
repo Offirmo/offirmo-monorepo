@@ -4,3 +4,7 @@ A file called .vscode/settings.json will be created in your workspace with the f
 {
   "deno.enable": true
 }
+
+gitignore
+.vscode/*
+!.vscode/extensions.json
