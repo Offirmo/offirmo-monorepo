@@ -42,6 +42,7 @@ character -- statistics https://en.wikipedia.org/wiki/Statistic_(role-playing_ga
 character class
 character creator
 Civilization 1 https://github.com/rajko-horvat/OpenCiv1
+Civilization 3 https://openciv3.org/
 clicker
 cloud multiplayer
 cloud save

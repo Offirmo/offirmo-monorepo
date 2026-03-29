@@ -53,6 +53,7 @@ moonshots = "sheer audacity of the challenge inspired motivation and passion in 
 north star
 nudges = PRs nudges for speed https://dl.acm.org/doi/abs/10.1145/3544791
 OKR
+older employees -- pro/cons https://longevity.stanford.edu/why-more-companies-are-recognizing-the-benefits-of-keeping-older-employees/
 planning -- Goals, Ideas, Step-Projects, and Tasks (GIST) https://www.productplan.com/glossary/gist-planning/
 planning -- Hofstadter's Law = It always takes longer than you expect, even when you take into account Hofstadter's Law https://en.wikipedia.org/wiki/Hofstadter's_law
 platform engineering

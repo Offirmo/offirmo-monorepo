@@ -2,6 +2,17 @@
 "mono repo management" https://bit.dev/
 
 
+Vite+ detects the package manager from the workspace root in this order:
+* packageManager in package.json
+* pnpm-workspace.yaml
+* pnpm-lock.yaml
+* yarn.lock or .yarnrc.yml
+* package-lock.json
+* .pnpmfile.cjs or pnpmfile.cjs
+* yarn.config.cjs
+
+
+
 use this pkg? https://github.com/privatenumber/tasuku
 
 TODO check for https://e18e.dev/docs/replacements/

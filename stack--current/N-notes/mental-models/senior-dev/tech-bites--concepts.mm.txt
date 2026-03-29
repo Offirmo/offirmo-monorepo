@@ -142,6 +142,7 @@ bugs -- 3 questions https://mental-reverb.com/blog.php?id=42
 bugs -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
 bugs -- significant https://en.wikipedia.org/wiki/List_of_software_bugs
 build & delivery part of a product
+build vs buy
 building blocks that just work = create building blocks that handle the undifferentiated heavy lifting, which freed developers to focus on higher-level work https://aws.amazon.com/blogs/aws/twenty-years-of-amazon-s3-and-building-whats-next/
 C++ 26 https://thenewstack.io/coming-to-iso-c-26-standard-an-ai-acceleration-edge/
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
@@ -676,6 +677,7 @@ learning -- https://roadmap.sh/
 legacy code = code without good testing coverage that we don’t recall writing https://www.booktopia.com.au/working-effectively-with-legacy-code-michael-feathers/book/9780131177055.html
 let's deploy to production https://www.youtube.com/watch?v=5p8wTOr8AbU
 LIFO
+Line-of-business (LOB) software = critical, specialized applications used to manage essential, day-to-day operations and core processes of an organization. Often customized or industry-specific, these tools—such as CRM, ERP, or accounting systems—streamline workflows and increase productivity, differentiating them from general-purpose office software https://en.wikipedia.org/wiki/Line_of_business
 linked list
 linting
 linux
@@ -715,7 +717,6 @@ memory -- safety -- "about 40% of all security problems in curl can be blamed on
 memory -- safety -- borrow-checking system = Rust https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
 memory -- safety -- profiles https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
 memory -- stack
-memory -- stack
 memory -- stack -- && overflow
 message passing https://en.wikipedia.org/wiki/Message_passing
 MFA -- 2FA
@@ -754,6 +755,7 @@ naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
 network -- autonomous system (AS) = very large network or group of networks with a single routing policy https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/
 no silver bullet in engineering = we cannot expect ever to see two-fold gains every two years https://en.wikipedia.org/wiki/No_Silver_Bullet
 node.js -- principles https://www.platformatichq.com/node-principles
+Not Invented Here (NIH)
 not invented here https://en.wikipedia.org/wiki/Not_invented_here
 npm
 null -- The Billion Dollar Mistake = opinion that null is bad (I disagree) https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Null%2bReferences_%2bThe%2bBillion%2bDollar%2bMistake.html
@@ -957,6 +959,7 @@ semver = https://docs.npmjs.com/about-semantic-versioning
 senior -- "problem solvers who happen to code" "job market is flooded with 8-year JavaScript veterans who can't debug a slow API" https://www.linkedin.com/posts/jordanambra_technicalleadership-hiring-engineeringmanagement-activity-7337913255601848320-t6m4/
 SHA "Secure Hash Algorithm"
 shaving the yak
+shell -- aliases -- collisions = use commas https://rhodesmill.org/brandon/2009/commands-with-comma/
 show me the code!
 shrinkwrap
 side effects = avoid them!

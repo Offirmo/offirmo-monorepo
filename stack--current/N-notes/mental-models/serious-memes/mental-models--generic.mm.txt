@@ -590,6 +590,7 @@ high-profile = ~widely known, ex. high-profile media
 high/low functioning human
 higher mountain after the previous one, have to go down before going higher
 historic recurrence https://en.wikipedia.org/wiki/Historic_recurrence
+HIV epidemic https://www.datawrapper.de/blog/hiv-aids-epidemic-history
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
 Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
 holier-than-thou
@@ -667,6 +668,7 @@ it's impossible to agree on what's allowed -- no vehicles in the park https://no
 it's impossible to agree on what's allowed https://danluu.com/impossible-agree/
 it's just 4x things!
 it's not about lowering the bar, it's about helping more people reach it.
+J-curve = lower before increase https://en.wikipedia.org/wiki/J_curve
 Jack Welch A/B/C players -- A = filled with passion, committed to "making things happen", open to ideas from anywhere, blessed with much "runway" ahead of them, charisma, able to energize themselves and others, can make business productive and enjoyable at the same time, exhibit four E of leadership
 Jack Welch A/B/C players -- B = not visionary or the most driven, but "vital" because they make up the majority
 Jack Welch A/B/C players -- C = nonproducers, likely to "enervate" rather than "energize". Procrastination, failure to deliver on promises

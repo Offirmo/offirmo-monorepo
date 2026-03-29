@@ -91,6 +91,7 @@ A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTael
 abliteration = family of techniques that identify and surgically remove the internal representations responsible for content refusal, without retraining or fine-tuning. The result: a model that responds to all prompts without artificial gatekeeping, while preserving its core language capabilities. https://github.com/elder-plinius/OBLITERATUS
 agent verification = activity to gain assurances that purposeful artificial constructs act in accordance with their specifications https://en.wikipedia.org/wiki/Agent_verification
 agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
+agents -- agent loop = prompt => {loop = evaluate <-> tool call(s)} => final answer https://platform.claude.com/docs/en/agent-sdk/agent-loop
 agents -- building -- It doesn’t matter how cool your capabilities are
 agents -- building -- Set up observability and evaluation from day one
 agents -- building -- Should you build an MCP server instead?
