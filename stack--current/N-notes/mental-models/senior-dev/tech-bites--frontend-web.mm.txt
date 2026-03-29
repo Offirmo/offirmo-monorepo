@@ -67,7 +67,7 @@ architecture -- MVC "Model-View-Controller" = DEPRECATED (flux, react) Model = d
 architecture -- MVP "Model-View-Presenter" = MVC
 architecture -- MVVM
 architecture -- SPC "Store-Presenter-Component" = Presenters operate on the stores, Components are unaware of S&P, they're wired together by the factories and react to store changes
-architecture -- SSR, ISR, CSR, PPR (see 'rendering')
+architecture -- SSR, ISR, CSR, PPR = see [rendering]
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 awards -- awwwards https://www.awwwards.com/websites/developer/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
@@ -78,6 +78,7 @@ blocking -- inline = still blocking but not as bad
 blocking -- js -- scripts are parse blocking
 blocking -- not = async, defer, and type=module
 blocking render https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/
+bookmarklets https://css-tricks.com/a-complete-guide-to-bookmarklets/
 bot detection
 bounce tracking https://brave.com/glossary/bounce-tracking/
 browser compatibility data -- watch https://bcd-watch.igalia.com/
@@ -350,6 +351,7 @@ layout -- &composer https://github.com/namecheap/ilc
 layout -- &trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
 layout = determining the size and position of boxes https://www.yogalayout.dev/docs/about-yoga
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
+loading code from a random person's GitHub Pages https://blog.thereallo.dev/blog/decompiling-the-white-house-app
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
 memory leaks -- 2026 = useEffect without a cleanup return, .subscribe() without .unsubscribe(), and addEventListener without removeEventListener. Together these account for 42.2% of all findings https://stackinsight.dev/blog/memory-leak-empirical-study/

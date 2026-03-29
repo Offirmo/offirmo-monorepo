@@ -1,3 +1,4 @@
+
 +++ If Architects Had To Work Like Programmers = https://web.archive.org/web/20251214162602/https://paws.kettering.edu/~jhuggins/humor/design.html
 +++ important history https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
 1969 ARPANET, forerunner of the Internet, starts operating
@@ -33,6 +34,7 @@
 [ ] https://matklad.github.io/2023/08/06/fantastic-learning-resources.html
 [ ] https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 [ ] https://tratt.net/laurie/blog/
+[ ] https://trustworthy.technology/
 [ ] https://www.atlassian.com/team-playbook/plays/elevator-pitch
 [ ] https://www.developing.dev/p/5-books-every-software-engineer-should
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
@@ -96,6 +98,7 @@ API -- result = Prefer declarative interfaces: An API that describes a result, r
 API -- should not force developers to do anything that could easily be done for them.
 API -- should present the mechanism, not the experience.
 API -- should provide helper functions to compose small features into common use-cases where appropriate.
+API -- tokens -- M2M "machine to machine"
 API -- tradeoffs = ex. safety / flexibility / extensibility / speed
 architectural decision (AD) = a justified design choice that addresses a functional or non-functional requirement that is architecturally significant
 architectural decision -- or rather "tactical bet"
@@ -161,6 +164,7 @@ case -- CamelCase
 case -- SHOUTY_CASE
 case -- snake_case
 CD (continuous delivery) -- [see dedicated file]
+certificates -- root
 change -- category -- C1 = removing a product
 change -- category -- C2 = Widespread change requiring high customer/ecosystem effort
 change -- category -- C3 = Localised change requiring high customer/ecosystem effort
@@ -178,6 +182,7 @@ changelog -- conventional https://github.com/conventional-changelog
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 CHOP "chat-oriented programming"
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+CI -- merge queue
 class
 CLI -- guidelines https://clig.dev/
 client/server -- multi-tier architecture
@@ -288,12 +293,15 @@ Cupertino effect = bad spell checking
 currying https://en.wikipedia.org/wiki/Currying
 data -- description = for discoverability
 data -- hydration
+data -- insert
 data -- lake
 data -- lineage tracking = who created it, transformed it, enriched it...
 data -- parse-dont-validate = avoiding validation functions and encoding invariants in the type level instead (can be heavy on the type system + not always doable) https://www.harudagondi.space/blog/parse-dont-validate-and-type-driven-design-in-rust/
 data -- privacy
 data -- re-extraction = of vx.y.z
+data -- upsert
 data -- versioning = of content + schema
+data = the most important. just data types = can compile, good data types = trivial code
 data format -- consumer vs producer
 data format -- consumer vs producer -- independent release/deploy
 data format -- do NOT conflate serialization w/ working representation w/ persisted w/ interchange! (cf. protobuf)
@@ -370,8 +378,10 @@ dev style -- TDD
 dev style -- TDD -- red → green → refactor
 development containers https://containers.dev/implementors/spec/
 DevEx
+DevOps
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
+DevSecOps
 digital hygiene = obvious if tech/dev https://x.com/karpathy/status/1902046003567718810
 DNS "Domain Name System"
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
@@ -472,6 +482,11 @@ framework -- motivations -- don't like the language ex. Java style on Javascript
 framework -- motivations -- underlying complexities = BUT may not be still there
 framework -- spectrum = spectrum of more features v. loss of architectural control https://reactrouter.com/start/modes
 frameworks = you have to build projects around them and not with them https://orm.drizzle.team/docs/overview#headless-orm
+free software -- Four Essential Freedoms of Software -- to distribute copies of your modified versions to others. By doing this you can give the whole community a chance to benefit from your changes.
+free software -- Four Essential Freedoms of Software -- to redistribute copies so you can help your neighbor.
+free software -- Four Essential Freedoms of Software -- to run the program as you wish, for any purpose.
+free software -- Four Essential Freedoms of Software -- to study how the program works, and change it so it does your computing as you wish. Access to the source code is a precondition for this.
+free software -- Four Essential Freedoms of Software https://en.wikipedia.org/wiki/The_Free_Software_Definition
 freedesktop.org
 FTU – First Time Use
 function
@@ -487,6 +502,7 @@ general dependency injection and inversion of control problem
 geohash = compact representations of latitude and longitude https://en.wikipedia.org/wiki/Geohash
 git
 git -- forges = github, gitlab, gitea, forgejo, bitbucket
+git -- gitops
 git -- worktrees https://git-scm.com/docs/git-worktree
 gitattributes
 gitignore https://git-scm.com/docs/gitignore#_pattern_format
@@ -514,6 +530,7 @@ handle
 hashbang (aka. shebang) https://github.com/tc39/proposal-hashbang
 helping -- XY problem = wrongly asking about your attempted solution rather than your actual problem https://xyproblem.info/
 historically bad ideas https://qconlondon.com/london-2009/qconlondon.com/london-2009/tracks/show_trackd04f.html?trackOID=232
+history -- Unix IV http://squoze.net/UNIX/v4/README
 Hofstadter's Law = It always takes longer than you expect, even when you take into account Hofstadter's Law https://en.wikipedia.org/wiki/Hofstadter's_law
 hoisting des vars de boucle for et switch
 homoiconicity https://en.wikipedia.org/wiki/Homoiconicity
@@ -684,12 +701,22 @@ math https://math4devs.com/
 mcp2cli https://github.com/knowsuchagency/mcp2cli
 MDN
 media types https://www.iana.org/assignments/media-types/media-types.xhtml
+memory -- arena > heap > chunk https://sourceware.org/glibc/wiki/MallocInternals
+memory -- fragmentation
+memory -- garbage collection
+memory -- garbage collection -- --max-old-space-size
 memory -- heap
+memory -- issues = ex. https://frn.sh/pmem/
+memory -- malloc = "One Heap to malloc them all, One Heap to free them, One Heap to coalesce, and in the memory bind them..." https://sourceware.org/glibc/wiki/MallocInternals
+memory -- mmap
+memory -- OOMKills = Out Of Memory crashes
+memory -- RAM
+memory -- safety -- "about 40% of all security problems in curl can be blamed on us using C instead of a memory-safe language. 50% of the high/critical severity ones" https://daniel.haxx.se/blog/2024/12/12/a-twenty-five-years-old-curl-bug/comment-page-1
+memory -- safety -- borrow-checking system = Rust https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
+memory -- safety -- profiles https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
 memory -- stack
-memory safety -- "about 40% of all security problems in curl can be blamed on us using C instead of a memory-safe language. 50% of the high/critical severity ones" https://daniel.haxx.se/blog/2024/12/12/a-twenty-five-years-old-curl-bug/comment-page-1
-memory safety -- borrow-checking system = Rust https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
-memory safety -- profiles https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
-merge queue
+memory -- stack
+memory -- stack -- && overflow
 message passing https://en.wikipedia.org/wiki/Message_passing
 MFA -- 2FA
 MFA -- double auth
@@ -734,6 +761,7 @@ nyan cat
 o11y observability https://o11y.eu/blog/what-is-o11y/
 object
 object model = memory, working representation ex. DOM, CCSOM...
+observability = is just another word for “understanding”
 OOP -- against https://paulgraham.com/noop.html
 OOP -- fake strengths -- abstraction -> any interface
 OOP -- fake strengths -- code re-use
@@ -812,6 +840,8 @@ postgres -- job queue https://github.com/timgit/pg-boss
 practices -- best vs. standard
 preprocessor macros
 principle of least surprise / principle of least astonishment https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+principles -- KISS
+principles -- SOLID
 privacy
 privacy -- collect and use someone's info respectfully
 privacy -- Data Retention and Deletion Policy
@@ -851,7 +881,6 @@ questions for a new technology -- 7 What’s a low risk way to get started?
 questions for a new technology -- 8 Have you gotten a mixed discipline group of senior folks together and thrashed out each of the above points? Where is that documented?
 questions for a new technology https://kellanem.com/notes/new-tech
 queue
-RAM
 RDF -- SPARQL = query language for querying RDF data
 reactive programming
 recursion
@@ -887,6 +916,7 @@ robustness https://en.wikipedia.org/wiki/Robustness_principle
 rollback
 rolling deploy
 RPC -- advocacy https://blog.cloudflare.com/javascript-native-rpc/
+RPC -- archi = contract (isomorphic) -> client (for consumers) + server (implement)
 RPC -- deadline https://protobuf.dev/programming-guides/api/
 RPC -- flawed = "RPC and its Offspring: Convenient, Yet Fundamentally Flawed" = can't hide the underlying distributed system  https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/RPC%2band%2bits%2bOffspring_%2bConvenient%2c%2bYet%2bFundamentally%2bFlawed.html https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/SteveVinoski_RPCAndItsOffspringConvenientYetFundamentallyFlawed.pdf
 RPC -- solution -- Google RPC https://grpc.io/
@@ -935,6 +965,7 @@ silly "make software silly again" https://www.linkedin.com/posts/addyosmani_soft
 simple average
 single executable application (SEA) -- node https://codesnip.sh/posts/building-standalone-nodejs-executables
 single executable application (SEA) https://joyeecheung.github.io/blog/2026/01/26/improving-single-executable-application-building-for-node-js/
+single responsibility principle -- challenge https://kiss-and-solid.com/blog/keep-it-simple
 single source of truth (SSoT) / single point of truth (SPOT) = https://en.wikipedia.org/wiki/Single_source_of_truth
 site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
 SLI "Service Level Indicator" = a measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
@@ -1048,6 +1079,10 @@ transpiler = translates code from one language to another in a human-readable fo
 tree
 tree -- walk
 tree shaking https://en.wikipedia.org/wiki/Tree_shaking
+trustworthy technology -- Freedom, including: The Right to Repair, Interoperability and Accessibility, Digital Sovereignty
+trustworthy technology -- Informed Consent
+trustworthy technology -- Privacy, and Data Sovereignty
+trustworthy technology = https://trustworthy.technology/
 TUIs "terminal user interfaces" = see [tech-bites--frontend-web.mm.txt]
 type -- signature (type annotation) = defines the inputs and outputs of a function, subroutine or method
 typecast

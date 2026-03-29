@@ -12,7 +12,6 @@ const LICENSE__path‿ar: MonorepoPathⳇRelative = '$WORKSPACE_ROOT/LICENSE'
 
 const LICENSE__manifest: StructuredFsⳇFileManifest = {
 	path‿ar: LICENSE__path‿ar,
-	format: 'text',
 	doc: [
 		'https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc',
 		'https://www.npmjs.com/package/nvmrc',

@@ -31,12 +31,6 @@
 5 mantras -- Prototype the path = The only way through is to do. Hard problems get a hell of a lot easier when we get our hands dirty, equip our curiosity, and start trying things out.
 5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often.
 5 mantras = by Christopher Davis (burnout)
-5 phases of brain's life -- 1 Childhood = from birth to age nine
-5 phases of brain's life -- 2 Adolescence = from nine to 32
-5 phases of brain's life -- 3 Adulthood = from 32 to 66
-5 phases of brain's life -- 4 Early ageing = from 66 to 83
-5 phases of brain's life -- 5 Late ageing = from 83 onwards
-5 phases of brain's life https://www.bbc.com/news/articles/cgl6klez226o
 80/20 rule "Pareto distribution" https://en.wikipedia.org/wiki/Pareto_distribution
 [ ] ++ https://savoir-sans-frontieres.com/
 [ ] +++ https://flinkliv.com/
@@ -53,6 +47,7 @@
 [ ] https://boz.com/
 [ ] https://cobeats.com/folder/ryfTgPr9H
 [ ] https://dontdie.bryanjohnson.com/
+[ ] https://effectiviology.com/
 [ ] https://en.wikipedia.org/wiki/Great_Recession
 [ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
 [ ] https://fs.blog/mental-models/
@@ -74,6 +69,7 @@ accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
 accepting oneself
 action -- deep dive & low-hanging fruits
+activism -- Boycott, Divestment, and Sanctions (BDS) is a nonviolent[2][6] Palestinian-led[7] movement promoting boycotts, divestments, and economic sanctions against Israel https://en.wikipedia.org/wiki/Boycott,_Divestment_and_Sanctions
 addictions -- casino -- "je vais me refaire"
 addictions -- casino -- the house always win
 Adventure is any inconvenience taken in the right spirit - Flower Hill Center
@@ -83,8 +79,6 @@ advices -- flaw -- Halo Effect
 advices -- flaw -- Survivorship Bias
 advocacy
 agency
-agency -- agency / talent quadrant https://x.com/shreyas/status/1276956836856393728
-agency -- high = finding a way to get what you want, without waiting for conditions to be perfect or otherwise blaming the circumstances. High Agency People either push through in the face of adverse conditions or manage to reverse the adverse conditions to achieve goals https://x.com/shreyas/status/1276956838840295425
 agile -- "what the client wanted"
 aging -- photoaging https://en.wikipedia.org/wiki/Photoaging
 alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
@@ -257,7 +251,6 @@ comparison -- is the thief of joy
 comparison -- the only comparison worth making is you vs. you 1y ago
 competition -- healthy = critical source of progress and innovation
 competition -- is for losers = Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
-competitive mindset = competition as the key driver of innovation and progress
 complex contagion = the phenomenon in social networks in which multiple sources of exposure to an innovation are required before an individual adopts the change of behavior https://en.wikipedia.org/wiki/Complex_contagion
 conditioning -- classical
 conditioning -- operant
@@ -310,6 +303,7 @@ cronyism = specific form of in-group favoritism = spoils system practice of part
 crucial conversations
 cruelty = intentional infliction of suffering or the inaction towards another's suffering when a clear remedy is readily available https://en.wikipedia.org/wiki/Cruelty
 crème solaire vs brossage de dents
+culture -- chopsticks https://www.nippon.com/en/japan-data/h01362/
 culture -- cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wikipedia.org/wiki/Power_(social_and_political)#Cultural_hegemony
 culture -- differences -- https://www.youtube.com/watch?v=vi8pyS076a8
 culture -- Hofstede’s Dimensions http://www.na-businesspress.com/ajm/bergieleb_web12_1_.pdf
@@ -429,6 +423,7 @@ effort paradox = Betty Crocker eggs https://uxdesign.cc/the-effort-paradox-in-ai
 ego
 ego -- vs. craftman's pride?
 Eisenhower's Urgent/Important = https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
+elements https://periodictableofelements.org/
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 email -- burner https://au.lifehacker.com/apple/49245/news/how-to-get-a-burner-email-address-with-iclouds-hide-my-email
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
@@ -439,6 +434,7 @@ emotions -- cool = despair, sadness, emptiness
 emotions -- dejection = sadness, disappointment
 emotions -- hot = anger, irritation, disgust
 employees exchange skills and time for money
+Energy distortion field = If you meet with them when you’re tired and defeated, you leave the room ready to run a marathon on a treadmill with max incline https://x.com/george__mack/status/1726164596019359840?lang=en
 English
 entrepreneurship -- billing -- free day https://blog.jpl-consulting.com/2011/05/the-free-day/
 entrepreneurship -- billing -- hourly rate vs fixed price
@@ -554,7 +550,6 @@ grapevine
 great works of literature = works that penetrate to the core of the human experience
 grinders
 grit
-growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
 guilt by association = ex. "15 years ago Brendan Eich donated to some cause that the author finds repugnant, hence you shouldn't use his browser today. I also oppose Eich's views, but I believe that he has the right for his political belief, and anyway it shouldn't have any bearing on his professional contributions." https://news.ycombinator.com/item?id=37060232
 hacker -- jargon http://catb.org/jargon/html/index.html
 hacking (tech)
@@ -790,7 +785,15 @@ Lev Landau classification of physicists https://books.google.com.au/books?id=nGc
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life -- "the journey" https://readalittlepoetry.com/2011/08/12/the-journey-by-mary-oliver/
 life -- 4 burners = Imagine your life as a stovetop. You’ve got 4 burners: 1. Family 2. Work 3. Health 4. Friends But in reality: To be successful…  You have to turn off one. To be *really* successful…  You must turn off two. https://x.com/thecurioustales/status/2023042152142700788
+life -- 40 raising 3 kids = +++ https://www.threads.com/@therealvivekiyer/post/DO0Qp7YgoQd?xmt=AQF0IlywfHNNKE-iWPR6W1cU80Flqd5hcZp73jH_kshGfQ&slof=1
+life -- 5 phases of brain's life -- 1 Childhood = from birth to age nine
+life -- 5 phases of brain's life -- 2 Adolescence = from nine to 32
+life -- 5 phases of brain's life -- 3 Adulthood = from 32 to 66
+life -- 5 phases of brain's life -- 4 Early ageing = from 66 to 83
+life -- 5 phases of brain's life -- 5 Late ageing = from 83 onwards
+life -- 5 phases of brain's life https://www.bbc.com/news/articles/cgl6klez226o
 life -- balance between living the moment and preparing the long-term = ex. of ppl dying at 50 before planned retirement / travelling (Also Gospel's parable)
+life -- care
 life -- diseases -- heart disfunction = New York Heart Association Functional Classification https://en.wikipedia.org/wiki/New_York_Heart_Association_Functional_Classification
 life -- fallacies -- "you are a tool. It sucks not being on top" = not true, "being of service to something or someone, which gives purpose"
 life -- stages -- 20+ boomerang https://en.wikipedia.org/wiki/Boomerang_Generation
@@ -825,6 +828,7 @@ loterie / casino
 love = wanting the best
 love and acceptance -- conditional/unconditional
 low culture https://en.wikipedia.org/wiki/Low_culture
+luxury items -- watches https://paulgraham.com/brandage.html
 légende blanche -- colonisation
 légende blanche -- Lost Cause of the Confederacy https://en.wikipedia.org/wiki/Lost_Cause_of_the_Confederacy
 légende dorée
@@ -869,9 +873,25 @@ micro-aggressions https://www.themicropedia.org/
 microaggressions
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
-mindset -- "What vs How" (see What vs how)
-mindset -- growth
-mindset -- mentality in front of adversity: victim, survivor, conqueror
+mindsets -- appearance of having the right mindset = pretend to have the mindset "it’s relatively easy to project the appearance of high agency without actually possessing it" https://nickwignall.com/how-to-identify-high-agency-people/
+mindsets -- competitive && = competition as the key driver of innovation and progress
+mindsets -- consultant && = "What vs How" (see What vs how)
+mindsets -- growth && = https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
+mindsets -- high agency && -- agency / talent quadrant https://x.com/shreyas/status/1276956836856393728
+mindsets -- high agency && -- associated qualities 01 Bias for Action
+mindsets -- high agency && -- associated qualities 02 Rational Optimism
+mindsets -- high agency && -- associated qualities 03 Creative Persistence
+mindsets -- high agency && -- associated qualities 04 Assertive Communication
+mindsets -- high agency && -- associated qualities 05 Low Defensiveness
+mindsets -- high agency && -- associated qualities 06 Self-Updating
+mindsets -- high agency && -- associated qualities 07 Values Clarity
+mindsets -- high agency && -- associated qualities 08 Radical Responsibility
+mindsets -- high agency && -- associated qualities 09 Self-Efficacy
+mindsets -- high agency && -- associated qualities 10 Contrarian Curiosity
+mindsets -- high agency && -- associated qualities https://nickwignall.com/how-to-identify-high-agency-people/
+mindsets -- high agency && -- identify https://nickwignall.com/how-to-identify-high-agency-people/
+mindsets -- high agency = finding a way to get what you want, without waiting for conditions to be perfect or otherwise blaming the circumstances. High Agency People either push through in the face of adverse conditions or manage to reverse the adverse conditions to achieve goals https://x.com/shreyas/status/1276956838840295425 https://nickwignall.com/high-agency-mindset/
+mindsets -- mentality in front of adversity = victim, survivor, conqueror
 minorities -- silent majority = unspecified large group of people in a country or group who do not express their opinions publicly https://en.wikipedia.org/wiki/Silent_majority
 minorities -- vocal minority
 Mitzvah -- "One Mitzvah for Bondi" -- Act with intent = reflect with a moment of silence to seek guidance and clarity before beginning a task.
@@ -928,6 +948,7 @@ naivety -- sexual abuse
 naivety -- sexual abuse -- men as sport teachers / trainers
 naivety -- sexual abuse -- men in childcare https://www.abc.net.au/news/2025-07-05/childcare-worker-colleague-joshua-brown/105497042
 naivety -- world order
+Napoleon Technique = Postponing Things to Increase Productivity (it’s likely to get resolved without your immediate input) https://effectiviology.com/napoleon/
 narcissism
 narcissism -- overlaps with neuroticism
 natural order of things in society = established by the dominant ideology
@@ -1091,6 +1112,9 @@ priorities -- 0 life extinction = global catastrophic risk / existential threat 
 priorities -- 1 human extinction (incl. omnicide) https://en.wikipedia.org/wiki/Human_extinction
 priorities -- 2 global issues https://en.wikipedia.org/wiki/List_of_global_issues
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
+privacy -- empowers individuals to reveal their identity when desired and only when desired
+private equity https://www.reuters.com/world/us/us-will-ban-large-institutional-investors-buying-single-family-homes-trump-says-2026-01-07/
+private equity https://www.theguardian.com/society/2026/mar/28/the-great-care-home-cash-grab-how-private-equity-turned-vulnerable-elderly-people-into-human-atms
 privilege
 privilege -- as "original sin" = "An able-bodied straight white American male is born with such a load of sin that only by the most abject repentance can he be saved." https://paulgraham.com/woke.html
 prix au kilo
@@ -1168,8 +1192,10 @@ regrets -- People report regretting such things as -- opting for a secure job ne
 regrets -- romantic = males, who are thought to be more promotion-oriented in relation to romance and sexual activity, tend to regret their failures to seize romantic opportunities, females are more likely to regret their past actions in this domain
 regrets https://walkerd.people.charleston.edu/317/Regrets2018.pdf
 regulation by prosecution
-regulatory crackdown
-regulatory focus
+regulatory -- capture -- avoidance https://www.ipart.nsw.gov.au/Home/About-IPART/regulatory-capture
+regulatory -- capture = a form of government failure where regulatory agencies, tasked with protecting the public interest, are dominated or influenced by the industries they are meant to regulate
+regulatory -- crackdown
+regulatory -- focus
 relationships -- 4 questions to test the strength https://www.today.com/health/behavior/4-questions-test-relationship-strength-rcna202125
 relationships -- how to Avoid Falling in Love with a Jerk: The Foolproof Way to Follow Your Heart Without Losing Your Mind
 relationships -- love at first sight = a “fantasy” that can clash with the reality of day-to-day life

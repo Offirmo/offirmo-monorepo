@@ -1,4 +1,5 @@
 import * as path from 'node:path'
+import { styleText } from 'node:util'
 import assert from 'tiny-invariant'
 import type {
 	JSONObject,
@@ -146,7 +147,7 @@ function onꓽspec_chain_loaded(
 
 // XXX TODO link parent!
 function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-	DEBUG && console.debug(`Registering "${node.type}" node...`, node.path‿abs)
+	DEBUG && console.debug(`Registering "${styleText('yellow', node.type)}" node...`, styleText('gray', node.path‿abs))
 
 	node = {
 		plugin_area: {},
@@ -179,7 +180,7 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 	//////////// WORKSPACE GRAPH ////////////
 	assert(
 		state.graphs.nodesⵧworkspace[node.path‿abs] === undefined,
-		`Semantic node already registered: ${node.path‿abs}!`,
+		`Semantic node already registered: ${styleText('gray', node.path‿abs)}!`,
 	)
 
 	node = {
@@ -213,7 +214,7 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 	}
 }
 function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-	DEBUG && console.debug('Marking node analyzed...', node.path‿abs, node.type)
+	DEBUG && console.debug('Marking node analyzed...', styleText('yellow', node.type), styleText('gray', node.path‿abs))
 
 	if (node.type === 'repository') {
 		assert(!!state.graphs.nodesⵧscm[node.path‿abs], `Node expected: ${node.path‿abs}!`)
@@ -262,7 +263,7 @@ function declareꓽfile_manifest(
 	state: Immutable<State>,
 	manifest: StructuredFsⳇFileManifest,
 ): Immutable<State> {
-	DEBUG && console.debug(`Declaring manifest… ${manifest.path‿ar} [${manifest.format ?? 'auto'}]`)
+	DEBUG && console.debug(`Declaring manifest… ${styleText('yellow', manifest.path‿ar)} [${manifest.format ? styleText('red', manifest.format) : styleText('green', 'auto')}]`)
 	//DEBUG && console.debug('Declaring manifest…', manifest)
 
 	const existing = state.file_manifests[manifest.path‿ar]
@@ -320,14 +321,14 @@ function requestꓽfactsⵧabout_file(
 ): Immutable<State> {
 	DEBUG
 		&& console.debug(
-			`requestꓽfactsⵧabout_file("${manifest.path‿ar}" from "${parent_node?.path‿ar}")`,
+			`requestꓽfactsⵧabout_file("${styleText('yellow', manifest.path‿ar)}" from "${styleText('yellow', parent_node?.path‿ar)}")`,
 		)
 
 	const path_abs = _resolveꓽarpath(state, manifest.path‿ar, parent_node)
 	const x: Immutable<SubStateⳇFactsFile> =
 		state.facts.files[path_abs]
 		|| ((): Immutable<SubStateⳇFactsFile> => {
-			DEBUG && console.debug('↳ New fact file request:', path_abs)
+			DEBUG && console.debug('↳ New fact file request:', styleText('gray', path_abs))
 			return {
 				manifest,
 				content: undefined,

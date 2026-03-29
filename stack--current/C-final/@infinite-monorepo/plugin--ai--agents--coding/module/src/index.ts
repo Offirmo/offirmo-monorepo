@@ -59,7 +59,7 @@ const PLUGIN: Plugin = {
 				const output_spec2: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽCLAUDEᐧmd,
-					intent: 'present--containing',
+					intent: 'present--exact', // plugins should use AGENTS.md
 					content: {
 						text: 'Read the [AGENTS.md](../AGENTS.md) file.'
 					},

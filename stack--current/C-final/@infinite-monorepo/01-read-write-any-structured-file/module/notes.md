@@ -1,5 +1,3 @@
-TODO exctract to a dedicated package
-
 TODO SKILL.md 
 
 see also https://github.com/ndjson/ndjson-spec

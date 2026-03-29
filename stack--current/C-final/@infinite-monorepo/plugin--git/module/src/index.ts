@@ -20,7 +20,6 @@ import type { FileOutputPresent } from '@infinite-monorepo/state'
 const ᐧgitignore__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧMONOREPO}/.gitignore`
 const manifestꓽᐧgitignore: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitignore__path‿ar,
-	format: 'list',
 	doc: [
 		'https://git-scm.com/docs/gitignore',
 		'https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns',
@@ -30,7 +29,6 @@ const manifestꓽᐧgitignore: StructuredFsⳇFileManifest = {
 const ᐧgitattributes__path‿ar: RepoPathⳇRelative = `${PATHVARⵧROOTⵧREPO}/.gitattributes`
 const manifestꓽᐧgitattributes: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitattributes__path‿ar,
-	format: 'text',
 	doc: ['https://git-scm.com/docs/gitattributes', 'https://stackoverflow.com/a/73095814/31353119'],
 }
 
@@ -44,55 +42,69 @@ const PLUGIN: Plugin = {
 		return state
 	},
 
-	onꓽnodeⵧdiscovered(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-		return state
-	},
-
 	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
 		switch (node?.type) {
 			case 'repository': {
-				const output_spec: FileOutputPresent = {
+				const output_specꓽᐧgitattributes: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽᐧgitattributes,
-					intent: 'present--exact',
+					intent: 'present--containing',
 					content: {
-						// TODO
-						text: `* text=auto eol=lf`,
+						entries: [
+							`## contains auto-generated content from @infinite-monorepo/plugin--git`,
+							`## https://nesbitt.io/2026/02/05/git-magic-files.html`,
+							`* text=auto eol=lf`, // ## Line ending normalization
+							`*.png binary`, // Treat as binary
+							`*.json diff=json`, // improved diff driver
+						],
 					},
 				}
-				state = StateLib.requestꓽfile_output(state, output_spec)
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitattributes)
 				break
 			}
 			case 'monorepo': {
-				const output_spec: FileOutputPresent = {
+				const output_specꓽᐧgitignore: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽᐧgitignore,
 					intent: 'present--containing',
 					content: {
 						entries: [
+							`## https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns`,
+							`## contains auto-generated content from @infinite-monorepo/plugin--git`,
+
 							// each plugin is free to add their own entries, we don't cargo cult a huge list
+
+							// we target js and it's a standard
 							'node_modules/',
+
 							// generic clearly local-only
 							'*.local',
+							'*local.*', // ex. Claude settings.local.json
+
 							// generic clearly temp
+							'tmp/',
 							'tmp-*/',
+
+							// clearly cache
 							'.cache/',
+
 							// for security: dotenv, Vercel https://nextjs.org/docs/app/guides/environment-variables#environment-variable-load-order
 							'.env',
 							'.env.dev',
 							'.env.staging',
 							'*.env.staging',
 							'.env.test',
-							'.env.test.local',
 							'.env.prod',
-							'.env.production.local',
-							'.env.local',
 							// for security: ?
 							'.*.vars',
+
+							// logs
+							`*.log`,
+							`logs/`,
 						],
 					},
 				}
-				state = StateLib.requestꓽfile_output(state, output_spec)
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitignore)
 				break
 			}
 			// TODO 1D any node where parent node != current node
@@ -115,4 +127,4 @@ const PLUGIN: Plugin = {
 /////////////////////////////////////////////////
 
 export default PLUGIN
-export { manifestꓽᐧgitignore }
+export { manifestꓽᐧgitignore, manifestꓽᐧgitattributes }

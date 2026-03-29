@@ -1,0 +1,6 @@
+› ChatGPT (Codex) (AGENTS.md)
+› Claude Code (CLAUDE.md)
+› Gemini CLI (GEMINI.md)
+› GitHub Copilot (.github/copilot-instructions.md)
+› Cursor (.cursor/rules/viteplus.mdc)
+› JetBrains AI Assistant (.aiassistant/rules/viteplus.md)

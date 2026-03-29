@@ -1,14 +1,14 @@
 import assert from 'tiny-invariant'
 import * as semver from 'semver'
-import type { Immutable } from '@monorepo-private/ts--types'
+import type { Immutable, PathⳇRelative } from '@monorepo-private/ts--types'
 import {
-	type Node,
+	type Node, NODE_TYPEⵧPACKAGE, NODE_TYPEⵧWORKSPACES__LINE,
 	type NodeⳇPackage,
 	type NodeⳇWorkspaceLine,
 	PATHVARⵧROOTⵧMONOREPO,
 	PATHVARⵧROOTⵧWORKSPACE__LINE,
 } from '@infinite-monorepo/types'
-import type { State, Plugin } from '@infinite-monorepo/state'
+import type {State, Plugin, FileOutputPresent} from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import { manifestꓽpackageᐧjson } from '@infinite-monorepo/plugin--npm'
 import * as path from 'node:path'
@@ -33,33 +33,31 @@ const PLUGIN: Plugin = {
 			node,
 			(state, result) => {
 				if (!result) return state // no file = fact "not using bolt"
+				if (isꓽError(result)) throw result
 
-				if (isꓽError(result)) {
-					// what to do?
-					throw result
-				}
-
-				const bolt_stuff = result?.['bolt']
+				const bolt_stuff = result.dataⵧjson['bolt']
 				if (!bolt_stuff) return state // not using bolt
 
 				// discover new node
-				const { workspaces } = bolt_stuff
-				if (workspaces) {
+				const { workspaces: workspacesⵧraw } = bolt_stuff
+				if (workspacesⵧraw) {
 					// TODO 1D use a glob lib
-
-					const MONOREPO_WORKSPACES_RELPATHS = (workspaces as string[])
-						.filter((p: RelPath) => {
+					const workspaces = (workspacesⵧraw as string[])
+						.filter((p: PathⳇRelative) => {
 							return !p.startsWith('#') && !p.startsWith('xx') // we allow "commenting" a workspace to help "progressive resurrection"
 						})
+						.sort()
+
+					const MONOREPO_WORKSPACES_RELPATHS = workspaces
 						.map(p => p.slice(0, -2)) // slice to remove trailing "/*"
 						.sort()
 
 					MONOREPO_WORKSPACES_RELPATHS.forEach(path_rel => {
 						const line_node: NodeⳇWorkspaceLine = {
-							type: 'workspace__line',
+							type: NODE_TYPEⵧWORKSPACES__LINE,
 							parent_id: node.path‿abs,
 							path‿ar: `${PATHVARⵧROOTⵧMONOREPO}/${path_rel}`,
-							path‿abs: path.join(node.path‿abs, path_rel) + '/',
+							path‿abs: `${path.join(node.path‿abs, path_rel)}/`,
 							plugin_area: {},
 						}
 						state = StateLib.registerꓽnode(state, line_node)
@@ -73,10 +71,10 @@ const PLUGIN: Plugin = {
 
 						candidate_package_dirs.forEach(path_rel => {
 							const pkg_node: NodeⳇPackage = {
-								type: 'package',
+								type: NODE_TYPEⵧPACKAGE,
 								parent_id: line_node.path‿abs,
 								path‿ar: `${PATHVARⵧROOTⵧWORKSPACE__LINE}/${path_rel}/`,
-								path‿abs: path.join(line_node.path‿abs, path_rel) + '/',
+								path‿abs: `${path.join(line_node.path‿abs, path_rel)}/`,
 								spec: {},
 								plugin_area: {},
 							}
@@ -98,7 +96,33 @@ const PLUGIN: Plugin = {
 		return state
 	},
 
-	// TODO on end of propagation?
+	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
+	if (StateLib.getꓽpackage_manager(state).name !== 'bolt') return state
+
+	switch (node?.type) {
+		case 'monorepo': {
+			const output_specꓽpackageᐧjson: FileOutputPresent = {
+				parent_node: node,
+				manifest: manifestꓽpackageᐧjson,
+				intent: 'present--containing',
+				content: {
+					bolt: {
+						"//": "https://github.com/boltpkg/bolt",
+						workspaces: [
+							...state.spec.workspaces,
+						]
+					},
+				},
+			}
+			state = StateLib.requestꓽfile_output(state, output_specꓽpackageᐧjson)
+			break
+		}
+		default:
+			break
+	}
+
+	return state
+},
 }
 
 /////////////////////////////////////////////////

@@ -59,6 +59,14 @@ function inferꓽformat_from_path(file_path: FilePathⳇAny): StructuredFileForm
 	switch (basename‿lc) {
 		case '.nvmrc':
 			return 'single-value'
+		case 'license':
+			return 'text'
+
+		// TODO improve
+		case '.editorconfig':
+			return 'text' // more like K/V TODO implement
+		case '.gitattributes':
+			return 'list' // more like K/V TODO implement
 		default:
 			break
 	}

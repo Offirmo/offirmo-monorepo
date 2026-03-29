@@ -38,6 +38,7 @@
 2024-09 alternative fundraising https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick
 2024-09 FBI revealed that fraud related to crypto businesses soared in 2023 with Americans suffering $5.6bn in losses, a 45% jump from the previous year.
 2024-10-16 https://a16zcrypto.com/posts/article/state-of-crypto-report-2024/
+2025 -- perps meta = perps on Hyperliquid instead of futures on exchanges: “It’s just so much easier. It’s also more fun.
 2025 Institutions are stacking
 2025 summary against crypto https://www.theguardian.com/us-news/2025/jun/17/trump-crypto-memecoin-corruption
 2025-01 Sony's Soneium https://blockworks.co/news/soneium-mainnet-censorship-complaints
@@ -114,6 +115,8 @@ attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-cha
 attacks -- transaction malleability (BitCoin) = old vulnerability in Bitcoin that caused the closure of Mt Gox https://en.wikipedia.org/wiki/Transaction_malleability_problem
 attacks -- valuation = pricing can be buggy, especially under market stress
 attacks -- valuation = pricing can be manipulated
+au -- Australian Privacy Foundation https://privacy.org.au/  https://www.smh.com.au/technology/no-warrants-needed-to-access-opal-card-records-20140708-zt02j.html
+au -- https://www.standwithcrypto.org/au
 automated market-making (AMM)
 bag check
 bear/bull markets = alternance of several months of falling prices (bear) and several months of rising prices (bull). Hard to time. Need to survive a bear market.
@@ -182,17 +185,21 @@ chain -- native currency = the native currency of a chain, ex. ETH for Ethereum,
 chains -- &"that matters" = chain that matters. BSC, HyperEVM, Solana, Base, ETH L1, etc. (2025) https://x.com/dwr/status/1976029779783790680
 chains -- EVM-compatible
 chains -- list -- EVM-based https://chainlist.org/
+chains -- memecore https://memecore.com/ecosystem
 chains -- Solidity compatible
 chains -- sovereign blockchains aka. parachains = ??? (Polkadot)
 chains -- superchain (Optimism) = a network of chains that share bridging, decentralized governance, upgrades, a communication layer and more https://www.superchain.eco/ https://docs.optimism.io/superchain/introduction/superchain-explainer
 chains -- tribalism
+challenges -- crypto malaise = lack of tokenholder rights, slow revenue growth, and low-quality revenue
 challenges -- distribution
 challenges -- double spend
 challenges -- form vs substance = "the prosecution asked jurors to ignore the form of X — non-custodial, immutable smart contract code — and instead focus on the substance of what it enabled: money laundering"  In short, prosecutors accused X of using a technical innovation to cleverly sidestep the law. This is what the rest of crypto is often accused of, too. In substance, skeptics say,  tokens are stocks, protocols are companies, labs entities are c-suites, staking yields are dividends, token burns are buybacks, airdrops are sometimes IPOs, DAOs are general partnerships, and stablecoins are bank accounts. It’s often hard to argue with. https://blockworks.co/news/crypto-substance-vs-form
 challenges -- Governance = can be challenging in decentralized systems. It requires effective structures that involve community participation and don’t centralize power.
 challenges -- mistakes https://ia.acs.org.au/article/2026/crypto-exchange-makes--58bn-mistake.html
 challenges -- multibillion-dollar implosions of FTX, BlockFi, Celsius, and Voyager Digital
+challenges -- narrative-driven prices = sky-high prices during boom, goes down eventually
 challenges -- need to purchase crypto first, have to endure a steep learning curve with wallets and exchanges as well as additional costs "It’s really hard to get non crypto people to use it" https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
+challenges -- predictable transaction inclusion https://a16zcrypto.substack.com/p/what-blockchains-need-to-compete
 challenges -- quantum https://a16zcrypto.com/posts/podcast/quantum-computing-what-when-where-how-fact-vs-fiction/
 challenges -- Regulatory compliance = Web3 applications must follow existing data protection and financial security requirements.
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
@@ -262,6 +269,7 @@ decentralization -- limits = hard to iterate, ex. Synthetix trade-off until PMF
 decentralization -- metric -- insider attack test = if your team itself tries to attack the system, how much will break, and how much harm could you do?
 decentralization -- metric -- the walkaway test = if your team and servers disappear tomorrow, will your application still be usable?
 decentralization = avoiding points of trust, minimizing censorship vulnerabilities and minimizing centralized infrastructure dependency
+decentralization doesn't matter = ??
 Decentralized Application (DApp) = A web page that relies upon one or many Web3 platform APIs which are exposed to the web page via the Wallet https://eips.ethereum.org/EIPS/eip-6963
 decentralized autonomous organization (DAO) = agreed-upon smart contract that automates decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.
 decentralized identifiers https://www.w3.org/TR/did-1.0/#identifier
@@ -319,6 +327,7 @@ Ethereum -- protocol
 Ethereum -- REth https://github.com/paradigmxyz/reth
 Ethereum -- roadmap (incl past) +++ https://ethereum.org/roadmap/
 Ethereum -- roadmap https://ethereum.org/en/roadmap/
+Ethereum -- s/o https://ethereum.stackexchange.com/questions?sort=votes
 Ethereum -- staking https://rocketpool.net/ https://x.com/Rocket_Pool
 ethereum -- top questions https://ethereum.stackexchange.com/questions?sort=votes
 Ethereum -- trustlessness "Ethereum was not created to make finance efficient or apps convenient. It was created to set people free — to empower anyone, anywhere to coordinate without permission and without trusting anyone they cannot hold accountable." https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
@@ -368,6 +377,7 @@ governance -- plutocracy? https://www.reddit.com/r/CryptoCurrency/comments/zy6ko
 governance -- skin in the game
 grand ideas -- no more bailouts https://nomorebailouts.org
 griefing attacks = no gain for the attacker, just issues for the victim. ex "Just create 100k accounts get $5 in each and burn it"
+https://memecore.com/ = ?
 humanity protocol = ? https://www.humanity.org/
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
 Hyperliquid -- ? https://hyperunit.xyz/
@@ -417,7 +427,6 @@ mantras of blockchain -- Don’t trust, verify
 mantras of blockchain -- not your keys, not your coins = see custodiality. only keep bitcoin in exchanges for as long as you need to https://blockworks.co/news/bitomat-exchange-deleted-17000-bitcoin
 market maker = easy to move the price, esp. ICO -> need right incentives
 marketing -- https://etherscan.io/
-marketing -- https://etherscan.io/
 Markets in Crypto Assets (MiCA) regulation to oversee the crypto industry
 MegaETH = MegaETH is real-time Ethereum, streaming transactions at lightning speed: 10-millisecond latency and over 20,000 transactions per second https://x.com/megaeth
 memecoin
@@ -461,7 +470,6 @@ narratives = to bring interest into crypto
 near https://www.near.org/
 NEAR intents = a new type of transaction paradigm where "intents" — user goals or desired outcomes — can be executed by agents on behalf of users, abstracting away blockchain complexity and enabling powerful cross-chain and AI-native applications https://github.com/near/intents https://messari.io/copilot/share/understanding-near-intents-03a2c85b-3e29-47c3-8fb8-a1de5da81b3c
 network effect = when a product or service becomes more valuable to users as more people use it. In industries where network effects are strong, market leaders often benefit disproportionately, and the “winner takes most” or even “winner takes all” scenarios are common.
-networks -- network REV (Real Economic Value) = a blockchain metric measuring total user demand for transactions, calculated as the sum of in-protocol transaction fees and out-of-protocol tips (often MEV). It serves as a "top line" revenue metric for chains like Ethereum, representing the total value paid for blockspace execution https://blockworks.com/news/valuing-blockchains-rev-debate
 networks -- Avalanche C-Chain
 networks -- Base
 networks -- Bitcoin Mainnet
@@ -470,6 +478,7 @@ networks -- Ethereum Mainnet
 networks -- Filecoin EVM Mainnet
 networks -- Filecoin Mainnet
 networks -- Neon EVM
+networks -- network REV (Real Economic Value) = a blockchain metric measuring total user demand for transactions, calculated as the sum of in-protocol transaction fees and out-of-protocol tips (often MEV). It serves as a "top line" revenue metric for chains like Ethereum, representing the total value paid for blockspace execution https://blockworks.com/news/valuing-blockchains-rev-debate
 networks -- Optimism
 networks -- Polygon Mainnet
 networks -- Solana Mainnet Beta
@@ -555,6 +564,7 @@ predictions https://polymarket.com/
 price oracles = pricing of some resource
 privacy -- "I Verified My LinkedIn Identity. Here's What I Actually Handed Over" https://thelocalstack.eu/posts/linkedin-identity-verification-privacy/
 privacy-maximalists vs normal non-technical user
+programmable finance
 programmable recovery = ??
 proof of personhood -- World ID XXX Sam Altman https://world.org/world-id
 proof of personhood = https://world.org/blog/world/proof-of-personhood-what-it-is-why-its-needed
@@ -734,14 +744,18 @@ trading -- pattern recognition https://mojo3324106.substack.com/p/everyone-has-a
 trading -- process https://mojo3324106.substack.com/p/everyone-has-a-process
 trading -- revenge trading = ex. https://x.com/TheWhiteWhaleHL/status/1977101908583088458
 transaction -- fee = higher = picked by nodes https://ethereum.org/en/developers/docs/gas/
-transaction processing -- stages -- batch storage
-transaction processing -- stages -- block metadata ordering
-transaction processing -- stages -- ledger certification
-transaction processing -- stages -- parallel transaction execution
-transaction processing -- stages -- transaction dissemination
-transaction processing -- stages = needed, can happen concurrently on some runtimes https://aptosfoundation.org/whitepaper
-transaction simulation https://support.rabby.io/hc/en-us/articles/11495560464143-Why-do-I-see-Simulation-Failed-error
-transactions per second -- 2024 https://a16zcrypto.com/posts/article/state-of-crypto-report-2024/#section--5
+transaction -- Hiding = No party, except for the node that a transaction is submitted to, learns any information about a transaction before its inclusion has been finalized by the protocol https://a16zcrypto.substack.com/p/what-blockchains-need-to-compete
+transaction -- inclusion -- eventual = robust guarantee over the span of seconds https://a16zcrypto.substack.com/p/what-blockchains-need-to-compete
+transaction -- inclusion -- predictable = hard (see challenges) https://a16zcrypto.substack.com/p/what-blockchains-need-to-compete
+transaction -- per second (tps) -- 2024 https://a16zcrypto.com/posts/article/state-of-crypto-report-2024/#section--5
+transaction -- processing -- stages -- batch storage
+transaction -- processing -- stages -- block metadata ordering
+transaction -- processing -- stages -- ledger certification
+transaction -- processing -- stages -- parallel transaction execution
+transaction -- processing -- stages -- transaction dissemination
+transaction -- processing -- stages = needed, can happen concurrently on some runtimes https://aptosfoundation.org/whitepaper
+transaction -- Short-Term Censorship Resistance = Any valid transaction that reaches any honest node on time will certainly be included in that next possible block https://a16zcrypto.substack.com/p/what-blockchains-need-to-compete
+transaction -- simulation https://support.rabby.io/hc/en-us/articles/11495560464143-Why-do-I-see-Simulation-Failed-error
 Trezor https://github.com/trezor
 trust -- digital = reflexion https://consensys.io/ethereum/trust
 trust = needed to avoid scams, see CoinGecko trust score

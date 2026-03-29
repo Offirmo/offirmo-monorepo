@@ -19,7 +19,9 @@ attacks -- business email compromise (BEC)
 attacks -- credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
 attacks -- direct blackmail = example of letter to individual https://www.reddit.com/r/cybersecurity_help/comments/1f7tbec/demand_for_bitcoin_payment_made_with_threats/
 attacks -- griefing
+attacks -- hash collision https://en.wikipedia.org/wiki/Collision_attack
 attacks -- homographs = using unicode for visual deception https://x.com/sheeki03/status/2018382483465867444
+attacks -- open redirect = exploiting a site's redirect mechanism to go to another website
 attacks -- phishing -- (many variants)
 attacks -- phishing https://www.azarask.in/blog/post/a-new-type-of-phishing-attack/
 attacks -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
@@ -27,6 +29,7 @@ attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
 attacks -- timing https://timing.attacks.cr.yp.to/programming.html
 attacks -- webextensions https://ia.acs.org.au/article/2025/four-million-browsers-infected-with-spyware.html
+attacks -- wrench
 authentication
 authorization
 best practices -- CISA = https://www.cisa.gov/topics/cybersecurity-best-practices
@@ -48,6 +51,15 @@ content scrapping = can be anti-competitive https://www.kasada.io/use-cases/cont
 Content security policy (CSP) https://web.dev/articles/csp
 cryptography -- ciphertext indistinguishability = important security property of encryption schemes = an adversary will be unable to distinguish pairs of ciphertexts based on the message they encrypt. indistinguishability under chosen plaintext attack is considered a basic requirement for most provably secure public key cryptosystems  https://cse.iitkgp.ac.in/~debdeep/courses_iitkgp/FCrypto/scribes/scribe8.pdf
 cryptography -- don't write your own
+cryptography -- elliptic curves https://growingswe.com/blog/elliptic-curve-cryptography
+cryptography -- hash -- attacks = collision, HashDos / hash flooding, preimage https://en.wikipedia.org/wiki/Collision_attack https://en.wikipedia.org/wiki/Preimage_attack https://nodejs.org/en/blog/vulnerability/march-2026-hashdos
+cryptography -- hash -- evaluation = ex. avalanche matrix https://cacm.acm.org/practice/questioning-the-criteria-for-evaluating-non-cryptographic-hash-functions/
+cryptography -- hash -- puzzle friendliness https://en.wikipedia.org/wiki/Puzzle_friendliness
+cryptography -- hash = the MOST important primitive
+cryptography -- MAC -- HMAC "hash-based message authentication code" https://en.wikipedia.org/wiki/HMAC
+cryptography -- MAC/MIC = a short piece of information used for authenticating and integrity-checking a message. In other words, it is used to confirm that the message came from the stated sender (its authenticity) and has not been changed (its integrity) https://en.wikipedia.org/wiki/Message_authentication_code
+cryptography -- salting https://en.wikipedia.org/wiki/Salt_(cryptography)
+cryptography -- SHA "Secure Cryptographic Hashing"
 cryptography -- using cryptography doesn't mean you're secure (attackers will look for a weaker link)
 CVE "Common Vulnerabilities and Exposures" = a catalog of publicly disclosed vulnerabilities and exposures. Each CVE includes a unique identifier, summary, associated metadata like the Common Weakness Enumeration (CWE) and Common Platform Enumeration (CPE), and a severity score that can range from None to Critical. The format of a CVE ID consists of a fixed prefix, the year of the disclosure and an arbitrary sequence number ​​like CVE-2017-0144. Memorable names such as "EternalBlue"  (CVE-2017-0144)  are often associated with high-profile exploits to enhance recall. https://blog.cloudflare.com/vulnerability-transparency-strengthening-security-through-responsible/#what-is-a-cve
 CVE -- CNA "CVE Numbering Authority" = an authorized party that  can assign CVE identifiers for vulnerabilities discovered within its products and ecosystems https://blog.cloudflare.com/vulnerability-transparency-strengthening-security-through-responsible/#what-is-a-cna
@@ -57,8 +69,8 @@ dark web https://www.group-ib.com/blog/dark-web-fraud/
 DDoS -- interstitial challenge = https://developers.cloudflare.com/cloudflare-challenges/challenge-types/challenge-pages/
 DDoS -- report http://www.ddosreport.com
 DEF CON = one of the oldest continuously running hacker conventions around, and also one of the largest https://defcon.org/
-defence -- Primary / Secondary / Tertiary
 defense -- in depth = https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
+defense -- Primary / Secondary / Tertiary
 denial of wallet = like DoS but service down due to no more credits https://www.kasada.io/use-cases/genai-abuse-73-percent-have-experienced-genai-security-incidents/
 device posture
 digital security https://securitylab.amnesty.org/digital-resources/
@@ -137,7 +149,7 @@ privacy pass = ???
 private relay -- iCloud = "ensures that no single party handling user data has complete information on both who the user is and what they are trying to access." = Internet privacy service from Apple that allows users with iOS 15, iPadOS 15, or macOS Monterey on (...) their devices and an iCloud+ subscription, to connect to the Internet and browse with Safari in a more secure and private way  https://blog.cloudflare.com/icloud-private-relay/
 production-grade cryptography
 pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
-randomness -- nothing up my sleeve https://en.wikipedia.org/wiki/Nothing-up-my-sleeve_number
+randomness -- "nothing up my sleeve" (hard to prove) https://en.wikipedia.org/wiki/Nothing-up-my-sleeve_number
 risks -- software -- bad defaults -- firebase https://env.fail/posts/firewreck-1
 risks -- software -- buffer overflows and how to protect against them
 risks -- software -- cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
@@ -164,7 +176,6 @@ risks -- software -- supply chain -- famous examples zx https://www.akamai.com/b
 risks -- software -- supply chain -- solutions https://github.blog/changelog/2025-07-31-npm-trusted-publishing-with-oidc-is-generally-available/
 risks -- software -- supply chain -- solutions https://github.com/google/oss-rebuild
 risks -- software -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
-salting https://en.wikipedia.org/wiki/Salt_(cryptography)
 sandbox
 sandbox -- escape https://googleprojectzero.blogspot.com/2025/05/breaking-sound-barrier-part-i-fuzzing.html
 sanitization -- data as part of database query
@@ -186,7 +197,6 @@ scams -- problem with your account
 scams -- scam payments = receiver is a scammer https://ia.acs.org.au/article/2025/banks-finally-unite-to-block-scam-payments.html
 secrets -- hiding secrets is hard - and secrets hidden in code won't stay secret for long
 secure by default = security is ON by default, need to be manually disabled if not needed (ex. dev).  Historically, many libraries had to be configured for them to be used securely.  For example, user content in JSP applications presented a cross site scripting risk, and developers needed to use special functions such as c:out or fn:escapeXml in order to prevent such vulnerabilities.  In a secure by default library, the risk is inherently prevented in the library implying that the developer does not need to think about special functionality in order to use it securely.
-Secure Cryptographic Hashing
 secure data at rest
 secure-by-design -- CISA https://www.cisa.gov/securebydesign
 secure-by-design -- CISA’s Secure By Design pledge = https://blog.cloudflare.com/vulnerability-transparency-strengthening-security-through-responsible/

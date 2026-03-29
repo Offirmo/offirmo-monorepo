@@ -1,16 +1,14 @@
-import type { MonorepoSpec } from '@infinite-monorepo/types'
+import type { InfiniteMonorepoSpec } from '@infinite-monorepo/types'
 
 /////////////////////////////////////////////////
 
-// TODO remove
-export const NODE_MAJOR_VERSION = 22
 
 /////////////////////////////////////////////////
 
-const SPEC: Partial<MonorepoSpec> = {
+const SPEC: Partial<InfiniteMonorepoSpec> = {
 	//runtimeⵧlocal: 'node',
 
-	namespace: '@offirmo',
+	//namespace: '@offirmo',
 
 	package_manager: 'bolt',
 	workspaces: [
@@ -33,13 +31,15 @@ const SPEC: Partial<MonorepoSpec> = {
 		"4-engine--browser/2-libs--cross-cutting/*",
 		"4-engine--browser/X-incubator/active/*",
 
-		"7-multimorphic/libs--rpg/*",
+		"7-multimorphic/@oh-my-rpg/*",
 
 		"B-backend/*",
 
+		"C-final/@dev-docs--web3/*",
+		"C-final/@infinite-monorepo/*",
+		"C-final/@tbrpg/1-logic/*",
 		"C-final/api--placeholders/*",
-		"C-final/single-pkg/*",
-		"C-final/tbrpg/1-logic/*"
+		"C-final/single-pkg/*"
 	],
 
 }

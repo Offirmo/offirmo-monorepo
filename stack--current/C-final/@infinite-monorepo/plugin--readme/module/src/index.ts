@@ -12,7 +12,7 @@ const READMEᐧmd__path‿ar: MonorepoPathⳇRelative = '$WORKSPACE_ROOT/README.
 
 const READMEᐧmd__manifest: StructuredFsⳇFileManifest = {
 	path‿ar: READMEᐧmd__path‿ar,
-	format: 'text',
+	//format: 'text',
 	doc: [
 		'https://openchangelog.com/blog/changelog-md',
 	],

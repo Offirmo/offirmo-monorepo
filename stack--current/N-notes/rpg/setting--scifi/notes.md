@@ -30,3 +30,7 @@ https://en.wikipedia.org/wiki/List_of_impact_structures_on_Earth
 
 
 military units https://www.youtube.com/watch?v=l1bMFmmYFk8
+
+https://en.wikipedia.org/wiki/Hyperion_Cantos
+
+https://www.noemamag.com/the-future-of-space-is-more-than-human/

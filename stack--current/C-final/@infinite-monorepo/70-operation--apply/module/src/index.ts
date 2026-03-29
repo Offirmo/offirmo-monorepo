@@ -1,5 +1,6 @@
 import * as fs from 'node:fs/promises'
-import path from "path";
+import path from "node:path"
+import { styleText } from 'node:util'
 
 import assert from 'tiny-invariant'
 import type { Immutable, PathⳇAny } from '@monorepo-private/ts--types'
@@ -22,13 +23,14 @@ import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
 import pluginꓽpnpm from '@infinite-monorepo/plugin--pnpm'
 import pluginꓽreadme from '@infinite-monorepo/plugin--readme'
 import pluginꓽtsconfig from '@infinite-monorepo/plugin--tsconfig'
+import pluginꓽyarnᝍᝍv1 from '@infinite-monorepo/plugin--yarn--v1'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
 import { mergeꓽjson, ೱwriteꓽfile } from '@infinite-monorepo/read-write-any-structured-file/write'
 
 /////////////////////////////////////////////////
 
-const plugins: Array<Plugin> = [
+const plugins: Record<string, Plugin> = {
 	// TODO a way to include on-demand
 	pluginꓽaiᝍᝍagentsᝍᝍcoding,
 	pluginꓽbolt,
@@ -46,21 +48,21 @@ const plugins: Array<Plugin> = [
 	pluginꓽpnpm,
 	pluginꓽreadme,
 	pluginꓽtsconfig,
-	// TODO plugins for everything!
-]
+	pluginꓽyarnᝍᝍv1,
+}
 
 function noop(state: Immutable<State>): Immutable<State> {
 	return state
 }
 
 async function apply(from?: PathⳇAny) {
-	console.group(`@infinite-monorepo/apply…`)
+	console.group(styleText('bold', `@infinite-monorepo/apply…`))
 
 	////////////
 	let state = StateLib.create()
 
 	async function _propagate() {
-		console.log('------------ propagating new infos… ------------')
+		console.log(styleText('italic', '------------ propagating new infos… ------------'))
 		//dumpꓽanyⵧprettified('state', state)
 
 		// wait for async tasks
@@ -74,10 +76,18 @@ async function apply(from?: PathⳇAny) {
 			prev = state
 			let node: Immutable<Node> | undefined
 			while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
-				state = plugins.reduce((state, plugin) => {
-					return (plugin.onꓽnodeⵧdiscovered ?? noop)(state, node)
+				console.group(`↳ onꓽnodeⵧdiscovered : [${node.type}] ${node?.path‿ar}`)
+				state = Object.entries(plugins).reduce((state, [name, plugin]) => {
+					if (!plugin.onꓽnodeⵧdiscovered) return state
+
+					console.group(`↳ onꓽnodeⵧdiscovered [${name}]`)
+					state = plugin.onꓽnodeⵧdiscovered(state, node)
+					console.groupEnd()
+
+					return state
 				}, state)
 				state = StateLib.reportꓽnodeⵧanalyzed(state, node)
+				console.groupEnd()
 			}
 
 			do {
@@ -88,8 +98,14 @@ async function apply(from?: PathⳇAny) {
 	}
 
 	////////////
-	state = plugins.reduce((state, plugin) => {
-		return (plugin.onꓽload ?? noop)(state)
+	state = Object.entries(plugins).reduce((state, [name, plugin]) => {
+		if (!plugin.onꓽload) return state
+
+		console.group(`↳ onꓽload [${name}]`)
+		state = plugin.onꓽload(state)
+		console.groupEnd()
+
+		return state
 	}, state)
 	await _propagate()
 
@@ -108,27 +124,50 @@ async function apply(from?: PathⳇAny) {
 	}, Promise.resolve(state))*/
 
 	////////////
-	// TODO topological order!!!
+	console.log(styleText('italic', '------------ plugins graphs discovery… ------------'))
+	console.group(`↳ SCM graph`)
 	Object.entries(state.graphs.nodesⵧscm)
+		// TODO topological order!!!
 		.sort()
 		.forEach(([, node]) => {
-			state = plugins.reduce((state, plugin) => {
-				return (plugin.onꓽapply ?? noop)(state, node)
+			console.group(`↳ SCM node ${node.path‿ar}`)
+			state = Object.entries(plugins).reduce((state, [name, plugin]) => {
+				if (!plugin.onꓽapply) return state
+
+				console.group(`↳ onꓽapply [${name}]`)
+				state = plugin.onꓽapply(state, node)
+				console.groupEnd()
+
+				return state
 			}, state)
+			console.groupEnd()
 		})
+	console.groupEnd()
+
+	console.group(`↳ Monorepo graph`)
 	Object.entries(state.graphs.nodesⵧworkspace)
+		// TODO topological order!!!
 		.sort()
 		.forEach(([, node]) => {
-			state = plugins.reduce((state, plugin) => {
-				return (plugin.onꓽapply ?? noop)(state, node)
+			console.group(`↳ monorepo node ${node.path‿ar}`)
+			state = Object.entries(plugins).reduce((state, [name, plugin]) => {
+				if (!plugin.onꓽapply) return state
+
+				console.group(`↳ onꓽapply [${name}]`)
+				state = plugin.onꓽapply(state, node)
+				console.groupEnd()
+
+				return state
 			}, state)
+			console.groupEnd()
 		})
+	console.groupEnd()
 
 	await _propagate()
 
 	////////////
 	// Ok now let's apply
-	console.log('About to apply...', state)
+	console.log(styleText('italic', '------------ About to apply… ------------'))
 	// 1. clear all files
 	// (TODO 1D)
 	// 2. re-create files we explicitly requested
@@ -189,7 +228,7 @@ async function apply(from?: PathⳇAny) {
 
 /////////////////////////////////////////////////
 
-async function ensureSymlink(target, linkPath) {
+async function ensureSymlink(target: string, linkPath: string) {
 	await fs.mkdir(path.dirname(linkPath), { recursive: true });
 
 	try {

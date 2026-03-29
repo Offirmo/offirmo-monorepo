@@ -12,7 +12,6 @@ const CHANGELOGᐧmd__path‿ar: MonorepoPathⳇRelative = '$WORKSPACE_ROOT/CHAN
 
 const CHANGELOGᐧmd__manifest: StructuredFsⳇFileManifest = {
 	path‿ar: CHANGELOGᐧmd__path‿ar,
-	format: 'text',
 	doc: [
 		'https://openchangelog.com/blog/changelog-md',
 	],

@@ -29,6 +29,7 @@
 		"@infinite-monorepo/plugin--pnpm": "*",
 		"@infinite-monorepo/plugin--readme": "*",
 		"@infinite-monorepo/plugin--tsconfig": "*",
+		"@infinite-monorepo/plugin--yarn--v1": "*",
 		"@infinite-monorepo/read-write-any-structured-file": "*",
 		"@infinite-monorepo/state": "*",
 		"tiny-invariant": "^1"

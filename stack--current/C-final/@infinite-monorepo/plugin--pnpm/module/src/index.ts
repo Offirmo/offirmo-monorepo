@@ -18,9 +18,14 @@ import { isꓽError } from '@offirmo/error-utils/v2'
 import path from 'node:path'
 import { lsDirsSync } from '@monorepo-private/fs--ls'
 
+import type { ProjectManifest } from '@pnpm/types' // https://github.com/pnpm/pnpm/blob/main/core/types/src/index.ts
+import { WORKSPACE_MANIFEST_FILENAME, WANTED_LOCKFILE } from '@pnpm/constants' // https://github.com/pnpm/pnpm/blob/main/core/constants/src/index.ts
+import { type WorkspaceManifest } from '@pnpm/workspace.workspace-manifest-reader'
+import {manifestꓽᐧgitignore, manifestꓽᐧgitattributes} from "@infinite-monorepo/plugin--git";
+
 /////////////////////////////////////////////////
 
-const pnpmᝍworkspaceᐧyaml__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧMONOREPO}/pnpm-workspace.yaml`
+const pnpmᝍworkspaceᐧyaml__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧMONOREPO}/${WORKSPACE_MANIFEST_FILENAME}`
 const manifestꓽpnpmᝍworkspaceᐧyaml: StructuredFsⳇFileManifest = {
 	path‿ar: pnpmᝍworkspaceᐧyaml__path‿ar,
 	doc: ['https://pnpm.io/settings', 'https://pnpm.io/pnpm-workspace_yaml'],
@@ -48,6 +53,8 @@ const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽpnpmᝍworkspaceᐧyaml)
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧpnpmfileᐧcjs)
+		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧgitignore)
+		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧgitattributes)
 
 		return state
 	},
@@ -85,6 +92,10 @@ const PLUGIN: Plugin = {
 					// file present but problem reading it
 					throw result
 				}
+
+				// XXX are we using pnpm?
+				//if (StateLib.getꓽpackage_manager(state).name !== 'pnpm') return
+
 
 				// discover new node
 				const { packages } = result
@@ -142,10 +153,27 @@ const PLUGIN: Plugin = {
 	},
 
 	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
+		if (StateLib.getꓽpackage_manager(state).name !== 'pnpm') return state
+
 		switch (node?.type) {
-			// TODO 1D any node where parent node != current node
+			case 'repository': {
+				const output_specꓽᐧgitattributes: FileOutputPresent = {
+					parent_node: node,
+					manifest: manifestꓽᐧgitattributes,
+					intent: 'present--containing',
+					content: {
+						entries: [
+							`## contains auto-generated content from @infinite-monorepo/plugin--pnpm`,
+							`${WANTED_LOCKFILE} merge=ours`, // Merge strategy
+						],
+					},
+				}
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitattributes)
+				break
+			}
 			case 'monorepo': {
-				const pnpm_config_output_spec: FileOutputPresent = {
+
+				const output_specꓽpnpmᝍworkspaceᐧyaml: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽpnpmᝍworkspaceᐧyaml,
 					intent: 'present--containing',
@@ -168,19 +196,37 @@ const PLUGIN: Plugin = {
 						// https://github.com/pnpm/pnpm.io/issues/667
 					},
 				}
-				state = StateLib.requestꓽfile_output(state, pnpm_config_output_spec)
+				state = StateLib.requestꓽfile_output(state, output_specꓽpnpmᝍworkspaceᐧyaml)
 
-				const packageᐧjson_output_spec: FileOutputPresent = {
+				const output_specꓽpackageᐧjson: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽpackageᐧjson,
 					intent: 'present--containing',
 					content: {
 						// TODO dynamic
+						engines: {
+							'pnpm': '>=10',
+						},
 						packageManager:
-							'pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd',
+							'pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be',
+							//'pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd',
 					},
 				}
-				state = StateLib.requestꓽfile_output(state, packageᐧjson_output_spec)
+				state = StateLib.requestꓽfile_output(state, output_specꓽpackageᐧjson)
+
+				const output_specꓽᐧgitignore: FileOutputPresent = {
+					parent_node: node,
+					manifest: manifestꓽᐧgitignore,
+					intent: 'present--containing',
+					content: {
+						entries: [
+							`## contains auto-generated content from @infinite-monorepo/plugin--pnpm`,
+
+							'node_modules/',
+						],
+					},
+				}
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitignore)
 				break
 			}
 			default:

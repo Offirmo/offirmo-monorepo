@@ -12,6 +12,10 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@infinite-monorepo/plugin--git": "*",
+		"@infinite-monorepo/state": "*",
+		"@infinite-monorepo/types": "*",
+		"semver": "^7",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -23,7 +27,9 @@
 	"devDependencies": {
 		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/semver": "^7",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^6"

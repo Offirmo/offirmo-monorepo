@@ -67,7 +67,7 @@ export function get_tsconfig__compilerOptions‿resolved(tsconfigPath?: string) 
 	);
 
 	if (parsedConfig.errors.length > 0) {
-		if (parsedConfig.errors.length === 1 && parsedConfig.errors[0].code === 18003) {
+		if (parsedConfig.errors.length === 1 && parsedConfig.errors[0]?.code === 18003) {
 			// "no input" = expected, this is a config to be extended
 		}
 		else {

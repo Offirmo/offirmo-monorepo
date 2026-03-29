@@ -8,7 +8,7 @@ const MONOREPO_SPEC_DEFAULT: Immutable<InfiniteMonorepoSpec> = {
 	runtimeⵧlocal: 'node',
 	namespace: `@monorepo`,
 	workspaces: [],
-	package_manager: 'yarn--berry',
+	package_manager: 'pnpm',
 	EOL: '\n',
 	PATH_SEP: '/',
 	root_path‿abs: 'NOT_YET_LOADED/',

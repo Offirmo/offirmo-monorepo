@@ -19,9 +19,9 @@ function getꓽfile__content(state: Immutable<State>): Immutable<Array<Node>> {
 const JS_RUNTIME_SPECⵧNODE: JsRuntimeSpec = {
 	// https://github.com/nodejs/Release/blob/main/schedule.json
 
-	name: 'node', // most standard 2025/08
-	versionsⵧacceptable: '^22', // current LTS 2025/08
-	versionⵧrecommended: '22.19.0', // 2025/08
+	name: 'node', // most standard 2026/03 but also bun
+	versionsⵧacceptable: '^24', // current LTS 2026/03
+	versionⵧrecommended: '24.14.0', // 20256/03
 }
 
 function getꓽruntimeⵧlocal(state: Immutable<State>, node: Immutable<Node>): JsRuntimeSpec {

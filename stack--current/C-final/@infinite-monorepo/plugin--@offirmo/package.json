@@ -22,7 +22,6 @@
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@infinite-monorepo/types": "*",
 		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/ts--types": "*",

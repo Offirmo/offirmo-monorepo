@@ -15,7 +15,6 @@ const ᐧeditorconfig__path‿ar: NodePathⳇRelative = `${PATHVARⵧROOTⵧNODE
 
 const manifestꓽᐧeditorconfig: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧeditorconfig__path‿ar,
-	format: 'text',
 	doc: [
 		'https://editorconfig.org/',
 		'https://spec.editorconfig.org/',
@@ -41,10 +40,12 @@ const PLUGIN: Plugin = {
 					intent: 'present--exact',
 					content: {
 						text: `
-# EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs
-# editorconfig.org
+## auto-generated content from @infinite-monorepo/plugin--editorconfig
+## EditorConfig helps developers define and maintain
+## consistent coding styles between different editors and IDEs
+## editorconfig.org
 
-# top-most EditorConfig file
+## top-most EditorConfig file
 root = true
 
 
@@ -57,6 +58,12 @@ insert_final_newline = true
 indent_style = tab
 indent_size = tab
 tab_width = 3
+## non standard EditorConfig entries
+## https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+indent_brace_style = K&R
+max_line_length = off
+quote_type = single
+spaces_around_operators = true
 
 
 [*.md]
@@ -65,15 +72,6 @@ indent_style = space
 indent_size = 2
 ## https://github.com/microsoft/vscode/issues/1679
 trim_trailing_whitespace = false
-
-
-## non standard EditorConfig entries
-## https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
-[*]
-indent_brace_style = K&R
-max_line_length = off
-quote_type = single
-spaces_around_operators = true
 						`.trim(),
 					},
 				}

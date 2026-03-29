@@ -13,6 +13,7 @@ assumptions -- check them
 assumptions -- do not assume
 bets
 business idiot / symbolic executive https://www.wheresyoured.at/the-era-of-the-business-idiot/
+C-level
 CEO "If I/we got fired today, what would the new CEO do?"
 challenges -- "Why is this our priority right now?" = CEO Actually asking about: Resource allocation; Market timing; Competitive threats; Revenue impact
 challenges -- questions -- use AI to simulate!
@@ -26,6 +27,7 @@ executive presence -- dress code = don't make leaders, but they sure announce th
 failures -- leadership -- Quantas https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
 failures modes = possible wrong ways https://newsletter.posthog.com/p/tech-lead-failure-modes
 feedback -- Keeper Test = "If this person resigned today, would I fight to keep them?"
+head of -- growth
 invisible https://medium.com/change-your-mind/the-1-minute-introduction-that-makes-people-remember-you-forever-30d0e8265854
 leadership -- ask questions
 LT "Leadership Team"

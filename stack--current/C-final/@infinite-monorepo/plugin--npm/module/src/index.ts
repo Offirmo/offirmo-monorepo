@@ -12,6 +12,7 @@ import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import type { FileOutputPresent } from '@infinite-monorepo/state'
 import assert from 'tiny-invariant'
+import {manifestꓽᐧgitattributes, manifestꓽᐧgitignore} from '@infinite-monorepo/plugin--git'
 
 /////////////////////////////////////////////////
 
@@ -41,13 +42,30 @@ const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽpackageᐧjson)
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽpackageᝍlockᐧjson)
+		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧgitattributes)
 
 		return state
 	},
 
 	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
+		if (StateLib.getꓽpackage_manager(state).name !== 'npm') return state
+
 		switch (node?.type) {
-			// TODO 1D any node where parent node != current node
+			case 'repository': {
+					const output_spec: FileOutputPresent = {
+						parent_node: node,
+						manifest: manifestꓽᐧgitattributes,
+						intent: 'present--containing',
+						content: {
+							entries: [
+								`## contains auto-generated content from @infinite-monorepo/plugin--npm`,
+								`package-lock.json merge=ours`, // Merge strategy
+							],
+						},
+					}
+					state = StateLib.requestꓽfile_output(state, output_spec)
+					break
+				}
 			case 'monorepo': {
 				const runtimeⵧlocal = StateLib.getꓽruntimeⵧlocal(state, node)
 				const runtimeⵧlocal__selector = (() => {
@@ -77,7 +95,7 @@ const PLUGIN: Plugin = {
 					return `${relevant.join('.')}`
 				})()
 
-				const output_spec: FileOutputPresent = {
+				const output_specꓽpackageᐧjson: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽpackageᐧjson,
 					intent: 'present--containing',
@@ -107,7 +125,21 @@ const PLUGIN: Plugin = {
 						},
 					},
 				}
-				state = StateLib.requestꓽfile_output(state, output_spec)
+				state = StateLib.requestꓽfile_output(state, output_specꓽpackageᐧjson)
+
+				const output_specꓽᐧgitignore: FileOutputPresent = {
+					parent_node: node,
+					manifest: manifestꓽᐧgitignore,
+					intent: 'present--containing',
+					content: {
+						entries: [
+							`## contains auto-generated content from @infinite-monorepo/plugin--npm`,
+
+							'node_modules/',
+						],
+					},
+				}
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitignore)
 				break
 			}
 			default:

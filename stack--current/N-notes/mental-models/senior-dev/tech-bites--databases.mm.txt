@@ -1,4 +1,5 @@
 +++ Oops, You Wrote a Database = those who fail to study databases are doomed to write them https://dx.tips/oops-database
+[ ] Database Design Patterns Every https://www.bytebase.com/blog/database-design-patterns/
 [ ] https://www.bytebase.com/blog/database-design-patterns/
 ACID -- 1 Atomicity = transactions are "all or nothing"
 ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
@@ -32,6 +33,7 @@ common table expressions (CTEs) = smaller sub-queries for expressing complex SQL
 connection string ex. mysql://user:pass@host:port/dbname
 data retrieval
 DBMS (Database Management System)
+DevSecOps https://www.bytebase.com/
 differential dataflow = a data-parallel programming framework designed to efficiently process large volumes of data and to quickly respond to arbitrary changes in input collections https://github.com/TimelyDataflow/differential-dataflow
 git-based https://github.com/dolthub/dolt
 graph

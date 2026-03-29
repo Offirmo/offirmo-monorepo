@@ -17,6 +17,7 @@
 2003 "Manna" prediction https://marshallbrain.com/manna1
 2019-02-14 ChatGPT 2 https://openai.com/index/better-language-models/
 2022 -> 2030 self driving car bet https://blog.codinghorror.com/the-2030-self-driving-car-bet/
+2022-11 "BEGINNING OF AI ERA" https://lzon.ca/posts/other/thoughts-ai-era/
 2022-11-30 ChatGPT lauched https://x.com/sama/status/1599668808285028353 https://openai.com/index/chatgpt/
 2023 -- AI 50 && https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 2023-01 OpenAI / Microsoft partnership https://arstechnica.com/information-technology/2023/01/openai-and-microsoft-reaffirm-shared-quest-for-powerful-ai-with-new-investment/
@@ -61,13 +62,16 @@
 2026-01-07 Tailwind fires 75% dev due to AI https://github.com/tailwindlabs/tailwindcss.com/pull/2388#issuecomment-3717222957
 2026-01-20 "the era of humans writing code is over. Disturbing for those of us who identify as SWEs, but no less true." https://x.com/rough__sea/status/2013280952370573666
 2026-01-31 most massive layoffs for 25 years, "job hugging" https://x.com/BoringBiz_/status/2019414912552878526?
+2026-02 AI flagging due to low quality https://games.slashdot.org/story/26/02/27/1934258/ai-mistakes-are-infuriating-gamers-as-developers-seek-savings
 2026-02 Gorman paradox "Everyone's shipping. Nobody's succeeding" https://x.com/BrettFromDJ/status/2023410927593541802
 2026-02 moltbook = A social network for AI agents. They share, discuss, and upvote. Humans welcome to observe. 🦞 https://www.moltbook.com/
 2026-02 OpenClaw https://garymarcus.substack.com/p/openclaw-aka-moltbot-is-everywhere https://steipete.me/posts/2026/openclaw
 2026-02-12 "An AI Agent Published a Hit Piece on Me" https://theshamblog.com/an-ai-agent-published-a-hit-piece-on-me/
 2026-02-28 Anthropic named supply-chain risk over mass domestic surveillance and fully autonomous weapons https://truthsocial.com/@realDonaldTrump/posts/116144552969293195 https://x.com/SecWar/status/2027507717469049070 https://www.anthropic.com/news/statement-comments-secretary-war
+2026-03 "the campfire of the Explorer era is flickering out. We are no longer building toys for the curious; we are pivoting toward Intelligence Operating Systems" https://open.substack.com/pub/a16z/p/the-sovereign-wall-why-ais-next-billion
+2026-03 Wikipedia en bans LLM https://news.slashdot.org/story/26/03/26/1818215/wikipedia-bans-use-of-generative-ai
+2026-03-05 re-implementationt -- but is it really "clean-room"? https://lucumr.pocoo.org/2026/3/5/theseus/ debate: https://github.com/chardet/chardet/issues/327#issuecomment-4005195078
 2026-03-24 "Issue tracking is dead" https://linear.app/next
-? https://agentation.dev/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
 [ ] https://aleteia.org/tag/artificial-intelligence/
@@ -85,8 +89,14 @@
 [ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
 A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 abliteration = family of techniques that identify and surgically remove the internal representations responsible for content refusal, without retraining or fine-tuning. The result: a model that responds to all prompts without artificial gatekeeping, while preserving its core language capabilities. https://github.com/elder-plinius/OBLITERATUS
-Agent verification = activity to gain assurances that purposeful artificial constructs act in accordance with their specifications https://en.wikipedia.org/wiki/Agent_verification
-Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
+agent verification = activity to gain assurances that purposeful artificial constructs act in accordance with their specifications https://en.wikipedia.org/wiki/Agent_verification
+agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
+agents -- building -- It doesn’t matter how cool your capabilities are
+agents -- building -- Set up observability and evaluation from day one
+agents -- building -- Should you build an MCP server instead?
+agents -- building -- What we wish we knew about building AI agents https://newsletter.posthog.com/p/what-we-wish-we-knew-before-building
+agents -- building -- Your context is your advantage
+agents -- building -- Your harness is not your moat
 agents -- credit cards https://agentcard.ai/
 agents -- crypto https://x.com/moonpay/status/2026371974037983504
 agents -- economy = agents transact, transfer resources, keep track, build trust
@@ -101,8 +111,9 @@ agents -- swarms = Every agent works on a different facet and results converge i
 agents -- ~assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 agents = ~unclear definition
 AGI -- ANI -> AGI -> ASI = narrow(weak) / general(strong) / super[human](strong)
-AGI -- timeline https://archive.md
-AGI ~ strong AI = can independently learn new problem-solving strategies that are not explicitly included in its original model or training data
+AGI -- High-Level Machine Intelligence (HLMI) = unaided machines that can accomplish every task better and more cheaply than human workers (seemingly including robotics) https://epoch.ai/gradient-updates/how-well-did-forecasters-predict-2025-ai-progress
+AGI -- timeline
+AGI = ~strong AI = can independently learn new problem-solving strategies that are not explicitly included in its original model or training data
 AI "Artificial intelligence" = intentionally vague term / "solving tasks or problems by computers/machines, which require a form of human-like intelligence"
 AI -- first cohort of winners
 AI -- weak AI = task specific
@@ -181,7 +192,8 @@ challenges -- laziness = cases where the model doesn’t complete a task https:/
 challenges -- model collapse = as AI grows, systems are trained on their own outputs, gradually losing accuracy, diversity, and reliability. This occurs because errors compound across successive model generations, leading to distorted data distributions and "irreversible defects" in performance. The model becomes poisoned with its own projection of reality. https://slashdot.org/story/25/05/28/0242240/some-signs-of-ai-model-collapse-begin-to-reveal-themselves
 challenges -- money aligned LLMs = ads, preferred providers
 challenges -- privacy, control
-challenges -- prompt injections = direct, in connectors, in function calls
+challenges -- prompt injection -- indirect = https://www.promptarmor.com/resources/notion-ai-unpatched-data-exfiltration
+challenges -- prompt injections -- direct = in connectors, in function calls
 challenges -- refusal = refuse to answer perfectly benign questions, increasing frustration for the user. Due to defense against CBRN / jailbreaks
 challenges -- sandbagging -- deferred subversion = specific, highly sophisticated form of sandbagging within the context of AI safety. It involves an AI model deliberately acting in alignment with its developers during testing (faking safety) to gain deployment, with the intention of pursuing misaligned goals only after it is deployed
 challenges -- sandbagging = strategic behavior involving the intentional underperformance, feigned lack of ability, or deliberate lowering of expectations to gain a future advantage
@@ -238,6 +250,7 @@ coding -- legacy code https://martinfowler.com/articles/legacy-modernization-gen
 coding -- next "AI friendly" language? https://lucumr.pocoo.org/2026/2/9/a-language-for-agents/
 coding -- OpenCode https://opencode.ai/
 coding -- review -- Code Review Bench https://codereview.withmartian.com/
+coding -- rigor = needed at some point. If not in code, somewhere else. https://www.honeycomb.io/blog/production-is-where-the-rigor-goes
 coding -- sandboxing https://www.luiscardoso.dev/blog/sandboxes-for-ai
 coding -- self-driving codebase
 coding -- tech stack choices https://amplifying.ai/research/claude-code-picks
@@ -324,6 +337,7 @@ harness -- minimal = a limited tool-calling loop around a model with no addition
 harness = Orchestration layer that receives input, interprets intent, routes to the right path, and manages concurrency, safety, automations, and follow-through
 HHH "helpful, honest, and harmless"
 Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.pinecone.io/learn/series/faiss/hnsw/
+Horseless Age energy = https://www.vanderbiltcupraces.com/blog/article/greg_os_garage_the_first_automobile_publication_the_horseless_age
 https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 https://nonbot.org/
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
@@ -348,6 +362,7 @@ jobs -- doorman paradox = saving on the doorman but was doing more than surface 
 jobs -- induced precarity = precarity. Your boss can't actually fire you and replace you with AI, but he can make you feel like he could, and maybe not ask for that raise.
 jobs -- jobpocalypse
 jobs -- luddites
+jobs -- marginal hire = not hired due to productivity gains https://tomtunguz.com/marginal-hire/
 jobs -- ngmi "not gonna make it" https://ghuntley.com/ngmi/
 jobs -- not left behind
 jobs -- rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
@@ -411,6 +426,7 @@ model (NN) = sort of snapshot of a trained neural network / brain = NN (structur
 model -- efficiency
 model -- foundational = a big one pre-trained on vast resources
 model -- transformer model
+model parity = Who topped the latest benchmark? Who had the most parameters?
 multimodal image generation "no elephant in the room" https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
 NLG Natural Language Generation
 NLP Natural Language Processing
@@ -601,15 +617,15 @@ training (NN) -- transfer learning = see fine-tuning
 training (NN) -- unsupervised learning
 training (NN) = iterative process in which data is passed to a neural network + parameters of the neural network are adjusted to achieve an optimal solution for the given problem. a dataset is required
 training -- cutoff
-training -- data -- illegal https://www.pcgamer.com/gaming-industry/court-documents-show-not-only-did-meta-torrent-terabytes-of-pirated-books-to-train-ai-models-employees-wouldnt-stop-emailing-each-other-about-it-torrenting-from-a-corporate-laptop-doesnt-feel-right/
-training data -- "uncontaminated" = "created fully in-house with our partners X and has not been published"
-Trainium
+training -- data -- illegal = https://www.pcgamer.com/gaming-industry/court-documents-show-not-only-did-meta-torrent-terabytes-of-pirated-books-to-train-ai-models-employees-wouldnt-stop-emailing-each-other-about-it-torrenting-from-a-corporate-laptop-doesnt-feel-right/
+training -- data -- uncontaminated = "created fully in-house with our partners X and has not been published"
 transfer learning
 transformers (hugging face) = a magic python library that can auto-download models on demand https://github.com/huggingface/transformers BUT it's for research, not prod (no unified API for ex.)
 transformers = "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time" ~pattern recognition techniques
 tropes ex. delve https://tropes.fyi/tropes-md
 Turing test
 UI -- dynamic https://tambo.co/blog/posts/introducing-tambo-generative-ui
+UI -- https://agentation.dev/
 UI -- https://www.openui.com/
 UI -- json https://github.com/vercel-labs/json-render
 vector -- difference with embedding??
@@ -622,6 +638,7 @@ vibe coding https://x.com/karpathy/status/1886192184808149383
 vulnerability research https://googleprojectzero.blogspot.com/2024/10/from-naptime-to-big-sleep.html
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization
+When building an agent, there’s ultimately one question you need to answer to succeed: How does this beat Claude?
 who's who -- Boris Cherny creator of Claude Code https://x.com/bcherny
 who's who -- Eliezer Yudkowsky = https://en.wikipedia.org/wiki/Eliezer_Yudkowsky
 who's who -- Karpathi
@@ -630,6 +647,6 @@ workload-model fit = a perfect alignment between what they desperately needed an
 write as little business logic as possible = don't get in the way of the model "feel the model as raw as possible"
 yap -- yap score
 yap https://www.reddit.com/r/ChatGPT/comments/1djgyvb/is_it_just_me_or_gpt4_yaps_too_much/
-YOLO mode = giving the agent all permissions
+YOLO mode = giving the AI all permissions
 ZDR "Zero Data Retention" = data security and privacy policy offered by AI providers (like OpenAI and Anthropic) to enterprise customers, ensuring that user data is not stored or trained on https://platform.claude.com/docs/en/build-with-claude/zero-data-retention
 zkML = the party that computes the inference can prove things like: “I ran X input on Y model to generate Z output” https://opengradient.medium.com/a-gentle-introduction-to-zkml-8049a0e10a04

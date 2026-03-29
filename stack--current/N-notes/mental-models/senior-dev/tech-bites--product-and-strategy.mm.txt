@@ -177,7 +177,10 @@ funnel -- RARRA -- 2 Activation = Focuses on mapping your users’ journeys with
 funnel -- RARRA -- 3 Revenue = It’s 60-70% easier to sell to current customers than it is to new ones. It makes sense that retaining customers should be more financially viable than trying to acquire new ones.
 funnel -- RARRA -- 4 Referral = Build products your users will love, and let them do the legwork for you. Studies show that people are 4x more likely to buy because of a recommendation from a friend or colleague than from any marketing material. Plus, it leads to a near 40% higher retention rate. Give your users the tools they need to refer your product: make it easy.
 funnel -- RARRA -- 5 Acquisition = All of your above efforts should lead to you acquiring more customers. Sure, it may happen at a slower rate, but at a much longer lifespan. Hence, an increase in customer lifetime value.
+gamification = usually bad
 get big fast / get large or get lost
+globalization -- Institutional trust and cultural permission are now inseparable from the product itself  https://open.substack.com/pub/a16z/p/the-sovereign-wall-why-ais-next-billion
+globalization = is not a product feature; it is a geopolitical negotiation ex. Thailand lèse-majesté, Germany GEMA (no fair use)... https://open.substack.com/pub/a16z/p/the-sovereign-wall-why-ais-next-billion
 go-to-market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 gold rush tools = during a gold rush, the one selling tools is the one making money
 good business = one that makes good products at a fair price to a sustainable and loyal market OR one that can display the most stock price growth from quarter to quarter? https://www.wheresyoured.at/the-era-of-the-business-idiot/
@@ -413,6 +416,7 @@ support loops = ex. help desk + social media + phone etc.
 system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
 teams moving from spreadsheet
+the next billion users = after early adopters / explorers / tech-optimists
 too big to fail
 too big to tame https://tech.slashdot.org/story/25/12/09/141227/indias-aviation-crisis-is-all-about-too-big-to-tame
 tool tech stack -- review https://www.lennysnewsletter.com/p/whats-in-your-stack-the-state-of
@@ -434,6 +438,7 @@ try/test/graduate
 Uber model = Make it so useful that you can’t shut it down
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 USP "Unique Selling Point" = secret sauce, difference with competition
+utility-seekers = the users don’t want to chat with a ghost in the machine; they want a tool that navigates the friction of their reality
 UX -- principles and cognitive bias relevant https://growth.design/psychology
 UX -- stick to established patterns https://medium.com/@daniel.stoyanov/not-following-well-established-ux-design-patterns-is-almost-always-a-bad-idea-58ae01b4f48a
 value extraction -- creating value, not extracting it

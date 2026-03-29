@@ -17,7 +17,7 @@ const ᐧnvmrc__path‿ar: NodePathⳇRelative = `${PATHVARⵧROOTⵧNODE}/.nvmr
 
 const manifestꓽᐧnvmrc: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧnvmrc__path‿ar,
-	format: 'single-value',
+	//format: 'single-value',
 	doc: [
 		/* Note: <version> refers to any version-like string nvm understands. This includes:
 			- full or partial version numbers, starting with an optional "v" (0.10, v0.1.2, v1)
@@ -35,13 +35,6 @@ const manifestꓽᐧnvmrc: StructuredFsⳇFileManifest = {
 const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧnvmrc)
-
-		return state
-	},
-
-	onꓽnodeⵧdiscovered(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-		// TODO 1D
-		//state = StateLib.ensureꓽfile_loading(state, node, ᐧnvmrc__path‿ar)
 
 		return state
 	},

@@ -12,13 +12,16 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@infinite-monorepo/plugin--git": "*",
 		"@infinite-monorepo/plugin--npm": "*",
 		"@infinite-monorepo/state": "*",
 		"@infinite-monorepo/types": "*",
 		"@monorepo-private/fs--ls": "*",
 		"@offirmo/error-utils": "^0.0.1",
+		"@pnpm/constants": "^1001",
 		"semver": "^7",
-		"tiny-invariant": "^1"
+		"tiny-invariant": "^1",
+		"tinyglobby": "^0.2"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/plugin--pnpm\" && tsc --noEmit",
@@ -31,6 +34,8 @@
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@pnpm/types": "^1001",
+		"@pnpm/workspace.workspace-manifest-reader": "^1000",
 		"@types/node": "^24",
 		"@types/semver": "^7",
 		"npm-run-all": "^4",

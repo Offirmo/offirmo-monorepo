@@ -41,6 +41,7 @@ character -- attributes https://en.wikipedia.org/wiki/Attribute_(role-playing_ga
 character -- statistics https://en.wikipedia.org/wiki/Statistic_(role-playing_games)
 character class
 character creator
+Civilization 1 https://github.com/rajko-horvat/OpenCiv1
 clicker
 cloud multiplayer
 cloud save
