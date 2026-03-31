@@ -17,7 +17,7 @@ import type { FileOutputPresent } from '@infinite-monorepo/state'
 /////////////////////////////////////////////////
 
 // about global gitignore https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
-const ᐧgitignore__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧMONOREPO}/.gitignore`
+const ᐧgitignore__path‿ar: NodePathⳇRelative = `${PATHVARⵧROOTⵧNODE}/.gitignore`
 const manifestꓽᐧgitignore: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitignore__path‿ar,
 	doc: [
@@ -26,7 +26,7 @@ const manifestꓽᐧgitignore: StructuredFsⳇFileManifest = {
 	],
 }
 
-const ᐧgitattributes__path‿ar: RepoPathⳇRelative = `${PATHVARⵧROOTⵧREPO}/.gitattributes`
+const ᐧgitattributes__path‿ar: NodePathⳇRelative = `${PATHVARⵧROOTⵧNODE}/.gitattributes`
 const manifestꓽᐧgitattributes: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitattributes__path‿ar,
 	doc: ['https://git-scm.com/docs/gitattributes', 'https://stackoverflow.com/a/73095814/31353119'],
@@ -108,6 +108,20 @@ const PLUGIN: Plugin = {
 					},
 				}
 				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitignore)
+
+				const output_specꓽᐧgitattributes: FileOutputPresent = {
+					parent_node: node,
+					manifest: manifestꓽᐧgitattributes,
+					intent: 'present--containing',
+					content: {
+						entries: [
+							`## contains auto-generated content from @infinite-monorepo/plugin--git`,
+							`## https://nesbitt.io/2026/02/05/git-magic-files.html`,
+						],
+					},
+				}
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitattributes)
+
 				break
 			}
 			// TODO 1D any node where parent node != current node

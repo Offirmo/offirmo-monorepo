@@ -103,12 +103,15 @@ agents -- crypto https://x.com/moonpay/status/2026371974037983504
 agents -- economy = agents transact, transfer resources, keep track, build trust
 agents -- fleets = Each agent works independently and produces its own contribution https://background-agents.com/
 agents -- graph
+agents -- managed vs. BYO = agent UI provided (sometimes with extra features such as UI) or Bring Your Own through a cli or MCP server
 agents -- orchestration
 agents -- principals
 agents -- some def = a loop of calls until goal achieved = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
 agents -- some def = a system that can perform complex tasks independently; capable of autonomous, purposeful action in the real world https://en.wikipedia.org/wiki/Autonomous_agent
 agents -- some def = stateful: remember conversations, act on schedules, call tools, coordinate with other agents, and stay connected to users in real-time
 agents -- swarms = Every agent works on a different facet and results converge into a single deliverable https://background-agents.com/
+agents -- tools = https://www.anthropic.com/engineering/writing-tools-for-agents https://modelcontextprotocol.io/specification/2025-06-18/server/tools
+agents -- tools -- through MCP = `tools/list` method then `tools/call`
 agents -- ~assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 agents = ~unclear definition
 AGI -- ANI -> AGI -> ASI = narrow(weak) / general(strong) / super[human](strong)
@@ -426,6 +429,8 @@ moat -- "We have no moat" https://www.semianalysis.com/p/google-we-have-no-moat-
 model (NN) = sort of snapshot of a trained neural network / brain = NN (structure + parameters) https://huggingface.co/docs/hub/models
 model -- efficiency
 model -- foundational = a big one pre-trained on vast resources
+model -- IQ (related to a certain tech) = ex. Ethereum IQ https://ethpandaops.io/posts/introducing-ethiq/
+model -- size class = nano / super / ultra
 model -- transformer model
 model parity = Who topped the latest benchmark? Who had the most parameters?
 multimodal image generation "no elephant in the room" https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image

@@ -156,21 +156,6 @@ const PLUGIN: Plugin = {
 		if (StateLib.getꓽpackage_manager(state).name !== 'pnpm') return state
 
 		switch (node?.type) {
-			case 'repository': {
-				const output_specꓽᐧgitattributes: FileOutputPresent = {
-					parent_node: node,
-					manifest: manifestꓽᐧgitattributes,
-					intent: 'present--containing',
-					content: {
-						entries: [
-							`## contains auto-generated content from @infinite-monorepo/plugin--pnpm`,
-							`${WANTED_LOCKFILE} merge=ours`, // Merge strategy
-						],
-					},
-				}
-				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitattributes)
-				break
-			}
 			case 'monorepo': {
 
 				const output_specꓽpnpmᝍworkspaceᐧyaml: FileOutputPresent = {
@@ -227,6 +212,20 @@ const PLUGIN: Plugin = {
 					},
 				}
 				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitignore)
+
+				const output_specꓽᐧgitattributes: FileOutputPresent = {
+					parent_node: node,
+					manifest: manifestꓽᐧgitattributes,
+					intent: 'present--containing',
+					content: {
+						entries: [
+							`## contains auto-generated content from @infinite-monorepo/plugin--pnpm`,
+							`${WANTED_LOCKFILE} merge=ours`, // Merge strategy
+						],
+					},
+				}
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧgitattributes)
+
 				break
 			}
 			default:

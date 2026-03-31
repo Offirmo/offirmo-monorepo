@@ -41,7 +41,9 @@ const PLUGIN: Plugin = {
 				// discover new node
 				const { workspaces: workspacesⵧraw } = bolt_stuff
 				if (workspacesⵧraw) {
-					// TODO 1D use a glob lib
+					// TODO 1D follow https://github.com/boltpkg/bolt/blob/master/src/utils/globs.js
+					// or use node integrated glob
+
 					const workspaces = (workspacesⵧraw as string[])
 						.filter((p: PathⳇRelative) => {
 							return !p.startsWith('#') && !p.startsWith('xx') // we allow "commenting" a workspace to help "progressive resurrection"
@@ -106,6 +108,7 @@ const PLUGIN: Plugin = {
 				manifest: manifestꓽpackageᐧjson,
 				intent: 'present--containing',
 				content: {
+					"// @infinite-monorepo/plugin--bolt": "auto generated some content in this file",
 					bolt: {
 						"//": "https://github.com/boltpkg/bolt",
 						workspaces: [

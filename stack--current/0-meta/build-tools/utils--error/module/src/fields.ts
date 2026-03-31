@@ -19,7 +19,9 @@ const QUASI_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	...STRICT_STANDARD_ERROR_FIELDS,
 
 	// quasi-standard: followed by all browsers + node
+	// being standardized: https://github.com/tc39/proposal-error-stack-accessor
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/prototype
+	// see also https://v8.dev/docs/stack-trace-api
 	'stack', // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack
 
 	// ES2024

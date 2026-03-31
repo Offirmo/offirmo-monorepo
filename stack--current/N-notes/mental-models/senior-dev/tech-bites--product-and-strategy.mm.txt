@@ -95,6 +95,7 @@ deep appeal = something that a few people love, even if most people don't get it
 deployment gap = between lab/demo to actual use https://www.a16z.news/p/the-physical-ai-deployment-gap
 digital product strategy and marketing https://lukew.com/
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
+disruptive technologies = see [The Innovator's Dilemma]
 dogfooding "Eating our own Dogfood" = ranges wider than testing your end-product, and can be the difference between good and great products https://gregtidanian.substack.com/p/eating-our-own-dog-food
 duty of care = actively shield users from harm “rather than the reactive system that exists now” https://ia.acs.org.au/article/2025/govt-ramps-up-big-tech--duty-of-care--reforms.html
 economies of scale = aren’t available to smaller players in a market, including increased visibility, increased buying power, and lower customer acquisition costs https://dealroom.net/blog/industry-consolidation
@@ -416,6 +417,7 @@ support loops = ex. help desk + social media + phone etc.
 system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
 teams moving from spreadsheet
+The Innovator's Dilemma = describes how large incumbent companies lose market share by listening to their customers and providing what appears to be the highest-value products, but new companies that serve low-value customers with poorly developed technology (disruptive technologies) can improve that technology incrementally until it is good enough to quickly take market share from established business. Christensen recommends that large companies maintain small, nimble divisions that attempt to replicate this phenomenon internally to avoid being blindsided and overtaken by startup competitors https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma
 the next billion users = after early adopters / explorers / tech-optimists
 too big to fail
 too big to tame https://tech.slashdot.org/story/25/12/09/141227/indias-aviation-crisis-is-all-about-too-big-to-tame

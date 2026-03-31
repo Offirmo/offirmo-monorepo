@@ -407,8 +407,8 @@ ISO/TC 307 = standardization effort "Blockchain and distributed ledger technolog
 kaito -- Yaps As Proof-of-Attention https://yaps.kaito.ai/social-card
 katana https://app.katana.network/
 L1
-L2
 L2 -- Rollup ??
+L2 -- vs L1 2026/03 https://blog.ethereum.org/en/2026/03/23/l1-l2-ethereum
 launchpad tokens
 launchpads
 launchpads
@@ -832,6 +832,7 @@ wallet -- supported networks
 wallet -- sweeping = transfer all assets (esp. from hot) to another "deposit" wallet
 wallet -- withdrawal & =
 Wallet Provider = A user agent that manages keys and facilitates transactions with Ethereum https://eips.ethereum.org/EIPS/eip-6963
+wallets -- external providers -- solutions = Turnkey, Zerodev, Dynamic, Privy, or similar services
 Web Ontology Language (OWL) = language for defining ontologies, or formal representations of knowledge and relationships between concepts. You can use it to specify classes, properties, and instances, as well as facilitate reasoning and inferencing.
 Web1 = read-only
 Web2 = interactive, but challenges with centralized providers: data portability, data abuse (privacy), censorship, ban (democracy)...

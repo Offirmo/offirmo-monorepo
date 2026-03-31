@@ -15,6 +15,8 @@ export const NODE_TYPEⵧPACKAGE          = 'package' as const // also named "wo
 /////////////////////////////////////////////////
 // inspired by https://www.jetbrains.com/help/idea/absolute-path-variables.html
 
+// TODO 1D also create user-level config files?
+
 export const PATHVARⵧROOTⵧREPO = `$REPO_ROOT$` as const
 export type RepoPathⳇRelative = `${typeof PATHVARⵧROOTⵧREPO}/${string}`
 

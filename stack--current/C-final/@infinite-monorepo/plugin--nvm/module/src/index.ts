@@ -5,7 +5,7 @@ import {
 	PATHVARⵧROOTⵧNODE,
 	type StructuredFsⳇFileManifest,
 	type Node,
-	type NodePathⳇRelative,
+	type NodePathⳇRelative, PATHVARⵧROOTⵧMONOREPO, type MonorepoPathⳇRelative,
 } from '@infinite-monorepo/types'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
@@ -13,7 +13,7 @@ import type { FileOutputPresent } from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////
 
-const ᐧnvmrc__path‿ar: NodePathⳇRelative = `${PATHVARⵧROOTⵧNODE}/.nvmrc`
+const ᐧnvmrc__path‿ar: MonorepoPathⳇRelative = `${PATHVARⵧROOTⵧMONOREPO}/.nvmrc`
 
 const manifestꓽᐧnvmrc: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧnvmrc__path‿ar,

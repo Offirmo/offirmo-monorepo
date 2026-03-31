@@ -957,6 +957,7 @@ semver -- operators = https://www.npmjs.com/package/semver
 semver -- preparing a major with a subpath https://github.com/colinhacks/zod/issues/4371
 semver = https://docs.npmjs.com/about-semantic-versioning
 senior -- "problem solvers who happen to code" "job market is flooded with 8-year JavaScript veterans who can't debug a slow API" https://www.linkedin.com/posts/jordanambra_technicalleadership-hiring-engineeringmanagement-activity-7337913255601848320-t6m4/
+settings = managed > project > project.local > user > system ex. https://code.claude.com/docs/en/memory#choose-where-to-put-claude-md-files
 SHA "Secure Hash Algorithm"
 shaving the yak
 shell -- aliases -- collisions = use commas https://rhodesmill.org/brandon/2009/commands-with-comma/
@@ -1029,6 +1030,8 @@ stringbool = string convertible to a bool, ex.yes, no, Y, false, true, 0, 1...
 style guides https://google.github.io/styleguide/
 superapp
 Sustainable Architectural Decisions https://adr.github.io/
+syntactic salt https://en.wikipedia.org/wiki/Syntactic_sugar#Syntactic_salt
+syntactic sugar https://en.wikipedia.org/wiki/Syntactic_sugar
 system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
 system call
 tainting an object https://react.dev/reference/react/experimental_taintObjectReference

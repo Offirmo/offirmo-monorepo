@@ -1,0 +1,6 @@
+
+
+- parameters
+- invariants
+- inits done
+- 

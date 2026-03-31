@@ -3,7 +3,7 @@ import path from "node:path"
 import { styleText } from 'node:util'
 
 import assert from 'tiny-invariant'
-import type { Immutable, PathⳇAny } from '@monorepo-private/ts--types'
+import type {Immutable, PathⳇAbsolute, PathⳇAny} from '@monorepo-private/ts--types'
 import type { Node } from '@infinite-monorepo/types'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 import * as StateLib from '@infinite-monorepo/state'
@@ -76,11 +76,11 @@ async function apply(from?: PathⳇAny) {
 			prev = state
 			let node: Immutable<Node> | undefined
 			while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
-				console.group(`↳ onꓽnodeⵧdiscovered : [${node.type}] ${node?.path‿ar}`)
-				state = Object.entries(plugins).reduce((state, [name, plugin]) => {
+				console.group(`↳ onꓽnodeⵧdiscovered : [${styleText('yellow', node.type)}] ${styleText('gray', node?.path‿ar || '??')}`)
+				state = Object.entries(plugins).reduce((state, [plugin__name, plugin]) => {
 					if (!plugin.onꓽnodeⵧdiscovered) return state
 
-					console.group(`↳ onꓽnodeⵧdiscovered [${name}]`)
+					console.group(`↳ onꓽnodeⵧdiscovered [${styleText('blue', plugin__name)}]`)
 					state = plugin.onꓽnodeⵧdiscovered(state, node)
 					console.groupEnd()
 
@@ -98,10 +98,10 @@ async function apply(from?: PathⳇAny) {
 	}
 
 	////////////
-	state = Object.entries(plugins).reduce((state, [name, plugin]) => {
+	state = Object.entries(plugins).reduce((state, [plugin__name, plugin]) => {
 		if (!plugin.onꓽload) return state
 
-		console.group(`↳ onꓽload [${name}]`)
+		console.group(`↳ onꓽload [${styleText('blue', plugin__name)}]`)
 		state = plugin.onꓽload(state)
 		console.groupEnd()
 
@@ -131,10 +131,10 @@ async function apply(from?: PathⳇAny) {
 		.sort()
 		.forEach(([, node]) => {
 			console.group(`↳ SCM node ${node.path‿ar}`)
-			state = Object.entries(plugins).reduce((state, [name, plugin]) => {
+			state = Object.entries(plugins).reduce((state, [plugin__name, plugin]) => {
 				if (!plugin.onꓽapply) return state
 
-				console.group(`↳ onꓽapply [${name}]`)
+				console.group(`↳ onꓽapply [${styleText('blue', plugin__name)}]`)
 				state = plugin.onꓽapply(state, node)
 				console.groupEnd()
 
@@ -150,10 +150,10 @@ async function apply(from?: PathⳇAny) {
 		.sort()
 		.forEach(([, node]) => {
 			console.group(`↳ monorepo node ${node.path‿ar}`)
-			state = Object.entries(plugins).reduce((state, [name, plugin]) => {
+			state = Object.entries(plugins).reduce((state, [plugin__name, plugin]) => {
 				if (!plugin.onꓽapply) return state
 
-				console.group(`↳ onꓽapply [${name}]`)
+				console.group(`↳ onꓽapply [${styleText('blue', plugin__name)}]`)
 				state = plugin.onꓽapply(state, node)
 				console.groupEnd()
 
@@ -179,6 +179,13 @@ async function apply(from?: PathⳇAny) {
 				case 'not-present':
 					console.log(`- Removing file ${path}…`)
 					fs.rm(path, { force: true })
+					break
+
+				case 'present':
+					console.log(`- Writing file if not exist ${path}…`)
+					ensureFile(path, async () => {
+						ೱwriteꓽfile(path, spec.content as any, spec.manifest.format)
+					})
 					break
 
 				case 'present--exact':
@@ -250,6 +257,14 @@ async function ensureSymlink(target: string, linkPath: string) {
 		if (err.code !== "ENOENT") throw err;
 		await fs.symlink(target, linkPath);
 		console.log(`Symlink created: ${linkPath} -> ${target}`);
+	}
+}
+
+async function ensureFile(path: PathⳇAbsolute, onCreate: () => Promise<void>): Promise<void> {
+	try {
+		await fs.access(path);
+	} catch {
+		await onCreate();
 	}
 }
 

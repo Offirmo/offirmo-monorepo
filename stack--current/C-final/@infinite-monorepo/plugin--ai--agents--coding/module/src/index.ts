@@ -23,6 +23,15 @@ const manifestꓽAGENTSᐧmd: StructuredFsⳇFileManifest = {
 		'https://agents.md/'
 	],
 }
+
+const ᐧaiignore__path‿ar: NodePathⳇRelative = `${PATHVARⵧROOTⵧNODE}/.aiignore`
+const manifestꓽᐧaiignore: StructuredFsⳇFileManifest = {
+	path‿ar: ᐧaiignore__path‿ar,
+	doc: [
+		'https://www.jetbrains.com/help/ai-assistant/disable-ai-assistant.html#restrict-ai-assistant-usage-in-specific-files-or-folders',
+	],
+}
+
 const CLAUDEᐧmd__path‿ar: NodePathⳇRelative = `${PATHVARⵧROOTⵧNODE}/.claude/CLAUDE.md`
 const manifestꓽCLAUDEᐧmd: StructuredFsⳇFileManifest = {
 	path‿ar: CLAUDEᐧmd__path‿ar,
@@ -38,33 +47,58 @@ const PLUGIN: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽAGENTSᐧmd)
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽCLAUDEᐧmd)
+		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧaiignore)
 
 		return state
 	},
 
 	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
 		switch (node?.type) {
-			case 'repository':
 			case 'monorepo': {
-				const output_spec1: FileOutputPresent = {
+				const output_specꓽAGENTSᐧmd: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽAGENTSᐧmd,
-					intent: 'present--containing',
+					intent: 'present',
 					content: {
-						text: 'TODO AGENTS.md'
+						text: `
+# AGENTS.md
+
+## Project overview
+
+## Build and test commands
+
+## Code style guidelines
+
+## Testing instructions
+
+## Security considerations
+`
 					},
 				}
-				state = StateLib.requestꓽfile_output(state, output_spec1)
+				state = StateLib.requestꓽfile_output(state, output_specꓽAGENTSᐧmd)
 
-				const output_spec2: FileOutputPresent = {
+				const output_specꓽCLAUDEᐧmd: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽCLAUDEᐧmd,
 					intent: 'present--exact', // plugins should use AGENTS.md
 					content: {
-						text: 'Read the [AGENTS.md](../AGENTS.md) file.'
+						text: '@../AGENTS.md' // cf. https://code.claude.com/docs/en/memory#agents-md
 					},
 				}
-				state = StateLib.requestꓽfile_output(state, output_spec2)
+				state = StateLib.requestꓽfile_output(state, output_specꓽCLAUDEᐧmd)
+
+				const output_specꓽᐧaiignore: FileOutputPresent = {
+					parent_node: node,
+					manifest: manifestꓽᐧaiignore,
+					intent: 'present--containing',
+					content: {
+						entries: [
+							`## contains auto-generated content from @infinite-monorepo/plugin--ai--agents--coding`,
+							`## https://www.jetbrains.com/help/ai-assistant/disable-ai-assistant.html#restrict-ai-assistant-usage-in-specific-files-or-folders`,
+						],
+					},
+				}
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧaiignore)
 				break
 			}
 			default:

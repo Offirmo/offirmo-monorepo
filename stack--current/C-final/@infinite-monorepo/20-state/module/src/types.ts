@@ -12,8 +12,9 @@ import * as StateLib from './index.ts'
 
 export type FileOutputIntent =
 	| 'not-present'
-	| 'present--exact'
-	| 'present--containing'
+	| 'present'              // default content if not present, won't touch if present
+	| 'present--exact'       // fully overwrite
+	| 'present--containing'  // merge content
 	| 'symlink'
 
 interface BaseFileOutput {
@@ -27,7 +28,7 @@ export interface FileOutputAbsent extends BaseFileOutput {
 	intent: 'not-present'
 }
 export interface FileOutputPresent extends BaseFileOutput {
-	intent: 'present--exact' | 'present--containing' | 'symlink'
+	intent: 'present' | 'present--exact' | 'present--containing' | 'symlink'
 	manifest: StructuredFsⳇFileManifest
 	content: Immutable<JSONObject>
 }

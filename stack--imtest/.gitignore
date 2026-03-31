@@ -2,6 +2,7 @@
 ## contains auto-generated content from @infinite-monorepo/plugin--mise
 ## contains auto-generated content from @infinite-monorepo/plugin--npm
 ## contains auto-generated content from @infinite-monorepo/plugin--parcel
+## contains auto-generated content from @infinite-monorepo/plugin--pnpm
 ## contains auto-generated content from @infinite-monorepo/plugin--typescript
 ## https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns
 *.env.staging
