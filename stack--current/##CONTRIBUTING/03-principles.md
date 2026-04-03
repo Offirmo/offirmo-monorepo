@@ -34,4 +34,3 @@ Unless it's more convenient for some reason, this repo strives to adhere to thos
 
 Good reads
 * 2023 https://read.engineerscodex.com/p/7-simple-habits-of-the-top-1-of-engineers
-*

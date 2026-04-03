@@ -26,9 +26,6 @@ assert(EOL === _os_EOL, `Unexpected EOL!`) // TODO review
 const MONOREPO_ROOT = path.resolve(path.join(GIT_ROOT, 'stack--current'))
 assert(fs.existsSync(MONOREPO_ROOT), `MONOREPO_ROOT dir "${MONOREPO_ROOT}" should exist!`)
 
-const MONOREPO__ROOT_TSCONFIG‿abs = path.join(__dirname, '../../../../tsconfig.json')
-assert(fs.existsSync(MONOREPO__ROOT_TSCONFIG‿abs), `MONOREPO__ROOT_TSCONFIG‿abs "${MONOREPO__ROOT_TSCONFIG‿abs}" should exist!`)
-
 const MONOREPO__SHARED_TS_TYPINGS‿abs = path.join(__dirname, '../../../../typescript-custom-typings')
 assert(fs.existsSync(MONOREPO__SHARED_TS_TYPINGS‿abs), `MONOREPO__SHARED_TS_TYPINGS‿abs dir "${MONOREPO__SHARED_TS_TYPINGS‿abs}" should exist!`)
 
@@ -41,7 +38,6 @@ export {
 	NODE_MAJOR_VERSION,
 
 	MONOREPO_ROOT,
-	MONOREPO__ROOT_TSCONFIG‿abs,
 	MONOREPO__SHARED_TS_TYPINGS‿abs,
 
 	EOL, SEP,

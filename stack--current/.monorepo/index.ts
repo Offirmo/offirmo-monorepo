@@ -1,4 +1,4 @@
-import type { InfiniteMonorepoSpec } from '@infinite-monorepo/types'
+import type { InfiniteMonorepoSpec } from '@infinite-monorepo/spec'
 
 /////////////////////////////////////////////////
 

@@ -27,7 +27,6 @@ interface Params {
 	dest_dir: string
 	git_root: string
 	bolt_root: string
-	ts__config__path: string
 	ts__custom_types__path: string
 
 	indent: string
@@ -44,7 +43,6 @@ async function present({
 
 	git_root,
 	bolt_root,
-	ts__config__path,
 	ts__custom_types__path,
 
 	pkg_infos_resolver = new PkgInfosResolver()
@@ -141,7 +139,6 @@ ${pure_module_details.description || ''}
 		_schedule_root_file_creation('tsconfig.json', {
 			"$schema": "https://json.schemastore.org/tsconfig",
 
-			//"extends": path.relative(dest_dir‿abspath, ts__config__path),
 			"extends": [
 				// TODO browser / node
 				'@monorepo-private/config--typescript/module/src/current/isomorphic/tsconfig.json'

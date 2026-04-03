@@ -4,7 +4,7 @@ import {
 	type StructuredFsⳇFileManifest,
 	type NodePathⳇRelative,
 	type Node,
-} from '@infinite-monorepo/types'
+} from '@infinite-monorepo/types-for-plugins'
 import * as StateLib from '@infinite-monorepo/state'
 import type { FileOutputPresent, State } from '@infinite-monorepo/state'
 import { manifestꓽᐧgitignore } from '@infinite-monorepo/plugin--git'

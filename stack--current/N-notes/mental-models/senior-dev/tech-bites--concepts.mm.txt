@@ -488,6 +488,7 @@ free software -- Four Essential Freedoms of Software -- to redistribute copies s
 free software -- Four Essential Freedoms of Software -- to run the program as you wish, for any purpose.
 free software -- Four Essential Freedoms of Software -- to study how the program works, and change it so it does your computing as you wish. Access to the source code is a precondition for this.
 free software -- Four Essential Freedoms of Software https://en.wikipedia.org/wiki/The_Free_Software_Definition
+free software -- glossary https://sfconservancy.org/copyleft-compliance/glossary.html
 freedesktop.org
 FTU – First Time Use
 function
@@ -712,6 +713,7 @@ memory -- issues = ex. https://frn.sh/pmem/
 memory -- malloc = "One Heap to malloc them all, One Heap to free them, One Heap to coalesce, and in the memory bind them..." https://sourceware.org/glibc/wiki/MallocInternals
 memory -- mmap
 memory -- OOMKills = Out Of Memory crashes
+memory -- pressure = high usage is good, pressure is bad https://planetscale.com/blog/high-memory-usage-in-postgres-is-good-actually
 memory -- RAM
 memory -- safety -- "about 40% of all security problems in curl can be blamed on us using C instead of a memory-safe language. 50% of the high/critical severity ones" https://daniel.haxx.se/blog/2024/12/12/a-twenty-five-years-old-curl-bug/comment-page-1
 memory -- safety -- borrow-checking system = Rust https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
@@ -742,6 +744,7 @@ Most codebases get harder to work with over time because each feature you add in
 multi tenant -- isolation
 MVC "Model View Controller"
 myth of the code monkey = belief that developers are dumb, can't use advanced features, will make wrong decisions and need to be forced to use good practices https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
+Named Entity Recognition (NER) = identifying proper nouns from a piece of text and classifying them into appropriate categories. These categories can be generic like ‘Organization’, ‘Person’, ‘Location’, etc. or they can be tailor-made for a particular application, e.g. ‘Programming Language’, ‘Blogging site’, etc. https://medium.com/swlh/a-beginners-introduction-to-named-entity-recognition-ner-2002b1a010c1
 namespace
 naming -- must leave no room for interpretation
 naming -- must not overload pre-existing, well known meanings
@@ -931,6 +934,7 @@ runtime = period during which a program is running — after it’s been compile
 Rust -- TRACTOR "Translating All C to Rust"
 SAAS -- Shared responsibility model
 safety -- defense in depth = incident only when all the layers failed (rare but happens)
+sandboxing https://www.computesdk.com/benchmarks/
 scatter/gather (datastreams)
 schema
 schema -- normalization https://www.npmjs.com/package/normalize-url

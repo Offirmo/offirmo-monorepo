@@ -9,7 +9,6 @@ import { getꓽdefault_namespace } from '@monorepo-private/monorepo--decisions'
 import {
 	GIT_ROOT,
 	MONOREPO_ROOT,
-	MONOREPO__ROOT_TSCONFIG‿abs,
 	MONOREPO__SHARED_TS_TYPINGS‿abs,
 } from '../src/consts.ts'
 import { getꓽall_known_pure_module__dirs‿abspath } from '../src/selectors.ts'
@@ -38,7 +37,6 @@ async function refreshꓽmonorepo() {
 
 			dest_dir: path.dirname(pure_module_details.root‿abspath),
 
-			ts__config__path: MONOREPO__ROOT_TSCONFIG‿abs,
 			ts__custom_types__path: MONOREPO__SHARED_TS_TYPINGS‿abs,
 
 			pkg_infos_resolver,

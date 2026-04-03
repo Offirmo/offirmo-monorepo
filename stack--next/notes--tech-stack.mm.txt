@@ -18,8 +18,8 @@ designed for Cloudflare/Vercel -- https://upstash.com/
 docker -- macos https://github.com/dockur/macos
 documentation site https://www.mintlify.com/
 durable workflows https://www.inngest.com/uses/durable-workflows
-ecocystem -- schemas = ex. 	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
 ecosystem -- cli = ex. npx @tanstack/cli@latest create
+ecosystem -- schemas = ex. 	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
 ecosystem -- sdk ? https://liblab.com/ https://www.speakeasy.com/
 env vars https://env.t3.gg/
 FE -- charts -- https://www.chartjs.org/ visx
@@ -47,6 +47,7 @@ FE -- ⚠ Tailwind https://www.mux.com/blog/tailwind-is-the-worst-form-of-css-ex
 feature flags
 GHA https://github.com/step-security
 git -- git crypt https://github.com/AGWA/git-crypt
+GitHub -- ⚠ https://sfconservancy.org/GiveUpGitHub/
 GraphQL https://gql-tada.0no.co/
 https://npmx.dev/package/gitpick = Clone exactly what you need aka straightforward project scaffolding
 IaC -- pulumi https://www.pulumi.com/
@@ -68,6 +69,7 @@ monorepo -- aware -- ✖ bolt
 next.js https://nextjs.org/docs
 pdf https://documenso.com/blog/introducing-libpdf-the-pdf-library-typescript-deserves
 pkg -- ai -- integrated skills https://tanstack.com/intent/latest/docs/registry
+pkg -- BigNum https://dev.to/fvictorio/a-comparison-of-bignumber-libraries-in-javascript-2gc5
 pkg -- creation https://www.totaltypescript.com/how-to-create-an-npm-package
 pkg -- evaluation -- npm https://github.com/antfu/node-modules-inspector
 pkg -- evaluation https://node-modules.dev/graph#install=@solana/web3.js
@@ -82,6 +84,7 @@ pkg -- publishing https://github.com/changesets/changesets
 search -- postgres https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
 SVW Speedy Web Compiler https://swc.rs/
+test runner -- comparison https://vitest.dev/guide/comparisons.html
 tracing https://www.jaegertracing.io/ (used by Cloudflare)
 transactional emails https://react.email/
 ts -- bases https://github.com/tsconfig/bases

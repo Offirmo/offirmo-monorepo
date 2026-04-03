@@ -7,7 +7,7 @@ import {
 	type NodeⳇWorkspaceLine,
 	PATHVARⵧROOTⵧMONOREPO,
 	PATHVARⵧROOTⵧWORKSPACE__LINE,
-} from '@infinite-monorepo/types'
+} from '@infinite-monorepo/types-for-plugins'
 import type {State, Plugin, FileOutputPresent} from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import { manifestꓽpackageᐧjson } from '@infinite-monorepo/plugin--npm'

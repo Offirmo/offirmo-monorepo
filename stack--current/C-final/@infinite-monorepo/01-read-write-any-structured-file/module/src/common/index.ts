@@ -57,6 +57,8 @@ function inferꓽformat_from_path(file_path: FilePathⳇAny): StructuredFileForm
 
 	// then exact file match
 	switch (basename‿lc) {
+		case '.keep':
+			return 'list' // helps listing links to doc for ex.
 		case '.nvmrc':
 			return 'single-value'
 		case 'license':

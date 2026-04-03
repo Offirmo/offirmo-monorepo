@@ -41,7 +41,7 @@ Updated state:
 * killer features after LTS?
   * localStorage/sessionStorage ?
 
-⭆ latest supported node = 24 (if updated, search for "engines" and "@types/node")
+⭆ latest supported node = 24 (if updated, search for "engines", "@types/node", "update marker")
 
 2. ECMAScript version
 * latest ES = [ES2025](https://en.wikipedia.org/wiki/ECMAScript_version_history) + [latest spec](https://262.ecma-international.org/16.0/)

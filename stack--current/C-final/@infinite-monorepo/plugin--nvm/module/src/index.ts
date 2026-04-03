@@ -6,7 +6,7 @@ import {
 	type StructuredFsⳇFileManifest,
 	type Node,
 	type NodePathⳇRelative, PATHVARⵧROOTⵧMONOREPO, type MonorepoPathⳇRelative,
-} from '@infinite-monorepo/types'
+} from '@infinite-monorepo/types-for-plugins'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import type { FileOutputPresent } from '@infinite-monorepo/state'

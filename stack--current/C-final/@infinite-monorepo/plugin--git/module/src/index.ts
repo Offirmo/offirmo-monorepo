@@ -9,7 +9,7 @@ import {
 	PATHVARⵧROOTⵧREPO,
 	type MonorepoPathⳇRelative,
 	PATHVARⵧROOTⵧMONOREPO,
-} from '@infinite-monorepo/types'
+} from '@infinite-monorepo/types-for-plugins'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import type { FileOutputPresent } from '@infinite-monorepo/state'
@@ -69,10 +69,12 @@ const PLUGIN: Plugin = {
 					intent: 'present--containing',
 					content: {
 						entries: [
+							// IMPORTANT: we don't cargo cult a huge list
+							// - up to each plugin to add their own entries
+							// - OS-dependent files (ex. .DS_Store) should be in the user's gitignore
+
 							`## https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns`,
 							`## contains auto-generated content from @infinite-monorepo/plugin--git`,
-
-							// each plugin is free to add their own entries, we don't cargo cult a huge list
 
 							// we target js and it's a standard
 							'node_modules/',
@@ -81,29 +83,29 @@ const PLUGIN: Plugin = {
 							'*.local',
 							'*local.*', // ex. Claude settings.local.json
 
-							// generic clearly temp
+							// generic clearly temporary
 							'tmp/',
 							'tmp-*/',
 
-							// clearly cache
+							// generic clearly cache
 							'.cache/',
 
-							// for security: dotenv, Vercel https://nextjs.org/docs/app/guides/environment-variables#environment-variable-load-order
+							// "should I commit my env files? no" https://github.com/motdotla/dotenv?tab=readme-ov-file#faq
+							// dotenv https://github.com/motdotla/dotenv
 							'.env',
-							'.env.dev',
-							'.env.staging',
-							'*.env.staging',
-							'.env.test',
-							'.env.prod',
-							// for security: ?
-							'.*.vars',
+							'.env.*',
+							// ??
+							'*.vars',
 
-							// logs
+							// generic logs
 							`*.log`,
 							`logs/`,
 
 							// built
 							'dist/',
+
+							// security: source maps, if leaked, allow regenerating the original source code (cf. 2026/04/01 Claude code leak)
+							`*.map`,
 						],
 					},
 				}

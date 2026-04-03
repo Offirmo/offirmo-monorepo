@@ -4,7 +4,7 @@ import {
 	type Plugin,
 	type StructuredFsⳇFileManifest,
 	type MonorepoPathⳇRelative,
-} from '@infinite-monorepo/types'
+} from '@infinite-monorepo/types-for-plugins'
 import * as StateLib from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////

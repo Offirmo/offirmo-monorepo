@@ -67,9 +67,15 @@ competition -- for narrative
 competition -- for revenue
 competition -- for users
 complex contagion = the phenomenon in social networks in which multiple sources of exposure to an innovation are required before an individual adopts the change of behavior https://en.wikipedia.org/wiki/Complex_contagion
-compliance -- due diligence -- Enhanced customer due diligence (ECDD) https://www.austrac.gov.au/business/core-guidance/amlctf-programs/enhanced-customer-due-diligence-ecdd-program
-compliance -- due diligence -- ongoing customer due diligence (OCDD)
-compliance -- know your customer (KYC) https://www.austrac.gov.au/business/core-guidance/customer-identification-and-verification
+compliance -- due diligence (CDD = customer due didligence)
+compliance -- due diligence -- delayed = sometimes possible
+compliance -- due diligence -- enhanced = for risky curstomers
+compliance -- due diligence -- enhanced customer due diligence (ECDD) https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/customer-due-diligence/enhanced-customer-due-diligence
+compliance -- due diligence -- initial https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/customer-due-diligence/initial-customer-due-diligence
+compliance -- due diligence -- ongoing (OCDD)
+compliance -- KYC "know your customer" = https://www.austrac.gov.au/business/core-guidance/customer-identification-and-verification
+compliance -- KYC -- KYB "know your business" (vs. individual)
+compliance -- KYC -- risks levels = Low, Medium, High, and Prohibited
 compliance -- money laundering and terrorism financing (ML/TF)
 compliance -- politically exposed persons (PEPs) = individual who holds a prominent public position or role in a government body or international organisation. Immediate family members and/or close associates of these individuals are also considered PEPs.
 compliance -- suspicious matter reports (SMRs)

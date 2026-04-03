@@ -15,3 +15,5 @@ https://lemire.me/blog/2026/02/28/you-can-use-newline-characters-in-urls/
 https://github.com/unrs/unrs-resolver
 https://github.com/jsdom/whatwg-url
 https://github.com/kitten/whatwg-url-minimum
+
+https://github.com/ClearURLs/Addon

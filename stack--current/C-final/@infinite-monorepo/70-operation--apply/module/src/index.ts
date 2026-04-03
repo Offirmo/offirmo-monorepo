@@ -4,8 +4,8 @@ import { styleText } from 'node:util'
 
 import assert from 'tiny-invariant'
 import type {Immutable, PathⳇAbsolute, PathⳇAny} from '@monorepo-private/ts--types'
-import type { Node } from '@infinite-monorepo/types'
-import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
+import type { Node } from '@infinite-monorepo/graph'
+import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/spec--load'
 import * as StateLib from '@infinite-monorepo/state'
 import pluginꓽaiᝍᝍagentsᝍᝍcoding from '@infinite-monorepo/plugin--ai--agents--coding'
 import pluginꓽbolt from '@infinite-monorepo/plugin--bolt'
@@ -17,6 +17,7 @@ import pluginꓽlicense from '@infinite-monorepo/plugin--license'
 import pluginꓽmise from '@infinite-monorepo/plugin--mise'
 import pluginꓽnpm from '@infinite-monorepo/plugin--npm'
 import pluginꓽnvm from '@infinite-monorepo/plugin--nvm'
+import pluginꓽoffirmo from '@infinite-monorepo/plugin--@offirmo'
 import pluginꓽoxcᝍᝍoxfmt from '@infinite-monorepo/plugin--oxc--oxfmt'
 import pluginꓽpackageᐧjson from '@infinite-monorepo/plugin--package-json'
 import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
@@ -42,6 +43,7 @@ const plugins: Record<string, Plugin> = {
 	pluginꓽmise,
 	pluginꓽnpm,
 	pluginꓽnvm,
+	pluginꓽoffirmo,
 	pluginꓽoxcᝍᝍoxfmt,
 	pluginꓽpackageᐧjson,
 	pluginꓽparcel,
@@ -70,13 +72,20 @@ async function apply(from?: PathⳇAny) {
 		do {
 			do {
 				prev = state
-				state = await StateLib.resolveꓽasync(state)
+				state = await StateLib.resolveꓽasync_operations(state)
 			} while (prev !== state)
 
 			prev = state
 			let node: Immutable<Node> | undefined
-			while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
+			while (node = StateLib.getꓽnodesⵧnew(state)[0]) {
+				// TODO 1D ensure no late discoveries
 				console.group(`↳ onꓽnodeⵧdiscovered : [${styleText('yellow', node.type)}] ${styleText('gray', node?.path‿ar || '??')}`)
+
+				if (node.type === 'package') {
+					// special auto-discovery
+
+				}
+
 				state = Object.entries(plugins).reduce((state, [plugin__name, plugin]) => {
 					if (!plugin.onꓽnodeⵧdiscovered) return state
 
@@ -92,12 +101,12 @@ async function apply(from?: PathⳇAny) {
 
 			do {
 				prev = state
-				state = await StateLib.resolveꓽasync(state)
+				state = await StateLib.resolveꓽasync_operations(state)
 			} while (prev !== state)
 		} while (StateLib.getꓽnodesⵧnew(state).length)
 	}
 
-	////////////
+	//////////// plugins onꓽload
 	state = Object.entries(plugins).reduce((state, [plugin__name, plugin]) => {
 		if (!plugin.onꓽload) return state
 
@@ -109,21 +118,13 @@ async function apply(from?: PathⳇAny) {
 	}, state)
 	await _propagate()
 
-	////////////
+	//////////// load spec
 	const spec_chain = await loadꓽspecⵧchainⵧraw(from)
 	state = StateLib.onꓽspec_chain_loaded(state, spec_chain)
 	// TODO 1D plugin onꓽspec_loaded?
 	await _propagate()
 
-	////////////
-
-	/*state = await plugins.reduce(async (acc, plugin) => {
-		let state = await acc
-		state = await plugin.onꓽload(state)
-		return state
-	}, Promise.resolve(state))*/
-
-	////////////
+	//////////// plugins onꓽapply (TODO improve)
 	console.log(styleText('italic', '------------ plugins graphs discovery… ------------'))
 	console.group(`↳ SCM graph`)
 	Object.entries(state.graphs.nodesⵧscm)

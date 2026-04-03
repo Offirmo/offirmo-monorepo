@@ -28,6 +28,7 @@
 2020 "DeFi summer" = ???
 2021 NFT "EVERYDAYS: THE FIRST 5000 DAYS" sold at Christies for MM https://onlineonly.christies.com/s/beeple-first-5000-days/beeple-b-1981-1/112924
 2022-01 facebook abandons its Libra/Diem cryptocurrency project https://en.wikipedia.org/wiki/Diem_(digital_currency)
+2022-05 Terra-Luna de-peg TerraUSD = algorithmic stablecoin https://www.sciencedirect.com/science/article/abs/pii/S1544612322005359
 2022-11-11 "never again"
 2023 Binance pleads guilty to violating US money-laundering laws and other violations and the justice department fined it a whopping $4bn
 2024 Ethereum 7702 = https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
@@ -47,8 +48,8 @@
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
 2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
 2025-06 crypto fully banned in China https://www.idnfinancials.com/news/54986/china-tightens-financial-control-crypto-now-fully-banned
-2025-06-18 GENIUS act in USA https://decrypt.co/325659/senate-passes-stablecoin-bill-genius-act-major-boon-crypto
 2025-07 Mainnet = Ethereum relevant again https://blog.synthetix.io/synthetix-mainnet/
+2025-07-18 GENIUS act in USA https://decrypt.co/325659/senate-passes-stablecoin-bill-genius-act-major-boon-crypto https://en.wikipedia.org/wiki/GENIUS_Act
 2025-08-08 Trump signs order to allow crypto and real estate investments in retirement plans (despite being risky) https://www.theguardian.com/us-news/2025/aug/07/trump-executive-order-cryptocurrency
 2025-08-13 Google briefly bans wallets webextensions https://blocknews.com/google-bans-crypto-wallets-the-u-s-and-eu-here-is-why/ https://blocknews.com/google-drops-plans-to-ban-non-custodial-crypto-wallets-here-is-the-full-story/
 2025-08-21 Kanye West launches his coin https://crypto.news/kanye-west-launches-yzy-memecoin-on-solana-2025/
@@ -60,6 +61,7 @@
 2025-12-17 nice recap of current state of crypto https://x.com/dougiedeluca/status/2000957512862884100
 2025-12-26 wallet drainer via store API compromise https://x.com/0xakinator/status/2004297673067704651 https://x.com/eowynchen/status/2004649284537647161 https://x.com/TradesTyr/status/2004674309923725735
 2026-01 crypto illegal could be ~50% https://mail.blockworks.com/p/thursday-links-de7b
+2026-03-22 $25M Resolv USR Minting Heist https://x.com/chainalysis/status/2035882965449019640 https://bfmtimes.com/hacker-mints-80-million-worth-of-fake-stablecoins-and-swaps-them-for-eth/ https://cryptopotato.com/how-the-25m-resolv-usr-minting-heist-happened/
 ? https://intel.arkm.com/
 [ ] +++ https://support.ledger.com/topic?topic=Crypto_Concepts https://support.ledger.com/topic?topic=Ledger_Live
 [ ] abstracts on many chains https://www.circle.com/multi-chain-usdc
@@ -94,6 +96,7 @@ altcoin = anything not BitCoin (or maybe Ether, depending on who you ask)
 Annual Energy Consumption https://ethereum.org/energy-consumption/
 antifragility = ?? https://www.reddit.com/r/ethereum/comments/7beq39/ethereum_and_antifragility/
 Aptos https://aptosfoundation.org/whitepaper
+arbitrage bots https://x.com/RetroValix/status/2032439170333810778 https://bfmtimes.com/this-crypto-bot-turned-2000-into-176k-in-1-month-its-design-explained/
 Arbitrum
 Arweave = ?? https://2hsfyi4t5fiqdcanybdez4e4admrjeqghts22viz7uuo3d5k2nna.arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/main https://www.arweave.org/ https://github.com/ArweaveTeam
 asset tokenization layer = ???
@@ -378,6 +381,7 @@ governance -- skin in the game
 grand ideas -- no more bailouts https://nomorebailouts.org
 griefing attacks = no gain for the attacker, just issues for the victim. ex "Just create 100k accounts get $5 in each and burn it"
 https://memecore.com/ = ?
+https://web3bounty.io/
 humanity protocol = ? https://www.humanity.org/
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
 Hyperliquid -- ? https://hyperunit.xyz/
@@ -664,6 +668,7 @@ solutions -- phishing detect https://github.com/MetaMask/eth-phishing-detect
 solutions -- Swapper
 some goals = immune to inflationary abuse, resistant to seizure, and adaptable to global economic growth https://woodcoincrypto.com/whitepaper/
 Sonic
+stablecoin -- algorithmic = no reserve
 stablecoin -- peg -- depeg = can't withstand a bank run. https://www.theblock.co/post/261727/large-cap-stablecoins-have-depegged-609-times-this-year-moodys-analytics-says
 stablecoin -- peg https://privatebank.jpmorgan.com/apac/en/insights/markets-and-investing/demystifying-stablecoins
 stablecoins -- pro/cons https://mail.blockworks.com/p/thursday-links-448a

@@ -47,6 +47,7 @@ This is bc source files usually have "related" files, ex:
 - `index.tsx` (the infamous barrel file ;))
 - `reducers.ts`, `selectors.ts`...
 - `_entrypoint.ts`
+- also allowed, ex. for matching routes `(id)`,  `[id]`,  `(id)`
 ```
 // ./examples
 export * from './index.ts'

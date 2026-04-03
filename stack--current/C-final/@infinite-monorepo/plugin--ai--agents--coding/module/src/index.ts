@@ -5,11 +5,7 @@ import {
 	type StructuredFsⳇFileManifest,
 	type Node,
 	type NodePathⳇRelative,
-	type RepoPathⳇRelative,
-	PATHVARⵧROOTⵧREPO,
-	type MonorepoPathⳇRelative,
-	PATHVARⵧROOTⵧMONOREPO,
-} from '@infinite-monorepo/types'
+} from '@infinite-monorepo/types-for-plugins'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import type { FileOutputPresent } from '@infinite-monorepo/state'
@@ -76,6 +72,22 @@ const PLUGIN: Plugin = {
 					},
 				}
 				state = StateLib.requestꓽfile_output(state, output_specꓽAGENTSᐧmd)
+
+				const output_specꓽᐧagentsⳇskillsⳇ: FileOutputPresent = {
+					parent_node: node,
+					manifest: {
+						path‿ar: `${PATHVARⵧROOTⵧNODE}/.agents/skills/.keep`,
+						doc: [
+							'https://code.claude.com/docs/en/skills',
+							'https://github.com/bgreenwell/dotagents'
+						]
+					},
+					intent: 'present',
+					content: {
+						entries: [`https://code.claude.com/docs/en/skills`],
+					},
+				}
+				state = StateLib.requestꓽfile_output(state, output_specꓽᐧagentsⳇskillsⳇ)
 
 				const output_specꓽCLAUDEᐧmd: FileOutputPresent = {
 					parent_node: node,

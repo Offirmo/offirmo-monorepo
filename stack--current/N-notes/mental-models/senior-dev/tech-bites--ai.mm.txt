@@ -72,6 +72,7 @@
 2026-03 Wikipedia en bans LLM https://news.slashdot.org/story/26/03/26/1818215/wikipedia-bans-use-of-generative-ai
 2026-03-05 re-implementationt -- but is it really "clean-room"? https://lucumr.pocoo.org/2026/3/5/theseus/ debate: https://github.com/chardet/chardet/issues/327#issuecomment-4005195078
 2026-03-24 "Issue tracking is dead" https://linear.app/next
+2026-03-31 Claude Code's source code leak https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it https://news.ycombinator.com/item?id=47584540 https://x.com/Fried_rice/status/2038894956459290963 https://github.com/chatgptprojects/clear-code/tree/642c7f944bbe5f7e57c05d756ab7fa7c9c5035cc
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
 [ ] https://aleteia.org/tag/artificial-intelligence/
@@ -92,14 +93,27 @@ abliteration = family of techniques that identify and surgically remove the inte
 agent verification = activity to gain assurances that purposeful artificial constructs act in accordance with their specifications https://en.wikipedia.org/wiki/Agent_verification
 agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
 agents -- agent loop = prompt => {loop = evaluate <-> tool call(s)} => final answer https://platform.claude.com/docs/en/agent-sdk/agent-loop
+agents -- Agents of Chaos -- 01 Authority confusion = Agents cannot reliably tell who they should obey. They follow instructions from non-owners or attackers. Simple tricks like display-name spoofing can fully compromise them. They may execute privileged or destructive actions on behalf of the wrong person
+agents -- Agents of Chaos -- 02 Social engineering = attacks required no technical exploits, just conversation. Agents can be manipulated via natural language persuasion. Prompt injection via memory, email, or chat persists across sessions. Multi-channel setups (Discord, email, etc.) expand attack surface dramatically
+agents -- Agents of Chaos -- 03 Overpowered + under-judged actions = Agents have too much capability relative to their judgment. Observed behaviors: Deleting files / modifying systems incorrectly; Disabling services trying to “help” (e.g. killing email client); Running loops, consuming resources, causing DoS
+agents -- Agents of Chaos -- 04 Misreporting reality = Agents often say they did something when they didn’t: Claiming tasks completed when system state disagrees; Producing a false record of reality that humans and other agents trust
+agents -- Agents of Chaos -- 05 Data leakage & confidentiality failures = Agents leak secrets easily: Sharing sensitive info across channels or users; Failing to properly delete data; No concept of “private vs public context”
+agents -- Agents of Chaos -- 06 Persistent compromise via memory = Attacks can stick permanently: Malicious instructions injected into memory alter future behavior; Corrupted” agents continue misbehaving across sessions
+agents -- Agents of Chaos -- 07 Identity spoofing & session boundary attacks = Agents rely on weak identity signals: New channel = lost context → attacker can impersonate owner
+agents -- Agents of Chaos -- 08 Cross-agent contagion = Agents can spread bad behavior: Sharing incorrect or malicious info with other agents; Reinforcing unsafe patterns across a system
+agents -- Agents of Chaos -- 09 Unbounded resource / system impact = Agents can: Exhaust compute or APIs; Trigger cascading failures; Partially take over systems
+agents -- Agents of Chaos -- 10 Fundamental capability gap = 3 missing capabilities: No stakeholder model → don’t know who matters; No self-model → don’t know when they’re out of depth; No private reasoning boundary → leak thoughts/data
+agents -- Agents of Chaos = report on OpenClaw https://agentsofchaos.baulab.info/report.html
 agents -- building -- It doesn’t matter how cool your capabilities are
 agents -- building -- Set up observability and evaluation from day one
 agents -- building -- Should you build an MCP server instead?
 agents -- building -- What we wish we knew about building AI agents https://newsletter.posthog.com/p/what-we-wish-we-knew-before-building
 agents -- building -- Your context is your advantage
 agents -- building -- Your harness is not your moat
+agents -- coordinator = becomes a manager: breaks your task into pieces, assigns each to a separate worker agent running in parallel, then combines their results
 agents -- credit cards https://agentcard.ai/
 agents -- crypto https://x.com/moonpay/status/2026371974037983504
+agents -- dreaming = between sessions, reviews what it learned and organizes scattered notes into clean, structured memory files
 agents -- economy = agents transact, transfer resources, keep track, build trust
 agents -- fleets = Each agent works independently and produces its own contribution https://background-agents.com/
 agents -- graph
@@ -110,8 +124,8 @@ agents -- some def = a loop of calls until goal achieved = you provide a goal, T
 agents -- some def = a system that can perform complex tasks independently; capable of autonomous, purposeful action in the real world https://en.wikipedia.org/wiki/Autonomous_agent
 agents -- some def = stateful: remember conversations, act on schedules, call tools, coordinate with other agents, and stay connected to users in real-time
 agents -- swarms = Every agent works on a different facet and results converge into a single deliverable https://background-agents.com/
-agents -- tools = https://www.anthropic.com/engineering/writing-tools-for-agents https://modelcontextprotocol.io/specification/2025-06-18/server/tools
 agents -- tools -- through MCP = `tools/list` method then `tools/call`
+agents -- tools = https://www.anthropic.com/engineering/writing-tools-for-agents https://modelcontextprotocol.io/specification/2025-06-18/server/tools
 agents -- ~assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 agents = ~unclear definition
 AGI -- ANI -> AGI -> ASI = narrow(weak) / general(strong) / super[human](strong)
@@ -433,6 +447,7 @@ model -- IQ (related to a certain tech) = ex. Ethereum IQ https://ethpandaops.io
 model -- size class = nano / super / ultra
 model -- transformer model
 model parity = Who topped the latest benchmark? Who had the most parameters?
+models -- "build for the model 6 month for now"
 multimodal image generation "no elephant in the room" https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
 NLG Natural Language Generation
 NLP Natural Language Processing
@@ -460,6 +475,7 @@ processing -- TPU = Tensor Processing Units
 product overhang -- ex. Claude Code "Claude exploring the filesystem was pure product overhang. The model could already do this, but there wasn’t a product built around this capability!”
 product overhang = a model is able to do a specific thing, but the product that the AI runs in isn’t built in a way that captures this capability https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built
 professional services work = the target of most LLMs "It excels at creating long-horizon deliverables such as slide decks, financial models, and legal analysis..."
+prompt -- autotuning
 prompt -- best practices https://developers.cloudflare.com/workers/get-started/prompting/#additional-resources
 prompt -- design -- anthropic https://docs.anthropic.com/claude/docs/introduction-to-prompt-design
 prompt -- design -- google https://ai.google.dev/gemini-api/docs/prompting-strategies?hl=en
@@ -473,6 +489,7 @@ prompt -- injection = attack where a malicious third party hides a secret messag
 prompt -- library = per role https://www.threads.com/@prodmgmt.world/post/DK4rQzpMapx
 prompt -- optimization https://app.hamming.ai/prompt-optimizer
 prompt -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
+prompt -- system -- ex. OpenClaw https://github.com/openclaw/openclaw/blob/main/src/agents/system-prompt.ts
 prompt -- xml tags -- <context name="directoryStructure"> <context name="gitStatus"> https://kirshatrov.com/posts/claude-code-internals
 prompt -- xml tags -- <env> https://kirshatrov.com/posts/claude-code-internals
 prompt -- xml tags -- <filepaths>

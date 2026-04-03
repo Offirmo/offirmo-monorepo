@@ -24,15 +24,22 @@ class -- high -- old money
 class -- low
 class -- middle
 communism
+domestication https://en.wikipedia.org/wiki/Anna_Karenina_principle#Failed_domestication
+Abenomics = the economic strategy implemented by Shinzo Abe of Japan and is comprised of three arrows: monetary policy, fiscal stimulus and structural reforms https://coinmarketcap.com/academy/glossary/abenomics
 containers https://x.com/ccatalini/status/1983588222921023552
-corruption -- Abscam - FBI sting operation where member of Congress were approached with a large sum of money in exchange for... "I've got larceny in my blood. I'd take it in a goddamn minute." "I do not consider myself a hero... what have we come to if turning down a bribe is 'heroic'?" https://en.wikipedia.org/wiki/Abscam
+corruption -- Abscam = FBI sting operation where member of Congress were approached with a large sum of money in exchange for... "I've got larceny in my blood. I'd take it in a goddamn minute." "I do not consider myself a hero... what have we come to if turning down a bribe is 'heroic'?" https://en.wikipedia.org/wiki/Abscam
 cosmos -- 1610 https://en.wikipedia.org/wiki/Copernican_Revolution
 cosmos -- 1920 galaxies https://en.wikipedia.org/wiki/Great_Debate_(astronomy)
 cosmos -- 1965 no life on Mars https://en.wikipedia.org/wiki/Martian_canals
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- guided https://en.wikipedia.org/wiki/Guided_democracy
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
+2014 Ukrainian economic and political crisis https://en.wikipedia.org/wiki/2014_pro-Russian_unrest_in_Ukraine
 divine kingship
+uplift
+brain drain https://en.wikipedia.org/wiki/Brain_drain
+international economic disparity https://en.wikipedia.org/wiki/International_inequality
+O-ring theory of economic development https://en.wikipedia.org/wiki/O-ring_theory_of_economic_development
 droits de l'homme https://fr.wikisource.org/wiki/Charte_internationale_des_Droits_de_l%E2%80%99Homme_(1948)/D%C3%A9claration_universelle_des_Droits_de_l%E2%80%99Homme
 electricity
 electricity -- light bulb
@@ -42,6 +49,26 @@ Epstein ~ elite abuses, never indicted
 Every world power has its time in the sun, thanks to the uniqueness of their circumstances and the nature of their character and culture (e.g., they have the essential elements of a strong work ethic, smarts, discipline, education, etc.), but they all eventually decline. Some do so more gracefully than others, with less trauma, but they nevertheless decline https://x.com/RayDalio/status/2022788750388998543
 family
 games -- chess https://chess.stackexchange.com/questions/47538/why-does-open-position-favor-black
+geopolitics -- client state -- associated state
+geopolitics -- client state -- condominium
+geopolitics -- client state -- dominion
+geopolitics -- client state -- Dominion suzerain
+geopolitics -- client state -- neo-colony
+geopolitics -- client state -- protected state
+geopolitics -- client state -- protectorate
+geopolitics -- client state -- puppet state
+geopolitics -- client state -- satellite state
+geopolitics -- client state -- self-governing colony
+geopolitics -- client state -- tributary state https://en.wikipedia.org/wiki/Tributary_state
+geopolitics -- client state -- vassal state
+geopolitics -- client state = https://en.wikipedia.org/wiki/Client_state
+geopolitics -- hegemon -- anti-hegemonic resistance
+geopolitics -- hegemon -- cultural https://en.wikipedia.org/wiki/Cultural_hegemony
+geopolitics -- hegemon https://en.wikipedia.org/wiki/Hegemony
+geopolitics -- imperialism
+geopolitics -- imperialism -- cultural
+geopolitics -- tribute -- tributary system https://en.wikipedia.org/wiki/Tributary_system_of_China
+geopolitics -- tribute https://en.wikipedia.org/wiki/Tribute
 golden rule
 great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
 group polarization https://en.wikipedia.org/wiki/Group_polarization
@@ -51,8 +78,6 @@ history https://en.wikipedia.org/wiki/History_of_the_Peloponnesian_War
 https://en.prolewiki.org/
 https://en.prolewiki.org/wiki/Library:Simple_Sabotage_Field_Manual
 https://en.wikipedia.org/wiki/Baby_farming
-https://en.wikipedia.org/wiki/Currency
-https://en.wikipedia.org/wiki/Decimalisation
 https://en.wikipedia.org/wiki/File:Molzbach_1.jpg
 https://en.wikipedia.org/wiki/Hallstatt_culture
 https://en.wikipedia.org/wiki/Historical_European_martial_arts
@@ -67,7 +92,6 @@ https://en.wikipedia.org/wiki/Tumulus_culture
 https://en.wikipedia.org/wiki/We_choose_to_go_to_the_Moon
 https://politiquemagazine.fr/civilisation/redecouvrir-les-origines-de-la-france/
 https://worldoffinewine.com/news-features/did-charles-darwin-save-wine
-https://www.atlassian.com/loop/about
 https://www.famillechretienne.fr/40361/article/remi-brague-nous-voyons-lislam-avec-des-lunettes-chretiennes
 infrastructure = roads, canals, telephone networks...
 intimidation of dissidents https://tech.slashdot.org/story/26/02/26/2045225/chinese-officials-use-of-chatgpt-revealed-a-global-intimidation-opperation
@@ -95,8 +119,12 @@ making big things
 Melian dialogue
 military tactics https://civilization.fandom.com/wiki/Military_Tactics_(Civ6)
 money -- conversion to gold https://mail.blockworks.com/p/operation-return-to-gold
+money -- currency -- decimalisation https://en.wikipedia.org/wiki/Decimalisation
+money -- currency = https://en.wikipedia.org/wiki/Currency
 money -- gold standard https://laviedesidees.fr/La-fin-de-l-etalon-or
 money -- world' safe banker = exorbitant privilege allowing “to incur debt to foreign countries at no cost”  https://mail.blockworks.com/p/operation-return-to-gold
+natural resource -- depletion
+natural resource https://en.wikipedia.org/wiki/Natural_resource
 numeral system https://en.wikipedia.org/wiki/Positional_notation
 pollution -- 12xx https://en.wikipedia.org/wiki/Pea_soup_fog
 problems -- & are the conduit of progress https://mail.blockworks.com/p/problems-are-the-conduit-of-progress
@@ -106,6 +134,7 @@ problems -- The problem of routine infections becoming deadly was solved by anti
 problems -- The problem of widespread hunger, for example, was solved by industrialized farming — but now food is so cheap and industrialized we have an epidemic of obesity.
 ransom
 slavery
+social domination = "natural order of things in society" established by the dominant ideology
 societal -- & collapse = fall of a complex human society characterized by the loss of cultural identity and of social complexity as an adaptive system, the downfall of government, and the rise of violence https://en.wikipedia.org/wiki/Societal_collapse
 societal -- & longevity = https://en.wikipedia.org/wiki/Societal_collapse
 sovereignty

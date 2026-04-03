@@ -279,6 +279,7 @@ html tool = single page tool https://simonwillison.net/2025/Dec/10/html-tools/
 htmx https://htmx.org/
 http "happy eyeballs" https://www.checklyhq.com/blog/how-a-tcpdump-led-us-to-a-bug-in-nodes-ipv6-handli/
 HTTP -- QUERY = safe, idempotent request method that can carry request content https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-05.html
+humane design https://codeberg.org/delightful-commons/delightful-humane-design
 hydration = rendering a web app from existing (pre-rendered) HTML instead of from scratch. Can fail if the data mismatch (shouldn't!) "Hydration is like watering the “dry” HTML with the “water” of interactivity and event handlers."
 hypercard https://hypercard.org
 hypermedia

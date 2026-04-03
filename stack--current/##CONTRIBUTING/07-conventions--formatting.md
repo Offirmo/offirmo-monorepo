@@ -36,13 +36,15 @@ function deriveꓽXYZⵧfoo‿v2(): void {}
 /*
 assertꓽnode_is_xyz()
 isꓽStory‿v2(x: Immutable<any>): s is Story‿v2 {
+
 ↆasyncⵧfetch
 ೱasyncⵧpromise
+
 ϟevent
 ǃerror
 aꓺbꘌc
 notᝍbadₓasⳇwell‿no
-fooǃfooꓽfoo𖾚foo
+fooǃfooꓽfoo
 fooꜛbarꜜfoo
 ꓽpackageᝍlockᐧjson
 matching? (formerly 𝝣 which causes issues)

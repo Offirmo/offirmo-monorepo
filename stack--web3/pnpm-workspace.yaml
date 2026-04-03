@@ -1,6 +1,7 @@
 autoInstallPeers: false
 
 catalog:
+  '@open-wallet-standard/core': 1.1.2
   '@scure/base': 2.0.0
   '@scure/bip32': 2.0.1
   '@scure/bip39': 2.0.1
