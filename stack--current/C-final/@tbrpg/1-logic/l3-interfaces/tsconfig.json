@@ -11,7 +11,7 @@
 		"pretty": true
 	},
 	"include": [
-		"../../../../0-meta/typescript-custom-typings/*.d.ts",
+		"../../../../0-meta/0-dev-tools/config--typescript/module/src/custom-typings/*.d.ts",
 		"module/**/*.ts"
 	],
 	"exclude": [

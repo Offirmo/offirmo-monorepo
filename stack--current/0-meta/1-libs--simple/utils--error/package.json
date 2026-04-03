@@ -1,0 +1,51 @@
+{
+	"name": "@offirmo/error-utils",
+	"description": "utilities around JavaScript Error creation and manipulation",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts",
+		"./v2": "./module/src/v2/_entrypoint.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {},
+	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …dist",
+		"clean": "npm-run-all _clean--pkg",
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"check--ts": "echo \"@offirmo/error-utils\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean check--ts--watch",
+		"ensure--size": "size-limit",
+		"check": "run-s tests check--ts",
+		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts",
+		"_build:prod": "monorepo-script--build-typescript-package",
+		"build": "run-s _build:prod",
+		"np": "np --no-publish",
+		"prepublishOnly": "run-s clean build ensure-size"
+	},
+	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/icepick": "^2",
+		"icepick": "^2",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^6"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/0-meta/1-libs--simple/utils--error",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/0-meta/1-libs--simple/utils--error/README.md",
+	"bugs": {
+		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
+	},
+	"files": [
+		"dist",
+		"module"
+	]
+}

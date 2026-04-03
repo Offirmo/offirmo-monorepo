@@ -12,7 +12,9 @@ const SPEC: Partial<InfiniteMonorepoSpec> = {
 
 	package_manager: 'bolt',
 	workspaces: [
-		"0-meta/build-tools/*",
+		"0-meta/0-dev-tools/*",
+		"0-meta/1-libs--simple/*",
+		"0-meta/X-to-reorganize/*",
 
 		"1-isomorphic/1-libs--simple/*",
 		"1-isomorphic/2-libs--cross-cutting/*",

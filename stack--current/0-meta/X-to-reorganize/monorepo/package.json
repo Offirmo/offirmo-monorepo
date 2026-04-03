@@ -1,0 +1,36 @@
+{
+	"name": "@monorepo-private/monorepo",
+	"description": "Source of truth about this monorepo",
+	"version": "0.0.1",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@monorepo-private/fs--ls": "*",
+		"@monorepo-private/config--monorepo": "*",
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"check--ts": "echo \"@monorepo-private/monorepo\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"_check": "run-s check--ts",
+		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
+	},
+	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^24",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^6"
+	}
+}

@@ -34,7 +34,7 @@
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4",
 		"@monorepo-private/config--typescript": "*",
-		"@monorepo-private/monorepo--decisions": "*",
+		"@monorepo-private/config--monorepo": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@offirmo/universal-debug-api-interface": "^1",

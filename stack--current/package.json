@@ -17,8 +17,7 @@
 
 	"scripts": {
 		"// GREAT!": "also update the root package.json when not in sync",
-		"postinstall": "node ./0-meta/build-tools/scripts/monorepo-utils.mjs",
-
+		"postinstall": "node ./0-meta/X-to-reorganize/scripts/monorepo-utils.mjs",
 		"// Meh": "not doing much ATM",
 		"manypkg--check": "manypkg check",
 		"manypkg--fix": "manypkg fix",
@@ -45,8 +44,9 @@
 	"// bolt": "https://github.com/boltpkg/bolt",
 	"bolt": {
 		"workspaces": [
-			"0-meta/build-tools/*",
-
+			"0-meta/0-dev-tools/*",
+			"0-meta/1-libs--simple/*",
+			"0-meta/X-to-reorganize/*",
 			"1-isomorphic/1-libs--simple/*",
 			"1-isomorphic/2-libs--cross-cutting/*",
 			"1-isomorphic/3-libs--advanced/*",

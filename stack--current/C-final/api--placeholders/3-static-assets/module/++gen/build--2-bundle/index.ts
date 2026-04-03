@@ -8,7 +8,7 @@ import meow from 'meow'
 import { Parcel } from '@parcel/core'
 import type { InitialParcelOptions, TargetDescriptor } from '@parcel/types';
 
-import { NODE_MAJOR_VERSION } from '@monorepo-private/monorepo--decisions'
+import { NODE_MAJOR_VERSION } from '@monorepo-private/config--monorepo'
 
 /////////////////////////////////////////////////
 

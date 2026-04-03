@@ -29,7 +29,7 @@
 		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/generator--website-entry-points": "*",
 		"@monorepo-private/marketing": "*",
-		"@monorepo-private/monorepo--decisions": "*",
+		"@monorepo-private/config--monorepo": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
 		"@monorepo-private/toolbox--parcel": "*",

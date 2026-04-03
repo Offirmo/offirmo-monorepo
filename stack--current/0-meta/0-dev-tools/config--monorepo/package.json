@@ -1,0 +1,32 @@
+{
+	"name": "@monorepo-private/config--monorepo",
+	"description": "Core decisions for this monorepo, NO DEPS, NO ENGINE (node)",
+	"version": "0.0.1",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"check--ts": "echo \"@monorepo-private/config--monorepo\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"_check": "run-s check--ts"
+	},
+	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^6"
+	}
+}
