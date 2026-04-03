@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@infinite-monorepo/plugin--npm": "*",
 		"@infinite-monorepo/state": "*",
-		"@infinite-monorepo/types": "*",
+		"@infinite-monorepo/types-for-plugins": "*",
 		"@monorepo-private/fs--ls": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"semver": "^7",

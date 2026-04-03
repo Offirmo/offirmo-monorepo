@@ -1,5 +1,5 @@
 {
-	"name": "@infinite-monorepo/plugin--nvm",
+	"name": "@infinite-monorepo/plugin",
 	"version": "0.0.1",
 	"private": true,
 	"sideEffects": false,
@@ -13,22 +13,20 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/state": "*",
-		"@infinite-monorepo/types-for-plugins": "*",
-		"semver": "^7",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@infinite-monorepo/plugin--nvm\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/plugin\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
+		"@infinite-monorepo/graph": "*",
 		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/semver": "^7",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^6"

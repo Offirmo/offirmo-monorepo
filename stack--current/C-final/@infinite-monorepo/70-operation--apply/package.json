@@ -12,7 +12,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@infinite-monorepo/load-spec": "*",
+		"@infinite-monorepo/plugin--@offirmo": "*",
 		"@infinite-monorepo/plugin--ai--agents--coding": "*",
 		"@infinite-monorepo/plugin--bolt": "*",
 		"@infinite-monorepo/plugin--changelog": "*",
@@ -31,6 +31,7 @@
 		"@infinite-monorepo/plugin--tsconfig": "*",
 		"@infinite-monorepo/plugin--yarn--v1": "*",
 		"@infinite-monorepo/read-write-any-structured-file": "*",
+		"@infinite-monorepo/spec--load": "*",
 		"@infinite-monorepo/state": "*",
 		"tiny-invariant": "^1"
 	},
@@ -42,7 +43,7 @@
 		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
-		"@infinite-monorepo/types": "*",
+		"@infinite-monorepo/graph": "*",
 		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/ts--types": "*",

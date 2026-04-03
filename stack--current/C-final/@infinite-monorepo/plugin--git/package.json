@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/state": "*",
-		"@infinite-monorepo/types": "*",
+		"@infinite-monorepo/types-for-plugins": "*",
 		"semver": "^7",
 		"tiny-invariant": "^1"
 	},
