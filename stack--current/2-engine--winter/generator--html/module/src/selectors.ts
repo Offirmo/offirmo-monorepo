@@ -210,7 +210,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlFileSpec>): Imm
 					break
 
 				case 'cssⳇfoundation--offirmo':
-					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@monorepo-private/css--foundation';`]
+					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import '@monorepo-private/css--foundation';`]
 					// reminder: foundation includes reset
 					_enqueue_layer_if_not_present('offirmo--reset')
 					_enqueue_layer_if_not_present('offirmo--foundation')
@@ -218,7 +218,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlFileSpec>): Imm
 					break
 
 				case 'cssⳇframework--offirmo':
-					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@monorepo-private/css--framework';`]
+					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import '@monorepo-private/css--framework';`]
 					// reminder: framework includes foundation which includes reset
 					_enqueue_layer_if_not_present('offirmo--reset')
 					_enqueue_layer_if_not_present('offirmo--foundation') // bc included in framework

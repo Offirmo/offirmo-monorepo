@@ -50,9 +50,16 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 			console.log('config =', config)
 			console.log('glob =', stories_glob)
 
-		// @ts-expect-error bundler advanced feature
-		//const initsⵧservices = import('../l0-services/init/*.ts') // Parcel 2
-		const initsⵧservices = import.meta.glob('../l0-services/init/*.ts') // vite v8
+		const initsⵧservices = (() => {
+			if (import.meta.env) {
+				// looks like vite
+				return import.meta.glob('../l0-services/init/*.ts')
+			}
+
+			// assume Parcel v2
+			// @ts-expect-error bundler advanced feature
+			return import('../l0-services/init/*.ts')
+		})() // vite v8
 
 			// 1. services
 			console.groupCollapsed(`[${LIB}] 1/3 Services init…`)

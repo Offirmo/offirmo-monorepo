@@ -834,12 +834,12 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 <script type="module">
 	import startꓽstorypad from '@monorepo-private/storypad'
 	import decoratorⵧdiagnostics from '@monorepo-private/storypad/decorators/diagnostics'
-	import nearest_pkg from '~/package.json'
+	import nearest_pkg from '../../../package.json'
 
 	const DEBUG = false
 
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
-	const stories = import('../../**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const stories = import.meta.glob('../../**/*.stories.(js|jsx|ts|tsx|mdx)')
 	if (DEBUG) console.log('BOOTSTRAP stories', {
 		stories,
 	})

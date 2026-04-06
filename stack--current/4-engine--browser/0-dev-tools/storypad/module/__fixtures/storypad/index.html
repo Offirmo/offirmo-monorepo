@@ -2,7 +2,7 @@
 
 <script type="module">
 	//import nearest_pkg from '~/package.json' need resolver (ex. Parcel v2)
-	import nearest_pkg from '../../../../package.json'
+	import nearest_pkg from '../../../package.json'
 	const ROOT_NAME = nearest_pkg?.name ?? 'unknown pkg'
 	const LIB = `${ROOT_NAME}’s storypad’s index.html`
 	console.log(`[${LIB}] 🚀 Hello…`)
@@ -11,9 +11,9 @@
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
 	// that's enabled with .@(...) actually
 	//const storiesⵧown = import('../../l0-types/l1-csf/**/*.stories.@(js|jsx|ts|tsx|mdx)') @ breaks vite v8 globber
-	const storiesⵧown = import.meta.glob('../../l0-types/l1-csf/**/*.stories.(js|jsx|ts|tsx|mdx)')
-	const storiesⵧofficial = {} // import.meta.glob('../../l3-compat/**/*.stories.(js|jsx|ts|tsx|mdx)') // XXX vite alias don't work
-	const storiesⵧstress_tests = {} // import('../../__tests/**/*.stories.@(js|jsx|ts|tsx|mdx)') // intentionally break Storypad! Enable on-demand
+	const storiesⵧown = import.meta.glob('../../src/l0-types/l1-csf/**/*.stories.(js|jsx|ts|tsx|mdx)')
+	const storiesⵧofficial = {} // import.meta.glob('../../src/l3-compat/**/*.stories.(js|jsx|ts|tsx|mdx)') // XXX vite alias don't work
+	const storiesⵧstress_tests = {} // import('../../src/__tests/**/*.stories.(js|jsx|ts|tsx|mdx)') // intentionally break Storypad! Enable on-demand
 	const stories_index = {
 		own: storiesⵧown,
 		storybook_official: storiesⵧofficial,

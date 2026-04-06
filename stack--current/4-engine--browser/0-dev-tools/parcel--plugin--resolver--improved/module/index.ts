@@ -52,6 +52,18 @@ export default new Resolver({
 			return { filePath }
 		}
 
+		if (params.dependency.sourcePath.endsWith('.css')) {
+			DEBUG && console.log(`[${LIB}] Evaluating assisting loading npm modules from CSS…`)
+			// it used to easily work in Parcel with the `npm:` prefix
+			// but vite doesn't support it. In this case, it's easier to tweak Parcel than vite
+
+			if (params.specifier.startsWith('@monorepo')) {
+				// this is a module, our stuff
+				const filePath  = import.meta.resolve(params.specifier)
+				return { filePath }
+			}
+		}
+
 		if (POSSIBLY_UNRESURRECTED_OFFIRMO_MODULES.includes(params.specifier)) {
 			DEBUG && console.log(`[${LIB}] Evaluating faking an un-resurrected Offirmo module…`)
 
