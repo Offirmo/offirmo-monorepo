@@ -12,4 +12,10 @@ export default defineConfig({
 		//Inspect(),
 		//xPlugin(),
 	],
+	resolve: {
+		alias: {
+			// can't you just use package.json??
+			"@storybook/test": "module/src/l3-compat/@storybook/test.ts"
+		}
+	}
 })

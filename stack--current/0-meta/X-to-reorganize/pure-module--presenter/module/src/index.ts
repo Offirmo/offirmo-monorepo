@@ -303,10 +303,16 @@ ${pure_module_details.description || ''}
 				//'--no-hmr', // because of bug https://github.com/parcel-bundler/parcel/issues/8181
 				// it seems to work for now...
 			].join(' ')
+			const VITE__COMMON_OPTIONS = [
+				'--port 1981',
+				'--strictPort',
+				'--logLevel info'
+			].join(' ')
 
 			if (pure_module_details.hasꓽstories || pure_module_details.entrypointⵧstorypad) {
 				assert(pure_module_details.entrypointⵧstorypad, `Expected storypad to be defined!`)
 				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧstorypad.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
+				scripts["_start:vite:storypad"] = `vite ${VITE__COMMON_OPTIONS} --open ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧstorypad.path‿rel)}`
 				scripts['stories'] = `npm-run-all clean --parallel _start:parcel:storypad`
 			}
 			if (pure_module_details.entrypointⵧdemo) {
@@ -322,6 +328,7 @@ ${pure_module_details.description || ''}
 
 					case '.html': {
 						scripts["_start:parcel:demo"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧdemo.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
+						scripts["_start:vite:demo"] = `vite ${VITE__COMMON_OPTIONS} --open ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧdemo.path‿rel)}`
 						scripts['demo'] = `npm-run-all clean --parallel _start:parcel:demo`
 						break
 					}
@@ -342,6 +349,7 @@ ${pure_module_details.description || ''}
 					}
 
 					case '.html': {
+						scripts["_start:vite:sandbox"] = `vite ${VITE__COMMON_OPTIONS} --open ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧsandbox.path‿rel)}`
 						scripts["_start:parcel:sandbox"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧsandbox.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 						scripts['sandbox'] = `npm-run-all clean --parallel _start:parcel:sandbox`
 						break
@@ -354,6 +362,7 @@ ${pure_module_details.description || ''}
 
 			/////// Start
 			if (pure_module_details.entrypointⵧmain.ext === '.html') {
+				scripts["_start:vite:main"] = `vite ${VITE__COMMON_OPTIONS} --open ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧmain.path‿rel)}`
 				scripts["_start:parcel:main"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧmain.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 			}
 			if (pure_module_details.isꓽapp) {

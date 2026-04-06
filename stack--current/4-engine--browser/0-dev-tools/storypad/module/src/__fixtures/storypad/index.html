@@ -12,7 +12,7 @@
 	// that's enabled with .@(...) actually
 	//const storiesⵧown = import('../../l0-types/l1-csf/**/*.stories.@(js|jsx|ts|tsx|mdx)') @ breaks vite v8 globber
 	const storiesⵧown = import.meta.glob('../../l0-types/l1-csf/**/*.stories.(js|jsx|ts|tsx|mdx)')
-	const storiesⵧofficial = import.meta.glob('../../l3-compat/**/*.stories.(js|jsx|ts|tsx|mdx)')
+	const storiesⵧofficial = {} // import.meta.glob('../../l3-compat/**/*.stories.(js|jsx|ts|tsx|mdx)') // XXX vite alias don't work
 	const storiesⵧstress_tests = {} // import('../../__tests/**/*.stories.@(js|jsx|ts|tsx|mdx)') // intentionally break Storypad! Enable on-demand
 	const stories_index = {
 		own: storiesⵧown,

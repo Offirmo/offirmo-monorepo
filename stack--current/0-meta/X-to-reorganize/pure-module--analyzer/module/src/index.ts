@@ -773,6 +773,8 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 			// TODO one day use parcel to track deps
 			console.log(`${indent}    ↘ auto-dep to @monorepo-private/toolbox--parcel`)
 			raw_deps.push({ label: '@monorepo-private/toolbox--parcel', type: 'dev'})
+			console.log(`${indent}    ↘ auto-dep to @monorepo-private/toolbox--vite`)
+			raw_deps.push({ label: '@monorepo-private/toolbox--vite', type: 'dev'})
 		}
 		if (langs.includes('css')) {
 			unprocessed_langs.delete('css')
@@ -912,6 +914,7 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 	if (targets_runtimeꓽbrowser) {
 		raw_deps.push({ label: '@monorepo-private/storypad', type: 'dev'})
 		raw_deps.push({ label: '@monorepo-private/toolbox--parcel', type: 'dev'})
+		raw_deps.push({ label: '@monorepo-private/toolbox--vite', type: 'dev'})
 	}
 
 	raw_deps.forEach(({label, type}) => {
@@ -954,6 +957,7 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 			'@monorepo-private/monorepo-scripts',
 			'@monorepo-private/storypad',
 			'@monorepo-private/toolbox--parcel',
+			'@monorepo-private/toolbox--vite',
 			'@offirmo/unit-test-toolbox',
 			'npm-run-all',
 			'tslib',
