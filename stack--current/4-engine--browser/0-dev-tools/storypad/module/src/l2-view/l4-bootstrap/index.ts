@@ -53,12 +53,13 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 		const initsⵧservices = (() => {
 			if (import.meta.env) {
 				// looks like vite
+				console.error('VITE?')
 				return import.meta.glob('../l0-services/init/*.ts')
 			}
 
 			// assume Parcel v2
-			// @ts-expect-error bundler advanced feature
-			return import('../l0-services/init/*.ts')
+			// XXX VITE REJECTS THIS LINE @ts-expect-error bundler advanced feature
+			//return import('../l0-services/init/*.ts')
 		})() // vite v8
 
 			// 1. services
