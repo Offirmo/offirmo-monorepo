@@ -105,6 +105,7 @@ agents -- Agents of Chaos -- 09 Unbounded resource / system impact = Agents can:
 agents -- Agents of Chaos -- 10 Fundamental capability gap = 3 missing capabilities: No stakeholder model → don’t know who matters; No self-model → don’t know when they’re out of depth; No private reasoning boundary → leak thoughts/data
 agents -- Agents of Chaos = report on OpenClaw https://agentsofchaos.baulab.info/report.html
 agents -- building -- It doesn’t matter how cool your capabilities are
+agents -- building -- loop https://ccunpacked.dev/
 agents -- building -- Set up observability and evaluation from day one
 agents -- building -- Should you build an MCP server instead?
 agents -- building -- What we wish we knew about building AI agents https://newsletter.posthog.com/p/what-we-wish-we-knew-before-building

@@ -801,6 +801,7 @@ life -- 5 phases of brain's life -- 3 Adulthood = from 32 to 66
 life -- 5 phases of brain's life -- 4 Early ageing = from 66 to 83
 life -- 5 phases of brain's life -- 5 Late ageing = from 83 onwards
 life -- 5 phases of brain's life https://www.bbc.com/news/articles/cgl6klez226o
+life -- 65yo -- barely any major work https://statmodeling.stat.columbia.edu/2026/03/25/what-major-works-of-literature-were-written-after-age-of-85-75-65/
 life -- balance between living the moment and preparing the long-term = ex. of ppl dying at 50 before planned retirement / travelling (Also Gospel's parable)
 life -- care
 life -- diseases -- heart disfunction = New York Heart Association Functional Classification https://en.wikipedia.org/wiki/New_York_Heart_Association_Functional_Classification
