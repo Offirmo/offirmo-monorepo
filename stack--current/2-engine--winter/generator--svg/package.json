@@ -26,6 +26,7 @@
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s tests check--ts",
 		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall",
+		"_start:vite:storypad": "vite --port 1981 --strictPort --logLevel info --open module/__fixtures/storypad/index.html",
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
 		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
@@ -34,6 +35,7 @@
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
 		"@monorepo-private/toolbox--parcel": "*",
+		"@monorepo-private/toolbox--vite": "*",
 		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",

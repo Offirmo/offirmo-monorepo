@@ -16,7 +16,9 @@
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
 		"_start:parcel:demo": "parcel serve module/~~sandbox/demo.html --port 1981 --lazy --no-autoinstall",
+		"_start:vite:demo": "vite --port 1981 --strictPort --logLevel info --open module/~~sandbox/demo.html",
 		"demo": "npm-run-all clean --parallel _start:parcel:demo",
+		"_start:vite:sandbox": "vite --port 1981 --strictPort --logLevel info --open module/~~sandbox/bug.html",
 		"_start:parcel:sandbox": "parcel serve module/~~sandbox/bug.html --port 1981 --lazy --no-autoinstall",
 		"sandbox": "npm-run-all clean --parallel _start:parcel:sandbox"
 	},
@@ -24,6 +26,7 @@
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
 		"@monorepo-private/toolbox--parcel": "*",
+		"@monorepo-private/toolbox--vite": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4"
 	}
