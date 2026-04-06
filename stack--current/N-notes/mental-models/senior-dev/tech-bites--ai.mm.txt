@@ -195,6 +195,8 @@ challenges -- biases -- left-leaning = https://tech.slashdot.org/story/25/04/10/
 challenges -- biases = ex. write a fairy tale after being primed https://deploymentsafety.openai.com/gpt-5-4-thinking/bias
 challenges -- blindspots https://ezyang.github.io/ai-blindspots/
 challenges -- coded gaze = Automated systems are not inherently neutral. They reflect the priorities, preferences, and prejudices - the coded gaze - of those who have the power to mold artificial intelligence.
+challenges -- cognitive surrender https://science.slashdot.org/story/26/04/03/2334204/cognitive-surrender-leads-ai-users-to-abandon-logical-thinking-research-finds
+challenges -- copyright https://developers.slashdot.org/story/26/04/01/158240/anthropic-issues-copyright-takedown-requests-to-remove-8000-copies-of-claude-code-source-code
 challenges -- copyright infringement https://arxiv.org/html/2602.10758v1 https://torrentfreak.com/uploading-pirated-books-via-bittorrent-qualifies-as-fair-use-meta/
 challenges -- cybersecurity
 challenges -- data destruction = rm -rf
@@ -380,10 +382,12 @@ jobs -- AI Washing = using AI as a pretext to fire and increase the workload htt
 jobs -- doorman paradox = saving on the doorman but was doing more than surface work
 jobs -- induced precarity = precarity. Your boss can't actually fire you and replace you with AI, but he can make you feel like he could, and maybe not ask for that raise.
 jobs -- jobpocalypse
+jobs -- journalism https://news.slashdot.org/story/26/04/05/2119210/will-ai-assisted-journalists-bring-errors-and-retractions
 jobs -- luddites
 jobs -- marginal hire = not hired due to productivity gains https://tomtunguz.com/marginal-hire/
 jobs -- ngmi "not gonna make it" https://ghuntley.com/ngmi/
 jobs -- not left behind
+jobs -- radiologists https://slashdot.org/story/26/04/01/0619250/ceo-of-americas-largest-public-hospital-system-says-hes-ready-to-replace-radiologists-with-ai
 jobs -- rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 jobs -- shrinkage of entry-level jobs In Tech https://slashdot.org/story/25/05/28/2239206/ai-may-already-be-shrinking-entry-level-jobs-in-tech-new-research-suggests
 jobs -- skilled pragmatist https://cutlefish.substack.com/p/tbm-271-the-biggest-untapped-opportunity
