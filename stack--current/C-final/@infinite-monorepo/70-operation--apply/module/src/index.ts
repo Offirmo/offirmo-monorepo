@@ -81,11 +81,6 @@ async function apply(from?: PathⳇAny) {
 				// TODO 1D ensure no late discoveries
 				console.group(`↳ onꓽnodeⵧdiscovered : [${styleText('yellow', node.type)}] ${styleText('gray', node?.path‿ar || '??')}`)
 
-				if (node.type === 'package') {
-					// special auto-discovery
-
-				}
-
 				state = Object.entries(plugins).reduce((state, [plugin__name, plugin]) => {
 					if (!plugin.onꓽnodeⵧdiscovered) return state
 

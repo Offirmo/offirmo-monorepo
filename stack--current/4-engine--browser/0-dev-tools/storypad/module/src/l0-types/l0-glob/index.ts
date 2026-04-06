@@ -1,11 +1,10 @@
 
-import {
-	type Module‿Parcelv2, isꓽModule‿Parcelv2,
-	type Glob‿Parcelv2,
-} from './parcel/v2'
+import { type Glob‿Parcelv2 } from './parcel/v2/index.ts'
+import { type Glob‿Vitev8 } from './vite/v8/index.ts'
 
+export type ImportGlob =
+	| Glob‿Parcelv2
+	| Glob‿Vitev8
 
-export type ImportModule = Module‿Parcelv2
-export function isꓽImportModule(x: any): x is ImportModule { return isꓽModule‿Parcelv2(x)}
-export type ImportGlob = Glob‿Parcelv2
-export function isꓽImportGlob(x: any): x is ImportGlob { return !isꓽImportModule(x)}
+export * from './parcel/v2/index.ts'
+export * from './vite/v8/index.ts'

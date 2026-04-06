@@ -1,6 +1,5 @@
 {
-	"name": "@monorepo-private/monorepo",
-	"description": "Source of truth about this monorepo",
+	"name": "@monorepo-private/vite-plugin-parcel-features",
 	"version": "0.0.1",
 	"private": true,
 	"sideEffects": false,
@@ -13,22 +12,19 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@monorepo-private/config--monorepo": "*",
-		"@monorepo-private/fs--ls": "*",
+		"@rolldown/pluginutils": "^1",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@monorepo-private/monorepo\" && tsc --noEmit",
+		"check--ts": "echo \"@monorepo-private/vite-plugin-parcel-features\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"_check": "run-s check--ts",
-		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
+		"check": "run-s check--ts"
 	},
 	"devDependencies": {
 		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^6"

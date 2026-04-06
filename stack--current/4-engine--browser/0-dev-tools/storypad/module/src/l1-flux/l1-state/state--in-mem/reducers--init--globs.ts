@@ -2,15 +2,16 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@monorepo-private/ts--types'
 
 import {
-	type ImportGlob, isꓽImportGlob,
-	type ImportModule, isꓽImportModule,
+	type ImportGlob,
+	type Module‿Parcelv2, isꓽMultiModule‿Parcelv2, isꓽModule‿Parcelv2, isꓽGlob‿Parcelv2,
+	isꓽGlob‿Vitev8,
 } from '../../../l0-types/l0-glob/index.ts'
-import { type Module‿Parcelv2, isꓽMultiModule‿Parcelv2} from '../../../l0-types/l0-glob/parcel/v2/index.ts'
 
 import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../../consts.ts'
 import { type StoryEntry, isꓽStoryEntry } from '../types.ts'
 import type { State } from './types.ts'
 import { registerꓽstory } from './reducers.ts'
+import type { GlobLeave, GlobLeaveⳇAsync } from '../../../l0-types/l0-glob/types.ts'
 
 /////////////////////////////////////////////////
 
@@ -46,32 +47,53 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 		const subpath = [...parent_path, key ]
 
 		switch (true) {
-			case isꓽImportModule(blob):
+			case Object.keys(blob).length === 0:
+				// empty or ~comment
+				// ignore
+				break
+
+			case isꓽModule‿Parcelv2(blob):
 				if (key === 'index')
 					subpath.pop() // useless
-				state = await _registerꓽstoriesⵧfrom_module(state, blob, subpath)
+				state = await _registerꓽstoriesⵧfromⵧModule‿Parcelv2(state, blob, subpath)
 				break
 
 			case isꓽMultiModule‿Parcelv2(blob): {
-				// special case... (sse type definition)
+				// special case... (see type definition)
 				// let's break this multi-module into individual modules
 				state = await Object.keys(blob).sort().reduce(async (acc, extension) => {
 					const state = await acc
 					const module: Module‿Parcelv2 = {
 						[extension]: (blob as any)[extension]!
 					}
-					return _registerꓽstoriesⵧfrom_module(state, module, [ ...subpath, extension ])
+					return await _registerꓽstoriesⵧfromⵧModule‿Parcelv2(state, module, [ ...subpath, extension ])
 				}, Promise.resolve(state))
 				break
 			}
 
-			case isꓽImportGlob(blob):
-				state = await _registerꓽstoriesⵧfrom_glob_or_module(state, blob, subpath)
+			case isꓽGlob‿Vitev8(blob): {
+				state = await Object.keys(blob).sort().reduce(async (acc, file_path) => {
+					const state = await acc
+					const extra_path = file_path
+						.split('/')
+						.filter(s => s !== '..') // vite "root" is strange
+
+					let basename = extra_path.pop()!
+					const extension = basename.split('.').at(-1)!
+					basename = basename.slice(0, -extension.length -1)
+					if (basename.endsWith('.stories')) basename = basename.slice(0, -8)
+
+					return await _registerꓽstoriesⵧfromⵧexports(state, (blob as any)[file_path]!, [ ...subpath, ...extra_path, basename, extension ])
+				}, Promise.resolve(state))
 				break
+			}
 
 			default:
-				console.error({key, blob})
-				throw new Error(`Unsupported blob field!`)
+				// we assume it's a Parcel v2 glob (hard to be sure)
+				state = await _registerꓽstoriesⵧfrom_glob_or_module(state, blob, subpath)
+				//console.error({key, blob})
+				//throw new Error(`Unsupported blob field!`)
+				break
 		}
 	}, Promise.resolve())
 
@@ -80,21 +102,32 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 	return state
 }
 
-async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Immutable<ImportModule>, parent_path: string[] = []): Promise<State> {
-	DEBUGⵧglob_parsing && console.group(`_registerꓽstories_from_module(${parent_path.join(SEPⵧSEGMENTS)}.[js/ts/...])`)
+async function _registerꓽstoriesⵧfromⵧModule‿Parcelv2(state: State, story_module: Immutable<Module‿Parcelv2>, parent_path: string[] = []): Promise<State> {
+	DEBUGⵧglob_parsing && console.group(`_registerꓽstoriesⵧfromⵧModule‿Parcelv2(${parent_path.join(SEPⵧSEGMENTS)}.[js/ts/...])`)
 	console.log('module=', story_module)
 
 	const exports_sync_or_async = story_module.js || story_module.jsx || story_module.ts || story_module.tsx
 	assert(exports_sync_or_async, `ESModule unrecognized extension! (Please implement)`)
 
+	state = await _registerꓽstoriesⵧfromⵧexports(state, exports_sync_or_async, parent_path)
+
+	DEBUGⵧglob_parsing && console.groupEnd()
+
+	return state
+}
+
+async function _registerꓽstoriesⵧfromⵧexports(state: State, exportsⵧraw: GlobLeave, parent_path: string[] = []): Promise<State> {
+	DEBUGⵧglob_parsing && console.group(`_registerꓽstoriesⵧfromⵧexports(${parent_path.join(SEPⵧSEGMENTS)})`)
+
 	const exports = await (async () => {
 		// TODO one day "on demand" resolution to avoid global js+styles pollution
-		if (typeof exports_sync_or_async === 'function') {
+		if (typeof exportsⵧraw === 'function') {
 			try {
-				return await exports_sync_or_async()
+				return await exportsⵧraw()
 			}
 			catch (err) {
 				console.error(`💣Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
+				console.error(err)
 				return {
 					'!ERROR!': () => {
 						console.error(`💣Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
@@ -104,12 +137,11 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 			}
 		}
 
-		return exports_sync_or_async
+		return exportsⵧraw
 	})()
 
 	const { default: meta, ...stories } = exports
 
-	// TODO remove duplicates by value
 	Object.keys(stories).forEach(story_key => {
 		DEBUGⵧglob_parsing && console.log(`Found story: key "${story_key}"`)
 

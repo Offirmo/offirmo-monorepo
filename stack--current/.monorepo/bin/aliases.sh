@@ -68,6 +68,7 @@ alias    mono40pc='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.s
 alias  mono40ppri='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/parcel--plugin--resolver--improved/;          tabset --badge mono40ppri'
 alias    mono40rd='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/rich-text-format--devtools/;                  tabset --badge mono40rd'
 alias     mono40s='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/storypad/;                                    tabset --badge mono40s'
+alias     mono40v='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 0-dev-tools/vite-plugin-parcel-features/;                 tabset --badge mono40v'
 alias     mono41b='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/browser-features-detection/;               tabset --badge mono41b'
 alias    mono41c0='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/css--0-reset/;                             tabset --badge mono41c0'
 alias    mono41c1='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/css--1-foundation/;                        tabset --badge mono41c1'

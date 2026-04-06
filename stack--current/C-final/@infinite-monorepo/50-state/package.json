@@ -13,11 +13,19 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/graph": "*",
+		"@infinite-monorepo/package-details": "*",
 		"@infinite-monorepo/read-write-any-structured-file": "*",
 		"@infinite-monorepo/spec--defaults": "*",
 		"@infinite-monorepo/spec--load": "*",
+		"@monorepo-private/file-entry": "*",
+		"@monorepo-private/fs--ls": "*",
+		"@monorepo-private/pkg-infos-resolver": "*",
 		"@offirmo/error-utils": "^0.0.1",
-		"tiny-invariant": "^1"
+		"ignore-walk": "^8",
+		"json5": "^2",
+		"parse-imports-ts": "^1",
+		"tiny-invariant": "^1",
+		"write-json-file": "^7"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/state\" && tsc --noEmit",
@@ -33,6 +41,7 @@
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/ignore-walk": "^4",
 		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",

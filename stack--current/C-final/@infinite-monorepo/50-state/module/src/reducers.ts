@@ -36,6 +36,7 @@ import type {
 	AsyncCallbackReducer,
 	SubStateⳇFactsFile,
 } from './types.ts'
+import { getꓽpackage_details } from './analyze-pkg.ts'
 
 /////////////////////////////////////////////////
 const DEBUG = true
@@ -185,16 +186,20 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 	)
 
 	node = {
-		spec: {},
+		spec: {}, // TODO load!
 		...node,
 	}
 
 	switch (node.type) {
 		case 'package': {
 			node = {
-				//details: c ??
 				...node,
+				details: {
+					...getꓽpackage_details(node.path‿abs),
+					...node.details, // very unlikely it's set
+				}
 			}
+			break
 		}
 		default:
 			break
@@ -209,6 +214,33 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 				[node.path‿abs]: {
 					...node,
 					status: 'new',
+				},
+			},
+		},
+	}
+}
+function updateꓽnodeⵧpackage__details(state: Immutable<State>, node: Immutable<Node>, details: any): Immutable<State> {
+	assert(node.type === 'package')
+
+	assert(!!state.graphs.nodesⵧworkspace[node.path‿abs], `Node expected: ${node.path‿abs}!`)
+	assert(
+		state.graphs.nodesⵧworkspace[node.path‿abs]?.status === 'new',
+		`Node not new: ${node.path‿abs}!`,
+	)
+
+	return {
+		...state,
+		graphs: {
+			...state.graphs,
+			nodesⵧworkspace: {
+				...state.graphs.nodesⵧworkspace,
+				[node.path‿abs]: {
+					...node,
+					details: {
+						// TODO deep merge?
+						...node.details,
+						...details,
+					}
 				},
 			},
 		},
@@ -285,7 +317,7 @@ function declareꓽfile_manifest(
 function _resolveꓽarpath(
 	state: Immutable<State>,
 	path‿ar: MultiRepoFilePathⳇRelative,
-	node?: Immutable<Node> | undefined,
+	parent_node?: Immutable<Node> | undefined,
 ): PathⳇAbsolute {
 	const first_segment = path‿ar.split('/')[0]
 	assert(
@@ -293,20 +325,20 @@ function _resolveꓽarpath(
 		`Invalid arpath NOT starting with a $PATHVAR$: "${path‿ar}"!`,
 	)
 
-	if (node) {
+	if (parent_node) {
 		if (first_segment === PATHVARⵧROOTⵧNODE) {
 			// joker, matches any node
-			return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
+			return path.resolve(parent_node.path‿abs, path‿ar.slice(first_segment.length + 1))
 		}
 
-		if (node.path‿ar.startsWith(first_segment)) {
+		if (parent_node.path‿ar.startsWith(first_segment)) {
 			// the node is the one we need
-			return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
+			return path.resolve(parent_node.path‿abs, path‿ar.slice(first_segment.length + 1))
 		}
 
-		if (first_segment === PATHVARⵧROOTⵧPACKAGE && node.type === 'monorepo') {
+		if (first_segment === PATHVARⵧROOTⵧPACKAGE && parent_node.type === 'monorepo') {
 			// special: the workspace root is also a package
-			return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
+			return path.resolve(parent_node.path‿abs, path‿ar.slice(first_segment.length + 1))
 		}
 	}
 

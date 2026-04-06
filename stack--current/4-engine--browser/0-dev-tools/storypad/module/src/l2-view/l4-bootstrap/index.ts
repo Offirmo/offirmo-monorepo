@@ -1,14 +1,17 @@
-//import './__shared/x-logger.ts'
-
 import assert from 'tiny-invariant'
 import type { Immutable } from '@monorepo-private/ts--types'
 import { asap_but_out_of_immediate_execution } from '@monorepo-private/utils--async'
-//import { ೱᐧpage_loaded } from '@monorepo-private/page-loaded'
+import { ೱᐧpage_loaded } from '@monorepo-private/page-loaded'
+import { _request_install_better_console_groups_if_not_already } from '@monorepo-private/better-console-groups'
+
+/////////////////////////////////////////////////
 
 import { LIB, DEBUG } from '../../consts.ts'
 import type { Config } from '../../l0-types/l2-config/index.ts'
 
 /////////////////////////////////////////////////
+
+_request_install_better_console_groups_if_not_already()
 
 // strange behavior on Parcel.js start
 Array.from({length: 10}, () => { console.log('⇱'); console.groupEnd() })
@@ -25,10 +28,7 @@ const misconfig_detection = setTimeout(() => {
 
 /////////////////////////////////////////////////
 
-import { ObservableState } from '../../l1-flux/l2-observable'
-
-// @ts-expect-error bundler advanced feature
-import initsⵧservices from '../l0-services/init/*.ts'
+import { ObservableState } from '../../l1-flux/l2-observable/index.ts'
 
 import render from './render-root.ts'
 
@@ -50,17 +50,27 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 			console.log('config =', config)
 			console.log('glob =', stories_glob)
 
+		// @ts-expect-error bundler advanced feature
+		//const initsⵧservices = import('../l0-services/init/*.ts') // Parcel 2
+		const initsⵧservices = import.meta.glob('../l0-services/init/*.ts') // vite v8
+
 			// 1. services
 			console.groupCollapsed(`[${LIB}] 1/3 Services init…`)
+				console.log({initsⵧservices})
 				// order is important! Timing is non-trivial!
 				assert(Object.keys(initsⵧservices).length > 0, 'Unexpectedly no services/init found!')
 				await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
 					await acc
 					console.group(`services/init "${key}"`)
-						const init_fn = initsⵧservices[key].default
+						const init_fn = initsⵧservices[key].default ?? initsⵧservices[key]
 						console.trace(`services/init "${key}": exec…`)
-						await init_fn()
-						console.trace(`services/init "${key}": done ✅`)
+						try {
+							await init_fn()
+							console.trace(`services/init "${key}": done ✅`)
+						}
+						catch (err) {
+							console.error(err)
+						}
 					console.groupEnd()
 				}, Promise.resolve())
 				console.log(`[${LIB}] 1/3 Services init ✅`)
@@ -69,14 +79,24 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 			// 2. flux
 			console.groupCollapsed(`[${LIB}] 2/3 Flux init…`)
 				const flux = new ObservableState()
-				await flux.init(stories_glob, config)
-				console.log(`[${LIB}] 2/3 Flux init ✅`)
+				try {
+					await flux.init(stories_glob, config)
+					console.log(`[${LIB}] 2/3 Flux init ✅`)
+				}
+				catch (err) {
+					console.error(err)
+				}
 			console.groupEnd()
 
 			// 3. view
 			console.groupCollapsed(`[${LIB}] 3/3 View init…`)
-				render(flux)
-				console.log(`[${LIB}] 3/3 View init ✅`)
+				try {
+					render(flux)
+					console.log(`[${LIB}] 3/3 View init ✅`)
+				}
+				catch (err) {
+					console.error(err)
+				}
 			console.groupEnd()
 
 			console.log(`[${LIB}] Done ✔`)

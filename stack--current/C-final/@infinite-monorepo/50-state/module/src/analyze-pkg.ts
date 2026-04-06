@@ -12,15 +12,19 @@ import JSON5 from 'json5'
 import { parse as parseImports } from 'parse-imports-ts'
 import { writeJsonFile as write_json_file } from 'write-json-file'
 
+import { lsDirsSync } from '@monorepo-private/fs--ls'
 import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
 
 import type {
 	PathⳇAbsolute,
 	PathⳇAny,
+} from '@monorepo-private/ts--types'
+
+import type {
 	ProgLang,
 	Dependency,
 	DependencyType,
-} from './types'
+} from '@infinite-monorepo/primitives'
 
 import { type FileEntry, createꓽfile_entry, updateꓽfile_entry } from '@monorepo-private/file-entry'
 
@@ -28,7 +32,7 @@ import {
 	type PureModuleDetails,
 	create as _createꓽresult,
 	updateⵧfrom_manifest,
-} from './pure-module-details/index.ts'
+} from '@infinite-monorepo/package-details'
 
 /////////////////////////////////////////////////
 
@@ -449,35 +453,6 @@ function isꓽentrypointⵧbuild(entry: FileEntry | undefined): boolean {
 	if (!entry.path‿rel.includes('++gen')) return false
 
 	return (entry.basenameⵧsemantic‿no_ᐧext.startsWith('build'))
-	/*
-	// some path / files have "build" in them without being build scripts
-	// ex. builder.ts
-	// we require at least one perfectly "build" segment
-	const segments = entry.path‿rel.split(SEP).map(s => {
-		s = s.trim()
-		if (s.startsWith('~~') || s.startsWith('__')) {
-			s = s.slice(2).trim()
-		}
-		return s
-	})
-	if (!segments.includes('build')) return null
-
-	const score: NonNullable<Score> = []
-
-	score.push((() => {
-		let score_unit = 0
-
-		 {
-			return score_unit
-		}
-		score_unit++
-
-		return score_unit
-	})())
-
-	score.push(...getꓽtrailing_score(entry))
-
-	return score*/
 }
 
 /////////////////////////////////////////////////
@@ -488,12 +463,13 @@ interface Options {
 	pkg_infos_resolver: PkgInfosResolver,
 }
 
-async function getꓽpure_module_details(module_path: PathⳇAny, options: Partial<Options> = {}): Promise<PureModuleDetails> {
+async function getꓽpackage_details(pkg_path: PathⳇAny, options: Partial<Options> = {}): Promise<PureModuleDetails> {
 	const {
 		indent = '',
 		getꓽdefault_namespace,
 		pkg_infos_resolver = new PkgInfosResolver(),
 	} = options
+	console.log(`${indent}🗂  analysing package at "${pkg_path}"…`)
 
 	function getꓽnamespace(details_so_far: PureModuleDetails): PureModuleDetails['namespace'] {
 		const path_segments = details_so_far.root‿abspath.split('/')
@@ -507,11 +483,24 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 				return candidate
 		}
 
-		return '@monorepo'
+		return '@monorepo-private'
 	}
 
-	const root‿abspath = path.resolve(module_path)
-	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
+	const root‿abspath = (() => {
+		let p = path.resolve(pkg_path)
+
+		// let's check the 1st level
+		const dirs_1stlev = new Set(lsDirsSync(p, { full_path: false }))
+		if (dirs_1stlev.has('module')) {
+			// it's a pure module
+			// TODO 1D only if offirmo
+			p = path.join(p, 'module')
+		}
+
+		return p
+	})()
+	if (root‿abspath !== pkg_path)
+		console.log(`${indent}   resolved and refined to "${root‿abspath}"…`)
 
 	const files = (walkNotGitIgnored.sync({ // https://github.com/npm/ignore-walk
 			path: root‿abspath,
@@ -818,7 +807,7 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 	assert(result.entrypointⵧmain, 'No main file found?')
 
 	result.isꓽapp = result._manifest.isꓽapp ?? (
-		module_path.includes('sandbox')
+		pkg_path.includes('sandbox')
 		|| result.entrypointⵧmain.ext === '.html'
 	)
 
@@ -994,8 +983,7 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 
 /////////////////////////////////////////////////
 
-export * from './types.ts'
 export {
 	type PureModuleDetails,
-	getꓽpure_module_details,
+	getꓽpackage_details,
 }

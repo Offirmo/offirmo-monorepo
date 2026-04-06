@@ -30,7 +30,7 @@ const ORIGINAL_CONSOLE = console
 /////////////////////////////////////////////////
 
 function install({ uncollapse_level = 'warn', lazy = true, original_console = ORIGINAL_CONSOLE }: Options = {}): void {
-	if (DEBUG) console.log('better-console-groups install', { uncollapse_level, lazy })
+	if (DEBUG) ORIGINAL_CONSOLE.log('better-console-groups install', { uncollapse_level, lazy })
 
 	const group_invocations: GroupInvocation[] = []
 	// in node, group() calls console.log()

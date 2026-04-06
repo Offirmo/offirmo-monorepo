@@ -1,12 +1,4 @@
-
-/////////////////////////////////////////////////
-
-type GlobLeaveⳇSync = { [exportKey: string]: any } // exports, incl. default
-type GlobLeaveⳇAsync = () => Promise<GlobLeaveⳇSync>
-
-type GlobLeave =
-	| GlobLeaveⳇSync
-	| GlobLeaveⳇAsync
+import type { GlobLeave } from '../../types.ts'
 
 /////////////////////////////////////////////////
 
@@ -43,4 +35,9 @@ export function isꓽModule‿Parcelv2(x: any): x is Module‿Parcelv2 {
 
 export interface Glob‿Parcelv2 {
 	[k: string]: Glob‿Parcelv2 | Module‿Parcelv2
+}
+
+export function isꓽGlob‿Parcelv2(x: any): x is Glob‿Parcelv2 {
+	// deep recursive Parcel v2 globs are hard to detect
+	throw new Error('isꓽGlob‿Parcelv2(): implementation difficult, do NOT use!')
 }
