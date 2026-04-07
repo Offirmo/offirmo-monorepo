@@ -19,8 +19,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"memoize-one": "^6",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"memoize-one": "^6"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",

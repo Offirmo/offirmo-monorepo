@@ -14,8 +14,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/state-utils": "*",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

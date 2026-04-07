@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/load-config": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/spec--load\" && tsc --noEmit",

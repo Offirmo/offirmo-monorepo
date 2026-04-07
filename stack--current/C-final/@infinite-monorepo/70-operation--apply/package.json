@@ -33,7 +33,7 @@
 		"@infinite-monorepo/read-write-any-structured-file": "*",
 		"@infinite-monorepo/spec--load": "*",
 		"@infinite-monorepo/state": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/operation--apply\" && tsc --noEmit",

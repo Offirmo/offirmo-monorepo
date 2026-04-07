@@ -15,10 +15,10 @@
 		"@infinite-monorepo/plugin--npm": "*",
 		"@infinite-monorepo/state": "*",
 		"@infinite-monorepo/types-for-plugins": "*",
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/fs--ls": "*",
 		"@offirmo/error-utils": "^0.0.1",
-		"semver": "^7",
-		"tiny-invariant": "^1"
+		"semver": "^7"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/plugin--bolt\" && tsc --noEmit",

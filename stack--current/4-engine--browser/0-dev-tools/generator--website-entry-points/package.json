@@ -13,6 +13,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/fs--output-file": "*",
 		"@monorepo-private/generator--html": "*",
 		"@monorepo-private/generator--svg": "*",
@@ -23,7 +24,6 @@
 		"@resvg/resvg-js": "^2",
 		"chroma-js": "^3",
 		"prettier": "^3",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

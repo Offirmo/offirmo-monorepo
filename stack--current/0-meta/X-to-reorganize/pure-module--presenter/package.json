@@ -13,9 +13,9 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/pkg-infos-resolver": "*",
 		"@monorepo-private/set-deep-property": "*",
-		"tiny-invariant": "^1",
 		"write-json-file": "^7"
 	},
 	"scripts": {

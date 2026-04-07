@@ -14,6 +14,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/rich-text-format": "*",
 		"@monorepo-private/state-utils": "*",
 		"@monorepo-private/timestamps": "*",
@@ -33,7 +34,6 @@
 		"@tbrpg/state--energy": "*",
 		"@tbrpg/state--inventory": "*",
 		"@tbrpg/state--wallet": "*",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

@@ -13,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@offirmo/random": "^3",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

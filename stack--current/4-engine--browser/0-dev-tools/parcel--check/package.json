@@ -10,7 +10,7 @@
 	},
 	"source": "module/index.html",
 	"dependencies": {
-		"tiny-invariant": "^1",
+		"@monorepo-private/assert": "*",
 		"tslib": "^2"
 	},
 	"scripts": {

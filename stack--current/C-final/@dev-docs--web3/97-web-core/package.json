@@ -13,6 +13,7 @@
 		"@dev-docs--web3/marketing": "*",
 		"@dev-docs--web3/state": "*",
 		"@markdoc/markdoc": "^0.5",
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/browser-features-detection": "*",
 		"@monorepo-private/css--framework": "*",
 		"@monorepo-private/page-loaded": "*",
@@ -32,7 +33,6 @@
 		"rehype-highlight": "^7",
 		"rehype-slug": "^6",
 		"remark-gfm": "^4",
-		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},
 	"scripts": {

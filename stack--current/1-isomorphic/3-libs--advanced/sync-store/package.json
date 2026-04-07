@@ -12,8 +12,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@monorepo-private/ts--types--web": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/ts--types--web": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/sync-store\" && tsc --noEmit",

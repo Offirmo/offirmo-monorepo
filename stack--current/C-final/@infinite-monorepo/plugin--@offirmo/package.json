@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@infinite-monorepo/state": "*",
 		"@infinite-monorepo/types-for-plugins": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/plugin--@offirmo\" && tsc --noEmit",

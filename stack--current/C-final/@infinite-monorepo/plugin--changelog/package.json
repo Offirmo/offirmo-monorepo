@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/state": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/plugin--changelog\" && tsc --noEmit",

@@ -14,7 +14,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/soft-execution-context--node\" && tsc --noEmit",

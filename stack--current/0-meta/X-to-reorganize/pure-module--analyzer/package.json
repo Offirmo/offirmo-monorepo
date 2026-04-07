@@ -13,6 +13,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/file-entry": "*",
 		"@monorepo-private/pkg-infos-resolver": "*",
 		"ignore-walk": "^8",

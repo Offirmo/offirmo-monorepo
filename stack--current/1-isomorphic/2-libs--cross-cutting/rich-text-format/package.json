@@ -6,16 +6,17 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/index.ts",
+		"./examples": "./module/src/__examples/_entrypoint.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/normalize-string": "*",
 		"@monorepo-private/type-detection": "*",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

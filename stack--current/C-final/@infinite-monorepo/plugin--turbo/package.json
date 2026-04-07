@@ -15,8 +15,8 @@
 		"@infinite-monorepo/plugin--git": "*",
 		"@infinite-monorepo/state": "*",
 		"@infinite-monorepo/types-for-plugins": "*",
-		"semver": "^7",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"semver": "^7"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/plugin--turbo\" && tsc --noEmit",

@@ -13,12 +13,12 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/sync-store": "*",
 		"@monorepo-private/ts--types--web": "*",
 		"@tbrpg/state": "*",
 		"@tbrpg/state--character": "*",
 		"emittery": "^2",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

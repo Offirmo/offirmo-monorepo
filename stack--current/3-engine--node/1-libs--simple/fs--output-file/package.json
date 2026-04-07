@@ -12,8 +12,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@monorepo-private/promise-try": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/promise-try": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/fs--output-file\" && tsc --noEmit",

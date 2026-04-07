@@ -13,6 +13,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/rich-text-format": "*",
 		"@oh-my-rpg/state--meta": "*",
 		"@tbrpg/definitions": "*",
@@ -25,7 +26,6 @@
 		"@tbrpg/state--character": "*",
 		"@tbrpg/state--inventory": "*",
 		"@tbrpg/state--wallet": "*",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

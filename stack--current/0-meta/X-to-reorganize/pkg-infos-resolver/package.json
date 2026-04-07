@@ -13,10 +13,10 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/monorepo": "*",
 		"package-json": "^10",
-		"semver": "^7",
-		"tiny-invariant": "^1"
+		"semver": "^7"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/pkg-infos-resolver\" && tsc --noEmit",

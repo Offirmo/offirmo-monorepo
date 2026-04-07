@@ -13,11 +13,11 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@total-typescript/ts-reset": "^0.6",
 		"@tsconfig/node-ts": "^23",
 		"@tsconfig/node24": "^24",
-		"@tsconfig/strictest": "^2",
-		"tiny-invariant": "^1"
+		"@tsconfig/strictest": "^2"
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",

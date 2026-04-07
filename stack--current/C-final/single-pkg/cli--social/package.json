@@ -12,6 +12,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/normalize-string": "*",
 		"@monorepo-private/type-detection": "*",
 		"temporal-polyfill": "^0.3",

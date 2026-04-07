@@ -1,5 +1,6 @@
 {
 	"name": "@monorepo-private/merge",
+	"description": "TODO description in MANIFEST.json5",
 	"version": "0.0.1",
 	"private": true,
 	"sideEffects": false,

@@ -16,8 +16,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@parcel/plugin": "^2",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@parcel/plugin": "^2"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/parcel-resolver\" && tsc --noEmit",

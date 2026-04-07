@@ -13,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@monorepo-private/type-detection": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/type-detection": "*"
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/**/*.tests.ts'",

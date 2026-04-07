@@ -13,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"limit-once": "^0.16",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"limit-once": "^0.16"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/better-console-groups\" && tsc --noEmit",

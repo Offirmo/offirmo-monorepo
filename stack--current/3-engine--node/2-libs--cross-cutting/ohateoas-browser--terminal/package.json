@@ -13,6 +13,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/normalize-string": "*",
 		"@monorepo-private/ohateoas": "*",
 		"@monorepo-private/prettify-any": "*",
@@ -20,7 +21,6 @@
 		"@monorepo-private/rich-text-format--to-terminal": "*",
 		"@monorepo-private/timestamps": "*",
 		"@monorepo-private/ts--types--web": "*",
-		"tiny-invariant": "^1",
 		"zx": "^8"
 	},
 	"scripts": {

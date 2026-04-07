@@ -13,9 +13,9 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@tsparticles/basic": "^3",
-		"@tsparticles/engine": "^3",
-		"tiny-invariant": "^1"
+		"@tsparticles/engine": "^3"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",

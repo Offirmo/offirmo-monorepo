@@ -13,8 +13,8 @@
 	},
 	"dependencies": {
 		"@dev-docs--web3/marketing": "*",
-		"@monorepo-private/generator--website-entry-points": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/generator--website-entry-points": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@dev-docs--web3/web-property\" && tsc --noEmit",

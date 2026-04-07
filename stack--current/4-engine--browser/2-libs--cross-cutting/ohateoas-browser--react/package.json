@@ -14,11 +14,11 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/ohateoas": "*",
 		"@monorepo-private/rich-text-format": "*",
 		"@monorepo-private/rich-text-format--to-react": "*",
-		"@monorepo-private/ts--types--web": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/ts--types--web": "*"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",

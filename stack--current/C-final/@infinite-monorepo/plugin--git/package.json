@@ -14,8 +14,8 @@
 	"dependencies": {
 		"@infinite-monorepo/state": "*",
 		"@infinite-monorepo/types-for-plugins": "*",
-		"semver": "^7",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"semver": "^7"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/plugin--git\" && tsc --noEmit",

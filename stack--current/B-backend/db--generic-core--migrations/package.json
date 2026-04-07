@@ -9,11 +9,11 @@
 	},
 	"source": "module/deps.ts",
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/normalize-string": "*",
 		"knex": "^3",
 		"pg": "^8",
 		"pg-connection-string": "^2",
-		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},
 	"scripts": {

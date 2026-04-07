@@ -14,8 +14,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@monorepo-private/marketing": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/marketing": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/credits\" && tsc --noEmit",

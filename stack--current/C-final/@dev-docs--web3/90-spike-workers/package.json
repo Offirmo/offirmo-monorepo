@@ -9,13 +9,13 @@
 	},
 	"source": "module/src/index.html",
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@parcel/service-worker": "^2",
 		"rehype-sanitize": "^6",
 		"rehype-stringify": "^10",
 		"remark-frontmatter": "^5",
 		"remark-parse": "^11",
 		"remark-rehype": "^11",
-		"tiny-invariant": "^1",
 		"tslib": "^2",
 		"unified": "^11"
 	},

@@ -13,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"cross-spawn": "^7",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"cross-spawn": "^7"
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/**/*.tests.ts'",

@@ -12,13 +12,13 @@
 	},
 	"source": "module/src/index.ts",
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/generator--svg": "*",
 		"@monorepo-private/offirmo-api--interface": "*",
 		"@monorepo-private/soft-execution-context": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/practical-logger-core": "^3",
 		"hono": "^4",
-		"tiny-invariant": "^1",
 		"tslib": "^2",
 		"typescript-string-enums": "^1"
 	},

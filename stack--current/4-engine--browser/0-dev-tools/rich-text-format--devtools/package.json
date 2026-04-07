@@ -5,14 +5,16 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/to--debug/index.tsx"
 	},
-	"source": "module/src/index.ts",
+	"source": "module/src/to--debug/index.tsx",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/css--framework": "*",
+		"@monorepo-private/rich-text-format": "*"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
@@ -31,6 +33,7 @@
 		"@monorepo-private/storypad": "*",
 		"@monorepo-private/toolbox--parcel": "*",
 		"@monorepo-private/toolbox--vite": "*",
+		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

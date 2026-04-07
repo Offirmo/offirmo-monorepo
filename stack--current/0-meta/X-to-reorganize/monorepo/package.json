@@ -13,9 +13,9 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/config--monorepo": "*",
-		"@monorepo-private/fs--ls": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/fs--ls": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/monorepo\" && tsc --noEmit",

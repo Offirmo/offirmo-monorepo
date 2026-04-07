@@ -12,7 +12,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/spec--defaults\" && tsc --noEmit",

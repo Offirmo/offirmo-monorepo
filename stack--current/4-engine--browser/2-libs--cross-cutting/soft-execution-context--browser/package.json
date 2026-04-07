@@ -14,8 +14,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"bowser": "^2",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"bowser": "^2"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",

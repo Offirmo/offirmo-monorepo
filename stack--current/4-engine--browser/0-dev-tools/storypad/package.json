@@ -17,6 +17,7 @@
 	},
 	"source": "module/src/index.ts",
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/better-console-groups": "*",
 		"@monorepo-private/browser-features-detection": "*",
 		"@monorepo-private/data-structures": "*",
@@ -27,7 +28,6 @@
 		"prop-types": "^15",
 		"react": "^19",
 		"react-dom": "^19",
-		"tiny-invariant": "^1",
 		"tslib": "^2",
 		"typescript-string-enums": "^1"
 	},

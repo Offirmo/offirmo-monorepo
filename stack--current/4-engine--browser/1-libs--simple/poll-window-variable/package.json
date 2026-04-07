@@ -13,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@monorepo-private/poll": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/poll": "*"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",

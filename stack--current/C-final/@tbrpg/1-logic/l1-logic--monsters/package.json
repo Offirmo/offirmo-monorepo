@@ -13,11 +13,11 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/state-utils": "*",
 		"@monorepo-private/unicode-data": "*",
 		"@offirmo/random": "^3",
 		"@tbrpg/definitions": "*",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

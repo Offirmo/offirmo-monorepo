@@ -14,13 +14,13 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/normalize-string": "*",
 		"@monorepo-private/rich-text-format": "*",
 		"@monorepo-private/timestamps": "*",
 		"@monorepo-private/ts--types": "*",
 		"@monorepo-private/ts--types--web": "*",
 		"@monorepo-private/type-detection": "*",
-		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {

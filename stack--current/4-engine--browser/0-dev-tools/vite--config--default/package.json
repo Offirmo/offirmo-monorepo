@@ -1,5 +1,6 @@
 {
 	"name": "@monorepo-private/vite--config--default",
+	"description": "TODO description in MANIFEST.json5",
 	"version": "0.0.1",
 	"private": true,
 	"sideEffects": false,
@@ -15,8 +16,7 @@
 		"@monorepo-private/assert": "*",
 		"@monorepo-private/merge": "*",
 		"@vitejs/plugin-react": "^6",
-		"vite": "^8",
-		"vite-plugin-inspect": "^12"
+		"vite": "^8"
 	},
 	"scripts": {
 		"check--ts": "echo \"@monorepo-private/vite--config--default\" && tsc --noEmit",

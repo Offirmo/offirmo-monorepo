@@ -10,7 +10,7 @@
 	},
 	"source": "module/src/web-component--social-links.js",
 	"dependencies": {
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",

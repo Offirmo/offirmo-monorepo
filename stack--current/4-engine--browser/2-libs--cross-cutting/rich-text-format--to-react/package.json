@@ -14,11 +14,11 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@monorepo-private/assert": "*",
 		"@monorepo-private/normalize-string": "*",
 		"@monorepo-private/rich-text-format": "*",
 		"classnames": "^2",
-		"memoize-one": "^6",
-		"tiny-invariant": "^1"
+		"memoize-one": "^6"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",

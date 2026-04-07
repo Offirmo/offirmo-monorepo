@@ -13,8 +13,8 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/read-write-any-structured-file": "*",
-		"@monorepo-private/fs--ls": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/fs--ls": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/load-config\" && tsc --noEmit",

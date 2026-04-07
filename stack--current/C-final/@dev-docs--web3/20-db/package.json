@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@dev-docs--web3/types": "*",
-		"tiny-invariant": "^1"
+		"@monorepo-private/assert": "*"
 	},
 	"scripts": {
 		"check--ts": "echo \"@dev-docs--web3/db\" && tsc --noEmit",
