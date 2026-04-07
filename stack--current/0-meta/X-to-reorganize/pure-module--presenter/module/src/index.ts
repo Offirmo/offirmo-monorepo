@@ -313,7 +313,8 @@ ${pure_module_details.description || ''}
 				assert(pure_module_details.entrypointⵧstorypad, `Expected storypad to be defined!`)
 				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧstorypad.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 				scripts["_start:vite:storypad"] = `vite ${VITE__COMMON_OPTIONS} --open ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧstorypad.path‿rel)}`
-				scripts['stories'] = `npm-run-all clean --parallel _start:parcel:storypad`
+				scripts['storiesp'] = `npm-run-all clean --parallel _start:parcel:storypad`
+				scripts['stories'] = `npm-run-all clean --parallel _start:vite:storypad`
 			}
 			if (pure_module_details.entrypointⵧdemo) {
 				switch (pure_module_details.entrypointⵧdemo.ext) {
@@ -329,7 +330,8 @@ ${pure_module_details.description || ''}
 					case '.html': {
 						scripts["_start:parcel:demo"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧdemo.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 						scripts["_start:vite:demo"] = `vite ${VITE__COMMON_OPTIONS} --open ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧdemo.path‿rel)}`
-						scripts['demo'] = `npm-run-all clean --parallel _start:parcel:demo`
+						scripts['demop'] = `npm-run-all clean --parallel _start:parcel:demo`
+						scripts['demo'] = `npm-run-all clean --parallel _start:vite:demo`
 						break
 					}
 
@@ -351,7 +353,8 @@ ${pure_module_details.description || ''}
 					case '.html': {
 						scripts["_start:vite:sandbox"] = `vite ${VITE__COMMON_OPTIONS} --open ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧsandbox.path‿rel)}`
 						scripts["_start:parcel:sandbox"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧsandbox.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
-						scripts['sandbox'] = `npm-run-all clean --parallel _start:parcel:sandbox`
+						scripts['sandboxp'] = `npm-run-all clean --parallel _start:parcel:sandbox`
+						scripts['sandbox'] = `npm-run-all clean --parallel _start:vite:sandbox`
 						break
 					}
 
@@ -370,7 +373,8 @@ ${pure_module_details.description || ''}
 					scripts['start'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧmain.path‿rel)}`
 				} else {
 					if (scripts['_start:parcel:main']) {
-						scripts['start'] = `npm-run-all clean --parallel _start:parcel:main`
+						scripts['startp'] = `npm-run-all clean --parallel _start:parcel:main`
+						scripts['start'] = `npm-run-all clean --parallel _start:vite:main`
 					}
 				}
 			}

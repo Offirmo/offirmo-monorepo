@@ -46,9 +46,16 @@ Promise.all(
 
 				case '…cache':
 					return Promise.all([
-						rm_folderⵧwith_trace(path.join(PKG_PATH, '.cache')), // parcel 1 ?
 						rm_folderⵧwith_trace(path.join(PKG_PATH, 'node_modules/.cache')),
+
+						// vite v8
+						rm_folderⵧwith_trace(path.join(PKG_PATH, 'node_modules/.vite')),
+						rm_folderⵧwith_trace(path.join(PKG_PATH, 'node_modules/.vite-temp')),
+
+						rm_folderⵧwith_trace(path.join(PKG_PATH, '.cache')), // parcel 1 ?
+
 						rm_folderⵧwith_trace(path.join(PKG_PATH, '.parcel')), // parcel 1
+
 						rm_folderⵧwith_trace(path.join(PKG_PATH, '.parcel-cache')), // parcel 2
 						rm_folderⵧwith_trace(path.join(MONOREPO_ROOT_PATH, '.parcel-cache')), // parcel 2 shared cache which causes heaps of troubles in monorepos
 					])
