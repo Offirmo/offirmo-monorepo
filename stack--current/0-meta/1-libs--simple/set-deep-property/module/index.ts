@@ -1,11 +1,11 @@
 /* inspired by npm:pathval
  * but modified to
- * - allow dots in the path, for package exports
+ * - allow alternate separator for dots in the path (for package exports)
  * - allow deletes
  * - support immutability
  */
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 
 /////////////////////////////////////////////////
 

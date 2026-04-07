@@ -6,23 +6,23 @@ import { $EXAMPLE_COMPLETE_NODE } from '../l1-types/guards.ts'
 
 /////// parts ///////
 
-const _SUB_OL_ITEMS: RichText.Document['$sub'] = {
+const _SUB_OL_ITEMS: RichText.Document['$refs'] = {
 	'002': {$type: 'fragmentⵧinline', $content: 'ol #2'},
 	'001': {$type: 'fragmentⵧinline', $content: 'ol #1'},
 	'003': {$type: 'fragmentⵧinline', $content: 'ol #3'},
 }
 
-const _SUB_UL_ITEMS: RichText.Document['$sub'] = {
+const _SUB_UL_ITEMS: RichText.Document['$refs'] = {
 	'002': {$type: 'fragmentⵧinline', $content: 'ul #2'},
 	'001': {$type: 'fragmentⵧinline', $content: 'ul #1'},
 	'003': {$type: 'fragmentⵧinline', $content: 'ul #3'},
 }
 
-const _SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
+const _SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$refs'] = {
 	'001': {
 		$type: 'fragmentⵧinline',
 		$content: '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
-		$sub: {
+		$refs: {
 			key: {
 				$content: 'level',
 			},
@@ -34,7 +34,7 @@ const _SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
 	'002': {
 		$type: 'fragmentⵧinline',
 		$content: '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
-		$sub: {
+		$refs: {
 			key: {
 				$content: 'health',
 			},
@@ -46,7 +46,7 @@ const _SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
 	'003': {
 		$type: 'fragmentⵧinline',
 		$content: '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
-		$sub: {
+		$refs: {
 			key: {
 				$content: 'mana',
 			},
@@ -59,6 +59,7 @@ const _SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
 
 /////// COMPLETE DOCS ///////
 
+/*
 const $DEMOⵧSIMPLE = (() => {
 	const builder = RichText.fragmentⵧinline()
 		.addClass('achievement')
@@ -93,12 +94,12 @@ const $DEMOⵧKV = (() => {
 
 	return builder.done()
 })()
-
-
+*/
+/*
 const _DOC_WEAPON_01_NAME: RichText.Document = {
 	$classes: ['item--name', 'item--weapon--name'],
 	$content: '⎨⎨qualifier2|Capitalize⎬⎬ ⎨⎨qualifier1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬',
-	$sub: {
+	$refs: {
 		qualifier2: {
 			$type: 'fragmentⵧinline',
 			$content: 'warfield king’s',
@@ -118,7 +119,7 @@ const DOC_WEAPON_01: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: ['item', 'item--weapon', 'item--quality--legendary'],
 	$content: '⎨⎨weapon_name⎬⎬ ⎨⎨enhancement⎬⎬',
-	$sub: {
+	$refs: {
 		weapon_name: _DOC_WEAPON_01_NAME,
 		enhancement: {
 			$type: 'fragmentⵧinline',
@@ -130,19 +131,20 @@ const DOC_WEAPON_01: RichText.Document = {
 		uuid: '1234',
 	},
 }
-const _SUB_UL_ACTIONABLE_ITEMS: RichText.Document['$sub'] = {
+
+const _SUB_UL_ACTIONABLE_ITEMS: RichText.Document['$refs'] = {
 	'001': DOC_WEAPON_01,
-	/*'002': render_item(DEMO_WEAPON_1),
+	'002': render_item(DEMO_WEAPON_1),
 	'003': render_item(DEMO_ARMOR_1),
 	'004': render_item(DEMO_WEAPON_2),
-	'005': render_item(DEMO_ARMOR_2),*/
+	'005': render_item(DEMO_ARMOR_2),
 }
 
 const DOC_PLACE_01: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: ['place'],
 	$content: 'the country of ⎨⎨name⎬⎬',
-	$sub: {
+	$refs: {
 		name: {
 			$classes: ['place--name'],
 			$content: 'Foo',
@@ -164,22 +166,22 @@ const DOC_NPC_01: RichText.Document = {
 
 const DOC_DEMO_LIST_ORDERED: RichText.Document = {
 	$type: 'ol',
-	$sub: _SUB_OL_ITEMS,
+	$refs: _SUB_OL_ITEMS,
 }
 const DOC_DEMO_LIST_UNORDERED: RichText.Document = {
 	$type: 'ul',
-	$sub: _SUB_UL_ITEMS,
+	$refs: _SUB_UL_ITEMS,
 }
 
 const DOC_DEMO_BASE_TYPES: RichText.Document = {
 	$type: 'fragmentⵧblock',
-	$content: '⎨⎨fragment1⎬⎬⎨⎨fragment2⎬⎬',
-	$sub: {
+	$content: ['⎨⎨fragment1⎬⎬⎨⎨fragment2⎬⎬'],
+	$refs: {
 		fragment1: {
 			$type: 'fragmentⵧblock',
 			$classes: [],
 			$content: 'horizontal rule:⎨⎨hr⎬⎬Heading:⎨⎨heading⎬⎬Another heading:⎨⎨heading⎬⎬Some text (before br)⎨⎨br⎬⎬(after br) ⎨⎨text⎬⎬⎨⎨br⎬⎬⎨⎨strong⎬⎬⎨⎨br⎬⎬⎨⎨em⎬⎬⎨⎨br⎬⎬normal⎨⎨br⎬⎬⎨⎨weak⎬⎬⎨⎨br⎬⎬emoji:⎨⎨emoji⎬⎬⎨⎨br⎬⎬Unordered list:⎨⎨ul⎬⎬Ordered list:⎨⎨ol⎬⎬More text.',
-			$sub: {
+			$refs: {
 				heading: {
 					$type: 'heading',
 					$content: 'heading',
@@ -221,50 +223,50 @@ const DOC_DEMO_BASE_TYPES: RichText.Document = {
 
 const DOC_DEMO_LIST_NESTED: RichText.Document = {
 	$type: 'ul',
-	$sub: {
+	$refs: {
 		'ol': {
 			$type: 'fragmentⵧblock',
 			$content: 'immediately nested ol: ⎨⎨sublist⎬⎬',
-			$sub: {
+			$refs: {
 				sublist: DOC_DEMO_LIST_ORDERED,
 			},
 		},
 		'txt': {
 			$type: 'fragmentⵧinline',
 			$content: 'simple text',
-			$sub: {
+			$refs: {
 			},
 		},
 		'ul': {
 			$type: 'fragmentⵧblock',
 			$content: 'immediately nested ul: ⎨⎨sublist⎬⎬',
-			$sub: {
+			$refs: {
 				sublist: DOC_DEMO_LIST_UNORDERED,
 			},
 		},
 		'xdeep': {
 			$type: 'fragmentⵧblock',
 			$content: 'deep nesting: ⎨⎨sublist⎬⎬',
-			$sub: {
+			$refs: {
 				sublist: {
 					$type: 'ul',
-					$sub: {
+					$refs: {
 						'ol': {
 							$type: 'fragmentⵧblock',
 							$content: 'immediately nested ol: ⎨⎨sublist⎬⎬',
-							$sub: {
+							$refs: {
 								sublist: DOC_DEMO_LIST_ORDERED,
 							},
 						},
 						'txt': {
 							$type: 'fragmentⵧinline',
 							$content: 'another simple text',
-							$sub: {},
+							$refs: {},
 						},
 						'ul': {
 							$type: 'fragmentⵧblock',
 							$content: 'immediately nested ul: ⎨⎨sublist⎬⎬',
-							$sub: {
+							$refs: {
 								sublist: DOC_DEMO_LIST_UNORDERED,
 							},
 						},
@@ -279,14 +281,14 @@ const DOC_DEMO_ADVANCED_TYPES: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: [],
 	$content: '⎨⎨heading⎬⎬Key-value pairs:⎨⎨kvdefault⎬⎬Nested list:⎨⎨nested_list⎬⎬Actionable items:⎨⎨uuid_list⎬⎬Done.',
-	$sub: {
+	$refs: {
 		heading: {
 			$type: 'heading',
 			$content: 'Advanced types',
 		},
 		kvdefault: {
 			$type: 'ul',
-			$sub: _SUB_UL_KEY_VALUE_PAIRS,
+			$refs: _SUB_UL_KEY_VALUE_PAIRS,
 			$hints: {
 				//key_align: left,
 			},
@@ -294,7 +296,7 @@ const DOC_DEMO_ADVANCED_TYPES: RichText.Document = {
 		nested_list: DOC_DEMO_LIST_NESTED,
 		uuid_list: {
 			$type: 'ol',
-			$sub: _SUB_UL_ACTIONABLE_ITEMS,
+			$refs: _SUB_UL_ACTIONABLE_ITEMS,
 			$hints: {
 				//key_align: left,
 			},
@@ -306,7 +308,7 @@ const DOC_DEMO_HINTS: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: [],
 	$content: '⎨⎨heading⎬⎬link: ⎨⎨link⎬⎬⎨⎨br⎬⎬List with no bullets:⎨⎨list⎬⎬Done.',
-	$sub: {
+	$refs: {
 		heading: {
 			$type: 'heading',
 			$content: 'Hints',
@@ -320,7 +322,7 @@ const DOC_DEMO_HINTS: RichText.Document = {
 		},
 		list: {
 			$type: 'ul',
-			$sub: _SUB_UL_ITEMS,
+			$refs: _SUB_UL_ITEMS,
 			$hints: {
 				list__style__type: '',
 			},
@@ -332,7 +334,7 @@ const DOC_DEMO_RPG_01: RichText.Document = {
 	$v: 1,
 	$type: 'fragmentⵧblock',
 	$content: 'You are in ⎨⎨place⎬⎬. You meet ⎨⎨npc⎬⎬.⎨⎨br⎬⎬He gives you a ⎨⎨item⎬⎬.',
-	$sub: {
+	$refs: {
 		place: DOC_PLACE_01,
 		npc: DOC_NPC_01,
 		item: DOC_WEAPON_01,
@@ -342,7 +344,7 @@ const DOC_DEMO_RPG_01: RichText.Document = {
 const DOC_DEMO_RPG_02: RichText.Document = {
 	$v: 1,
 	$type: 'ol',
-	$sub: {
+	$refs: {
 		'001': DOC_WEAPON_01,
 		'002': DOC_PLACE_01,
 		'003': DOC_NPC_01,
@@ -366,19 +368,19 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 	'$type': 'fragmentⵧblock',
 	'$classes': [],
 	'$content': '⎨⎨equipped⎬⎬⎨⎨wallet⎬⎬⎨⎨backpack⎬⎬',
-	'$sub': {
+	'$refs': {
 		'equipped': {
 			'$v': 1,
 			'$type': 'fragmentⵧblock',
 			'$classes': [],
 			'$content': '⎨⎨header⎬⎬⎨⎨list⎬⎬',
-			'$sub': {
+			'$refs': {
 				'header': {
 					'$v': 1,
 					'$type': 'heading',
 					'$classes': [],
 					'$content': 'Active equipment:',
-					'$sub': {},
+					'$refs': {},
 					'$hints': {},
 				},
 				'list': {
@@ -388,13 +390,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 						'inventory--equipment',
 					],
 					'$content': '',
-					'$sub': {
+					'$refs': {
 						'001': {
 							'$v': 1,
 							'$type': 'fragmentⵧinline',
 							'$classes': [],
 							'$content': 'weapon: ⎨⎨s1⎬⎬',
-							'$sub': {
+							'$refs': {
 								's1': {
 									'$v': 1,
 									'$type': 'fragmentⵧinline',
@@ -404,13 +406,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 										'item',
 									],
 									'$content': '⎨⎨quality⎬⎬ ⎨⎨name⎬⎬ ⎨⎨values⎬⎬',
-									'$sub': {
+									'$refs': {
 										'quality': {
 											'$v': 1,
 											'$type': 'fragmentⵧinline',
 											'$classes': [],
 											'$content': 'common',
-											'$sub': {},
+											'$refs': {},
 											'$hints': {},
 										},
 										'name': {
@@ -420,13 +422,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 												'item__name',
 											],
 											'$content': '⎨⎨q2|Capitalize⎬⎬ ⎨⎨q1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬',
-											'$sub': {
+											'$refs': {
 												'base': {
 													'$v': 1,
 													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'spear',
-													'$sub': {},
+													'$refs': {},
 													'$hints': {},
 												},
 												'q1': {
@@ -434,7 +436,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'heavy',
-													'$sub': {},
+													'$refs': {},
 													'$hints': {},
 												},
 												'q2': {
@@ -442,7 +444,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'woodsman’s',
-													'$sub': {},
+													'$refs': {},
 													'$hints': {},
 												},
 											},
@@ -455,7 +457,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 												'weapon--values',
 											],
 											'$content': '[deals 9 to 20 damage]',
-											'$sub': {},
+											'$refs': {},
 											'$hints': {},
 										},
 									},
@@ -471,7 +473,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 							'$type': 'fragmentⵧinline',
 							'$classes': [],
 							'$content': 'armor: ⎨⎨s1⎬⎬',
-							'$sub': {
+							'$refs': {
 								's1': {
 									'$v': 1,
 									'$type': 'fragmentⵧinline',
@@ -481,13 +483,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 										'item',
 									],
 									'$content': '⎨⎨quality⎬⎬ ⎨⎨name⎬⎬ ⎨⎨values⎬⎬',
-									'$sub': {
+									'$refs': {
 										'quality': {
 											'$v': 1,
 											'$type': 'fragmentⵧinline',
 											'$classes': [],
 											'$content': 'common',
-											'$sub': {},
+											'$refs': {},
 											'$hints': {},
 										},
 										'name': {
@@ -497,13 +499,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 												'item__name',
 											],
 											'$content': '⎨⎨q1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬ ⎨⎨q2|Capitalize⎬⎬',
-											'$sub': {
+											'$refs': {
 												'base': {
 													'$v': 1,
 													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'socks',
-													'$sub': {},
+													'$refs': {},
 													'$hints': {},
 												},
 												'q1': {
@@ -511,7 +513,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'used',
-													'$sub': {},
+													'$refs': {},
 													'$hints': {},
 												},
 												'q2': {
@@ -519,7 +521,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'of the noob',
-													'$sub': {},
+													'$refs': {},
 													'$hints': {},
 												},
 											},
@@ -532,7 +534,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 												'armor--values',
 											],
 											'$content': '[absorbs 1 to 4 damage]',
-											'$sub': {},
+											'$refs': {},
 											'$hints': {},
 										},
 									},
@@ -554,13 +556,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 			'$type': 'fragmentⵧblock',
 			'$classes': [],
 			'$content': '⎨⎨header⎬⎬⎨⎨list⎬⎬',
-			'$sub': {
+			'$refs': {
 				'header': {
 					'$v': 1,
 					'$type': 'heading',
 					'$classes': [],
 					'$content': 'Wallet:',
-					'$sub': {},
+					'$refs': {},
 					'$hints': {},
 				},
 				'list': {
@@ -570,7 +572,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 						'inventory--wallet',
 					],
 					'$content': '',
-					'$sub': {
+					'$refs': {
 						'coin': {
 							'$v': 1,
 							'$type': 'fragmentⵧinline',
@@ -578,13 +580,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 								'currency--coin',
 							],
 							'$content': '⎨⎨amount⎬⎬ coins',
-							'$sub': {
+							'$refs': {
 								'amount': {
 									'$v': 1,
 									'$type': 'fragmentⵧinline',
 									'$classes': [],
 									'$content': '17',
-									'$sub': {},
+									'$refs': {},
 									'$hints': {},
 								},
 							},
@@ -597,13 +599,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 								'currency--token',
 							],
 							'$content': '⎨⎨amount⎬⎬ tokens',
-							'$sub': {
+							'$refs': {
 								'amount': {
 									'$v': 1,
 									'$type': 'fragmentⵧinline',
 									'$classes': [],
 									'$content': '0',
-									'$sub': {},
+									'$refs': {},
 									'$hints': {},
 								},
 							},
@@ -620,13 +622,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 			'$type': 'fragmentⵧblock',
 			'$classes': [],
 			'$content': '⎨⎨header⎬⎬⎨⎨list⎬⎬',
-			'$sub': {
+			'$refs': {
 				'header': {
 					'$v': 1,
 					'$type': 'heading',
 					'$classes': [],
 					'$content': 'Backpack:',
-					'$sub': {},
+					'$refs': {},
 					'$hints': {},
 				},
 				'list': {
@@ -636,13 +638,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 						'inventory--backpack',
 					],
 					'$content': '',
-					'$sub': {
+					'$refs': {
 						'-': {
 							'$v': 1,
 							'$type': 'fragmentⵧinline',
 							'$classes': [],
 							'$content': '(empty)',
-							'$sub': {},
+							'$refs': {},
 							'$hints': {},
 						},
 					},
@@ -654,12 +656,13 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 	},
 	'$hints': {},
 }
+*/
 
 ////////////
 
 export {
 	$EXAMPLE_COMPLETE_NODE,
-
+/*
 	$DEMOⵧSIMPLE,
 	$DEMOⵧKV,
 
@@ -673,5 +676,5 @@ export {
 	DOC_DEMO_RPG_01,
 	DOC_DEMO_RPG_02,
 	DOC_DEMO_RPG_03,
-	DOC_DEMO_INVENTORY,
+	DOC_DEMO_INVENTORY,*/
 }

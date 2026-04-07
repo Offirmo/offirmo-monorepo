@@ -2,7 +2,7 @@ console.log('Hello from index.ts')
 
 import './index.css'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 
 /////////////////////////////////////////////////
 

@@ -3,7 +3,7 @@
  * and showcase them by displaying an attribution in-app for certain major assets.
  */
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 
 import type { Asset, Url‿str, PathⳇAny } from '../l1-types/index.ts'

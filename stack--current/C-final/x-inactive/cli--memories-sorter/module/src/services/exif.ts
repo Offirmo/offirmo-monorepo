@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { normalizeError } from '@offirmo/error-utils'
 import { exiftool, Tags, ExifDateTime } from 'exiftool-vendored'
 import { type Immutable, HashOf } from '@monorepo-private/ts--types'

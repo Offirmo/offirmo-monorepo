@@ -15,6 +15,7 @@
 12-Factor Agents -- 12: Make your agent a stateless reducer
 12-Factor Agents = principles for building reliable LLM applications https://github.com/humanlayer/12-factor-agents
 2003 "Manna" prediction https://marshallbrain.com/manna1
+2013-10 "her" movie, foreshadowing may AI assistants concepts https://en.wikipedia.org/wiki/Her_(2013_film) (see also controversy https://en.wikipedia.org/wiki/GPT-4o#Scarlett_Johansson_controversy )
 2019-02-14 ChatGPT 2 https://openai.com/index/better-language-models/
 2022 -> 2030 self driving car bet https://blog.codinghorror.com/the-2030-self-driving-car-bet/
 2022-11 "BEGINNING OF AI ERA" https://lzon.ca/posts/other/thoughts-ai-era/
@@ -23,18 +24,18 @@
 2023-01 OpenAI / Microsoft partnership https://arstechnica.com/information-technology/2023/01/openai-and-microsoft-reaffirm-shared-quest-for-powerful-ai-with-new-investment/
 2023-02-08 Google scramble to catch on ChatGPT with "Bard" https://arstechnica.com/information-technology/2023/02/in-paris-demo-google-scrambles-to-counter-chatgpt-but-ends-up-embarrassing-itself/
 2023-03 AutoGPT = works autonomously by breaking the main goal into smaller sub-tasks and using tools like web browsing and file management to complete them https://en.wikipedia.org/wiki/AutoGPT
-2023-03-14 GPT-4
+2023-03-14 GPT-4 https://openai.com/index/gpt-4-research/
 2023-10 Claude 2
-2024 "Her" moment for voice = crossed the uncanny valley
 2024 Google I/O AI built-in Chrome
-2024 o3
 2024-05 Google AI overview multiple blunders https://www.forbes.com/sites/jackkelly/2024/05/31/google-ai-glue-to-pizza-viral-blunders/
 2024-06-21 https://www.anthropic.com/news/claude-3-5-sonnet "artifacts"
 2024-11 MCP https://www.anthropic.com/news/model-context-protocol
 2024-12 coding agents emerge around the industry ex. https://github.com/block/goose
+2025-02 "her" moment for voice = crossed the uncanny valley of conversational voice https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice
 2025-03 4o image generation = incredible, +1M users in 1h https://openai.com/index/introducing-4o-image-generation/ https://x.com/sama/status/1906771292390666325
 2025-04 multimodal img gen https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
 2025-04 Shopify threatening internal memo "Reflexive AI usage is now a baseline expectation" https://x.com/tobi/status/1909251946235437514
+2025-04-16 o3 https://openai.com/index/introducing-o3-and-o4-mini/
 2025-05 AI's Trillion-Dollar Opportunity: Sequoia AI Ascent 2025 Keynote https://www.youtube.com/watch?v=v9JBMnxuPX8
 2025-05 Duolingo "AI crashout" https://www.fastcompany.com/91338068/duolingo-deletes-tiktok-ai-backlash-returns-with-strange-message https://www.reddit.com/r/OutOfTheLoop/comments/1kncne7/whats_going_on_with_duolingo/ https://it.slashdot.org/story/25/06/08/185209/after-ai-first-promise-duolingo-ceo-admits-i-did-not-expect-the-blowback
 2025-05-20 infamous Copilot .net PR https://github.com/dotnet/runtime/pull/115762
@@ -109,6 +110,7 @@ agents -- building -- loop https://ccunpacked.dev/
 agents -- building -- Set up observability and evaluation from day one
 agents -- building -- Should you build an MCP server instead?
 agents -- building -- What we wish we knew about building AI agents https://newsletter.posthog.com/p/what-we-wish-we-knew-before-building
+agents -- building -- When building an agent, there’s ultimately one question you need to answer to succeed: How does this beat Claude?
 agents -- building -- Your context is your advantage
 agents -- building -- Your harness is not your moat
 agents -- coordinator = becomes a manager: breaks your task into pieces, assigns each to a separate worker agent running in parallel, then combines their results
@@ -666,11 +668,10 @@ vibe coding https://x.com/karpathy/status/1886192184808149383
 vulnerability research https://googleprojectzero.blogspot.com/2024/10/from-naptime-to-big-sleep.html
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization
-When building an agent, there’s ultimately one question you need to answer to succeed: How does this beat Claude?
-who's who -- Boris Cherny creator of Claude Code https://x.com/bcherny
+who's who -- Boris Cherny = creator of Claude Code https://x.com/bcherny
 who's who -- Eliezer Yudkowsky = https://en.wikipedia.org/wiki/Eliezer_Yudkowsky
 who's who -- Karpathi
-who's who -- Sam Altman https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from_OpenAI
+who's who -- Sam Altman = https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from_OpenAI
 workload-model fit = a perfect alignment between what they desperately needed and what the AI delivers https://www.a16z.news/p/the-cinderella-glass-slipper-effect
 write as little business logic as possible = don't get in the way of the model "feel the model as raw as possible"
 yap -- yap score

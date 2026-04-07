@@ -2,7 +2,7 @@ import * as fs from 'node:fs/promises'
 import path from "node:path"
 import { styleText } from 'node:util'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type {Immutable, PathⳇAbsolute, PathⳇAny} from '@monorepo-private/ts--types'
 import type { Node } from '@infinite-monorepo/graph'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/spec--load'

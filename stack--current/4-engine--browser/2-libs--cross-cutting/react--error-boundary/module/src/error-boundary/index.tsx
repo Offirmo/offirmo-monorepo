@@ -1,6 +1,6 @@
 import { Component, type ErrorInfo } from 'react'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { asap_but_not_synchronous } from '@monorepo-private/utils--async'
 import { getRootSXC, type SoftExecutionContext } from '@monorepo-private/soft-execution-context'
 

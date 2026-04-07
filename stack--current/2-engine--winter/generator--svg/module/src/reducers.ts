@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable, Emoji } from '@monorepo-private/ts--types'
 import type { CssⳇColor‿str, Dimensions2DSpec } from '@monorepo-private/ts--types--web'
 import { getꓽdimensions2D } from '@monorepo-private/ts--types--web'

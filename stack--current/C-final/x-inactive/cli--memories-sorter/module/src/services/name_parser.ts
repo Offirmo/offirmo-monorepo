@@ -1,5 +1,5 @@
 import path from 'path'
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { NORMALIZERS } from '@monorepo-private/normalize-string'
 import type { Immutable } from '@monorepo-private/ts--types'
 import micro_memoize from 'micro-memoize'

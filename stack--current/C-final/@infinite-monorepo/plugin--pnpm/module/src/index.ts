@@ -12,7 +12,7 @@ import {
 import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import type { FileOutputPresent } from '@infinite-monorepo/state'
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { manifestꓽpackageᐧjson } from '@infinite-monorepo/plugin--npm'
 import { isꓽError } from '@offirmo/error-utils/v2'
 import path from 'node:path'

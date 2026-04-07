@@ -1,0 +1,35 @@
+{
+	"name": "@monorepo-private/vite--config--default",
+	"version": "0.0.1",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/merge": "*",
+		"@vitejs/plugin-react": "^6",
+		"vite": "^8",
+		"vite-plugin-inspect": "^12"
+	},
+	"scripts": {
+		"check--ts": "echo \"@monorepo-private/vite--config--default\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts"
+	},
+	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^6"
+	}
+}

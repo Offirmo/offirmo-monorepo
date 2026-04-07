@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Author, Url‿str, Immutable } from '@monorepo-private/ts--types'
 import {
 	normalize_unicode,

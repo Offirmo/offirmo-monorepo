@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { type Immutable } from '@monorepo-private/ts--types'
 import type { StrictNode, NodeLike } from '../l1-types/types.ts'
 import { wrap, isꓽlist } from '../l1-utils/index.ts'

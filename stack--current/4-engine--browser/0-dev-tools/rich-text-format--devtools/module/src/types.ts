@@ -1,0 +1,13 @@
+import * as RichText from '@monorepo-private/rich-text-format'
+
+/////////////////////////////////////////////////
+
+interface Props {
+	$doc: RichText.NodeLike
+}
+
+/////////////////////////////////////////////////
+
+export {
+	type Props,
+}

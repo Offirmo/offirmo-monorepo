@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import React, { Component, type ReactNode } from "react"
 
 import { Immutable } from '@monorepo-private/state-utils'

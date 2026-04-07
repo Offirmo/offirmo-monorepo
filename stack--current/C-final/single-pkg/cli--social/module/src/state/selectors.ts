@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Temporal } from 'temporal-polyfill'
 import type { Immutable } from '@monorepo-private/ts--types'
 

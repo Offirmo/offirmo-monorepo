@@ -2,7 +2,7 @@ import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
 import { ೱoutputꓽfile } from '@monorepo-private/fs--output-file'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import * as Prettier from 'prettier'
 import type { Immutable, PathⳇAbsolute } from '@monorepo-private/ts--types'
 

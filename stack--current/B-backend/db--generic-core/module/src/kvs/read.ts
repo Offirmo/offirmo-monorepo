@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 
 import get_db from '../db.ts'
 import { type PUser } from '../users/index.ts'

@@ -76,7 +76,7 @@ async function refreshꓽmonorepo() {
 			'alias',
 			`mono${radix}='cd`.padStart(15),
 			`"$OFFIRMO_MONOREPO_ROOT__CURRENT";`,
-			'nvm use;',
+			'mise install;',
 			'git--offirmo.sh;',
 			(
 				`cd ${workspace}/;`.padEnd(22)
@@ -90,7 +90,7 @@ async function refreshꓽmonorepo() {
 	fs.writeFileSync(
 		path.resolve(MONOREPO_ROOT, '.monorepo', 'bin', 'aliases.sh'),
 		`#@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […monorepo/…/aliases.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)   ↳ […monorepo/…/aliases.sh] hello!"
 
 export OFFIRMO_MONOREPO_ROOT__CURRENT=\${OFFIRMO_MONOREPO_ROOT__CURRENT:-"$HOME/${path.relative(process.env['HOME']!, MONOREPO_ROOT)}/"};
 

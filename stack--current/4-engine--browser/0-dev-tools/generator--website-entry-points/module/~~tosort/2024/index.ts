@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Immutable, Author, Thing, ThingWithOnlinePresence } from '@monorepo-private/ts--types'
 import * as path from 'node:path'
 import * as util from 'node:util'

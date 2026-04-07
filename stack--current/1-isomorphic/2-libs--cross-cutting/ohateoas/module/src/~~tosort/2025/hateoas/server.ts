@@ -1,7 +1,7 @@
 // https://htmx.org/essays/hateoas/
 // https://restfulapi.net/hateoas/
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Immutable } from '@monorepo-private/state-utils'
 import {
 	type Hyperlink,

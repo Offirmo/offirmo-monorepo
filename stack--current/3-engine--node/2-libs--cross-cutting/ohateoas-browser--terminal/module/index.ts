@@ -34,7 +34,7 @@ import {
 } from '@monorepo-private/ohateoas'
 import * as StateLib from '@monorepo-private/ohateoas'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import * as process from 'node:process'
 
 /////////////////////////////////////////////////

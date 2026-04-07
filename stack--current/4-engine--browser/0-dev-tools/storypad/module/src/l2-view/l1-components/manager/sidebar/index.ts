@@ -1,7 +1,7 @@
 /* PROMPT
  */
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable, Basename } from '@monorepo-private/ts--types'
 
 import { LIB, SEPⵧSEGMENTS } from '../../../../consts'

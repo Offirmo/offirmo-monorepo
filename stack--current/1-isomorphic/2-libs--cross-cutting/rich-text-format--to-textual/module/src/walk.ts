@@ -2,7 +2,7 @@
  * "walk" is the foundation on which all the renderer are based
  */
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 import { hasꓽshape, isꓽexact_stringified_number } from '@monorepo-private/type-detection'
 import { capitalizeⵧfirst } from '@monorepo-private/normalize-string'

@@ -1,0 +1,35 @@
+{
+	"name": "@monorepo-private/merge",
+	"version": "0.0.1",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/type-detection": "*"
+	},
+	"scripts": {
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"check--ts": "echo \"@monorepo-private/merge\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s tests check--ts"
+	},
+	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/icepick": "^2",
+		"icepick": "^2",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^6"
+	}
+}

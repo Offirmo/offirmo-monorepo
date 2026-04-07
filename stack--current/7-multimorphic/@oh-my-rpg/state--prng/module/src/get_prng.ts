@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { type Immutable } from '@monorepo-private/state-utils'
 import { getꓽengine, type PRNGEngine } from '@offirmo/random'
 

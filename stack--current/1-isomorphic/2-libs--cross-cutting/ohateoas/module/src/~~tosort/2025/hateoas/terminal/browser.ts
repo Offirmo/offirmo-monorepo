@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 
 import { getꓽcompareFnⵧby_string_key } from '@monorepo-private/ts--utils'
 import { Immutable } from '@monorepo-private/state-utils'

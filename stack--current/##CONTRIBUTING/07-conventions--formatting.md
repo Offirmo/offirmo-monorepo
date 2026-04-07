@@ -23,7 +23,7 @@ TODO one day prettify
  * ’…
  */
 
-import assert from 'tiny-invariant'
+import { assert, assert_from } from '@monorepo-private/assert'
 import type { Immutable } from '@monorepo-private/ts--types'
 
 import type {  } from './types.ts'

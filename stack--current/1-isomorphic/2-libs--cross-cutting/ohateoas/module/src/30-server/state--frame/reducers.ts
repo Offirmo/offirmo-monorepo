@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable, Url‿str } from '@monorepo-private/ts--types'
 import * as RichText from '@monorepo-private/rich-text-format'
 

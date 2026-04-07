@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Immutable } from '../embedded-deps/immutable.js'
 
 import {

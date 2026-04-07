@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 import { asap_but_out_of_immediate_execution } from '@monorepo-private/utils--async'
 import { ೱᐧpage_loaded } from '@monorepo-private/page-loaded'
@@ -51,15 +51,16 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 			console.log('glob =', stories_glob)
 
 		const initsⵧservices = (() => {
+			// @ts-expect-error vite stuff
 			if (import.meta.env) {
 				// looks like vite
-				console.error('VITE?')
 				return import.meta.glob('../l0-services/init/*.ts')
 			}
 
 			// assume Parcel v2
 			// XXX VITE REJECTS THIS LINE @ts-expect-error bundler advanced feature
 			//return import('../l0-services/init/*.ts')
+			throw new Error('Bundler not supported')
 		})() // vite v8
 
 			// 1. services

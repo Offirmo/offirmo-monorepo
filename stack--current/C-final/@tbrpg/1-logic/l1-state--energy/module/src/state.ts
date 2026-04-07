@@ -1,6 +1,6 @@
 /////////////////////
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 import { getꓽlogger } from '@tbrpg/definitions'
 

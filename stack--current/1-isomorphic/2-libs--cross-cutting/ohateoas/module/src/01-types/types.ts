@@ -1,6 +1,6 @@
 // New "Offirmo's Hyper Architecture" OHA
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Enum } from 'typescript-string-enums'
 import type {
 	JSON,

@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import * as icepick from 'icepick'
 import type { Immutable, Mutable, ImmutabilityEnforcer } from '@monorepo-private/ts--types'
 import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'

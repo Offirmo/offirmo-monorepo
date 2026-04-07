@@ -1,7 +1,7 @@
 // Reminder: code will be prettified, no need to indent or format it.
 // put the comments in the code, it's up to the consumer to optimize or not
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 import { getꓽISO8601ⵧsimplified‿days } from '@monorepo-private/timestamps'
 import json_stable_stringify from "@monorepo-private/json-stable-stringify";

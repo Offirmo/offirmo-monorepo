@@ -1,6 +1,6 @@
 //import { STATUS_CODES } from 'node:http'
 import { Enum } from 'typescript-string-enums'
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { createError, type XXError} from '@offirmo/error-utils'
 import { HTTP_STATUS_CODE } from '@monorepo-private/offirmo-api--interface'
 

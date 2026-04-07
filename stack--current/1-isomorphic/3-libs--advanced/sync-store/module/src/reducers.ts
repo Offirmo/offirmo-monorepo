@@ -2,7 +2,7 @@
  * ’
  */
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 import {
 	type ReducerMap,

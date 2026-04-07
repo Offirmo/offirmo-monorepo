@@ -1,7 +1,7 @@
 import { isDeepStrictEqual } from 'node:util'
 import type { Immutable } from '@monorepo-private/ts--types'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { createError } from '@offirmo/error-utils'
 import { type AnyOffirmoState, fluid_select } from '@monorepo-private/state-utils'
 

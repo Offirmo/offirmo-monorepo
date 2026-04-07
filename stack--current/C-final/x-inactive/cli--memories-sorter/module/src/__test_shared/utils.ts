@@ -5,7 +5,7 @@ import fs from 'fs'
 import { type Immutable, Mutable } from '@monorepo-private/ts--types'
 import { enforceꓽimmutable } from '@monorepo-private/state-utils'
 import { expect } from 'chai'
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Tags as EXIFTags } from 'exiftool-vendored'
 import { hashFile } from 'hasha'
 

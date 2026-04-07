@@ -1,6 +1,6 @@
 // https://storybook.js.org/docs/configure/user-interface/sidebar-and-urls
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Url‿str } from '@monorepo-private/ts--types'
 
 import type { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'

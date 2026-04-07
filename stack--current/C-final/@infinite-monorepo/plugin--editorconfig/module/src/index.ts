@@ -40,10 +40,15 @@ const PLUGIN: Plugin = {
 					intent: 'present--exact',
 					content: {
 						text: `
-## auto-generated content from @infinite-monorepo/plugin--editorconfig
+## (auto-generated content from @infinite-monorepo/plugin--editorconfig)
 ## EditorConfig helps developers define and maintain
 ## consistent coding styles between different editors and IDEs
 ## editorconfig.org
+
+## NOTE this file is more widely supported than other prettifier tools:
+## - for ex. Cloudflare wrangler will use this file if present
+## - these settings MUST be kept in sync with other tools such as oxfmt/eslint
+
 
 ## top-most EditorConfig file
 root = true

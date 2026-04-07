@@ -1,6 +1,6 @@
 import * as path from 'node:path'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Enum } from 'typescript-string-enums'
 const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
 

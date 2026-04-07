@@ -31,7 +31,7 @@ import {
 	getꓽcta,
 	OHALinkRelation,
 } from '@monorepo-private/ohateoas'
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 
 /////////////////////////////////////////////////
 

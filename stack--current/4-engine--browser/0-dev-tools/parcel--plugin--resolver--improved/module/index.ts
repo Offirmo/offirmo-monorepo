@@ -5,7 +5,7 @@ import { Resolver } from '@parcel/plugin'
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 
 const LIB = '@monorepo-private/parcel-resolver'
 const DEBUG = false
@@ -52,10 +52,10 @@ export default new Resolver({
 			return { filePath }
 		}
 
-		if (params.dependency.sourcePath.endsWith('.css')) {
+		if (params.dependency.sourcePath?.endsWith('.css')) {
 			DEBUG && console.log(`[${LIB}] Evaluating assisting loading npm modules from CSS…`)
-			// it used to easily work in Parcel with the `npm:` prefix
-			// but vite doesn't support it. In this case, it's easier to tweak Parcel than vite
+			// import of modules in CSS used to need the `npm:` prefix if Parcel
+			// but vite doesn't need it: In this case, it's easier to tweak Parcel than vite:
 
 			if (params.specifier.startsWith('@monorepo')) {
 				// this is a module, our stuff

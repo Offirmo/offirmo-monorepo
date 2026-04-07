@@ -839,7 +839,7 @@ async function getꓽpackage_details(pkg_path: PathⳇAny, options: Partial<Opti
 			root_title: nearest_pkg?.name,
 			decorators: [
 				/*(story) => {
-					import('npm:@monorepo-private/css--foundation')
+					import('@monorepo-private/css--foundation')
 					return story
 				},*/
 				decoratorⵧdiagnostics

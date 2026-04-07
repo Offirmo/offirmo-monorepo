@@ -1,6 +1,6 @@
 // TODO move into dedicated package
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Immutable } from '@monorepo-private/state-utils'
 import {
 	type Uri‿str,

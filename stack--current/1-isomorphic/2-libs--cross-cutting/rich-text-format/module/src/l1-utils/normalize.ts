@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 import { normalize_unicode } from '@monorepo-private/normalize-string'
 import { LIB, SCHEMA_VERSION } from '../consts.ts'

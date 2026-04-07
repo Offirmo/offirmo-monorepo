@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 import { getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 import { getꓽmutable_copy } from '@monorepo-private/state-utils'

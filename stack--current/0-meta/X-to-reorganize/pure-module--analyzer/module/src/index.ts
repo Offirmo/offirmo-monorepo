@@ -852,7 +852,7 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 			root_title: nearest_pkg?.name,
 			decorators: [
 				/*(story) => {
-					import('npm:@monorepo-private/css--foundation')
+					import('@monorepo-private/css--foundation')
 					return story
 				},*/
 				decoratorⵧdiagnostics
@@ -879,7 +879,7 @@ async function getꓽpure_module_details(module_path: PathⳇAny, options: Parti
 
 	// encourage safe practices
 	if (!result.isꓽpublished && (result.languages.has('js') || result.languages.has('ts'))) {
-		raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
+		raw_deps.push({ label: '@monorepo-private/assert', type: 'normal'})
 	}
 
 	// consolidate

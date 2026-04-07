@@ -1,7 +1,7 @@
 // Reminder: code will be prettified, no need to indent or format it.
 // put the comments in the code, it's up to the consumer to optimize or not
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 import type { Html‿str } from '@monorepo-private/ts--types--web';
 import { normalize_unicode } from '@monorepo-private/normalize-string'

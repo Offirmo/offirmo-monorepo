@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import type { Immutable } from '@monorepo-private/ts--types'
 
 import type { Story‿v2, Meta‿v2 } from '../../../../l0-types/l1-csf/v2/index.ts'

@@ -1,5 +1,5 @@
 import type { Immutable } from '@monorepo-private/ts--types'
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 
 import type { NodeLike } from '../../l1-types/index.ts'
 import { getꓽdisplay_type, getꓽtype } from '../../l1-utils/misc.ts'

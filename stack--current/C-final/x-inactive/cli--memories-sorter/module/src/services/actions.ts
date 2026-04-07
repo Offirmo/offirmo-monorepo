@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 import * as util from 'node:util'
 import * as fs from 'node:fs'
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import async from 'async'
 import * as json from '@offirmo/cli-toolbox/fs/extra/json'
 import type { Immutable } from '@monorepo-private/ts--types'

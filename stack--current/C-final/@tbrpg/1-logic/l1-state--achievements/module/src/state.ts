@@ -1,6 +1,6 @@
 /////////////////////
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import {
 	getꓽUTC_timestampⵧhuman_readable‿days,
 } from '@monorepo-private/timestamps'

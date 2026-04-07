@@ -764,7 +764,6 @@ leadership -- exiger seulement ce qu’on peut faire soi même
 leadership -- is about how you are, not just what you do
 leadership -- is for everyone
 leadership -- know when to fight
-naive -- https://news.slashdot.org/story/26/04/02/2113218/mount-everest-climbers-poisoned-by-guides-in-insurance-fraud-scheme
 leadership -- leader - leader -- context-rich environment / information management
 leadership -- must never ask sth they couldn't do
 leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timeless-lessons-leadership-jo-owen
@@ -952,6 +951,7 @@ myths -- origin
 naivety
 naivety -- abandon animaux compagnie
 naivety -- corruption
+naivety -- https://news.slashdot.org/story/26/04/02/2113218/mount-everest-climbers-poisoned-by-guides-in-insurance-fraud-scheme
 naivety -- lunch theft in office
 naivety -- mafia
 naivety -- police
@@ -1327,6 +1327,7 @@ slavery -- servitude -- indentured && = https://en.wikipedia.org/wiki/Indentured
 slavery -- USA https://en.wikipedia.org/wiki/Slavery_in_the_United_States
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 sleep on it
+smart -- book smart / street smart
 SMART goal-setting framework
 smile
 smile -- Duchenne https://en.wikipedia.org/wiki/Smile
@@ -1485,6 +1486,7 @@ tyranny of the majority
 tyranny of the urgent https://www.psychologytoday.com/us/blog/human-flourishing-101/202309/how-to-conquer-the-tyranny-of-the-urgent
 underdog spirit = What do you got? Hunger. Drive. Grit. Scrappiness. Independence. You’re on offense. You don’t have enough, which is why you’re dangerous. You have no choice but to be clever and creative. To make up for what you don’t have with something they can’t have: The underdog spirit. https://x.com/jasonfried/status/1656717766374875137
 understanding a problem and having real life experience with it are two different things https://x.com/TheWhiteWhaleV2/status/2022421870805401622
+unhinged = extremely irrational, crazy, or out-of-control behavior
 universal human truths of existence = such as death, freedom, isolation and the search for the meaning of life
 universe
 universe -- cosmological model -- +++ Lambda cold dark matter (ΛCDM) = current best (2024) https://en.wikipedia.org/wiki/Lambda-CDM_model

@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts.js'
 import { TimeZone } from '../types.js'
 import { create_better_date, _clean_debug } from '../services/better-date.js'

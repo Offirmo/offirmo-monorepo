@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { Enum } from 'typescript-string-enums'
 import memoize_one from 'memoize-one'
 import * as jsondiffpatch from 'jsondiffpatch'

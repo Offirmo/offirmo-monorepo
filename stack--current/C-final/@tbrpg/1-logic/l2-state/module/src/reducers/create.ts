@@ -2,7 +2,7 @@
 
 import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@monorepo-private/timestamps'
 
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { type Immutable, enforceꓽimmutable } from '@monorepo-private/state-utils'
 
 /////////////////////

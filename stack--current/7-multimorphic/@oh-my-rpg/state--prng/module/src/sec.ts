@@ -1,4 +1,4 @@
-import assert from 'tiny-invariant'
+import assert from '@monorepo-private/assert/v1'
 import { type SoftExecutionContext, getRootSXC } from '@monorepo-private/soft-execution-context'
 import type { Logger } from '@offirmo/practical-logger-types'
 

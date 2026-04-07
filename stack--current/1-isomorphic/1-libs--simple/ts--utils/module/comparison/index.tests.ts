@@ -18,20 +18,23 @@ describe('@monorepo-private/ts--utils -- comparison', function () {
 	}
 
 	const p1: Person = {
-		name: 'parent',
 		type: 'adult',
+
+		name: 'parent',
 		age: 33,
 	}
 
 	const p2: Person = {
-		name: 'child1',
 		type: 'child',
+
+		name: 'child1',
 		age: 3,
 	}
 
 	const p3: Person = {
-		name: 'child2',
 		type: 'child',
+
+		name: 'child2',
 		age: 3,
 	}
 
@@ -66,7 +69,7 @@ describe('@monorepo-private/ts--utils -- comparison', function () {
 			const s1 = a1.toSorted(getꓽcompareFnⵧby_string_key('type', ['adult', 'child']))
 			expect(s1.map(p => p.name)).to.deep.equal([ 'parent', 'child1', 'child2' ])
 
-			const s2 = a1.toSorted(getꓽcompareFnⵧby_string_key('type', ['child','adult']))
+			const s2 = a1.toSorted(getꓽcompareFnⵧby_string_key('type', ['child', 'adult']))
 			expect(s2.map(p => p.name)).to.deep.equal([ 'child1', 'child2', 'parent' ])
 		})
 	})

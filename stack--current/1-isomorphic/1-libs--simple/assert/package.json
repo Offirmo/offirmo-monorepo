@@ -5,7 +5,8 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/v2/index.ts"
+		".": "./module/src/v2/index.ts",
+		"./v1": "./module/src/v1/_entrypoint.ts"
 	},
 	"source": "module/src/v2/index.ts",
 	"peerDependencies": {
