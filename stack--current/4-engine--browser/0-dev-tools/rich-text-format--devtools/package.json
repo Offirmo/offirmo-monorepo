@@ -5,16 +5,17 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/to--text/index.tsx"
+		".": "./module/src/index.tsx"
 	},
-	"source": "module/src/to--text/index.tsx",
+	"source": "module/src/index.tsx",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
 		"@monorepo-private/assert": "*",
 		"@monorepo-private/css--framework": "*",
-		"@monorepo-private/rich-text-format": "*"
+		"@monorepo-private/rich-text-format": "*",
+		"@monorepo-private/rich-text-format--to-textual": "*"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
@@ -36,7 +37,10 @@
 		"@monorepo-private/toolbox--vite": "*",
 		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/react": "^19",
 		"npm-run-all": "^4",
+		"react": "^19",
+		"react-dom": "^19",
 		"tslib": "^2",
 		"typescript": "^6"
 	}

@@ -165,3 +165,4 @@ alias    monoCap2='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offi
 alias    monoCap3='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd api--placeholders/3-static-assets/;                       tabset --badge monoCap3'
 alias    monoCap4='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd api--placeholders/4-cloudflare-worker/;                   tabset --badge monoCap4'
 alias    monoCscs='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd single-pkg/cli--social/;                                  tabset --badge monoCscs'
+alias     monoCsd='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd single-pkg/digital-hoarder/;                              tabset --badge monoCsd'
