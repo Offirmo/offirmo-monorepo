@@ -1,4 +1,3 @@
-
 "Investing in crypto assets involves a high degree of risk. Crypto owners can lose their entire investment due to inherent risks. Past performance is not indicative of future results. Make sure to conduct your own research before investing in cryptocurrencies."
 "proactively manage your on-chain footprint -> might prevent you from having security issues in the future"
 & = "the distributed web" = a set of technologies that enables hosting of content and web applications in a serverless manner by leveraging distributed systems and consensus protocols https://developers.cloudflare.com/web3/
@@ -43,6 +42,7 @@
 2025 Institutions are stacking
 2025 summary against crypto https://www.theguardian.com/us-news/2025/jun/17/trump-crypto-memecoin-corruption
 2025-01 Sony's Soneium https://blockworks.co/news/soneium-mainnet-censorship-complaints
+2025-02-14 Javier Milei scandal = the Argentinian president "pump" $libra for money before it's rugpulled https://www.theguardian.com/world/2026/apr/12/crypto-javier-milei-bribery-argentina
 2025-03 Trump "crypto summit" for biggest backers of his $TRUMP = criticized as open influence trading
 2025-04-07 Trump disbanding a national cryptocurrency enforcement team that was set up in 2022, and had brought some high-profile cases against North Korean hackers and other crypto criminals.
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
@@ -62,8 +62,11 @@
 2025-12-26 wallet drainer via store API compromise https://x.com/0xakinator/status/2004297673067704651 https://x.com/eowynchen/status/2004649284537647161 https://x.com/TradesTyr/status/2004674309923725735
 2026-01 crypto illegal could be ~50% https://mail.blockworks.com/p/thursday-links-de7b
 2026-03-22 $25M Resolv USR Minting Heist https://x.com/chainalysis/status/2035882965449019640 https://bfmtimes.com/hacker-mints-80-million-worth-of-fake-stablecoins-and-swaps-them-for-eth/ https://cryptopotato.com/how-the-25m-resolv-usr-minting-heist-happened/
+2026-03-31 new quantum breaktrhough Q-day now set to 2029 https://x.com/drakefjustin/status/2038847732152996108
+2026-04-12 Jusin Sun "discovers" that WLF is not honest 🤣 https://x.com/justinsuntron/status/2043234272622883074
 ? https://intel.arkm.com/
 [ ] +++ https://support.ledger.com/topic?topic=Crypto_Concepts https://support.ledger.com/topic?topic=Ledger_Live
+[ ] Aave ??
 [ ] abstracts on many chains https://www.circle.com/multi-chain-usdc
 [ ] criticism https://bitfinexed.medium.com/
 [ ] digital security -- solutions -- https://www.privacyguides.org/
@@ -85,6 +88,7 @@
 [ ] list of chains
 [ ] news https://www.binance.com/en/square/trending
 [ ] news https://x.com/beincrypto
+Aave
 Aave = decentralized lending protocol https://aave.com/
 address -- evm = the right-most 160 bits of a Keccak hash of an ECDSA public key https://info.etherscan.com/what-is-an-ethereum-address/
 address -- screening = "against sanctions lists and high-risk activity"
@@ -207,7 +211,17 @@ challenges -- quantum https://a16zcrypto.com/posts/podcast/quantum-computing-wha
 challenges -- Regulatory compliance = Web3 applications must follow existing data protection and financial security requirements.
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
-challenges -- UX
+challenges -- UX -- "the chasm" = 87% of new wallet users leave within a week. Beautiful UI won't save you if the mental model is wrong. https://ethux.design/#/chasm
+challenges -- UX -- 1 User Onboarding = Make the first 5 minutes effortless.
+challenges -- UX -- 2 Transaction Clarity = Help users understand every transaction.
+challenges -- UX -- 3 Cross-chain Flow = Make moving between chains invisible.
+challenges -- UX -- 4 Safety & Security = Build trust through transparency and user control.
+challenges -- UX -- 5 Mobile & Connectivity = Bring wallet connection up to mobile standards.
+challenges -- UX -- 6 Accessibility = Open the door for 75% of non-English speakers.
+challenges -- UX -- 7 Protocol Design = Unlock better UX at the protocol layer.
+challenges -- UX -- 8 Daily Operations = Polish the flows people use every day.
+challenges -- UX https://ethux.design/
+client diversity = green > yellow > red https://clientdiversity.org/
 CLOB "Central Limit Order Book" = system where all buy and sell orders for an asset are collected, sorted, and matched based on price and time priority
 code is law "Hundreds of millions stolen in a spree of massive crypto heists - but the hackers say they broke no laws" https://www.journeyman.tv/film/8785
 coinbase = some bitcoin concept
@@ -219,6 +233,7 @@ concepts -- key pairs -- unicity = astronomically low chance of collision, cf. h
 consensus -- &mechanisms = complete stack of ideas, protocols and incentives that enable a distributed set of nodes to agree on the state of a blockchain https://ethereum.org/en/developers/docs/consensus-mechanisms/
 consensus = a general agreement has been reached. Consider a group of people going to the cinema. If there is no disagreement on a proposed choice of film, then a consensus is achieved. If there is disagreement, the group must have the means to decide which film to see. In extreme cases, the group will eventually split https://ethereum.org/en/developers/docs/consensus-mechanisms/
 corporate blockchains = "Big companies launching L1s is kind of a rejection of the L2 thesis, but it’s even more of a rejection of the Solana thesis" https://blockworks.co/news/stripe-circle-l1s-solana
+corporate havens = easy to hide wealth and launder money e.g. Delaware https://www.a16z.news/p/charts-of-the-week-dexit-real-or https://en.wikipedia.org/wiki/Wyoming_as_a_corporate_haven https://www.icij.org/investigations/pandora-papers/the-cowboy-cocktail-how-wyoming-became-one-of-the-worlds-top-tax-havens/
 covenants tech = ???
 crapto = anything not BitCoin (maybe Ether?)
 creator coins https://x.com/VitalikButerin/status/2017956762347835488
@@ -353,6 +368,7 @@ exchanges = cryptocurrency exchange
 fiat
 fiat ramps
 fiat-backed
+Flippening = the day Ethereum (ETH) finally becomes #1 coin https://flippening.org/
 fogo -- foggots
 Fogo -- sessions = a novel chain primitive that enable users to interact with apps on the chain without paying for gas or signing individual transactions https://docs.fogo.io/fogo-sessions.html
 Fogo = L1 built for DeFi applications. It is based on Solana's architecture and implements multi-local consensus to achieve minimal latency https://docs.fogo.io/
@@ -380,6 +396,7 @@ governance -- plutocracy? https://www.reddit.com/r/CryptoCurrency/comments/zy6ko
 governance -- skin in the game
 grand ideas -- no more bailouts https://nomorebailouts.org
 griefing attacks = no gain for the attacker, just issues for the victim. ex "Just create 100k accounts get $5 in each and burn it"
+https://freeromanstorm.com/
 https://memecore.com/ = ?
 https://web3bounty.io/
 humanity protocol = ? https://www.humanity.org/
@@ -408,6 +425,8 @@ internet censorship -- 2025 Russia https://news.ycombinator.com/item?id=44392221
 InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers. https://docs.ipfs.tech/concepts/
 iota https://iota.stackexchange.com/
 ISO/TC 307 = standardization effort "Blockchain and distributed ledger technologies" https://www.iso.org/committee/6266604.html
+jargon 2026/04 https://mail.blockworks.com/p/grokking-the-new-lexicon
+Jurisdiction shopping
 kaito -- Yaps As Proof-of-Attention https://yaps.kaito.ai/social-card
 katana https://app.katana.network/
 L1
@@ -429,7 +448,8 @@ liquidity -- incentives = attracting liquidity and retaining it are fundamentall
 Litecoin = "You can dislike me all you want, but I was here before most of your pet projects and I will be here after you die. I'm not fiat and I'm not some software to fill the pockets of VC's. I'm sound money and I don't bend the knee to anyone."
 mantras of blockchain -- Don’t trust, verify
 mantras of blockchain -- not your keys, not your coins = see custodiality. only keep bitcoin in exchanges for as long as you need to https://blockworks.co/news/bitomat-exchange-deleted-17000-bitcoin
-market maker = easy to move the price, esp. ICO -> need right incentives
+market maker -- fraud = easy to move the price, esp. ICO -> need right incentives
+market maker -- illicit https://www.justice.gov/usao-ndca/pr/ten-foreign-nationals-charged-international-operation-targeting-cryptocurrency-market
 marketing -- https://etherscan.io/
 Markets in Crypto Assets (MiCA) regulation to oversee the crypto industry
 MegaETH = MegaETH is real-time Ethereum, streaming transactions at lightning speed: 10-millisecond latency and over 20,000 transactions per second https://x.com/megaeth
@@ -449,6 +469,8 @@ metrics -- active addresses count
 metrics -- TPS "Transactions Per Second"
 metrics -- TVL "Total Value Locked"
 metrics = to evaluate a chain / project
+MEV -- or rather TOV = https://x.com/buffalu__/status/2041541434008866970
+MEV https://x.com/buffalu__/status/2041541434008866970
 mining
 mining -- algorithms -- Ethash = used by Ethereum when PoW https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/ethash/
 mining -- algorithms -- goals -- ASIC-resistance = the benefit from creating specialized hardware for the algorithm should be as small as possible
@@ -459,6 +481,7 @@ mining -- algorithms -- Scrypt, Dagger, Hashimoto, Dagger-Hashimoto = https://et
 mining -- algorithms = https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/
 mining -- cost = quickly goes up, hence pools https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/#cost-of-mining
 mining -- pool https://casebitcoin.com/critiques/china-controls-bitcoin
+mining -- pooled
 mining -- profitability = complex, ex. using cheap power, stolen computing etc.
 mining = process of creating a block of transactions to be added to a blockchain using proof-of-work  https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/
 minting -- burning = remove from circulation permanently
@@ -467,6 +490,7 @@ mixer / tumbler https://en.wikipedia.org/wiki/Cryptocurrency_tumbler
 Monad = high-performance Layer-1 blockchain designed to deliver high throughput with full EVM compatibility
 monero https://monero.stackexchange.com/
 movement
+Mr Average = "You must be below the radar belt, you must be essentially invisible to the government, the spooks dossier on you must read Mr Average and be entirely wholesome. Then you must have one or more alter-egos, for your real interests" https://mailing-list-archive.cryptoanarchy.wiki/archive/1998/01/3fa930df6253cd6f9cfb56bdbf16164513d3f3a19ea414c492ecdd7aa0ed6614/
 multi-chain https://arxiv.org/abs/2112.01472
 multichain strategy
 multisig
@@ -580,6 +604,7 @@ proof-of -- 2018 proof of history -- https://medium.com/solana-labs/proof-of-his
 proof-of = component in consensus mechanisms that protect against Sybil attacks by making it "crypto-economically" not worth it to do a Sybil attack https://ethereum.org/en/developers/docs/consensus-mechanisms/
 Provider Discovery Library = A library or piece of software that assists a DApp to interact with the Wallet https://eips.ethereum.org/EIPS/eip-6963
 public key cryptography
+quantum procrastinators
 r/CryptoCurrency https://www.reddit.com/r/CryptoCurrency/
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
 RICO Act "Racketeer Influenced and Corrupt Organizations Act" = a U.S. federal law originally created in 1970 to combat organized crime (like the Mafia). It allows prosecutors to charge people or organizations who engage in a pattern of criminal activity (called racketeering) as part of an enterprise — even if they didn’t personally commit every crime.
@@ -591,6 +616,8 @@ RPC = interface to interact with a blockchain through a node
 RWAfi = real-world asset finance
 sanctionned by US https://en.wikipedia.org/wiki/Nicolas_Guillou
 Satochi
+satoshi coins https://bitslog.com/2013/04/17/the-well-deserved-fortune-of-satoshi-nakamoto/
+Satoshi Nakamoto https://gnusha.org/pi/bitcoindev/6EC9DDF352DC4838AE9B088AB372428A25E1F42A@DS04/ https://www.nytimes.com/2026/04/08/business/bitcoin-satoshi-nakamoto-identity-adam-back.html
 scalability
 scalability -- transactions per second
 scams -- (sort of) example of sweeping the market by a big player https://x.com/mlmabc/status/1960462635314635207
@@ -661,6 +688,7 @@ solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/we
 solutions -- Cloudflare -- IFPS
 solutions -- CoinGecko = ranking website https://www.coingecko.com/
 solutions -- Geth (Go Ethereum) = an open source blockchain protocol implementing the standard Ethereum specification plus other useful features such as a pluggable consensus engine. Geth is among the most widely used implementations of Ethereum nodes. It supports both the standard DAG based Proof-of-Work consensus and Proof-of-Authority (PoA) consensus with its implementation called Clique https://github.com/ethereum/go-ethereum
+solutions -- hardhat = Ethereum development environment https://github.com/NomicFoundation/hardhat
 solutions -- https://www.infura.io/
 solutions -- https://www.moderntreasury.com/
 solutions -- https://x.com/meshpay ?
@@ -680,6 +708,8 @@ staking -- Liquid staking derivatives (LSD) = ??? https://notes.ethereum.org/@dj
 staking -- Liquid Staking Token (LST) = ex. stETH from Lido
 staking -- types -- solo / non-custodial / custodial / liquid https://www.sec.gov/newsroom/speeches-statements/corpfin-certain-liquid-staking-activities-080525
 staking = https://www.britannica.com/money/what-is-crypto-staking https://www.coinbase.com/en-au/learn/crypto-basics/what-is-staking https://www.bitpanda.com/academy/en/lessons/what-is-staking/
+STARK = ?
+stylometry
 Succinct Proofs of Random Access (SPoRAs) https://github.com/ArweaveTeam/arweave/releases/tag/N.2.3.0.0
 superminority -- Nakamoto Coefficient = directly measures the superminority = minimum number of validators needed to reach 33.3% of stake. A higher Nakamoto Coefficient = more decentralized and harder to attack.
 superminority -- threshold 1 = 1/3 + 1 of the stake is enough to break the network.
@@ -874,6 +904,6 @@ x402 = "402 Payment Required response with pricing" https://www.x402.org/
 XMR = ??? https://x.com/PerpetualCow/status/2010820707991650542
 XMTP https://docs.xmtp.org/
 zCash https://z.cash/learn/
-zk-SNARKs = zero-knowledge succinct non-interactive arguments of knowledge
-zkVM
+zk -- zk-SNARKs = zero-knowledge succinct non-interactive arguments of knowledge
+zk -- zkVM "zero-knowledge Virtual Machine" = a virtual machine whose execution produces a cryptographic proof. You run a program inside it, and the VM gives back two things: the program's public output, and a proof that the output was produced by running that exact program on some input. Anyone can check the proof without re-running the program and without seeing the input. https://github.com/Roasbeef/go-zkvm/blob/main/docs/tutorial.md
 “Your Chain, Your Rules” https://arbitrum.io/launch-chain

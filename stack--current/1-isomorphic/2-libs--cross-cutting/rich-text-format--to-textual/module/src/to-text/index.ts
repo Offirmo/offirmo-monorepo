@@ -1,8 +1,8 @@
 import type { Immutable } from '@monorepo-private/ts--types'
 import assert from '@monorepo-private/assert/v1'
 
-import type { NodeLike } from '../../l1-types/index.ts'
-import { getꓽdisplay_type, getꓽtype } from '../../l1-utils/misc.ts'
+import type { NodeLike } from '@monorepo-private/rich-text-format'
+import { getꓽdisplay_type, getꓽtype } from '@monorepo-private/rich-text-format'
 
 import { isꓽlink } from '../common.ts'
 import {
@@ -18,13 +18,13 @@ interface RenderingOptionsⵧToText extends BaseRenderingOptions {
 	use_hints?: boolean // use known hints to improve rendering? or ignore them and render the most basic style?
 	style:
 		| 'basic' // text only
-		| 'advanced' // more intelligent: detect KV lists; allow bullet-less lists
+		//| 'advanced' // more intelligent: detect KV lists; allow bullet-less lists XXX TODO review should it be based on hints instead? also KV = nothing
 		| 'markdown'
 }
 const DEFAULT_RENDERING_OPTIONSⵧToText = Object.freeze<RenderingOptionsⵧToText>({
 	...DEFAULT_RENDERING_OPTIONSⵧWalk,
 	use_hints: true,
-	style: 'advanced',
+	style: 'markdown',
 })
 
 type State = {

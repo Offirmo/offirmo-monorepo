@@ -12,6 +12,7 @@ TODO
 - tenderly simulation
 - block scan
 - contract interaction / ABI
+  - maybe https://github.com/NomicFoundation/hardhat ?
 - deploy a smart contract https://hardhat.org/docs/getting-started
 
 

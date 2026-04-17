@@ -159,7 +159,7 @@ const assert: AssertSugar = Object.assign(_assert, {
 	post: assertⵧpost,
 })
 
-function assert_from(fn_in_obj: { [name: string]: Function}) {
+function assert_from(fn_in_obj: { [name: string]: Function }) {
 	_assert(typeof fn_in_obj === 'object' && fn_in_obj)
 	const [ caller__name, caller ] = Object.entries(fn_in_obj)[0] || []
 	_assert(caller__name)
@@ -240,15 +240,17 @@ function _on_failure(context: Context): never {
 		throw !error // no details
 	}
 
-	// TODO log?
-	//const s = error!.stack
-	//console.log(s)
-
 	const message__body__assertion = (() => {
 		if (typeof assertion_description === 'function')
 			assertion_description = assertion_description()
 
 		if (!!assertion_description) return String(assertion_description)
+
+		// auto detail...
+
+		if (object_under_check__name) {
+			object_under_check__name = `assertion about ${object_under_check__name}`
+		}
 
 		if (typeof assertion === 'boolean')
 			return 'should be true'
@@ -284,6 +286,14 @@ function _on_failure(context: Context): never {
 	if (!messageⵧfinal.endsWith('!')) messageⵧfinal += '!'
 
 	error!.message = messageⵧfinal
+
+	if (!isꓽprod) {
+		console.warn('!!! assertion failed !!!')
+		console.warn('!!', messageⵧfinal)
+		console.warn('!!', error)
+		console.warn('!! will now throw...') // put breakpoint here
+	}
+
 	throw error
 }
 

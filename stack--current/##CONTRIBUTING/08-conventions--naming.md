@@ -2,17 +2,26 @@
 
 ## File system arborescence
 
+### Generic rules
+
+- `__xyz/` dev stuff
+  - ex `__fixtures/`
+- `##xyz/` doc
+- `~~xyz/` UNlinted stuff: sandbox / dirty / throwaway / temp
+  - ex `~~tosort/`
+
+
 ### Package structure
 Every package should ideally have exactly the same structure:
 * `package.json` just a normal package.json
 * `README.md` lightweight docs for this package
-* `/src/` contains all the source code for this package, including unit tests
-* `/src/00-embedded-deps/` (optional) = deps we copied internally to be no-deps (rare, for very small packages)
-* `/docs/` (optional) detailed docs for the package, that render integration examples and props API
-* `/docs/storypad/` 
-* `/dist/` (optional) contains the built version of the package, if it is a library
-* `/tosort/YYYY/` (optional) - area for parking code for reference or later refactoring. MUST be in a subfolder with the year of parking (to help evaluate the staleness)
 * `CONTRIBUTING.md` (if public)
+* `/dist/` (optional) contains the built version of the package, if it is a library
+* `/docs/` (optional) detailed docs for the package, that render integration examples and props API
+* `/module/src/` contains all the source code for this package, including unit tests
+* `/module/src/00-embedded-deps/` (optional) = deps we copied internally to be no-deps (rare, for very small packages)
+* `/module/__fixtures/storypad/` 
+* `/module/~~tosort/YYYY/` (optional) - area for parking code for reference or later refactoring. MUST be in a subfolder with the year of parking (to help evaluate the staleness)
 
 
 ### /src structure

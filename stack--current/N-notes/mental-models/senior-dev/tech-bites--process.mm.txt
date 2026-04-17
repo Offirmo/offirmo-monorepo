@@ -82,6 +82,7 @@ Safe Release Management -- 03 Addressing known issues (i.e. Auto-scaling)
 Safe Release Management -- Production Change Control (PCC)
 Scrum = an agile team collaboration framework; PM, dev, Scrum master, sprint, daily scrum, backlog, retro, velocity
 Scrumban https://en.wikipedia.org/wiki/Scrumban
+team -- Lencioni model of team dysfunction https://www.linkedin.com/posts/addyosmani_softwareengineering-productivity-leadership-activity-7000540911050907648-vxzN
 team -- performance -- four key metrics -- Change Failure Rate = The percentage of deployments causing a failure in production
 team -- performance -- four key metrics -- Deployment Frequency = How often an organization successfully releases to production
 team -- performance -- four key metrics -- Lead Time for Changes = The amount of time it takes a commit to get into production

@@ -18,6 +18,7 @@ type ConversationRole =
 	| 'other'     // different character/NPC/person
 	| 'developer' // (for LLM, not to be displayed) higher authority instructions https://platform.openai.com/docs/guides/text?api-mode=responses#message-roles-and-instruction-following
 	              // "developer messages are instructions provided by the application developer, prioritized ahead of user messages."
+	// toolResult?
 
 type SuccessOrFailure = boolean | null // hint a message as a success/failure/not-applicable
 

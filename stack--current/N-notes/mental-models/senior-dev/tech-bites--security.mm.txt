@@ -14,13 +14,16 @@
 [ ] https://www.reddit.com/r/privacy/ https://www.reddit.com/r/PrivacyGuides/
 account takeover (ATO) https://www.kasada.io/use-cases/account-takeover/
 Alice & Bob https://en.wikipedia.org/wiki/Alice_and_Bob#Cast_of_characters
-attacks -- 0 click& = exploit security flaws in software that handles incoming data, like messaging apps, email clients, or web browsers https://medium.com/@davidsehyeonbaek/zero-click-attacks-how-your-device-can-be-infected-with-spyware-without-even-opening-a-message-1e1699850ecc
+attacks -- 0 click && = exploit in software that handles incoming data, like messaging apps, email clients, or web browsers https://medium.com/@davidsehyeonbaek/zero-click-attacks-how-your-device-can-be-infected-with-spyware-without-even-opening-a-message-1e1699850ecc
 attacks -- business email compromise (BEC)
 attacks -- credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
 attacks -- direct blackmail = example of letter to individual https://www.reddit.com/r/cybersecurity_help/comments/1f7tbec/demand_for_bitcoin_payment_made_with_threats/
 attacks -- griefing
+attacks -- harvest-now/decrypt-later = advancein cryptography
 attacks -- hash collision https://en.wikipedia.org/wiki/Collision_attack
 attacks -- homographs = using unicode for visual deception https://x.com/sheeki03/status/2018382483465867444
+attacks -- N day = old systems unpatched
+attacks -- O day = even in most up-to-date systems
 attacks -- open redirect = exploiting a site's redirect mechanism to go to another website
 attacks -- phishing -- (many variants)
 attacks -- phishing https://www.azarask.in/blog/post/a-new-type-of-phishing-attack/
@@ -141,6 +144,7 @@ password -- peppering (pwd managers) https://passwordbits.com/salting-passwords/
 pin codes -- most common https://informationisbeautiful.net/visualizations/most-common-pin-codes/
 PKI = Public Key Infrastructure
 plan for security from the start - it's not something you can bolt on at the end
+post-quantum target = now 2029 post-quantum https://blog.cloudflare.com/post-quantum-roadmap/
 principle of least privilege
 privacy advices -- https://tails.net/doc/about/warnings/index.en.html
 privacy pass -- issuance protocol https://www.rfc-editor.org/rfc/rfc9578.html

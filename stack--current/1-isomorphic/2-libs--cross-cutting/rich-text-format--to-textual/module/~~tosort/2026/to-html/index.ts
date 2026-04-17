@@ -1,16 +1,16 @@
 import memoize_one from 'memoize-one'
 import type { Immutable } from '@monorepo-private/ts--types'
 
-import { type StrictNode, type Node, isꓽlist, type NodeLike } from '../../l1-types/index.ts'
+import { type StrictNode, type Node, isꓽlist, type NodeLike } from '@monorepo-private/rich-text-format'
 
-import { isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from '../common.ts'
+import { isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from '../../../src/common.ts'
 import {
 	type BaseRenderingOptions,
 	NodeType,
 	type WalkerCallbacks,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from '../walk.ts'
+} from '../../../src/walk.ts'
 import { promoteꓽto_node } from '../../l1-utils/index.ts'
 
 /////////////////////////////////////////////////

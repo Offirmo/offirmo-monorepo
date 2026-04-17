@@ -34,7 +34,10 @@ function compare<T>(a: T, operator: ComparisonOperator, b: T, to_index: (val: T)
 
 /////////////////////////////////////////////////
 
-function getꓽcompareFn<T>(to_index: (val: T) => number): (a: T, b: T) => number {
+// https://devdocs.io/javascript/global_objects/array/sort
+type CompareFn<T> = (a: T, b: T) => number
+
+function getꓽcompareFn<T>(to_index: (val: T) => number): CompareFn<T> {
 	return function compare(a: T, b: T): number {
 		const index_a: number = to_index(a)
 		if(typeof index_a !== 'number' || isNaN(index_a)) throw new Error('getꓽcompareFn(): to_index() should return a number')
@@ -46,7 +49,7 @@ function getꓽcompareFn<T>(to_index: (val: T) => number): (a: T, b: T) => numbe
 }
 
 // ???
-function getꓽcompareFnⵧcompose<T>(to_indexⵧordered: Array<(val: T) => number>): (a: T, b: T) => number {
+function getꓽcompareFnⵧcompose<T>(to_indexⵧordered: Array<(val: T) => number>): CompareFn<T> {
 	return function compare(a: T, b: T): number {
 		return to_indexⵧordered.reduce((acc, to_index) => {
 			if (acc !== 0) return acc
@@ -60,7 +63,7 @@ function getꓽcompareFnⵧcompose<T>(to_indexⵧordered: Array<(val: T) => numb
 }
 
 // ex sort { flow: 'main' } { flow: 'side' } against [ 'main', 'side' ]
-function getꓽcompareFnⵧby_string_key<T>(key: string | ((val: T) => string), ordered_values: string[]): (a: T, b: T) => number {
+function getꓽcompareFnⵧby_string_key<T>(key: string | ((val: T) => string), ordered_values: string[]): CompareFn<T> {
 
 	function get_index_key(val: T): string {
 		if (typeof key === 'string') {
@@ -89,6 +92,8 @@ function getꓽcompareFnⵧby_string_key<T>(key: string | ((val: T) => string), 
 export {
 	type ComparisonOperator,
 	compare,
+
+	type CompareFn,
 
 	getꓽcompareFn,
 	getꓽcompareFnⵧcompose,

@@ -11,8 +11,8 @@ import type { Node, StrictNode, NodeLike } from './types.ts'
 // with all fields, even optionals
 const $EXAMPLE_COMPLETE_NODE: StrictNode = {
 	$v: 1,
-	$type: 'fragmentⵧinline',
-	$heading: 'title',
+	$type: 'fragmentⵧblock',
+	$heading: 'Some title',
 	$content: 'Hello, ⎨⎨target⎬⎬!',
 	$refs: {
 		target: 'World',

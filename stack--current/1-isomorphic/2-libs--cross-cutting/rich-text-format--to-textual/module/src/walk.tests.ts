@@ -1,12 +1,12 @@
 import { expect } from 'chai'
 
-import { LIB } from '../consts.ts'
+import { LIB } from './consts.ts'
 
 /////////////////////////////////////////////////
 
-import * as RichText from '../index.ts'
+import * as RichText from '@monorepo-private/rich-text-format'
 import { walk, type WalkerCallbacks } from './walk.ts'
-import { type BaseRenderingOptions, type Node } from '../index.ts'
+import { type BaseRenderingOptions, type Node } from './walk.ts'
 
 describe(`${LIB} -- renderers -- walker (internal)`, function () {
 	interface State {}
@@ -30,7 +30,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 				$content: 'foo⎨⎨br⎬⎬bar',
 				// no sub-nodes: it's pre-defined!
 			}
-			const str = RichText.renderⵧto_text($doc)
+			const str = renderⵧto_text($doc)
 			expect(str).to.equal('foo\nbar')
 		})
 
@@ -39,7 +39,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 				$content: 'foo⎨⎨hr⎬⎬bar',
 				// no sub-nodes: it's pre-defined!
 			}
-			const str = RichText.renderⵧto_text($doc)
+			const str = renderⵧto_text($doc)
 			expect(str).to.equal(
 				'foo\n------------------------------------------------------------\nbar',
 			)
@@ -54,7 +54,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 					},
 				},
 			}
-			const str = RichText.renderⵧto_text($doc)
+			const str = renderⵧto_text($doc)
 			expect(str).to.equal('foo42baz')
 		})
 
@@ -68,7 +68,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 					},
 				},
 			}
-			const str = RichText.renderⵧto_text($doc)
+			const str = renderⵧto_text($doc)
 			expect(str).to.equal('foo\n42\nbaz')
 		})
 
@@ -93,7 +93,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 				},
 			}
 
-			const str = RichText.renderⵧto_text($doc, {
+			const str = renderⵧto_text($doc, {
 				shouldꓽrecover_from_unknown_sub_nodes: 'placeholder',
 				style: 'basic',
 			})
@@ -111,7 +111,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 				},
 			}
 
-			const str = RichText.renderⵧto_text($doc, {
+			const str = renderⵧto_text($doc, {
 				shouldꓽrecover_from_unknown_sub_nodes: 'root',
 				style: 'basic',
 			})
@@ -126,7 +126,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 				},
 			}
 
-			const str = RichText.renderⵧto_text($doc, undefined, {
+			const str = renderⵧto_text($doc, undefined, {
 				...RichText.callbacksⵧto_text,
 				resolveꓽunknown_ref($refs_node_id: string, ...rest): Node | undefined {
 					if ($refs_node_id === 'gꓽbar')

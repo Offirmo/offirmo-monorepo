@@ -107,6 +107,8 @@ client/server -- multi-tier architecture -- 03 business
 client/server -- multi-tier architecture -- 04 data access
 client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
 coding -- Claude -- version history https://cchistory.mariozechner.at/
+colors -- colour schemes --
+colors -- colour schemes -- cubehelix = increasing intensity, good for astronomy https://people.phy.cam.ac.uk/dag9/CUBEHELIX/
 components https://www.componentdriven.org/
 composition -- embed
 composition -- shared view
@@ -206,6 +208,7 @@ devices -- support
 dialog
 dialogs -- alert
 dialogs -- confirmation
+dithering https://ditherimage.online/
 DNS = distributed database for IP address translation
 Document = The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. It provides functionality globally to the document, like how to obtain the page's URL and create new elements in the document.
 document.currentScript = https://frontendmasters.com/blog/document-currentscript-is-more-useful-than-i-thought/
@@ -239,6 +242,17 @@ events -- custom & https://medium.com/@pankajpatil822/understanding-custom-event
 events -- event delegation
 fetch -- DIFFERENT from async state management = fetch is simple, handling remote (server) state is not https://tkdodo.eu/blog/why-you-want-react-query
 fetch -- why it doesn't reject on error = bc fetch promise is promise of a successful REQUEST https://kettanaito.com/blog/why-fetch-promise-doesnt-reject-on-error-responses
+figures -- 10 rules for better figures -- Rule 01: Know Your Audience
+figures -- 10 rules for better figures -- Rule 02: Identify Your Message
+figures -- 10 rules for better figures -- Rule 03: Adapt the Figure to the Support Medium
+figures -- 10 rules for better figures -- Rule 04: Captions Are Not Optional
+figures -- 10 rules for better figures -- Rule 05: Do Not Trust the Defaults
+figures -- 10 rules for better figures -- Rule 06: Use Color Effectively
+figures -- 10 rules for better figures -- Rule 07: Do Not Mislead the Reader
+figures -- 10 rules for better figures -- Rule 08: Avoid “Chartjunk”
+figures -- 10 rules for better figures -- Rule 09: Message Trumps Beauty
+figures -- 10 rules for better figures -- Rule 10: Get the Right Tool
+figures -- 10 rules for better figures https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833
 fingerprinting https://amiunique.org/fingerprint https://github.com/fingerprintjs/fingerprintjs
 flash of -- empty state = "you have no friends"
 flash of -- fallback font (FOFT)
@@ -620,4 +634,3 @@ WebXR / WebVR = VR / AR
 Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/
 XSS -- injection sinks https://devdocs.io/dom/trusted_types_api
 “Your” vs “My” in user interfaces = In summary 1) Use “your” when communicating to the user 2) Use “my” when the user is communicating to us https://adamsilver.io/blog/your-vs-my-in-user-interfaces/
-📦 https://transparenttextures.com/

@@ -5,9 +5,9 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/to--debug/index.tsx"
+		".": "./module/src/to--text/index.tsx"
 	},
-	"source": "module/src/to--debug/index.tsx",
+	"source": "module/src/to--text/index.tsx",
 	"peerDependencies": {
 		"tslib": "^2"
 	},

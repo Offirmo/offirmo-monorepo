@@ -14,6 +14,7 @@ case studies -- whitehouse 2026/03 https://blog.thereallo.dev/blog/decompiling-t
 CI/CD -- ? https://mergify.com/
 cloud -- Cloudflare
 cron https://croner.56k.guru/
+dashboards https://github.com/chartbrew/chartbrew
 designed for Cloudflare/Vercel -- https://upstash.com/
 docker -- macos https://github.com/dockur/macos
 documentation site https://www.mintlify.com/
@@ -23,6 +24,7 @@ ecosystem -- schemas = ex. 	"$schema": "https://biomejs.dev/schemas/2.2.4/schema
 ecosystem -- sdk ? https://liblab.com/ https://www.speakeasy.com/
 env vars https://env.t3.gg/
 FE -- charts -- https://www.chartjs.org/ visx
+FE -- colors -- https://npmx.dev/package/chroma-js
 FE -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/
 FE -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 FE -- https://agentation.dev/
@@ -38,6 +40,7 @@ FE -- presentation https://revealjs.com
 FE -- React
 FE -- React -- avatars https://www.facehash.dev/
 FE -- React -- router https://reactrouter.com/home ?
+FE -- server components https://tanstack.com/blog/react-server-components
 FE -- syntax highlighter https://prismjs.com/
 FE -- viz https://visx.airbnb.tech/gallery
 FE -- web apps -- ? expo https://expo.dev/
@@ -45,6 +48,7 @@ FE -- ⚠ React Native
 FE -- ⚠ Tailwind https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 FE -- ⚠ Tailwind https://www.mux.com/blog/tailwind-is-the-worst-form-of-css-except-for-all-the-others
 feature flags
+generic heuristic = "At TanStack, we have always strived to build tools that cover the 90% use case with ease, but still give you the flexibility to break out of the box for advanced use cases. Why? Because we know that when things get serious, you know what's best for your application and deserve the freedom to take control." https://tanstack.com/blog/react-server-components
 GHA https://github.com/step-security
 git -- git crypt https://github.com/AGWA/git-crypt
 GitHub -- ⚠ https://sfconservancy.org/GiveUpGitHub/
@@ -67,7 +71,7 @@ mobile -- capacitor https://capacitorjs.com/  https://capawesome.io/  https://ca
 monorepo -- aware -- turborepo
 monorepo -- aware -- ✖ bolt
 next.js https://nextjs.org/docs
-pdf https://documenso.com/blog/introducing-libpdf-the-pdf-library-typescript-deserves
+pdf libs https://documenso.com/blog/introducing-libpdf-the-pdf-library-typescript-deserves
 pkg -- ai -- integrated skills https://tanstack.com/intent/latest/docs/registry
 pkg -- BigNum https://dev.to/fvictorio/a-comparison-of-bignumber-libraries-in-javascript-2gc5
 pkg -- creation https://www.totaltypescript.com/how-to-create-an-npm-package
@@ -81,6 +85,7 @@ pkg -- manager -- ✅ pnpm (+ turbo) case study: https://pnpm.io/blog/2025/12/05
 pkg -- manager -- ✅ yarn v4
 pkg -- manager -- ✖ npm
 pkg -- publishing https://github.com/changesets/changesets
+polish -- textures https://transparenttextures.com/
 search -- postgres https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
 SVW Speedy Web Compiler https://swc.rs/

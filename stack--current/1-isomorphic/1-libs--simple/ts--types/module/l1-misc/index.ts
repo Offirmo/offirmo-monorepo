@@ -1,5 +1,7 @@
 // unsure where to sort those types for now
 
+import { type Immutable } from '../l1-immutable/index.ts'
+
 /////////////////////////////////////////////////
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types
@@ -44,3 +46,6 @@ export interface WithHints<Hints = BaseHints> {
 }
 
 /////////////////////////////////////////////////
+
+// https://devdocs.io/javascript/global_objects/array/sort
+export type CompareFn<T> = (a: Immutable<T>, b: Immutable<T>) => number

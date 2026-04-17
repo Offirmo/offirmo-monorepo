@@ -7,8 +7,9 @@ This set of command will build everything: (required as there are dependencies b
 ```bash
 ## First: update OS, brew, nvm, etc.
 ## Then:
-nvm install
-npm i -g yarn # bolt only works when installed by yarn
+mise install
+npm i -g corepack  ## if using. no longer installed along node since 25
+npm i -g yarn    # bolt only works when installed by yarn
 yarn global add bolt
 bolt
 bolt build

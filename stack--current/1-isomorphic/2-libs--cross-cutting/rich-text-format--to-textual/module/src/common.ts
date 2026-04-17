@@ -1,8 +1,7 @@
 import assert from '@monorepo-private/assert/v1'
 import { type Immutable } from '@monorepo-private/ts--types'
-import type { StrictNode, NodeLike } from '../l1-types/types.ts'
-import { wrap, isꓽlist } from '../l1-utils/index.ts'
-import { isꓽNodeLike } from '../l1-types/index.ts'
+import type { StrictNode, NodeLike } from '@monorepo-private/rich-text-format'
+import { wrap, isꓽlist, isꓽNodeLike } from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 

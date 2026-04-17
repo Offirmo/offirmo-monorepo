@@ -34,6 +34,7 @@ function create(): Immutable<> {
 function getꓽXYZⵧfoo‿v2(): void {}
 function deriveꓽXYZⵧfoo‿v2(): void {}
 /*
+const ǃ = assert_from({my_func})
 assertꓽnode_is_xyz()
 isꓽStory‿v2(x: Immutable<any>): s is Story‿v2 {
 
@@ -57,8 +58,8 @@ TODO express a resilient function who technically should never crash?
 // @ts-ignore
 
 // prettier-ignore
-// eslint-disable-next-line no-console
-/* eslint-disable no-console */
+// oxlint-disable-next-line no-console
+/* oxlint-disable no-console */
 
 }
 

@@ -40,3 +40,10 @@ samp {
 	 */
 	tab-size: 3;
 }
+
+pre {
+	/* Code can easily overflow on small screens
+	 * We don't necessarily want a scroll (TODO refine)
+	 */
+	overflow-inline: auto;
+}

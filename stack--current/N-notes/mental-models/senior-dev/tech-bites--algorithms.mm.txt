@@ -166,6 +166,7 @@ string -- Approximate string matching = matching despite insertion, deletion, su
 string -- pattern searching
 string -- sorting
 string -- word searching -- Knuth–Morris–Pratt algorithm (KMP) https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
+sudoku https://blog.veitheller.de/Six_Simple_Sudoku_Solvers_I:_Python_(Reference).html
 termination
 termination -- proving
 tower of Hanoi

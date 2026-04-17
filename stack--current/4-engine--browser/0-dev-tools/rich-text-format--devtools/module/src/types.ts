@@ -2,12 +2,12 @@ import * as RichText from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 
-interface Props {
+interface BaseProps {
 	$doc: RichText.NodeLike
 }
 
 /////////////////////////////////////////////////
 
 export {
-	type Props,
+	type BaseProps,
 }

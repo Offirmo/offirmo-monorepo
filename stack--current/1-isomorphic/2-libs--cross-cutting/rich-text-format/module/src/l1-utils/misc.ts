@@ -60,6 +60,7 @@ assert(
 	`_NODE_TYPE_to_DISPLAY_MODE should be up to date!`
 )
 
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout
 function getꓽdisplay_type($node: Immutable<NodeLike>): 'inline' | 'block' {
 	const $type = getꓽtype($node)
 

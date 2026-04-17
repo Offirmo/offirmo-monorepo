@@ -1,12 +1,14 @@
 2008 financial crisis https://en.wikipedia.org/wiki/2008_financial_crisis
 2023-10 bank run collapsing Silicon Valley Bank https://en.wikipedia.org/wiki/Collapse_of_Silicon_Valley_Bank
+[ ] AI https://github.com/georgezouq/awesome-ai-in-finance
 [ ] https://en.wikipedia.org/wiki/Portal:Money
 accounting system
+adverse selection = in case of finance, fear the market is rigged and not entering https://en.wikipedia.org/wiki/Adverse_selection
 alt currency -- frequent flyer miles = building a currency in that airline’s name, has ~intrinsic value (to the specific airline) 1) “Fun with accounting” 2) the airlines can release the liability in a breakage process if "look like lost account" https://weekly.visualapproach.io/p/airlines-as-loss-leaders
 alt currency -- gift cards
 applicable laws and regulations
-asset
 arbitrage https://bfmtimes.com/this-crypto-bot-turned-2000-into-176k-in-1-month-its-design-explained/
+asset
 asset -- seizure
 bailouts = https://nomorebailouts.org
 bank run = when many customers withdraw their funds from a bank due to concerns about the bank's insolvency or bankruptcy. https://en.wikipedia.org/wiki/Bank_run
@@ -17,7 +19,7 @@ banknote
 bond https://en.wikipedia.org/wiki/Bond_(finance)
 borrowing
 bull/bear = https://www.coinbase.com/en-au/learn/crypto-basics/what-is-a-bull-or-bear-market
-central bank
+Buy Now Pay Later (BNPL)
 central bank https://en.wikipedia.org/wiki/Central_bank
 churn = to make the account of a client excessively active by frequent purchases and sales primarily in order to generate commissions
 coin
@@ -87,11 +89,13 @@ government -- budget deficit
 government -- fiscal austerity
 government -- high public spending
 government confiscation = forced to give precious metal
+hedge fund = risky, no longer hedge https://www.investor.gov/introduction-investing/investing-basics/investment-products/private-investment-funds/hedge-funds
 https://www.auspayplus.com.au/about-us
 index -- big mac = compare purchasing power across countries https://en.wikipedia.org/wiki/Big_Mac_Index
 index -- cosmetics -- theory contends that consumers will be more willing to buy less costly luxury goods when they are facing an economic crisis https://en.wikipedia.org/wiki/Lipstick_effect
 index -- men's underwear https://en.wikipedia.org/wiki/Men%27s_underwear_index
 index -- skirt length "Hemline index" theory that the typical hemline of women’s skirts and dresses (hereafter, referred to as ‘skirts’) can be predicted from economic trends  https://en.wikipedia.org/wiki/Hemline_index
+index fund = designed to follow certain preset rules so that it can replicate the performance of a specified basket of underlying securities (most often a stock market index or a bond market index) https://en.wikipedia.org/wiki/Index_fund
 inflation -- greedflation = mainly companies using inflation as a pretext to increase prices = increasing margin & profit https://en.wikipedia.org/wiki/Greedflation
 inflation -- hedge https://en.wikipedia.org/wiki/Inflation_hedge
 inflation -- runaway
@@ -104,6 +108,7 @@ institution
 instrument = https://en.wikipedia.org/wiki/Legal_instrument
 insurance
 interest rate
+investor -- retail vs. accredited = retail limited to simpler investments + protection, accerited needs high income, less protection, higher risks https://www.investor.gov/introduction-investing/investing-basics/investment-products/private-investment-funds/hedge-funds
 KYC
 laws
 ledger

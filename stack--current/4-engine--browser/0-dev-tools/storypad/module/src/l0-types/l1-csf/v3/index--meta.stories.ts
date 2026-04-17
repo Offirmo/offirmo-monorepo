@@ -1,4 +1,4 @@
-import type { Meta‿v3, Story‿v3 } from './index.ts'
+import type { Meta‿v3, Story‿v3 } from '@monorepo-private/storypad'
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

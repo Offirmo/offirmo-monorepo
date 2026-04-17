@@ -1,5 +1,5 @@
 /**
- * "walk" is the foundation on which all the renderer are based
+ * "walk" is the foundation on which all the renderers are based
  */
 
 import assert from '@monorepo-private/assert/v1'
@@ -7,31 +7,32 @@ import type { Immutable } from '@monorepo-private/ts--types'
 import { hasꓽshape, isꓽexact_stringified_number } from '@monorepo-private/type-detection'
 import { capitalizeⵧfirst } from '@monorepo-private/normalize-string'
 
-import { LIB } from '../consts.ts'
+import { LIB } from './consts.ts'
 import { getꓽcontent‿nodes_list } from './common.ts'
 import {
 	type NodeLike,
 	NodeType,
 	type StrictNode,
 	type Node,
-} from '../l1-types/index.ts'
+} from '@monorepo-private/rich-text-format'
 
-import { normalizeꓽnode } from '../l1-utils/normalize.ts'
-import { promoteꓽto_node } from '../l1-utils/promote.ts'
-import { getꓽdisplay_type, getꓽtype, isꓽlist, wrap } from '../l1-utils/index.ts'
+import { normalizeꓽnode,promoteꓽto_node, getꓽdisplay_type, getꓽtype, isꓽlist, wrap } from '@monorepo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 // base rendering options
 
 interface BaseRenderingOptions {
+	shouldꓽstrip_hints: boolean // experimental
+
 	// what should happen if a sub-node could not be resolved?
 	// (final, after calling resolveꓽunknown_ref())
 	shouldꓽrecover_from_unknown_sub_nodes:
 		| false // don't recover -> crash (default)
-		| 'placeholder' // NOT RECOMMENDED replace with an ugly placeholder. Useful if we can't afford to fail.
+		| 'placeholder' // NOT RECOMMENDED: replace with an ugly placeholder. Useful if we can't afford to fail.
 }
 
 const DEFAULT_RENDERING_OPTIONSⵧWalk = Object.freeze<BaseRenderingOptions>({
+	strip_hints: false,
 	shouldꓽrecover_from_unknown_sub_nodes: false,
 })
 
@@ -468,7 +469,11 @@ function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 	xstateⵧparent: CustomWalkState,
 	$raw_node: Immutable<NodeLike>,
 ) {
-	const $node = normalizeꓽnode(promoteꓽto_node($raw_node))
+	const $node = maybe_strip_hints(
+		normalizeꓽnode(
+			promoteꓽto_node($raw_node)
+		), options.shouldꓽstrip_hints
+	)
 	const { $heading, $refs, $type } = $node
 	assert($type !== 'auto', `${LIB}[walk]: $type should never be "auto" at this stage!`)
 
@@ -509,6 +514,18 @@ function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 
 	return xstate
 }
+
+function maybe_strip_hints($node: Immutable<StrictNode>, should_strip: boolean): Immutable<StrictNode> {
+	if (!should_strip) {
+		return $node
+	}
+
+	return {
+		...$node,
+		$hints: {}
+	}
+}
+
 
 /////////////////////////////////////////////////
 

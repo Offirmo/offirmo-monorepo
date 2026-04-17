@@ -5,8 +5,8 @@ import {
 	assertⵧpre, require,
 	assertⵧpost, ensure,
 	assert_from
-} from './index.ts'
-import * as ǃ from './index.ts'
+} from '@monorepo-private/assert'
+import * as ǃ from '@monorepo-private/assert'
 
 /////////////////////////////////////////////////
 

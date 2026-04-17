@@ -1,4 +1,3 @@
-
 +++ If Architects Had To Work Like Programmers = https://web.archive.org/web/20251214162602/https://paws.kettering.edu/~jhuggins/humor/design.html
 +++ important history https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
 1969 ARPANET, forerunner of the Internet, starts operating
@@ -205,6 +204,14 @@ codebase -- type -- hobby
 codebase -- type -- large established codebase = single-digit million lines of code (~5M, let’s say); Somewhere between 100 and 1000 engineers working on the same codebase; The first working version of the codebase is at least ten years old
 codebase -- type -- open source
 codebase -- type https://www.seangoedecke.com/large-established-codebases/
+codebase drag -- audit -- Apology Estimate = “Knowing this codebase, it’ll probably take about two weeks.”
+codebase drag -- audit -- Deploy Fear = When’s the last time your team deployed on a Friday? If that question gets a laugh, you have deploy fear
+codebase drag -- audit -- The Coverage Lie = 80% test coverage. The dashboard looks healthy. But the three models that handle money have zero tests, and the coverage number is carried by hundreds of tests on serializers, helpers, and utility methods that rarely break.
+codebase drag -- audit -- Time to First Commit = Hand a new engineer a laptop. How long until they open a pull request with a real change? Not a README fix. An actual bug fix or small feature. In a healthy codebase, this takes a day or two.
+codebase drag -- audit -- “Don’t Touch That” File = I hear it on almost every engagement. Usually within the first two days, always casual. Like it’s just how things work around here.
+codebase drag -- audit https://piechowski.io/post/codebase-drag-audit/
+codebase drag -- vs. tech debt = Technical debt is what’s wrong with the code. Codebase drag is what it costs your team to work in it anyway.  https://piechowski.io/post/codebase-drag-audit/
+codebase drag = when the codebase makes every task take longer than it should. It doesn’t show up in any dashboard or sprint report https://piechowski.io/post/codebase-drag-audit/
 codemod
 CODEOWNERS = file defining individuals or teams that are responsible for code in a repository. Code owners are automatically requested for review when someone opens a pull request that modifies code that they own.  https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
@@ -695,6 +702,7 @@ long-term support (LTS)
 loop
 loop - breaking out of
 lore -- NSC "Nocturnal Self Correction" = improved performance after long weekends
+low level -- boot / kernel https://bryankeller.github.io/2026/04/08/porting-mac-os-x-nintendo-wii.html
 LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
 LxTHW "Learn X The Hard Way" Philosophy = has students do exercises, focuses on practice and rote repetition, and instills an attitude that to learn anything one must be prepared to work at it https://github.com/georgeowen1993/learn-git-the-hard-way/
 magic number
@@ -732,6 +740,7 @@ mission-critical software
 mixins -- considered harmful https://legacy.reactjs.org/blog/2016/07/13/mixins-considered-harmful.html
 mocha / chai
 monads
+monads and category theory = advanced concepts from functional programming, usually unpractical + would require all libs to natively use it https://blog.jcoglan.com/2026/03/23/uses-for-nested-promises/ https://github.com/promises-aplus/promises-spec/issues/94
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
 Monitoring vs. Observability = Traditional monitoring is about watching for pre-defined failure states, while observability is about building a system that can be interrogated to understand any state, expected or not. https://blog.mergify.com/software-observability/
 monolith = over time become poorly structured, containing many different, sometimes competing conventions. These conventions and “styles” sprawl throughout the monolith and make it difficult to understand what is going on. Because structures are built with different conventions, to work in the monolith safely, you have to examine everything to make sure you understand this instance of this pattern. It’s not safe to assume anything. This, combined with the lack of boundaries in the monolith means that every change incurs a huge cost in examination and understanding before it can be safely implemented. This skews developer performance to tenure - the longer you have been staring at the code, the more you have wrapped your head around and the faster you can go (mostly). New developers should not be worried about the time it takes to be effective in the monolith - it's the monolith’s fault, not yours."
@@ -756,6 +765,7 @@ naming -- should be purposeful
 naming -- should be short and simple
 naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
 network -- autonomous system (AS) = very large network or group of networks with a single routing policy https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/
+network -- traceroute https://tech.stonecharioteer.com/posts/2026/traceroute/
 no silver bullet in engineering = we cannot expect ever to see two-fold gains every two years https://en.wikipedia.org/wiki/No_Silver_Bullet
 node.js -- principles https://www.platformatichq.com/node-principles
 Not Invented Here (NIH)

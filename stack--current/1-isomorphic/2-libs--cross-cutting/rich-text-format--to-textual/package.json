@@ -14,8 +14,8 @@
 	"dependencies": {
 		"@monorepo-private/assert": "*",
 		"@monorepo-private/normalize-string": "*",
-		"@monorepo-private/type-detection": "*",
-		"memoize-one": "^6"
+		"@monorepo-private/rich-text-format": "*",
+		"@monorepo-private/type-detection": "*"
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
@@ -31,7 +31,6 @@
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^6",
-		"typescript-string-enums": "^1"
+		"typescript": "^6"
 	}
 }

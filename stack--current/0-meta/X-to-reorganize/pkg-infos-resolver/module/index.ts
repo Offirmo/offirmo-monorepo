@@ -105,6 +105,8 @@ class PkgInfosResolver {
 						console.log(`Preemptive pkg ${pkg_name} not found, ignoring.`)
 						return
 					}
+
+					console.error(`Error loading package.json for "${pkg_name}":`, err)
 					throw err
 				}
 			)

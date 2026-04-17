@@ -9,7 +9,7 @@ import {
 	type WalkerCallbacks,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from '../walk.ts'
+} from '../../../src/walk.ts'
 
 /////////////////////////////////////////////////
 

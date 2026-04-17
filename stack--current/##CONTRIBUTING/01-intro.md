@@ -17,4 +17,5 @@ I code **however I want**, often departing from old conventions.
 
 I don't plan to sell/incorporate anything, enough stress in my life already, thank you!
 
-Most of this code is multi-licensed with extremely permissive terms. Pick what you want! No need to even credit! (check closest license)
+UPDATE: due to genAI environment changes, the code is now **CLOSED source** until further notice. (with some exceptions: check closest license file)
+~~Most of this code is multi-licensed with extremely permissive terms. Pick what you want! No need to even credit! (check closest license)~~
