@@ -17,9 +17,16 @@ a {
 		 */
 		background-color: var(--o⋄color⁚bg--highlight--alt, Highlight);
 	}
-}
 
-/* Add a visual indicator for external links
- */
-a[target=_blank]::after {content: "↗"}
-a[download]::after {content: "⬇"}
+	/* Add a visual indicator for external links
+    */
+	&[target=_blank]:not(.own-indicator)::after {
+		content: "⇲";
+		display: inline-block;
+		transform: scaleY(-1);
+		margin-inline-start: .3ch;
+	}
+	&[download]:not(.own-indicator)::after {content: "⬇"}
+
+
+}

@@ -34,6 +34,9 @@ function get‿DigitalHordingMemeplex(mm_txt: string): DigitalHoardingMemeplex {
 		if (lineⵧraw.startsWith('[ ]')) {
 			return MemeplexLib.addꓽtodo(state, lineⵧraw)
 		}
+		if (lineⵧraw.startsWith('http')) {
+			return MemeplexLib.addꓽtodo(state, lineⵧraw)
+		}
 
 		if (lineⵧraw.startsWith('+++')) {
 			// TODO refactor
@@ -52,10 +55,27 @@ function get‿DigitalHordingMemeplex(mm_txt: string): DigitalHoardingMemeplex {
 
 		let equal_sep_index = segmentsⵧremaining.indexOf('=')
 		ǃ.forⵧvalue({equal_sep_index}).ensure(equal_sep_index === -1 || equal_sep_index > 0, '= sign should not appear at the beginning')
+
+		// note the urls
+		segmentsⵧremaining.forEach((segment) => {
+			if (isꓽUrl‿str(segment)) {
+				dhm.urls.push(normalizeꓽurlⵧhttpₓ(segment))
+			}
+		})
+
+		/*if (line._lineno === 460) {
+			debugger
+		}*/
+
+		/*
+		// remove the trailing urls
+		while (segmentsⵧremaining.length > 1 && isꓽUrl‿str(segmentsⵧremaining.at(-1))) {
+			segmentsⵧremaining.pop()
+		}
 		segmentsⵧremaining = segmentsⵧremaining.filter((segment, index) => {
 			if (isꓽUrl‿str(segment)) {
 				dhm.urls.push(normalizeꓽurlⵧhttpₓ(segment))
-				if (equal_sep_index > -1 && index < equal_sep_index) {
+				if ((equal_sep_index === -1 && index === 0) || index < equal_sep_index) {
 					// XXX do NOT filter out urls before '=' = part of the heading
 					return true
 				}
@@ -65,7 +85,7 @@ function get‿DigitalHordingMemeplex(mm_txt: string): DigitalHoardingMemeplex {
 			}
 
 			return true
-		})
+		}) */
 
 		if (segmentsⵧremaining.at(-1) === '=')
 			segmentsⵧremaining.pop()
@@ -82,6 +102,7 @@ function get‿DigitalHordingMemeplex(mm_txt: string): DigitalHoardingMemeplex {
 		ǃ.forⵧvalue({equal_sep_index}).ensure(equal_sep_index === -1 || equal_sep_index > 0, '= sign should not appear at the beginning (remaining)')
 		if (equal_sep_index === -1) {
 			dhm.heading = segmentsⵧremaining.join(' ')
+			xxx TODO trailing urls go to description
 		}
 		else
 		{
@@ -111,6 +132,8 @@ function get‿DigitalHordingMemeplex(mm_txt: string): DigitalHoardingMemeplex {
 
 		// TODO
 		//ǃ.ensure(dhm.heading.length < 128, `heading too big. Missing = sign? line ${dhm._lineno}: "${dhm.heading}"`)
+
+		ǃ.forⵧvalue({dhm}).ensure(!!dhm.heading)
 
 		return MemeplexLib.addꓽmeme(state, dhm)
 	}, MemeplexLib.create())

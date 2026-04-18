@@ -111,3 +111,19 @@ img.emoji {
    vertical-align: -0.1em;
 }
  */
+
+/*
+.flip-vertical {
+	display: inline-block;
+	transform: scaleY(-1);
+}
+ */
+
+
+
+img.o⋄inline {
+	display: inline-block;
+	height: 1em;
+	vertical-align: middle;
+	background-color: unset;
+}

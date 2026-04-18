@@ -60,3 +60,9 @@ https://colorbrewer2.org/?type=qualitative&scheme=Pastel1&n=9
   fill: rgb(242, 242, 242)
 }
 ```
+
+
+Fonts
+- uniwidth / multiplexed https://fonts.google.com/knowledge/glossary/multiplexed_duplexed_uniwidth
+- Recursive https://www.recursive.design/
+- 
