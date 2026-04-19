@@ -157,3 +157,11 @@ https://h5.g123.jp/game/guruguru?lang=en&platform=auto&utm_source=facebook&utm_c
 https://xsamkok.wattgamesvn.com/p-reg/en.html?qd=FB1&utm_source=facebook&utm_campaign=C52072_A32081_T1_P883109&fbclid=PAZXh0bgNhZW0BMAABpvNkXopnQHdxkFmf_algd3CQiTHrTWIFyVDga0tRM97TUxrFnTQ0RXIJkA_aem_axkxbbfUWMnM7tgjXmhdOQ
 https://fyden.luckyyx.com/pre2/index.html?campaign_id=120211594849330304&adset_id=120211594850160304&ad_id=120211594910150304&placement=Instagram_Feed&utm_source=FBlby&utm_medium=paid&utm_id=120211594849330304&utm_content=120211594910150304&utm_term=120211594850160304&utm_campaign=120211594849330304&fbclid=PAZXh0bgNhZW0BMAABpsEGCz384GoNB0X42SVibULqPxqi6POBqYi-hd8oMM8cjH4IfUGjcd09Zg_aem_qwPCp8zB-oS6Fije_EXNOA
 https://muffin.xdg.com/en/yyweb/s.html?ppid=b95d9645-6126-4d2a-af31-9b9365c2fa25&fuid=fbios-caau-m-rpg-EN111&fbclid=PAZXh0bgNhZW0BMABhZGlkAasVCOz_rLUBpncTpqu7RDsKJ9hy8Pw7tD_MNrGch3Rf8fWxgGqwrF5u1rjOr8XtlbhZfw_aem_wAhyg1AzXoQi5nQvg_AjKA
+
+
+
+
+
+https://www.cloudflare.com/learning/bots/what-is-robots-txt/
+
+.well-known/webauthn

@@ -21,3 +21,18 @@ https://github.com/ClearURLs/Addon
 
 
 https://www.youtube.com/watch?v=xvFZjo5PgG0
+
+
+"ref" https://www.ethicalads.io/?ref=rtd-sidebar
+Delivery https://ia.acs.org.au/article/2025/microsoft-retires-blue-screen-of-death-after-40-years.html?ref=newsletter&deliveryName=DM26606
+Song link https://odesli.co/
+https://en.wikipedia.org/wiki/Punycode
+https://www.npmjs.com/package/normalize-url
+https://www.ethicalads.io/?ref=rtd-sidebar
+?from=newsletter
+https://e-mail.wtf/
+disposable domains https://www.usercheck.com/provider/mail.™
+https://urlscan.io/
+https://developer.chrome.com/blog/css-nesting-relaxed-syntax-update/?utm_source=Codrops%20Subscribers&utm_campaign=e8fde0277b-COLLECTIVE_792&utm_medium=email&utm_term=0_-a43123b2e4-%5BLIST_EMAIL_ID%5D
+https://bitly.com/blog/trust-safety-at-bitly/
+“Variant” https://keyst.one/shop/products/keystone-tablet-plus?variant=KT003

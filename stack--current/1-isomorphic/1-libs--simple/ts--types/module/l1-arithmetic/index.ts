@@ -6,6 +6,7 @@
 export type Integer = number
 export type PositiveInteger = Integer
 export type PositiveIntegerInRange<min = PositiveInteger, max = PositiveInteger> = PositiveInteger
+export type LineNumber = PositiveIntegerInRange<1, 999999>
 
 export type Percentage = number // between 0 and 1
 
