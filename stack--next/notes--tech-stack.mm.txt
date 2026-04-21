@@ -1,6 +1,7 @@
 2024-02 https://cep.dev/posts/every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup/
 2024-11 https://vercel.com/blog/how-we-built-the-v0-ios-app
 2026-02 https://cpojer.net/posts/fastest-frontend-tooling
+[ ] https://github.com/millionco/react-doctor/issues/105#issuecomment-4265013082
 [ ] https://stackingthebricks.com/bootstrapper-tech-stack/
 API → openapi → openapi trpc / hono ??
 auth -- ? https://www.propelauth.com/
@@ -63,6 +64,7 @@ linter -- https://biomejs.dev/
 localias = securely manage local aliases for development servers https://github.com/peterldowns/localias
 log -- pino https://www.reddit.com/r/node/comments/eyfhlq/bunyan_hasnt_been_updated_in_almost_3_years_is/
 logs https://betterstack.com/
+marketing -- howto https://x.com/MarkKnd/status/2023413937719672979
 meta -- CNCF -- landscape = https://landscape.cncf.io/
 meta -- CNCF = the open source, vendor-neutral hub of cloud native computing, hosting projects like Kubernetes and Prometheus to make cloud native universal and sustainable https://landscape.cncf.io/
 meta -- https://stackshare.io/
@@ -71,6 +73,7 @@ mobile -- capacitor https://capacitorjs.com/  https://capawesome.io/  https://ca
 monorepo -- aware -- turborepo
 monorepo -- aware -- ✖ bolt
 next.js https://nextjs.org/docs
+npm -- security https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html
 pdf libs https://documenso.com/blog/introducing-libpdf-the-pdf-library-typescript-deserves
 pkg -- ai -- integrated skills https://tanstack.com/intent/latest/docs/registry
 pkg -- BigNum https://dev.to/fvictorio/a-comparison-of-bignumber-libraries-in-javascript-2gc5
@@ -100,6 +103,7 @@ ts -- tRPC https://trpc.io/docs/getting-started
 ts -- ts-pattern https://github.com/gvergnaud/ts-pattern
 ts -- zod, https://valibot.dev/guides/comparison/, typebox, ow
 ts-- scaling issues https://engineering.usemotion.com/moving-off-of-typescript-e7bb1f3ad091
+UI -- components -- https://mantine.dev/
 ui -- markdown -- editor https://overtype.dev/
 vite -- npm create vite@latest my-project
 vite -- vitest

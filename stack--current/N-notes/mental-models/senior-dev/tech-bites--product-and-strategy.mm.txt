@@ -19,10 +19,12 @@ alignment -- of incentives = https://vitalik.eth.limo/general/2024/09/28/alignme
 alignment -- of tech
 alignment -- of values
 another Uber = unethical, untenable, profit-driven startup who took a gambit evading the law, hoping to grow too big to fail before the law catches up. Except Uber was good at being bad, but X combined malfeasance with incompetence https://www.sandofsky.com/lambda-school/
+antisocial profit-maximizing corporations https://www.androidpolice.com/why-so-evil-google/
 B2B (Business to Business)
 B2C (Business to Customer)
-B2C -- DTC (direct-to-consumer) companies = sell products directly to consumers, bypassing traditional retail channels, allowing them to control the entire customer experience and build strong brand relationships
-B2C -- DTC -- often do well at the beginning, then a bunch of copycats come out and it's a race to the bottom funded by VC dollars https://www.youtube.com/watch?v=WcNbIm0fRxk
+B2C -- DTC (direct-to-consumer)
+B2C -- DTC -- companies = often do well at the beginning, then a bunch of copycats come out and it's a race to the bottom funded by VC dollars https://www.youtube.com/watch?v=WcNbIm0fRxk
+B2C -- DTC -- companies = sell products directly to consumers, bypassing traditional retail channels, allowing them to control the entire customer experience and build strong brand relationships
 B2G (Business to Government)
 barriers -- to entry -- doing a good job = ex. of epic store not displacing Steam because no competitive advantage
 barriers -- to entry -- low = low entry barrier to enable global adoption

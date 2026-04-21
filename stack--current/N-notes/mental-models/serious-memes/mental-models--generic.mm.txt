@@ -32,6 +32,7 @@
 5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often.
 5 mantras = by Christopher Davis (burnout)
 80/20 rule "Pareto distribution" https://en.wikipedia.org/wiki/Pareto_distribution
+? https://www.kitklarenberg.com/
 [ ] ++ https://savoir-sans-frontieres.com/
 [ ] +++ https://flinkliv.com/
 [ ] +++ https://fs.blog/mental-models/
@@ -50,6 +51,7 @@
 [ ] https://dontdie.bryanjohnson.com/
 [ ] https://effectiviology.com/
 [ ] https://en.wikipedia.org/wiki/Great_Recession
+[ ] https://en.wikipedia.org/wiki/National_Book_Award_for_Nonfiction
 [ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
 [ ] https://fs.blog/mental-models/
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
@@ -208,6 +210,7 @@ cadre = should lead, can change the world (cf. "du role social de l'officier")
 Can the Subaltern Speak? = highlights the challenges faced by marginalised groups in having their voices heard within dominant power structure https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak#%22Can_the_Subaltern_Speak?%22
 can't satisfy others
 cancel culture -- ex. of Brendan Eich https://www.spacebar.news/stop-using-brave-browser/
+capitalism -- antisocial profit-maximizing corporations
 capitalism -- state-corporate & = prioritize the accumulation of wealth over other interests
 care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
 career -- career limiting (action/move)
@@ -290,6 +293,8 @@ copernican principle = humans are not privileged observers of the universe "The 
 corporate slave (but also never achieving anything?)
 correlation is not causation https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation
 corruption -- 2025 Qatar gifting AirForce 1 https://www.theguardian.com/us-news/2025/may/11/trump-accept-luxury-plane-gift-qatar
+corruption -- political -- revolving door = situation where legislators, regulators, or personnel in the public sector moves to a similar position in the private sector, where many work in fields related to lobbying https://en.wikipedia.org/wiki/Revolving_door_(politics)
+corruption -- political https://en.wikipedia.org/wiki/Political_corruption
 cosmological models
 cosmological models -- alternative -- Janus https://januscosmologicalmodel.com/
 cosmological models -- alternative -- Quantised Inertia https://physicsfromtheedge.blogspot.com/2024/11/a-potted-history-of-qi.html
@@ -482,6 +487,7 @@ evolution -- gene-centered = https://en.wikipedia.org/wiki/Gene-centered_view_of
 evolution -- greater male variability hypothesis (heretic) https://en.wikipedia.org/wiki/Variability_hypothesis
 evolution -- LUCA https://en.wikipedia.org/wiki/Last_universal_common_ancestor
 evolution -- not just species = "The struggle for existence holds as much in the intellectual as in the physical world. A theory is a species of thinking, and its right to exist is coextensive with its power of resisting extinction by its rivals" https://en.wikipedia.org/wiki/Meme#Early_formulations
+evolution -- quirks of human anatomy https://www.sdbonline.org/sites/fly/lewheldquirk/figlegq6.htm
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 excuses vs. solutions
 executive
@@ -601,6 +607,7 @@ harassment = repeated pattern, or a particularly egregious instance, of offensiv
 haters -- haters gonna hate
 haters -- ignore the f’ing haters = including the ones "in the arena" https://aseemk.substack.com/p/ignore-the-f-ing-haters-json5
 hawks and doves https://seldo.com/posts/the_case_for_frameworks
+heckler = a person who harasses and tries to disconcert others with questions, challenges, or gibes.[1] Hecklers are often known to shout discouraging comments at a performance or event, or to interrupt set-piece speeches, with the intent of disturbing performers or participants. https://en.wikipedia.org/wiki/Heckler
 helicopter parent
 herbe toujours plus verte
 herd immunity
@@ -700,6 +707,7 @@ it's impossible to agree on what's allowed -- no vehicles in the park https://no
 it's impossible to agree on what's allowed https://danluu.com/impossible-agree/
 it's just 4x things!
 it's not about lowering the bar, it's about helping more people reach it.
+I’m disappointed = doesn’t accuse anyone. doesn’t assign blame. doesn’t make the other person wrong. simply implies — quietly, powerfully — that you expected better https://marcrandolph.substack.com/p/the-two-most-powerful-words-in-any
 J-curve = lower before increase https://en.wikipedia.org/wiki/J_curve
 Jack Welch A/B/C players -- A = filled with passion, committed to "making things happen", open to ideas from anywhere, blessed with much "runway" ahead of them, charisma, able to energize themselves and others, can make business productive and enjoyable at the same time, exhibit four E of leadership
 Jack Welch A/B/C players -- B = not visionary or the most driven, but "vital" because they make up the majority
@@ -713,6 +721,7 @@ job -- O-ring vs. foolproof -- foolproof jobs = jobs characterized by diminishin
 job -- O-ring vs. foolproof -- O-ring jobs = jobs featuring high strategic complementarities in terms of skill
 job -- O-ring vs. foolproof https://en.wikipedia.org/wiki/O-ring_theory_of_economic_development
 job -- readiness
+jobs -- keep interviewing, even if employed = keep an ear to the ground. Keep that resume updated. Keep applying for those positions. When you bomb an interview while you're gainfully employed, the only thing lost is a little bit of time and effort. You might also learn something from the experience. https://www.reddit.com/r/ExperiencedDevs/comments/1sqtvxz/you_should_really_consider_interviewing_even/
 Johari window https://en.wikipedia.org/wiki/Johari_window
 joie de l’effort = "Satisfaction lies in the effort, not in the attainment" Gandhi
 joie du don
@@ -1003,6 +1012,7 @@ network effect
 neuro-divergent
 Never interrupt someone doing what you said couldn't be done.
 Never job backwards. What-might-have-been was a waste of time. Follow your fate, and be satisfied with it, and be glad not to be a second-hand motor salesman, or a yellow-press journalist, pickled in gin and nicotine, or a cripple—or dead (Fleming / James Bond)
+never meet your heroes
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 new normal
 next larger context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
@@ -1219,6 +1229,7 @@ red herring
 redbaiting = reduction to communism
 reduce reuse recycle
 reference work = a document to which one can refer for information to be found quickly when needed https://en.wikipedia.org/wiki/Reference_work
+reflexivity = https://en.wikipedia.org/wiki/Reflexivity_(social_theory)
 regeneration -- urban = restoring wildlife
 regrets -- "biggest mistakes in life" = ppl more likely to mention failures to act on opportunities than regrettable actions
 regrets -- 5 top regrets of the dying -- 1 I wish I'd had the courage to live a life true to myself, not the life others expected of me

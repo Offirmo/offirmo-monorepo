@@ -5,12 +5,13 @@ import { normalizeꓽurlⵧhttpₓ } from '@monorepo-private/normalize-string'
 import type {LineRecord, DigitalHoardingMeme} from "../digital-hoarding-meme/types.ts";
 import * as DigitalHoardingMemeLib from "../digital-hoarding-meme/index.ts";
 import type {DigitalHoardingMemeplex} from "./types.ts";
-import { isꓽUrl‿str } from '../utils/index.ts'
+import {isꓽUrl‿str, isꓽYMDDate} from '../utils/index.ts'
 
 /////////////////////////////////////////////////
 
 function createꓽDigitalHordingMemeplex(): Immutable<DigitalHoardingMemeplex> {
 	return {
+		newsfeeds: [],
 		comments: [],
 		todos: [],
 		memes: [],
@@ -18,20 +19,26 @@ function createꓽDigitalHordingMemeplex(): Immutable<DigitalHoardingMemeplex> {
 	}
 }
 
-function addꓽcomment(state: Immutable<DigitalHoardingMemeplex>, line: string): Immutable<DigitalHoardingMemeplex> {
-	if (line.startsWith('//')) {
-		line = line.slice(2).trim()
+function addꓽcomment(state: Immutable<DigitalHoardingMemeplex>, line: Immutable<LineRecord>): Immutable<DigitalHoardingMemeplex> {
+	if (line._source.startsWith('//')) {
+		line = {
+			...line,
+			_source: line._source.slice(2).trim()
+		}
 	}
 
 	return {
 		...state,
-		comments: [...state.comments, line].sort(),
+		comments: [...state.comments, line].sort(DigitalHoardingMemeLib.compareꓽLineRecord),
 	}
 }
 
-function addꓽtodo(state: Immutable<DigitalHoardingMemeplex>, line: string): Immutable<DigitalHoardingMemeplex> {
-	if (line.startsWith('[ ]')) {
-		line = line.slice(3).trim()
+function addꓽtodo(state: Immutable<DigitalHoardingMemeplex>, line: Immutable<LineRecord>): Immutable<DigitalHoardingMemeplex> {
+	if (line._source.startsWith('?')) {
+		line = {
+			...line,
+			_source: line._source.slice(1).trim()
+		}
 	}
 
 	return {
@@ -40,19 +47,33 @@ function addꓽtodo(state: Immutable<DigitalHoardingMemeplex>, line: string): Im
 	}
 }
 
+function addꓽnewsfeed(state: Immutable<DigitalHoardingMemeplex>, line: Immutable<LineRecord>): Immutable<DigitalHoardingMemeplex> {
+	if (line._source.startsWith('[ ]')) {
+		line = {
+			...line,
+			_source: line._source.slice(3).trim()
+		}
+	}
+
+	return {
+		...state,
+		newsfeeds: [...state.newsfeeds, line].sort(),
+	}
+}
+
 function addꓽmeme(state: Immutable<DigitalHoardingMemeplex>, dhm: Immutable<DigitalHoardingMeme>): Immutable<DigitalHoardingMemeplex> {
 	const ǃ = assert_from({addꓽmeme})
 
 	let { abbreviations } = state
 	if (dhm.headingⵧshortened) {
-		ǃ.forⵧparam({dhm}).require(!!dhm.headingⵧfull, `internal abbrevation error`)
+		ǃ.forⵧparam({dhm}).require(!!dhm.headingⵧfull, `internal abbreviation error`)
 		if (state.abbreviations[dhm.headingⵧshortened]) {
-			ǃ.forⵧparam({dhm}).require(state.abbreviations[dhm.headingⵧshortened] === dhm.headingⵧfull, `conflicting abbreviations: ${dhm.headingⵧshortened}=>${state.abbreviations[dhm.headingⵧshortened]} vs. ${dhm.headingⵧfull}`)
+			ǃ.forⵧparam({dhm}).require(state.abbreviations[dhm.headingⵧshortened]?.headingⵧfull === dhm.headingⵧfull, `conflicting abbreviations: ${dhm.headingⵧshortened}=>${state.abbreviations[dhm.headingⵧshortened]?.headingⵧfull} vs. ${dhm.headingⵧfull}`)
 		}
 		else {
 			abbreviations = {
 				...state.abbreviations,
-				[dhm.headingⵧshortened]: dhm.headingⵧfull!,
+				[dhm.headingⵧshortened]: dhm,
 			}
 		}
 	}
@@ -72,23 +93,26 @@ function createꓽDigitalHordingMemeplexⵧfrom_mm_txt(mm_txt: string): DigitalH
 	return lines‿LineRecord.reduce((state, line_record: LineRecord) => {
 		const line = line_record._source
 
-		/*if (line._lineno === 460) {
-		debugger
+		/*if (line_record._lineno === 34) {
+			debugger
 		}*/
 
 		if (line.startsWith('//')) {
-			return addꓽcomment(state, line)
+			return addꓽcomment(state, line_record)
 		}
 
 		if (line.startsWith('[ ]')) {
-			return addꓽtodo(state, line)
+			return addꓽnewsfeed(state, line_record)
+		}
+
+		if (line.startsWith('?')) {
+			return addꓽtodo(state, line_record)
 		}
 		if (line.startsWith('http')) {
-			return addꓽtodo(state, line)
+			return addꓽtodo(state, line_record)
 		}
 		if (line.startsWith('+++')) {
-			// TODO refactor
-			return addꓽtodo(state, line)
+			return addꓽtodo(state, line_record)
 		}
 
 		const dhm: DigitalHoardingMeme = {
@@ -97,6 +121,7 @@ function createꓽDigitalHordingMemeplexⵧfrom_mm_txt(mm_txt: string): DigitalH
 			heading: 'PENDING',
 			description: undefined, // so far
 			//urls: [],
+			hasꓽevent: 'no', // so far
 		}
 
 		let segmentsⵧremaining = line.split(' ')
@@ -117,44 +142,12 @@ function createꓽDigitalHordingMemeplexⵧfrom_mm_txt(mm_txt: string): DigitalH
 			: []
 		segmentsⵧremaining = segmentsⵧremaining.slice(last_id_sep_index + 1)
 
-		/*
-		// note the urls
-		segmentsⵧremaining.forEach((segment) => {
-			if (isꓽUrl‿str(segment)) {
-				dhm.urls.push(normalizeꓽurlⵧhttpₓ(segment))
-			}
-		})
-
-		// remove the trailing urls
-		while (segmentsⵧremaining.length > 1 && isꓽUrl‿str(segmentsⵧremaining.at(-1))) {
-			segmentsⵧremaining.pop()
-		}
-		segmentsⵧremaining = segmentsⵧremaining.filter((segment, index) => {
-			if (isꓽUrl‿str(segment)) {
-				dhm.urls.push(normalizeꓽurlⵧhttpₓ(segment))
-				if ((equal_sep_index === -1 && index === 0) || index < equal_sep_index) {
-					// XXX do NOT filter out urls before '=' = part of the heading
-					return true
-				}
-				else {
-					return false
-				}
-			}
-
-			return true
-		})
-
-		if (segmentsⵧremaining.at(-1) === '=')
-			segmentsⵧremaining.pop()
-		*/
-
-
 		let equal_sep_index = segmentsⵧremaining.indexOf('=')
 		ǃ.forⵧvalue({equal_sep_index}).ensure(equal_sep_index === -1 || equal_sep_index > 0, '= sign should not appear at the beginning')
 
 		if (equal_sep_index === -1) {
 			dhm.description = ''
-			// trailing urls are not part of the heading unless just it
+			// trailing urls are not part of the heading unless the heading is a single url
 			while(segmentsⵧremaining.length > 1 && isꓽUrl‿str(segmentsⵧremaining.at(-1))) {
 				dhm.description = segmentsⵧremaining.pop() + ' ' + dhm.description
 			}
@@ -166,6 +159,32 @@ function createꓽDigitalHordingMemeplexⵧfrom_mm_txt(mm_txt: string): DigitalH
 			dhm.description = segmentsⵧremaining.slice(equal_sep_index + 1).join(' ')
 		}
 		segmentsⵧremaining = []
+
+		if (isꓽYMDDate(dhm.parent_headings[0])) {
+			dhm.hasꓽevent = 'pure'
+			// expand the date
+			const d = dhm.parent_headings.shift()!
+			const split = d.split('-')
+			dhm.parent_headings.unshift(split[2] || '??')
+			dhm.parent_headings.unshift(split[1] || '??')
+			dhm.parent_headings.unshift(split[0]!)
+		}
+		else if (isꓽYMDDate(dhm.heading.split(' ')[0])) {
+			dhm.hasꓽevent = dhm.parent_headings.length ? 'side' : 'pure'
+			// expand the date
+			const d = dhm.heading.split(' ')[0]!
+			const split = d.split('-')
+			dhm.parent_headings.push(split[0]!)
+			dhm.parent_headings.push(split[1] || '??')
+			dhm.parent_headings.push(split[2] || '??')
+			dhm.heading = dhm.heading.split(' ').slice(1).join(' ')
+			// what if no more heading? can happen if the date was selected as the heading
+			if (!dhm.heading) {
+				ǃ.forⵧvalue({equal_sep_index}).ensure(equal_sep_index === -1, 'expectation when heading was purely a date')
+				dhm.heading = dhm.description
+				dhm.description = ''
+			}
+		}
 
 		// TODO handle citations
 		if (!dhm.heading.startsWith('"') && !dhm.heading.endsWith(';)')) {

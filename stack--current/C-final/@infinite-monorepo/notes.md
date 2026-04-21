@@ -12,6 +12,9 @@ Vite+ detects the package manager from the workspace root in this order:
 * yarn.config.cjs
 
 
+https://github.com/sindresorhus/eslint-plugin-unicorn/tree/main/docs/rules
+https://typescript-eslint.io/rules/
+
 
 use this pkg? https://github.com/privatenumber/tasuku
 

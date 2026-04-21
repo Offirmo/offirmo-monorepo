@@ -3,6 +3,7 @@
 2015-09 XcodeGhost https://en.wikipedia.org/wiki/XcodeGhost
 2025-11-24 Shai Hulud 2 https://helixguard.ai/blog/malicious-sha1hulud-2025-11-24
 2025-11-29 React2Shell https://react2shell.com/
+2026-04 Mythos
 [ ] +++ http://zesty.ca/capmyths/usenix.pdf
 [ ] ATT&CK® is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations https://attack.mitre.org/
 [ ] crypto primitives https://keccak.team/glossary.html
@@ -18,6 +19,7 @@ attacks -- 0 click && = exploit in software that handles incoming data, like mes
 attacks -- business email compromise (BEC)
 attacks -- credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
 attacks -- direct blackmail = example of letter to individual https://www.reddit.com/r/cybersecurity_help/comments/1f7tbec/demand_for_bitcoin_payment_made_with_threats/
+attacks -- DPRK remote IT  = https://www.dfat.gov.au/news/media-release/combating-dprk-remote-it-worker-threats
 attacks -- griefing
 attacks -- harvest-now/decrypt-later = advancein cryptography
 attacks -- hash collision https://en.wikipedia.org/wiki/Collision_attack
@@ -28,6 +30,7 @@ attacks -- open redirect = exploiting a site's redirect mechanism to go to anoth
 attacks -- phishing -- (many variants)
 attacks -- phishing https://www.azarask.in/blog/post/a-new-type-of-phishing-attack/
 attacks -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
+attacks -- push notifications = they're stored in the OS and can be diclosed if ordered to (Apple, Android) https://x.com/KitKlarenberg/status/2042338634062299422
 attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-npm-ecosystem
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
 attacks -- timing https://timing.attacks.cr.yp.to/programming.html
@@ -77,6 +80,7 @@ defense -- Primary / Secondary / Tertiary
 denial of wallet = like DoS but service down due to no more credits https://www.kasada.io/use-cases/genai-abuse-73-percent-have-experienced-genai-security-incidents/
 device posture
 digital security https://securitylab.amnesty.org/digital-resources/
+DPRK "Democratic People's Republic of Korea" = a common attacker (or scapegoat)
 email -- SPF https://www.digitalocean.com/community/tutorials/how-to-use-an-spf-record-to-prevent-spoofing-improve-e-mail-reliability
 encryption of stored data
 eviction / eradication = the process of removing a cyber threat actor or malicious code from a compromised environment https://www.cisa.gov/resources-tools/resources/eviction-strategies-tool
@@ -217,6 +221,7 @@ source maps leaking secrets https://lachlan.nz/blog/x-marks-the-spot
 spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
 surveillance self-defense = Tips, Tools and How-tos for Safer Online Communications https://ssd.eff.org/
 Tails = a portable operating system that protects your privacy and helps you avoid censorship https://tails.net/about/
+the exploit economy https://x.com/gothburz/status/2018695140718649469
 threat modeling
 through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity
 through obscurity -- still useful https://news.ycombinator.com/item?id=24444497

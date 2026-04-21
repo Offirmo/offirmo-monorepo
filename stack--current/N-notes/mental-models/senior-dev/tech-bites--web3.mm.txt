@@ -28,6 +28,7 @@
 2021 NFT "EVERYDAYS: THE FIRST 5000 DAYS" sold at Christies for MM https://onlineonly.christies.com/s/beeple-first-5000-days/beeple-b-1981-1/112924
 2022-01 facebook abandons its Libra/Diem cryptocurrency project https://en.wikipedia.org/wiki/Diem_(digital_currency)
 2022-05 Terra-Luna de-peg TerraUSD = algorithmic stablecoin https://www.sciencedirect.com/science/article/abs/pii/S1544612322005359
+2022-05-02 Bored Ape Virtual Land Sale Breaks Ethereum, Wastes $180 Million in Fees https://www.vice.com/en/article/bored-ape-virtual-land-sale-breaks-ethereum-wastes-dollar180-million-in-fees/
 2022-11-11 "never again"
 2023 Binance pleads guilty to violating US money-laundering laws and other violations and the justice department fined it a whopping $4bn
 2024 Ethereum 7702 = https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
@@ -61,10 +62,21 @@
 2025-12-17 nice recap of current state of crypto https://x.com/dougiedeluca/status/2000957512862884100
 2025-12-26 wallet drainer via store API compromise https://x.com/0xakinator/status/2004297673067704651 https://x.com/eowynchen/status/2004649284537647161 https://x.com/TradesTyr/status/2004674309923725735
 2026-01 crypto illegal could be ~50% https://mail.blockworks.com/p/thursday-links-de7b
+2026-03-12 aave incident https://x.com/aave/status/2032959512244518962
+2026-03-14 "The Ethereum foundation mandate" https://x.com/ethereumfndn/status/2032460726728573298
 2026-03-22 $25M Resolv USR Minting Heist https://x.com/chainalysis/status/2035882965449019640 https://bfmtimes.com/hacker-mints-80-million-worth-of-fake-stablecoins-and-swaps-them-for-eth/ https://cryptopotato.com/how-the-25m-resolv-usr-minting-heist-happened/
 2026-03-31 new quantum breaktrhough Q-day now set to 2029 https://x.com/drakefjustin/status/2038847732152996108
+2026-04-01 Drift hack https://x.com/DriftProtocol/status/2040611161121370409 https://www.cyfrin.io/blog/drift-hack-learnings
 2026-04-12 Jusin Sun "discovers" that WLF is not honest 🤣 https://x.com/justinsuntron/status/2043234272622883074
+? alchemy https://www.alchemy.com/docs
+? gas network https://www.blocknative.com/
+? https://consensys.io/
+? https://defi-skills.nethermind.io/
+? https://iancoleman.io/
 ? https://intel.arkm.com/
+? https://openanonymity.ai/
+? https://projectjin.ai/
+? https://www.codex.io/
 [ ] +++ https://support.ledger.com/topic?topic=Crypto_Concepts https://support.ledger.com/topic?topic=Ledger_Live
 [ ] Aave ??
 [ ] abstracts on many chains https://www.circle.com/multi-chain-usdc
@@ -74,8 +86,10 @@
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
 [ ] Gitcoin https://grants.gitcoin.co/
 [ ] great videos on DeFi https://www.youtube.com/@Finematics
+[ ] https://beincrypto.com/
 [ ] https://blog.labeleven.dev
 [ ] https://brave.com/web3/
+[ ] https://github.com/paulmillr
 [ ] https://giveth.io/
 [ ] https://info.etherscan.com/
 [ ] https://support.infinex.xyz/en/articles/9719898-crypto-terms
@@ -88,6 +102,7 @@
 [ ] list of chains
 [ ] news https://www.binance.com/en/square/trending
 [ ] news https://x.com/beincrypto
+[ ] Sydney guy https://zorz.substack.com/
 Aave
 Aave = decentralized lending protocol https://aave.com/
 address -- evm = the right-most 160 bits of a Keccak hash of an ECDSA public key https://info.etherscan.com/what-is-an-ethereum-address/
@@ -236,6 +251,7 @@ corporate blockchains = "Big companies launching L1s is kind of a rejection of t
 corporate havens = easy to hide wealth and launder money e.g. Delaware https://www.a16z.news/p/charts-of-the-week-dexit-real-or https://en.wikipedia.org/wiki/Wyoming_as_a_corporate_haven https://www.icij.org/investigations/pandora-papers/the-cowboy-cocktail-how-wyoming-became-one-of-the-worlds-top-tax-havens/
 covenants tech = ???
 crapto = anything not BitCoin (maybe Ether?)
+creator coins -- vitlik opinion = https://x.com/VitalikButerin/status/2017956762347835488
 creator coins https://x.com/VitalikButerin/status/2017956762347835488
 cross-chain
 cross-chain -- chain abstraction
@@ -252,6 +268,7 @@ cryptocurrency -- legal definition -- AU = A type of currency that only exists i
 cryptocurrency -- legality https://en.wikipedia.org/wiki/Legality_of_cryptocurrency_by_country_or_territory
 cryptocurrency = a medium of exchange secured by a blockchain-based ledger https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 CT "Crypto Twitter" = a subset of the popular social media platform Twitter, specifically focused on cryptocurrency, blockchain technology, and decentralized finance https://www.bitget.com/wiki/what-is-ct-in-crypto
+CT -- "manipulation caller" = genre on Crypto Twitter with a strong survivorship-bias problem
 culture -- "Be your own bank" and personally secure your assets
 culture -- "HODL"
 culture -- "horrifically adversarial environment. Anything that can be exploited will be exploited" @kayn
@@ -294,6 +311,7 @@ decentralized identifiers https://www.w3.org/TR/did-1.0/#identifier
 decentralized identity = technology that aims to give individuals more control and ownership over their digital identity. In traditional online systems, users often rely on centralized identity providers (like social media platforms or email services) to manage their identities and access various online services. Decentralized identity shifts the control of identity information back to the individual user. It uses globally unique identifiers associated with a decentralized identifier (DID) document. This document contains public keys, cryptographic material, and service endpoints related to identity. The technology uses selective disclosure to share specific identity attributes and minimize exposure to personally identifiable information (PII) during identity verification processes.
 DeFi
 DeFi -- lending / borrowing -- Compound, AAVE
+defi -- low-risk && = basic function of payments and savings, and well-understood tools like synthetic assets and fully collateralized lending, and the ability to exchange between these assets. https://vitalik.eth.limo/general/2025/09/21/low_risk_defi.html
 DePin = decentralized physical infrastructure networks
 DeSci = ???
 Difficulty Bomb = designed to push the Ethereum chain from proof-of-work consensus mechanism to proof-of-stake in the future by exponentially increasing the difficulty of mining
@@ -312,6 +330,7 @@ domain names = .crypto https://support.unstoppabledomains.com/support/solutions/
 domain names = .eth
 domain names = .xyz introduced in 2014, but "top 5 for malicious domain registrations [2024]" https://en.wikipedia.org/wiki/.xyz
 dominance = coin dominance (BitCoin) https://www.coingecko.com/en/charts/bitcoin-dominance
+don't invest recklessly https://www.reddit.com/r/Bitcoin/comments/7gi55s/dont_invest_recklessly/
 dWebsite -- .limo https://eth.limo/
 dWebsite https://eth-limo.gitbook.io/documentation/introduction/what-is-a-dwebsite
 DYOR
@@ -326,6 +345,7 @@ ERC-20 = fungible tokens "each token of a given type is identical and interchang
 ERC-721 = non-fungible tokens "each NFT is unique and has distinct properties that set it apart from others"
 ETC -- ECIP "Ethereum Classic Improvement Proposal"
 ETC = Ethereum Classic https://en.wikipedia.org/wiki/Ethereum_Classic
+eth.limo = provides a free, open-source gateway to decentralized web content built with the Ethereum Name Service (ENS) and various decentralized storage protocols https://ethlimo.substack.com/p/ethlimo-everything-youve-wanted-to https://eth-limo.gitbook.io/documentation
 Ethena
 Ether -- value? https://medium.com/ethhub/why-ether-is-valuable-2b4e39e01eb3
 Ethereum -- & Virtual Machine (EVM) = a decentralized virtual environment that executes code consistently and securely across all Ethereum nodes. Nodes run the EVM to execute smart contracts, using "gas" to measure the computational effort required for operations, ensuring efficient resource allocation and network security. https://ethereum.org/en/developers/docs/evm/
@@ -399,6 +419,7 @@ griefing attacks = no gain for the attacker, just issues for the victim. ex "Jus
 https://freeromanstorm.com/
 https://memecore.com/ = ?
 https://web3bounty.io/
+https://www.archivalsurvival.com.au/collections/document-copy-paper
 humanity protocol = ? https://www.humanity.org/
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
 Hyperliquid -- ? https://hyperunit.xyz/
@@ -416,6 +437,7 @@ ICO -- mills = help ICO for a % then immediately sell
 ICO https://en.wikipedia.org/wiki/Initial_coin_offering
 illegal -- exchanges -- unlawfully facilitating the trading of several cryptocurrency tokens that SEC leadership (...) believed should have been registered as securities
 immutability
+incident -- response template https://frameworks.securityalliance.org/incident-management/incident-response-template/overview/
 Infinex "solve onchain user experience" https://infinex.xyz/
 inflationary rewards = ??
 InfoFi "Information Finance" -- Today’s dominant approach tracks social sentiment. Leading platforms scan Crypto Twitter for mentions, measure engagement rates, and rank projects by mindshare. These tools excel at capturing conversation volume but miss a fundamental truth: talk is cheap, especially in crypto https://caladan.xyz/layer3/
@@ -604,6 +626,7 @@ proof-of -- 2018 proof of history -- https://medium.com/solana-labs/proof-of-his
 proof-of = component in consensus mechanisms that protect against Sybil attacks by making it "crypto-economically" not worth it to do a Sybil attack https://ethereum.org/en/developers/docs/consensus-mechanisms/
 Provider Discovery Library = A library or piece of software that assists a DApp to interact with the Wallet https://eips.ethereum.org/EIPS/eip-6963
 public key cryptography
+pump.fun -- manipulation = pump.fun is rigged by the house (as expected) https://x.com/WhiteWhaleLabs/status/2045184600029254102
 quantum procrastinators
 r/CryptoCurrency https://www.reddit.com/r/CryptoCurrency/
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
@@ -884,6 +907,7 @@ who's who -- Anthony Di Iorio
 who's who -- Charles Hoskinson
 who's who -- CZ Binance https://x.com/cz_binance
 who's who -- Gavin Wood = Eth, inventor of Solidity? DAO hack
+who's who -- Jeffrey Yan = genius founder of Hyperliquid https://colossus.com/article/beyond-the-sky-jeffrey-yan-hyperliquid/
 who's who -- Joseph Lubin
 who's who -- Kain Warwick https://paragraph.com/@kain
 who's who -- Kevin O'Leary
@@ -894,7 +918,7 @@ who's who -- Paul Sebastien
 who's who -- Sam Bankman-Fried https://en.wikipedia.org/wiki/Sam_Bankman-Fried
 who's who -- Satoshi Nakamoto = https://en.wikipedia.org/wiki/Satoshi_Nakamoto
 who's who -- Taylor Gerring
-who's who -- The White Whale https://x.com/TheWhiteWhaleV2
+who's who -- The White Whale https://x.com/TheWhiteWhaleV2 https://x.com/WhiteWhaleLabs
 who's who -- Virgil Griffith
 who's who -- Vitalik Buterin = https://en.wikipedia.org/wiki/Vitalik_Buterin https://x.com/VitalikButerin
 who's who -- William Entriken

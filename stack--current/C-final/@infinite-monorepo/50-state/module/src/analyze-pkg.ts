@@ -706,6 +706,8 @@ async function getꓽpackage_details(pkg_path: PathⳇAny, options: Partial<Opti
 					if (dep_type !== 'dev' && ![
 							'@monorepo-private/state-migration-tester',
 							'@offirmo/unit-test-toolbox',
+							'@monorepo-private/unit-test-toolbox',
+							'@monorepo-private/toolbox--unit-tests',
 						].includes(result.fqname)
 					) {
 						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')

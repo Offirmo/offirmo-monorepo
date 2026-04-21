@@ -1,5 +1,8 @@
+1992 sterling crisis "Black Wednesday" https://en.wikipedia.org/wiki/Black_Wednesday
+1999–2002 sale of British gold reserves https://en.wikipedia.org/wiki/1999%E2%80%932002_sale_of_British_gold_reserves
 2008 financial crisis https://en.wikipedia.org/wiki/2008_financial_crisis
 2023-10 bank run collapsing Silicon Valley Bank https://en.wikipedia.org/wiki/Collapse_of_Silicon_Valley_Bank
+? eToro
 [ ] AI https://github.com/georgezouq/awesome-ai-in-finance
 [ ] https://en.wikipedia.org/wiki/Portal:Money
 accounting system
@@ -90,6 +93,7 @@ government -- fiscal austerity
 government -- high public spending
 government confiscation = forced to give precious metal
 hedge fund = risky, no longer hedge https://www.investor.gov/introduction-investing/investing-basics/investment-products/private-investment-funds/hedge-funds
+https://en.wikipedia.org/wiki/Impossible_trinity
 https://www.auspayplus.com.au/about-us
 index -- big mac = compare purchasing power across countries https://en.wikipedia.org/wiki/Big_Mac_Index
 index -- cosmetics -- theory contends that consumers will be more willing to buy less costly luxury goods when they are facing an economic crisis https://en.wikipedia.org/wiki/Lipstick_effect
@@ -161,3 +165,4 @@ value -- perceived
 value -- store of value = keep value despite inflation etc. ex. gold or house or bitcoin (maybe) https://en.wikipedia.org/wiki/Store_of_value
 value -- use = tangible features of a commodity (a tradeable object) which can satisfy some human requirement, want or need, or which serves a useful purpose https://en.wikipedia.org/wiki/Use_value
 Wells Notice https://en.wikipedia.org/wiki/Wells_notice
+“If you own spot, you own the market.” https://x.com/WhiteWhaleLabs/status/2018745502439964861

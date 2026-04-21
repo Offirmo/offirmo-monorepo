@@ -15,6 +15,7 @@
 [ ] CSS https://ishadeed.com/articles/
 [ ] design https://www.youtube.com/@phoebeyutbt/videos
 [ ] https://browser.engineering/index.html
+[ ] https://component.gallery/design-systems/
 [ ] https://csswizardry.com/archive/
 [ ] perf https://github.com/prettydiff/wisdom/blob/master/performance_frontend.md
 [ ] security https://portswigger.net/web-security/all-topics
@@ -377,6 +378,7 @@ monitoring -- real user & (RUM) = passive monitoring technology that records all
 monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_monitoring
 native apps with JS https://v2.tauri.app/
 navigation -- client side vs full refresh
+next -- hot patching libs https://github.com/vercel/next.js/blob/canary/packages/next/next-runtime.webpack-config.js#L37-L42
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
 noopener https://mathiasbynens.github.io/rel-noopener/
 oklch https://oklch.com/
@@ -577,6 +579,18 @@ UX -- good practices -- stick to established patterns https://medium.com/@daniel
 UX -- mobile -- sheet = a modal component that slides in from the bottom edge of the mobile device screen, similar to Tray. However, unlike Tray, Sheet has a fixed height. It's particularly useful for displaying interfaces with long content or those requiring interaction with the virtual keyboard.
 UX -- mobile -- tray = a lightweight, dismissible modal component anchored to the bottom of a mobile device's screen. It slides up from the bottom and overlays existing content. Users can dismiss the tray by swiping down.
 UX -- modality = a design technique that presents UI content in a separate, focused view. This dedicated mode prevents interaction with the parent view and requires a specific action to exit
+UX -- patterns -- Algorithmic Transparency = Algorithms that make their reasoning visible
+UX -- patterns -- Ambient Co-presence = Creating a subtle, peripheral, and synchronous sense of shared space and context on the web
+UX -- patterns -- Assumed Audiences = Naming your invisible audiences to free yourself from unspoken obligations
+UX -- patterns -- Command K Bars = Command line bars you can quickly summon with a keyboard shortcut
+UX -- patterns -- Computational Notebooks = Shareable, browser-based documents that can compile and run code
+UX -- patterns -- Daily Notes Pages = Daily notes as a frictionless default input for personal knowledge management systems
+UX -- patterns -- Epistemic Disclosure = Providing clear metadata on the epistemic validity of content
+UX -- patterns -- Folk Interfaces = People reappropriating existing software to solve their own unique problems
+UX -- patterns -- Historical Trails = Giving people a visible, useful trail of where they've been over the course of an exploratory journey
+UX -- patterns -- Programmable Notes = Agent-based note-taking systems that can prompt and facilitate custom workflows
+UX -- patterns -- Programming Portals = Small, scoped areas within a graphical interface that allow users to read and write simple programmes
+UX -- patterns -- Spatial Web Browsing = Adding spatial affordances to the experience of browsing the web
 UX -- principle of least astonishment (POLA) = general principle in the design of all kinds of interfaces. It is based on the idea that human beings can only pay full attention to one thing at one time, leading to the conclusion that novelty should be minimized.
 UX -- principles and cognitive bias relevant https://growth.design/psychology
 UX -- properties https://en.wikipedia.org/wiki/User_interface#Types

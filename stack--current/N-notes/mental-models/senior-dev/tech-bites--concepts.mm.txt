@@ -7,6 +7,7 @@
 2010's tech bubble, a period where mediocre people could raise ludicrous money amid a venture capitalist echo chamber fueled by low-interest rates https://www.sandofsky.com/lambda-school/
 2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
 5 min zoom vs 10 emails/comments volley https://blog.jpl-consulting.com/2010/04/ten-email-volley-or-five-minute-phone-call/
+? microformats https://web.archive.org/web/20250926192326/https://www.hotelsmallorca24.com/microformatiquecom/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [ ] +++ https://explorer.globe.engineer/
 [ ] +++ https://martinfowler.com/
@@ -29,6 +30,7 @@
 [ ] https://github.com/charlax/professional-programming
 [ ] https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md
 [ ] https://github.com/kilimchoi/engineering-blogs
+[ ] https://iancoleman.io/quotes/
 [ ] https://learnxinyminutes.com/
 [ ] https://matklad.github.io/2023/08/06/fantastic-learning-resources.html
 [ ] https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
@@ -37,6 +39,7 @@
 [ ] https://www.atlassian.com/team-playbook/plays/elevator-pitch
 [ ] https://www.developing.dev/p/5-books-every-software-engineer-should
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
+[ ] https://www.reddit.com/r/ExperiencedDevs/
 [ ] https://www.tedinski.com/archive/
 [ ] https://zknill.io/posts/every-programmer-should-know/
 [ ] patterns https://www.patterns.dev/
@@ -128,6 +131,8 @@ big companies software = At big companies, software tends to be written by large
 bit-flips causing 25% of errors in Firefox https://mas.to/@gabrielesvelto/116171750653898304
 blocking
 blocklist/blacklist -- https://paulgraham.com/spamhausblacklist.html
+books -- clean code = https://www.reddit.com/r/ExperiencedDevs/comments/1g2l3wc/comment/lrpupgp/
+books -- Philosophy of Software Design = controversed https://www.reddit.com/r/ExperiencedDevs/comments/1g2l3wc/book_club_i_dont_understand_why_philosophy_of/
 bootcamps https://www.sandofsky.com/lambda-school/
 bossware https://ia.acs.org.au/article/2024/workers-and-bosses-engage-in-sneaky-tactics.html
 bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
@@ -590,6 +595,7 @@ internal developer platform -- private registry
 interpreters = make your own programming language https://craftinginterpreters.com/
 Inversion of control (IoC) = programming principle whereby flow is managed in the opposite way to traditional procedural programming. With inversion of control, custom-written portions of a program receive the flow of control from a generic framework, as opposed to the traditional procedural approach whereby custom code calls into reusable libraries to take care of generic tasks. With inversion of control, the framework calls into custom, or task-specific, code
 is it worth the time? https://will-keleher.com/posts/its-not-worth-the-time-yet/
+jobs -- meaningful -- vs. hyper optimisation of ads delivery = https://www.reddit.com/r/ExperiencedDevs/comments/1sq5y4t/advice_on_moving_from_big_tech_to_something_more/
 Joel test -- 01 Do you use source control?
 Joel test -- 02 Can you make a build in one step?
 Joel test -- 03 Do you make daily builds?
@@ -698,6 +704,7 @@ lock-in
 lock-in -- vendor
 lodash
 log
+logging -- wide events = https://jeremymorrell.dev/blog/a-practitioners-guide-to-wide-events/
 long-term support (LTS)
 loop
 loop - breaking out of
@@ -928,6 +935,7 @@ RFC "Request For Comments" https://rfc.fyi/
 RFC 2119 terminology = must, must not, should, should not, and may. The terms prefer and avoid correspond to should and should not, respectively. Imperative and declarative statements are prescriptive and correspond to must.
 robustness -- principle (beware bad effects) https://en.wikipedia.org/wiki/Robustness_principle
 robustness https://en.wikipedia.org/wiki/Robustness_principle
+roles -- dps, tank, utility, healer https://x.com/karrisaarinen/status/2038356036390998229
 rollback
 rolling deploy
 RPC -- advocacy https://blog.cloudflare.com/javascript-native-rpc/

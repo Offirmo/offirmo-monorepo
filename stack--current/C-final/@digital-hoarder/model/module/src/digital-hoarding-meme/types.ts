@@ -16,11 +16,18 @@ interface DigitalHoardingMeme extends LineRecord {
 	parent_headings: string[] // may be empty
 
 	// both or none. .heading is the preferred form, must equal one of those, usually "shortened"
+	// TODO group?
 	headingⵧshortened?: string
 	headingⵧfull?: string
 
 	description: string | undefined
 
+	hasꓽevent: // to more easily fish them out
+		| 'no'
+		| 'pure'
+		| 'side'
+
+	//url_canonical?: Url‿str // when there is a clear one. should be appended to the description. (TODO review this?) NO can be dynamically extracted later!
 	// XXX what is that? why?
 	//urls: Array<Url‿str> // order is important
 }

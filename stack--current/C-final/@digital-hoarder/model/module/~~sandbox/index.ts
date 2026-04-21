@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import type {Html‿str, Url‿str} from "@monorepo-private/ts--types--web";
+import type {Html‿str} from "@monorepo-private/ts--types--web";
 import type {Immutable} from "@monorepo-private/ts--types";
 
 import he from 'he'
@@ -28,7 +28,7 @@ for (const line of memeplex.memes) {
 
 const DEBUG = true
 
-function Segment({s}: {s: string}) {
+function Segment({s, memeplex}: {s: string, memeplex: Immutable<DigitalHoardingMemeplex>}) {
 	const split = s.split(' ')
 
 	return split
@@ -77,6 +77,15 @@ function Segment({s}: {s: string}) {
 				return `<span class="separator">${s}</span>`
 			}
 
+			if (!memeplex.abbreviations[s]) {
+				if (Object.values(memeplex.abbreviations)[s]) {
+					// todo
+				}
+			}
+			else {
+				return `<abbr title="${he.escape(memeplex.abbreviations[s])}">${he.escape(s)}</abbr>`
+			}
+
 			return he.escape(s)
 		})
 		.join(' ')
@@ -95,34 +104,13 @@ function append(html: Html‿str, memeplex: Immutable<DigitalHoardingMemeplex>, 
 		html += `<div class="meme-line" data-counter="${counter++}">\n`
 		if (DEBUG) html += `<small class="original-line">${he.escape(`${dhm._lineno}: ${dhm._source}`)}</small><br/>`
 		html += [
-			...dhm.parent_headings.map(s => `<span class="parent-heading">${Segment({s})}</span>`),
+			...dhm.parent_headings.map(s => `<span class="parent-heading">${Segment({s, memeplex})}</span>`),
 			`<span class="heading">${Segment({s: dhm.headingⵧfull
 				? `${dhm.headingⵧshortened} (${dhm.headingⵧfull})`
-				: dhm.heading})}</span>`,
+				: dhm.heading, memeplex})}</span>`,
 		].join(`<span class="separator"> ⵧ </span>`)
 
-		html += Segment({s: dhm.description ? ` = ${dhm.description}` : ''})
-
-		/*
-		const full_id__segments = MemeLib.getꓽheadings_path(dhm)
-		//const urlsⵧleft_to_insert = new Set<Url‿str>(dhm.urls.filter(url => !full_id__segments.includes(url)))
-		let full_description_txt = [
-			dhm.description ?? '',
-			//...dhm.urls.filter(url => urlsⵧleft_to_insert.has(url))
-		].filter(s => !!s).join(' ')
-
-		if (full_description_txt) {
-			html += Segment({
-				s: full_description_txt.startsWith('http')
-					? ' '
-					: ' = '
-			})
-			html += [
-				dhm.description ?? '',
-				//...dhm.urls.filter(url => urlsⵧleft_to_insert.has(url))
-				].filter(s => !!s).join(' ').split(' ').map(s => Segment({s: s!})).join(' ')
-		}
-		 */
+		html += Segment({s: dhm.description ? ` = ${dhm.description}` : '', memeplex})
 
 		html += `</div> <!-- meme -->\n`
 	}

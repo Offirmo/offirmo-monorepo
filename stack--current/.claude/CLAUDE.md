@@ -1,1 +1,1 @@
-Read the [AGENTS.md](../AGENTS.md) file.
+@../AGENTS.md

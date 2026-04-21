@@ -165,3 +165,5 @@ https://muffin.xdg.com/en/yyweb/s.html?ppid=b95d9645-6126-4d2a-af31-9b9365c2fa25
 https://www.cloudflare.com/learning/bots/what-is-robots-txt/
 
 .well-known/webauthn
+
+domain names https://instantdomainsearch.com/

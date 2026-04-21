@@ -1,8 +1,8 @@
 import { assert_from } from '@monorepo-private/assert'
 import type { Immutable, CompareFn } from '@monorepo-private/ts--types'
-import type {Url‿str} from "@monorepo-private/ts--types--web";
+import type { Url‿str } from "@monorepo-private/ts--types--web";
 
-import type { DigitalHoardingMeme } from "./types.ts";
+import type { LineRecord, DigitalHoardingMeme } from "./types.ts";
 
 /////////////////////////////////////////////////
 
@@ -34,6 +34,14 @@ function deriveꓽDigitalHoardingMeme‿line(dhm: Immutable<DigitalHoardingMeme>
 	return result
 }
 
+const compareꓽLineRecord: CompareFn<LineRecord> = (a, b) => {
+	let result = a._source.localeCompare(b._source)
+	if (result !== 0)
+		return result
+
+	return a._lineno - b._lineno
+}
+
 const compareꓽDigitalHoardingMeme: CompareFn<DigitalHoardingMeme> = (a, b) => {
 	const la = deriveꓽDigitalHoardingMeme‿line(a).toLowerCase()
 	const lb = deriveꓽDigitalHoardingMeme‿line(b).toLowerCase()
@@ -47,6 +55,8 @@ const compareꓽDigitalHoardingMeme: CompareFn<DigitalHoardingMeme> = (a, b) => 
 /////////////////////////////////////////////////
 
 export {
+	compareꓽLineRecord,
+
 	getꓽheadings_path,
 	deriveꓽDigitalHoardingMeme‿line,
 	compareꓽDigitalHoardingMeme,
