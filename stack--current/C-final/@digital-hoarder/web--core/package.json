@@ -12,7 +12,10 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@monorepo-private/assert": "*"
+		"@digital-hoarder/model": "*",
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/css--framework": "*",
+		"he": "^1"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
@@ -27,7 +30,6 @@
 		"sandbox": "npm-run-all clean --parallel _start:vite:sandbox"
 	},
 	"devDependencies": {
-		"@digital-hoarder/model": "^0.0.1",
 		"@monorepo-private/config--typescript": "*",
 		"@monorepo-private/monorepo-scripts": "*",
 		"@monorepo-private/storypad": "*",
@@ -35,6 +37,7 @@
 		"@monorepo-private/toolbox--vite": "*",
 		"@monorepo-private/ts--types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/he": "^1",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"npm-run-all": "^4",

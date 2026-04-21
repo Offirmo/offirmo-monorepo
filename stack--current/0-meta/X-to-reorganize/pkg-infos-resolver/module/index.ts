@@ -230,6 +230,8 @@ class PkgInfosResolver {
 			pkg_name.startsWith('@monorepo-private/')
 			|| pkg_name.startsWith('@oh-my-rpg/')
 			|| pkg_name.startsWith('@dev-docs--web3/')
+			|| pkg_name.startsWith('@digital-hoarder/')
+			|| pkg_name.startsWith('@glim/')
 			|| pkg_name.startsWith('@infinite-monorepo/')
 			|| pkg_name.startsWith('@tbrpg/')
 		)
