@@ -18,7 +18,7 @@ https://github.com/kitten/whatwg-url-minimum
 
 https://github.com/ClearURLs/Addon
 
-
+domain information https://radar.cloudflare.com/domains/domain/archive.today
 
 https://www.youtube.com/watch?v=xvFZjo5PgG0
 

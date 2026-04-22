@@ -1,4 +1,5 @@
 +++ Oops, You Wrote a Database = those who fail to study databases are doomed to write them https://dx.tips/oops-database
+? https://www.dbpro.app/blog/do-you-even-need-a-database
 [ ] Database Design Patterns Every https://www.bytebase.com/blog/database-design-patterns/
 [ ] https://www.bytebase.com/blog/database-design-patterns/
 ACID -- 1 Atomicity = transactions are "all or nothing"
@@ -67,6 +68,8 @@ locking -- should be avoided at all cost
 multiversion concurrency control (MVCC) = a popular database mechanism for tracking changes in a non-blocking fashion, where for any key we can keep multiple versions of its values for different points in time https://en.wikipedia.org/wiki/Multiversion_concurrency_control
 MySQL -- gotchas -- varchar columns return data with the case stored but, by default, are case-insensitive for comparisons.
 MySQL -- stop using it https://optimizedbyotto.com/post/reasons-to-stop-using-mysql/
+normal forms -- 4NF "fourth normal form" = https://minimalmodeling.substack.com/p/historically-4nf-explanations-are
+normal forms -- 5NF "fifth normal form"= https://kb.databasedesignbook.com/posts/5nf/
 normalization
 normalization -- de& = ex. for perf or ease of query
 NoSQL

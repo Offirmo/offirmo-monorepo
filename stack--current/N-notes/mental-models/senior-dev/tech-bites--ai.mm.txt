@@ -1,4 +1,5 @@
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
+//[ ] https://aleteia.org/tag/artificial-intelligence/
 12-Factor Agents -- 01 Natural Language to Tool Calls
 12-Factor Agents -- 02 Own your prompts
 12-Factor Agents -- 03 Own your context window
@@ -66,7 +67,7 @@
 2026-02-12 "An AI Agent Published a Hit Piece on Me" https://theshamblog.com/an-ai-agent-published-a-hit-piece-on-me/
 2026-02-28 Anthropic named supply-chain risk over mass domestic surveillance and fully autonomous weapons https://truthsocial.com/@realDonaldTrump/posts/116144552969293195 https://x.com/SecWar/status/2027507717469049070 https://www.anthropic.com/news/statement-comments-secretary-war
 2026-03 "the campfire of the Explorer era is flickering out. We are no longer building toys for the curious; we are pivoting toward Intelligence Operating Systems" https://open.substack.com/pub/a16z/p/the-sovereign-wall-why-ais-next-billion
-2026-03 Claude Code nerfed? + response from dev https://x.com/hesamation/status/2042979500103815306
+2026-03 Claude Code nerfed? + response from dev https://x.com/hesamation/status/2042979500103815306 https://github.com/anthropics/claude-code/issues/42796
 2026-03 Wikipedia en bans LLM https://news.slashdot.org/story/26/03/26/1818215/wikipedia-bans-use-of-generative-ai
 2026-03-05 re-implementationt -- but is it really "clean-room"? https://lucumr.pocoo.org/2026/3/5/theseus/ debate: https://github.com/chardet/chardet/issues/327#issuecomment-4005195078
 2026-03-24 "Issue tracking is dead" https://linear.app/next
@@ -78,9 +79,9 @@
 [ ] 2023 https://9elements.com/blog/ai-glossary/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
-//[ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://blog.cloudflare.com/tag/ai/
 [ ] https://ghuntley.com/
+[ ] https://github.com/Foxhunt/daily-hackernews/issues
 [ ] https://lucumr.pocoo.org/
 [ ] https://machinelearning.apple.com/research
 [ ] https://openai.com/news/
@@ -175,6 +176,7 @@ benchmarks -- GLUE = language understanding benchmark
 benchmarks -- GPQA https://arxiv.org/abs/2311.12022
 benchmarks -- Humanity's Last Exam https://lastexam.ai/
 benchmarks -- OSWorld https://os-world.github.io/
+benchmarks -- vs. messy, multi-step, real tasks = e.g. Claude dominating in real life despite Gemini scoring well on benchmarks https://www.linkedin.com/posts/linasbeliunas_google-just-admitted-anthropics-claude-ai-share-7452344531426926592-uoFT?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAABCMjsBlsnsypQrujQIErVuOdIdbCIH5O0
 benchmaxxed = performs well in benchmarks but bad experience
 BMAD https://github.com/bmad-code-org/BMAD-METHOD
 BPE "Byte Pair Encoding" = a way of converting text into tokens
@@ -380,6 +382,7 @@ jobs -- luddites
 jobs -- marginal hire = not hired due to productivity gains https://tomtunguz.com/marginal-hire/
 jobs -- ngmi "not gonna make it" https://ghuntley.com/ngmi/
 jobs -- not left behind
+jobs -- Open To Work Crisis = of 2026 https://darkounity.com/blog/the-impact-of-ai-on-game-dev-jobs-open-to-work-crisis-2026
 jobs -- radiologists https://slashdot.org/story/26/04/01/0619250/ceo-of-americas-largest-public-hospital-system-says-hes-ready-to-replace-radiologists-with-ai
 jobs -- rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 jobs -- shrinkage of entry-level jobs In Tech https://slashdot.org/story/25/05/28/2239206/ai-may-already-be-shrinking-entry-level-jobs-in-tech-new-research-suggests
@@ -409,6 +412,8 @@ LLM OS framing = the LLM as OS kernel. Context window = RAM. Tool calls = proces
 llms.txt -- embedded https://vercel.com/blog/a-proposal-for-inline-llm-instructions-in-html
 llms.txt = https://llmstxt.org
 LoRA "Low-rank Adaptation" = adapter-based technique for efficiently fine-tuning models https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)#Low-rank_adaptation
+luddites -- neo-luddites
+luddites = not so simple, learnings from their stories https://www.lesswrong.com/posts/w3kjXWmgos56e3Z4u/learning-from-the-luddites-implications-for-a-modern-ai
 MCP -- challenges -- overall -- vs. CLI -- tax = Every layer — Data → API → MCP — introduces an abstraction taxhttps://justin.poehnelt.com/posts/mcp-abstraction-tax/
 MCP -- challenges -- overall -- vs. CLI / TS https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/ https://ejholmes.github.io/2026/02/28/mcp-is-dead-long-live-the-cli.html
 MCP -- challenges -- overall -- vs. direct code https://lucumr.pocoo.org/2025/8/18/code-mcps/
@@ -515,6 +520,7 @@ research directions -- Interpretability = How can we understand model internals?
 research directions -- Scalable oversight = How can we use AI systems to assist humans in evaluating the outputs of other AI systems on complex tasks?
 research directions -- Weak-to-strong generalization = Humans will be weak supervisors relative to superhuman models. Can we understand and control how strong models generalize from weak supervision?
 RLAIF "RL from AI Feedback" https://arxiv.org/abs/2212.08073
+sandboxing = https://spawn-queue.acm.org/doi/10.1145/3733699
 Searle's Chinese Room https://plato.stanford.edu/entries/chinese-room/
 second brain
 security -- 2026-03-09 https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform

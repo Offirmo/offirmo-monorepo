@@ -43,6 +43,7 @@ character class
 character creator
 Civilization 1 https://github.com/rajko-horvat/OpenCiv1
 Civilization 3 https://openciv3.org/
+cliches -- gruff machismo / order-barking typical protagonists
 clicker
 cloud multiplayer
 cloud save
@@ -72,6 +73,7 @@ endgame -- GW2 -- Story and exploration-based content — playing new story chap
 endgame -- GW2 = https://wiki.guildwars2.com/wiki/Endgame
 endgame https://wiki.guildwars2.com/wiki/Endgame
 Environmental Storytelling = arranging a careful selection of the objects available in a game world so that they suggest a story to the player who sees them https://www.gamedeveloper.com/design/environmental-storytelling
+fantasy -- untainted by cynicism = one aspect of the genre https://kotaku.com/pragmata-preview-impressions-capcom-diana-hacking-2000679655
 fun
 fun & cool -- "a theory of fun for game design"
 fun & cool -- "I see who are the villains" (LOTRO)
@@ -113,6 +115,8 @@ graphics -- 2D -- plan
 graphics -- 3D -- perspective (true 3D)
 graphics -- projections https://en.wikipedia.org/wiki/Axonometric_projection https://en.wikipedia.org/wiki/Axonometric_projection#/media/File:Graphical_projection_comparison.png
 graphics https://en.wikipedia.org/wiki/Video_game_graphics
+gravitas -- cynicism of post-2010s AAA games development = https://kotaku.com/pragmata-preview-impressions-capcom-diana-hacking-2000679655
+gravitas = making serious
 hero's journey https://en.wikipedia.org/wiki/Hero%27s_journey
 idle
 items -- fungibility = a normal, undistinguishable item (ex. can of soda) or a unique, irreplaceable one (ex. Frostmourne)?
@@ -181,6 +185,7 @@ overworld / underworld
 overworld https://en.wikipedia.org/wiki/Overworld
 pacifist run
 party
+pause -- techniques to pause a game are not always trivial https://kotaku.com/video-game-devs-explain-how-pausing-works-and-sometimes-it-gets-weird-2000686339
 pay-to-win
 permadeath
 permanently missable content

@@ -614,6 +614,7 @@ prediction markets -- insiders https://x.com/peterjliu/status/202490158580622572
 predictions https://polymarket.com/
 price oracles = pricing of some resource
 privacy -- "I Verified My LinkedIn Identity. Here's What I Actually Handed Over" https://thelocalstack.eu/posts/linkedin-identity-verification-privacy/
+privacy -- Google handing to gvt without warning/delay https://www.eff.org/deeplinks/2026/04/google-broke-its-promise-me-now-ice-has-my-data
 privacy-maximalists vs normal non-technical user
 programmable finance
 programmable recovery = ??

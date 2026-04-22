@@ -7,6 +7,7 @@
 2010's tech bubble, a period where mediocre people could raise ludicrous money amid a venture capitalist echo chamber fueled by low-interest rates https://www.sandofsky.com/lambda-school/
 2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
 5 min zoom vs 10 emails/comments volley https://blog.jpl-consulting.com/2010/04/ten-email-volley-or-five-minute-phone-call/
+? https://kiss-and-solid.com/blog
 ? microformats https://web.archive.org/web/20250926192326/https://www.hotelsmallorca24.com/microformatiquecom/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [ ] +++ https://explorer.globe.engineer/
@@ -236,6 +237,8 @@ compile to js
 compiler -- Dear Sir, You Have Built a Compiler = https://people.csail.mit.edu/rachit/post/you-have-built-a-compiler/
 compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
 compiler = translates code from one language to another at a different level of abstraction. As a result, the compiled code from a compiler is much harder for a human to read than the original.
+compilers -- https://nanopass.org/
+compilers = Want to Write a Compiler? Just Read These Two Papers https://prog21.dadgum.com/30.html
 complexity -- tends to increase exponentially in multi-threaded systems, and quadratically in distributed parallel systems https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/CameronPurdy_TraditionalProgrammingModelsStoneKnivesAndBearskinsInTheGoogleAge.pdf
 complexity budget https://htmx.org/essays/complexity-budget/
 compute
@@ -450,6 +453,7 @@ error -- failure type – open / close = open = allow, close = deny, best choice
 error -- handling -- exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
 error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 error -- handling -- fail fast and loudly
+error -- handling -- late/lazy evaluation vs. fail fast
 error -- reuse error codes
 error -- type -- domain error = out of the specification, ex. sqrt(-x) https://cplusplus.com/reference/stdexcept/domain_error/
 error -- type -- logic error = errors in the internal logical of the program, such as violation of logical preconditions or class invariants https://cplusplus.com/reference/stdexcept/logic_error/
@@ -666,25 +670,24 @@ lang -- swiftlang = from Apple https://x.com/awesomekling/status/182223688818849
 lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
 lang -- There are only two kinds of languages: the ones people complain about and the ones nobody uses.
 lang -- wasp = high level website / SaaS https://wasp.sh/
+language -- && Server Index Format (LSIF)
+language -- && Server Protocol https://microsoft.github.io/language-server-protocol/
+language -- features -- contract enforcement
+language -- features -- data hiding
+language -- features -- encapsulation
+language -- features -- polymorphism
+language -- interpreted && -- types simples / types par référence
+language -- language tags
 language -- type -- markup = a text-encoding system which specifies the structure and formatting of a document and potentially the relationships among its parts.[1] Markup can control the display of a document or enrich its content to facilitate automated processing https://en.wikipedia.org/wiki/Markup_language
-language features -- contract enforcement
-language features -- data hiding
-language features -- encapsulation
-language features -- polymorphism
-language interpreted -- types simples / types par référence
-Language Server Index Format (LSIF)
-Language Server Protocol https://microsoft.github.io/language-server-protocol/
-language tags
-languages -- configuration
 languages -- configuration -- https://github.com/bazelbuild/starlark/
 languages -- generations = (disputed) https://en.wikipedia.org/wiki/Programming_language_generations
 languages -- higher level -- wrongly against = Von Neumann https://www.reddit.com/r/compsci/comments/zx1eu8/von_neumann_was_admonishing_people_who_built/
 languages -- trends
-languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-languages-weekends/
-late/lazy evaluation vs fail fast
-layer -- abstraction
+languages -- ur-languages = ALGOL, Lisp, ML, Self, Forth, APL, Prolog https://madhadron.com/programming/seven_ur_languages.html
+languages -- weekend = for fun https://stackoverflow.blog/2017/02/07/what-programming-languages-weekends/
 layers
-layers -- shearing &&
+layers -- abstraction
+layers -- shearing && = +++ very important concept
 lazy-loading
 leaking
 learning -- https://roadmap.sh/

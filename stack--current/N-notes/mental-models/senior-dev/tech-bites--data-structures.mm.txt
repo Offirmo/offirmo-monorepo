@@ -86,6 +86,7 @@ rope https://en.wikipedia.org/wiki/Rope_(data_structure)
 search = retrieve efficiently from a set https://en.wikipedia.org/wiki/Search_data_structure
 sentence diagram = way to encode a sentence
 skip list = sort of optimized searchable hybrid array / linked list -- is probabilistic! https://en.wikipedia.org/wiki/Skip_list
+skip lists = What are skiplists good for? randomized data structure that’s basically a drop-in replacement for a binary search tree with the same interface and the same asymptotic complexity on each of its operations. Some people like them because you can produce relatively simple and understandable lock-free concurrent implementations, and others like them as a matter of taste https://antithesis.com/blog/2026/skiptrees/
 sparse = (array or matrix) only needed elements
 table -- hash = implements maps, uses a hash to pre-index + chaining/bucket (bc. collisions), see also trie (trade-offs)
 tree -- B-Tree https://en.wikipedia.org/wiki/B-tree

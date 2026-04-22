@@ -181,6 +181,7 @@ Blue Monday -- stressors -- Weather/Light exposure
 Blue Monday = worse of the year https://en.wikipedia.org/wiki/Blue_Monday_(date)
 blue-chip = (publicly traded company) known for its stability, consistent earnings, sound financials, and long-standing reputation = "most wanted in the industry (investment)"
 bonnes et mauvaises cartes
+books -- Le Monde’s 100 Books of the Century https://standardebooks.org/collections/le-mondes-100-books-of-the-century
 bouba-kiki effect = languages spontaneously associate the nonwords “kiki” and “bouba” with spiky and round shapes, respectively https://www.science.org/doi/10.1126/science.adq7188
 brain -- fast & slow
 brain -- fast & slow -- fast = training / education / culture = biased = knee-jerk = LLM
@@ -210,6 +211,7 @@ cadre = should lead, can change the world (cf. "du role social de l'officier")
 Can the Subaltern Speak? = highlights the challenges faced by marginalised groups in having their voices heard within dominant power structure https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak#%22Can_the_Subaltern_Speak?%22
 can't satisfy others
 cancel culture -- ex. of Brendan Eich https://www.spacebar.news/stop-using-brave-browser/
+cannabis -- Huge study finds no evidence cannabis helps anxiety, depression, or PTSD https://www.sciencedaily.com/releases/2026/03/260319044656.htm
 capitalism -- antisocial profit-maximizing corporations
 capitalism -- state-corporate & = prioritize the accumulation of wealth over other interests
 care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
@@ -633,6 +635,7 @@ hope -- trust in others = “On this day, I would like all of us to hope anew,�
 hope = is it worth fighting? drowning rats experiment https://worldofwork.io/2019/07/drowning-rats-psychology-experiments/
 hopium
 hormesis = A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
+horoscopes -- Michel Gauquelin researcher https://www.threads.com/@oddthisday/post/DXL3caNip4m
 Horseshoe Theory = Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 hostile architecture https://en.wikipedia.org/wiki/Hostile_architecture
 how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
