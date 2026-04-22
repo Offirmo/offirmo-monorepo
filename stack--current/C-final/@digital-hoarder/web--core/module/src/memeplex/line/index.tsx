@@ -4,7 +4,6 @@ import type { Immutable } from '@monorepo-private/ts--types'
 
 import type { LineRecord } from '@digital-hoarder/model'
 import type { BaseProps } from "../types";
-import he from 'he'
 
 /////////////////////////////////////////////////
 
@@ -13,12 +12,12 @@ export interface Props extends BaseProps, PropsWithChildren {
 }
 
 export function Line(props: Props) {
-	console.log('🔄 <Line/>', props)
+	//console.log('🔄 <Line/>', props)
 	const { _debug, meme: line_record, children } = props
 
 	return (
 		<div className="meme-line" key={line_record._lineno}>
-			{ _debug && [<small className="original-line">{he.escape(`${line_record._lineno}: ${line_record._source}`)}</small>, <br/>]}
+			{ _debug && [<small className="original-line">{`${line_record._lineno}: ${line_record._source}`}</small>, <br/>]}
 			<div className={'meme-line'}>
 				{children}
 			</div>

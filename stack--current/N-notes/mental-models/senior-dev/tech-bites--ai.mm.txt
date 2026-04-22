@@ -78,7 +78,7 @@
 [ ] 2023 https://9elements.com/blog/ai-glossary/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
-[ ] https://aleteia.org/tag/artificial-intelligence/
+//[ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://blog.cloudflare.com/tag/ai/
 [ ] https://ghuntley.com/
 [ ] https://lucumr.pocoo.org/

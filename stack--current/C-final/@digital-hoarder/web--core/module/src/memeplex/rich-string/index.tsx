@@ -1,6 +1,5 @@
 import { assert_from } from '@monorepo-private/assert'
 import type { Immutable } from '@monorepo-private/ts--types'
-import he from 'he'
 
 import '@monorepo-private/css--framework'
 
@@ -14,7 +13,7 @@ export interface Props extends BaseProps {
 }
 
 export function RichString({s, memeplex}: Props) {
-	console.log('🔄 <RichString/>', {s, memeplex})
+	//console.log('🔄 <RichString/>', {s, memeplex})
 
 	const split = s.split(' ')
 
@@ -44,8 +43,8 @@ export function RichString({s, memeplex}: Props) {
 						if (simplified_segments.length >= 1) {
 							// works on repo or org
 							out.push(
-								<a href={`https://${host}/${simplified_segments.join('/')}`} target="_blank" class="own-indicator">
-									<img class="o⋄inline" src={`https://img.shields.io/github/stars/${simplified_segments.join('/')}?style=social`} alt="stars" />
+								<a href={`https://${host}/${simplified_segments.join('/')}`} target="_blank" className="own-indicator">
+									<img className="o⋄inline" src={`https://img.shields.io/github/stars/${simplified_segments.join('/')}?style=social`} alt="stars" />
 								</a>
 							)
 						}
@@ -53,8 +52,8 @@ export function RichString({s, memeplex}: Props) {
 						if (next_2_segments.length === 2) {
 							// works only on repos
 							out.push(
-								<a href={`https://${host}/${next_2_segments.join('/')}`} target="_blank" class="own-indicator">
-									<img class="o⋄inline" src={`https://img.shields.io/github/forks/${next_2_segments.join('/')}?style=social`} alt="forks" />
+								<a href={`https://${host}/${next_2_segments.join('/')}`} target="_blank" className="own-indicator">
+									<img className="o⋄inline" src={`https://img.shields.io/github/forks/${next_2_segments.join('/')}?style=social`} alt="forks" />
 								</a>
 							)
 						}
@@ -69,7 +68,7 @@ export function RichString({s, memeplex}: Props) {
 			}
 
 			if (s === '=' || s === '--' || s === 'ⵧ') {
-				return <span class="separator">{s}</span>
+				return <span className="separator">{s}</span>
 			}
 
 			if (!memeplex.abbreviations[s]) {
@@ -78,10 +77,10 @@ export function RichString({s, memeplex}: Props) {
 				}
 			}
 			else {
-				return <abbr title={he.escape(memeplex.abbreviations[s]?.headingⵧfull)}>{he.escape(s)}</abbr>
+				return <abbr title={memeplex.abbreviations[s]?.headingⵧfull!}>{s}</abbr>
 			}
 
-			return he.escape(s)
+			return s
 		})
 		.flatMap(x => [x, ' '])
 }
