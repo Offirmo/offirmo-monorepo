@@ -9,7 +9,7 @@ import * as process from 'node:process'
 import { setꓽpropertyⵧdeep } from '@monorepo-private/set-deep-property'
 import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
 import { type Basename, type PureModuleDetails } from '@monorepo-private/pure-module--analyzer'
-import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@infinite-monorepo/pkg-infos-resolver'
 
 /////////////////////////////////////////////////
 
@@ -196,7 +196,7 @@ ${pure_module_details.description || ''}
 			...(pure_module_details.isꓽpublished ? {} : { "private": true}),
 
 			...(Object.keys(enginesⵧcleaned).length && { engines: enginesⵧcleaned }),
-			"sideEffects": pure_module_details.hasꓽside_effects,
+			"sideEffects": pure_module_details.hasꓽside_effects || pure_module_details.isꓽapp,
 
 			"type": "module",
 			"exports": {

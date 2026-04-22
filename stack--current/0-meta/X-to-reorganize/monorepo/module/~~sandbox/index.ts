@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs'
 
-import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@infinite-monorepo/pkg-infos-resolver'
 import { getꓽpure_module_details, type PureModuleDetails } from '@monorepo-private/pure-module--analyzer'
 import { present } from '@monorepo-private/pure-module--presenter'
 

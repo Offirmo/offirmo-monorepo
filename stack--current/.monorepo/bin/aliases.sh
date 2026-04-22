@@ -15,7 +15,6 @@ alias    mono01pt='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offi
 alias     mono01s='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd 0-meta/;           cd 1-libs--simple/set-deep-property/;                        tabset --badge mono01s'
 alias    mono01ue='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd 0-meta/;           cd 1-libs--simple/utils--error/;                             tabset --badge mono01ue'
 alias     mono0Xm='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd 0-meta/;           cd X-to-reorganize/monorepo/;                                tabset --badge mono0Xm'
-alias     mono0Xp='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd 0-meta/;           cd X-to-reorganize/pkg-infos-resolver/;                      tabset --badge mono0Xp'
 alias    mono0Xpa='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd 0-meta/;           cd X-to-reorganize/pure-module--analyzer/;                   tabset --badge mono0Xpa'
 alias    mono0Xpp='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd 0-meta/;           cd X-to-reorganize/pure-module--presenter/;                  tabset --badge mono0Xpp'
 
@@ -119,6 +118,7 @@ alias    monoC@82='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offi
 alias    monoC@83='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd @digital-hoarder/89-web--final/;                          tabset --badge monoC@83'
 alias     monoC@0='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/01-read-write-any-structured-file/;    tabset --badge monoC@0'
 alias    monoC@02='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/02-load-config/;                       tabset --badge monoC@02'
+alias    monoC@03='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/03-pkg-infos-resolver/;                tabset --badge monoC@03'
 alias    monoC@12='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/12-structured-file-manifest/;          tabset --badge monoC@12'
 alias    monoC@13='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/13-primitives/;                        tabset --badge monoC@13'
 alias    monoC@14='cd "$OFFIRMO_MONOREPO_ROOT__CURRENT"; mise install; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/15-spec/;                              tabset --badge monoC@14'

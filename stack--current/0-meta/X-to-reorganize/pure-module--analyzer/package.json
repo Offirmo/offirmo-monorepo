@@ -13,9 +13,9 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@infinite-monorepo/pkg-infos-resolver": "*",
 		"@monorepo-private/assert": "*",
 		"@monorepo-private/file-entry": "*",
-		"@monorepo-private/pkg-infos-resolver": "*",
 		"ignore-walk": "^8",
 		"json5": "^2",
 		"parse-imports-ts": "^1",

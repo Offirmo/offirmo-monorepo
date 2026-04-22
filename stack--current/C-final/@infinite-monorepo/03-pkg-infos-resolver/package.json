@@ -1,14 +1,14 @@
 {
-	"name": "@monorepo-private/pkg-infos-resolver",
-	"description": "Resolves infos about packages such as their version, typings, etc.",
+	"name": "@infinite-monorepo/pkg-infos-resolver",
+	"description": "Fetch the latest infos about a npm package: version, typings, etc.",
 	"version": "0.0.1",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/index.ts"
+		".": "./module/src/index.ts"
 	},
-	"source": "module/index.ts",
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -19,7 +19,7 @@
 		"semver": "^7"
 	},
 	"scripts": {
-		"check--ts": "echo \"@monorepo-private/pkg-infos-resolver\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/pkg-infos-resolver\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"

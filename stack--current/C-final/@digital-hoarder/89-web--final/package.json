@@ -2,7 +2,7 @@
 	"name": "@digital-hoarder/web--final",
 	"version": "0.0.1",
 	"private": true,
-	"sideEffects": false,
+	"sideEffects": true,
 	"type": "module",
 	"exports": {
 		".": "./module/src/index.html"

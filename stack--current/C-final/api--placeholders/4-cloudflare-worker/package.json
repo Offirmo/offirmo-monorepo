@@ -5,7 +5,7 @@
 	"engines": {
 		"cloudflare--wrangler": "*"
 	},
-	"sideEffects": false,
+	"sideEffects": true,
 	"type": "module",
 	"exports": {
 		".": "./module/src/index.ts"

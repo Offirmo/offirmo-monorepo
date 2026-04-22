@@ -1,28 +1,11 @@
-/**
- * Fetch the latest infos about a "package.json"-based package
- */
-
 import { strict as assert } from 'node:assert'
 import packageJson from 'package-json'
 import * as semver from 'semver'
-import { NODE_MAJOR_VERSION } from '@monorepo-private/monorepo'
+
+import type { PackageJson } from './types.ts'
+import { OVERRIDES, MONOREPO_NAMESPACES } from './overrides.ts'
 
 /////////////////////////////////////////////////
-
-interface PackageJson {
-	name: string // full, including scope/namespace
-	version?: string
-	types?: string // https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#including-declarations-in-your-npm-package
-	private?: true
-}
-
-// TODO move in another pkg and inject?
-const OVERRIDES: Record<string, {}> = {
-	'fraction.js': { version: '^4' }, // v5+ switched to BigInt, which is not json-compatible
-	'@types/node': { version: `^${NODE_MAJOR_VERSION}` }, // clamp it to the closest, safest available version
-}
-
-// TODO why is type-fest misdetected?
 
 class PkgInfosResolver {
 	#packageᐧjson_cache: Record<string, any> = {}
@@ -117,6 +100,7 @@ class PkgInfosResolver {
 		if (!pkg_name.startsWith('@types/')) {
 			// pre-emptively try to load types as well (BUT may not be needed or not exist)
 			// we need to launch this sync for being in #pending_promises as well
+
 			const potential_types_pkg_name = _get_at_types_for_pkg_name(pkg_name)
 			console.log(`PkgVersionResolver pre-emptively querying "${potential_types_pkg_name}"…`)
 			const pending_id = 'auto-' + potential_types_pkg_name
@@ -127,6 +111,8 @@ class PkgInfosResolver {
 						console.log(`Preemptive "${potential_types_pkg_name}" is not needed, types are already included in "${pkg_name}"`)
 						return
 					}
+
+
 
 					// this will replace the previous promise
 					console.log(`types are NOT already included in "${pkg_name}", continuing preemptive "${potential_types_pkg_name}" preload`)
@@ -228,21 +214,9 @@ class PkgInfosResolver {
 	private is_monorepo_package(pkg_name: string) {
 		if (
 			pkg_name.startsWith('@monorepo-private/')
-			|| pkg_name.startsWith('@oh-my-rpg/')
-			|| pkg_name.startsWith('@dev-docs--web3/')
-			|| pkg_name.startsWith('@digital-hoarder/')
-			|| pkg_name.startsWith('@glim/')
-			|| pkg_name.startsWith('@infinite-monorepo/')
-			|| pkg_name.startsWith('@tbrpg/')
+			|| MONOREPO_NAMESPACES.some(ns => pkg_name.startsWith(`${ns}/`))
 		)
 			return true // always for those one
-
-		/*if (pkg_name.startsWith('@offirmo/')) {
-			// maybe...
-			//const packageᐧjson = this.ǃgetꓽpackageᐧjson(pkg_name)
-			//return packageᐧjson.private === true
-			return false
-		}*/
 
 		return false
 	}
@@ -283,9 +257,17 @@ function _has_typescript_types(packageᐧjson: PackageJson): boolean {
 	)
 		return true
 
-	if (packageᐧjson.name === 'strip-bom') {
-		console.log(`XXX @types/strip-bom`, packageᐧjson)
+	if (packageᐧjson.name === 'type-fest') {
+		// TODO why is it misdetected?
+		return true
 	}
+
+	// warning @types/strip-bom@4.0.1: This is a stub types definition. strip-bom provides its own type definitions, so you do not need this installed.
+	if (packageᐧjson.name === 'strip-bom') {
+		// TODO why is it misdetected?
+		return true
+	}
+
 	return false
 }
 

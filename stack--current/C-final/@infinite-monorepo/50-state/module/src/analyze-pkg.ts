@@ -13,7 +13,7 @@ import { parse as parseImports } from 'parse-imports-ts'
 import { writeJsonFile as write_json_file } from 'write-json-file'
 
 import { lsDirsSync } from '@monorepo-private/fs--ls'
-import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@infinite-monorepo/pkg-infos-resolver'
 
 import type {
 	PathⳇAbsolute,

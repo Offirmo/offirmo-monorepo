@@ -2,7 +2,7 @@
 	"name": "@dev-docs--web3/web-core",
 	"version": "0.0.1",
 	"private": true,
-	"sideEffects": false,
+	"sideEffects": true,
 	"type": "module",
 	"exports": {
 		".": "./module/src/index.ts"

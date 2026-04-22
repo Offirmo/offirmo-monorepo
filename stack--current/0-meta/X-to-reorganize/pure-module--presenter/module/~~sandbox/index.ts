@@ -11,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 import { lsDirsSync } from '@monorepo-private/fs--ls'
 import { getꓽdefault_namespace } from '@monorepo-private/config--monorepo'
-import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@infinite-monorepo/pkg-infos-resolver'
 import { getꓽpure_module_details, type PureModuleDetails, type Options as PureModuleAnalyzerOptions } from '@monorepo-private/pure-module--analyzer'
 import { present } from '@monorepo-private/pure-module--presenter'
 

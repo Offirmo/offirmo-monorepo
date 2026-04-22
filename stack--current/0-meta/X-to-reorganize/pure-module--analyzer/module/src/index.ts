@@ -12,7 +12,7 @@ import JSON5 from 'json5'
 import { parse as parseImports } from 'parse-imports-ts'
 import { writeJsonFile as write_json_file } from 'write-json-file'
 
-import { PkgInfosResolver } from '@monorepo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@infinite-monorepo/pkg-infos-resolver'
 
 import type {
 	PathⳇAbsolute,

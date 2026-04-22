@@ -13,8 +13,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@infinite-monorepo/pkg-infos-resolver": "*",
 		"@monorepo-private/assert": "*",
-		"@monorepo-private/pkg-infos-resolver": "*",
 		"@monorepo-private/set-deep-property": "*",
 		"write-json-file": "^7"
 	},
