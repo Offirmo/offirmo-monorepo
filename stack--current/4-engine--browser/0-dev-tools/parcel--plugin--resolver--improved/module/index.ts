@@ -52,7 +52,8 @@ export default new Resolver({
 			return { filePath }
 		}
 
-		if (params.dependency.sourcePath?.endsWith('.css')) {
+		if (params.dependency.sourcePath?.endsWith('.css')
+			|| params.dependency.sourcePath?.endsWith('.html')) {
 			DEBUG && console.log(`[${LIB}] Evaluating assisting loading npm modules from CSS…`)
 			// import of modules in CSS used to need the `npm:` prefix if Parcel
 			// but vite doesn't need it: In this case, it's easier to tweak Parcel than vite:

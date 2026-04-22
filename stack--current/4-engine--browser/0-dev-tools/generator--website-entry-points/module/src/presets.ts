@@ -10,7 +10,6 @@ export const PRESETꘌblog: Partial<WebPropertyEntryPointSpec> = {
 
 // webapp, uses full screen, no nav nor browser controls ex. game
 export const PRESETꘌappⵧimmersive: Partial<WebPropertyEntryPointSpec> = {
-
 	hasꓽown_navigation: true,
 	features: [
 		'cssⳇviewport--full' as FeatureSnippets

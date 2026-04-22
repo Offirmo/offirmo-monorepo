@@ -1,0 +1,35 @@
+{
+	"name": "@digital-hoarder/web--property",
+	"version": "0.0.1",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@dev-docs--web3/marketing": "*",
+		"@monorepo-private/assert": "*",
+		"@monorepo-private/generator--website-entry-points": "*"
+	},
+	"scripts": {
+		"check--ts": "echo \"@digital-hoarder/web--property\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts",
+		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
+	},
+	"devDependencies": {
+		"@monorepo-private/config--typescript": "*",
+		"@monorepo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^24",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^6"
+	}
+}

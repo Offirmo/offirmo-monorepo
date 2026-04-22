@@ -22,6 +22,20 @@ function isꓽexact_stringified_number(s: string): s is string {
 
 	return String(n) === s
 }
+// use case: convert back to number
+// any leading 0 don't count
+function isꓽstringified_integer(s: string): s is string {
+	if (typeof s !== 'string') return false
+
+	s = s.split('').reduce((acc, c) => {
+		if (acc.length === 0 && c === '0') return acc
+		return acc + c
+	}, '');
+	const n = Number(s)
+	if (isNaN(n)) return false // NOT a number
+
+	return String(n) === s
+}
 
 // https://unicode.org/reports/tr51/#Emoji_Sets
 const EMOJI_REGEX = /\p{RGI_Emoji}/v
@@ -76,6 +90,7 @@ export {
 	isꓽnegative_zero,
 
 	isꓽexact_stringified_number,
+	isꓽstringified_integer,
 	hasꓽemoji,
 
 	isꓽobjectⵧkv,

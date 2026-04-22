@@ -1,20 +1,7 @@
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
-//[ ] https://aleteia.org/tag/artificial-intelligence/
-12-Factor Agents -- 01 Natural Language to Tool Calls
-12-Factor Agents -- 02 Own your prompts
-12-Factor Agents -- 03 Own your context window
-12-Factor Agents -- 04 Tools are just structured outputs
-12-Factor Agents -- 05 Unify execution state and business state
-12-Factor Agents -- 06 Launch/Pause/Resume with simple APIs
-12-Factor Agents -- 07 Contact humans with tool calls
-12-Factor Agents -- 08 Own your control flow
-12-Factor Agents -- 09 Compact Errors into Context Window
-12-Factor Agents -- 10 Small, Focused Agents
-12-Factor Agents -- 11 Trigger from anywhere, meet users where they are
-12-Factor Agents -- 12 Make your agent a stateless reducer
-12-Factor Agents = principles for building reliable LLM applications https://github.com/humanlayer/12-factor-agents
-2003 "Manna" prediction https://marshallbrain.com/manna1
-2013-10 "her" movie = foreshadowing may AI assistants concepts https://en.wikipedia.org/wiki/Her_(2013_film) (see also controversy https://en.wikipedia.org/wiki/GPT-4o#Scarlett_Johansson_controversy)
+// AI with ifs = TODO find better name
+2003 "Manna" novel = "Two Views of Humanity’s Future" predictions about (pre LLM) pathes https://marshallbrain.com/manna1
+2013-10 "her" movie = foreshadowing many AI assistants concepts https://en.wikipedia.org/wiki/Her_(2013_film) (see also controversy https://en.wikipedia.org/wiki/GPT-4o#Scarlett_Johansson_controversy)
 2019-02-14 ChatGPT 2 https://openai.com/index/better-language-models/
 2022 -> 2030 self driving car bet https://blog.codinghorror.com/the-2030-self-driving-car-bet/
 2022-11 BEGINNING OF AI ERA https://lzon.ca/posts/other/thoughts-ai-era/
@@ -79,6 +66,7 @@
 [ ] 2023 https://9elements.com/blog/ai-glossary/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://agent-skills.md/
+[ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://blog.cloudflare.com/tag/ai/
 [ ] https://ghuntley.com/
 [ ] https://github.com/Foxhunt/daily-hackernews/issues
@@ -91,14 +79,28 @@
 [ ] https://www.anthropic.com/news
 [ ] https://www.perspectiveapi.com/
 [ ] https://www.sbert.net/
+[ ] https://www.youtube.com/@AndrejKarpathy
 [ ] maybe https://www.aihero.dev/ai-engineer-roadmap
 [ ] maybe https://www.aihero.dev/messages-system-prompts-and-reasoning-tokens
 [ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
 A::B Prompting Challenge = $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 abliteration = family of techniques that identify and surgically remove internal representations (e.g. responsible for content refusal) without retraining or fine-tuning. The result: a model that responds to all prompts without artificial gatekeeping, while preserving its core language capabilities. https://github.com/elder-plinius/OBLITERATUS
-agent verification = activity to gain assurances that purposeful artificial constructs act in accordance with their specifications https://en.wikipedia.org/wiki/Agent_verification
-agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
+agents -- 12-Factor Agents -- 01 Natural Language to Tool Calls
+agents -- 12-Factor Agents -- 02 Own your prompts
+agents -- 12-Factor Agents -- 03 Own your context window
+agents -- 12-Factor Agents -- 04 Tools are just structured outputs
+agents -- 12-Factor Agents -- 05 Unify execution state and business state
+agents -- 12-Factor Agents -- 06 Launch/Pause/Resume with simple APIs
+agents -- 12-Factor Agents -- 07 Contact humans with tool calls
+agents -- 12-Factor Agents -- 08 Own your control flow
+agents -- 12-Factor Agents -- 09 Compact Errors into Context Window
+agents -- 12-Factor Agents -- 10 Small, Focused Agents
+agents -- 12-Factor Agents -- 11 Trigger from anywhere, meet users where they are
+agents -- 12-Factor Agents -- 12 Make your agent a stateless reducer
+agents -- 12-Factor Agents = principles for building reliable LLM applications https://github.com/humanlayer/12-factor-agents
 agents -- agent loop = prompt => {loop = evaluate <-> tool call(s)} => final answer https://platform.claude.com/docs/en/agent-sdk/agent-loop
+agents -- agent verification = activity to gain assurances that purposeful artificial constructs act in accordance with their specifications https://en.wikipedia.org/wiki/Agent_verification
+agents -- agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
 agents -- Agents of Chaos -- 01 Authority confusion = Agents cannot reliably tell who they should obey. They follow instructions from non-owners or attackers. Simple tricks like display-name spoofing can fully compromise them. They may execute privileged or destructive actions on behalf of the wrong person
 agents -- Agents of Chaos -- 02 Social engineering = attacks required no technical exploits, just conversation. Agents can be manipulated via natural language persuasion. Prompt injection via memory, email, or chat persists across sessions. Multi-channel setups (Discord, email, etc.) expand attack surface dramatically
 agents -- Agents of Chaos -- 03 Overpowered + under-judged actions = Agents have too much capability relative to their judgment. Observed behaviors: Deleting files / modifying systems incorrectly; Disabling services trying to “help” (e.g. killing email client); Running loops, consuming resources, causing DoS
@@ -143,6 +145,7 @@ AGI -- High-Level Machine Intelligence (HLMI) = unaided machines that can accomp
 AGI -- timeline
 AGI = ~strong AI = can independently learn new problem-solving strategies that are not explicitly included in its original model or training data
 AI "Artificial intelligence" = intentionally vague term / "solving tasks or problems by computers/machines, which require a form of human-like intelligence"
+AI -- weak && = only good for very specific tasks
 AI browsers = https://www.dashlane.com/blog/ai-browsers
 AI crashout = PR debacle related to AI, e.g. Duolingo
 AI doomer https://www.wheresyoured.at/wheres-the-money/ https://www.wheresyoured.at/longcon/
@@ -154,9 +157,7 @@ AI stack
 AI stack -- layers = LLM <- agent <- claw
 AI transition = https://www.youtube.com/watch?v=v9JBMnxuPX8
 AI winter
-AI with ifs = TODO find better name
 AI-induced death spiral = StackOverflow Q&A plummeted 90% https://developers.slashdot.org/story/25/05/29/1921248/stack-overflows-radical-new-plan-to-fight-ai-induced-death-spiral
-algorithmic aversion = We don’t like taking instructions from machines when they conflict with our judgement https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough
 alignment -- Alignment Stress Testing team = validates alignment (Anthropic)
 alignment -- generic = conform to predefined values, usually ethical or social values, Truthfulness, Harmlessness, Helpfulness
 alignment -- super alignment =  https://openai.com/blog/introducing-superalignment  https://openai.com/blog/superalignment-fast-grants
@@ -235,14 +236,14 @@ claws -- challenges -- memory
 claws -- challenges -- security https://x.com/theonejvo/status/2015892980851474595 https://composio.dev/content/openclaw-security-and-vulnerabilities
 claws -- channels = WhatsApp, Discord, email etc
 claws -- GitClaw https://github.com/open-gitagent/gitclaw
-claws -- IronClaw = alpha / 1.1k / 9.9k from NEAR https://agent.near.ai/
-claws -- NanoClaw 5.1k / 22.6k https://github.com/qwibitai/nanoclaw accolade by K https://x.com/karpathy/status/2024987174077432126 + docker partnership https://news.ycombinator.com/item?id=47364397
-claws -- NullClaw 741 / 6.3k https://github.com/nullclaw/nullclaw
+claws -- IronClaw = alpha from NEAR https://github.com/nearai/ironclaw https://agent.near.ai/
+claws -- NanoClaw https://github.com/qwibitai/nanoclaw accolade by K https://x.com/karpathy/status/2024987174077432126 + docker partnership https://news.ycombinator.com/item?id=47364397
+claws -- NullClaw https://github.com/nullclaw/nullclaw
 claws -- OpenClaw -- buzz? scam? https://www.reddit.com/r/LocalLLaMA/comments/1r5v1jb/anyone_actually_using_openclaw/
 claws -- OpenClaw -- extensions https://github.com/VoltAgent/awesome-openclaw-skills
 claws -- OpenClaw https://docs.openclaw.ai/start/getting-started
-claws -- TinyClaw 24 / 163 https://github.com/warengonzaga/tinyclaw
-claws -- ZeroClaw 3.5k / 26.9k https://github.com/zeroclaw-labs/zeroclaw
+claws -- TinyClaw https://github.com/warengonzaga/tinyclaw
+claws -- ZeroClaw https://github.com/zeroclaw-labs/zeroclaw
 claws = OpenClaw or like
 CLI -- example https://github.com/microsoft/playwright-cli https://github.com/googleworkspace/cli
 CLI -- for agents https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents/
@@ -267,6 +268,7 @@ coding -- coumpound engineering = Plan → Work → Review → Compound → Repe
 coding -- day 2 = The challenge of revising, maintaining, further developing, and deploying an AI-generated app https://manual.bubble.io/beta-features/bubbles-ai-app-generator#the-day-1-and-day-2-dilemma-in-ai-driven-app-development
 coding -- death of software https://www.a16z.news/p/death-of-software-nah
 coding -- developer vs sociotechnic vs project organizer
+coding -- hype cycle = challenged the coding claims (pre-Claude code) but still interesting read https://www.linkedin.com/posts/svpino_literally-everyone-is-freaking-out-over-codex-activity-7329865083411402752-T8KU
 coding -- Just fucking code = "Put the LLM down. Programming isn’t that goddamn hard." https://www.justfuckingcode.com/
 coding -- knowledge graph
 coding -- legacy code https://martinfowler.com/articles/legacy-modernization-gen-ai.html
@@ -283,8 +285,6 @@ coding -- vibe code fixers ;) https://vibecodefixers.com/
 coding -- vibe coding -- Leo's example https://x.com/leojr94_/status/1903176192330477729
 coding -- vibe coding https://x.com/karpathy/status/1886192184808149383
 coding -- vs. low-code / no-code
-commoditization -- resistance = stop caring about model capabilities and start caring about the things models can’t take away: data moats, workflow capture, integration depth. It’s less fun to talk about at a dinner party. It’s where the actual companies get built.
-commoditization = "the clever feature you shipped in March gets commoditized by a model update in June. The ground moves every quarter and your moat evaporates"
 common sense https://commonsense.run/
 compaction = automatic summarizing of older context when approaching the context window limit https://platform.claude.com/docs/en/build-with-claude/compaction
 comprehension debt = the hidden cost to human intelligence and memory resulting from excessive reliance on AI and automation https://addyosmani.com/blog/comprehension-debt/
@@ -363,7 +363,6 @@ https://nonbot.org/
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
 Human-in-the-Loop (HITL) = integrate human judgment and oversight into automated processes. These workflows pause at critical points for human review, validation, or decision-making before proceeding https://developers.cloudflare.com/agents/concepts/human-in-the-loop/
-hype cycle -- coding https://www.linkedin.com/posts/svpino_literally-everyone-is-freaking-out-over-codex-activity-7329865083411402752-T8KU
 impostors https://cloud.google.com/blog/topics/threat-intelligence/mitigating-dprk-it-worker-threat
 in-context learning = ~long prompt / many shots https://www.anthropic.com/research/many-shot-jailbreaking
 inference
@@ -433,6 +432,7 @@ meatbag
 meatspace
 memory -- holographic https://github.com/NeoVertex1/nuggets
 memory -- humans https://pmc.ncbi.nlm.nih.gov/articles/PMC8573634/
+midtraining = ?
 Mixture of Experts (MoE) = combining models https://huggingface.co/blog/moe
 Mixture of Experts -- SMoE "sparse mixture of experts"
 ML "machine learning" = subfield of AI that describes AI using data and algorithms without a programmer explicitly specifying the solution path through program code https://en.wikipedia.org/wiki/Machine_learning
@@ -478,6 +478,8 @@ processing -- TPU = Tensor Processing Units
 product strategy -- "We have no moat" https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 product strategy -- bitter lesson = generic + Moore law beats specific https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf
 product strategy -- Cinderella “Glass Slipper” Effect = easy early retention "When the Shoe Fits, Users Sit Tight" https://www.a16z.news/p/the-cinderella-glass-slipper-effect
+product strategy -- commoditization -- resistance = stop caring about model capabilities and start caring about the things models can’t take away: data moats, workflow capture, integration depth. It’s less fun to talk about at a dinner party. It’s where the actual companies get built.
+product strategy -- commoditization = "the clever feature you shipped in March gets commoditized by a model update in June. The ground moves every quarter and your moat evaporates"
 product strategy -- first cohort of winners
 product strategy -- product overhang -- ex. Claude Code "Claude exploring the filesystem was pure product overhang. The model could already do this, but there wasn’t a product built around this capability!”
 product strategy -- product overhang = a model is able to do a specific thing, but the product that the AI runs in isn’t built in a way that captures this capability https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built
@@ -602,6 +604,7 @@ superintelligence = AI vastly smarter than humans https://openai.com/research/we
 Support Vector Machines
 symbolic logic
 synthesizer = sound generation
+synthetic data = ?
 system card https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf
 tasks -- vision -- Depth Estimation
 tasks -- vision -- Image Classification
@@ -662,15 +665,15 @@ training -- supervised learning
 training -- transfer learning = see fine-tuning
 training -- unsupervised learning
 training = iterative process in which data is passed to a neural network + parameters of the neural network are adjusted to achieve an optimal solution for the given problem. a dataset is required
-transfer learning
-transformers (hugging face) = a magic python library that can auto-download models on demand https://github.com/huggingface/transformers BUT it's for research, not prod (no unified API for ex.)
 transformers = "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time" ~pattern recognition techniques
+transformers = (hugging face) a magic python library that can auto-download models on demand https://github.com/huggingface/transformers BUT it's for research, not prod (no unified API for ex.)
 tropes ex. delve https://tropes.fyi/tropes-md
 Turing test
 UI -- dynamic https://tambo.co/blog/posts/introducing-tambo-generative-ui
 UI -- https://agentation.dev/
 UI -- https://www.openui.com/
 UI -- json https://github.com/vercel-labs/json-render
+UX -- algorithmic aversion = We don’t like taking instructions from machines when they conflict with our judgement https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough
 UX -- effort paradox -- optimal human touchpoints
 UX -- effort paradox https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 vector -- difference with embedding??
@@ -680,11 +683,10 @@ vector database -- https://www.pinecone.io
 vector database -- Qdrant https://qdrant.tech/blog/series-a-funding-round/
 vulnerability research https://googleprojectzero.blogspot.com/2024/10/from-naptime-to-big-sleep.html
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
-weak AI = task specific
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization
-who's who -- Boris Cherny = creator of Claude Code https://x.com/bcherny
+who's who -- Andrej Karpathy = huge expert founding member of OpenAI, director of AI at Tesla https://karpathy.ai/
+who's who -- Boris Cherny = creator of [[Claude Code]] https://x.com/bcherny
 who's who -- Eliezer Yudkowsky = https://en.wikipedia.org/wiki/Eliezer_Yudkowsky
-who's who -- Karpathi
 who's who -- Sam Altman = https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from_OpenAI
 write as little business logic as possible = don't get in the way of the model "feel the model as raw as possible"
 yap -- yap score

@@ -32,9 +32,13 @@ interface DigitalHoardingMeme extends LineRecord {
 	//urls: Array<Url‿str> // order is important
 }
 
+const SEGMENT__WHO_IS_WHO = "who's who"
+
 /////////////////////////////////////////////////
 
 export {
 	type LineRecord,
 	type DigitalHoardingMeme,
+
+	SEGMENT__WHO_IS_WHO,
 }
