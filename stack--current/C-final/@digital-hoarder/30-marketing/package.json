@@ -1,5 +1,5 @@
 {
-	"name": "@digital-hoarder/web--property",
+	"name": "@digital-hoarder/marketing",
 	"version": "0.0.1",
 	"private": true,
 	"sideEffects": false,
@@ -12,22 +12,21 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@dev-docs--web3/marketing": "*",
 		"@monorepo-private/assert": "*",
-		"@monorepo-private/generator--website-entry-points": "*"
+		"@monorepo-private/marketing": "*"
 	},
 	"scripts": {
-		"check--ts": "echo \"@digital-hoarder/web--property\" && tsc --noEmit",
+		"check--ts": "echo \"@digital-hoarder/marketing\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s check--ts",
-		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
+		"check": "run-s check--ts"
 	},
 	"devDependencies": {
 		"@monorepo-private/config--typescript": "*",
+		"@monorepo-private/generator--website-entry-points": "*",
 		"@monorepo-private/monorepo-scripts": "*",
+		"@monorepo-private/ts--types--web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/node": "^24",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^6"
