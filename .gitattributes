@@ -3,3 +3,4 @@
 * text=auto eol=lf
 *.json diff=json
 *.png binary
+stack--current/1-isomorphic/1-libs--simple/marketing/module/src/pro/** filter=git-crypt diff=git-crypt

@@ -11,6 +11,7 @@ mise install
 npm i -g corepack  ## if using. no longer installed along node since 25
 npm i -g yarn    # bolt only works when installed by yarn
 yarn global add bolt
+git-crypt unlock /path/to/key
 bolt
 bolt build
 bolt test
